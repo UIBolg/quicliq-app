@@ -202,9 +202,46 @@
       "r4": "Yousef",
       "r5": "Huda"
     },
-    "verify": {
-      "title": "Verify your ID and address",
-      "body": "to send up to {{amount}}"
+    "nextStep": {
+      "idAddress": {
+        "title": "Verify your ID and address",
+        "body": "to send up to {{amount}}"
+      },
+      "sourceOfFunds": {
+        "title": "Add your source of funds",
+        "body": "to send over {{amount}}"
+      }
+    },
+    "levelLink": "Level {{level}} of 3",
+    "limitSheet": {
+      "title": "Your sending limit",
+      "usage": "{{used}} used · {{left}} left",
+      "steps": {
+        "account": {
+          "title": "Create your account",
+          "hint": "Mobile, name and date of birth checked"
+        },
+        "idAddress": {
+          "title": "Verify your ID and address",
+          "hint": "Passport or driving licence + a recent bill"
+        },
+        "sourceOfFunds": {
+          "title": "Add your source of funds",
+          "hint": "Payslip, bank statement or proof of savings"
+        }
+      },
+      "done": "Done",
+      "locked": "Unlocks after the step above",
+      "total": "total",
+      "more": "+{{amount}} more",
+      "over": "Over {{amount}}",
+      "status": {
+        "done": "Done",
+        "current": "Next step",
+        "locked": "Locked"
+      },
+      "raise": "Raise my limit",
+      "allDone": "You have the highest sending limit."
     }
   }
 }

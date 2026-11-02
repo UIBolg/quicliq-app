@@ -38,3 +38,4 @@ export * from './RecipientTile';
 export * from './TabBar';
 export * from './ActionBanner';
 export * from './LimitCard';
+export * from './LimitStep';

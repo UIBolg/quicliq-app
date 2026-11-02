@@ -9,8 +9,6 @@ export const demoAccount = {
   initials: 'JC',
   /** Sample GBP → JOD rate for the Home proposal. */
   rate: { jod: '0.8932' },
-  /** Lifetime limit after verifying ID & address (build doc: £12,000). */
-  verifiedLimit: 12000,
   /** Demo login (7.1): mobile 123456789 or this email, with password 123456. Any other pair is wrong (7.3);
    *  5 wrong tries pause login for 15 minutes (7.4). Log in with both fields empty goes straight to Home (demo shortcut).
    *  Demo values only — never real credentials. */
@@ -40,7 +38,29 @@ export function isDemoLogin(method: 'mobile' | 'email', id: string, password: st
 }
 
 /** Sending limit for the verified Home: lifetime limit and how much has been sent so far (GBP). */
-export const demoLimit = { total: 800, sent: 100 } as const;
+/**
+ * Sending-limit levels (product rules):
+ *  1 account        — account created and mobile, name and birth date match the same person → £800 lifetime.
+ *  2 idAddress      — ID and address verified → £12,000.
+ *  3 sourceOfFunds  — proof of source of funds uploaded → over £12,000 (no fixed figure).
+ * `route` is where "Raise my limit" / the banner goes to reach that level (NotBuilt screen IDs until built).
+ */
+export type LimitLevel = 1 | 2 | 3;
+export type LimitLevelDef = { key: 'account' | 'idAddress' | 'sourceOfFunds'; icon: 'user' | 'idCard' | 'file'; total: number | null; route: string | null };
+export const limitLevels: readonly LimitLevelDef[] = [
+  { key: 'account', icon: 'user', total: 800, route: null },
+  { key: 'idAddress', icon: 'idCard', total: 12000, route: '4.1' },
+  { key: 'sourceOfFunds', icon: 'file', total: null, route: 'Source of funds' },
+];
+
+/** The level that comes after `level` (what the banner and "Raise my limit" point to); undefined at level 3. */
+export const nextLevel = (level: LimitLevel): LimitLevelDef | undefined => limitLevels[level];
+
+/** Demo user: level 1 (preview menu can open Home at level 2 or 3), £100 sent so far. */
+export const demoLimit = { level: 1 as LimitLevel, sent: 100 };
+
+/** Lifetime limit at a level; level 3 has no fixed cap, so it reports the level-2 figure it goes beyond. */
+export const limitTotal = (level: LimitLevel): number => limitLevels[level - 1].total ?? limitLevels[1].total ?? 0;
 
 /** Last 5 recipients, most recent first (names live in the i18n files under home.recipientNames). */
 export const demoRecipients = [

@@ -20,7 +20,8 @@ export type RootStackParamList = {
   '7.2c': { phone: string; email: string; method: 'sms' | 'email' };
   '7.5': undefined;
   '7.6': undefined;
-  Home: undefined;
+  /** level: sending-limit level to show (preview menu); defaults to the demo account's level. */
+  Home: { level?: 1 | 2 | 3 } | undefined;
   NotBuilt: { screenId: string };
   'dev/Gallery': undefined;
   'dev/Tokens': undefined;
