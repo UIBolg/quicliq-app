@@ -1,4 +1,4 @@
-# Fonts (licensed — not committed by default)
+# Fonts (licensed — supplied by Quicliq, committed on the product owner's instruction)
 
 Drop the font files here, then run `npm start` (fonts are registered automatically by `scripts/register-fonts.js`).
 

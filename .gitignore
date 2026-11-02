@@ -40,6 +40,3 @@ yarn-error.*
 /ios
 /android
 
-# Licensed fonts — keep out of git unless your licence allows it
-assets/fonts/*.ttf
-assets/fonts/*.otf
