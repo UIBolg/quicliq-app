@@ -243,7 +243,8 @@
       },
       "raise": "Raise my limit",
       "allDone": "You have the highest sending limit."
-    }
+    },
+    "addRecipient": "Add new"
   },
   "account": {
     "title": "Account",

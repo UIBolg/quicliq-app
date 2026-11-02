@@ -6,7 +6,7 @@
  *   top group (gap spacing/16): greeting row (Avatar brand · Caption Slate + Title · IconButton bell) ·
  *     next-level Action Banner (alert; ID & address at level 1, source of funds at level 2, none at 3) ·
  *     Limit Card (red, plane artwork, "Level n of 3" pill; tap → SendingLimitSheet) · Primary "Send money".
- *   then (gap spacing/24): Recent recipients (5 tiles, tint avatars) · Recent transfers (TransferRows on a white card with an Alpha/Ink 10% border).
+ *   then (gap spacing/24): Recent recipients ("Add new" tile + 5 tint tiles, scrolls sideways) · Recent transfers (TransferRows on a white card with an Alpha/Ink 10% border).
  * Composition only: every repeated pattern lives in src/components; every string in src/i18n.
  */
 import { useState } from 'react';
@@ -14,7 +14,7 @@ import { ScrollView, StyleSheet, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import {
-  ActionBanner, AppText, Avatar, Button, IconButton, LimitCard, RecipientTile, Screen, SectionHeader,
+  ActionBanner, AddRecipientTile, AppText, Avatar, Button, IconButton, LimitCard, RecipientTile, Screen, SectionHeader,
   TabBar, TransferRow,
 } from '../../components';
 import { demoAccount, demoLimit, demoRecipients, demoTransfers, limitTotal, nextLevel, type LimitLevel } from '../../mock/account';
@@ -114,7 +114,14 @@ function Recipients({ notBuilt }: { notBuilt: NotBuilt }) {
   return (
     <View style={{ gap: t.spacing['spacing/12'] }}>
       <SectionHeader title={tr(`${k}.recipients`)} actionLabel={tr(`${k}.seeAll`)} onAction={notBuilt('Recipients')} />
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+      {/* Scrolls sideways; bleeds to the screen edges so tiles slide under the gutter. */}
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={{ marginHorizontal: -t.layout.screenGutter }}
+        contentContainerStyle={{ paddingHorizontal: t.layout.screenGutter, gap: t.spacing['spacing/4'] }}
+      >
+        <AddRecipientTile label={tr(`${k}.addRecipient`)} onPress={notBuilt('Add recipient')} />
         {demoRecipients.map((r) => (
           <RecipientTile
             key={r.id}
@@ -125,7 +132,7 @@ function Recipients({ notBuilt }: { notBuilt: NotBuilt }) {
             onPress={notBuilt('Send money')}
           />
         ))}
-      </View>
+      </ScrollView>
     </View>
   );
 }
