@@ -24,6 +24,9 @@
     "plugins": [
       "expo-font",
       "expo-localization"
-    ]
+    ],
+    "experiments": {
+      "baseUrl": "/quicliq-app"
+    }
   }
 }
