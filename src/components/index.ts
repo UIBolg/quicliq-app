@@ -31,3 +31,8 @@ export * from './BackButton';
 export * from './Keypad';
 export * from './Banner';
 export * from './Illustration';
+export * from './ProgressBar';
+export * from './SectionHeader';
+export * from './TransferRow';
+export * from './RecipientTile';
+export * from './TabBar';

@@ -105,11 +105,10 @@ export const sizes = {
   /** Spot illustrations 79:389 — 160 artboards; 7.6 / 7.7 use them at 144. */
   illustration: { default: 160, small: 144 },
 
-  /** Home (proposal) — setup progress bar 4 high with an 8-wide stub at 0 steps. */
-  setupProgress: { height: 4, minFill: 8 },
+  /** ProgressBar (code addition, Home proposal): sm 4 (setup steps), md 8 (sending limit); 8-wide stub at 0. */
+  progress: { sm: 4, md: 8, minFill: 8 },
 
-  /** Home (proposal) — sending-limit progress bar 8 high; recipient tile width (56 avatar + name). */
-  limitProgress: { height: 8 },
+  /** RecipientTile (code addition, Home proposal): 56 avatar + one-line name. */
   recipientTile: { width: 72 },
 
   /** Password Rule 281:7369 — 20 indicator (Met = Icon Badge 20 Success). */

@@ -9,7 +9,7 @@ import { useState, type ReactNode } from 'react';
 import {
   Agreement, AppText, Avatar, Button, Checkbox, CountryPrefix, DividerOr, Flag, Icon, IconBadge, IconButton, LoginMethod, Logo,
   iconNames, isDirectionalIcon,
-  CodeError, CodeInput, OnboardingScene, OtpDigit, Pagination, ResendCountdown, useCountdown, PasswordRule, PhoneField, RadioOption, SheetGrabber, SheetHeader, SwitchAccount, TextField, VerifiedTag,
+  CodeError, CodeInput, ProgressBar, RecipientTile, SectionHeader, TabBar, TransferRow, OnboardingScene, OtpDigit, Pagination, ResendCountdown, useCountdown, PasswordRule, PhoneField, RadioOption, SheetGrabber, SheetHeader, SwitchAccount, TextField, VerifiedTag,
   type ButtonType, type LoginMethodValue, type TextFieldState,
 } from '../../components';
 import { useTheme, type IconBadgeSize } from '../../theme';
@@ -312,6 +312,51 @@ export function ComponentGallery({ onToggleLocale, onShowTokens }: { onToggleLoc
         <FormsGroup />
 
         <CodeEntryGroup />
+
+        <AppText variant="Overline" color="Primary/Red">HOME PATTERNS · CODE ADDITIONS (NOT IN FIGMA)</AppText>
+
+        <Section title="Progress Bar" node="code · sizes.progress">
+          <Label>md · default (on Fog)</Label>
+          <View style={{ backgroundColor: t.colors['Neutral/Fog'], padding: t.spacing['spacing/16'], borderRadius: t.radius['radius/md'] }}>
+            <ProgressBar value={100} max={800} accessibilityLabel="100 of 800" />
+          </View>
+          <Label>sm · onBrand (on red) · 0 and 1 of 2</Label>
+          <View style={{ backgroundColor: t.colors['Primary/Red'], padding: t.spacing['spacing/16'], borderRadius: t.radius['radius/md'], gap: t.spacing['spacing/12'] }}>
+            <ProgressBar value={0} max={2} size="sm" tone="onBrand" accessibilityLabel="0 of 2" />
+            <ProgressBar value={1} max={2} size="sm" tone="onBrand" accessibilityLabel="1 of 2" />
+          </View>
+        </Section>
+
+        <Section title="Section Header" node="code">
+          <SectionHeader title={tr('home.recent')} actionLabel={tr('home.seeAll')} onAction={() => {}} />
+        </Section>
+
+        <Section title="Recipient Tile" node="code">
+          <View style={{ flexDirection: 'row', gap: t.spacing['spacing/8'] }}>
+            <RecipientTile initials="LH" shortName={tr('home.recipientShort.r1')} fullName={tr('home.recipientNames.r1')} actionLabel={tr('home.sendMoney')} onPress={() => {}} />
+            <RecipientTile initials="OK" shortName={tr('home.recipientShort.r2')} fullName={tr('home.recipientNames.r2')} actionLabel={tr('home.sendMoney')} onPress={() => {}} />
+          </View>
+        </Section>
+
+        <Section title="Transfer Row" node="code">
+          <View style={{ backgroundColor: t.colors['Neutral/Fog'], borderRadius: t.radius['radius/lg'], paddingHorizontal: t.spacing['spacing/16'] }}>
+            <TransferRow name={tr('home.names.t1')} method="bank" methodLabel={tr('home.methods.bank')} date="28 Oct" amount="£250.00" status="delivered" statusLabel={tr('home.status.delivered')} onPress={() => {}} />
+            <TransferRow divider name={tr('home.names.t3')} method="cash" methodLabel={tr('home.methods.cash')} date="02 Oct" amount="£75.50" status="processing" statusLabel={tr('home.status.processing')} onPress={() => {}} />
+          </View>
+        </Section>
+
+        <Section title="Tab Bar" node="code">
+          <TabBar
+            active="home"
+            onSelect={() => {}}
+            items={[
+              { key: 'home', icon: 'home', label: tr('home.tabs.home') },
+              { key: 'send', icon: 'send', label: tr('home.tabs.send') },
+              { key: 'history', icon: 'history', label: tr('home.tabs.history') },
+              { key: 'profile', icon: 'user', label: tr('home.tabs.profile') },
+            ]}
+          />
+        </Section>
 
         <AppText variant="Overline" color="Primary/Red">ONBOARDING · SHEETS</AppText>
 

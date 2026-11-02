@@ -38,3 +38,4 @@ Figma is never edited from code.
 | 31 | 7.6 ID expired (82:9762) | Drawn as a full screen; the build doc calls it a sheet. | Follows Figma: full screen. |
 | 32 | Home (proposal) needs styles Figma doesn't define | Inverse Button (white fill, red label on red), Button trailing icon, Icon Button on a Fog page (white fill), card shadow on Fog pages. | Added in code from existing tokens: Button `type="inverse"` + `trailingIcon`, IconButton `surface`, `elevation.card` (Neutral/Ink 6%, 0/4/16). Designer to add or replace. |
 | 33 | Home (proposal) recipients | Avatar exists only as Primary/Red; five red avatars in a row overpower the page. | Avatar `tone="tint"` (Alpha/Red 10% + Primary/Red initials) for recipients — code addition, designer to confirm. |
+| 34 | Button Disabled (12:16) | White label on Neutral/Silver is about 1.8:1 contrast, below WCAG AA 4.5:1. | Kept as designed; flagged. Home "Verify to send" uses it — consider an active button instead. |

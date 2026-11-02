@@ -205,9 +205,9 @@
       "title": "Send money",
       "youSend": "You send",
       "theyReceive": "They receive",
-      "fee": "Fee {{fee}}",
       "verifyToSend": "Verify to send",
-      "verifyHint": "Finish setting up to start sending."
+      "verifyHint": "Finish setting up to start sending.",
+      "rateLine": "{{rate}} · Fee {{fee}}"
     },
     "empty": {
       "title": "No transfers yet",
@@ -225,6 +225,13 @@
       "r3": "Rana Saleh",
       "r4": "Yousef Nasser",
       "r5": "Huda Abbas"
+    },
+    "recipientShort": {
+      "r1": "Layla",
+      "r2": "Omar",
+      "r3": "Rana",
+      "r4": "Yousef",
+      "r5": "Huda"
     }
   }
 }
