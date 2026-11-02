@@ -180,7 +180,7 @@
       "home": "Home",
       "send": "Send",
       "history": "History",
-      "profile": "Profile"
+      "profile": "Account"
     },
     "limit": {
       "title": "You can send",
@@ -219,22 +219,23 @@
       "steps": {
         "account": {
           "title": "Create your account",
-          "hint": "Mobile, name and date of birth checked"
+          "current": "Done",
+          "locked": "Done"
         },
         "idAddress": {
           "title": "Verify your ID and address",
-          "hint": "Passport or driving licence + a recent bill"
+          "current": "Passport or driving licence + a recent bill · 3 min",
+          "locked": "Unlocks after your account is created"
         },
         "sourceOfFunds": {
           "title": "Add your source of funds",
-          "hint": "Payslip, bank statement or proof of savings"
+          "current": "Payslip, bank statement or proof of savings",
+          "locked": "Unlocks after ID and address"
         }
       },
       "done": "Done",
-      "locked": "Unlocks after the step above",
       "total": "total",
-      "more": "+{{amount}} more",
-      "over": "Over {{amount}}",
+      "over": "{{amount}}+",
       "status": {
         "done": "Done",
         "current": "Next step",
@@ -243,5 +244,24 @@
       "raise": "Raise my limit",
       "allDone": "You have the highest sending limit."
     }
+  },
+  "account": {
+    "title": "Account",
+    "groups": {
+      "account": "ACCOUNT",
+      "preferences": "PREFERENCES",
+      "support": "SUPPORT"
+    },
+    "rows": {
+      "personal": "Personal details",
+      "cards": "Saved cards",
+      "limit": "Your limit",
+      "security": "Security",
+      "language": "Language",
+      "help": "Help",
+      "legal": "Legal"
+    },
+    "logOut": "Log out",
+    "version": "Quicliq · Version {{version}}"
   }
 }

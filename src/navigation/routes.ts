@@ -7,6 +7,7 @@
  *  7.2c        — try another way (220:6694)
  *  7.5 / 7.6   — offline (82:9735) / ID expired (82:9762); 7.3 and 7.4 are states of 7.1
  *  Home        — proposal (no Figma frame yet), see src/screens/home/HomeScreen.tsx
+ *  Account     — Profile tab, proposal from the product owner's sketch (no Figma frame yet)
  *  NotBuilt    — temporary target for links into flows that are not built yet (shows the Figma ID)
  *  dev/*       — read-only design-system previews, registered in development builds only
  */
@@ -22,6 +23,7 @@ export type RootStackParamList = {
   '7.6': undefined;
   /** level: sending-limit level to show (preview menu); defaults to the demo account's level. */
   Home: { level?: 1 | 2 | 3 } | undefined;
+  Account: undefined;
   NotBuilt: { screenId: string };
   'dev/Gallery': undefined;
   'dev/Tokens': undefined;

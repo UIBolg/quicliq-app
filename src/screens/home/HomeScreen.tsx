@@ -15,10 +15,11 @@ import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import {
   ActionBanner, AppText, Avatar, Button, IconButton, LimitCard, RecipientTile, Screen, SectionHeader,
-  TabBar, TransferRow, type AvatarTone, type TabBarItem,
+  TabBar, TransferRow, type AvatarTone,
 } from '../../components';
 import { demoAccount, demoLimit, demoRecipients, demoTransfers, limitTotal, nextLevel, type LimitLevel } from '../../mock/account';
 import { SendingLimitSheet } from './SendingLimitSheet';
+import { useMainTabs } from '../../navigation/mainTabs';
 import { formatMoney, ltr } from '../../utils/format';
 import { useTheme } from '../../theme';
 import type { RootStackParamList } from '../../navigation/routes';
@@ -36,12 +37,7 @@ export function HomeScreen({ navigation, route }: Props) {
   const level = route.params?.level ?? demoLimit.level;
   const [limitOpen, setLimitOpen] = useState(false);
   const notBuilt: NotBuilt = (screenId) => () => navigation.navigate('NotBuilt', { screenId });
-  const tabs: TabBarItem[] = [
-    { key: 'home', icon: 'home', label: tr(`${k}.tabs.home`) },
-    { key: 'send', icon: 'send', label: tr(`${k}.tabs.send`) },
-    { key: 'history', icon: 'history', label: tr(`${k}.tabs.history`) },
-    { key: 'profile', icon: 'user', label: tr(`${k}.tabs.profile`) },
-  ];
+  const tabs = useMainTabs(navigation);
 
   return (
     <Screen edges={['top']}>
@@ -55,7 +51,7 @@ export function HomeScreen({ navigation, route }: Props) {
           <Transfers notBuilt={notBuilt} />
         </View>
       </ScrollView>
-      <TabBar items={tabs} active="home" onSelect={(key) => notBuilt(tabs.find((x) => x.key === key)?.label ?? key)()} />
+      <TabBar items={tabs.items} active="home" onSelect={tabs.onSelect} />
       <SendingLimitSheet
         visible={limitOpen}
         level={level}

@@ -15,7 +15,7 @@ import { FlatList, Pressable, StyleSheet, View, type LayoutChangeEvent, type Nat
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import {
-  AppText, BottomSheet, Button, IconButton, Logo, OnboardingScene, Pagination, RadioOption, Screen, SheetHeader,
+  AppText, Button, IconButton, LanguageSheet, Logo, OnboardingScene, Pagination, Screen,
   type OnboardingSceneName,
 } from '../../components';
 import { useLocale } from '../../i18n/LocaleProvider';
@@ -119,23 +119,7 @@ export function OnboardingScreen({ navigation }: NativeStackScreenProps<RootStac
       </View>
 
       {/* Choose language */}
-      <BottomSheet visible={sheetOpen} onClose={() => setSheetOpen(false)}>
-        <SheetHeader title={tr('onboarding.language.title')} subtitle={tr('onboarding.language.subtitle')} onClose={() => setSheetOpen(false)} />
-        <View style={{ gap: t.spacing['spacing/8'] }}>
-          {/* Current language first, as in both Figma sheets. */}
-          {(locale === 'en' ? (['en', 'ar'] as const) : (['ar', 'en'] as const)).map((l) => (
-            <RadioOption
-              key={l}
-              testID={`language-${l}`}
-              title={tr(`onboarding.language.${l}.title`)}
-              subtitle={l === locale ? undefined : tr(`onboarding.language.${l}.subtitle`)}
-              titleLocale={l}
-              selected={l === locale}
-              onPress={() => chooseLanguage(l)}
-            />
-          ))}
-        </View>
-      </BottomSheet>
+      <LanguageSheet visible={sheetOpen} locale={locale} onClose={() => setSheetOpen(false)} onChoose={chooseLanguage} />
     </Screen>
   );
 }

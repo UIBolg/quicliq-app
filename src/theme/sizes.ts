@@ -111,6 +111,12 @@ export const sizes = {
   /** RecipientTile (code addition, Home proposal): 56 avatar + one-line name. */
   recipientTile: { width: 72 },
 
+  /** LimitStep (code addition, sending-limit sheet): 32 status circle, 10 dot for the current step. */
+  limitStep: { badge: 32, dot: 10 },
+
+  /** ListRow (code addition, Account): ≥56 rows, 40 icon badge. */
+  listRow: { minHeight: 56, badge: 40 },
+
   /** TabBar (code addition, floating pill — Home options canvas "Nav 4" in light colours): 48-high tab cells. */
   tabBar: { item: 48 },
 

@@ -16,6 +16,7 @@ import { ChooseCodeMethodScreen } from '../screens/login/ChooseCodeMethodScreen'
 import { OfflineScreen } from '../screens/login/OfflineScreen';
 import { IdExpiredScreen } from '../screens/login/IdExpiredScreen';
 import { HomeScreen } from '../screens/home/HomeScreen';
+import { AccountScreen } from '../screens/account/AccountScreen';
 import { NotBuiltScreen } from '../screens/NotBuiltScreen';
 import { ComponentGallery } from '../screens/dev/ComponentGallery';
 import { FoundationsScreen } from '../screens/dev/FoundationsScreen';
@@ -69,6 +70,7 @@ export function RootNavigator() {
         <Stack.Screen name="7.5" component={OfflineScreen} />
         <Stack.Screen name="7.6" component={IdExpiredScreen} />
         <Stack.Screen name="Home" component={HomeScreen} options={{ animation: 'fade', gestureEnabled: false }} />
+        <Stack.Screen name="Account" component={AccountScreen} options={{ animation: 'fade', gestureEnabled: false }} />
         <Stack.Screen name="NotBuilt" component={NotBuiltScreen} />
         {__DEV__ ? (
           <>
