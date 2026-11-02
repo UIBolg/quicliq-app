@@ -3,10 +3,9 @@
  * Rows open 12.2–12.7 and 13.1; Your limit opens the sending-limit sheet (5.2); Log out opens the 12.8 sheet.
  * Neutral/White page, pt spacing/8 · gutter · pb spacing/32, gap spacing/24:
  *  H2 "Account" ·
- *  profile card (Neutral/Fog, radius/xl, padding spacing/16, gap spacing/16): Avatar 56 · name (Title) + email
- *    (Caption, Slate) · chevron → 12.2; then, over a hairline: "Level n of 3" + current limit, a 3-segment bar
- *    (done = Primary/Red) and the next-step link (Primary/Red) → sending-limit sheet ·
- *  List Groups (every icon circle Alpha/Red 8% + Primary/Red, like Personal details): Account (Personal details, Saved cards — the limit lives only in the profile card) ·
+ *  profile card (Neutral/Fog, radius/xl, padding spacing/16): Avatar 56 · name (Title) + email (Caption, Slate) ·
+ *    chevron → 12.2 (the limit lives only in the "Your limit" row) ·
+ *  List Groups (every icon circle Alpha/Red 8% + Primary/Red, like Personal details): Account (Personal details, Saved cards, Your limit → sending-limit sheet) ·
  *    Preferences (Security, Language) · Support (Help, Legal) · Log out (danger row → 12.8 sheet → 7.1) ·
  *  app version (Caption, Slate, centred).
  * Floating TabBar with Profile active.
@@ -16,7 +15,7 @@ import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { AppText, Avatar, BottomSheet, Button, Icon, ListGroup, ListRow, Screen, TabBar } from '../../components';
-import { demoAccount, demoLimit, limitTotal, nextLevel } from '../../mock/account';
+import { demoAccount, demoLimit, limitTotal } from '../../mock/account';
 import { useLocale } from '../../i18n/LocaleProvider';
 import { useMainTabs } from '../../navigation/mainTabs';
 import { SendingLimitSheet } from '../home/SendingLimitSheet';
@@ -36,7 +35,6 @@ export function AccountScreen({ navigation }: Props) {
   const tabs = useMainTabs(navigation);
   const [sheet, setSheet] = useState<'limit' | 'logout' | null>(null);
   const level = demoLimit.level;
-  const next = nextLevel(level);
 
   return (
     <Screen edges={['top']}>
@@ -46,7 +44,7 @@ export function AccountScreen({ navigation }: Props) {
       >
         <AppText variant="H2" accessibilityRole="header">{tr(`${k}.title`)}</AppText>
 
-        <View style={{ padding: t.spacing['spacing/16'], gap: t.spacing['spacing/16'], borderRadius: t.radius['radius/xl'], backgroundColor: t.colors['Neutral/Fog'] }}>
+        <View style={{ padding: t.spacing['spacing/16'], borderRadius: t.radius['radius/xl'], backgroundColor: t.colors['Neutral/Fog'] }}>
           <Pressable
             onPress={() => navigation.navigate('12.2')}
             accessibilityRole="button"
@@ -61,41 +59,12 @@ export function AccountScreen({ navigation }: Props) {
             </View>
             <Icon name="chevronRight" size={t.sizes.icon.md} color="Neutral/Slate" />
           </Pressable>
-
-          {/* Limit level: label + current limit, 3-segment bar (done = Primary/Red), next-step link → sending-limit sheet. */}
-          <View style={{ gap: t.spacing['spacing/8'], paddingTop: t.spacing['spacing/16'], borderTopWidth: t.stroke['stroke/xs'], borderTopColor: t.colors['Alpha/Ink 10%'] }}>
-            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-              <View style={{ flexDirection: 'row', alignItems: 'center', gap: t.spacing['spacing/6'] }}>
-                <Icon name="shield" size={t.sizes.icon.sm} color="Primary/Red" />
-                <AppText variant="Body Medium">{tr('home.levelLink', { level })}</AppText>
-              </View>
-              <AppText variant="Caption" color="Neutral/Slate">{tr(`${k}.limitValue`, { amount: formatMoney(limitTotal(level)) })}</AppText>
-            </View>
-            <View accessible accessibilityLabel={tr('home.levelLink', { level })} style={{ flexDirection: 'row', gap: t.spacing['spacing/4'] }}>
-              {[1, 2, 3].map((n) => (
-                <View key={n} style={{ flex: 1, height: t.sizes.progress.sm, borderRadius: t.radius['radius/full'], backgroundColor: t.colors[n <= level ? 'Primary/Red' : 'Alpha/Ink 10%'] }} />
-              ))}
-            </View>
-            {next ? (
-              <Pressable onPress={() => setSheet('limit')} accessibilityRole="button" testID="raise-limit-link" hitSlop={t.spacing['spacing/8']} style={{ flexDirection: 'row', alignItems: 'center', gap: t.spacing['spacing/4'], alignSelf: 'flex-start', minHeight: t.sizes.touchTarget }}>
-                {({ pressed }) => (
-                  <>
-                    <AppText variant="Body Medium" color="Primary/Red" style={pressed ? styles.underline : undefined}>
-                      {tr(`${k}.raise.${next.key}`, { amount: formatMoney(limitTotal(2)) })}
-                    </AppText>
-                    <Icon name="chevronRight" size={t.sizes.icon.sm} color="Primary/Red" />
-                  </>
-                )}
-              </Pressable>
-            ) : (
-              <AppText variant="Body Medium" color="Status/Success/Default">{tr('home.limitSheet.allDone')}</AppText>
-            )}
-          </View>
         </View>
 
         <ListGroup title={tr(`${k}.groups.account`)}>
           <ListRow icon="user" title={tr(`${k}.rows.personal`)} onPress={() => navigation.navigate('12.2')} />
           <ListRow icon="card" title={tr(`${k}.rows.cards`)} onPress={() => navigation.navigate('12.4')} />
+          <ListRow icon="trendingUp" title={tr(`${k}.rows.limit`)} value={formatMoney(limitTotal(level))} onPress={() => setSheet('limit')} testID="row-limit" />
         </ListGroup>
 
         <ListGroup title={tr(`${k}.groups.preferences`)}>
@@ -140,4 +109,4 @@ export function AccountScreen({ navigation }: Props) {
   );
 }
 
-const styles = StyleSheet.create({ flex: { flex: 1 }, underline: { textDecorationLine: 'underline' } });
+const styles = StyleSheet.create({ flex: { flex: 1 } });

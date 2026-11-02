@@ -352,11 +352,6 @@
       "today_h": "اليوم",
       "earlier": "سابقاً"
     },
-    "limitValue": "حدّ {{amount}}",
-    "raise": {
-      "idAddress": "وثّق هويتك لترسل حتى {{amount}}",
-      "sourceOfFunds": "أضف مصدر أموالك لترسل أكثر من {{amount}}"
-    },
     "addCard": {
       "title": "إضافة بطاقة",
       "number": "رقم البطاقة",

@@ -348,11 +348,6 @@
       "today_h": "TODAY",
       "earlier": "EARLIER"
     },
-    "limitValue": "{{amount}} limit",
-    "raise": {
-      "idAddress": "Verify your ID to send up to {{amount}}",
-      "sourceOfFunds": "Add your source of funds to send over {{amount}}"
-    },
     "addCard": {
       "title": "Add a card",
       "number": "Card number",
