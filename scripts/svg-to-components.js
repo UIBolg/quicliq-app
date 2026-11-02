@@ -34,5 +34,7 @@ build('assets/illustrations', 'src/assets/illustrations.generated.ts', 'illustra
 build('assets/flags', 'src/assets/flags.generated.ts', 'flagXml', false);
 // Onboarding scenes 202:6388 (EN) / 202:6715 (AR): assets/illustrations/onboarding/*.svg
 build('assets/illustrations/onboarding', 'src/assets/onboarding.generated.ts', 'onboardingXml', false);
+// Status bar mock indicators (Status Bar 12:58 Dark / 12:69 Light) — device-frame previews only
+build('assets/statusbar', 'src/assets/statusbar.generated.ts', 'statusBarXml', false);
 // Logo 32:256: assets/logo/brand.svg (Tone=Brand), assets/logo/white.svg (Tone=White)
 build('assets/logo', 'src/assets/logo.generated.ts', 'logoXml', false);

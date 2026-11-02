@@ -6,6 +6,8 @@ import type { ReactNode } from 'react';
 import { StyleSheet } from 'react-native';
 import { SafeAreaView, type Edge } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
+import { StatusBarMock } from './StatusBarMock';
+import { inDeviceFrame } from '../platform/deviceFrame';
 import { useTheme, type ColorToken } from '../theme';
 
 export function Screen({
@@ -15,6 +17,7 @@ export function Screen({
   return (
     <SafeAreaView edges={edges} style={[styles.fill, { backgroundColor: t.colors[background], direction: t.isRTL ? 'rtl' : 'ltr' }]}>
       <StatusBar style={statusBar} />
+      {inDeviceFrame ? <StatusBarMock tone={statusBar} /> : null}
       {children}
     </SafeAreaView>
   );

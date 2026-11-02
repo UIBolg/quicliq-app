@@ -2,10 +2,12 @@
  * Bottom sheet container — as drawn in "Onboarding — Choose language" (217:16719 / AR 217:16909):
  * Scrim Alpha/Ink 50% over the screen; sheet Neutral/White, top corners radius/xl,
  * padding spacing/16 top · spacing/24 sides · spacing/40 bottom, children gap spacing/16, starting with a Sheet Grabber.
- * Tapping the scrim dismisses. Built on RN Modal (no extra native module needed for Expo Go).
+ * Tapping the scrim dismisses. Built on RN Modal (no extra native module needed for Expo Go). On web it renders as an
+ * absolute overlay inside the screen instead, because RN-web's Modal attaches to <body> and would escape the
+ * device-frame preview; the parent screen must be the sheet's nearest full-size container.
  */
 import { useEffect, useRef, type ReactNode } from 'react';
-import { Animated, Modal, Pressable, StyleSheet, View } from 'react-native';
+import { Animated, Modal, Platform, Pressable, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
 import { SheetGrabber } from './SheetParts';
@@ -24,34 +26,39 @@ export function BottomSheet({ visible, onClose, children }: { visible: boolean; 
     }
   }, [visible, slide, t.states.motion.sheet]);
 
+  const content = (
+    <View style={[Platform.OS === 'web' ? StyleSheet.absoluteFill : styles.fill, styles.end, { direction: t.isRTL ? 'rtl' : 'ltr' }]}>
+      <Pressable
+        style={[StyleSheet.absoluteFill, { backgroundColor: t.colors['Alpha/Ink 50%'] }]}
+        onPress={onClose}
+        accessibilityRole="button"
+        accessibilityLabel={tr('common.close')}
+      />
+      <Animated.View
+        accessibilityViewIsModal
+        style={{
+          backgroundColor: t.colors['Neutral/White'],
+          borderTopLeftRadius: t.radius['radius/xl'],
+          borderTopRightRadius: t.radius['radius/xl'],
+          paddingTop: t.spacing['spacing/16'],
+          paddingHorizontal: t.layout.screenGutter,
+          paddingBottom: Math.max(t.spacing['spacing/40'], insets.bottom),
+          gap: t.spacing['spacing/16'],
+          transform: [{ translateY: slide.interpolate({ inputRange: [0, 1], outputRange: [t.layout.frame.height / 2, 0] }) }],
+        }}
+      >
+        <SheetGrabber />
+        {children}
+      </Animated.View>
+    </View>
+  );
+
+  if (Platform.OS === 'web') return visible ? content : null;
   return (
     <Modal visible={visible} transparent animationType="fade" onRequestClose={onClose} statusBarTranslucent>
-      <View style={[styles.fill, { direction: t.isRTL ? 'rtl' : 'ltr' }]}>
-        <Pressable
-          style={[StyleSheet.absoluteFill, { backgroundColor: t.colors['Alpha/Ink 50%'] }]}
-          onPress={onClose}
-          accessibilityRole="button"
-          accessibilityLabel={tr('common.close')}
-        />
-        <Animated.View
-          accessibilityViewIsModal
-          style={{
-            backgroundColor: t.colors['Neutral/White'],
-            borderTopLeftRadius: t.radius['radius/xl'],
-            borderTopRightRadius: t.radius['radius/xl'],
-            paddingTop: t.spacing['spacing/16'],
-            paddingHorizontal: t.layout.screenGutter,
-            paddingBottom: Math.max(t.spacing['spacing/40'], insets.bottom),
-            gap: t.spacing['spacing/16'],
-            transform: [{ translateY: slide.interpolate({ inputRange: [0, 1], outputRange: [t.layout.frame.height / 2, 0] }) }],
-          }}
-        >
-          <SheetGrabber />
-          {children}
-        </Animated.View>
-      </View>
+      {content}
     </Modal>
   );
 }
 
-const styles = StyleSheet.create({ fill: { flex: 1, justifyContent: 'flex-end' } });
+const styles = StyleSheet.create({ fill: { flex: 1 }, end: { justifyContent: 'flex-end' } });

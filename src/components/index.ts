@@ -26,3 +26,4 @@ export * from './OtpDigit';
 export * from './CodeInput';
 export * from './ResendCountdown';
 export * from './CodeError';
+export * from './StatusBarMock';

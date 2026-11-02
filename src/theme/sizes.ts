@@ -77,14 +77,6 @@ export const sizes = {
   /** Onboarding 202:6388 — illustration canvas 342×360 (scene artwork size). */
   onboarding: { sceneWidth: 342, sceneHeight: 360 },
 
-  /** Splash AR/Splash 82:11716 — logo 200 wide, two decorative circles. */
-  splash: {
-    logoWidth: 200,
-    decoLarge: { size: 420, top: -120, start: 150 },
-    decoSmall: { size: 380, top: 560, start: -160 },
-    spinner: 32,
-  },
-
   /** OTP Digit 280:8044 — 46×60 box; Focused caret 2×28. Code row separator 12×2 (220:6759). */
   otpDigit: { width: 46, height: 60, caretWidth: 2, caretHeight: 28 },
   codeSeparator: { width: 12, height: 2 },
@@ -94,6 +86,9 @@ export const sizes = {
 
   /** Error box (7.2d 220:6766 / 7.10 99:2845) — 18 alert icon; attempt bars 16×4. */
   codeError: { icon: 18, barWidth: 16, barHeight: 4 },
+
+  /** Status Bar 12:58 / 12:69 — design mock, 47 high, 68×12 indicators. Device-frame preview only. */
+  statusBar: { height: 47, indicatorsWidth: 68, indicatorsHeight: 12 },
 
   /** Password Rule 281:7369 — 20 indicator (Met = Icon Badge 20 Success). */
   passwordRule: { indicator: 20 },
