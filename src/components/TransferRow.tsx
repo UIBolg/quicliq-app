@@ -1,7 +1,7 @@
 /**
  * Transfer card — one transfer as its own card (Home "Recent transfers" and 11.1 Activity; no Figma component yet,
  * docs/figma-issues.md #41). Neutral/Fog, radius/lg, padding spacing/16, gap spacing/12:
- *  Icon Badge 44 White (bank / cash) · name (Body Medium) over method · date (Caption, Slate) ·
+ *  Icon Badge 44 Red tint (Alpha/Red 10% + Primary/Red bank / cash icon, same colour as the recipient circles) · name (Body Medium) over method · date (Caption, Slate) ·
  *  amount (Body Medium, EN style, LTR) over a status pill (radius/full, Caption):
  *    Delivered = Status/Success/Light + Status/Success/Default · Processing = Neutral/White + Slate.
  * Pressed = Alpha/Ink 6% overlay. Read as one element: "Layla Haddad, Bank deposit, 28 Oct, £250.00, Delivered".
@@ -41,7 +41,7 @@ export function TransferRow({ name, method, methodLabel, date, amount, status, s
       {({ pressed }) => (
         <>
           {pressed ? <View pointerEvents="none" style={[StyleSheet.absoluteFill, { borderRadius: r, backgroundColor: t.colors['Alpha/Ink 6%'] }]} /> : null}
-          <IconBadge icon={method === 'cash' ? 'cash' : 'bank'} size={44} tone="white" />
+          <IconBadge icon={method === 'cash' ? 'cash' : 'bank'} size={44} tone="redTint" />
           <View style={styles.flex}>
             <AppText variant="Body Medium" numberOfLines={1}>{name}</AppText>
             <AppText variant="Caption" color="Neutral/Slate" numberOfLines={1}>{methodLabel} · {date}</AppText>
