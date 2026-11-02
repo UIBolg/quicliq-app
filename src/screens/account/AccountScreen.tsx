@@ -5,7 +5,7 @@
  *  H2 "Account" ·
  *  profile card (Neutral/Fog, radius/xl, padding spacing/16): Avatar 56 · name (Title) + email (Caption, Slate) ·
  *    chevron → 12.2 (the limit lives only in the "Your limit" row) ·
- *  List Groups (every icon circle Alpha/Red 8% + Primary/Red, like Personal details): Account (Personal details, Saved cards, Your limit → sending-limit sheet) ·
+ *  List Groups (every icon circle Alpha/Red 8% + Primary/Red, like Personal details): Account (Personal details, Saved cards, Your limit + next-step subtitle → sending-limit sheet) ·
  *    Preferences (Security, Language) · Support (Help, Legal) · Log out (danger row → 12.8 sheet → 7.1) ·
  *  app version (Caption, Slate, centred).
  * Floating TabBar with Profile active.
@@ -15,7 +15,7 @@ import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { AppText, Avatar, BottomSheet, Button, Icon, ListGroup, ListRow, Screen, TabBar } from '../../components';
-import { demoAccount, demoLimit, limitTotal } from '../../mock/account';
+import { demoAccount, demoLimit, limitTotal, nextLevel } from '../../mock/account';
 import { useLocale } from '../../i18n/LocaleProvider';
 import { useMainTabs } from '../../navigation/mainTabs';
 import { SendingLimitSheet } from '../home/SendingLimitSheet';
@@ -35,6 +35,8 @@ export function AccountScreen({ navigation }: Props) {
   const tabs = useMainTabs(navigation);
   const [sheet, setSheet] = useState<'limit' | 'logout' | null>(null);
   const level = demoLimit.level;
+  /** Next level's step, shown under "Your limit" (same copy as the Home banner); none at level 3. */
+  const next = nextLevel(level);
 
   return (
     <Screen edges={['top']}>
@@ -64,7 +66,7 @@ export function AccountScreen({ navigation }: Props) {
         <ListGroup title={tr(`${k}.groups.account`)}>
           <ListRow icon="user" title={tr(`${k}.rows.personal`)} onPress={() => navigation.navigate('12.2')} />
           <ListRow icon="card" title={tr(`${k}.rows.cards`)} onPress={() => navigation.navigate('12.4')} />
-          <ListRow icon="trendingUp" title={tr(`${k}.rows.limit`)} value={formatMoney(limitTotal(level))} onPress={() => setSheet('limit')} testID="row-limit" />
+          <ListRow icon="trendingUp" title={tr(`${k}.rows.limit`)} subtitle={next ? `${tr(`home.nextStep.${next.key}.title`)} ${tr(`home.nextStep.${next.key}.body`, { amount: formatMoney(limitTotal(2)) })}` : undefined} value={formatMoney(limitTotal(level))} onPress={() => setSheet('limit')} testID="row-limit" />
         </ListGroup>
 
         <ListGroup title={tr(`${k}.groups.preferences`)}>
