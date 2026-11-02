@@ -5,4 +5,6 @@ export * from './stroke';
 export * from './typography';
 export * from './fonts';
 export * from './layout';
+export * from './sizes';
+export * from './states';
 export * from './ThemeProvider';

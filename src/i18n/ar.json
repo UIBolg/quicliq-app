@@ -1,0 +1,19 @@
+{
+  "common": {
+    "loading": "جارٍ التحميل",
+    "back": "رجوع",
+    "close": "إغلاق",
+    "edit": "تعديل",
+    "or": "أو",
+    "matched": "مطابق",
+    "logo": "Quicliq",
+    "language": "تغيير اللغة"
+  },
+  "gallery": {
+    "title": "معرض المكوّنات",
+    "switchTo": "English",
+    "button": "زر",
+    "continue": "متابعة",
+    "sampleName": "جيمس كارتر"
+  }
+}

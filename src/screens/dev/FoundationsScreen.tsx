@@ -16,7 +16,7 @@ export function FoundationsScreen({ onToggleLocale }: { onToggleLocale: () => vo
       <View style={styles.header}>
         <Text style={[t.text('H3'), styles.ink]}>Foundations · {t.locale.toUpperCase()}</Text>
         <Pressable onPress={onToggleLocale} style={styles.toggle} accessibilityRole="button">
-          <Text style={[t.text('Body Medium'), styles.onRed]}>{t.isRTL ? 'English' : 'العربية'}</Text>
+          <Text style={[t.text('Body Medium'), styles.onRed]}>← Gallery</Text>
         </Pressable>
       </View>
       <ScrollView contentContainerStyle={styles.content}>

@@ -1,0 +1,19 @@
+{
+  "common": {
+    "loading": "Loading",
+    "back": "Back",
+    "close": "Close",
+    "edit": "Edit",
+    "or": "or",
+    "matched": "Matched",
+    "logo": "Quicliq",
+    "language": "Change language"
+  },
+  "gallery": {
+    "title": "Component gallery",
+    "switchTo": "العربية",
+    "button": "Button",
+    "continue": "Continue",
+    "sampleName": "James Carter"
+  }
+}

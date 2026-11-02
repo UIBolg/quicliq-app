@@ -32,3 +32,5 @@ function build(srcDir, outFile, exportName, recolour) {
 build('assets/icons', 'src/assets/icons.generated.ts', 'iconXml', true);
 build('assets/illustrations', 'src/assets/illustrations.generated.ts', 'illustrationXml', false);
 build('assets/flags', 'src/assets/flags.generated.ts', 'flagXml', false);
+// Logo 32:256: assets/logo/brand.svg (Tone=Brand), assets/logo/white.svg (Tone=White)
+build('assets/logo', 'src/assets/logo.generated.ts', 'logoXml', false);

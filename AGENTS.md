@@ -26,6 +26,7 @@ Run lint and typecheck before declaring any task done.
 ## Navigation & Routing
 
 - **Project decision:** this app uses **React Navigation** (native stack), not Expo Router, with Figma screen IDs (e.g. `2.4`) as route names. See docs/build-prompts.md.
+- Figma is READ-ONLY: only read tools; write tools are denied in .claude/settings.json; log Figma inconsistencies in docs/figma-issues.md. See CLAUDE.md.
 - Design source of truth: Figma (read-only) → saved in design/figma/. Tokens live in src/theme; never hard-code colours, sizes or spacing in screens.
 
 ## Building with EAS
