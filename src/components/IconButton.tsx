@@ -1,4 +1,7 @@
-/** Icon Button — Figma 217:7015. 40 circle, Neutral/Fog, radius/full, 24 icon. Touch area extended to 44. */
+/**
+ * Icon Button — Figma 217:7015. 40 circle, Neutral/Fog, radius/full, 24 icon. Touch area extended to 44.
+ * `surface` = Neutral/White fill for use on Fog pages (code addition, Home proposal).
+ */
 import { Pressable, StyleSheet, View } from 'react-native';
 import { Icon, type IconName } from './Icon';
 import { useFocusRing } from './usePressState';
@@ -10,9 +13,10 @@ export type IconButtonProps = {
   onPress?: () => void;
   disabled?: boolean;
   testID?: string;
+  surface?: boolean;
 };
 
-export function IconButton({ icon, accessibilityLabel, onPress, disabled, testID }: IconButtonProps) {
+export function IconButton({ icon, accessibilityLabel, onPress, disabled, testID, surface }: IconButtonProps) {
   const t = useTheme();
   const { focused, focusProps } = useFocusRing();
   const d = t.sizes.iconButton.size;
@@ -28,7 +32,7 @@ export function IconButton({ icon, accessibilityLabel, onPress, disabled, testID
       {...focusProps}
       style={[
         styles.base,
-        { width: d, height: d, borderRadius: t.radius['radius/full'], backgroundColor: t.colors['Neutral/Fog'] },
+        { width: d, height: d, borderRadius: t.radius['radius/full'], backgroundColor: t.colors[surface ? 'Neutral/White' : 'Neutral/Fog'] },
         focused && { outlineColor: t.colors['Neutral/Ink'], outlineWidth: t.stroke['stroke/md'], outlineStyle: 'solid' },
       ]}
     >

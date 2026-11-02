@@ -105,6 +105,9 @@ export const sizes = {
   /** Spot illustrations 79:389 — 160 artboards; 7.6 / 7.7 use them at 144. */
   illustration: { default: 160, small: 144 },
 
+  /** Home (proposal) — setup progress bar 4 high with an 8-wide stub at 0 steps. */
+  setupProgress: { height: 4, minFill: 8 },
+
   /** Password Rule 281:7369 — 20 indicator (Met = Icon Badge 20 Success). */
   passwordRule: { indicator: 20 },
 } as const;

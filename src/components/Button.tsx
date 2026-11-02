@@ -3,6 +3,8 @@
  * Size=Large: 56 high, full width, radius/md, padding 0/spacing/24, gap spacing/8, Title text, 20 icon.
  * Size=Small: 32 high, hugs content, radius/full, padding 0/spacing/12, gap spacing/4, Body Medium, 16 icon.
  * Secondary border = Neutral/Silver at stroke/md. Disabled = Silver fill, white label. Loading = red + spinner.
+ * Code additions (not in Figma, docs/figma-issues.md #32): Inverse = Neutral/White fill + Primary/Red label for use on
+ * red surfaces (Home setup card); optional trailing icon (e.g. chevronRight, mirrored in RTL).
  */
 import { ActivityIndicator, Pressable, StyleSheet, View, type StyleProp, type ViewStyle } from 'react-native';
 import { useTranslation } from 'react-i18next';
@@ -12,13 +14,14 @@ import { useFocusRing } from './usePressState';
 import { useTheme, type ColorToken } from '../theme';
 
 export type ButtonSize = 'large' | 'small';
-export type ButtonType = 'primary' | 'secondary' | 'ghost' | 'tonal' | 'disabled' | 'loading';
+export type ButtonType = 'primary' | 'secondary' | 'ghost' | 'tonal' | 'inverse' | 'disabled' | 'loading';
 
 const palette: Record<ButtonType, { bg?: ColorToken; fg: ColorToken; border?: ColorToken }> = {
   primary: { bg: 'Primary/Red', fg: 'Neutral/White' },
   secondary: { bg: 'Neutral/White', fg: 'Neutral/Ink', border: 'Neutral/Silver' },
   ghost: { fg: 'Primary/Red' },
   tonal: { bg: 'Alpha/Red 8%', fg: 'Primary/Red' },
+  inverse: { bg: 'Neutral/White', fg: 'Primary/Red' },
   disabled: { bg: 'Neutral/Silver', fg: 'Neutral/White' },
   loading: { bg: 'Primary/Red', fg: 'Neutral/White' },
 };
@@ -30,13 +33,15 @@ export type ButtonProps = {
   type?: ButtonType;
   /** Optional leading icon (sits on the start side, so it moves to the right in RTL). */
   icon?: IconName;
+  /** Optional trailing icon (end side). */
+  trailingIcon?: IconName;
   /** Defaults to the label. */
   accessibilityLabel?: string;
   style?: StyleProp<ViewStyle>;
   testID?: string;
 };
 
-export function Button({ label, onPress, size = 'large', type = 'primary', icon, accessibilityLabel, style, testID }: ButtonProps) {
+export function Button({ label, onPress, size = 'large', type = 'primary', icon, trailingIcon, accessibilityLabel, style, testID }: ButtonProps) {
   const t = useTheme();
   const { t: tr } = useTranslation();
   const { focused, focusProps } = useFocusRing();
@@ -85,6 +90,7 @@ export function Button({ label, onPress, size = 'large', type = 'primary', icon,
               <AppText variant={large ? 'Title' : 'Body Medium'} color={c.fg} numberOfLines={1}>
                 {label}
               </AppText>
+              {trailingIcon ? <Icon name={trailingIcon} size={iconSize} color={c.fg} /> : null}
             </>
           )}
           {pressed && !inactive ? (

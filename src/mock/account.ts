@@ -8,6 +8,11 @@ export const demoAccount = {
   initials: 'JC',
   /** Sample GBP → JOD rate for the Home proposal. */
   rate: { jod: '0.8932' },
+  /** Send-money calculator (unverified Home): GBP → JOD, no fee. */
+  quote: { rate: 0.8932, fee: '0.00', defaultAmount: '500.00' },
+  /** Unverified Home: ID & address steps done (of 2). */
+  setupStepsDone: 0,
+  setupStepsTotal: 2,
   phone: '7700 900123',
   email: 'james.carter@email.com',
   /** Any other password is wrong (7.3); 5 wrong tries pause login for 15 minutes (7.4). */

@@ -190,6 +190,28 @@
       "send": "Send",
       "history": "History",
       "profile": "Profile"
+    },
+    "greetings": {
+      "morning": "Good morning",
+      "afternoon": "Good afternoon",
+      "evening": "Good evening"
+    },
+    "setup": {
+      "title": "Finish setting up to send money",
+      "progress": "{{done}} of {{total}} steps complete",
+      "continue": "Continue setup"
+    },
+    "calc": {
+      "title": "Send money",
+      "youSend": "You send",
+      "theyReceive": "They receive",
+      "fee": "Fee {{fee}}",
+      "verifyToSend": "Verify to send",
+      "verifyHint": "Finish setting up to start sending."
+    },
+    "empty": {
+      "title": "No transfers yet",
+      "body": "Your transfers will show here."
     }
   }
 }
