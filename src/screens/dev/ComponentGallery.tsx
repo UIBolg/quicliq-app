@@ -7,7 +7,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
 import { useState, type ReactNode } from 'react';
 import {
-  Agreement, AppText, Avatar, Button, Checkbox, CountryPrefix, DividerOr, IconBadge, IconButton, LoginMethod, Logo,
+  Agreement, AppText, Avatar, Button, Checkbox, CountryPrefix, DividerOr, Flag, Icon, IconBadge, IconButton, LoginMethod, Logo,
+  iconNames, isDirectionalIcon,
   PasswordRule, PhoneField, SwitchAccount, TextField, VerifiedTag,
   type ButtonType, type LoginMethodValue, type TextFieldState,
 } from '../../components';
@@ -152,6 +153,37 @@ export function ComponentGallery({ onToggleLocale, onShowTokens }: { onToggleLoc
       </View>
 
       <ScrollView contentContainerStyle={{ padding: t.layout.screenGutter, gap: t.spacing['spacing/40'] }}>
+        <AppText variant="Overline" color="Primary/Red">ASSETS · EXPORTED FROM FIGMA (SVG)</AppText>
+
+        <Section title={`Icons · ${iconNames.length}`} node="79:2">
+          <Label>Neutral/Ink · 24 · ↔ = mirrored in RTL</Label>
+          <View style={[row, { gap: t.spacing['spacing/8'] }]}>
+            {iconNames.map((name) => (
+              <View key={name} style={{ width: t.sizes.gallery.iconCell, alignItems: 'center', gap: t.spacing['spacing/4'] }}>
+                <Icon name={name} />
+                <AppText variant="Caption" color="Neutral/Slate" numberOfLines={1}>
+                  {isDirectionalIcon(name) ? `↔ ${name}` : name}
+                </AppText>
+              </View>
+            ))}
+          </View>
+          <Label>Recolour · Primary/Red · Status/Success/Default · White on red</Label>
+          <View style={row}>
+            <Icon name="shield" color="Primary/Red" />
+            <Icon name="check" color="Status/Success/Default" />
+            <View style={{ backgroundColor: t.colors['Primary/Red'], padding: t.spacing['spacing/8'], borderRadius: t.radius['radius/full'] }}>
+              <Icon name="arrowRight" color="Neutral/White" />
+            </View>
+          </View>
+        </Section>
+
+        <Section title="Flags" node="81:9 · 117:1567">
+          <View style={row}>
+            <Flag country="UK" />
+            <Flag country="JO" />
+          </View>
+        </Section>
+
         <AppText variant="Overline" color="Primary/Red">GROUP 1 · BASICS</AppText>
 
         <Section title="Button" node="12:16">

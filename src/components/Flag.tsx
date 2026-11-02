@@ -7,6 +7,9 @@ import { SvgXml } from 'react-native-svg';
 import { flagXml } from '../assets/flags.generated';
 import { useTheme } from '../theme';
 
+/** Flags whose Figma artwork already contains the Alpha/Ink 10% hairline (docs/figma-issues.md #17). */
+const HAIRLINE_IN_ARTWORK: ReadonlySet<string> = new Set(['UK']);
+
 export function Flag({ country = 'UK' }: { country?: 'UK' | 'JO' }) {
   const t = useTheme();
   const d = t.sizes.flag;
@@ -18,7 +21,7 @@ export function Flag({ country = 'UK' }: { country?: 'UK' | 'JO' }) {
         width: d,
         height: d,
         borderRadius: t.radius['radius/full'],
-        borderWidth: t.stroke['stroke/xs'],
+        borderWidth: xml && HAIRLINE_IN_ARTWORK.has(country) ? 0 : t.stroke['stroke/xs'],
         borderColor: t.colors['Alpha/Ink 10%'],
         borderStyle: xml ? 'solid' : 'dashed',
         backgroundColor: xml ? undefined : t.colors['Flag/UK Blue'],

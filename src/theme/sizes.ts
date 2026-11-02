@@ -8,7 +8,7 @@ export const sizes = {
   touchTarget: 44,
 
   icon: {
-    /** Icons page 79:2 — 24px artboards, 1.75 stroke. */
+    /** Icons page 79:2 — 24px artboards (exported strokes are 1.5; see docs/figma-issues.md #16). */
     default: 24,
     md: 20,
     sm: 16,
@@ -58,6 +58,9 @@ export const sizes = {
 
   /** Checkbox 21:460 — 24 box, 16 check. */
   checkbox: { size: 24, icon: 16 },
+
+  /** Dev gallery only — width of one icon cell in the icon grid. */
+  gallery: { iconCell: 80 },
 
   /** Password Rule 281:7369 — 20 indicator (Met = Icon Badge 20 Success). */
   passwordRule: { indicator: 20 },

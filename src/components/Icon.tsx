@@ -24,6 +24,8 @@ const DIRECTIONAL: ReadonlySet<IconName> = new Set([
   'arrowLeft', 'arrowRight', 'arrowUpRight', 'chevronLeft', 'chevronRight', 'send', 'backspace', 'trendingUp',
 ]);
 
+export const isDirectionalIcon = (name: IconName) => DIRECTIONAL.has(name);
+
 export type IconProps = {
   name: IconName;
   size?: number;
