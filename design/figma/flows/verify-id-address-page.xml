@@ -1,0 +1,1659 @@
+<canvas id="326:36304" name="Verify ID &amp; Address" x="0" y="0" width="0" height="0">
+  <section id="326:36305" name="Verify ID and address — English (LTR)" x="-5650" y="-1694" width="11300" height="1636">
+    <frame id="326:36306" name="EN/4.0 Raise your sending limit (sheet)" x="80" y="160" width="390" height="844">
+      <frame id="326:36307" name="Background" x="0" y="0" width="390" height="844">
+        <instance id="326:36308" name="Status Bar" x="0" y="0" width="390" height="47" />
+      </frame>
+      <rounded-rectangle id="326:36309" name="Scrim" x="0" y="0" width="390" height="844" />
+      <frame id="326:36310" name="Bottom sheet" x="0" y="224" width="390" height="620">
+        <rounded-rectangle id="326:36311" name="Rectangle" x="175" y="16" width="40" height="4" />
+        <instance id="326:36312" name="Illustration/locked" x="147" y="44" width="96" height="96" />
+        <frame id="326:36313" name="Text" x="24" y="164" width="342" height="112">
+          <text id="326:36314" name="Raise your sending limit" x="0" y="0" width="342" height="32" />
+          <text id="326:36315" name="Verify your ID and address to send up to £12,000. It’s a legal requirement and keeps your money safe." x="0" y="40" width="342" height="72" />
+        </frame>
+        <frame id="326:36316" name="Steps" x="24" y="300" width="342" height="128">
+          <frame id="326:36317" name="Step 1" x="16" y="16" width="310" height="40">
+            <frame id="326:36318" name="Number" x="0" y="4" width="32" height="32">
+              <text id="326:36319" name="1" x="12" y="5" width="8" height="22" />
+            </frame>
+            <frame id="326:36320" name="Text" x="48" y="0" width="262" height="40">
+              <text id="326:36321" name="Personal details &amp; ID" x="0" y="0" width="262" height="22" />
+              <text id="326:36322" name="Scan your ID · about 2 minutes" x="0" y="22" width="262" height="18" />
+            </frame>
+          </frame>
+          <frame id="326:36323" name="Step 2" x="16" y="72" width="310" height="40">
+            <frame id="326:36324" name="Number" x="0" y="4" width="32" height="32">
+              <text id="326:36325" name="2" x="12" y="5" width="8" height="22" />
+            </frame>
+            <frame id="326:36326" name="Text" x="48" y="0" width="262" height="40">
+              <text id="326:36327" name="Your address" x="0" y="0" width="262" height="22" />
+              <text id="326:36328" name="About 1 minute" x="0" y="22" width="262" height="18" />
+            </frame>
+          </frame>
+        </frame>
+        <instance id="326:36329" name="Button" x="24" y="452" width="342" height="56" />
+        <instance id="326:36330" name="Button" x="24" y="532" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:36331" name="EN/4.1 Verification hub — not started" x="1100" y="160" width="390" height="844">
+      <instance id="326:36332" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <frame id="326:36333" name="Top bar" x="0" y="47" width="390" height="48">
+        <frame id="326:36334" name="Badge" x="24" y="8" width="40" height="40">
+          <instance id="326:36335" name="icon/x" x="10" y="10" width="20" height="20" />
+        </frame>
+      </frame>
+      <frame id="326:36336" name="Content" x="0" y="95" width="390" height="645">
+        <frame id="326:36337" name="Heading" x="24" y="16" width="342" height="68">
+          <text id="326:36338" name="Verify your account" x="0" y="0" width="342" height="36" />
+          <text id="326:36339" name="Complete both steps to start sending money." x="0" y="44" width="342" height="24" />
+        </frame>
+        <frame id="326:36340" name="Overall" x="24" y="108" width="342" height="36">
+          <text id="326:36341" name="0 of 2 complete" x="0" y="0" width="342" height="22" />
+          <frame id="326:36342" name="Progress" x="0" y="30" width="342" height="6">
+            <rounded-rectangle id="326:36343" name="Fill" x="0" y="0" width="4" height="6" />
+          </frame>
+        </frame>
+        <frame id="326:36344" name="Steps" x="24" y="168" width="342" height="184">
+          <frame id="326:36345" name="Step 1" x="0" y="0" width="342" height="94">
+            <frame id="326:36346" name="Number" x="18" y="31" width="32" height="32">
+              <text id="326:36347" name="1" x="12" y="5" width="8" height="22" />
+            </frame>
+            <frame id="326:36348" name="Text" x="66" y="18" width="163" height="58">
+              <text id="326:36349" name="Personal details &amp; ID" x="0" y="0" width="163" height="22" />
+              <text id="326:36350" name="Scan your ID · about 2 minutes" x="0" y="22" width="163" height="36" />
+            </frame>
+            <frame id="326:36351" name="Status" x="245" y="38" width="79" height="18">
+              <text id="326:36352" name="Not started" x="8" y="0" width="63" height="18" />
+            </frame>
+          </frame>
+          <frame id="326:36353" name="Step 2" x="0" y="110" width="342" height="74">
+            <frame id="326:36354" name="Number" x="17" y="21" width="32" height="32">
+              <text id="326:36355" name="2" x="12" y="5" width="8" height="22" />
+            </frame>
+            <frame id="326:36356" name="Text" x="65" y="17" width="226" height="40">
+              <text id="326:36357" name="Your address" x="0" y="0" width="226" height="22" />
+              <text id="326:36358" name="Unlocks after step 1" x="0" y="22" width="226" height="18" />
+            </frame>
+            <instance id="326:36359" name="icon/lock" x="307" y="28" width="18" height="18" />
+          </frame>
+        </frame>
+        <frame id="326:36360" name="Note" x="24" y="376" width="342" height="76">
+          <instance id="326:36361" name="icon/info" x="16" y="28" width="20" height="20" />
+          <text id="326:36362" name="Your progress is saved. You can leave and continue anytime." x="52" y="16" width="274" height="44" />
+        </frame>
+      </frame>
+      <frame id="326:36363" name="Footer" x="0" y="740" width="390" height="104">
+        <instance id="326:36364" name="Button" x="24" y="16" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:36365" name="EN/4.2 Allow camera access" x="2120" y="160" width="390" height="844">
+      <instance id="326:36366" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <frame id="326:36367" name="Content" x="0" y="47" width="390" height="685">
+        <instance id="326:36368" name="Illustration/cameraOff" x="115" y="228.5" width="160" height="160" />
+        <frame id="326:36369" name="Text" x="24" y="412.5" width="342" height="84">
+          <text id="326:36370" name="Allow camera access" x="0" y="0" width="342" height="32" />
+          <text id="326:36371" name="We need your camera to scan your ID and take a selfie. Turn it on in Settings." x="0" y="40" width="342" height="44" />
+        </frame>
+      </frame>
+      <frame id="326:36372" name="Footer" x="0" y="732" width="390" height="112">
+        <instance id="326:36373" name="Button" x="24" y="16" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:36374" name="EN/4.3 Scan your ID" x="2630" y="160" width="390" height="844">
+      <instance id="326:36375" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <frame id="326:36376" name="Top" x="0" y="47" width="390" height="48">
+        <instance id="326:36377" name="Badge" x="24" y="8" width="40" height="40" />
+      </frame>
+      <frame id="326:36378" name="Content" x="0" y="95" width="390" height="613">
+        <frame id="326:36379" name="Text" x="24" y="24" width="342" height="84">
+          <text id="326:36380" name="Scan your passport" x="0" y="0" width="342" height="32" />
+          <text id="326:36381" name="Place the photo page inside the frame. Make sure it’s well lit and all 4 corners show." x="0" y="40" width="342" height="44" />
+        </frame>
+        <frame id="326:36382" name="Viewfinder" x="24" y="132" width="342" height="216" />
+        <frame id="326:36383" name="Hint" x="148" y="372" width="94" height="34">
+          <text id="326:36384" name="Hold still…" x="12" y="6" width="70" height="22" />
+        </frame>
+      </frame>
+      <frame id="326:36385" name="Footer" x="0" y="708" width="390" height="136">
+        <frame id="326:36386" name="Shutter" x="155" y="16" width="80" height="80">
+          <ellipse id="326:36387" name="Button" x="9" y="9" width="62" height="62" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="326:36388" name="EN/4.4 Review your details" x="3650" y="160" width="390" height="1214">
+      <instance id="326:36389" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="326:36390" name="Step Header" x="0" y="47" width="390" height="132" />
+      <frame id="326:36391" name="Content" x="0" y="179" width="390" height="930">
+        <frame id="326:36392" name="Banner/success" x="24" y="8" width="342" height="98">
+          <instance id="326:36393" name="icon/check" x="16" y="16" width="20" height="20" />
+          <text id="326:36394" name="ID scanned. Check these details are correct. They come from your ID and can’t be edited." x="52" y="16" width="274" height="66" />
+        </frame>
+        <instance id="326:36395" name="Text Field" x="24" y="122" width="342" height="64" />
+        <instance id="326:36396" name="Text Field" x="24" y="202" width="342" height="64" />
+        <instance id="326:36397" name="Text Field" x="24" y="282" width="342" height="64" />
+        <instance id="326:36398" name="Text Field" x="24" y="362" width="342" height="64" />
+        <instance id="326:36399" name="Text Field" x="24" y="442" width="342" height="64" />
+        <instance id="326:36400" name="Text Field" x="24" y="522" width="342" height="64" />
+        <instance id="326:36401" name="Text Field" x="24" y="602" width="342" height="64" />
+        <instance id="326:36402" name="Text Field" x="24" y="682" width="342" height="64" />
+        <instance id="326:36403" name="Text Field" x="24" y="762" width="342" height="64" />
+        <instance id="326:36404" name="Text Field" x="24" y="842" width="342" height="64" />
+      </frame>
+      <frame id="326:36405" name="Footer" x="0" y="1109" width="390" height="105">
+        <instance id="326:36406" name="Button" x="24" y="17" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:36407" name="EN/4.5 Enter your details manually" x="4160" y="160" width="390" height="1376">
+      <instance id="326:36408" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="326:36409" name="Step Header" x="0" y="47" width="390" height="132" />
+      <frame id="326:36410" name="Content" x="0" y="179" width="390" height="1092">
+        <frame id="326:36411" name="Banner/info" x="24" y="8" width="342" height="98">
+          <instance id="326:36412" name="icon/check" x="16" y="16" width="20" height="20" />
+          <text id="326:36413" name="Enter your details exactly as they appear on your ID. Our team will check them against a photo of your ID." x="52" y="16" width="274" height="66" />
+        </frame>
+        <instance id="326:36414" name="Text Field" x="24" y="122" width="342" height="64" />
+        <instance id="326:36415" name="Text Field" x="24" y="202" width="342" height="64" />
+        <instance id="326:36416" name="Text Field" x="24" y="282" width="342" height="64" />
+        <instance id="326:36417" name="Text Field" x="24" y="362" width="342" height="64" />
+        <instance id="326:36418" name="Text Field" x="24" y="442" width="342" height="64" />
+        <instance id="326:36419" name="Text Field" x="24" y="522" width="342" height="64" />
+        <instance id="326:36420" name="Text Field" x="24" y="602" width="342" height="64" />
+        <instance id="326:36421" name="Text Field" x="24" y="682" width="342" height="64" />
+        <instance id="326:36422" name="Text Field" x="24" y="762" width="342" height="64" />
+        <instance id="326:36423" name="Text Field" x="24" y="842" width="342" height="64" />
+        <frame id="326:36424" name="ID photo" x="24" y="922" width="342" height="146">
+          <frame id="326:36425" name="Top" x="17" y="17" width="308" height="40">
+            <frame id="326:36426" name="Badge" x="0" y="0" width="40" height="40">
+              <instance id="326:36427" name="icon/home" x="10" y="10" width="20" height="20" />
+            </frame>
+            <frame id="326:36428" name="Text" x="56" y="0" width="252" height="40">
+              <text id="326:36429" name="Photo of your ID" x="0" y="0" width="252" height="22" />
+              <text id="326:36430" name="Passport or driving licence" x="0" y="22" width="252" height="18" />
+            </frame>
+          </frame>
+          <instance id="326:36431" name="Button" x="17" y="73" width="308" height="56" />
+        </frame>
+      </frame>
+      <frame id="326:36432" name="Footer" x="0" y="1271" width="390" height="105">
+        <instance id="326:36433" name="Button" x="24" y="17" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:36434" name="EN/4.5a Upload a photo of your ID" x="4670" y="160" width="390" height="844">
+      <instance id="326:36435" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="326:36436" name="Step Header" x="0" y="47" width="390" height="132" />
+      <frame id="326:36437" name="Content" x="0" y="179" width="390" height="1092">
+        <frame id="326:36438" name="Banner/info" x="24" y="8" width="342" height="98">
+          <instance id="326:36439" name="icon/check" x="16" y="16" width="20" height="20" />
+          <text id="326:36440" name="Enter your details exactly as they appear on your ID. Our team will check them against a photo of your ID." x="52" y="16" width="274" height="66" />
+        </frame>
+        <instance id="326:36441" name="Text Field" x="24" y="122" width="342" height="64" />
+        <instance id="326:36442" name="Text Field" x="24" y="202" width="342" height="64" />
+        <instance id="326:36443" name="Text Field" x="24" y="282" width="342" height="64" />
+        <instance id="326:36444" name="Text Field" x="24" y="362" width="342" height="64" />
+        <instance id="326:36445" name="Text Field" x="24" y="442" width="342" height="64" />
+        <instance id="326:36446" name="Text Field" x="24" y="522" width="342" height="64" />
+        <instance id="326:36447" name="Text Field" x="24" y="602" width="342" height="64" />
+        <instance id="326:36448" name="Text Field" x="24" y="682" width="342" height="64" />
+        <instance id="326:36449" name="Text Field" x="24" y="762" width="342" height="64" />
+        <instance id="326:36450" name="Text Field" x="24" y="842" width="342" height="64" />
+        <frame id="326:36451" name="ID photo" x="24" y="922" width="342" height="146">
+          <frame id="326:36452" name="Top" x="17" y="17" width="308" height="40">
+            <frame id="326:36453" name="Badge" x="0" y="0" width="40" height="40">
+              <instance id="326:36454" name="icon/home" x="10" y="10" width="20" height="20" />
+            </frame>
+            <frame id="326:36455" name="Text" x="56" y="0" width="252" height="40">
+              <text id="326:36456" name="Photo of your ID" x="0" y="0" width="252" height="22" />
+              <text id="326:36457" name="Passport or driving licence" x="0" y="22" width="252" height="18" />
+            </frame>
+          </frame>
+          <instance id="326:36458" name="Button" x="17" y="73" width="308" height="56" />
+        </frame>
+      </frame>
+      <frame id="326:36459" name="Footer" x="0" y="1271" width="390" height="105">
+        <instance id="326:36460" name="Button" x="24" y="17" width="342" height="56" />
+      </frame>
+      <rounded-rectangle id="326:36461" name="Scrim" x="0" y="0" width="390" height="1134" />
+      <frame id="326:36462" name="Bottom Sheet" x="0" y="300" width="390" height="544">
+        <frame id="326:36463" name="Grabber" x="24" y="16" width="342" height="4">
+          <rounded-rectangle id="326:36464" name="Rectangle" x="151" y="0" width="40" height="4" />
+        </frame>
+        <frame id="326:36465" name="Head" x="24" y="44" width="342" height="32">
+          <text id="326:36466" name="Photo of your ID" x="0" y="2" width="156" height="28" />
+          <frame id="326:36467" name="Badge" x="310" y="0" width="32" height="32">
+            <instance id="326:36468" name="icon/x" x="8" y="8" width="16" height="16" />
+          </frame>
+        </frame>
+        <text id="326:36469" name="Upload a clear photo of the ID you entered. All 4 corners and the text must be visible." x="24" y="100" width="342" height="44" />
+        <frame id="326:36470" name="Accepted" x="24" y="168" width="342" height="94">
+          <text id="326:36471" name="Accepted IDs" x="0" y="0" width="342" height="22" />
+          <frame id="326:36472" name="Chips" x="0" y="30" width="266" height="38">
+            <frame id="326:36473" name="Doc" x="0" y="0" width="110" height="38">
+              <instance id="326:36474" name="icon/file" x="16" y="12" width="14" height="14" />
+              <text id="326:36475" name="Passport" x="38" y="8" width="56" height="22" />
+            </frame>
+            <frame id="326:36476" name="Doc" x="118" y="0" width="148" height="38">
+              <instance id="326:36477" name="icon/file" x="16" y="12" width="14" height="14" />
+              <text id="326:36478" name="Driving licence" x="38" y="8" width="94" height="22" />
+            </frame>
+          </frame>
+          <text id="326:36479" name="Must not be expired" x="0" y="76" width="342" height="18" />
+        </frame>
+        <frame id="326:36480" name="Options" x="24" y="286" width="342" height="184">
+          <frame id="326:36481" name="Option/camera" x="0" y="0" width="342" height="56">
+            <frame id="326:36482" name="Badge" x="0" y="8" width="40" height="40">
+              <instance id="326:36483" name="icon/camera" x="10" y="10" width="20" height="20" />
+            </frame>
+            <text id="326:36484" name="Take a photo" x="56" y="17" width="250" height="22" />
+            <instance id="326:36485" name="icon/chevronRight" x="322" y="18" width="20" height="20" />
+          </frame>
+          <frame id="326:36486" name="Option/image" x="0" y="64" width="342" height="56">
+            <frame id="326:36487" name="Badge" x="0" y="8" width="40" height="40">
+              <instance id="326:36488" name="icon/image" x="10" y="10" width="20" height="20" />
+            </frame>
+            <text id="326:36489" name="Choose from gallery" x="56" y="17" width="250" height="22" />
+            <instance id="326:36490" name="icon/chevronRight" x="322" y="18" width="20" height="20" />
+          </frame>
+          <frame id="326:36491" name="Option/file" x="0" y="128" width="342" height="56">
+            <frame id="326:36492" name="Badge" x="0" y="8" width="40" height="40">
+              <instance id="326:36493" name="icon/file" x="10" y="10" width="20" height="20" />
+            </frame>
+            <text id="326:36494" name="Upload a file" x="56" y="17" width="250" height="22" />
+            <instance id="326:36495" name="icon/chevronRight" x="322" y="18" width="20" height="20" />
+          </frame>
+        </frame>
+        <text id="326:36496" name="JPG, PNG or PDF · max 5MB" x="24" y="494" width="342" height="18" />
+      </frame>
+    </frame>
+    <frame id="326:36497" name="EN/4.6 Hub — step 1 done" x="7220" y="160" width="390" height="844">
+      <instance id="326:36498" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <frame id="326:36499" name="Top bar" x="0" y="47" width="390" height="48">
+        <frame id="326:36500" name="Badge" x="24" y="8" width="40" height="40">
+          <instance id="326:36501" name="icon/x" x="10" y="10" width="20" height="20" />
+        </frame>
+      </frame>
+      <frame id="326:36502" name="Content" x="0" y="95" width="390" height="645">
+        <frame id="326:36503" name="Heading" x="24" y="16" width="342" height="68">
+          <text id="326:36504" name="Verify your account" x="0" y="0" width="342" height="36" />
+          <text id="326:36505" name="Complete both steps to start sending money." x="0" y="44" width="342" height="24" />
+        </frame>
+        <frame id="326:36506" name="Overall" x="24" y="108" width="342" height="36">
+          <text id="326:36507" name="1 of 2 complete" x="0" y="0" width="342" height="22" />
+          <frame id="326:36508" name="Progress" x="0" y="30" width="342" height="6">
+            <rounded-rectangle id="326:36509" name="Fill" x="0" y="0" width="171" height="6" />
+          </frame>
+        </frame>
+        <frame id="326:36510" name="Steps" x="24" y="168" width="342" height="166">
+          <frame id="326:36511" name="Step 1" x="0" y="0" width="342" height="74">
+            <frame id="326:36512" name="Badge" x="17" y="21" width="32" height="32">
+              <instance id="326:36513" name="icon/check" x="8" y="8" width="16" height="16" />
+            </frame>
+            <frame id="326:36514" name="Text" x="65" y="17" width="167" height="40">
+              <text id="326:36515" name="Personal details &amp; ID" x="0" y="0" width="167" height="22" />
+              <text id="326:36516" name="Scan your ID · about 2 minutes" x="0" y="22" width="167" height="18" />
+            </frame>
+            <frame id="326:36517" name="Status" x="248" y="28" width="77" height="18">
+              <text id="326:36518" name="Completed" x="8" y="0" width="61" height="18" />
+            </frame>
+          </frame>
+          <frame id="326:36519" name="Step 2" x="0" y="90" width="342" height="76">
+            <frame id="326:36520" name="Number" x="18" y="22" width="32" height="32">
+              <text id="326:36521" name="2" x="12" y="5" width="8" height="22" />
+            </frame>
+            <frame id="326:36522" name="Text" x="66" y="18" width="166" height="40">
+              <text id="326:36523" name="Your address" x="0" y="0" width="166" height="22" />
+              <text id="326:36524" name="About 1 minute" x="0" y="22" width="166" height="18" />
+            </frame>
+            <frame id="326:36525" name="Status" x="248" y="29" width="76" height="18">
+              <text id="326:36526" name="In progress" x="8" y="0" width="60" height="18" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="326:36527" name="Note" x="24" y="358" width="342" height="54">
+          <instance id="326:36528" name="icon/info" x="16" y="17" width="20" height="20" />
+          <text id="326:36529" name="Pick up where you left off: your address." x="52" y="16" width="274" height="22" />
+        </frame>
+      </frame>
+      <frame id="326:36530" name="Footer" x="0" y="740" width="390" height="104">
+        <instance id="326:36531" name="Button" x="24" y="16" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:36532" name="EN/4.6a Hub — ID in review" x="6710" y="160" width="390" height="844">
+      <instance id="326:36533" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <frame id="326:36534" name="Top bar" x="0" y="47" width="390" height="48">
+        <frame id="326:36535" name="Badge" x="24" y="8" width="40" height="40">
+          <instance id="326:36536" name="icon/x" x="10" y="10" width="20" height="20" />
+        </frame>
+      </frame>
+      <frame id="326:36537" name="Content" x="0" y="95" width="390" height="645">
+        <frame id="326:36538" name="Heading" x="24" y="16" width="342" height="68">
+          <text id="326:36539" name="Verify your account" x="0" y="0" width="342" height="36" />
+          <text id="326:36540" name="Complete both steps to start sending money." x="0" y="44" width="342" height="24" />
+        </frame>
+        <frame id="326:36541" name="Overall" x="24" y="108" width="342" height="36">
+          <text id="326:36542" name="1 of 2 submitted" x="0" y="0" width="342" height="22" />
+          <frame id="326:36543" name="Progress" x="0" y="30" width="342" height="6">
+            <rounded-rectangle id="326:36544" name="Fill" x="0" y="0" width="171" height="6" />
+          </frame>
+        </frame>
+        <frame id="326:36545" name="Steps" x="24" y="168" width="342" height="184">
+          <frame id="326:36546" name="Step 1" x="0" y="0" width="342" height="92">
+            <frame id="326:36547" name="Badge" x="17" y="30" width="32" height="32">
+              <instance id="326:36548" name="icon/check" x="8" y="8" width="16" height="16" />
+            </frame>
+            <frame id="326:36549" name="Text" x="65" y="17" width="179" height="58">
+              <text id="326:36550" name="Personal details &amp; ID" x="0" y="0" width="179" height="22" />
+              <text id="326:36551" name="We’re checking your ID · up to 24 hours" x="0" y="22" width="179" height="36" />
+            </frame>
+            <frame id="326:36552" name="Status" x="260" y="37" width="65" height="18">
+              <text id="326:36553" name="In review" x="8" y="0" width="49" height="18" />
+            </frame>
+          </frame>
+          <frame id="326:36554" name="Step 2" x="0" y="108" width="342" height="76">
+            <frame id="326:36555" name="Number" x="18" y="22" width="32" height="32">
+              <text id="326:36556" name="2" x="12" y="5" width="8" height="22" />
+            </frame>
+            <frame id="326:36557" name="Text" x="66" y="18" width="166" height="40">
+              <text id="326:36558" name="Your address" x="0" y="0" width="166" height="22" />
+              <text id="326:36559" name="About 1 minute" x="0" y="22" width="166" height="18" />
+            </frame>
+            <frame id="326:36560" name="Status" x="248" y="29" width="76" height="18">
+              <text id="326:36561" name="In progress" x="8" y="0" width="60" height="18" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="326:36562" name="Note" x="24" y="376" width="342" height="76">
+          <instance id="326:36563" name="icon/info" x="16" y="28" width="20" height="20" />
+          <text id="326:36564" name="We’re reviewing your ID. You can add your address in the meantime." x="52" y="16" width="274" height="44" />
+        </frame>
+      </frame>
+      <frame id="326:36565" name="Footer" x="0" y="740" width="390" height="104">
+        <instance id="326:36566" name="Button" x="24" y="16" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:36567" name="EN/4.7a Your address — details found" x="8240" y="160" width="390" height="968">
+      <instance id="326:36568" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="326:36569" name="Step Header" x="0" y="47" width="390" height="132" />
+      <frame id="326:36570" name="Content" x="0" y="179" width="390" height="684">
+        <instance id="326:36571" name="Text Field" x="24" y="8" width="342" height="90" />
+        <instance id="326:36572" name="Text Field" x="24" y="114" width="342" height="64" />
+        <instance id="326:36573" name="Text Field" x="24" y="194" width="342" height="64" />
+        <instance id="326:36574" name="Text Field" x="24" y="274" width="342" height="64" />
+        <instance id="326:36575" name="Text Field" x="24" y="354" width="342" height="64" />
+        <instance id="326:36576" name="Text Field" x="24" y="434" width="342" height="64" />
+        <frame id="326:36577" name="Proof of Address" x="24" y="514" width="342" height="146">
+          <frame id="326:36578" name="Top" x="17" y="17" width="308" height="40">
+            <frame id="326:36579" name="Badge" x="0" y="0" width="40" height="40">
+              <instance id="326:36580" name="icon/home" x="10" y="10" width="20" height="20" />
+            </frame>
+            <frame id="326:36581" name="Text" x="56" y="0" width="252" height="40">
+              <text id="326:36582" name="Proof of address" x="0" y="0" width="252" height="22" />
+              <text id="326:36583" name="Verify your address." x="0" y="22" width="252" height="18" />
+            </frame>
+          </frame>
+          <instance id="326:36584" name="Button" x="17" y="73" width="308" height="56" />
+        </frame>
+      </frame>
+      <frame id="326:36585" name="Footer" x="0" y="863" width="390" height="105">
+        <instance id="326:36586" name="Button" x="24" y="17" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:36587" name="EN/4.7 Your address — enter postcode" x="7730" y="160" width="390" height="968">
+      <instance id="326:36588" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="326:36589" name="Step Header" x="0" y="47" width="390" height="132" />
+      <frame id="326:36590" name="Content" x="0" y="179" width="390" height="684">
+        <instance id="326:36591" name="Text Field" x="24" y="8" width="342" height="90" />
+        <instance id="326:36592" name="Text Field" x="24" y="114" width="342" height="64" />
+        <instance id="326:36593" name="Text Field" x="24" y="194" width="342" height="64" />
+        <instance id="326:36594" name="Text Field" x="24" y="274" width="342" height="64" />
+        <instance id="326:36595" name="Text Field" x="24" y="354" width="342" height="64" />
+        <instance id="326:36596" name="Text Field" x="24" y="434" width="342" height="64" />
+        <frame id="326:36597" name="Proof of Address" x="24" y="514" width="342" height="146">
+          <frame id="326:36598" name="Top" x="17" y="17" width="308" height="40">
+            <frame id="326:36599" name="Badge" x="0" y="0" width="40" height="40">
+              <instance id="326:36600" name="icon/home" x="10" y="10" width="20" height="20" />
+            </frame>
+            <frame id="326:36601" name="Text" x="56" y="0" width="252" height="40">
+              <text id="326:36602" name="Proof of address" x="0" y="0" width="252" height="22" />
+              <text id="326:36603" name="Verify your address." x="0" y="22" width="252" height="18" />
+            </frame>
+          </frame>
+          <instance id="326:36604" name="Button" x="17" y="73" width="308" height="56" />
+        </frame>
+      </frame>
+      <frame id="326:36605" name="Footer" x="0" y="863" width="390" height="105">
+        <instance id="326:36606" name="Button" x="24" y="17" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:36607" name="EN/4.8 Proof of address (sheet)" x="8750" y="160" width="390" height="968">
+      <instance id="326:36608" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="326:36609" name="Step Header" x="0" y="47" width="390" height="132" />
+      <frame id="326:36610" name="Content" x="0" y="179" width="390" height="684">
+        <instance id="326:36611" name="Text Field" x="24" y="8" width="342" height="90" />
+        <instance id="326:36612" name="Text Field" x="24" y="114" width="342" height="64" />
+        <instance id="326:36613" name="Text Field" x="24" y="194" width="342" height="64" />
+        <instance id="326:36614" name="Text Field" x="24" y="274" width="342" height="64" />
+        <instance id="326:36615" name="Text Field" x="24" y="354" width="342" height="64" />
+        <instance id="326:36616" name="Text Field" x="24" y="434" width="342" height="64" />
+        <frame id="326:36617" name="Proof of Address" x="24" y="514" width="342" height="146">
+          <frame id="326:36618" name="Top" x="17" y="17" width="308" height="40">
+            <frame id="326:36619" name="Badge" x="0" y="0" width="40" height="40">
+              <instance id="326:36620" name="icon/home" x="10" y="10" width="20" height="20" />
+            </frame>
+            <frame id="326:36621" name="Text" x="56" y="0" width="252" height="40">
+              <text id="326:36622" name="Proof of address" x="0" y="0" width="252" height="22" />
+              <text id="326:36623" name="Verify your address." x="0" y="22" width="252" height="18" />
+            </frame>
+          </frame>
+          <instance id="326:36624" name="Button" x="17" y="73" width="308" height="56" />
+        </frame>
+      </frame>
+      <frame id="326:36625" name="Footer" x="0" y="863" width="390" height="105">
+        <instance id="326:36626" name="Button" x="24" y="17" width="342" height="56" />
+      </frame>
+      <rounded-rectangle id="326:36627" name="Scrim" x="0" y="0" width="390" height="1024" />
+      <frame id="326:36628" name="Bottom Sheet" x="0" y="402" width="390" height="566">
+        <frame id="326:36629" name="Grabber" x="24" y="16" width="342" height="4">
+          <rounded-rectangle id="326:36630" name="Rectangle" x="151" y="0" width="40" height="4" />
+        </frame>
+        <frame id="326:36631" name="Head" x="24" y="44" width="342" height="32">
+          <text id="326:36632" name="Proof of address" x="0" y="2" width="155" height="28" />
+          <frame id="326:36633" name="Badge" x="310" y="0" width="32" height="32">
+            <instance id="326:36634" name="icon/x" x="8" y="8" width="16" height="16" />
+          </frame>
+        </frame>
+        <text id="326:36635" name="Verifying your address helps us comply with financial regulations and protect your account. Providing proof of address increases your sending limit." x="24" y="100" width="342" height="66" />
+        <frame id="326:36636" name="Accepted" x="24" y="190" width="342" height="94">
+          <text id="326:36637" name="Accepted documents" x="0" y="0" width="342" height="22" />
+          <frame id="326:36638" name="Chips" x="0" y="30" width="263" height="38">
+            <frame id="326:36639" name="Doc" x="0" y="0" width="140" height="38">
+              <instance id="326:36640" name="icon/file" x="16" y="12" width="14" height="14" />
+              <text id="326:36641" name="Electricity bill" x="38" y="8" width="86" height="22" />
+            </frame>
+            <frame id="326:36642" name="Doc" x="148" y="0" width="115" height="38">
+              <instance id="326:36643" name="icon/file" x="16" y="12" width="14" height="14" />
+              <text id="326:36644" name="Water bill" x="38" y="8" width="61" height="22" />
+            </frame>
+          </frame>
+          <text id="326:36645" name="Must be dated within the last 3 months" x="0" y="76" width="342" height="18" />
+        </frame>
+        <frame id="326:36646" name="Options" x="24" y="308" width="342" height="184">
+          <frame id="326:36647" name="Option/camera" x="0" y="0" width="342" height="56">
+            <frame id="326:36648" name="Badge" x="0" y="8" width="40" height="40">
+              <instance id="326:36649" name="icon/camera" x="10" y="10" width="20" height="20" />
+            </frame>
+            <text id="326:36650" name="Take a photo" x="56" y="17" width="250" height="22" />
+            <instance id="326:36651" name="icon/chevronRight" x="322" y="18" width="20" height="20" />
+          </frame>
+          <frame id="326:36652" name="Option/image" x="0" y="64" width="342" height="56">
+            <frame id="326:36653" name="Badge" x="0" y="8" width="40" height="40">
+              <instance id="326:36654" name="icon/image" x="10" y="10" width="20" height="20" />
+            </frame>
+            <text id="326:36655" name="Choose from gallery" x="56" y="17" width="250" height="22" />
+            <instance id="326:36656" name="icon/chevronRight" x="322" y="18" width="20" height="20" />
+          </frame>
+          <frame id="326:36657" name="Option/file" x="0" y="128" width="342" height="56">
+            <frame id="326:36658" name="Badge" x="0" y="8" width="40" height="40">
+              <instance id="326:36659" name="icon/file" x="10" y="10" width="20" height="20" />
+            </frame>
+            <text id="326:36660" name="Upload a file" x="56" y="17" width="250" height="22" />
+            <instance id="326:36661" name="icon/chevronRight" x="322" y="18" width="20" height="20" />
+          </frame>
+        </frame>
+        <text id="326:36662" name="JPG, PNG or PDF · max 5MB" x="24" y="516" width="342" height="18" />
+      </frame>
+    </frame>
+    <frame id="326:36663" name="EN/4.8a Proof of address uploaded" x="9260" y="160" width="390" height="944">
+      <instance id="326:36664" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="326:36665" name="Step Header" x="0" y="47" width="390" height="132" />
+      <frame id="326:36666" name="Content" x="0" y="179" width="390" height="660">
+        <instance id="326:36667" name="Text Field" x="24" y="8" width="342" height="90" />
+        <instance id="326:36668" name="Text Field" x="24" y="114" width="342" height="64" />
+        <instance id="326:36669" name="Text Field" x="24" y="194" width="342" height="64" />
+        <instance id="326:36670" name="Text Field" x="24" y="274" width="342" height="64" />
+        <instance id="326:36671" name="Text Field" x="24" y="354" width="342" height="64" />
+        <instance id="326:36672" name="Text Field" x="24" y="434" width="342" height="64" />
+        <frame id="326:36673" name="Proof of Address" x="24" y="514" width="342" height="122">
+          <frame id="326:36674" name="Top" x="17" y="17" width="308" height="40">
+            <frame id="326:36675" name="Thumbnail" x="0" y="0" width="40" height="40">
+              <instance id="326:36676" name="icon/home" x="10" y="10" width="20" height="20" />
+            </frame>
+            <frame id="326:36677" name="Text" x="56" y="0" width="252" height="40">
+              <text id="326:36678" name="Proof of address" x="0" y="0" width="252" height="22" />
+              <text id="326:36679" name="british-gas-bill-oct.pdf · 1.2 MB" x="0" y="22" width="252" height="18" />
+            </frame>
+          </frame>
+          <frame id="326:36680" name="Actions" x="17" y="73" width="308" height="32">
+            <instance id="326:36681" name="Button" x="0" y="0" width="75" height="32" />
+            <instance id="326:36682" name="Button" x="83" y="0" width="95" height="32" />
+            <instance id="326:36683" name="Button" x="186" y="0" width="96" height="32" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="326:36684" name="Footer" x="0" y="839" width="390" height="105">
+        <instance id="326:36685" name="Button" x="24" y="17" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:36686" name="EN/4.9 Hub — under review" x="10790" y="160" width="390" height="844">
+      <instance id="326:36687" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <frame id="326:36688" name="Top bar" x="0" y="47" width="390" height="48">
+        <frame id="326:36689" name="Badge" x="24" y="8" width="40" height="40">
+          <instance id="326:36690" name="icon/x" x="10" y="10" width="20" height="20" />
+        </frame>
+      </frame>
+      <frame id="326:36691" name="Content" x="0" y="95" width="390" height="645">
+        <frame id="326:36692" name="Heading" x="24" y="16" width="342" height="68">
+          <text id="326:36693" name="Verify your account" x="0" y="0" width="342" height="36" />
+          <text id="326:36694" name="Complete both steps to start sending money." x="0" y="44" width="342" height="24" />
+        </frame>
+        <frame id="326:36695" name="Overall" x="24" y="108" width="342" height="36">
+          <text id="326:36696" name="2 of 2 submitted" x="0" y="0" width="342" height="22" />
+          <frame id="326:36697" name="Progress" x="0" y="30" width="342" height="6">
+            <rounded-rectangle id="326:36698" name="Fill" x="0" y="0" width="342" height="6" />
+          </frame>
+        </frame>
+        <frame id="326:36699" name="Steps" x="24" y="168" width="342" height="182">
+          <frame id="326:36700" name="Step 1" x="0" y="0" width="342" height="74">
+            <frame id="326:36701" name="Badge" x="17" y="21" width="32" height="32">
+              <instance id="326:36702" name="icon/check" x="8" y="8" width="16" height="16" />
+            </frame>
+            <frame id="326:36703" name="Text" x="65" y="17" width="167" height="40">
+              <text id="326:36704" name="Personal details &amp; ID" x="0" y="0" width="167" height="22" />
+              <text id="326:36705" name="Scan your ID · about 2 minutes" x="0" y="22" width="167" height="18" />
+            </frame>
+            <frame id="326:36706" name="Status" x="248" y="28" width="77" height="18">
+              <text id="326:36707" name="Completed" x="8" y="0" width="61" height="18" />
+            </frame>
+          </frame>
+          <frame id="326:36708" name="Step 2" x="0" y="90" width="342" height="92">
+            <frame id="326:36709" name="Badge" x="17" y="30" width="32" height="32">
+              <instance id="326:36710" name="icon/check" x="8" y="8" width="16" height="16" />
+            </frame>
+            <frame id="326:36711" name="Text" x="65" y="17" width="179" height="58">
+              <text id="326:36712" name="Your address" x="0" y="0" width="179" height="22" />
+              <text id="326:36713" name="We’re checking your proof · up to 24 hours" x="0" y="22" width="179" height="36" />
+            </frame>
+            <frame id="326:36714" name="Status" x="260" y="37" width="65" height="18">
+              <text id="326:36715" name="In review" x="8" y="0" width="49" height="18" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="326:36716" name="Note" x="24" y="374" width="342" height="76">
+          <instance id="326:36717" name="icon/info" x="16" y="28" width="20" height="20" />
+          <text id="326:36718" name="We’ll notify you as soon as we’ve reviewed your details, usually within 24 hours." x="52" y="16" width="274" height="44" />
+        </frame>
+      </frame>
+      <frame id="326:36719" name="Footer" x="0" y="740" width="390" height="104">
+        <instance id="326:36720" name="Button" x="24" y="16" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:36721" name="EN/4.5b ID photo uploaded" x="5180" y="160" width="390" height="1352">
+      <instance id="326:36722" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="326:36723" name="Step Header" x="0" y="47" width="390" height="132" />
+      <frame id="326:36724" name="Content" x="0" y="179" width="390" height="1068">
+        <frame id="326:36725" name="Banner/info" x="24" y="8" width="342" height="98">
+          <instance id="326:36726" name="icon/check" x="16" y="16" width="20" height="20" />
+          <text id="326:36727" name="Enter your details exactly as they appear on your ID. Our team will check them against a photo of your ID." x="52" y="16" width="274" height="66" />
+        </frame>
+        <instance id="326:36728" name="Text Field" x="24" y="122" width="342" height="64" />
+        <instance id="326:36729" name="Text Field" x="24" y="202" width="342" height="64" />
+        <instance id="326:36730" name="Text Field" x="24" y="282" width="342" height="64" />
+        <instance id="326:36731" name="Text Field" x="24" y="362" width="342" height="64" />
+        <instance id="326:36732" name="Text Field" x="24" y="442" width="342" height="64" />
+        <instance id="326:36733" name="Text Field" x="24" y="522" width="342" height="64" />
+        <instance id="326:36734" name="Text Field" x="24" y="602" width="342" height="64" />
+        <instance id="326:36735" name="Text Field" x="24" y="682" width="342" height="64" />
+        <instance id="326:36736" name="Text Field" x="24" y="762" width="342" height="64" />
+        <instance id="326:36737" name="Text Field" x="24" y="842" width="342" height="64" />
+        <frame id="326:36738" name="ID photo" x="24" y="922" width="342" height="122">
+          <frame id="326:36739" name="Top" x="17" y="17" width="308" height="40">
+            <frame id="326:36740" name="Thumbnail" x="0" y="0" width="40" height="40">
+              <instance id="326:36741" name="icon/home" x="10" y="10" width="20" height="20" />
+            </frame>
+            <frame id="326:36742" name="Text" x="56" y="0" width="252" height="40">
+              <text id="326:36743" name="Photo of your ID" x="0" y="0" width="252" height="22" />
+              <text id="326:36744" name="passport-photo-page.jpg · 2.4 MB" x="0" y="22" width="252" height="18" />
+            </frame>
+          </frame>
+          <frame id="326:36745" name="Actions" x="17" y="73" width="308" height="32">
+            <instance id="326:36746" name="Button" x="0" y="0" width="75" height="32" />
+            <instance id="326:36747" name="Button" x="83" y="0" width="95" height="32" />
+            <instance id="326:36748" name="Button" x="186" y="0" width="96" height="32" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="326:36749" name="Footer" x="0" y="1247" width="390" height="105">
+        <instance id="326:36750" name="Button" x="24" y="17" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:36751" name="EN/4.0a What you’ll need" x="590" y="160" width="390" height="815">
+      <instance id="326:36752" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <frame id="326:36753" name="Top" x="0" y="47" width="390" height="48">
+        <instance id="326:36754" name="Badge" x="24" y="8" width="40" height="40" />
+      </frame>
+      <frame id="326:36755" name="Content" x="0" y="95" width="390" height="544">
+        <frame id="326:36756" name="Heading" x="24" y="24" width="342" height="92">
+          <text id="326:36757" name="Before you start" x="0" y="0" width="342" height="36" />
+          <text id="326:36758" name="Have these documents ready. It takes about 3 minutes, and you can stop at any time." x="0" y="44" width="342" height="48" />
+        </frame>
+        <frame id="326:36759" name="Group · 1. Your ID" x="24" y="140" width="342" height="222">
+          <text id="326:36760" name="1. Your ID" x="0" y="0" width="342" height="26" />
+          <frame id="326:36761" name="List" x="0" y="34" width="342" height="144">
+            <instance id="326:36762" name="Item" x="16" y="16" width="310" height="48" />
+            <instance id="326:36763" name="Item" x="16" y="80" width="310" height="48" />
+          </frame>
+          <text id="326:36764" name="Must be valid and not expired. You’ll scan it with your phone camera." x="0" y="186" width="342" height="36" />
+        </frame>
+        <frame id="326:36765" name="Group · 2. Proof of address" x="24" y="386" width="342" height="158">
+          <text id="326:36766" name="2. Proof of address" x="0" y="0" width="342" height="26" />
+          <frame id="326:36767" name="List" x="0" y="34" width="342" height="80">
+            <instance id="326:36768" name="Item" x="16" y="16" width="310" height="48" />
+          </frame>
+          <text id="326:36769" name="Dated in the last 3 months and showing your full name and UK address. Photo or PDF." x="0" y="122" width="342" height="36" />
+        </frame>
+      </frame>
+      <frame id="326:36770" name="Footer" x="0" y="639" width="390" height="176">
+        <instance id="326:36771" name="Button" x="24" y="16" width="342" height="56" />
+        <instance id="326:36772" name="Button" x="24" y="80" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:36773" name="EN/4.5c Preview ID photo" x="5690" y="160" width="390" height="844">
+      <instance id="326:36774" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <frame id="326:36775" name="Top bar" x="0" y="47" width="390" height="48">
+        <frame id="326:36776" name="Badge" x="24" y="8" width="40" height="40">
+          <instance id="326:36777" name="icon/x" x="10" y="10" width="20" height="20" />
+        </frame>
+      </frame>
+      <frame id="326:36778" name="Content" x="0" y="95" width="390" height="581">
+        <frame id="326:36779" name="Heading" x="24" y="16" width="342" height="58">
+          <text id="326:36780" name="Photo of your ID" x="0" y="0" width="342" height="32" />
+          <text id="326:36781" name="passport-photo-page.jpg · 2.4 MB · Uploaded today" x="0" y="36" width="342" height="22" />
+        </frame>
+        <frame id="326:36782" name="Preview" x="24" y="90" width="342" height="491">
+          <instance id="326:36783" name="Illustration/idCard" x="43" y="117.5" width="256" height="256" />
+        </frame>
+      </frame>
+      <frame id="326:36784" name="Footer" x="0" y="676" width="390" height="168">
+        <instance id="326:36785" name="Button" x="24" y="16" width="342" height="56" />
+        <instance id="326:36786" name="Button" x="24" y="80" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:36787" name="EN/4.5d Remove ID photo" x="6200" y="160" width="390" height="844">
+      <instance id="326:36788" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="326:36789" name="Step Header" x="0" y="47" width="390" height="132" />
+      <frame id="326:36790" name="Content" x="0" y="179" width="390" height="1092">
+        <frame id="326:36791" name="Banner/info" x="24" y="8" width="342" height="98">
+          <instance id="326:36792" name="icon/check" x="16" y="16" width="20" height="20" />
+          <text id="326:36793" name="Enter your details exactly as they appear on your ID. Our team will check them against a photo of your ID." x="52" y="16" width="274" height="66" />
+        </frame>
+        <instance id="326:36794" name="Text Field" x="24" y="122" width="342" height="64" />
+        <instance id="326:36795" name="Text Field" x="24" y="202" width="342" height="64" />
+        <instance id="326:36796" name="Text Field" x="24" y="282" width="342" height="64" />
+        <instance id="326:36797" name="Text Field" x="24" y="362" width="342" height="64" />
+        <instance id="326:36798" name="Text Field" x="24" y="442" width="342" height="64" />
+        <instance id="326:36799" name="Text Field" x="24" y="522" width="342" height="64" />
+        <instance id="326:36800" name="Text Field" x="24" y="602" width="342" height="64" />
+        <instance id="326:36801" name="Text Field" x="24" y="682" width="342" height="64" />
+        <instance id="326:36802" name="Text Field" x="24" y="762" width="342" height="64" />
+        <instance id="326:36803" name="Text Field" x="24" y="842" width="342" height="64" />
+        <frame id="326:36804" name="ID photo" x="24" y="922" width="342" height="146">
+          <frame id="326:36805" name="Top" x="17" y="17" width="308" height="40">
+            <frame id="326:36806" name="Badge" x="0" y="0" width="40" height="40">
+              <instance id="326:36807" name="icon/home" x="10" y="10" width="20" height="20" />
+            </frame>
+            <frame id="326:36808" name="Text" x="56" y="0" width="252" height="40">
+              <text id="326:36809" name="Photo of your ID" x="0" y="0" width="252" height="22" />
+              <text id="326:36810" name="passport-photo-page.jpg · Uploaded" x="0" y="22" width="252" height="18" />
+            </frame>
+          </frame>
+          <instance id="326:36811" name="Button" x="17" y="73" width="308" height="56" />
+        </frame>
+      </frame>
+      <frame id="326:36812" name="Footer" x="0" y="1271" width="390" height="105">
+        <instance id="326:36813" name="Button" x="24" y="17" width="342" height="56" />
+      </frame>
+      <rounded-rectangle id="326:36814" name="Scrim" x="0" y="0" width="390" height="1296" />
+      <frame id="326:36815" name="Bottom Sheet" x="0" y="560" width="390" height="284">
+        <instance id="326:36816" name="Sheet Grabber" x="24" y="8" width="342" height="4" />
+        <frame id="326:36817" name="Text" x="24" y="28" width="342" height="80">
+          <text id="326:36818" name="Remove this document?" x="0" y="0" width="342" height="28" />
+          <text id="326:36819" name="You’ll need to upload a photo of your ID again before you can submit." x="0" y="36" width="342" height="44" />
+        </frame>
+        <instance id="326:36820" name="Button" x="24" y="124" width="342" height="56" />
+        <instance id="326:36821" name="Button" x="24" y="196" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:36822" name="EN/4.8b Preview proof of address" x="9770" y="160" width="390" height="844">
+      <instance id="326:36823" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <frame id="326:36824" name="Top bar" x="0" y="47" width="390" height="48">
+        <frame id="326:36825" name="Badge" x="24" y="8" width="40" height="40">
+          <instance id="326:36826" name="icon/x" x="10" y="10" width="20" height="20" />
+        </frame>
+      </frame>
+      <frame id="326:36827" name="Content" x="0" y="95" width="390" height="581">
+        <frame id="326:36828" name="Heading" x="24" y="16" width="342" height="58">
+          <text id="326:36829" name="Proof of address" x="0" y="0" width="342" height="32" />
+          <text id="326:36830" name="british-gas-bill-oct.pdf · 1.2 MB · Uploaded today" x="0" y="36" width="342" height="22" />
+        </frame>
+        <frame id="326:36831" name="Preview" x="24" y="90" width="342" height="491">
+          <frame id="326:36832" name="Document page" x="61" y="166.5" width="220" height="158">
+            <rounded-rectangle id="326:36833" name="Rectangle" x="17" y="17" width="56" height="14" />
+            <rounded-rectangle id="326:36834" name="Line" x="17" y="39" width="188" height="6" />
+            <rounded-rectangle id="326:36835" name="Line" x="17" y="53" width="150" height="6" />
+            <rounded-rectangle id="326:36836" name="Line" x="17" y="67" width="170" height="6" />
+            <rounded-rectangle id="326:36837" name="Line" x="17" y="81" width="120" height="6" />
+            <rounded-rectangle id="326:36838" name="Line" x="17" y="95" width="188" height="6" />
+            <rounded-rectangle id="326:36839" name="Line" x="17" y="109" width="160" height="6" />
+            <rounded-rectangle id="326:36840" name="Line" x="17" y="123" width="100" height="6" />
+            <rounded-rectangle id="326:36841" name="Line" x="17" y="137" width="188" height="6" />
+            <rounded-rectangle id="326:36842" name="Line" x="17" y="151" width="140" height="6" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="326:36843" name="Footer" x="0" y="676" width="390" height="168">
+        <instance id="326:36844" name="Button" x="24" y="16" width="342" height="56" />
+        <instance id="326:36845" name="Button" x="24" y="80" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:36846" name="EN/4.8c Remove proof of address" x="10280" y="160" width="390" height="844">
+      <instance id="326:36847" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="326:36848" name="Step Header" x="0" y="47" width="390" height="132" />
+      <frame id="326:36849" name="Content" x="0" y="179" width="390" height="684">
+        <instance id="326:36850" name="Text Field" x="24" y="8" width="342" height="90" />
+        <instance id="326:36851" name="Text Field" x="24" y="114" width="342" height="64" />
+        <instance id="326:36852" name="Text Field" x="24" y="194" width="342" height="64" />
+        <instance id="326:36853" name="Text Field" x="24" y="274" width="342" height="64" />
+        <instance id="326:36854" name="Text Field" x="24" y="354" width="342" height="64" />
+        <instance id="326:36855" name="Text Field" x="24" y="434" width="342" height="64" />
+        <frame id="326:36856" name="Proof of Address" x="24" y="514" width="342" height="146">
+          <frame id="326:36857" name="Top" x="17" y="17" width="308" height="40">
+            <frame id="326:36858" name="Badge" x="0" y="0" width="40" height="40">
+              <instance id="326:36859" name="icon/home" x="10" y="10" width="20" height="20" />
+            </frame>
+            <frame id="326:36860" name="Text" x="56" y="0" width="252" height="40">
+              <text id="326:36861" name="Proof of address" x="0" y="0" width="252" height="22" />
+              <text id="326:36862" name="british-gas-bill-oct.pdf · Uploaded" x="0" y="22" width="252" height="18" />
+            </frame>
+          </frame>
+          <instance id="326:36863" name="Button" x="17" y="73" width="308" height="56" />
+        </frame>
+      </frame>
+      <frame id="326:36864" name="Footer" x="0" y="863" width="390" height="105">
+        <instance id="326:36865" name="Button" x="24" y="17" width="342" height="56" />
+      </frame>
+      <rounded-rectangle id="326:36866" name="Scrim" x="0" y="0" width="390" height="1024" />
+      <frame id="326:36867" name="Bottom Sheet" x="0" y="560" width="390" height="284">
+        <instance id="326:36868" name="Sheet Grabber" x="24" y="8" width="342" height="4" />
+        <frame id="326:36869" name="Text" x="24" y="28" width="342" height="80">
+          <text id="326:36870" name="Remove this document?" x="0" y="0" width="342" height="28" />
+          <text id="326:36871" name="You’ll need to upload proof of address again before you can submit." x="0" y="36" width="342" height="44" />
+        </frame>
+        <instance id="326:36872" name="Button" x="24" y="124" width="342" height="56" />
+        <instance id="326:36873" name="Button" x="24" y="196" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:36874" name="EN/4.1a Choose your ID" x="1610" y="160" width="390" height="844">
+      <instance id="326:36875" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="326:36876" name="Step Header" x="0" y="47" width="390" height="132" />
+      <frame id="326:36877" name="Content" x="0" y="179" width="390" height="284">
+        <text id="326:36878" name="Which document do you want to scan? It must be valid and not expired." x="24" y="8" width="342" height="48" />
+        <frame id="326:36879" name="Options" x="24" y="72" width="342" height="188">
+          <instance id="326:36880" name="Option · passport" x="0" y="0" width="342" height="88" />
+          <instance id="326:36881" name="Option · licence" x="0" y="100" width="342" height="88" />
+        </frame>
+      </frame>
+      <frame id="326:36882" name="Footer" x="0" y="463" width="390" height="105">
+        <instance id="326:36883" name="Button" x="24" y="17" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:36884" name="EN/4.3a Couldn’t read your ID — scan again or enter manually" x="3140" y="160" width="390" height="844">
+      <instance id="326:36885" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <frame id="326:36886" name="Content" x="0" y="47" width="390" height="621">
+        <instance id="326:36887" name="Illustration/error" x="115" y="48.5" width="160" height="160" />
+        <frame id="326:36888" name="Text" x="24" y="232.5" width="342" height="84">
+          <text id="326:36889" name="We couldn’t read your ID" x="0" y="0" width="342" height="32" />
+          <text id="326:36890" name="Try these tips and scan again, or enter your details manually instead." x="0" y="40" width="342" height="44" />
+        </frame>
+        <frame id="326:36891" name="List" x="24" y="340.5" width="342" height="272">
+          <instance id="326:36892" name="Item" x="16" y="16" width="310" height="48" />
+          <instance id="326:36893" name="Item" x="16" y="80" width="310" height="48" />
+          <instance id="326:36894" name="Item" x="16" y="144" width="310" height="48" />
+          <instance id="326:36895" name="Item" x="16" y="208" width="310" height="48" />
+        </frame>
+      </frame>
+      <frame id="326:36896" name="Footer" x="0" y="668" width="390" height="176">
+        <instance id="326:36897" name="Button" x="24" y="16" width="342" height="56" />
+        <instance id="326:36898" name="Button" x="24" y="80" width="342" height="56" />
+      </frame>
+    </frame>
+  </section>
+  <section id="326:36899" name="Verify ID and address — Arabic (RTL)" x="-5650" y="67" width="11300" height="1626">
+    <frame id="326:36900" name="AR/4.0 Raise your sending limit (sheet)" x="80" y="160" width="390" height="844">
+      <frame id="326:36901" name="Background" x="0" y="0" width="390" height="844">
+        <instance id="326:36902" name="Status Bar" x="0" y="0" width="390" height="47" />
+      </frame>
+      <rounded-rectangle id="326:36903" name="Scrim" x="0" y="0" width="390" height="844" />
+      <frame id="326:36904" name="Bottom sheet" x="0" y="228" width="390" height="616">
+        <rounded-rectangle id="326:36905" name="Rectangle" x="175" y="16" width="40" height="4" />
+        <instance id="326:36906" name="Illustration/locked" x="147" y="44" width="96" height="96" />
+        <frame id="326:36907" name="Text" x="24" y="164" width="342" height="100">
+          <text id="326:36908" name="ارفع حدّ الإرسال" x="0" y="0" width="342" height="36" />
+          <text id="326:36909" name="وثّق هويتك وعنوانك لترسل حتى 12,000 £. هذا متطلب قانوني ويحافظ على أمان أموالك." x="0" y="44" width="342" height="56" />
+        </frame>
+        <frame id="326:36910" name="Steps" x="24" y="288" width="342" height="136">
+          <frame id="326:36911" name="Step 1" x="16" y="16" width="310" height="44">
+            <frame id="326:36912" name="Text" x="0" y="0" width="262" height="44">
+              <text id="326:36913" name="البيانات الشخصية والهوية" x="0" y="0" width="262" height="24" />
+              <text id="326:36914" name="مسح الهوية · نحو دقيقتين" x="0" y="24" width="262" height="20" />
+            </frame>
+            <frame id="326:36915" name="Number" x="278" y="6" width="32" height="32">
+              <text id="326:36916" name="1" x="12" y="5" width="8" height="22" />
+            </frame>
+          </frame>
+          <frame id="326:36917" name="Step 2" x="16" y="76" width="310" height="44">
+            <frame id="326:36918" name="Text" x="0" y="0" width="262" height="44">
+              <text id="326:36919" name="عنوانك" x="0" y="0" width="262" height="24" />
+              <text id="326:36920" name="نحو دقيقة واحدة" x="0" y="24" width="262" height="20" />
+            </frame>
+            <frame id="326:36921" name="Number" x="278" y="6" width="32" height="32">
+              <text id="326:36922" name="2" x="12" y="5" width="8" height="22" />
+            </frame>
+          </frame>
+        </frame>
+        <instance id="326:36923" name="Button" x="24" y="448" width="342" height="56" />
+        <instance id="326:36924" name="Button" x="24" y="528" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:36925" name="AR/4.1 Verification hub — not started" x="1100" y="160" width="390" height="844">
+      <instance id="326:36926" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <frame id="326:36927" name="Top bar" x="0" y="47" width="390" height="48">
+        <frame id="326:36928" name="Badge" x="326" y="8" width="40" height="40">
+          <instance id="326:36929" name="icon/x" x="10" y="10" width="20" height="20" />
+        </frame>
+      </frame>
+      <frame id="326:36930" name="Content" x="0" y="95" width="390" height="645">
+        <frame id="326:36931" name="Heading" x="24" y="16" width="342" height="76">
+          <text id="326:36932" name="توثيق حسابك" x="0" y="0" width="342" height="40" />
+          <text id="326:36933" name="أكمل الخطوتين لتبدأ بإرسال الأموال." x="0" y="48" width="342" height="28" />
+        </frame>
+        <frame id="326:36934" name="Overall" x="24" y="116" width="342" height="38">
+          <text id="326:36935" name="0 من 2 مكتملة" x="0" y="0" width="342" height="24" />
+          <frame id="326:36936" name="Progress" x="0" y="32" width="342" height="6">
+            <rounded-rectangle id="326:36937" name="Fill" x="338" y="0" width="4" height="6" />
+          </frame>
+        </frame>
+        <frame id="326:36938" name="Steps" x="24" y="178" width="342" height="174">
+          <frame id="326:36939" name="Step 1" x="0" y="0" width="342" height="80">
+            <frame id="326:36940" name="Status" x="18" y="30" width="48" height="20">
+              <text id="326:36941" name="لم تبدأ" x="8" y="0" width="32" height="20" />
+            </frame>
+            <frame id="326:36942" name="Text" x="82" y="18" width="194" height="44">
+              <text id="326:36943" name="البيانات الشخصية والهوية" x="0" y="0" width="194" height="24" />
+              <text id="326:36944" name="مسح الهوية · نحو دقيقتين" x="0" y="24" width="194" height="20" />
+            </frame>
+            <frame id="326:36945" name="Number" x="292" y="24" width="32" height="32">
+              <text id="326:36946" name="1" x="12" y="5" width="8" height="22" />
+            </frame>
+          </frame>
+          <frame id="326:36947" name="Step 2" x="0" y="96" width="342" height="78">
+            <instance id="326:36948" name="icon/lock" x="17" y="30" width="18" height="18" />
+            <frame id="326:36949" name="Text" x="51" y="17" width="226" height="44">
+              <text id="326:36950" name="عنوانك" x="0" y="0" width="226" height="24" />
+              <text id="326:36951" name="تُفتح بعد الخطوة 1" x="0" y="24" width="226" height="20" />
+            </frame>
+            <frame id="326:36952" name="Number" x="293" y="23" width="32" height="32">
+              <text id="326:36953" name="2" x="12" y="5" width="8" height="22" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="326:36954" name="Note" x="24" y="376" width="342" height="80">
+          <text id="326:36955" name="يتم حفظ تقدمك. يمكنك المغادرة والمتابعة في أي وقت." x="16" y="16" width="274" height="48" />
+          <instance id="326:36956" name="icon/info" x="306" y="30" width="20" height="20" />
+        </frame>
+      </frame>
+      <frame id="326:36957" name="Footer" x="0" y="740" width="390" height="104">
+        <instance id="326:36958" name="Button" x="24" y="16" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:36959" name="AR/4.2 Allow camera access" x="2120" y="160" width="390" height="844">
+      <instance id="326:36960" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <frame id="326:36961" name="Content" x="0" y="47" width="390" height="685">
+        <instance id="326:36962" name="Illustration/cameraOff" x="115" y="224.5" width="160" height="160" />
+        <frame id="326:36963" name="Text" x="24" y="408.5" width="342" height="92">
+          <text id="326:36964" name="اسمح بالوصول إلى الكاميرا" x="0" y="0" width="342" height="36" />
+          <text id="326:36965" name="نحتاج إلى الكاميرا لتصوير هويتك والتقاط صورة سيلفي. فعّلها من الإعدادات." x="0" y="44" width="342" height="48" />
+        </frame>
+      </frame>
+      <frame id="326:36966" name="Footer" x="0" y="732" width="390" height="112">
+        <instance id="326:36967" name="Button" x="24" y="16" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:36968" name="AR/4.3 Scan your ID" x="2630" y="160" width="390" height="844">
+      <instance id="326:36969" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <frame id="326:36970" name="Top" x="0" y="47" width="390" height="48">
+        <instance id="326:36971" name="Badge" x="326" y="8" width="40" height="40" />
+      </frame>
+      <frame id="326:36972" name="Content" x="0" y="95" width="390" height="613">
+        <frame id="326:36973" name="Text" x="24" y="24" width="342" height="92">
+          <text id="326:36974" name="صوّر جواز سفرك" x="0" y="0" width="342" height="36" />
+          <text id="326:36975" name="ضع صفحة الصورة داخل الإطار. تأكد من وجود إضاءة جيدة وظهور الزوايا الأربع." x="0" y="44" width="342" height="48" />
+        </frame>
+        <frame id="326:36976" name="Viewfinder" x="24" y="140" width="342" height="216" />
+        <frame id="326:36977" name="Hint" x="152" y="380" width="86" height="36">
+          <text id="326:36978" name="لا تتحرك…" x="12" y="6" width="62" height="24" />
+        </frame>
+      </frame>
+      <frame id="326:36979" name="Footer" x="0" y="708" width="390" height="136">
+        <frame id="326:36980" name="Shutter" x="155" y="16" width="80" height="80">
+          <ellipse id="326:36981" name="Button" x="9" y="9" width="62" height="62" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="326:36982" name="AR/4.4 Review your details" x="3650" y="160" width="390" height="1200">
+      <instance id="326:36983" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="326:36984" name="Step Header" x="0" y="47" width="390" height="136" />
+      <frame id="326:36985" name="Content" x="0" y="183" width="390" height="912">
+        <frame id="326:36986" name="Banner/success" x="24" y="8" width="342" height="80">
+          <text id="326:36987" name="تم تصوير الهوية. تحقق من صحة هذه البيانات. تمت قراءتها من هويتك ولا يمكن تعديلها." x="16" y="16" width="274" height="48" />
+          <instance id="326:36988" name="icon/check" x="306" y="16" width="20" height="20" />
+        </frame>
+        <instance id="326:36989" name="Text Field" x="24" y="104" width="342" height="64" />
+        <instance id="326:36990" name="Text Field" x="24" y="184" width="342" height="64" />
+        <instance id="326:36991" name="Text Field" x="24" y="264" width="342" height="64" />
+        <instance id="326:36992" name="Text Field" x="24" y="344" width="342" height="64" />
+        <instance id="326:36993" name="Text Field" x="24" y="424" width="342" height="64" />
+        <instance id="326:36994" name="Text Field" x="24" y="504" width="342" height="64" />
+        <instance id="326:36995" name="Text Field" x="24" y="584" width="342" height="64" />
+        <instance id="326:36996" name="Text Field" x="24" y="664" width="342" height="64" />
+        <instance id="326:36997" name="Text Field" x="24" y="744" width="342" height="64" />
+        <instance id="326:36998" name="Text Field" x="24" y="824" width="342" height="64" />
+      </frame>
+      <frame id="326:36999" name="Footer" x="0" y="1095" width="390" height="105">
+        <instance id="326:37000" name="Button" x="24" y="17" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:37001" name="AR/4.5 Enter your details manually" x="4160" y="160" width="390" height="1366">
+      <instance id="326:37002" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="326:37003" name="Step Header" x="0" y="47" width="390" height="136" />
+      <frame id="326:37004" name="Content" x="0" y="183" width="390" height="1078">
+        <frame id="326:37005" name="Banner/info" x="24" y="8" width="342" height="80">
+          <text id="326:37006" name="أدخل بياناتك كما تظهر تماماً في هويتك. سيقارنها فريقنا بصورة هويتك." x="16" y="16" width="274" height="48" />
+          <instance id="326:37007" name="icon/check" x="306" y="16" width="20" height="20" />
+        </frame>
+        <instance id="326:37008" name="Text Field" x="24" y="104" width="342" height="64" />
+        <instance id="326:37009" name="Text Field" x="24" y="184" width="342" height="64" />
+        <instance id="326:37010" name="Text Field" x="24" y="264" width="342" height="64" />
+        <instance id="326:37011" name="Text Field" x="24" y="344" width="342" height="64" />
+        <instance id="326:37012" name="Text Field" x="24" y="424" width="342" height="64" />
+        <instance id="326:37013" name="Text Field" x="24" y="504" width="342" height="64" />
+        <instance id="326:37014" name="Text Field" x="24" y="584" width="342" height="64" />
+        <instance id="326:37015" name="Text Field" x="24" y="664" width="342" height="64" />
+        <instance id="326:37016" name="Text Field" x="24" y="744" width="342" height="64" />
+        <instance id="326:37017" name="Text Field" x="24" y="824" width="342" height="64" />
+        <frame id="326:37018" name="ID photo" x="24" y="904" width="342" height="150">
+          <frame id="326:37019" name="Top" x="17" y="17" width="308" height="44">
+            <frame id="326:37020" name="Text" x="0" y="0" width="252" height="44">
+              <text id="326:37021" name="صورة هويتك" x="0" y="0" width="252" height="24" />
+              <text id="326:37022" name="جواز السفر أو رخصة القيادة" x="0" y="24" width="252" height="20" />
+            </frame>
+            <frame id="326:37023" name="Badge" x="268" y="0" width="40" height="40">
+              <instance id="326:37024" name="icon/home" x="10" y="10" width="20" height="20" />
+            </frame>
+          </frame>
+          <instance id="326:37025" name="Button" x="17" y="77" width="308" height="56" />
+        </frame>
+      </frame>
+      <frame id="326:37026" name="Footer" x="0" y="1261" width="390" height="105">
+        <instance id="326:37027" name="Button" x="24" y="17" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:37028" name="AR/4.5a Upload a photo of your ID" x="4670" y="160" width="390" height="844">
+      <instance id="326:37029" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="326:37030" name="Step Header" x="0" y="47" width="390" height="136" />
+      <frame id="326:37031" name="Content" x="0" y="183" width="390" height="1078">
+        <frame id="326:37032" name="Banner/info" x="24" y="8" width="342" height="80">
+          <text id="326:37033" name="أدخل بياناتك كما تظهر تماماً في هويتك. سيقارنها فريقنا بصورة هويتك." x="16" y="16" width="274" height="48" />
+          <instance id="326:37034" name="icon/check" x="306" y="16" width="20" height="20" />
+        </frame>
+        <instance id="326:37035" name="Text Field" x="24" y="104" width="342" height="64" />
+        <instance id="326:37036" name="Text Field" x="24" y="184" width="342" height="64" />
+        <instance id="326:37037" name="Text Field" x="24" y="264" width="342" height="64" />
+        <instance id="326:37038" name="Text Field" x="24" y="344" width="342" height="64" />
+        <instance id="326:37039" name="Text Field" x="24" y="424" width="342" height="64" />
+        <instance id="326:37040" name="Text Field" x="24" y="504" width="342" height="64" />
+        <instance id="326:37041" name="Text Field" x="24" y="584" width="342" height="64" />
+        <instance id="326:37042" name="Text Field" x="24" y="664" width="342" height="64" />
+        <instance id="326:37043" name="Text Field" x="24" y="744" width="342" height="64" />
+        <instance id="326:37044" name="Text Field" x="24" y="824" width="342" height="64" />
+        <frame id="326:37045" name="ID photo" x="24" y="904" width="342" height="150">
+          <frame id="326:37046" name="Top" x="17" y="17" width="308" height="44">
+            <frame id="326:37047" name="Text" x="0" y="0" width="252" height="44">
+              <text id="326:37048" name="صورة هويتك" x="0" y="0" width="252" height="24" />
+              <text id="326:37049" name="جواز السفر أو رخصة القيادة" x="0" y="24" width="252" height="20" />
+            </frame>
+            <frame id="326:37050" name="Badge" x="268" y="0" width="40" height="40">
+              <instance id="326:37051" name="icon/home" x="10" y="10" width="20" height="20" />
+            </frame>
+          </frame>
+          <instance id="326:37052" name="Button" x="17" y="77" width="308" height="56" />
+        </frame>
+      </frame>
+      <frame id="326:37053" name="Footer" x="0" y="1261" width="390" height="105">
+        <instance id="326:37054" name="Button" x="24" y="17" width="342" height="56" />
+      </frame>
+      <rounded-rectangle id="326:37055" name="Scrim" x="0" y="0" width="390" height="1120" />
+      <frame id="326:37056" name="Bottom Sheet" x="0" y="288" width="390" height="556">
+        <frame id="326:37057" name="Grabber" x="24" y="16" width="342" height="4">
+          <rounded-rectangle id="326:37058" name="Rectangle" x="151" y="0" width="40" height="4" />
+        </frame>
+        <frame id="326:37059" name="Head" x="24" y="44" width="342" height="32">
+          <frame id="326:37060" name="Badge" x="0" y="0" width="32" height="32">
+            <instance id="326:37061" name="icon/x" x="8" y="8" width="16" height="16" />
+          </frame>
+          <text id="326:37062" name="صورة هويتك" x="232" y="0" width="110" height="32" />
+        </frame>
+        <text id="326:37063" name="ارفع صورة واضحة للهوية التي أدخلت بياناتها. يجب أن تظهر الزوايا الأربع والنص بوضوح." x="24" y="100" width="342" height="48" />
+        <frame id="326:37064" name="Accepted" x="24" y="172" width="342" height="100">
+          <text id="326:37065" name="الهويات المقبولة" x="0" y="0" width="342" height="24" />
+          <frame id="326:37066" name="Chips" x="88" y="32" width="254" height="40">
+            <frame id="326:37067" name="Doc" x="0" y="0" width="129" height="40">
+              <text id="326:37068" name="رخصة القيادة" x="16" y="8" width="75" height="24" />
+              <instance id="326:37069" name="icon/file" x="99" y="13" width="14" height="14" />
+            </frame>
+            <frame id="326:37070" name="Doc" x="137" y="0" width="117" height="40">
+              <text id="326:37071" name="جواز السفر" x="16" y="8" width="63" height="24" />
+              <instance id="326:37072" name="icon/file" x="87" y="13" width="14" height="14" />
+            </frame>
+          </frame>
+          <text id="326:37073" name="يجب ألا تكون منتهية الصلاحية" x="0" y="80" width="342" height="20" />
+        </frame>
+        <frame id="326:37074" name="Options" x="24" y="296" width="342" height="184">
+          <frame id="326:37075" name="Option/camera" x="0" y="0" width="342" height="56">
+            <instance id="326:37076" name="icon/chevronRight" x="0" y="18" width="20" height="20" />
+            <text id="326:37077" name="التقط صورة" x="36" y="16" width="250" height="24" />
+            <frame id="326:37078" name="Badge" x="302" y="8" width="40" height="40">
+              <instance id="326:37079" name="icon/camera" x="10" y="10" width="20" height="20" />
+            </frame>
+          </frame>
+          <frame id="326:37080" name="Option/image" x="0" y="64" width="342" height="56">
+            <instance id="326:37081" name="icon/chevronRight" x="0" y="18" width="20" height="20" />
+            <text id="326:37082" name="اختر من المعرض" x="36" y="16" width="250" height="24" />
+            <frame id="326:37083" name="Badge" x="302" y="8" width="40" height="40">
+              <instance id="326:37084" name="icon/image" x="10" y="10" width="20" height="20" />
+            </frame>
+          </frame>
+          <frame id="326:37085" name="Option/file" x="0" y="128" width="342" height="56">
+            <instance id="326:37086" name="icon/chevronRight" x="0" y="18" width="20" height="20" />
+            <text id="326:37087" name="ارفع ملفاً" x="36" y="16" width="250" height="24" />
+            <frame id="326:37088" name="Badge" x="302" y="8" width="40" height="40">
+              <instance id="326:37089" name="icon/file" x="10" y="10" width="20" height="20" />
+            </frame>
+          </frame>
+        </frame>
+        <text id="326:37090" name="JPG أو PNG أو PDF · بحد أقصى 5 ميغابايت" x="24" y="504" width="342" height="20" />
+      </frame>
+    </frame>
+    <frame id="326:37091" name="AR/4.6 Hub — step 1 done" x="7220" y="160" width="390" height="844">
+      <instance id="326:37092" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <frame id="326:37093" name="Top bar" x="0" y="47" width="390" height="48">
+        <frame id="326:37094" name="Badge" x="326" y="8" width="40" height="40">
+          <instance id="326:37095" name="icon/x" x="10" y="10" width="20" height="20" />
+        </frame>
+      </frame>
+      <frame id="326:37096" name="Content" x="0" y="95" width="390" height="645">
+        <frame id="326:37097" name="Heading" x="24" y="16" width="342" height="76">
+          <text id="326:37098" name="توثيق حسابك" x="0" y="0" width="342" height="40" />
+          <text id="326:37099" name="أكمل الخطوتين لتبدأ بإرسال الأموال." x="0" y="48" width="342" height="28" />
+        </frame>
+        <frame id="326:37100" name="Overall" x="24" y="116" width="342" height="38">
+          <text id="326:37101" name="1 من 2 مكتملة" x="0" y="0" width="342" height="24" />
+          <frame id="326:37102" name="Progress" x="0" y="32" width="342" height="6">
+            <rounded-rectangle id="326:37103" name="Fill" x="171" y="0" width="171" height="6" />
+          </frame>
+        </frame>
+        <frame id="326:37104" name="Steps" x="24" y="178" width="342" height="174">
+          <frame id="326:37105" name="Step 1" x="0" y="0" width="342" height="78">
+            <frame id="326:37106" name="Status" x="17" y="29" width="50" height="20">
+              <text id="326:37107" name="مكتملة" x="8" y="0" width="34" height="20" />
+            </frame>
+            <frame id="326:37108" name="Text" x="83" y="17" width="194" height="44">
+              <text id="326:37109" name="البيانات الشخصية والهوية" x="0" y="0" width="194" height="24" />
+              <text id="326:37110" name="مسح الهوية · نحو دقيقتين" x="0" y="24" width="194" height="20" />
+            </frame>
+            <frame id="326:37111" name="Badge" x="293" y="23" width="32" height="32">
+              <instance id="326:37112" name="icon/check" x="8" y="8" width="16" height="16" />
+            </frame>
+          </frame>
+          <frame id="326:37113" name="Step 2" x="0" y="94" width="342" height="80">
+            <frame id="326:37114" name="Status" x="18" y="30" width="69" height="20">
+              <text id="326:37115" name="قيد التنفيذ" x="8" y="0" width="53" height="20" />
+            </frame>
+            <frame id="326:37116" name="Text" x="103" y="18" width="173" height="44">
+              <text id="326:37117" name="عنوانك" x="0" y="0" width="173" height="24" />
+              <text id="326:37118" name="نحو دقيقة واحدة" x="0" y="24" width="173" height="20" />
+            </frame>
+            <frame id="326:37119" name="Number" x="292" y="24" width="32" height="32">
+              <text id="326:37120" name="2" x="12" y="5" width="8" height="22" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="326:37121" name="Note" x="24" y="376" width="342" height="56">
+          <text id="326:37122" name="تابع من حيث توقفت: عنوانك." x="16" y="16" width="274" height="24" />
+          <instance id="326:37123" name="icon/info" x="306" y="18" width="20" height="20" />
+        </frame>
+      </frame>
+      <frame id="326:37124" name="Footer" x="0" y="740" width="390" height="104">
+        <instance id="326:37125" name="Button" x="24" y="16" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:37126" name="AR/4.6a Hub — ID in review" x="6710" y="160" width="390" height="844">
+      <instance id="326:37127" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <frame id="326:37128" name="Top bar" x="0" y="47" width="390" height="48">
+        <frame id="326:37129" name="Badge" x="326" y="8" width="40" height="40">
+          <instance id="326:37130" name="icon/x" x="10" y="10" width="20" height="20" />
+        </frame>
+      </frame>
+      <frame id="326:37131" name="Content" x="0" y="95" width="390" height="645">
+        <frame id="326:37132" name="Heading" x="24" y="16" width="342" height="76">
+          <text id="326:37133" name="توثيق حسابك" x="0" y="0" width="342" height="40" />
+          <text id="326:37134" name="أكمل الخطوتين لتبدأ بإرسال الأموال." x="0" y="48" width="342" height="28" />
+        </frame>
+        <frame id="326:37135" name="Overall" x="24" y="116" width="342" height="38">
+          <text id="326:37136" name="تم إرسال خطوة من 2" x="0" y="0" width="342" height="24" />
+          <frame id="326:37137" name="Progress" x="0" y="32" width="342" height="6">
+            <rounded-rectangle id="326:37138" name="Fill" x="171" y="0" width="171" height="6" />
+          </frame>
+        </frame>
+        <frame id="326:37139" name="Steps" x="24" y="178" width="342" height="174">
+          <frame id="326:37140" name="Step 1" x="0" y="0" width="342" height="78">
+            <frame id="326:37141" name="Status" x="17" y="29" width="77" height="20">
+              <text id="326:37142" name="قيد المراجعة" x="8" y="0" width="61" height="20" />
+            </frame>
+            <frame id="326:37143" name="Text" x="110" y="17" width="167" height="44">
+              <text id="326:37144" name="البيانات الشخصية والهوية" x="0" y="0" width="167" height="24" />
+              <text id="326:37145" name="نراجع هويتك · حتى 24 ساعة" x="0" y="24" width="167" height="20" />
+            </frame>
+            <frame id="326:37146" name="Badge" x="293" y="23" width="32" height="32">
+              <instance id="326:37147" name="icon/check" x="8" y="8" width="16" height="16" />
+            </frame>
+          </frame>
+          <frame id="326:37148" name="Step 2" x="0" y="94" width="342" height="80">
+            <frame id="326:37149" name="Status" x="18" y="30" width="69" height="20">
+              <text id="326:37150" name="قيد التنفيذ" x="8" y="0" width="53" height="20" />
+            </frame>
+            <frame id="326:37151" name="Text" x="103" y="18" width="173" height="44">
+              <text id="326:37152" name="عنوانك" x="0" y="0" width="173" height="24" />
+              <text id="326:37153" name="نحو دقيقة واحدة" x="0" y="24" width="173" height="20" />
+            </frame>
+            <frame id="326:37154" name="Number" x="292" y="24" width="32" height="32">
+              <text id="326:37155" name="2" x="12" y="5" width="8" height="22" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="326:37156" name="Note" x="24" y="376" width="342" height="80">
+          <text id="326:37157" name="نراجع هويتك. يمكنك إضافة عنوانك في هذه الأثناء." x="16" y="16" width="274" height="48" />
+          <instance id="326:37158" name="icon/info" x="306" y="30" width="20" height="20" />
+        </frame>
+      </frame>
+      <frame id="326:37159" name="Footer" x="0" y="740" width="390" height="104">
+        <instance id="326:37160" name="Button" x="24" y="16" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:37161" name="AR/4.7a Your address — details found" x="8240" y="160" width="390" height="978">
+      <instance id="326:37162" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="326:37163" name="Step Header" x="0" y="47" width="390" height="136" />
+      <frame id="326:37164" name="Content" x="0" y="183" width="390" height="690">
+        <instance id="326:37165" name="Text Field" x="24" y="8" width="342" height="92" />
+        <instance id="326:37166" name="Text Field" x="24" y="116" width="342" height="64" />
+        <instance id="326:37167" name="Text Field" x="24" y="196" width="342" height="64" />
+        <instance id="326:37168" name="Text Field" x="24" y="276" width="342" height="64" />
+        <instance id="326:37169" name="Text Field" x="24" y="356" width="342" height="64" />
+        <instance id="326:37170" name="Text Field" x="24" y="436" width="342" height="64" />
+        <frame id="326:37171" name="Proof of Address" x="24" y="516" width="342" height="150">
+          <frame id="326:37172" name="Top" x="17" y="17" width="308" height="44">
+            <frame id="326:37173" name="Text" x="0" y="0" width="252" height="44">
+              <text id="326:37174" name="إثبات العنوان" x="0" y="0" width="252" height="24" />
+              <text id="326:37175" name="وثّق عنوانك لرفع حد الإرسال." x="0" y="24" width="252" height="20" />
+            </frame>
+            <frame id="326:37176" name="Badge" x="268" y="0" width="40" height="40">
+              <instance id="326:37177" name="icon/home" x="10" y="10" width="20" height="20" />
+            </frame>
+          </frame>
+          <instance id="326:37178" name="Button" x="17" y="77" width="308" height="56" />
+        </frame>
+      </frame>
+      <frame id="326:37179" name="Footer" x="0" y="873" width="390" height="105">
+        <instance id="326:37180" name="Button" x="24" y="17" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:37181" name="AR/4.7 Your address — enter postcode" x="7730" y="160" width="390" height="1034">
+      <instance id="326:37182" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="326:37183" name="Step Header" x="0" y="47" width="390" height="136" />
+      <frame id="326:37184" name="Content" x="0" y="183" width="390" height="746">
+        <instance id="326:37185" name="Text Field" x="24" y="8" width="342" height="92" />
+        <instance id="326:37186" name="Button" x="24" y="116" width="342" height="40" />
+        <instance id="326:37187" name="Text Field" x="24" y="172" width="342" height="64" />
+        <instance id="326:37188" name="Text Field" x="24" y="252" width="342" height="64" />
+        <instance id="326:37189" name="Text Field" x="24" y="332" width="342" height="64" />
+        <instance id="326:37190" name="Text Field" x="24" y="412" width="342" height="64" />
+        <instance id="326:37191" name="Text Field" x="24" y="492" width="342" height="64" />
+        <frame id="326:37192" name="Proof of Address" x="24" y="572" width="342" height="150">
+          <frame id="326:37193" name="Top" x="17" y="17" width="308" height="44">
+            <frame id="326:37194" name="Text" x="0" y="0" width="252" height="44">
+              <text id="326:37195" name="إثبات العنوان" x="0" y="0" width="252" height="24" />
+              <text id="326:37196" name="وثّق عنوانك لرفع حد الإرسال." x="0" y="24" width="252" height="20" />
+            </frame>
+            <frame id="326:37197" name="Badge" x="268" y="0" width="40" height="40">
+              <instance id="326:37198" name="icon/home" x="10" y="10" width="20" height="20" />
+            </frame>
+          </frame>
+          <instance id="326:37199" name="Button" x="17" y="77" width="308" height="56" />
+        </frame>
+      </frame>
+      <frame id="326:37200" name="Footer" x="0" y="929" width="390" height="105">
+        <instance id="326:37201" name="Button" x="24" y="17" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:37202" name="AR/4.8 Proof of address (sheet)" x="8750" y="160" width="390" height="978">
+      <instance id="326:37203" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="326:37204" name="Step Header" x="0" y="47" width="390" height="136" />
+      <frame id="326:37205" name="Content" x="0" y="183" width="390" height="690">
+        <instance id="326:37206" name="Text Field" x="24" y="8" width="342" height="92" />
+        <instance id="326:37207" name="Text Field" x="24" y="116" width="342" height="64" />
+        <instance id="326:37208" name="Text Field" x="24" y="196" width="342" height="64" />
+        <instance id="326:37209" name="Text Field" x="24" y="276" width="342" height="64" />
+        <instance id="326:37210" name="Text Field" x="24" y="356" width="342" height="64" />
+        <instance id="326:37211" name="Text Field" x="24" y="436" width="342" height="64" />
+        <frame id="326:37212" name="Proof of Address" x="24" y="516" width="342" height="150">
+          <frame id="326:37213" name="Top" x="17" y="17" width="308" height="44">
+            <frame id="326:37214" name="Text" x="0" y="0" width="252" height="44">
+              <text id="326:37215" name="إثبات العنوان" x="0" y="0" width="252" height="24" />
+              <text id="326:37216" name="وثّق عنوانك لرفع حد الإرسال." x="0" y="24" width="252" height="20" />
+            </frame>
+            <frame id="326:37217" name="Badge" x="268" y="0" width="40" height="40">
+              <instance id="326:37218" name="icon/home" x="10" y="10" width="20" height="20" />
+            </frame>
+          </frame>
+          <instance id="326:37219" name="Button" x="17" y="77" width="308" height="56" />
+        </frame>
+      </frame>
+      <frame id="326:37220" name="Footer" x="0" y="873" width="390" height="105">
+        <instance id="326:37221" name="Button" x="24" y="17" width="342" height="56" />
+      </frame>
+      <rounded-rectangle id="326:37222" name="Scrim" x="0" y="0" width="390" height="1126" />
+      <frame id="326:37223" name="Bottom Sheet" x="0" y="570" width="390" height="556">
+        <frame id="326:37224" name="Grabber" x="24" y="16" width="342" height="4">
+          <rounded-rectangle id="326:37225" name="Rectangle" x="151" y="0" width="40" height="4" />
+        </frame>
+        <frame id="326:37226" name="Head" x="24" y="44" width="342" height="32">
+          <frame id="326:37227" name="Badge" x="0" y="0" width="32" height="32">
+            <instance id="326:37228" name="icon/x" x="8" y="8" width="16" height="16" />
+          </frame>
+          <text id="326:37229" name="إثبات العنوان" x="235" y="0" width="107" height="32" />
+        </frame>
+        <text id="326:37230" name="توثيق عنوانك يساعدنا على الالتزام باللوائح المالية وحماية حسابك، ويرفع حدّ الإرسال لديك." x="24" y="100" width="342" height="48" />
+        <frame id="326:37231" name="Accepted" x="24" y="172" width="342" height="100">
+          <text id="326:37232" name="المستندات المقبولة" x="0" y="0" width="342" height="24" />
+          <frame id="326:37233" name="Chips" x="90" y="32" width="252" height="40">
+            <frame id="326:37234" name="Doc" x="0" y="0" width="117" height="40">
+              <text id="326:37235" name="فاتورة مياه" x="16" y="8" width="63" height="24" />
+              <instance id="326:37236" name="icon/file" x="87" y="13" width="14" height="14" />
+            </frame>
+            <frame id="326:37237" name="Doc" x="125" y="0" width="127" height="40">
+              <text id="326:37238" name="فاتورة كهرباء" x="16" y="8" width="73" height="24" />
+              <instance id="326:37239" name="icon/file" x="97" y="13" width="14" height="14" />
+            </frame>
+          </frame>
+          <text id="326:37240" name="يجب أن تكون صادرة خلال آخر 3 أشهر" x="0" y="80" width="342" height="20" />
+        </frame>
+        <frame id="326:37241" name="Options" x="24" y="296" width="342" height="184">
+          <frame id="326:37242" name="Option/camera" x="0" y="0" width="342" height="56">
+            <instance id="326:37243" name="icon/chevronRight" x="0" y="18" width="20" height="20" />
+            <text id="326:37244" name="التقط صورة" x="36" y="16" width="250" height="24" />
+            <frame id="326:37245" name="Badge" x="302" y="8" width="40" height="40">
+              <instance id="326:37246" name="icon/camera" x="10" y="10" width="20" height="20" />
+            </frame>
+          </frame>
+          <frame id="326:37247" name="Option/image" x="0" y="64" width="342" height="56">
+            <instance id="326:37248" name="icon/chevronRight" x="0" y="18" width="20" height="20" />
+            <text id="326:37249" name="اختر من المعرض" x="36" y="16" width="250" height="24" />
+            <frame id="326:37250" name="Badge" x="302" y="8" width="40" height="40">
+              <instance id="326:37251" name="icon/image" x="10" y="10" width="20" height="20" />
+            </frame>
+          </frame>
+          <frame id="326:37252" name="Option/file" x="0" y="128" width="342" height="56">
+            <instance id="326:37253" name="icon/chevronRight" x="0" y="18" width="20" height="20" />
+            <text id="326:37254" name="ارفع ملفاً" x="36" y="16" width="250" height="24" />
+            <frame id="326:37255" name="Badge" x="302" y="8" width="40" height="40">
+              <instance id="326:37256" name="icon/file" x="10" y="10" width="20" height="20" />
+            </frame>
+          </frame>
+        </frame>
+        <text id="326:37257" name="JPG أو PNG أو PDF · بحد أقصى 5 ميغابايت" x="24" y="504" width="342" height="20" />
+      </frame>
+    </frame>
+    <frame id="326:37258" name="AR/4.8a Proof of address uploaded" x="9260" y="160" width="390" height="954">
+      <instance id="326:37259" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="326:37260" name="Step Header" x="0" y="47" width="390" height="136" />
+      <frame id="326:37261" name="Content" x="0" y="183" width="390" height="666">
+        <instance id="326:37262" name="Text Field" x="24" y="8" width="342" height="92" />
+        <instance id="326:37263" name="Text Field" x="24" y="116" width="342" height="64" />
+        <instance id="326:37264" name="Text Field" x="24" y="196" width="342" height="64" />
+        <instance id="326:37265" name="Text Field" x="24" y="276" width="342" height="64" />
+        <instance id="326:37266" name="Text Field" x="24" y="356" width="342" height="64" />
+        <instance id="326:37267" name="Text Field" x="24" y="436" width="342" height="64" />
+        <frame id="326:37268" name="Proof of Address" x="24" y="516" width="342" height="126">
+          <frame id="326:37269" name="Top" x="17" y="17" width="308" height="44">
+            <frame id="326:37270" name="Text" x="0" y="0" width="252" height="44">
+              <text id="326:37271" name="إثبات العنوان" x="0" y="0" width="252" height="24" />
+              <text id="326:37272" name="british-gas-bill-oct.pdf · 1.2 MB" x="0" y="24" width="252" height="20" />
+            </frame>
+            <frame id="326:37273" name="Thumbnail" x="268" y="0" width="40" height="40">
+              <instance id="326:37274" name="icon/home" x="10" y="10" width="20" height="20" />
+            </frame>
+          </frame>
+          <frame id="326:37275" name="Actions" x="17" y="77" width="308" height="32">
+            <instance id="326:37276" name="Button" x="58" y="0" width="68" height="32" />
+            <instance id="326:37277" name="Button" x="134" y="0" width="91" height="32" />
+            <instance id="326:37278" name="Button" x="233" y="0" width="75" height="32" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="326:37279" name="Footer" x="0" y="849" width="390" height="105">
+        <instance id="326:37280" name="Button" x="24" y="17" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:37281" name="AR/4.9 Hub — under review" x="10790" y="160" width="390" height="844">
+      <instance id="326:37282" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <frame id="326:37283" name="Top bar" x="0" y="47" width="390" height="48">
+        <frame id="326:37284" name="Badge" x="326" y="8" width="40" height="40">
+          <instance id="326:37285" name="icon/x" x="10" y="10" width="20" height="20" />
+        </frame>
+      </frame>
+      <frame id="326:37286" name="Content" x="0" y="95" width="390" height="645">
+        <frame id="326:37287" name="Heading" x="24" y="16" width="342" height="76">
+          <text id="326:37288" name="توثيق حسابك" x="0" y="0" width="342" height="40" />
+          <text id="326:37289" name="أكمل الخطوتين لتبدأ بإرسال الأموال." x="0" y="48" width="342" height="28" />
+        </frame>
+        <frame id="326:37290" name="Overall" x="24" y="116" width="342" height="38">
+          <text id="326:37291" name="تم إرسال الخطوتين" x="0" y="0" width="342" height="24" />
+          <frame id="326:37292" name="Progress" x="0" y="32" width="342" height="6">
+            <rounded-rectangle id="326:37293" name="Fill" x="0" y="0" width="342" height="6" />
+          </frame>
+        </frame>
+        <frame id="326:37294" name="Steps" x="24" y="178" width="342" height="192">
+          <frame id="326:37295" name="Step 1" x="0" y="0" width="342" height="78">
+            <frame id="326:37296" name="Status" x="17" y="29" width="50" height="20">
+              <text id="326:37297" name="مكتملة" x="8" y="0" width="34" height="20" />
+            </frame>
+            <frame id="326:37298" name="Text" x="83" y="17" width="194" height="44">
+              <text id="326:37299" name="البيانات الشخصية والهوية" x="0" y="0" width="194" height="24" />
+              <text id="326:37300" name="مسح الهوية · نحو دقيقتين" x="0" y="24" width="194" height="20" />
+            </frame>
+            <frame id="326:37301" name="Badge" x="293" y="23" width="32" height="32">
+              <instance id="326:37302" name="icon/check" x="8" y="8" width="16" height="16" />
+            </frame>
+          </frame>
+          <frame id="326:37303" name="Step 2" x="0" y="94" width="342" height="98">
+            <frame id="326:37304" name="Status" x="17" y="39" width="77" height="20">
+              <text id="326:37305" name="قيد المراجعة" x="8" y="0" width="61" height="20" />
+            </frame>
+            <frame id="326:37306" name="Text" x="110" y="17" width="167" height="64">
+              <text id="326:37307" name="عنوانك" x="0" y="0" width="167" height="24" />
+              <text id="326:37308" name="نراجع إثبات العنوان · حتى 24 ساعة" x="0" y="24" width="167" height="40" />
+            </frame>
+            <frame id="326:37309" name="Badge" x="293" y="33" width="32" height="32">
+              <instance id="326:37310" name="icon/check" x="8" y="8" width="16" height="16" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="326:37311" name="Note" x="24" y="394" width="342" height="80">
+          <text id="326:37312" name="سنبلغك فور مراجعة بياناتك، عادةً خلال 24 ساعة." x="16" y="16" width="274" height="48" />
+          <instance id="326:37313" name="icon/info" x="306" y="30" width="20" height="20" />
+        </frame>
+      </frame>
+      <frame id="326:37314" name="Footer" x="0" y="740" width="390" height="104">
+        <instance id="326:37315" name="Button" x="24" y="16" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:37316" name="AR/4.5b ID photo uploaded" x="5180" y="160" width="390" height="1342">
+      <instance id="326:37317" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="326:37318" name="Step Header" x="0" y="47" width="390" height="136" />
+      <frame id="326:37319" name="Content" x="0" y="183" width="390" height="1054">
+        <frame id="326:37320" name="Banner/info" x="24" y="8" width="342" height="80">
+          <text id="326:37321" name="أدخل بياناتك كما تظهر تماماً في هويتك. سيقارنها فريقنا بصورة هويتك." x="16" y="16" width="274" height="48" />
+          <instance id="326:37322" name="icon/check" x="306" y="16" width="20" height="20" />
+        </frame>
+        <instance id="326:37323" name="Text Field" x="24" y="104" width="342" height="64" />
+        <instance id="326:37324" name="Text Field" x="24" y="184" width="342" height="64" />
+        <instance id="326:37325" name="Text Field" x="24" y="264" width="342" height="64" />
+        <instance id="326:37326" name="Text Field" x="24" y="344" width="342" height="64" />
+        <instance id="326:37327" name="Text Field" x="24" y="424" width="342" height="64" />
+        <instance id="326:37328" name="Text Field" x="24" y="504" width="342" height="64" />
+        <instance id="326:37329" name="Text Field" x="24" y="584" width="342" height="64" />
+        <instance id="326:37330" name="Text Field" x="24" y="664" width="342" height="64" />
+        <instance id="326:37331" name="Text Field" x="24" y="744" width="342" height="64" />
+        <instance id="326:37332" name="Text Field" x="24" y="824" width="342" height="64" />
+        <frame id="326:37333" name="ID photo" x="24" y="904" width="342" height="126">
+          <frame id="326:37334" name="Top" x="17" y="17" width="308" height="44">
+            <frame id="326:37335" name="Text" x="0" y="0" width="252" height="44">
+              <text id="326:37336" name="صورة هويتك" x="0" y="0" width="252" height="24" />
+              <text id="326:37337" name="passport-photo-page.jpg · 2.4 MB" x="0" y="24" width="252" height="20" />
+            </frame>
+            <frame id="326:37338" name="Thumbnail" x="268" y="0" width="40" height="40">
+              <instance id="326:37339" name="icon/home" x="10" y="10" width="20" height="20" />
+            </frame>
+          </frame>
+          <frame id="326:37340" name="Actions" x="17" y="77" width="308" height="32">
+            <instance id="326:37341" name="Button" x="58" y="0" width="68" height="32" />
+            <instance id="326:37342" name="Button" x="134" y="0" width="91" height="32" />
+            <instance id="326:37343" name="Button" x="233" y="0" width="75" height="32" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="326:37344" name="Footer" x="0" y="1237" width="390" height="105">
+        <instance id="326:37345" name="Button" x="24" y="17" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:37346" name="AR/4.0a What you’ll need" x="590" y="160" width="390" height="819">
+      <instance id="326:37347" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <frame id="326:37348" name="Top" x="0" y="47" width="390" height="48">
+        <instance id="326:37349" name="Badge" x="24" y="8" width="40" height="40" />
+      </frame>
+      <frame id="326:37350" name="Content" x="0" y="95" width="390" height="548">
+        <frame id="326:37351" name="Heading" x="24" y="24" width="342" height="104">
+          <text id="326:37352" name="قبل أن تبدأ" x="0" y="0" width="342" height="40" />
+          <text id="326:37353" name="جهّز هذه المستندات. يستغرق ذلك حوالي 3 دقائق، ويمكنك التوقف في أي وقت." x="0" y="48" width="342" height="56" />
+        </frame>
+        <frame id="326:37354" name="Group · 1. هويتك" x="24" y="152" width="342" height="208">
+          <text id="326:37355" name="1. هويتك" x="0" y="0" width="342" height="28" />
+          <frame id="326:37356" name="List" x="0" y="36" width="342" height="144">
+            <instance id="326:37357" name="Item" x="16" y="16" width="310" height="48" />
+            <instance id="326:37358" name="Item" x="16" y="80" width="310" height="48" />
+          </frame>
+          <text id="326:37359" name="يجب أن تكون سارية وغير منتهية الصلاحية. ستصوّرها بكاميرا هاتفك." x="0" y="188" width="342" height="20" />
+        </frame>
+        <frame id="326:37360" name="Group · 2. إثبات العنوان" x="24" y="384" width="342" height="164">
+          <text id="326:37361" name="2. إثبات العنوان" x="0" y="0" width="342" height="28" />
+          <frame id="326:37362" name="List" x="0" y="36" width="342" height="80">
+            <instance id="326:37363" name="Item" x="16" y="16" width="310" height="48" />
+          </frame>
+          <text id="326:37364" name="صادر خلال آخر 3 أشهر ويُظهر اسمك الكامل وعنوانك في المملكة المتحدة. صورة أو ملف PDF." x="0" y="124" width="342" height="40" />
+        </frame>
+      </frame>
+      <frame id="326:37365" name="Footer" x="0" y="643" width="390" height="176">
+        <instance id="326:37366" name="Button" x="24" y="16" width="342" height="56" />
+        <instance id="326:37367" name="Button" x="24" y="80" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:37368" name="AR/4.5c Preview ID photo" x="5690" y="160" width="390" height="844">
+      <instance id="326:37369" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <frame id="326:37370" name="Top bar" x="0" y="47" width="390" height="48">
+        <frame id="326:37371" name="Badge" x="326" y="8" width="40" height="40">
+          <instance id="326:37372" name="icon/x" x="10" y="10" width="20" height="20" />
+        </frame>
+      </frame>
+      <frame id="326:37373" name="Content" x="0" y="95" width="390" height="581">
+        <frame id="326:37374" name="Heading" x="24" y="16" width="342" height="64">
+          <text id="326:37375" name="صورة هويتك" x="0" y="0" width="342" height="36" />
+          <text id="326:37376" name="passport-photo-page.jpg · 2.4 MB · تم الرفع اليوم" x="0" y="40" width="342" height="24" />
+        </frame>
+        <frame id="326:37377" name="Preview" x="24" y="96" width="342" height="485">
+          <instance id="326:37378" name="Illustration/idCard" x="43" y="114.5" width="256" height="256" />
+        </frame>
+      </frame>
+      <frame id="326:37379" name="Footer" x="0" y="676" width="390" height="168">
+        <instance id="326:37380" name="Button" x="24" y="16" width="342" height="56" />
+        <instance id="326:37381" name="Button" x="24" y="80" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:37382" name="AR/4.5d Remove ID photo" x="6200" y="160" width="390" height="844">
+      <instance id="326:37383" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="326:37384" name="Step Header" x="0" y="47" width="390" height="136" />
+      <frame id="326:37385" name="Content" x="0" y="183" width="390" height="1078">
+        <frame id="326:37386" name="Banner/info" x="24" y="8" width="342" height="80">
+          <text id="326:37387" name="أدخل بياناتك كما تظهر تماماً في هويتك. سيقارنها فريقنا بصورة هويتك." x="16" y="16" width="274" height="48" />
+          <instance id="326:37388" name="icon/check" x="306" y="16" width="20" height="20" />
+        </frame>
+        <instance id="326:37389" name="Text Field" x="24" y="104" width="342" height="64" />
+        <instance id="326:37390" name="Text Field" x="24" y="184" width="342" height="64" />
+        <instance id="326:37391" name="Text Field" x="24" y="264" width="342" height="64" />
+        <instance id="326:37392" name="Text Field" x="24" y="344" width="342" height="64" />
+        <instance id="326:37393" name="Text Field" x="24" y="424" width="342" height="64" />
+        <instance id="326:37394" name="Text Field" x="24" y="504" width="342" height="64" />
+        <instance id="326:37395" name="Text Field" x="24" y="584" width="342" height="64" />
+        <instance id="326:37396" name="Text Field" x="24" y="664" width="342" height="64" />
+        <instance id="326:37397" name="Text Field" x="24" y="744" width="342" height="64" />
+        <instance id="326:37398" name="Text Field" x="24" y="824" width="342" height="64" />
+        <frame id="326:37399" name="ID photo" x="24" y="904" width="342" height="150">
+          <frame id="326:37400" name="Top" x="17" y="17" width="308" height="44">
+            <frame id="326:37401" name="Text" x="0" y="0" width="252" height="44">
+              <text id="326:37402" name="صورة هويتك" x="0" y="0" width="252" height="24" />
+              <text id="326:37403" name="passport-photo-page.jpg · تم الرفع" x="0" y="24" width="252" height="20" />
+            </frame>
+            <frame id="326:37404" name="Badge" x="268" y="0" width="40" height="40">
+              <instance id="326:37405" name="icon/home" x="10" y="10" width="20" height="20" />
+            </frame>
+          </frame>
+          <instance id="326:37406" name="Button" x="17" y="77" width="308" height="56" />
+        </frame>
+      </frame>
+      <frame id="326:37407" name="Footer" x="0" y="1261" width="390" height="105">
+        <instance id="326:37408" name="Button" x="24" y="17" width="342" height="56" />
+      </frame>
+      <rounded-rectangle id="326:37409" name="Scrim" x="0" y="0" width="390" height="1286" />
+      <frame id="326:37410" name="Bottom Sheet" x="0" y="576" width="390" height="268">
+        <instance id="326:37411" name="Sheet Grabber" x="24" y="8" width="342" height="4" />
+        <frame id="326:37412" name="Text" x="24" y="28" width="342" height="64">
+          <text id="326:37413" name="إزالة هذا المستند؟" x="0" y="0" width="342" height="32" />
+          <text id="326:37414" name="ستحتاج إلى رفع صورة هويتك مرة أخرى قبل الإرسال." x="0" y="40" width="342" height="24" />
+        </frame>
+        <instance id="326:37415" name="Button" x="24" y="108" width="342" height="56" />
+        <instance id="326:37416" name="Button" x="24" y="180" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:37417" name="AR/4.8b Preview proof of address" x="9770" y="160" width="390" height="844">
+      <instance id="326:37418" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <frame id="326:37419" name="Top bar" x="0" y="47" width="390" height="48">
+        <frame id="326:37420" name="Badge" x="326" y="8" width="40" height="40">
+          <instance id="326:37421" name="icon/x" x="10" y="10" width="20" height="20" />
+        </frame>
+      </frame>
+      <frame id="326:37422" name="Content" x="0" y="95" width="390" height="581">
+        <frame id="326:37423" name="Heading" x="24" y="16" width="342" height="64">
+          <text id="326:37424" name="إثبات العنوان" x="0" y="0" width="342" height="36" />
+          <text id="326:37425" name="british-gas-bill-oct.pdf · 1.2 MB · تم الرفع اليوم" x="0" y="40" width="342" height="24" />
+        </frame>
+        <frame id="326:37426" name="Preview" x="24" y="96" width="342" height="485">
+          <frame id="326:37427" name="Document page" x="61" y="163.5" width="220" height="158">
+            <rounded-rectangle id="326:37428" name="Rectangle" x="147" y="17" width="56" height="14" />
+            <rounded-rectangle id="326:37429" name="Line" x="15" y="39" width="188" height="6" />
+            <rounded-rectangle id="326:37430" name="Line" x="53" y="53" width="150" height="6" />
+            <rounded-rectangle id="326:37431" name="Line" x="33" y="67" width="170" height="6" />
+            <rounded-rectangle id="326:37432" name="Line" x="83" y="81" width="120" height="6" />
+            <rounded-rectangle id="326:37433" name="Line" x="15" y="95" width="188" height="6" />
+            <rounded-rectangle id="326:37434" name="Line" x="43" y="109" width="160" height="6" />
+            <rounded-rectangle id="326:37435" name="Line" x="103" y="123" width="100" height="6" />
+            <rounded-rectangle id="326:37436" name="Line" x="15" y="137" width="188" height="6" />
+            <rounded-rectangle id="326:37437" name="Line" x="63" y="151" width="140" height="6" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="326:37438" name="Footer" x="0" y="676" width="390" height="168">
+        <instance id="326:37439" name="Button" x="24" y="16" width="342" height="56" />
+        <instance id="326:37440" name="Button" x="24" y="80" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:37441" name="AR/4.8c Remove proof of address" x="10280" y="160" width="390" height="844">
+      <instance id="326:37442" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="326:37443" name="Step Header" x="0" y="47" width="390" height="136" />
+      <frame id="326:37444" name="Content" x="0" y="183" width="390" height="690">
+        <instance id="326:37445" name="Text Field" x="24" y="8" width="342" height="92" />
+        <instance id="326:37446" name="Text Field" x="24" y="116" width="342" height="64" />
+        <instance id="326:37447" name="Text Field" x="24" y="196" width="342" height="64" />
+        <instance id="326:37448" name="Text Field" x="24" y="276" width="342" height="64" />
+        <instance id="326:37449" name="Text Field" x="24" y="356" width="342" height="64" />
+        <instance id="326:37450" name="Text Field" x="24" y="436" width="342" height="64" />
+        <frame id="326:37451" name="Proof of Address" x="24" y="516" width="342" height="150">
+          <frame id="326:37452" name="Top" x="17" y="17" width="308" height="44">
+            <frame id="326:37453" name="Text" x="0" y="0" width="252" height="44">
+              <text id="326:37454" name="إثبات العنوان" x="0" y="0" width="252" height="24" />
+              <text id="326:37455" name="british-gas-bill-oct.pdf · تم الرفع" x="0" y="24" width="252" height="20" />
+            </frame>
+            <frame id="326:37456" name="Badge" x="268" y="0" width="40" height="40">
+              <instance id="326:37457" name="icon/home" x="10" y="10" width="20" height="20" />
+            </frame>
+          </frame>
+          <instance id="326:37458" name="Button" x="17" y="77" width="308" height="56" />
+        </frame>
+      </frame>
+      <frame id="326:37459" name="Footer" x="0" y="873" width="390" height="105">
+        <instance id="326:37460" name="Button" x="24" y="17" width="342" height="56" />
+      </frame>
+      <rounded-rectangle id="326:37461" name="Scrim" x="0" y="0" width="390" height="1126" />
+      <frame id="326:37462" name="Bottom Sheet" x="0" y="576" width="390" height="268">
+        <instance id="326:37463" name="Sheet Grabber" x="24" y="8" width="342" height="4" />
+        <frame id="326:37464" name="Text" x="24" y="28" width="342" height="64">
+          <text id="326:37465" name="إزالة هذا المستند؟" x="0" y="0" width="342" height="32" />
+          <text id="326:37466" name="ستحتاج إلى رفع إثبات العنوان مرة أخرى قبل الإرسال." x="0" y="40" width="342" height="24" />
+        </frame>
+        <instance id="326:37467" name="Button" x="24" y="108" width="342" height="56" />
+        <instance id="326:37468" name="Button" x="24" y="180" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:37469" name="AR/4.1a Choose your ID" x="1610" y="160" width="390" height="844">
+      <instance id="326:37470" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="326:37471" name="Step Header" x="0" y="47" width="390" height="136" />
+      <frame id="326:37472" name="Content" x="0" y="183" width="390" height="286">
+        <text id="326:37473" name="ما المستند الذي تريد تصويره؟ يجب أن يكون سارياً وغير منتهي الصلاحية." x="24" y="8" width="342" height="56" />
+        <frame id="326:37474" name="Options" x="24" y="80" width="342" height="182">
+          <instance id="326:37475" name="Option · passport" x="0" y="0" width="342" height="88" />
+          <instance id="326:37476" name="Option · licence" x="0" y="100" width="342" height="82" />
+        </frame>
+      </frame>
+      <frame id="326:37477" name="Footer" x="0" y="469" width="390" height="105">
+        <instance id="326:37478" name="Button" x="24" y="17" width="342" height="56" />
+      </frame>
+    </frame>
+    <frame id="326:37479" name="AR/4.3a Couldn’t read your ID — scan again or enter manually" x="3140" y="160" width="390" height="844">
+      <instance id="326:37480" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <frame id="326:37481" name="Content" x="0" y="47" width="390" height="621">
+        <instance id="326:37482" name="Illustration/error" x="115" y="44.5" width="160" height="160" />
+        <frame id="326:37483" name="Text" x="24" y="228.5" width="342" height="92">
+          <text id="326:37484" name="تعذّرت قراءة هويتك" x="0" y="0" width="342" height="36" />
+          <text id="326:37485" name="جرّب هذه النصائح وأعد التصوير، أو أدخل بياناتك يدوياً بدلاً من ذلك." x="0" y="44" width="342" height="48" />
+        </frame>
+        <frame id="326:37486" name="List" x="24" y="344.5" width="342" height="272">
+          <instance id="326:37487" name="Item" x="16" y="16" width="310" height="48" />
+          <instance id="326:37488" name="Item" x="16" y="80" width="310" height="48" />
+          <instance id="326:37489" name="Item" x="16" y="144" width="310" height="48" />
+          <instance id="326:37490" name="Item" x="16" y="208" width="310" height="48" />
+        </frame>
+      </frame>
+      <frame id="326:37491" name="Footer" x="0" y="668" width="390" height="176">
+        <instance id="326:37492" name="Button" x="24" y="16" width="342" height="56" />
+        <instance id="326:37493" name="Button" x="24" y="80" width="342" height="56" />
+      </frame>
+    </frame>
+  </section>
+</canvas>IMPORTANT: After you call this tool, you MUST call get_design_context if trying to implement the design, since this tool only returns metadata. If you do not call get_design_context, the agent will not be able to implement the design.
