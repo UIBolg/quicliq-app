@@ -90,6 +90,15 @@ export const sizes = {
   /** Status Bar 12:58 / 12:69 — design mock, 47 high, 68×12 indicators. Device-frame preview only. */
   statusBar: { height: 47, indicatorsWidth: 68, indicatorsHeight: 12 },
 
+  /** Back button in Step Header 21:455 / "Top" bars — 40 Fog circle, 20 arrowLeft. */
+  backButton: { size: 40, icon: 20 },
+
+  /** Keypad 281:8115 — iOS number pad mock (device-frame preview only): keys 46 high. */
+  keypad: { keyHeight: 46 },
+
+  /** Radio Option 282:9637 Icon=On — 40 white badge with a 20 icon. */
+  radioOptionIcon: { badge: 40, icon: 20 },
+
   /** Password Rule 281:7369 — 20 indicator (Met = Icon Badge 20 Success). */
   passwordRule: { indicator: 20 },
 } as const;

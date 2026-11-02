@@ -8,7 +8,7 @@
  * "Don't have an account? Sign up" centred (Body Slate + Body Medium Primary/Red link).
  *
  * No backend yet: "Log in" shows the Loading button (7.2 / 7.2e), then goes to the code-entry step
- * (7.2a by text / 7.2b by email), which is a placeholder until the verify-login screens are built.
+ * (7.2a by text / 7.2b by email).
  */
 import { useEffect, useRef, useState } from 'react';
 import { KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, View } from 'react-native';
@@ -36,7 +36,8 @@ export function LoginScreen({ navigation, route }: NativeStackScreenProps<RootSt
     setLoading(true);
     timer.current = setTimeout(() => {
       setLoading(false);
-      navigation.navigate('NotBuilt', { screenId: method === 'mobile' ? '7.2a' : '7.2b' });
+      if (method === 'mobile') navigation.navigate('7.2a', { phone: mobile || undefined });
+      else navigation.navigate('7.2b', { email: email || undefined });
     }, t.states.motion.mockRequest);
   };
 

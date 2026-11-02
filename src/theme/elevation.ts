@@ -14,4 +14,12 @@ export const elevation = {
     shadowRadius: 8,
     elevation: 2,
   },
+  /** Keypad key (281:8115) — raw 0 / 1 / 0, black 25% in Figma; Neutral/Ink 25% here (docs/figma-issues.md #29). */
+  keypadKey: {
+    shadowColor: colors['Neutral/Ink'],
+    shadowOpacity: 0.25,
+    shadowOffset: { width: 0, height: 1 },
+    shadowRadius: 0,
+    elevation: 1,
+  },
 } as const;

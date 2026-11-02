@@ -20,10 +20,12 @@ export type CodeInputProps = {
   status?: 'error' | 'success';
   autoFocus?: boolean;
   editable?: boolean;
+  /** Draw the focused box even without keyboard focus (device-frame preview with the Keypad mock). */
+  forceFocus?: boolean;
   testID?: string;
 };
 
-export function CodeInput({ value, onChangeText, onComplete, length = 6, status, autoFocus = true, editable = true, testID }: CodeInputProps) {
+export function CodeInput({ value, onChangeText, onComplete, length = 6, status, autoFocus = true, editable = true, forceFocus = false, testID }: CodeInputProps) {
   const t = useTheme();
   const { t: tr } = useTranslation();
   const input = useRef<ElementRef<typeof TextInput>>(null);
@@ -38,7 +40,7 @@ export function CodeInput({ value, onChangeText, onComplete, length = 6, status,
 
   const stateAt = (i: number): OtpDigitState => {
     if (status) return status;
-    if (focused && i === Math.min(value.length, length - 1) && value.length < length) return 'focused';
+    if ((focused || forceFocus) && editable && i === Math.min(value.length, length - 1) && value.length < length) return 'focused';
     return value[i] ? 'filled' : 'empty';
   };
 

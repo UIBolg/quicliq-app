@@ -57,7 +57,11 @@
       "attemptsLeft_other": "{{count}} attempts left"
     },
     "didntGetCode": "Didn’t get a code?",
-    "tryAnotherWay": "Try another way"
+    "tryAnotherWay": "Try another way",
+    "keypad": {
+      "fromMessages": "From Messages",
+      "delete": "Delete"
+    }
   },
   "registration": {
     "2_1": {
@@ -120,6 +124,18 @@
       "logIn": "Log in",
       "noAccount": "Don’t have an account?",
       "signUp": "Sign up"
+    },
+    "7_2": {
+      "title": "Verify it’s you",
+      "textedTo": "For your security, we’ve texted a 6-digit code to",
+      "emailedTo": "For your security, we’ve emailed a 6-digit code to"
+    },
+    "7_2c": {
+      "title": "How should we verify you?",
+      "body": "We’ll send a one-time code to make sure it’s really you.",
+      "sms": "Text message",
+      "email": "Email",
+      "send": "Send code"
     }
   },
   "notBuilt": {

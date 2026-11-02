@@ -32,3 +32,5 @@ Figma is never edited from code.
 | 25 | Resend Countdown 281:9668 State=Unlocked (281:9652 / AR 281:9667) | Unlocked label still says "Resend code in 0:42" (placeholder copy from Counting). | Unlocked shows "Resend code" / "إعادة إرسال الرمز" (build doc copy). |
 | 26 | Resend Countdown "Countdown" ring (281:9639) | Flattened image with a fixed ~3/4 arc; no spec for how it animates. | Draws the ring from tokens (Fog track, Slate arc, stroke/2xl); the arc shows the time left. |
 | 27 | OTP Digit 280:8044 Focused | Caret is static; no blink spec. Digit uses EN/H2 with no Lang variant. | Caret blinks (500 ms). Digits always EN/H2 so they stay Western in Arabic (CLAUDE.md rule). |
+| 28 | 7.2c "Top" (280:7912) and the other "Top" bars (7.7, 7.8, 7.8b, 7.8d) | Layer is an Icon Badge named "Badge" with `icon/message`, but the frames render a back arrow in a Fog circle. | Uses a Back button (arrowLeft 20 in a 40 Fog circle), as rendered. |
+| 29 | Keypad 281:8115 keys | Key shadow is a raw 0/1/0 black 25% effect (not a variable / effect style). | Shadow in `src/theme/elevation.ts` from Neutral/Ink at 25%. Keypad is drawn only in the web device-frame preview. |

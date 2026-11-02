@@ -27,3 +27,5 @@ export * from './CodeInput';
 export * from './ResendCountdown';
 export * from './CodeError';
 export * from './StatusBarMock';
+export * from './BackButton';
+export * from './Keypad';

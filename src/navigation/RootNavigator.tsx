@@ -9,6 +9,8 @@ import { useTheme } from '../theme';
 import { SplashScreen } from '../screens/onboarding/SplashScreen';
 import { OnboardingScreen } from '../screens/onboarding/OnboardingScreen';
 import { LoginScreen } from '../screens/login/LoginScreen';
+import { VerifyLoginScreen } from '../screens/login/VerifyLoginScreen';
+import { ChooseCodeMethodScreen } from '../screens/login/ChooseCodeMethodScreen';
 import { NotBuiltScreen } from '../screens/NotBuiltScreen';
 import { ComponentGallery } from '../screens/dev/ComponentGallery';
 import { FoundationsScreen } from '../screens/dev/FoundationsScreen';
@@ -37,6 +39,9 @@ export function RootNavigator() {
         <Stack.Screen name="Splash" component={SplashScreen} options={{ animation: 'fade' }} />
         <Stack.Screen name="Onboarding" component={OnboardingScreen} options={{ animation: 'fade' }} />
         <Stack.Screen name="7.1" component={LoginScreen} />
+        <Stack.Screen name="7.2a" component={VerifyLoginScreen} />
+        <Stack.Screen name="7.2b" component={VerifyLoginScreen} />
+        <Stack.Screen name="7.2c" component={ChooseCodeMethodScreen} />
         <Stack.Screen name="NotBuilt" component={NotBuiltScreen} />
         {__DEV__ ? (
           <>
