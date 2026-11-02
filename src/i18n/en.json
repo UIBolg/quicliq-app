@@ -212,6 +212,19 @@
     "empty": {
       "title": "No transfers yet",
       "body": "Your transfers will show here."
+    },
+    "limit": {
+      "title": "You can send",
+      "left": "left of your {{total}} lifetime limit",
+      "a11y": "{{used}} of {{total}} used"
+    },
+    "recipients": "Recent recipients",
+    "recipientNames": {
+      "r1": "Layla Haddad",
+      "r2": "Omar Khalil",
+      "r3": "Rana Saleh",
+      "r4": "Yousef Nasser",
+      "r5": "Huda Abbas"
     }
   }
 }

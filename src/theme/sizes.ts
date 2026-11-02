@@ -108,6 +108,10 @@ export const sizes = {
   /** Home (proposal) — setup progress bar 4 high with an 8-wide stub at 0 steps. */
   setupProgress: { height: 4, minFill: 8 },
 
+  /** Home (proposal) — sending-limit progress bar 8 high; recipient tile width (56 avatar + name). */
+  limitProgress: { height: 8 },
+  recipientTile: { width: 72 },
+
   /** Password Rule 281:7369 — 20 indicator (Met = Icon Badge 20 Success). */
   passwordRule: { indicator: 20 },
 } as const;

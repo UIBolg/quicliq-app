@@ -1,6 +1,7 @@
 /**
  * Avatar — Figma local component 280:8449 (Size=56): Primary/Red circle, white initials in H3.
  * Size 44 is not in Figma (added on request) — it uses Title so the initials fit.
+ * Tone `tint` (code addition, Home recipients): Alpha/Red 10% circle with Primary/Red initials.
  * AR screens (e.g. AR/7.0 139:3922) keep Latin initials in the EN style; the avatar sits on the start side.
  */
 import { View } from 'react-native';
@@ -10,11 +11,12 @@ import { getTextStyle, useTheme, type AvatarSize } from '../theme';
 export type AvatarProps = {
   initials: string;
   size?: AvatarSize;
+  tone?: 'brand' | 'tint';
   /** Full name for screen readers. */
   accessibilityLabel?: string;
 };
 
-export function Avatar({ initials, size = 56, accessibilityLabel }: AvatarProps) {
+export function Avatar({ initials, size = 56, tone = 'brand', accessibilityLabel }: AvatarProps) {
   const t = useTheme();
   const d = t.sizes.avatar[size];
   return (
@@ -26,7 +28,7 @@ export function Avatar({ initials, size = 56, accessibilityLabel }: AvatarProps)
         width: d,
         height: d,
         borderRadius: t.radius['radius/full'],
-        backgroundColor: t.colors['Primary/Red'],
+        backgroundColor: t.colors[tone === 'tint' ? 'Alpha/Red 10%' : 'Primary/Red'],
         alignItems: 'center',
         justifyContent: 'center',
         overflow: 'hidden',
@@ -35,7 +37,7 @@ export function Avatar({ initials, size = 56, accessibilityLabel }: AvatarProps)
       }}
     >
       {/* Latin initials always use the EN text style, as in the Figma AR screens. */}
-      <Text style={[getTextStyle(size === 56 ? 'H3' : 'Title', 'en'), { color: t.colors['Neutral/White'] }]}>{initials}</Text>
+      <Text style={[getTextStyle(size === 56 ? 'H3' : 'Title', 'en'), { color: t.colors[tone === 'tint' ? 'Primary/Red' : 'Neutral/White'] }]}>{initials}</Text>
     </View>
   );
 }

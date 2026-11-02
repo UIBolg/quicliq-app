@@ -5,7 +5,8 @@
  * designer's frames once they exist (docs/figma-issues.md #30). Sample data from src/mock/account.ts.
  *
  * Two variants (route param `variant`), sharing the header and the bottom tab bar:
- *  verified   — white page: Send card (Primary/Red: corridor, today's rate, "Send money") · Quick actions ·
+ *  verified   — white page: Sending limit card (Fog: "You can send £700", "left of your £800 lifetime limit",
+ *               progress of the amount used) · Primary "Send money" · Recent recipients (last 5, tap to send) ·
  *               Recent transfers.
  *  unverified — customer hasn't finished ID & address checks (Verify ID & Address 4.x). Neutral/Fog page with white
  *               cards: Setup card (Primary/Red: "Finish setting up to send money", n of 2 steps, progress bar,
@@ -16,8 +17,8 @@ import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { AppText, Avatar, Button, Flag, Icon, IconBadge, IconButton, Screen, type IconName } from '../../components';
-import { demoAccount, demoTransfers } from '../../mock/account';
+import { AppText, Avatar, Button, Icon, IconBadge, IconButton, Screen, type IconName } from '../../components';
+import { demoAccount, demoLimit, demoRecipients, demoTransfers } from '../../mock/account';
 import { useTheme, getTextStyle } from '../../theme';
 import type { RootStackParamList } from '../../navigation/routes';
 
@@ -81,48 +82,63 @@ function Header({ unverified, onBell }: { unverified: boolean; onBell: () => voi
 function VerifiedBody({ notBuilt }: { notBuilt: NotBuilt }) {
   const t = useTheme();
   const { t: tr } = useTranslation();
-  const actions: { key: string; icon: IconName }[] = [
-    { key: 'send', icon: 'send' },
-    { key: 'recipients', icon: 'users' },
-    { key: 'rates', icon: 'trendingUp' },
-    { key: 'help', icon: 'help' },
-  ];
+  const { total, sent } = demoLimit;
+  const left = Math.max(0, total - sent);
+  const money = (n: number) => ltr(`£${n.toLocaleString('en-GB')}`);
+  const sectionHead = (title: string, onSeeAll: () => void) => (
+    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+      <AppText variant="H3" accessibilityRole="header">{title}</AppText>
+      <Pressable onPress={onSeeAll} accessibilityRole="link" hitSlop={t.spacing['spacing/12']}>
+        <AppText variant="Body Medium" color="Primary/Red">{tr(`${k}.seeAll`)}</AppText>
+      </Pressable>
+    </View>
+  );
+
   return (
     <>
-      <View style={{ backgroundColor: t.colors['Primary/Red'], borderRadius: t.radius['radius/xl'], padding: t.spacing['spacing/24'], gap: t.spacing['spacing/16'] }}>
-        <View style={{ flexDirection: 'row', alignItems: 'center', gap: t.spacing['spacing/8'] }}>
-          <View style={{ flexDirection: 'row', direction: 'ltr' }}>
-            <Flag country="UK" />
-            <View style={{ marginStart: -t.spacing['spacing/6'] }}><Flag country="JO" /></View>
-          </View>
-          <AppText variant="Body Medium" color="Neutral/White">{tr(`${k}.corridor`)}</AppText>
+      {/* Sending limit */}
+      <View style={{ backgroundColor: t.colors['Neutral/Fog'], borderRadius: t.radius['radius/xl'], padding: t.spacing['spacing/24'], gap: t.spacing['spacing/8'] }}>
+        <AppText variant="Body Large" color="Neutral/Slate">{tr(`${k}.limit.title`)}</AppText>
+        <AppText variant="Numeric L" style={[getTextStyle('Numeric L', 'en'), { textAlign: t.isRTL ? 'right' : 'left' }]}>{money(left)}</AppText>
+        <AppText variant="Body" color="Neutral/Slate">{tr(`${k}.limit.left`, { total: money(total) })}</AppText>
+        <View
+          accessible
+          accessibilityRole="progressbar"
+          accessibilityLabel={tr(`${k}.limit.a11y`, { used: money(sent), total: money(total) })}
+          accessibilityValue={{ min: 0, max: total, now: sent }}
+          style={{ marginTop: t.spacing['spacing/8'], height: t.sizes.limitProgress.height, borderRadius: t.radius['radius/full'], backgroundColor: t.colors['Neutral/White'], overflow: 'hidden' }}
+        >
+          <View style={{ height: '100%', width: `${(sent / total) * 100}%`, borderRadius: t.radius['radius/full'], backgroundColor: t.colors['Primary/Red'] }} />
         </View>
-        <View style={{ gap: t.spacing['spacing/4'] }}>
-          <AppText variant="Overline" color="Alpha/White 80%">{tr(`${k}.rateLabel`)}</AppText>
-          <AppText variant="Numeric L" color="Neutral/White" style={[getTextStyle('Numeric L', 'en'), { textAlign: t.isRTL ? 'right' : 'left' }]}>
-            {ltr(demoAccount.rate.jod)}
-          </AppText>
-          <AppText variant="Body" color="Alpha/White 80%">{tr(`${k}.rateNote`, { gbp: ltr('£1') })}</AppText>
-        </View>
-        <Button type="secondary" icon="send" label={tr(`${k}.sendMoney`)} onPress={notBuilt('Send money')} testID="home-send" />
       </View>
 
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-        {actions.map((a) => (
-          <Pressable key={a.key} onPress={notBuilt(tr(`${k}.actions.${a.key}`))} accessibilityRole="button" style={{ alignItems: 'center', gap: t.spacing['spacing/8'], flex: 1 }}>
-            <IconBadge icon={a.icon} size={56} tone="redTint" />
-            <AppText variant="Caption" style={{ textAlign: 'center' }}>{tr(`${k}.actions.${a.key}`)}</AppText>
-          </Pressable>
-        ))}
-      </View>
+      <Button label={tr(`${k}.sendMoney`)} onPress={notBuilt('Send money')} testID="home-send" />
 
+      {/* Recent recipients (last 5) */}
       <View style={{ gap: t.spacing['spacing/12'] }}>
-        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-          <AppText variant="H3" accessibilityRole="header">{tr(`${k}.recent`)}</AppText>
-          <Pressable onPress={notBuilt('History')} accessibilityRole="link" hitSlop={t.spacing['spacing/12']}>
-            <AppText variant="Body Medium" color="Primary/Red">{tr(`${k}.seeAll`)}</AppText>
-          </Pressable>
+        {sectionHead(tr(`${k}.recipients`), notBuilt('Recipients'))}
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+          {demoRecipients.map((r) => {
+            const name = tr(`${k}.recipientNames.${r.id}`);
+            return (
+              <Pressable
+                key={r.id}
+                onPress={notBuilt(`Send to ${tr(`${k}.recipientNames.${r.id}`, { lng: 'en' })}`)}
+                accessibilityRole="button"
+                accessibilityLabel={`${tr(`${k}.sendMoney`)}: ${name}`}
+                style={{ width: t.sizes.recipientTile.width, alignItems: 'center', gap: t.spacing['spacing/8'] }}
+              >
+                <Avatar initials={r.initials} size={56} tone="tint" />
+                <AppText variant="Caption" numberOfLines={1} style={{ textAlign: 'center', alignSelf: 'stretch' }}>{name.split(' ')[0]}</AppText>
+              </Pressable>
+            );
+          })}
         </View>
+      </View>
+
+      {/* Recent transfers */}
+      <View style={{ gap: t.spacing['spacing/12'] }}>
+        {sectionHead(tr(`${k}.recent`), notBuilt('History'))}
         <View style={{ backgroundColor: t.colors['Neutral/Fog'], borderRadius: t.radius['radius/lg'], paddingHorizontal: t.spacing['spacing/16'] }}>
           {demoTransfers.map((tx, i) => (
             <Pressable

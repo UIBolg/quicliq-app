@@ -40,3 +40,15 @@ export function isDemoLogin(method: 'mobile' | 'email', id: string, password: st
     : id.trim().toLowerCase() === demoAccount.email;
   return idOk && password === demoAccount.password;
 }
+
+/** Sending limit for the verified Home: lifetime limit and how much has been sent so far (GBP). */
+export const demoLimit = { total: 800, sent: 100 } as const;
+
+/** Last 5 recipients, most recent first (names live in the i18n files under home.recipientNames). */
+export const demoRecipients = [
+  { id: 'r1', initials: 'LH' },
+  { id: 'r2', initials: 'OK' },
+  { id: 'r3', initials: 'RS' },
+  { id: 'r4', initials: 'YN' },
+  { id: 'r5', initials: 'HA' },
+] as const;
