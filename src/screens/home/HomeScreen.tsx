@@ -6,7 +6,7 @@
  *   top group (gap spacing/16): greeting row (Avatar brand · Caption Slate + Title · IconButton bell) ·
  *     next-level Action Banner (alert; ID & address at level 1, source of funds at level 2, none at 3) ·
  *     Limit Card (red, plane artwork, "Level n of 3" pill; tap → SendingLimitSheet) · Primary "Send money".
- *   then (gap spacing/24): Recent recipients (5 tiles, rotating avatar tones) · Recent transfers (TransferRows on Fog).
+ *   then (gap spacing/24): Recent recipients (5 tiles, rotating avatar tones) · Recent transfers (TransferRows on a white card with an Alpha/Ink 10% border).
  * Composition only: every repeated pattern lives in src/components; every string in src/i18n.
  */
 import { useState } from 'react';
@@ -15,7 +15,7 @@ import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import {
   ActionBanner, AppText, Avatar, Button, IconButton, LimitCard, RecipientTile, Screen, SectionHeader,
-  TabBar, TransferRow, type AvatarTone,
+  TabBar, TransferRow,
 } from '../../components';
 import { demoAccount, demoLimit, demoRecipients, demoTransfers, limitTotal, nextLevel, type LimitLevel } from '../../mock/account';
 import { SendingLimitSheet } from './SendingLimitSheet';
@@ -28,8 +28,6 @@ type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 type NotBuilt = (screenId: string) => () => void;
 
 const k = 'home';
-/** Recipient avatars cycle through these tones so the row reads as distinct people. */
-const recipientTones: AvatarTone[] = ['brand', 'success', 'ink', 'tint', 'success'];
 
 export function HomeScreen({ navigation, route }: Props) {
   const t = useTheme();
@@ -117,11 +115,11 @@ function Recipients({ notBuilt }: { notBuilt: NotBuilt }) {
     <View style={{ gap: t.spacing['spacing/12'] }}>
       <SectionHeader title={tr(`${k}.recipients`)} actionLabel={tr(`${k}.seeAll`)} onAction={notBuilt('Recipients')} />
       <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-        {demoRecipients.map((r, i) => (
+        {demoRecipients.map((r) => (
           <RecipientTile
             key={r.id}
             initials={r.initials}
-            tone={recipientTones[i % recipientTones.length]}
+            tone={r.tone}
             shortName={tr(`${k}.recipientShort.${r.id}`)}
             fullName={tr(`${k}.recipientNames.${r.id}`)}
             actionLabel={tr(`${k}.sendMoney`)}
@@ -139,10 +137,14 @@ function Transfers({ notBuilt }: { notBuilt: NotBuilt }) {
   return (
     <View style={{ gap: t.spacing['spacing/12'] }}>
       <SectionHeader title={tr(`${k}.recent`)} actionLabel={tr(`${k}.seeAll`)} onAction={notBuilt('History')} />
-      <View style={{ backgroundColor: t.colors['Neutral/Fog'], borderRadius: t.radius['radius/lg'], paddingHorizontal: t.spacing['spacing/16'], overflow: 'hidden' }}>
-        {demoTransfers.map((tx, i) => (
+      <View style={{ backgroundColor: t.colors['Neutral/White'], borderWidth: t.stroke['stroke/xs'], borderColor: t.colors['Alpha/Ink 10%'], borderRadius: t.radius['radius/lg'], paddingHorizontal: t.spacing['spacing/16'], overflow: 'hidden' }}>
+        {demoTransfers.map((tx, i) => {
+          const r = demoRecipients.find((x) => x.id === tx.recipient);
+          return (
           <TransferRow
             key={tx.id}
+            initials={r?.initials ?? ''}
+            tone={r?.tone}
             divider={i > 0}
             name={tr(`${k}.names.${tx.id}`)}
             method={tx.method}
@@ -153,7 +155,8 @@ function Transfers({ notBuilt }: { notBuilt: NotBuilt }) {
             statusLabel={tr(`${k}.status.${tx.status}`)}
             onPress={notBuilt('Transfer details')}
           />
-        ))}
+          );
+        })}
       </View>
     </View>
   );
