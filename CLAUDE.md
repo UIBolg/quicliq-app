@@ -33,3 +33,11 @@ Read `AGENTS.md` too (Expo commands and conventions). The rules below win if the
 ## Workflow
 - Always work on and push directly to `main`. No feature branches.
 - Work in phases/groups and stop for review after each. Commit after each component group / flow.
+
+## Keep usage low (owner's request)
+- Small changes (colour, copy, remove/move a section): edit → `npx tsc --noEmit` → commit → push. No screenshots, no preview republish.
+- Screenshots / browser checks only for large new screens or when the owner asks "show me". Crop to the changed area.
+- Don't republish the Claude preview artifact; the live site (https://uibolg.github.io/quicliq-app/) redeploys on every push. Republish only when asked.
+- Read only the parts of files you need (grep / line ranges); don't re-read files already in context.
+- Short replies: what changed + commit hash. No long summaries or tables unless asked.
+- Suggest a fresh session when a conversation gets long; batch related requests into one change.
