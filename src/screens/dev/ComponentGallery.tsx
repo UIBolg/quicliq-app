@@ -5,10 +5,11 @@
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
-import type { ReactNode } from 'react';
+import { useState, type ReactNode } from 'react';
 import {
-  AppText, Avatar, Button, DividerOr, IconBadge, IconButton, Logo, VerifiedTag,
-  type ButtonType,
+  Agreement, AppText, Avatar, Button, Checkbox, CountryPrefix, DividerOr, IconBadge, IconButton, LoginMethod, Logo,
+  PasswordRule, PhoneField, SwitchAccount, TextField, VerifiedTag,
+  type ButtonType, type LoginMethodValue, type TextFieldState,
 } from '../../components';
 import { useTheme, type IconBadgeSize } from '../../theme';
 
@@ -40,6 +41,91 @@ const BADGES: { size: IconBadgeSize; tone: 'white' | 'redTint' | 'success' | 'gr
   { size: 40, tone: 'redTint', icon: 'edit' },
   { size: 44, tone: 'white', icon: 'user' },
 ];
+
+const FIELD_STATES: TextFieldState[] = ['default', 'filled', 'focused', 'error', 'locked'];
+
+/** Group 2 — Forms. Live, interactive examples plus every static Figma state. */
+function FormsGroup() {
+  const t = useTheme();
+  const { t: tr } = useTranslation();
+  const [phone, setPhone] = useState('7700 900123');
+  const [email, setEmail] = useState('');
+  const [pw, setPw] = useState('Quicliq1');
+  const [privacy, setPrivacy] = useState(false);
+  const [fraud, setFraud] = useState(true);
+  const [check, setCheck] = useState(true);
+  const [method, setMethod] = useState<LoginMethodValue>('mobile');
+  const k = 'registration.2_1';
+  const rules = [
+    { key: 'length', met: pw.length >= 8 },
+    { key: 'upper', met: /[A-Z]/.test(pw) },
+    { key: 'lower', met: /[a-z]/.test(pw) },
+    { key: 'number', met: /[0-9]/.test(pw) },
+    { key: 'special', met: /[^A-Za-z0-9]/.test(pw) },
+  ];
+  const card = { backgroundColor: t.colors['Neutral/Fog'], padding: t.spacing['spacing/16'], borderRadius: t.radius['radius/md'], gap: t.spacing['spacing/8'] };
+  return (
+    <>
+      <AppText variant="Overline" color="Primary/Red">GROUP 2 · FORMS</AppText>
+
+      <Section title="Text Field" node="21:388">
+        <Label>State (static)</Label>
+        {FIELD_STATES.map((s) => (
+          <TextField
+            key={s}
+            previewState={s}
+            label={tr(`${k}.email`)}
+            value={s === 'default' ? '' : 'james.carter@email.com'}
+            placeholder={tr(`${k}.email`)}
+            locked={s === 'locked'}
+            error={s === 'error' ? tr(`${k}.mobileHelper`) : undefined}
+          />
+        ))}
+        <Label>Trailing · eye (live — tap the eye)</Label>
+        <TextField label={tr(`${k}.password`)} value={pw} onChangeText={setPw} trailing="eye" />
+        <Label>Trailing · calendar / chevron (picker)</Label>
+        <TextField label="Date of birth" value="14 / 03 / 1990" trailing="calendar" onPress={() => {}} />
+        <TextField label="Nationality" value="" placeholder="Select" trailing="chevron" onPress={() => {}} />
+        <Label>Live · empty → focused → filled</Label>
+        <TextField label={tr(`${k}.email`)} value={email} onChangeText={setEmail} placeholder={tr(`${k}.email`)} keyboardType="email-address" autoCapitalize="none" />
+      </Section>
+
+      <Section title="Country Prefix + mobile" node="281:9863 · Phone 71:1158">
+        <CountryPrefix />
+        <PhoneField label={tr(`${k}.mobile`)} value={phone} onChangeText={setPhone} helper={tr(`${k}.mobileHelper`)} />
+      </Section>
+
+      <Section title="Checkbox" node="21:460">
+        <View style={{ flexDirection: 'row', gap: t.spacing['spacing/24'] }}>
+          <Checkbox checked={false} accessibilityLabel="Off" />
+          <Checkbox checked={check} onChange={setCheck} accessibilityLabel="On" />
+        </View>
+      </Section>
+
+      <Section title="Agreement" node="281:7794">
+        <Agreement document="privacy" checked={privacy} onChange={setPrivacy} onOpenDocument={() => {}} />
+        <Agreement document="fraud" checked={fraud} onChange={setFraud} onOpenDocument={() => {}} />
+      </Section>
+
+      <Section title="Password Rule" node="281:7369">
+        <Label>Live — edit the password field above</Label>
+        <View style={card}>
+          {rules.map((r) => (
+            <PasswordRule key={r.key} label={tr(`${k}.rules.${r.key}`)} met={r.met} />
+          ))}
+        </View>
+      </Section>
+
+      <Section title="Login Method" node="141:4399">
+        <LoginMethod value={method} onChange={setMethod} />
+      </Section>
+
+      <Section title="Switch Account" node="282:9874">
+        <SwitchAccount onPress={() => {}} />
+      </Section>
+    </>
+  );
+}
 
 export function ComponentGallery({ onToggleLocale, onShowTokens }: { onToggleLocale: () => void; onShowTokens: () => void }) {
   const t = useTheme();
@@ -127,6 +213,8 @@ export function ComponentGallery({ onToggleLocale, onShowTokens }: { onToggleLoc
         <Section title="Verified Tag" node="282:9835">
           <VerifiedTag />
         </Section>
+
+        <FormsGroup />
       </ScrollView>
     </SafeAreaView>
   );

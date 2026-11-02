@@ -1,0 +1,1203 @@
+<section id="102:9414" name="New registration — Arabic (RTL)" x="-80" y="5707" width="15179" height="1384">
+  <text id="71:1783" name="1.1 About you" x="145" y="129" width="116" height="26" />
+  <frame id="71:1724" name="AR/1.1 About you" x="145" y="129" width="390" height="844">
+    <instance id="71:1725" name="Status Bar" x="0" y="0" width="390" height="47" />
+    <instance id="71:1736" name="Step Header" x="0" y="47" width="390" height="136" />
+    <frame id="71:1747" name="Content" x="0" y="183" width="390" height="557">
+      <text id="71:1748" name="أدخل اسمك وتاريخ ميلادك كما يظهران تماماً في هويتك." x="24" y="8" width="342" height="56" />
+      <instance id="191:5648" name="Text Field" x="24" y="80" width="342" height="64" />
+      <instance id="191:5670" name="Text Field" x="24" y="160" width="342" height="64" />
+      <instance id="191:5697" name="Text Field" x="24" y="240" width="342" height="64" />
+      <instance id="71:1764" name="Text Field" x="24" y="320" width="342" height="64" />
+    </frame>
+    <frame id="71:1779" name="Footer" x="0" y="740" width="390" height="104">
+      <instance id="71:1780" name="Button" x="24" y="16" width="342" height="56" />
+    </frame>
+  </frame>
+  <text id="86:1642" name="1.1b Date of birth picker" x="599" y="129" width="201" height="26" />
+  <frame id="86:1588" name="AR/1.1b Date of birth picker" x="599" y="129" width="390" height="844">
+    <frame id="86:1589" name="Background" x="0" y="0" width="390" height="844">
+      <instance id="86:1590" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="86:1591" name="Step Header" x="0" y="47" width="390" height="136" />
+      <frame id="86:1592" name="Content" x="0" y="183" width="390" height="557">
+        <text id="86:1593" name="أدخل اسمك وتاريخ ميلادك كما يظهران تماماً في هويتك." x="24" y="8" width="342" height="56" />
+        <instance id="86:1594" name="Text Field" x="24" y="80" width="342" height="92" />
+        <instance id="86:1595" name="Text Field" x="24" y="188" width="342" height="64" />
+      </frame>
+      <frame id="86:1596" name="Footer" x="0" y="740" width="390" height="104">
+        <instance id="86:1597" name="Button" x="24" y="16" width="342" height="56" />
+      </frame>
+    </frame>
+    <rounded-rectangle id="86:1598" name="Scrim" x="0" y="0" width="390" height="844" />
+    <frame id="86:1599" name="Bottom sheet" x="0" y="362" width="390" height="482">
+      <instance id="280:8525" name="Grabber" x="24" y="16" width="342" height="4" />
+      <instance id="282:10010" name="Head" x="24" y="36" width="342" height="58" />
+      <frame id="86:1610" name="Wheel picker" x="24" y="110" width="342" height="232">
+        <rounded-rectangle id="86:1611" name="Selection band" x="0" y="110" width="342" height="48" />
+        <frame id="86:1612" name="Column/Year" x="0" y="0" width="96" height="232">
+          <text id="86:1613" name="1988" x="0" y="34" width="96" height="24" />
+          <text id="86:1614" name="1989" x="0" y="76" width="96" height="28" />
+          <text id="86:1615" name="1990" x="0" y="120" width="96" height="28" />
+          <text id="86:1616" name="1991" x="0" y="164" width="96" height="28" />
+          <text id="86:1617" name="1992" x="0" y="210" width="96" height="24" />
+        </frame>
+        <frame id="86:1618" name="Column/Month" x="108" y="0" width="150" height="232">
+          <text id="86:1619" name="يناير" x="0" y="34" width="150" height="24" />
+          <text id="86:1620" name="فبراير" x="0" y="76" width="150" height="28" />
+          <text id="86:1621" name="مارس" x="0" y="118" width="150" height="32" />
+          <text id="86:1622" name="أبريل" x="0" y="164" width="150" height="28" />
+          <text id="86:1623" name="مايو" x="0" y="210" width="150" height="24" />
+        </frame>
+        <frame id="86:1624" name="Column/Day" x="270" y="0" width="72" height="232">
+          <text id="86:1625" name="12" x="0" y="34" width="72" height="24" />
+          <text id="86:1626" name="13" x="0" y="76" width="72" height="28" />
+          <text id="86:1627" name="14" x="0" y="120" width="72" height="28" />
+          <text id="86:1628" name="15" x="0" y="164" width="72" height="28" />
+          <text id="86:1629" name="16" x="0" y="210" width="72" height="24" />
+        </frame>
+        <rounded-rectangle id="86:1630" name="Fade top" x="0" y="0" width="342" height="72" />
+        <rounded-rectangle id="86:1631" name="Fade bottom" x="342" y="232" width="342" height="72" />
+      </frame>
+      <frame id="86:1638" name="Note" x="24" y="358" width="342" height="20">
+        <text id="86:1633" name="يجب أن يكون عمرك 18 عاماً أو أكثر لفتح حساب." x="0" y="0" width="320" height="20" />
+        <frame id="127:3268" name="Icon wrap" x="328" y="0" width="14" height="20">
+          <instance id="86:1634" name="Icon/info" x="0" y="3" width="14" height="14" />
+        </frame>
+      </frame>
+      <instance id="86:1639" name="Button" x="24" y="394" width="342" height="56" />
+    </frame>
+  </frame>
+  <text id="71:1849" name="1.2 About you — validation errors" x="1053" y="129" width="277" height="26" />
+  <frame id="71:1784" name="AR/1.2 About you — errors" x="1053" y="129" width="390" height="844">
+    <instance id="71:1785" name="Status Bar" x="0" y="0" width="390" height="47" />
+    <instance id="71:1796" name="Step Header" x="0" y="47" width="390" height="136" />
+    <frame id="71:1807" name="Content" x="0" y="183" width="390" height="557">
+      <text id="71:1808" name="أدخل اسمك وتاريخ ميلادك كما يظهران تماماً في هويتك." x="24" y="8" width="342" height="56" />
+      <instance id="191:5723" name="Text Field" x="24" y="80" width="342" height="92" />
+      <instance id="191:5746" name="Text Field" x="24" y="188" width="342" height="92" />
+      <instance id="191:5768" name="Text Field" x="24" y="296" width="342" height="92" />
+      <instance id="71:1827" name="Text Field" x="24" y="404" width="342" height="92" />
+    </frame>
+    <frame id="71:1845" name="Footer" x="0" y="740" width="390" height="104">
+      <instance id="71:1846" name="Button" x="24" y="16" width="342" height="56" />
+    </frame>
+  </frame>
+  <text id="71:1909" name="1.3 About you — ready" x="1507" y="129" width="190" height="26" />
+  <frame id="71:1850" name="AR/1.3 About you — ready" x="1507" y="129" width="390" height="844">
+    <instance id="71:1851" name="Status Bar" x="0" y="0" width="390" height="47" />
+    <instance id="71:1862" name="Step Header" x="0" y="47" width="390" height="136" />
+    <frame id="71:1873" name="Content" x="0" y="183" width="390" height="557">
+      <text id="71:1874" name="أدخل اسمك وتاريخ ميلادك كما يظهران تماماً في هويتك." x="24" y="8" width="342" height="56" />
+      <instance id="191:5790" name="Text Field" x="24" y="80" width="342" height="64" />
+      <instance id="191:5808" name="Text Field" x="24" y="160" width="342" height="64" />
+      <instance id="191:5825" name="Text Field" x="24" y="240" width="342" height="64" />
+      <instance id="71:1890" name="Text Field" x="24" y="320" width="342" height="64" />
+    </frame>
+    <frame id="71:1905" name="Footer" x="0" y="740" width="390" height="104">
+      <instance id="71:1906" name="Button" x="24" y="16" width="342" height="56" />
+    </frame>
+  </frame>
+  <text id="72:1265" name="1.3a About you — checking details (loading)" x="1961" y="129" width="360" height="26" />
+  <text id="72:1267" name="1.5 Details matched (sheet)" x="2415" y="129" width="222" height="26" />
+  <frame id="72:1130" name="AR/1.5 Details matched" x="2415" y="129" width="390" height="844">
+    <frame id="191:5996" name="Background" x="0" y="0" width="390" height="844">
+      <instance id="191:5997" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="191:5998" name="Step Header" x="0" y="47" width="390" height="136" />
+      <frame id="191:5999" name="Content" x="0" y="183" width="390" height="557">
+        <text id="191:6000" name="أدخل اسمك وتاريخ ميلادك كما يظهران تماماً في هويتك." x="24" y="8" width="342" height="56" />
+        <instance id="191:6001" name="Text Field" x="24" y="80" width="342" height="64" />
+        <instance id="191:6002" name="Text Field" x="24" y="160" width="342" height="64" />
+        <instance id="191:6003" name="Text Field" x="24" y="240" width="342" height="64" />
+        <instance id="191:6004" name="Text Field" x="24" y="320" width="342" height="64" />
+      </frame>
+      <frame id="191:6005" name="Footer" x="0" y="740" width="390" height="104">
+        <instance id="191:6006" name="Button" x="24" y="16" width="342" height="56" />
+      </frame>
+    </frame>
+    <rounded-rectangle id="191:6066" name="Scrim" x="0" y="0" width="390" height="844" />
+    <frame id="191:5978" name="Bottom sheet" x="0" y="372" width="390" height="472">
+      <instance id="280:8527" name="Grabber" x="24" y="16" width="342" height="4" />
+      <instance id="80:8698" name="Illustration/success" x="141" y="36" width="107.99999237060547" height="107.99999237060547" />
+      <frame id="72:1147" name="Text" x="24" y="160" width="342" height="100">
+        <text id="72:1148" name="بياناتك صحيحة" x="0" y="0" width="342" height="36" />
+        <text id="72:1149" name="بياناتك مطابقة للسجلات الرسمية ولا يوجد حساب سابق. الخطوة التالية: إعداد بيانات الدخول." x="0" y="44" width="342" height="56" />
+      </frame>
+      <frame id="72:1161" name="Summary" x="24" y="276" width="342" height="84">
+        <instance id="282:9851" name="Verified" x="16" y="28" width="70" height="28" />
+        <frame id="72:1150" name="Text" x="94" y="16" width="184" height="52">
+          <text id="72:1151" name="James Robert Carter" x="0" y="0" width="184" height="28" />
+          <text id="72:1152" name="14 مارس 1990" x="0" y="28" width="184" height="24" />
+        </frame>
+        <instance id="280:6954" name="Badge" x="286" y="22" width="40" height="40" />
+      </frame>
+      <instance id="72:1163" name="Button" x="24" y="376" width="342" height="56" />
+    </frame>
+  </frame>
+  <text id="72:1269" name="1.6 Couldn’t confirm — try again (sheet)" x="2869" y="129" width="326" height="26" />
+  <frame id="72:1165" name="AR/1.6 Couldn&#39;t confirm" x="2869" y="129" width="390" height="844">
+    <frame id="191:6085" name="Background" x="0" y="0" width="390" height="844">
+      <instance id="191:6086" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="191:6087" name="Step Header" x="0" y="47" width="390" height="136" />
+      <frame id="191:6088" name="Content" x="0" y="183" width="390" height="557">
+        <text id="191:6089" name="أدخل اسمك وتاريخ ميلادك كما يظهران تماماً في هويتك." x="24" y="8" width="342" height="56" />
+        <instance id="191:6090" name="Text Field" x="24" y="80" width="342" height="64" />
+        <instance id="191:6091" name="Text Field" x="24" y="160" width="342" height="64" />
+        <instance id="191:6092" name="Text Field" x="24" y="240" width="342" height="64" />
+        <instance id="191:6093" name="Text Field" x="24" y="320" width="342" height="64" />
+      </frame>
+      <frame id="191:6094" name="Footer" x="0" y="740" width="390" height="104">
+        <instance id="191:6095" name="Button" x="24" y="16" width="342" height="56" />
+      </frame>
+    </frame>
+    <rounded-rectangle id="191:6155" name="Scrim" x="0" y="0" width="390" height="844" />
+    <frame id="191:6067" name="Bottom sheet" x="0" y="246" width="390" height="598">
+      <instance id="280:8529" name="Grabber" x="24" y="16" width="342" height="4" />
+      <instance id="80:8708" name="Illustration/error" x="156" y="36" width="78" height="78" />
+      <frame id="72:1183" name="Text" x="24" y="130" width="342" height="100">
+        <text id="72:1184" name="تعذّر التأكد من بياناتك" x="0" y="0" width="342" height="36" />
+        <text id="72:1185" name="لم يتطابق اسمك وتاريخ ميلادك مع السجلات الرسمية. يرجى التحقق منهما والمحاولة مرة أخرى." x="0" y="44" width="342" height="56" />
+      </frame>
+      <frame id="72:1186" name="List" x="24" y="246" width="342" height="240">
+        <text id="72:1187" name="ما يجب التحقق منه" x="16" y="16" width="310" height="16" />
+        <instance id="282:9386" name="Item" x="16" y="48" width="310" height="48" />
+        <instance id="282:9393" name="Item" x="16" y="112" width="310" height="48" />
+        <instance id="282:9404" name="Item" x="16" y="176" width="310" height="48" />
+      </frame>
+      <instance id="72:1212" name="Button" x="24" y="502" width="342" height="56" />
+    </frame>
+  </frame>
+  <text id="71:1999" name="1.7 Account already exists" x="3323" y="129" width="214" height="26" />
+  <frame id="71:1974" name="AR/1.7 Account exists" x="3323" y="129" width="390" height="844">
+    <frame id="71:1975" name="Background" x="0" y="0" width="390" height="844">
+      <instance id="71:1976" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="71:1977" name="Step Header" x="0" y="47" width="390" height="136" />
+      <frame id="71:1978" name="Content" x="0" y="183" width="390" height="557">
+        <text id="71:1979" name="أدخل اسمك وتاريخ ميلادك كما يظهران تماماً في هويتك." x="24" y="8" width="342" height="56" />
+        <instance id="71:1980" name="Text Field" x="24" y="80" width="342" height="64" />
+        <instance id="71:1981" name="Text Field" x="24" y="160" width="342" height="64" />
+      </frame>
+      <frame id="71:1982" name="Footer" x="0" y="740" width="390" height="104">
+        <instance id="71:1983" name="Button" x="24" y="16" width="342" height="56" />
+      </frame>
+    </frame>
+    <rounded-rectangle id="71:1984" name="Scrim" x="0" y="0" width="390" height="844" />
+    <frame id="71:1985" name="Bottom sheet" x="0" y="412" width="390" height="432">
+      <rounded-rectangle id="71:1986" name="Rectangle" x="175" y="16" width="40" height="4" />
+      <instance id="280:7466" name="Badge" x="159" y="44" width="72" height="72" />
+      <frame id="71:1991" name="Text" x="24" y="140" width="342" height="100">
+        <text id="71:1992" name="لديك حساب بالفعل" x="0" y="0" width="342" height="36" />
+        <text id="71:1993" name="يوجد حساب بهذه البيانات. سجّل الدخول، أو أعد تعيين كلمة المرور إذا نسيتها." x="0" y="44" width="342" height="56" />
+      </frame>
+      <instance id="71:1994" name="Button" x="24" y="264" width="342" height="56" />
+      <instance id="71:1996" name="Button" x="24" y="344" width="342" height="56" />
+    </frame>
+  </frame>
+  <text id="71:2127" name="2.1a Account details — password selected (criteria shown)" x="4231" y="129" width="475" height="26" />
+  <frame id="71:2000" name="AR/2.1a Account details — password selected" x="4231" y="129" width="390" height="1040">
+    <instance id="71:2001" name="Status Bar" x="0" y="0" width="390" height="47" />
+    <instance id="71:2012" name="Step Header" x="0" y="47" width="390" height="136" />
+    <frame id="71:2023" name="Content" x="0" y="183" width="390" height="753">
+      <text id="71:2024" name="ستستخدمها لتسجيل الدخول. سنرسل رمزاً إلى هاتفك المحمول للتحقق منه." x="24" y="8" width="342" height="56" />
+      <frame id="71:2025" name="Phone" x="24" y="80" width="342" height="112">
+        <instance id="281:10059" name="UK prefix (fixed)" x="0" y="0" width="112" height="64" />
+        <instance id="71:2033" name="Text Field" x="120" y="0" width="222" height="112" />
+      </frame>
+      <instance id="71:2048" name="Text Field" x="24" y="208" width="342" height="64" />
+      <instance id="71:2063" name="Text Field" x="24" y="288" width="342" height="64" />
+      <frame id="71:2078" name="Password rules" x="24" y="368" width="342" height="184">
+        <instance id="281:7562" name="Rule" x="16" y="16" width="310" height="24" />
+        <instance id="281:7567" name="Rule" x="16" y="48" width="310" height="24" />
+        <instance id="281:7572" name="Rule" x="16" y="80" width="310" height="24" />
+        <instance id="281:7742" name="Rule" x="16" y="112" width="310" height="24" />
+        <instance id="281:7745" name="Rule" x="16" y="144" width="310" height="24" />
+      </frame>
+      <instance id="71:2100" name="Text Field" x="24" y="568" width="342" height="64" />
+      <rounded-rectangle id="71:2115" name="Rectangle" x="24" y="648" width="342" height="1" />
+      <frame id="71:2116" name="Agreements" x="24" y="665" width="342" height="64">
+        <instance id="281:7867" name="Agreement" x="0" y="0" width="342" height="24" />
+        <instance id="281:7873" name="Agreement" x="0" y="40" width="342" height="24" />
+      </frame>
+    </frame>
+    <frame id="71:2123" name="Footer" x="0" y="936" width="390" height="104">
+      <instance id="71:2124" name="Button" x="24" y="16" width="342" height="56" />
+    </frame>
+  </frame>
+  <text id="71:2269" name="2.2 Account details — errors" x="4685" y="129" width="233" height="26" />
+  <frame id="71:2128" name="AR/2.2 Account details — errors" x="4685" y="129" width="390" height="1068">
+    <instance id="71:2129" name="Status Bar" x="0" y="0" width="390" height="47" />
+    <instance id="71:2140" name="Step Header" x="0" y="47" width="390" height="136" />
+    <frame id="71:2151" name="Content" x="0" y="183" width="390" height="781">
+      <text id="71:2152" name="ستستخدمها لتسجيل الدخول. سنرسل رمزاً إلى هاتفك المحمول للتحقق منه." x="24" y="8" width="342" height="56" />
+      <frame id="71:2153" name="Phone" x="24" y="80" width="342" height="112">
+        <instance id="281:10072" name="UK prefix (fixed)" x="0" y="0" width="112" height="64" />
+        <instance id="71:2161" name="Text Field" x="120" y="0" width="222" height="112" />
+      </frame>
+      <instance id="71:2179" name="Text Field" x="24" y="208" width="342" height="64" />
+      <instance id="71:2194" name="Text Field" x="24" y="288" width="342" height="64" />
+      <frame id="71:2209" name="Password rules" x="24" y="368" width="342" height="184">
+        <instance id="281:7577" name="Rule" x="16" y="16" width="310" height="24" />
+        <instance id="281:7582" name="Rule" x="16" y="48" width="310" height="24" />
+        <instance id="281:7587" name="Rule" x="16" y="80" width="310" height="24" />
+        <instance id="281:7592" name="Rule" x="16" y="112" width="310" height="24" />
+        <instance id="281:7597" name="Rule" x="16" y="144" width="310" height="24" />
+      </frame>
+      <instance id="71:2235" name="Text Field" x="24" y="568" width="342" height="92" />
+      <rounded-rectangle id="71:2253" name="Rectangle" x="24" y="676" width="342" height="1" />
+      <frame id="71:2254" name="Agreements" x="24" y="693" width="342" height="64">
+        <instance id="281:7879" name="Agreement" x="0" y="0" width="342" height="24" />
+        <instance id="281:7909" name="Agreement" x="0" y="40" width="342" height="24" />
+      </frame>
+    </frame>
+    <frame id="71:2265" name="Footer" x="0" y="964" width="390" height="104">
+      <instance id="71:2266" name="Button" x="24" y="16" width="342" height="56" />
+    </frame>
+  </frame>
+  <text id="71:2406" name="2.3 Account details — ready" x="5139" y="129" width="230" height="26" />
+  <frame id="71:2270" name="AR/2.3 Account details — ready" x="5139" y="129" width="390" height="1104">
+    <instance id="71:2271" name="Status Bar" x="0" y="0" width="390" height="47" />
+    <instance id="71:2282" name="Step Header" x="0" y="47" width="390" height="136" />
+    <frame id="71:2293" name="Content" x="0" y="183" width="390" height="781">
+      <text id="71:2294" name="ستستخدمها لتسجيل الدخول. سنرسل رمزاً إلى هاتفك المحمول للتحقق منه." x="24" y="8" width="342" height="56" />
+      <frame id="71:2295" name="Phone" x="24" y="80" width="342" height="112">
+        <instance id="281:10085" name="UK prefix (fixed)" x="0" y="0" width="112" height="64" />
+        <instance id="71:2303" name="Text Field" x="120" y="0" width="222" height="112" />
+      </frame>
+      <instance id="71:2318" name="Text Field" x="24" y="208" width="342" height="64" />
+      <instance id="71:2333" name="Text Field" x="24" y="288" width="342" height="64" />
+      <frame id="71:2348" name="Password rules" x="24" y="368" width="342" height="184">
+        <instance id="281:7602" name="Rule" x="16" y="16" width="310" height="24" />
+        <instance id="281:7607" name="Rule" x="16" y="48" width="310" height="24" />
+        <instance id="281:7612" name="Rule" x="16" y="80" width="310" height="24" />
+        <instance id="281:7617" name="Rule" x="16" y="112" width="310" height="24" />
+        <instance id="281:7622" name="Rule" x="16" y="144" width="310" height="24" />
+      </frame>
+      <instance id="71:2374" name="Text Field" x="24" y="568" width="342" height="92" />
+      <rounded-rectangle id="71:2389" name="Rectangle" x="24" y="676" width="342" height="1" />
+      <frame id="71:2390" name="Agreements" x="24" y="693" width="342" height="64">
+        <instance id="281:7884" name="Agreement" x="0" y="0" width="342" height="24" />
+        <instance id="281:7914" name="Agreement" x="0" y="40" width="342" height="24" />
+      </frame>
+    </frame>
+    <frame id="71:2401" name="Footer" x="0" y="964" width="390" height="140">
+      <text id="71:2402" name="بعد ذلك، سنرسل رمزاً من 6 أرقام إلى رقمك المحمول." x="24" y="16" width="342" height="20" />
+      <instance id="71:2403" name="Button" x="24" y="52" width="342" height="56" />
+    </frame>
+  </frame>
+  <text id="73:1795" name="2.4 Verify — enter code (autofill offered)" x="7409" y="129" width="329" height="26" />
+  <frame id="73:1355" name="AR/2.4 Verify — enter code" x="7409" y="129" width="390" height="844">
+    <instance id="73:1356" name="Status Bar" x="0" y="0" width="390" height="47" />
+    <instance id="73:1367" name="Step Header" x="0" y="47" width="390" height="64" />
+    <frame id="73:1378" name="Content" x="0" y="111" width="390" height="417">
+      <frame id="73:1382" name="Text" x="24" y="8" width="342" height="112">
+        <text id="73:1383" name="تحقق من رقمك" x="0" y="0" width="342" height="36" />
+        <text id="73:1384" name="أرسلنا رمزاً من 6 أرقام إلى" x="0" y="44" width="342" height="28" />
+        <frame id="73:1391" name="Number" x="104" y="80" width="238" height="32">
+          <instance id="286:9772" name="Edit" x="0" y="0" width="79" height="32" />
+          <text id="73:1390" name="+44 7700 900123" x="95" y="3" width="143" height="26" />
+        </frame>
+      </frame>
+      <frame id="73:1392" name="Code" x="24" y="144" width="342" height="60">
+        <instance id="280:8105" name="Digit 1" x="3" y="0" width="46" height="60" />
+        <instance id="280:8107" name="Digit 2" x="57" y="0" width="46" height="60" />
+        <instance id="280:8109" name="Digit 3" x="111" y="0" width="46" height="60" />
+        <rounded-rectangle id="73:1399" name="Separator" x="165" y="29" width="12" height="2" />
+        <instance id="280:8231" name="Digit 4" x="185" y="0" width="46" height="60" />
+        <instance id="280:8286" name="Digit 5" x="239" y="0" width="46" height="60" />
+        <instance id="280:8287" name="Digit 6" x="293" y="0" width="46" height="60" />
+      </frame>
+      <frame id="73:1410" name="Help row" x="24" y="228" width="342" height="24">
+        <text id="73:1409" name="لم يصلك الرمز؟" x="0" y="0" width="91" height="24" />
+        <instance id="281:9752" name="Countdown" x="174" y="0" width="168" height="24" />
+      </frame>
+    </frame>
+    <instance id="281:8877" name="Keypad" x="0" y="528" width="390" height="316" />
+  </frame>
+  <text id="90:2415" name="2.4a Edit mobile number (sheet)" x="7863" y="129" width="261" height="26" />
+  <frame id="90:2216" name="AR/2.4a Edit mobile number" x="7863" y="129" width="390" height="844">
+    <frame id="90:2217" name="Background" x="0" y="0" width="390" height="844">
+      <instance id="90:2218" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="90:2219" name="Step Header" x="0" y="47" width="390" height="64" />
+      <frame id="90:2220" name="Content" x="0" y="111" width="390" height="417">
+        <frame id="90:2221" name="Text" x="24" y="8" width="342" height="112">
+          <text id="90:2222" name="تحقق من رقمك" x="0" y="0" width="342" height="36" />
+          <text id="90:2223" name="أرسلنا رمزاً من 6 أرقام إلى" x="0" y="44" width="342" height="28" />
+          <frame id="90:2224" name="Number" x="104" y="80" width="238" height="32">
+            <instance id="286:9790" name="Edit" x="0" y="0" width="79" height="32" />
+            <text id="90:2228" name="+44 7700 900123" x="95" y="3" width="143" height="26" />
+          </frame>
+        </frame>
+        <frame id="90:2229" name="Code" x="24" y="144" width="342" height="60">
+          <instance id="280:8111" name="Digit 1" x="3" y="0" width="46" height="60" />
+          <instance id="280:8113" name="Digit 2" x="57" y="0" width="46" height="60" />
+          <instance id="280:8115" name="Digit 3" x="111" y="0" width="46" height="60" />
+          <rounded-rectangle id="90:2236" name="Separator" x="165" y="29" width="12" height="2" />
+          <instance id="280:8233" name="Digit 4" x="185" y="0" width="46" height="60" />
+          <instance id="280:8288" name="Digit 5" x="239" y="0" width="46" height="60" />
+          <instance id="280:8289" name="Digit 6" x="293" y="0" width="46" height="60" />
+        </frame>
+        <frame id="90:2241" name="Help row" x="24" y="228" width="342" height="24">
+          <text id="90:2242" name="لم يصلك الرمز؟" x="0" y="0" width="91" height="24" />
+          <instance id="281:9757" name="Countdown" x="174" y="0" width="168" height="24" />
+        </frame>
+      </frame>
+      <instance id="281:8921" name="Keypad" x="0" y="528" width="390" height="316" />
+    </frame>
+    <rounded-rectangle id="90:2288" name="Scrim" x="0" y="0" width="390" height="844" />
+    <frame id="90:2329" name="Bottom sheet" x="0" y="278" width="390" height="318">
+      <instance id="280:8531" name="Grabber" x="24" y="16" width="342" height="4" />
+      <instance id="282:10019" name="Head" x="24" y="36" width="342" height="58" />
+      <frame id="90:2375" name="Phone" x="24" y="110" width="342" height="112">
+        <instance id="281:10098" name="UK prefix (fixed)" x="0" y="0" width="112" height="64" />
+        <instance id="90:2380" name="Text Field" x="120" y="0" width="222" height="112" />
+      </frame>
+      <instance id="90:2412" name="Button" x="24" y="238" width="342" height="56" />
+    </frame>
+    <instance id="281:9312" name="Keypad" x="0" y="596" width="390" height="248" />
+  </frame>
+  <text id="90:2115" name="2.4b Verify — resend unlocked (timer ended)" x="9679" y="129" width="365" height="26" />
+  <frame id="90:2015" name="AR/2.4b Verify — resend unlocked" x="9679" y="129" width="390" height="844">
+    <instance id="90:2016" name="Status Bar" x="0" y="0" width="390" height="47" />
+    <instance id="90:2017" name="Step Header" x="0" y="47" width="390" height="64" />
+    <frame id="90:2018" name="Content" x="0" y="111" width="390" height="417">
+      <frame id="90:2019" name="Text" x="24" y="8" width="342" height="112">
+        <text id="90:2020" name="تحقق من رقمك" x="0" y="0" width="342" height="36" />
+        <text id="90:2021" name="أرسلنا رمزاً من 6 أرقام إلى" x="0" y="44" width="342" height="28" />
+        <frame id="90:2022" name="Number" x="104" y="80" width="238" height="32">
+          <instance id="286:9800" name="Edit" x="0" y="0" width="79" height="32" />
+          <text id="90:2026" name="+44 7700 900123" x="95" y="3" width="143" height="26" />
+        </frame>
+      </frame>
+      <frame id="90:2027" name="Code" x="24" y="144" width="342" height="60">
+        <instance id="280:8117" name="Digit 1" x="3" y="0" width="46" height="60" />
+        <instance id="280:8119" name="Digit 2" x="57" y="0" width="46" height="60" />
+        <instance id="280:8121" name="Digit 3" x="111" y="0" width="46" height="60" />
+        <rounded-rectangle id="90:2034" name="Separator" x="165" y="29" width="12" height="2" />
+        <instance id="280:8235" name="Digit 4" x="185" y="0" width="46" height="60" />
+        <instance id="280:8290" name="Digit 5" x="239" y="0" width="46" height="60" />
+        <instance id="280:8291" name="Digit 6" x="293" y="0" width="46" height="60" />
+      </frame>
+      <frame id="90:2039" name="Help row" x="24" y="228" width="342" height="24">
+        <text id="90:2040" name="لم يصلك الرمز؟" x="0" y="0" width="91" height="24" />
+        <instance id="281:9827" name="Countdown" x="224" y="0" width="118" height="24" />
+      </frame>
+    </frame>
+    <instance id="281:8964" name="Keypad" x="0" y="528" width="390" height="316" />
+  </frame>
+  <text id="90:2215" name="2.4c Verify — new code sent to new number" x="10133" y="129" width="361" height="26" />
+  <frame id="90:2116" name="AR/2.4c Verify — new code sent" x="10133" y="129" width="390" height="844">
+    <instance id="90:2117" name="Status Bar" x="0" y="0" width="390" height="47" />
+    <instance id="90:2118" name="Step Header" x="0" y="47" width="390" height="64" />
+    <frame id="90:2119" name="Content" x="0" y="111" width="390" height="485">
+      <frame id="90:2120" name="Text" x="24" y="8" width="342" height="112">
+        <text id="90:2121" name="تحقق من رقمك" x="0" y="0" width="342" height="36" />
+        <text id="90:2122" name="أرسلنا رمزاً من 6 أرقام إلى" x="0" y="44" width="342" height="28" />
+        <frame id="90:2123" name="Number" x="104" y="80" width="238" height="32">
+          <instance id="286:9811" name="Edit" x="0" y="0" width="79" height="32" />
+          <text id="90:2127" name="+44 7700 900456" x="95" y="3" width="143" height="26" />
+        </frame>
+      </frame>
+      <frame id="90:2128" name="Code" x="24" y="144" width="342" height="60">
+        <instance id="280:8237" name="Digit 1" x="3" y="0" width="46" height="60" />
+        <instance id="280:8292" name="Digit 2" x="57" y="0" width="46" height="60" />
+        <instance id="280:8293" name="Digit 3" x="111" y="0" width="46" height="60" />
+        <rounded-rectangle id="90:2135" name="Separator" x="165" y="29" width="12" height="2" />
+        <instance id="280:8294" name="Digit 4" x="185" y="0" width="46" height="60" />
+        <instance id="280:8295" name="Digit 5" x="239" y="0" width="46" height="60" />
+        <instance id="280:8296" name="Digit 6" x="293" y="0" width="46" height="60" />
+      </frame>
+      <frame id="90:2140" name="Help row" x="24" y="228" width="342" height="24">
+        <text id="90:2141" name="لم يصلك الرمز؟" x="0" y="0" width="91" height="24" />
+        <instance id="281:9762" name="Countdown" x="174" y="0" width="168" height="24" />
+      </frame>
+    </frame>
+    <instance id="281:9352" name="Keypad" x="0" y="596" width="390" height="248" />
+    <frame id="90:2213" name="Toast" x="24" y="56" width="342" height="52">
+      <text id="90:2212" name="تم إرسال رمز جديد. قد يستغرق وصوله حتى دقيقة." x="16" y="16" width="286" height="20" />
+      <frame id="127:3276" name="Icon wrap" x="310" y="16" width="16" height="20">
+        <instance id="90:2210" name="Icon/check" x="0" y="2" width="16" height="16" />
+      </frame>
+    </frame>
+  </frame>
+  <text id="73:1797" name="2.5 Verify — auto-submits on 6th digit" x="10587" y="129" width="310" height="26" />
+  <frame id="73:1453" name="AR/2.5 Verify — verifying" x="10587" y="129" width="390" height="844">
+    <instance id="73:1454" name="Status Bar" x="0" y="0" width="390" height="47" />
+    <instance id="73:1465" name="Step Header" x="0" y="47" width="390" height="64" />
+    <frame id="73:1476" name="Content" x="0" y="111" width="390" height="733">
+      <frame id="73:1480" name="Text" x="24" y="8" width="342" height="112">
+        <text id="73:1481" name="تحقق من رقمك" x="0" y="0" width="342" height="36" />
+        <text id="73:1482" name="أرسلنا رمزاً من 6 أرقام إلى" x="0" y="44" width="342" height="28" />
+        <frame id="73:1489" name="Number" x="104" y="80" width="238" height="32">
+          <instance id="286:9822" name="Edit" x="0" y="0" width="79" height="32" />
+          <text id="73:1488" name="+44 7700 900123" x="95" y="3" width="143" height="26" />
+        </frame>
+      </frame>
+      <frame id="73:1490" name="Code" x="24" y="144" width="342" height="60">
+        <instance id="280:8123" name="Digit 1" x="3" y="0" width="46" height="60" />
+        <instance id="280:8125" name="Digit 2" x="57" y="0" width="46" height="60" />
+        <instance id="280:8127" name="Digit 3" x="111" y="0" width="46" height="60" />
+        <rounded-rectangle id="73:1497" name="Separator" x="165" y="29" width="12" height="2" />
+        <instance id="280:8129" name="Digit 4" x="185" y="0" width="46" height="60" />
+        <instance id="280:8131" name="Digit 5" x="239" y="0" width="46" height="60" />
+        <instance id="280:8133" name="Digit 6" x="293" y="0" width="46" height="60" />
+      </frame>
+      <frame id="73:1508" name="Verifying" x="24" y="228" width="342" height="24">
+        <text id="73:1507" name="جارٍ التحقق…" x="120.5" y="0" width="73" height="24" />
+        <frame id="73:1504" name="Spinner" x="201.5" y="2" width="20" height="20" />
+      </frame>
+    </frame>
+  </frame>
+  <text id="73:1799" name="2.6 Verify — wrong code" x="11041" y="129" width="202" height="26" />
+  <frame id="73:1509" name="AR/2.6 Verify — wrong code" x="11041" y="129" width="390" height="844">
+    <instance id="73:1510" name="Status Bar" x="0" y="0" width="390" height="47" />
+    <instance id="73:1521" name="Step Header" x="0" y="47" width="390" height="64" />
+    <frame id="73:1532" name="Content" x="0" y="111" width="390" height="485">
+      <frame id="73:1536" name="Text" x="24" y="8" width="342" height="112">
+        <text id="73:1537" name="تحقق من رقمك" x="0" y="0" width="342" height="36" />
+        <text id="73:1538" name="أرسلنا رمزاً من 6 أرقام إلى" x="0" y="44" width="342" height="28" />
+        <frame id="73:1545" name="Number" x="104" y="80" width="238" height="32">
+          <instance id="286:9832" name="Edit" x="0" y="0" width="79" height="32" />
+          <text id="73:1544" name="+44 7700 900123" x="95" y="3" width="143" height="26" />
+        </frame>
+      </frame>
+      <frame id="73:1546" name="Code" x="24" y="144" width="342" height="60">
+        <instance id="280:8335" name="Digit 1" x="3" y="0" width="46" height="60" />
+        <instance id="280:8337" name="Digit 2" x="57" y="0" width="46" height="60" />
+        <instance id="280:8339" name="Digit 3" x="111" y="0" width="46" height="60" />
+        <rounded-rectangle id="73:1553" name="Separator" x="165" y="29" width="12" height="2" />
+        <instance id="280:8341" name="Digit 4" x="185" y="0" width="46" height="60" />
+        <instance id="280:8343" name="Digit 5" x="239" y="0" width="46" height="60" />
+        <instance id="280:8345" name="Digit 6" x="293" y="0" width="46" height="60" />
+      </frame>
+      <frame id="73:1571" name="Error box" x="24" y="228" width="342" height="108">
+        <frame id="73:1564" name="Error" x="16" y="16" width="310" height="48">
+          <text id="73:1560" name="الرمز غير صحيح. تحقق من رسائلك وحاول مرة أخرى." x="0" y="0" width="284" height="48" />
+          <frame id="127:3279" name="Icon wrap" x="292" y="0" width="18" height="24">
+            <instance id="80:9037" name="icon/alert" x="0" y="3" width="18" height="18" />
+          </frame>
+        </frame>
+        <frame id="73:1570" name="Attempts row" x="192" y="72" width="134" height="20">
+          <text id="73:1569" name="تبقّت محاولتان" x="0" y="0" width="70" height="20" />
+          <frame id="73:1565" name="Attempts" x="78" y="8" width="56" height="4">
+            <rounded-rectangle id="73:1566" name="Rectangle" x="0" y="0" width="16" height="4" />
+            <rounded-rectangle id="73:1567" name="Rectangle" x="20" y="0" width="16" height="4" />
+            <rounded-rectangle id="73:1568" name="Rectangle" x="40" y="0" width="16" height="4" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="73:1578" name="Help row" x="24" y="360" width="342" height="24">
+        <text id="73:1577" name="لم يصلك الرمز؟" x="0" y="0" width="91" height="24" />
+        <instance id="281:9767" name="Countdown" x="174" y="0" width="168" height="24" />
+      </frame>
+    </frame>
+    <instance id="281:9393" name="Keypad" x="0" y="596" width="390" height="248" />
+  </frame>
+  <text id="73:1801" name="2.7 Verify — number verified" x="11495" y="129" width="234" height="26" />
+  <frame id="73:1617" name="AR/2.7 Verify — verified" x="11495" y="129" width="390" height="844">
+    <instance id="73:1618" name="Status Bar" x="0" y="0" width="390" height="47" />
+    <instance id="73:1629" name="Step Header" x="0" y="47" width="390" height="64" />
+    <frame id="73:1640" name="Content" x="0" y="111" width="390" height="733">
+      <frame id="73:1644" name="Text" x="24" y="8" width="342" height="112">
+        <text id="73:1645" name="تحقق من رقمك" x="0" y="0" width="342" height="36" />
+        <text id="73:1646" name="أرسلنا رمزاً من 6 أرقام إلى" x="0" y="44" width="342" height="28" />
+        <frame id="73:1653" name="Number" x="104" y="80" width="238" height="32">
+          <instance id="286:9843" name="Edit" x="0" y="0" width="79" height="32" />
+          <text id="73:1652" name="+44 7700 900123" x="95" y="3" width="143" height="26" />
+        </frame>
+      </frame>
+      <frame id="73:1654" name="Code" x="24" y="144" width="342" height="60">
+        <instance id="280:8419" name="Digit 1" x="3" y="0" width="46" height="60" />
+        <instance id="280:8421" name="Digit 2" x="57" y="0" width="46" height="60" />
+        <instance id="280:8423" name="Digit 3" x="111" y="0" width="46" height="60" />
+        <rounded-rectangle id="73:1661" name="Separator" x="165" y="29" width="12" height="2" />
+        <instance id="280:8425" name="Digit 4" x="185" y="0" width="46" height="60" />
+        <instance id="280:8427" name="Digit 5" x="239" y="0" width="46" height="60" />
+        <instance id="280:8429" name="Digit 6" x="293" y="0" width="46" height="60" />
+      </frame>
+      <frame id="73:1668" name="Verified" x="24" y="228" width="342" height="172">
+        <instance id="280:7846" name="Badge" x="143" y="24" width="56" height="56" />
+        <text id="73:1672" name="تم التحقق من رقمك" x="94.5" y="88" width="153" height="28" />
+        <frame id="73:1677" name="Next" x="104" y="124" width="134" height="24">
+          <text id="73:1676" name="جارٍ إنشاء حسابك…" x="0" y="0" width="110" height="24" />
+          <frame id="73:1673" name="Frame" x="118" y="4" width="16" height="16" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <text id="73:1803" name="2.8 Didn’t get a code? (sheet)" x="11949" y="129" width="242" height="26" />
+  <frame id="73:1678" name="AR/2.8 Didn&#39;t get a code" x="11949" y="129" width="390" height="844">
+    <frame id="80:9676" name="Background" x="0" y="0" width="390" height="844">
+      <instance id="80:9677" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="80:9678" name="Step Header" x="0" y="47" width="390" height="64" />
+      <frame id="80:9679" name="Content" x="0" y="111" width="390" height="417">
+        <frame id="80:9680" name="Text" x="24" y="8" width="342" height="112">
+          <text id="80:9681" name="تحقق من رقمك" x="0" y="0" width="342" height="36" />
+          <text id="80:9682" name="أرسلنا رمزاً من 6 أرقام إلى" x="0" y="44" width="342" height="28" />
+          <frame id="80:9683" name="Number" x="104" y="80" width="238" height="32">
+            <instance id="286:9853" name="Edit" x="0" y="0" width="79" height="32" />
+            <text id="80:9687" name="+44 7700 900123" x="95" y="3" width="143" height="26" />
+          </frame>
+        </frame>
+        <frame id="80:9688" name="Code" x="24" y="144" width="342" height="60">
+          <instance id="280:8135" name="Digit 1" x="3" y="0" width="46" height="60" />
+          <instance id="280:8137" name="Digit 2" x="57" y="0" width="46" height="60" />
+          <instance id="280:8139" name="Digit 3" x="111" y="0" width="46" height="60" />
+          <rounded-rectangle id="80:9695" name="Separator" x="165" y="29" width="12" height="2" />
+          <instance id="280:8239" name="Digit 4" x="185" y="0" width="46" height="60" />
+          <instance id="280:8297" name="Digit 5" x="239" y="0" width="46" height="60" />
+          <instance id="280:8298" name="Digit 6" x="293" y="0" width="46" height="60" />
+        </frame>
+        <frame id="80:9700" name="Help row" x="24" y="228" width="342" height="24">
+          <text id="80:9701" name="لم يصلك الرمز؟" x="0" y="0" width="91" height="24" />
+          <instance id="281:9772" name="Countdown" x="174" y="0" width="168" height="24" />
+        </frame>
+      </frame>
+      <instance id="281:9008" name="Keypad" x="0" y="528" width="390" height="316" />
+    </frame>
+    <rounded-rectangle id="73:1757" name="Scrim" x="0" y="0" width="390" height="844" />
+    <frame id="73:1758" name="Bottom sheet" x="0" y="422" width="390" height="422">
+      <instance id="280:8533" name="Grabber" x="24" y="16" width="342" height="4" />
+      <text id="73:1761" name="لم يصلك الرمز؟" x="24" y="36" width="342" height="36" />
+      <text id="73:1762" name="قد يستغرق وصوله حتى دقيقة. تأكد من صحة الرقم أدناه." x="24" y="88" width="342" height="56" />
+      <frame id="73:1763" name="Options" x="24" y="160" width="342" height="158">
+        <frame id="73:1772" name="إعادة الإرسال برسالة نصية" x="0" y="0" width="342" height="76">
+          <instance id="80:9061" name="icon/chevronLeft" x="16" y="28" width="20" height="20" />
+          <frame id="73:1764" name="Text" x="52" y="16" width="218" height="44">
+            <text id="73:1765" name="إعادة الإرسال برسالة نصية" x="0" y="0" width="218" height="24" />
+            <text id="73:1766" name="متاح خلال 0:42" x="0" y="24" width="218" height="20" />
+          </frame>
+          <instance id="280:7871" name="Badge" x="286" y="18" width="40" height="40" />
+        </frame>
+        <frame id="73:1791" name="تغيير رقم الهاتف" x="0" y="84" width="342" height="74">
+          <instance id="80:9071" name="icon/chevronLeft" x="16" y="27" width="20" height="20" />
+          <frame id="73:1782" name="Text" x="52" y="16" width="218" height="42">
+            <text id="73:1783" name="تغيير رقم الهاتف" x="0" y="0" width="218" height="24" />
+            <text id="73:1784" name="+44 7700 900123" x="0" y="24" width="218" height="18" />
+          </frame>
+          <instance id="280:7986" name="Badge" x="286" y="17" width="40" height="40" />
+        </frame>
+      </frame>
+      <instance id="73:1792" name="Button" x="24" y="334" width="342" height="56" />
+    </frame>
+  </frame>
+  <text id="69:5077" name="2.9 Account created — verify ID to raise limit" x="12403" y="129" width="367" height="26" />
+  <frame id="69:5078" name="AR/2.9 Account created" x="12403" y="129" width="390" height="844">
+    <instance id="69:5079" name="Status Bar" x="0" y="0" width="390" height="47" />
+    <frame id="199:6511" name="Content" x="0" y="47" width="390" height="629">
+      <frame id="199:6512" name="Header" x="24" y="16" width="342" height="172">
+        <instance id="199:6513" name="Illustration/success" x="123" y="0" width="96" height="96" />
+        <frame id="199:6523" name="Text" x="0" y="104" width="342" height="68">
+          <text id="199:6524" name="تم إنشاء الحساب" x="0" y="0" width="342" height="36" />
+          <text id="199:6525" name="مرحباً جيمس! يمكنك البدء بإرسال الأموال الآن." x="0" y="40" width="342" height="28" />
+        </frame>
+      </frame>
+      <frame id="199:6526" name="Limit card" x="24" y="212" width="342" height="433">
+        <frame id="199:6527" name="Current limit" x="24" y="24" width="294" height="100">
+          <text id="199:6528" name="حدّ الإرسال الحالي" x="0" y="0" width="294" height="24" />
+          <text id="199:6529" name="£800" x="0" y="28" width="294" height="48" />
+          <text id="199:6530" name="إجمالي ما يمكنك إرساله طوال عمر حسابك" x="0" y="80" width="294" height="20" />
+        </frame>
+        <rounded-rectangle id="199:6531" name="Divider" x="24" y="140" width="294" height="1" />
+        <text id="199:6532" name="ارفع حدّك" x="24" y="157" width="294" height="28" />
+        <frame id="199:6533" name="Steps" x="24" y="201" width="294" height="208">
+          <frame id="199:6545" name="Step 1" x="0" y="0" width="294" height="68">
+            <frame id="199:6542" name="Amount" x="0" y="0" width="32" height="46">
+              <text id="199:6543" name="£800" x="0" y="4" width="32" height="22" />
+              <text id="199:6544" name="إجمالاً" x="0" y="26" width="28" height="20" />
+            </frame>
+            <frame id="199:6539" name="Text" x="44" y="0" width="210" height="68">
+              <text id="199:6540" name="إنشاء الحساب" x="0" y="4" width="210" height="24" />
+              <text id="199:6541" name="مكتمل" x="0" y="32" width="210" height="20" />
+            </frame>
+            <frame id="199:6537" name="Rail" x="266" y="0" width="28" height="68">
+              <frame id="199:6534" name="Node" x="0" y="0" width="28" height="28">
+                <instance id="199:6535" name="Icon/check" x="6" y="6" width="16" height="16" />
+              </frame>
+              <rounded-rectangle id="199:6538" name="Line" x="13" y="32" width="2" height="36" />
+            </frame>
+          </frame>
+          <frame id="199:6556" name="Step 2" x="0" y="68" width="294" height="88">
+            <frame id="199:6553" name="Amount" x="0" y="0" width="51" height="46">
+              <text id="199:6554" name="£12,000" x="0" y="4" width="51" height="22" />
+              <text id="199:6555" name="إجمالاً" x="0" y="26" width="28" height="20" />
+            </frame>
+            <frame id="199:6550" name="Text" x="63" y="0" width="191" height="88">
+              <text id="199:6551" name="توثيق الهوية والعنوان" x="0" y="4" width="191" height="24" />
+              <text id="199:6552" name="جواز سفر أو رخصة قيادة + فاتورة حديثة · 3 دقائق" x="0" y="32" width="191" height="40" />
+            </frame>
+            <frame id="199:6548" name="Rail" x="266" y="0" width="28" height="88">
+              <frame id="199:6546" name="Node" x="0" y="0" width="28" height="28">
+                <ellipse id="199:6547" name="Dot" x="9" y="9" width="10" height="10" />
+              </frame>
+              <rounded-rectangle id="199:6549" name="Line" x="13" y="32" width="2" height="56" />
+            </frame>
+          </frame>
+          <frame id="199:6568" name="Step 3" x="0" y="156" width="294" height="52">
+            <frame id="199:6565" name="Amount" x="0" y="0" width="60" height="46">
+              <text id="199:6566" name="£12,000+" x="0" y="4" width="60" height="22" />
+              <text id="199:6567" name="إجمالاً" x="0" y="26" width="28" height="20" />
+            </frame>
+            <frame id="199:6562" name="Text" x="72" y="0" width="182" height="52">
+              <text id="199:6563" name="إضافة مصدر الأموال" x="0" y="4" width="182" height="24" />
+              <text id="199:6564" name="متاح بعد توثيق الهوية والعنوان" x="0" y="32" width="182" height="20" />
+            </frame>
+            <frame id="199:6561" name="Rail" x="266" y="0" width="28" height="52">
+              <frame id="199:6557" name="Node" x="0" y="0" width="28" height="28">
+                <instance id="199:6558" name="Icon/lock" x="7" y="7" width="14" height="14" />
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+    <frame id="199:6569" name="Footer" x="0" y="676" width="390" height="168">
+      <instance id="199:6570" name="Button" x="24" y="16" width="342" height="56" />
+      <instance id="199:6592" name="Button" x="24" y="80" width="342" height="56" />
+    </frame>
+  </frame>
+  <text id="69:5102" name="3.1 Biometric login — Face ID (optional)" x="12857" y="129" width="326" height="26" />
+  <frame id="69:5103" name="AR/3.6 Biometric setup" x="12857" y="129" width="390" height="844">
+    <instance id="69:5104" name="Status Bar" x="0" y="0" width="390" height="47" />
+    <frame id="69:5105" name="Content" x="0" y="47" width="390" height="621">
+      <instance id="80:8741" name="Illustration/faceId" x="119" y="74.5" width="152" height="152" />
+      <frame id="69:5111" name="Text" x="24" y="250.5" width="342" height="136">
+        <text id="69:5112" name="سجّل الدخول أسرع باستخدام Face ID" x="0" y="0" width="342" height="72" />
+        <text id="69:5113" name="استخدم Face ID بدلاً من كتابة كلمة المرور في كل مرة." x="0" y="80" width="342" height="56" />
+      </frame>
+      <frame id="69:5114" name="Benefits" x="24" y="410.5" width="342" height="160">
+        <frame id="69:5115" name="Benefit" x="16" y="16" width="310" height="32">
+          <text id="69:5116" name="دخول أسرع بنظرة واحدة" x="0" y="4" width="270" height="24" />
+          <instance id="280:7168" name="Badge" x="278" y="0" width="32" height="32" />
+        </frame>
+        <frame id="69:5120" name="Benefit" x="16" y="64" width="310" height="32">
+          <text id="69:5121" name="بيانات وجهك لا تغادر هاتفك" x="0" y="4" width="270" height="24" />
+          <instance id="280:7173" name="Badge" x="278" y="0" width="32" height="32" />
+        </frame>
+        <frame id="69:5126" name="Benefit" x="16" y="112" width="310" height="32">
+          <text id="69:5127" name="حماية إضافية لكل تحويل" x="0" y="4" width="270" height="24" />
+          <instance id="280:7179" name="Badge" x="278" y="0" width="32" height="32" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="69:5131" name="Footer" x="0" y="668" width="390" height="176">
+      <instance id="69:5132" name="Button" x="24" y="16" width="342" height="56" />
+      <instance id="69:5134" name="Button" x="24" y="88" width="342" height="56" />
+    </frame>
+  </frame>
+  <text id="90:2477" name="3.1b Biometric login — fingerprint (optional)" x="13311" y="129" width="362" height="26" />
+  <frame id="90:2416" name="AR/3.1b Biometric setup — fingerprint" x="13311" y="129" width="390" height="844">
+    <instance id="90:2417" name="Status Bar" x="0" y="0" width="390" height="47" />
+    <frame id="90:2418" name="Content" x="0" y="47" width="390" height="621">
+      <instance id="90:2419" name="Illustration/fingerprint" x="119" y="74.5" width="152" height="152" />
+      <frame id="90:2420" name="Text" x="24" y="250.5" width="342" height="136">
+        <text id="90:2421" name="سجّل الدخول أسرع باستخدام بصمتك" x="0" y="0" width="342" height="72" />
+        <text id="90:2422" name="استخدم بصمة إصبعك بدلاً من كتابة كلمة المرور في كل مرة." x="0" y="80" width="342" height="56" />
+      </frame>
+      <frame id="90:2423" name="Benefits" x="24" y="410.5" width="342" height="160">
+        <frame id="90:2424" name="Benefit" x="16" y="16" width="310" height="32">
+          <text id="90:2425" name="دخول أسرع بلمسة واحدة" x="0" y="4" width="270" height="24" />
+          <instance id="280:7185" name="Badge" x="278" y="0" width="32" height="32" />
+        </frame>
+        <frame id="90:2428" name="Benefit" x="16" y="64" width="310" height="32">
+          <text id="90:2429" name="بيانات بصمتك لا تغادر هاتفك" x="0" y="4" width="270" height="24" />
+          <instance id="280:7190" name="Badge" x="278" y="0" width="32" height="32" />
+        </frame>
+        <frame id="90:2432" name="Benefit" x="16" y="112" width="310" height="32">
+          <text id="90:2433" name="حماية إضافية لكل تحويل" x="0" y="4" width="270" height="24" />
+          <instance id="280:7196" name="Badge" x="278" y="0" width="32" height="32" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="90:2436" name="Footer" x="0" y="668" width="390" height="176">
+      <instance id="90:2437" name="Button" x="24" y="16" width="342" height="56" />
+      <instance id="90:2438" name="Button" x="24" y="88" width="342" height="56" />
+    </frame>
+  </frame>
+  <text id="151:4805" name="2.3a Account details — checking number (loading)" x="5593" y="129" width="410" height="26" />
+  <frame id="151:4806" name="AR/2.3b Couldn’t confirm number" x="6047" y="129" width="390" height="844">
+    <frame id="192:7039" name="Background" x="0" y="0" width="390" height="1104">
+      <instance id="192:7040" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="192:7041" name="Step Header" x="0" y="47" width="390" height="136" />
+      <frame id="192:7042" name="Content" x="0" y="183" width="390" height="781">
+        <text id="192:7043" name="ستستخدمها لتسجيل الدخول. سنرسل رمزاً إلى هاتفك المحمول للتحقق منه." x="24" y="8" width="342" height="56" />
+        <frame id="192:7044" name="Phone" x="24" y="80" width="342" height="112">
+          <instance id="281:10111" name="UK prefix (fixed)" x="0" y="0" width="112" height="64" />
+          <instance id="192:7049" name="Text Field" x="120" y="0" width="222" height="112" />
+        </frame>
+        <instance id="192:7050" name="Text Field" x="24" y="208" width="342" height="64" />
+        <instance id="192:7051" name="Text Field" x="24" y="288" width="342" height="64" />
+        <frame id="192:7052" name="Password rules" x="24" y="368" width="342" height="184">
+          <instance id="281:7627" name="Rule" x="16" y="16" width="310" height="24" />
+          <instance id="281:7632" name="Rule" x="16" y="48" width="310" height="24" />
+          <instance id="281:7637" name="Rule" x="16" y="80" width="310" height="24" />
+          <instance id="281:7642" name="Rule" x="16" y="112" width="310" height="24" />
+          <instance id="281:7647" name="Rule" x="16" y="144" width="310" height="24" />
+        </frame>
+        <instance id="192:7073" name="Text Field" x="24" y="568" width="342" height="92" />
+        <rounded-rectangle id="192:7074" name="Rectangle" x="24" y="676" width="342" height="1" />
+        <frame id="192:7075" name="Agreements" x="24" y="693" width="342" height="64">
+          <instance id="281:7889" name="Agreement" x="0" y="0" width="342" height="24" />
+          <instance id="281:7919" name="Agreement" x="0" y="40" width="342" height="24" />
+        </frame>
+      </frame>
+      <frame id="192:7082" name="Footer" x="0" y="964" width="390" height="140">
+        <text id="192:7083" name="بعد ذلك، سنرسل رمزاً من 6 أرقام إلى رقمك المحمول." x="24" y="16" width="342" height="20" />
+        <instance id="192:7084" name="Button" x="24" y="52" width="342" height="56" />
+      </frame>
+    </frame>
+    <rounded-rectangle id="192:7164" name="Scrim" x="0" y="0" width="390" height="844" />
+    <frame id="192:7021" name="Bottom sheet" x="0" y="182" width="390" height="662">
+      <instance id="280:8535" name="Grabber" x="24" y="16" width="342" height="4" />
+      <instance id="151:4809" name="Illustration/error" x="156" y="36" width="78" height="78" />
+      <frame id="151:4810" name="Text" x="24" y="130" width="342" height="100">
+        <text id="151:4811" name="تعذّر التأكد من رقم هاتفك" x="0" y="0" width="342" height="36" />
+        <text id="151:4812" name="رقم الهاتف هذا غير مسجّل بالاسم الذي أدخلته. أدخل رقم هاتف بريطانياً مسجّلاً باسمك." x="0" y="44" width="342" height="56" />
+      </frame>
+      <frame id="151:4813" name="List" x="24" y="246" width="342" height="176">
+        <text id="151:4814" name="ما يجب التحقق منه" x="16" y="16" width="310" height="16" />
+        <instance id="282:9416" name="Item" x="16" y="48" width="310" height="48" />
+        <instance id="282:9425" name="Item" x="16" y="112" width="310" height="48" />
+      </frame>
+      <instance id="151:4828" name="Button" x="24" y="438" width="342" height="56" />
+      <text id="272:7105" name="Continue note" x="24" y="510" width="342" height="40" />
+      <instance id="266:7278" name="Continue button" x="24" y="566" width="342" height="56" />
+    </frame>
+  </frame>
+  <text id="151:4877" name="2.3b Couldn’t confirm number (sheet)" x="6047" y="129" width="306" height="26" />
+  <frame id="151:4878" name="AR/2.3c Enter a different number" x="6955" y="129" width="390" height="1084">
+    <instance id="151:4879" name="Status Bar" x="0" y="0" width="390" height="47" />
+    <instance id="151:4880" name="Step Header" x="0" y="47" width="390" height="136" />
+    <frame id="151:4881" name="Content" x="0" y="183" width="390" height="761">
+      <text id="151:4882" name="ستستخدمها لتسجيل الدخول. سنرسل رمزاً إلى هاتفك المحمول للتحقق منه." x="24" y="8" width="342" height="56" />
+      <frame id="151:4883" name="Phone" x="24" y="80" width="342" height="92">
+        <instance id="281:10124" name="UK prefix (fixed)" x="0" y="0" width="112" height="64" />
+        <instance id="151:4888" name="Text Field" x="120" y="0" width="222" height="92" />
+      </frame>
+      <instance id="151:4889" name="Text Field" x="24" y="188" width="342" height="64" />
+      <instance id="151:4890" name="Text Field" x="24" y="268" width="342" height="64" />
+      <frame id="151:4891" name="Password rules" x="24" y="348" width="342" height="184">
+        <instance id="281:7652" name="Rule" x="16" y="16" width="310" height="24" />
+        <instance id="281:7657" name="Rule" x="16" y="48" width="310" height="24" />
+        <instance id="281:7662" name="Rule" x="16" y="80" width="310" height="24" />
+        <instance id="281:7667" name="Rule" x="16" y="112" width="310" height="24" />
+        <instance id="281:7672" name="Rule" x="16" y="144" width="310" height="24" />
+      </frame>
+      <instance id="151:4912" name="Text Field" x="24" y="548" width="342" height="92" />
+      <rounded-rectangle id="151:4913" name="Rectangle" x="24" y="656" width="342" height="1" />
+      <frame id="151:4914" name="Agreements" x="24" y="673" width="342" height="64">
+        <instance id="281:7894" name="Agreement" x="0" y="0" width="342" height="24" />
+        <instance id="281:7924" name="Agreement" x="0" y="40" width="342" height="24" />
+      </frame>
+    </frame>
+    <frame id="151:4921" name="Footer" x="0" y="944" width="390" height="140">
+      <text id="151:4922" name="بعد ذلك، سنرسل رمزاً من 6 أرقام إلى رقمك المحمول." x="24" y="16" width="342" height="20" />
+      <instance id="151:4923" name="Button" x="24" y="52" width="342" height="56" />
+    </frame>
+  </frame>
+  <text id="151:4983" name="2.3c Enter a different number" x="6955" y="129" width="241" height="26" />
+  <frame id="191:5842" name="AR/1.3a About you — checking" x="1961" y="129" width="390" height="844">
+    <instance id="191:5843" name="Status Bar" x="0" y="0" width="390" height="47" />
+    <instance id="191:5844" name="Step Header" x="0" y="47" width="390" height="136" />
+    <frame id="191:5845" name="Content" x="0" y="183" width="390" height="521">
+      <text id="191:5846" name="أدخل اسمك وتاريخ ميلادك كما يظهران تماماً في هويتك." x="24" y="8" width="342" height="56" />
+      <instance id="191:5847" name="Text Field" x="24" y="80" width="342" height="64" />
+      <instance id="191:5848" name="Text Field" x="24" y="160" width="342" height="64" />
+      <instance id="191:5849" name="Text Field" x="24" y="240" width="342" height="64" />
+      <instance id="191:5850" name="Text Field" x="24" y="320" width="342" height="64" />
+    </frame>
+    <frame id="191:5851" name="Footer" x="0" y="704" width="390" height="140">
+      <frame id="72:1129" name="Note" x="24" y="16" width="342" height="20">
+        <text id="72:1125" name="هذا ليس فحصاً ائتمانياً ولن يؤثر على تصنيفك الائتماني." x="0" y="0" width="277" height="20" />
+        <frame id="127:3269" name="Icon wrap" x="285" y="0" width="16" height="20">
+          <instance id="80:8947" name="icon/lock" x="0" y="2" width="16" height="16" />
+        </frame>
+      </frame>
+      <instance id="191:5852" name="Button" x="24" y="52" width="342" height="56" />
+    </frame>
+  </frame>
+  <frame id="192:6710" name="AR/2.1 Account details" x="3777" y="129" width="390" height="844">
+    <instance id="192:6711" name="Status Bar" x="0" y="0" width="390" height="47" />
+    <instance id="192:6712" name="Step Header" x="0" y="47" width="390" height="136" />
+    <frame id="192:6713" name="Content" x="0" y="183" width="390" height="553">
+      <text id="192:6714" name="ستستخدمها لتسجيل الدخول. سنرسل رمزاً إلى هاتفك المحمول للتحقق منه." x="24" y="8" width="342" height="56" />
+      <frame id="192:6715" name="Phone" x="24" y="80" width="342" height="112">
+        <instance id="281:10137" name="UK prefix (fixed)" x="0" y="0" width="112" height="64" />
+        <instance id="192:6720" name="Text Field" x="120" y="0" width="222" height="112" />
+      </frame>
+      <instance id="192:6721" name="Text Field" x="24" y="208" width="342" height="64" />
+      <instance id="192:6722" name="Text Field" x="24" y="288" width="342" height="64" />
+      <frame id="192:6723" name="Password rules" x="24" y="368" width="342" height="184" hidden="true">
+        <instance id="281:7677" name="Rule" x="0" y="0" width="310" height="24" />
+        <instance id="281:7682" name="Rule" x="0" y="0" width="310" height="24" />
+        <instance id="281:7687" name="Rule" x="0" y="0" width="310" height="24" />
+        <instance id="281:7748" name="Rule" x="0" y="0" width="310" height="24" />
+        <instance id="281:7751" name="Rule" x="0" y="0" width="310" height="24" />
+      </frame>
+      <instance id="192:6742" name="Text Field" x="24" y="368" width="342" height="64" />
+      <rounded-rectangle id="192:6743" name="Rectangle" x="24" y="448" width="342" height="1" />
+      <frame id="192:6744" name="Agreements" x="24" y="465" width="342" height="64">
+        <instance id="281:7870" name="Agreement" x="0" y="0" width="342" height="24" />
+        <instance id="281:7876" name="Agreement" x="0" y="40" width="342" height="24" />
+      </frame>
+    </frame>
+    <frame id="192:6751" name="Footer" x="0" y="736" width="390" height="104">
+      <instance id="192:6752" name="Button" x="24" y="16" width="342" height="56" />
+    </frame>
+  </frame>
+  <text id="192:6880" name="2.1 Account details — default (empty)" x="3777" y="129" width="309" height="26" />
+  <frame id="192:6883" name="AR/2.3a Account details — checking" x="5593" y="129" width="390" height="1104">
+    <instance id="192:6884" name="Status Bar" x="0" y="0" width="390" height="47" />
+    <instance id="192:6885" name="Step Header" x="0" y="47" width="390" height="136" />
+    <frame id="192:6886" name="Content" x="0" y="183" width="390" height="781">
+      <text id="192:6887" name="ستستخدمها لتسجيل الدخول. سنرسل رمزاً إلى هاتفك المحمول للتحقق منه." x="24" y="8" width="342" height="56" />
+      <frame id="192:6888" name="Phone" x="24" y="80" width="342" height="112">
+        <instance id="281:10150" name="UK prefix (fixed)" x="0" y="0" width="112" height="64" />
+        <instance id="192:6893" name="Text Field" x="120" y="0" width="222" height="112" />
+      </frame>
+      <instance id="192:6894" name="Text Field" x="24" y="208" width="342" height="64" />
+      <instance id="192:6895" name="Text Field" x="24" y="288" width="342" height="64" />
+      <frame id="192:6896" name="Password rules" x="24" y="368" width="342" height="184">
+        <instance id="281:7692" name="Rule" x="16" y="16" width="310" height="24" />
+        <instance id="281:7697" name="Rule" x="16" y="48" width="310" height="24" />
+        <instance id="281:7702" name="Rule" x="16" y="80" width="310" height="24" />
+        <instance id="281:7707" name="Rule" x="16" y="112" width="310" height="24" />
+        <instance id="281:7712" name="Rule" x="16" y="144" width="310" height="24" />
+      </frame>
+      <instance id="192:6917" name="Text Field" x="24" y="568" width="342" height="92" />
+      <rounded-rectangle id="192:6918" name="Rectangle" x="24" y="676" width="342" height="1" />
+      <frame id="192:6919" name="Agreements" x="24" y="693" width="342" height="64">
+        <instance id="281:7899" name="Agreement" x="0" y="0" width="342" height="24" />
+        <instance id="281:7929" name="Agreement" x="0" y="40" width="342" height="24" />
+      </frame>
+    </frame>
+    <frame id="192:6926" name="Footer" x="0" y="964" width="390" height="140">
+      <text id="192:6927" name="نتحقق من أن هذا الرقم مسجّل باسمك…" x="24" y="16" width="342" height="20" />
+      <instance id="192:6928" name="Button" x="24" y="52" width="342" height="56" />
+    </frame>
+  </frame>
+  <frame id="192:7165" name="AR/2.3d Number confirmed" x="6501" y="129" width="390" height="844">
+    <frame id="192:7269" name="Background" x="0" y="0" width="390" height="1104">
+      <instance id="192:7270" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="192:7271" name="Step Header" x="0" y="47" width="390" height="136" />
+      <frame id="192:7272" name="Content" x="0" y="183" width="390" height="781">
+        <text id="192:7273" name="ستستخدمها لتسجيل الدخول. سنرسل رمزاً إلى هاتفك المحمول للتحقق منه." x="24" y="8" width="342" height="56" />
+        <frame id="192:7274" name="Phone" x="24" y="80" width="342" height="112">
+          <instance id="281:10163" name="UK prefix (fixed)" x="0" y="0" width="112" height="64" />
+          <instance id="192:7279" name="Text Field" x="120" y="0" width="222" height="112" />
+        </frame>
+        <instance id="192:7280" name="Text Field" x="24" y="208" width="342" height="64" />
+        <instance id="192:7281" name="Text Field" x="24" y="288" width="342" height="64" />
+        <frame id="192:7282" name="Password rules" x="24" y="368" width="342" height="184">
+          <instance id="281:7717" name="Rule" x="16" y="16" width="310" height="24" />
+          <instance id="281:7722" name="Rule" x="16" y="48" width="310" height="24" />
+          <instance id="281:7727" name="Rule" x="16" y="80" width="310" height="24" />
+          <instance id="281:7732" name="Rule" x="16" y="112" width="310" height="24" />
+          <instance id="281:7737" name="Rule" x="16" y="144" width="310" height="24" />
+        </frame>
+        <instance id="192:7303" name="Text Field" x="24" y="568" width="342" height="92" />
+        <rounded-rectangle id="192:7304" name="Rectangle" x="24" y="676" width="342" height="1" />
+        <frame id="192:7305" name="Agreements" x="24" y="693" width="342" height="64">
+          <instance id="281:7904" name="Agreement" x="0" y="0" width="342" height="24" />
+          <instance id="281:7934" name="Agreement" x="0" y="40" width="342" height="24" />
+        </frame>
+      </frame>
+      <frame id="192:7312" name="Footer" x="0" y="964" width="390" height="140">
+        <text id="192:7313" name="بعد ذلك، سنرسل رمزاً من 6 أرقام إلى رقمك المحمول." x="24" y="16" width="342" height="20" />
+        <instance id="192:7314" name="Button" x="24" y="52" width="342" height="56" />
+      </frame>
+    </frame>
+    <rounded-rectangle id="192:7177" name="Scrim" x="0" y="0" width="390" height="844" />
+    <frame id="192:7178" name="Bottom sheet" x="0" y="372" width="390" height="472">
+      <instance id="280:8537" name="Grabber" x="24" y="16" width="342" height="4" />
+      <instance id="192:7181" name="Illustration/success" x="141" y="36" width="107.99999237060547" height="107.99999237060547" />
+      <frame id="192:7182" name="Text" x="24" y="160" width="342" height="100">
+        <text id="192:7183" name="تم تأكيد رقمك" x="0" y="0" width="342" height="36" />
+        <text id="192:7184" name="هذا الرقم مسجّل باسمك. سنرسل لك الآن رمزاً من 6 أرقام للتحقق منه." x="0" y="44" width="342" height="56" />
+      </frame>
+      <frame id="192:7185" name="Summary" x="24" y="276" width="342" height="84">
+        <instance id="282:9856" name="Verified" x="16" y="28" width="70" height="28" />
+        <frame id="192:7190" name="Text" x="94" y="16" width="184" height="52">
+          <text id="192:7191" name="+44 7700 900123" x="0" y="0" width="184" height="28" />
+          <text id="192:7192" name="مسجّل باسمك" x="0" y="28" width="184" height="24" />
+        </frame>
+        <instance id="280:6960" name="Badge" x="286" y="22" width="40" height="40" />
+      </frame>
+      <instance id="192:7195" name="Button" x="24" y="376" width="342" height="56" />
+    </frame>
+  </frame>
+  <text id="192:7405" name="2.3d Number confirmed (sheet)" x="6501" y="129" width="256" height="26" />
+  <frame id="194:6564" name="AR/2.4d Edit mobile number — checking" x="8317" y="129" width="390" height="844">
+    <frame id="194:6565" name="Background" x="0" y="0" width="390" height="844">
+      <instance id="194:6566" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="194:6567" name="Step Header" x="0" y="47" width="390" height="64" />
+      <frame id="194:6568" name="Content" x="0" y="111" width="390" height="417">
+        <frame id="194:6569" name="Text" x="24" y="8" width="342" height="112">
+          <text id="194:6570" name="تحقق من رقمك" x="0" y="0" width="342" height="36" />
+          <text id="194:6571" name="أرسلنا رمزاً من 6 أرقام إلى" x="0" y="44" width="342" height="28" />
+          <frame id="194:6572" name="Number" x="104" y="80" width="238" height="32">
+            <instance id="286:9863" name="Edit" x="0" y="0" width="79" height="32" />
+            <text id="194:6577" name="+44 7700 900123" x="95" y="3" width="143" height="26" />
+          </frame>
+        </frame>
+        <frame id="194:6578" name="Code" x="24" y="144" width="342" height="60">
+          <instance id="280:8141" name="Digit 1" x="3" y="0" width="46" height="60" />
+          <instance id="280:8143" name="Digit 2" x="57" y="0" width="46" height="60" />
+          <instance id="280:8145" name="Digit 3" x="111" y="0" width="46" height="60" />
+          <rounded-rectangle id="194:6585" name="Separator" x="165" y="29" width="12" height="2" />
+          <instance id="280:8241" name="Digit 4" x="185" y="0" width="46" height="60" />
+          <instance id="280:8299" name="Digit 5" x="239" y="0" width="46" height="60" />
+          <instance id="280:8300" name="Digit 6" x="293" y="0" width="46" height="60" />
+        </frame>
+        <frame id="194:6590" name="Help row" x="24" y="228" width="342" height="24">
+          <text id="194:6591" name="لم يصلك الرمز؟" x="0" y="0" width="91" height="24" />
+          <instance id="281:9777" name="Countdown" x="174" y="0" width="168" height="24" />
+        </frame>
+      </frame>
+      <instance id="281:9051" name="Keypad" x="0" y="528" width="390" height="316" />
+    </frame>
+    <rounded-rectangle id="194:6637" name="Scrim" x="0" y="0" width="390" height="844" />
+    <frame id="194:6638" name="Bottom sheet" x="0" y="298" width="390" height="298">
+      <instance id="280:8539" name="Grabber" x="24" y="16" width="342" height="4" />
+      <instance id="282:10028" name="Head" x="24" y="36" width="342" height="58" />
+      <frame id="194:6647" name="Phone" x="24" y="110" width="342" height="92">
+        <instance id="281:10176" name="UK prefix (fixed)" x="0" y="0" width="112" height="64" />
+        <instance id="194:6652" name="Text Field" x="120" y="0" width="222" height="92" />
+      </frame>
+      <instance id="194:6653" name="Button" x="24" y="218" width="342" height="56" />
+    </frame>
+    <instance id="281:9434" name="Keypad" x="0" y="596" width="390" height="248" />
+  </frame>
+  <text id="194:6982" name="2.4d Edit mobile number — checking (loading, same as 2.3a)" x="8317" y="129" width="493" height="26" />
+  <text id="194:6983" name="2.4e Number confirmed (sheet) — same as 2.3d" x="8771" y="129" width="389" height="26" />
+  <frame id="195:8019" name="AR/2.4e Edit mobile number — number confirmed" x="8771" y="129" width="390" height="844">
+    <frame id="195:8178" name="Background" x="0" y="0" width="390" height="844">
+      <instance id="195:8179" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="195:8180" name="Step Header" x="0" y="47" width="390" height="64" />
+      <frame id="195:8181" name="Content" x="0" y="111" width="390" height="417">
+        <frame id="195:8182" name="Text" x="24" y="8" width="342" height="112">
+          <text id="195:8183" name="تحقق من رقمك" x="0" y="0" width="342" height="36" />
+          <text id="195:8184" name="أرسلنا رمزاً من 6 أرقام إلى" x="0" y="44" width="342" height="28" />
+          <frame id="195:8185" name="Number" x="104" y="80" width="238" height="32">
+            <instance id="286:9873" name="Edit" x="0" y="0" width="79" height="32" />
+            <text id="195:8190" name="+44 7700 900123" x="95" y="3" width="143" height="26" />
+          </frame>
+        </frame>
+        <frame id="195:8191" name="Code" x="24" y="144" width="342" height="60">
+          <instance id="280:8147" name="Digit 1" x="3" y="0" width="46" height="60" />
+          <instance id="280:8149" name="Digit 2" x="57" y="0" width="46" height="60" />
+          <instance id="280:8151" name="Digit 3" x="111" y="0" width="46" height="60" />
+          <rounded-rectangle id="195:8198" name="Separator" x="165" y="29" width="12" height="2" />
+          <instance id="280:8243" name="Digit 4" x="185" y="0" width="46" height="60" />
+          <instance id="280:8301" name="Digit 5" x="239" y="0" width="46" height="60" />
+          <instance id="280:8302" name="Digit 6" x="293" y="0" width="46" height="60" />
+        </frame>
+        <frame id="195:8203" name="Help row" x="24" y="228" width="342" height="24">
+          <text id="195:8204" name="لم يصلك الرمز؟" x="0" y="0" width="91" height="24" />
+          <instance id="281:9782" name="Countdown" x="174" y="0" width="168" height="24" />
+        </frame>
+      </frame>
+      <instance id="281:9094" name="Keypad" x="0" y="528" width="390" height="316" />
+    </frame>
+    <rounded-rectangle id="195:8066" name="Scrim" x="0" y="0" width="390" height="844" />
+    <frame id="195:8067" name="Bottom sheet" x="0" y="372" width="390" height="472">
+      <instance id="280:8541" name="Grabber" x="24" y="16" width="342" height="4" />
+      <instance id="195:8070" name="Illustration/success" x="141" y="36" width="107.99999237060547" height="107.99999237060547" />
+      <frame id="195:8071" name="Text" x="24" y="160" width="342" height="100">
+        <text id="195:8072" name="تم تأكيد رقمك" x="0" y="0" width="342" height="36" />
+        <text id="195:8073" name="هذا الرقم مسجّل باسمك. سنرسل لك الآن رمزاً من 6 أرقام للتحقق منه." x="0" y="44" width="342" height="56" />
+      </frame>
+      <frame id="195:8074" name="Summary" x="24" y="276" width="342" height="84">
+        <instance id="282:9861" name="Verified" x="16" y="28" width="70" height="28" />
+        <frame id="195:8079" name="Text" x="94" y="16" width="184" height="52">
+          <text id="195:8080" name="+44 7700 900456" x="0" y="0" width="184" height="28" />
+          <text id="195:8081" name="مسجّل باسمك" x="0" y="28" width="184" height="24" />
+        </frame>
+        <instance id="280:6966" name="Badge" x="286" y="22" width="40" height="40" />
+      </frame>
+      <instance id="195:8084" name="Button" x="24" y="376" width="342" height="56" />
+    </frame>
+  </frame>
+  <frame id="195:8274" name="AR/2.4f Edit mobile number — couldn’t confirm number" x="9225" y="129" width="390" height="844">
+    <frame id="195:8442" name="Background" x="0" y="0" width="390" height="844">
+      <instance id="195:8443" name="Status Bar" x="0" y="0" width="390" height="47" />
+      <instance id="195:8444" name="Step Header" x="0" y="47" width="390" height="64" />
+      <frame id="195:8445" name="Content" x="0" y="111" width="390" height="417">
+        <frame id="195:8446" name="Text" x="24" y="8" width="342" height="112">
+          <text id="195:8447" name="تحقق من رقمك" x="0" y="0" width="342" height="36" />
+          <text id="195:8448" name="أرسلنا رمزاً من 6 أرقام إلى" x="0" y="44" width="342" height="28" />
+          <frame id="195:8449" name="Number" x="104" y="80" width="238" height="32">
+            <instance id="286:9883" name="Edit" x="0" y="0" width="79" height="32" />
+            <text id="195:8454" name="+44 7700 900123" x="95" y="3" width="143" height="26" />
+          </frame>
+        </frame>
+        <frame id="195:8455" name="Code" x="24" y="144" width="342" height="60">
+          <instance id="280:8153" name="Digit 1" x="3" y="0" width="46" height="60" />
+          <instance id="280:8155" name="Digit 2" x="57" y="0" width="46" height="60" />
+          <instance id="280:8157" name="Digit 3" x="111" y="0" width="46" height="60" />
+          <rounded-rectangle id="195:8462" name="Separator" x="165" y="29" width="12" height="2" />
+          <instance id="280:8245" name="Digit 4" x="185" y="0" width="46" height="60" />
+          <instance id="280:8303" name="Digit 5" x="239" y="0" width="46" height="60" />
+          <instance id="280:8304" name="Digit 6" x="293" y="0" width="46" height="60" />
+        </frame>
+        <frame id="195:8467" name="Help row" x="24" y="228" width="342" height="24">
+          <text id="195:8468" name="لم يصلك الرمز؟" x="0" y="0" width="91" height="24" />
+          <instance id="281:9787" name="Countdown" x="174" y="0" width="168" height="24" />
+        </frame>
+      </frame>
+      <instance id="281:9137" name="Keypad" x="0" y="528" width="390" height="316" />
+    </frame>
+    <rounded-rectangle id="195:8321" name="Scrim" x="0" y="0" width="390" height="844" />
+    <frame id="195:8322" name="Bottom sheet" x="0" y="246" width="390" height="598">
+      <instance id="280:8543" name="Grabber" x="24" y="16" width="342" height="4" />
+      <instance id="195:8325" name="Illustration/error" x="156" y="36" width="78" height="78" />
+      <frame id="195:8326" name="Text" x="24" y="130" width="342" height="100">
+        <text id="195:8327" name="تعذّر التأكد من رقم هاتفك" x="0" y="0" width="342" height="36" />
+        <text id="195:8328" name="رقم الهاتف هذا غير مسجّل بالاسم الذي أدخلته. أدخل رقم هاتف بريطانياً مسجّلاً باسمك." x="0" y="44" width="342" height="56" />
+      </frame>
+      <frame id="195:8329" name="List" x="24" y="246" width="342" height="240">
+        <text id="195:8330" name="ما يجب التحقق منه" x="16" y="16" width="310" height="16" />
+        <instance id="282:9434" name="Item" x="16" y="48" width="310" height="48" />
+        <instance id="282:9443" name="Item" x="16" y="112" width="310" height="48" />
+        <instance id="282:9452" name="Item" x="16" y="176" width="310" height="48" />
+      </frame>
+      <instance id="195:8343" name="Button" x="24" y="502" width="342" height="56" />
+    </frame>
+  </frame>
+  <text id="195:8539" name="2.4f Couldn’t confirm number (sheet) — same as 2.3b" x="9225" y="129" width="435" height="26" />
+  <frame id="266:7516" name="AR/2.4g Verify — enter code (ID check required)" x="13765" y="129" width="390" height="844">
+    <instance id="266:7517" name="Status Bar" x="0" y="0" width="390" height="47" />
+    <instance id="266:7518" name="Step Header" x="0" y="47" width="390" height="64" />
+    <frame id="266:7519" name="Content" x="0" y="111" width="390" height="417">
+      <frame id="266:7520" name="Text" x="24" y="8" width="342" height="112">
+        <text id="266:7521" name="تحقق من رقمك" x="0" y="0" width="342" height="36" />
+        <text id="266:7522" name="أرسلنا رمزاً من 6 أرقام إلى" x="0" y="44" width="342" height="28" />
+        <frame id="266:7523" name="Number" x="104" y="80" width="238" height="32">
+          <instance id="286:9893" name="Edit" x="0" y="0" width="79" height="32" />
+          <text id="266:7528" name="+44 7700 900123" x="95" y="3" width="143" height="26" />
+        </frame>
+      </frame>
+      <frame id="266:7529" name="Code" x="24" y="144" width="342" height="60">
+        <instance id="280:8159" name="Digit 1" x="3" y="0" width="46" height="60" />
+        <instance id="280:8161" name="Digit 2" x="57" y="0" width="46" height="60" />
+        <instance id="280:8163" name="Digit 3" x="111" y="0" width="46" height="60" />
+        <rounded-rectangle id="266:7536" name="Separator" x="165" y="29" width="12" height="2" />
+        <instance id="280:8247" name="Digit 4" x="185" y="0" width="46" height="60" />
+        <instance id="280:8305" name="Digit 5" x="239" y="0" width="46" height="60" />
+        <instance id="280:8306" name="Digit 6" x="293" y="0" width="46" height="60" />
+      </frame>
+      <frame id="266:7541" name="Help row" x="24" y="228" width="342" height="24">
+        <text id="266:7542" name="لم يصلك الرمز؟" x="0" y="0" width="91" height="24" />
+        <instance id="281:9792" name="Countdown" x="174" y="0" width="168" height="24" />
+      </frame>
+    </frame>
+    <instance id="281:9180" name="Keypad" x="0" y="528" width="390" height="316" />
+  </frame>
+  <text id="266:7611" name="2.4g Verify — enter code (ID check required)" x="13765" y="129" width="364" height="26" />
+  <frame id="266:7612" name="AR/2.7b Verify — verified (ID check required)" x="14219" y="129" width="390" height="844">
+    <instance id="266:7613" name="Status Bar" x="0" y="0" width="390" height="47" />
+    <instance id="266:7614" name="Step Header" x="0" y="47" width="390" height="64" />
+    <frame id="266:7615" name="Content" x="0" y="111" width="390" height="733">
+      <frame id="266:7616" name="Text" x="24" y="8" width="342" height="112">
+        <text id="266:7617" name="تحقق من رقمك" x="0" y="0" width="342" height="36" />
+        <text id="266:7618" name="أرسلنا رمزاً من 6 أرقام إلى" x="0" y="44" width="342" height="28" />
+        <frame id="266:7619" name="Number" x="104" y="80" width="238" height="32">
+          <instance id="286:9903" name="Edit" x="0" y="0" width="79" height="32" />
+          <text id="266:7624" name="+44 7700 900123" x="95" y="3" width="143" height="26" />
+        </frame>
+      </frame>
+      <frame id="266:7625" name="Code" x="24" y="144" width="342" height="60">
+        <instance id="280:8431" name="Digit 1" x="3" y="0" width="46" height="60" />
+        <instance id="280:8433" name="Digit 2" x="57" y="0" width="46" height="60" />
+        <instance id="280:8435" name="Digit 3" x="111" y="0" width="46" height="60" />
+        <rounded-rectangle id="266:7632" name="Separator" x="165" y="29" width="12" height="2" />
+        <instance id="280:8437" name="Digit 4" x="185" y="0" width="46" height="60" />
+        <instance id="280:8439" name="Digit 5" x="239" y="0" width="46" height="60" />
+        <instance id="280:8441" name="Digit 6" x="293" y="0" width="46" height="60" />
+      </frame>
+      <frame id="266:7639" name="Verified" x="24" y="228" width="342" height="172">
+        <instance id="280:7851" name="Badge" x="143" y="24" width="56" height="56" />
+        <text id="266:7642" name="تم التحقق من رقمك" x="94.5" y="88" width="153" height="28" />
+        <frame id="266:7643" name="Next" x="104" y="124" width="134" height="24">
+          <text id="266:7644" name="جارٍ إنشاء حسابك…" x="0" y="0" width="110" height="24" />
+          <frame id="266:7645" name="Frame" x="118" y="4" width="16" height="16" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <text id="266:7667" name="2.7b Verify — verified (ID check required)" x="14219" y="129" width="336" height="26" />
+  <frame id="266:7668" name="AR/2.9b Account created — limit £0" x="14673" y="129" width="390" height="844">
+    <instance id="266:7669" name="Status Bar" x="0" y="0" width="390" height="47" />
+    <frame id="266:7670" name="Content" x="0" y="47" width="390" height="629">
+      <frame id="266:7671" name="Header" x="24" y="16" width="342" height="68">
+        <instance id="266:7672" name="Illustration/success" x="123" y="0" width="96" height="96" hidden="true" />
+        <frame id="266:7673" name="Text" x="0" y="0" width="342" height="68">
+          <text id="266:7674" name="تم إنشاء الحساب" x="0" y="0" width="342" height="36" />
+          <text id="266:7675" name="مرحباً جيمس! وثّق هويتك وعنوانك لتبدأ الإرسال." x="0" y="40" width="342" height="28" />
+        </frame>
+      </frame>
+      <instance id="266:7833" name="Banner" x="24" y="100" width="342" height="80" />
+      <frame id="266:7676" name="Limit card" x="24" y="196" width="342" height="352">
+        <frame id="266:7677" name="Current limit" x="24" y="24" width="294" height="100">
+          <text id="266:7678" name="حدّ الإرسال الحالي" x="0" y="0" width="294" height="24" />
+          <text id="266:7679" name="£0" x="0" y="28" width="294" height="48" />
+          <text id="266:7680" name="لا يمكنك إرسال الأموال قبل توثيق هويتك وعنوانك" x="0" y="80" width="294" height="20" />
+        </frame>
+        <rounded-rectangle id="266:7681" name="Divider" x="24" y="140" width="294" height="1" hidden="true" />
+        <text id="266:7682" name="ارفع حدّك" x="24" y="140" width="294" height="28" hidden="true" />
+        <frame id="266:7683" name="Steps" x="24" y="140" width="294" height="188">
+          <frame id="266:7684" name="Step 1" x="0" y="0" width="294" height="68">
+            <frame id="266:7685" name="Amount" x="0" y="0" width="28" height="46">
+              <text id="266:7686" name="£0" x="0" y="4" width="16" height="22" />
+              <text id="266:7687" name="إجمالاً" x="0" y="26" width="28" height="20" />
+            </frame>
+            <frame id="266:7688" name="Text" x="40" y="0" width="214" height="68">
+              <text id="266:7689" name="إنشاء الحساب" x="0" y="4" width="214" height="24" />
+              <text id="266:7690" name="مكتمل" x="0" y="32" width="214" height="20" />
+            </frame>
+            <frame id="266:7691" name="Rail" x="266" y="0" width="28" height="68">
+              <frame id="266:7692" name="Node" x="0" y="0" width="28" height="28">
+                <instance id="266:7693" name="Icon/check" x="6" y="6" width="16" height="16" />
+              </frame>
+              <rounded-rectangle id="266:7694" name="Line" x="13" y="32" width="2" height="36" />
+            </frame>
+          </frame>
+          <frame id="266:7695" name="Step 2" x="0" y="68" width="294" height="68">
+            <frame id="266:7696" name="Amount" x="0" y="0" width="51" height="46">
+              <text id="266:7697" name="£12,000" x="0" y="4" width="51" height="22" />
+              <text id="266:7698" name="إجمالاً" x="0" y="26" width="28" height="20" />
+            </frame>
+            <frame id="266:7699" name="Text" x="63" y="0" width="191" height="68">
+              <text id="266:7700" name="توثيق الهوية والعنوان" x="0" y="4" width="191" height="24" />
+              <text id="266:7701" name="مطلوب لبدء الإرسال · 3 دقائق" x="0" y="32" width="191" height="20" />
+            </frame>
+            <frame id="266:7702" name="Rail" x="266" y="0" width="28" height="68">
+              <frame id="266:7703" name="Node" x="0" y="0" width="28" height="28">
+                <ellipse id="266:7704" name="Dot" x="9" y="9" width="10" height="10" />
+              </frame>
+              <rounded-rectangle id="266:7705" name="Line" x="13" y="32" width="2" height="36" />
+            </frame>
+          </frame>
+          <frame id="266:7706" name="Step 3" x="0" y="136" width="294" height="52">
+            <frame id="266:7707" name="Amount" x="0" y="0" width="60" height="46">
+              <text id="266:7708" name="£12,000+" x="0" y="4" width="60" height="22" />
+              <text id="266:7709" name="إجمالاً" x="0" y="26" width="28" height="20" />
+            </frame>
+            <frame id="266:7710" name="Text" x="72" y="0" width="182" height="52">
+              <text id="266:7711" name="إضافة مصدر الأموال" x="0" y="4" width="182" height="24" />
+              <text id="266:7712" name="متاح بعد توثيق الهوية والعنوان" x="0" y="32" width="182" height="20" />
+            </frame>
+            <frame id="266:7713" name="Rail" x="266" y="0" width="28" height="52">
+              <frame id="266:7714" name="Node" x="0" y="0" width="28" height="28">
+                <instance id="266:7715" name="Icon/lock" x="7" y="7" width="14" height="14" />
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+    <frame id="266:7716" name="Footer" x="0" y="676" width="390" height="168">
+      <instance id="266:7717" name="Button" x="24" y="16" width="342" height="56" />
+      <instance id="266:7718" name="Button" x="24" y="80" width="342" height="56" />
+    </frame>
+  </frame>
+  <text id="266:7750" name="2.9b Account created — limit £0" x="14673" y="129" width="264" height="26" />
+</section>

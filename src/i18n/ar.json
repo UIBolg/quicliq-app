@@ -7,7 +7,12 @@
     "or": "أو",
     "matched": "مطابق",
     "logo": "Quicliq",
-    "language": "تغيير اللغة"
+    "language": "تغيير اللغة",
+    "showPassword": "إظهار كلمة المرور",
+    "hidePassword": "إخفاء كلمة المرور",
+    "locked": "مقفل",
+    "ruleMet": "مستوفى",
+    "ruleUnmet": "غير مستوفى"
   },
   "gallery": {
     "title": "معرض المكوّنات",
@@ -15,5 +20,44 @@
     "button": "زر",
     "continue": "متابعة",
     "sampleName": "جيمس كارتر"
+  },
+  "components": {
+    "countryPrefix": "المملكة المتحدة، ‎+44",
+    "loginMethod": {
+      "mobile": "رقم الهاتف",
+      "email": "البريد الإلكتروني"
+    },
+    "agreement": {
+      "privacy": {
+        "prefix": "أوافق على ",
+        "link": "سياسة الخصوصية"
+      },
+      "fraud": {
+        "prefix": "قرأت ",
+        "link": "تحذير الاحتيال"
+      }
+    },
+    "switchAccount": {
+      "prompt": "لست أنت؟",
+      "action": "تبديل الحساب"
+    }
+  },
+  "registration": {
+    "2_1": {
+      "intro": "ستستخدمها لتسجيل الدخول. سنرسل رمزاً إلى هاتفك المحمول للتحقق منه.",
+      "mobile": "رقم الهاتف المحمول",
+      "mobileHelper": "يجب أن يكون رقم هاتف بريطانياً مسجّلاً باسمك.",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "confirmPlaceholder": "أعد إدخال كلمة المرور",
+      "rules": {
+        "length": "8 أحرف على الأقل",
+        "upper": "حرف كبير واحد",
+        "lower": "حرف صغير واحد",
+        "number": "رقم واحد",
+        "special": "رمز خاص واحد"
+      }
+    }
   }
 }

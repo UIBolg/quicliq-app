@@ -7,7 +7,12 @@
     "or": "or",
     "matched": "Matched",
     "logo": "Quicliq",
-    "language": "Change language"
+    "language": "Change language",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "locked": "Locked",
+    "ruleMet": "met",
+    "ruleUnmet": "not met"
   },
   "gallery": {
     "title": "Component gallery",
@@ -15,5 +20,44 @@
     "button": "Button",
     "continue": "Continue",
     "sampleName": "James Carter"
+  },
+  "components": {
+    "countryPrefix": "United Kingdom, +44",
+    "loginMethod": {
+      "mobile": "Mobile number",
+      "email": "Email"
+    },
+    "agreement": {
+      "privacy": {
+        "prefix": "I accept the ",
+        "link": "Privacy Policy"
+      },
+      "fraud": {
+        "prefix": "I’ve read the ",
+        "link": "Fraud Warning"
+      }
+    },
+    "switchAccount": {
+      "prompt": "Not you?",
+      "action": "Switch account"
+    }
+  },
+  "registration": {
+    "2_1": {
+      "intro": "You’ll use these to log in. We’ll text a code to verify your mobile.",
+      "mobile": "Mobile number",
+      "mobileHelper": "Must be a UK mobile number registered in your name.",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm password",
+      "confirmPlaceholder": "Re-enter your password",
+      "rules": {
+        "length": "At least 8 characters",
+        "upper": "One uppercase letter",
+        "lower": "One lowercase letter",
+        "number": "One number",
+        "special": "One special character"
+      }
+    }
   }
 }

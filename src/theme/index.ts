@@ -7,4 +7,5 @@ export * from './fonts';
 export * from './layout';
 export * from './sizes';
 export * from './states';
+export * from './elevation';
 export * from './ThemeProvider';

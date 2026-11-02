@@ -1,10 +1,11 @@
 /**
  * Avatar — Figma local component 280:8449 (Size=56): Primary/Red circle, white initials in H3.
  * Size 44 is not in Figma (added on request) — it uses Title so the initials fit.
+ * AR screens (e.g. AR/7.0 139:3922) keep Latin initials in the EN style; the avatar sits on the start side.
  */
 import { View } from 'react-native';
-import { AppText } from './AppText';
-import { useTheme, type AvatarSize } from '../theme';
+import { Text } from 'react-native';
+import { getTextStyle, useTheme, type AvatarSize } from '../theme';
 
 export type AvatarProps = {
   initials: string;
@@ -33,9 +34,8 @@ export function Avatar({ initials, size = 56, accessibilityLabel }: AvatarProps)
         direction: 'ltr',
       }}
     >
-      <AppText variant={size === 56 ? 'H3' : 'Title'} color="Neutral/White">
-        {initials}
-      </AppText>
+      {/* Latin initials always use the EN text style, as in the Figma AR screens. */}
+      <Text style={[getTextStyle(size === 56 ? 'H3' : 'Title', 'en'), { color: t.colors['Neutral/White'] }]}>{initials}</Text>
     </View>
   );
 }

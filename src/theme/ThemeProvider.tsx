@@ -6,6 +6,7 @@ import { stroke } from './stroke';
 import { layout } from './layout';
 import { sizes } from './sizes';
 import { states } from './states';
+import { elevation } from './elevation';
 import { getTextStyle, type Locale, type TextStyleName } from './typography';
 
 function buildTheme(locale: Locale) {
@@ -19,6 +20,7 @@ function buildTheme(locale: Locale) {
     layout,
     sizes,
     states,
+    elevation,
     /** e.g. theme.text('H1') → EN/H1 or AR/H1 depending on locale */
     text: (name: TextStyleName) => getTextStyle(name, locale),
   };

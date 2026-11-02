@@ -46,6 +46,21 @@ export const sizes = {
 
   /** Verified Tag 282:9835 — 14px check in an 18 (EN) / 20 (AR) line box. */
   verifiedTag: { icon: 14 },
+
+  /** Text Field 21:388 — 64 high; trailing icons 20; lock 18; helper alert 14. */
+  textField: { height: 64, icon: 20, lock: 18, helperIcon: 14 },
+
+  /** Country Prefix 281:9863 — 112×64; flag 24; lock 14. */
+  countryPrefix: { width: 112, flag: 24, lock: 14 },
+
+  /** Flag/UK 81:9, Flag/JO 117:1567 — 24 circle. */
+  flag: 24,
+
+  /** Checkbox 21:460 — 24 box, 16 check. */
+  checkbox: { size: 24, icon: 16 },
+
+  /** Password Rule 281:7369 — 20 indicator (Met = Icon Badge 20 Success). */
+  passwordRule: { indicator: 20 },
 } as const;
 
 export type IconBadgeSize = keyof typeof sizes.iconBadge;
