@@ -14,5 +14,5 @@ export const states = {
   /** Keyboard / accessibility focus ring — matches Text Field Focused (Ink outline, stroke/md). */
   focusRing: { color: 'Neutral/Ink' as ColorToken, width: 'stroke/md' as StrokeToken },
   /** Motion durations (ms). Figma has no motion spec yet (docs/figma-issues.md #24); platform-like defaults. */
-  motion: { sheet: 250, splashMin: 1200, mockRequest: 1200 },
+  motion: { sheet: 250, splashMin: 1200, mockRequest: 1200, caret: 500 },
 } as const;

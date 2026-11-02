@@ -9,7 +9,7 @@ import { useState, type ReactNode } from 'react';
 import {
   Agreement, AppText, Avatar, Button, Checkbox, CountryPrefix, DividerOr, Flag, Icon, IconBadge, IconButton, LoginMethod, Logo,
   iconNames, isDirectionalIcon,
-  OnboardingScene, Pagination, PasswordRule, PhoneField, RadioOption, SheetGrabber, SheetHeader, SwitchAccount, TextField, VerifiedTag,
+  CodeError, CodeInput, OnboardingScene, OtpDigit, Pagination, ResendCountdown, useCountdown, PasswordRule, PhoneField, RadioOption, SheetGrabber, SheetHeader, SwitchAccount, TextField, VerifiedTag,
   type ButtonType, type LoginMethodValue, type TextFieldState,
 } from '../../components';
 import { useTheme, type IconBadgeSize } from '../../theme';
@@ -44,6 +44,69 @@ const BADGES: { size: IconBadgeSize; tone: 'white' | 'redTint' | 'success' | 'gr
 ];
 
 const FIELD_STATES: TextFieldState[] = ['default', 'filled', 'focused', 'error', 'locked'];
+
+/** Short timer so reviewers see the Unlocked state; screens use 59 s (build doc 2.4). */
+const RESEND_DEMO_SECONDS = 10;
+
+/** Group 3 — Code entry. Static Figma states + a live code input (123456 = correct). */
+function CodeEntryGroup() {
+  const t = useTheme();
+  const { t: tr } = useTranslation();
+  const [code, setCode] = useState('');
+  const [status, setStatus] = useState<'error' | 'success' | undefined>();
+  const [attempts, setAttempts] = useState(3);
+  const [round, setRound] = useState(0);
+  const total = RESEND_DEMO_SECONDS;
+  const left = useCountdown(total, round);
+  const submit = (c: string) => {
+    if (c === '123456') setStatus('success');
+    else { setStatus('error'); setAttempts((a) => Math.max(0, a - 1)); }
+  };
+  const change = (v: string) => { setCode(v); if (status === 'error') setStatus(undefined); };
+  const row = { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: t.spacing['spacing/8'] } as const;
+  return (
+    <>
+      <AppText variant="Overline" color="Primary/Red">GROUP 3 · CODE ENTRY</AppText>
+
+      <Section title="OTP Digit" node="280:8044">
+        <Label>Empty · Focused · Filled · Error · Success</Label>
+        <View style={[row, { direction: 'ltr' }]}>
+          <OtpDigit state="empty" />
+          <OtpDigit state="focused" />
+          <OtpDigit state="filled" value="4" />
+          <OtpDigit state="error" value="4" />
+          <OtpDigit state="success" value="4" />
+        </View>
+      </Section>
+
+      <Section title="Code input (6 × OTP Digit)" node="220:6752">
+        <Label>Live — 123456 is correct · SMS autofill · native number pad</Label>
+        <CodeInput value={code} onChangeText={change} onComplete={submit} status={status} autoFocus={false} testID="code-input" />
+        {status === 'error' ? <CodeError message={tr('components.codeError.wrongCode')} attemptsLeft={attempts} /> : null}
+      </Section>
+
+      <Section title="Resend Countdown" node="281:9668">
+        <Label>Live (short demo timer) · tap to resend when unlocked</Label>
+        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+          <ResendCountdown secondsLeft={left} total={total} onResend={() => setRound((r) => r + 1)} />
+          <AppText variant="Body Medium" color="Primary/Red">{tr('components.tryAnotherWay')}</AppText>
+        </View>
+        <Label>Counting · Unlocked (static)</Label>
+        <ResendCountdown secondsLeft={42} total={59} onResend={() => {}} />
+        <ResendCountdown secondsLeft={0} total={59} onResend={() => {}} />
+      </Section>
+
+      <Section title="Code error box" node="220:6766">
+        <CodeError message={tr('components.codeError.wrongCode')} attemptsLeft={2} />
+        <CodeError message={tr('components.codeError.wrongCode')} attemptsLeft={1} />
+      </Section>
+
+      <Section title="Keypad" node="281:8115">
+        <AppText variant="Body" color="Neutral/Slate">{tr('gallery.keypadNote')}</AppText>
+      </Section>
+    </>
+  );
+}
 
 /** Group 2 — Forms. Live, interactive examples plus every static Figma state. */
 function FormsGroup() {
@@ -247,6 +310,8 @@ export function ComponentGallery({ onToggleLocale, onShowTokens }: { onToggleLoc
         </Section>
 
         <FormsGroup />
+
+        <CodeEntryGroup />
 
         <AppText variant="Overline" color="Primary/Red">ONBOARDING · SHEETS</AppText>
 

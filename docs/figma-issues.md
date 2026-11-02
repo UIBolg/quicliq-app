@@ -29,3 +29,6 @@ Figma is never edited from code.
 | 22 | Onboarding slide titles (202:6464 …) | Use EN/Display (32/40) while the build doc says H1. | Follows Figma: Display. |
 | 23 | EN/Splash — Loading 82:11650 | Contains only a Lottie placeholder rectangle (link to LottieFiles), no logo/tagline/spinner. The AR splash (82:11716) has the full layout. The Lottie file itself is not exported. | Builds both languages from the AR layout (white logo, tagline AR only, platform spinner). Lottie can replace it once the file is supplied. |
 | 24 | Bottom sheet / pager | No motion spec (sheet slide-in, page swipe, splash duration). | Sheet 250 ms slide, splash min 1.2 s (src/theme/states.ts `motion`). |
+| 25 | Resend Countdown 281:9668 State=Unlocked (281:9652 / AR 281:9667) | Unlocked label still says "Resend code in 0:42" (placeholder copy from Counting). | Unlocked shows "Resend code" / "إعادة إرسال الرمز" (build doc copy). |
+| 26 | Resend Countdown "Countdown" ring (281:9639) | Flattened image with a fixed ~3/4 arc; no spec for how it animates. | Draws the ring from tokens (Fog track, Slate arc, stroke/2xl); the arc shows the time left. |
+| 27 | OTP Digit 280:8044 Focused | Caret is static; no blink spec. Digit uses EN/H2 with no Lang variant. | Caret blinks (500 ms). Digits always EN/H2 so they stay Western in Arabic (CLAUDE.md rule). |

@@ -19,7 +19,8 @@
     "switchTo": "English",
     "button": "زر",
     "continue": "متابعة",
-    "sampleName": "جيمس كارتر"
+    "sampleName": "جيمس كارتر",
+    "keypadNote": "تصميم توضيحي فقط. يستخدم التطبيق لوحة أرقام الهاتف نفسها (مع التعبئة التلقائية لرمز الرسائل) — اضغط على حقل الرمز أعلاه."
   },
   "components": {
     "countryPrefix": "المملكة المتحدة، ‎+44",
@@ -41,7 +42,26 @@
       "prompt": "لست أنت؟",
       "action": "تبديل الحساب"
     },
-    "pagination": "الخطوة {{step}} من {{count}}"
+    "pagination": "الخطوة {{step}} من {{count}}",
+    "codeInput": {
+      "label": "رمز من {{count}} أرقام",
+      "entered": "تم إدخال: {{digits}}"
+    },
+    "resend": {
+      "counting": "إعادة الإرسال خلال {{time}}",
+      "action": "إعادة إرسال الرمز"
+    },
+    "codeError": {
+      "wrongCode": "الرمز غير صحيح. تحقق من رسائلك وحاول مرة أخرى.",
+      "attemptsLeft_zero": "لم تتبقَّ محاولات",
+      "attemptsLeft_one": "تبقّت محاولة واحدة",
+      "attemptsLeft_two": "تبقّت محاولتان",
+      "attemptsLeft_few": "تبقّت {{count}} محاولات",
+      "attemptsLeft_many": "تبقّت {{count}} محاولة",
+      "attemptsLeft_other": "تبقّت {{count}} محاولة"
+    },
+    "didntGetCode": "لم يصلك الرمز؟",
+    "tryAnotherWay": "جرّب طريقة أخرى"
   },
   "registration": {
     "2_1": {

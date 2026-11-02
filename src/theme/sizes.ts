@@ -85,6 +85,16 @@ export const sizes = {
     spinner: 32,
   },
 
+  /** OTP Digit 280:8044 — 46×60 box; Focused caret 2×28. Code row separator 12×2 (220:6759). */
+  otpDigit: { width: 46, height: 60, caretWidth: 2, caretHeight: 28 },
+  codeSeparator: { width: 12, height: 2 },
+
+  /** Resend Countdown 281:9668 — 20 countdown ring (stroke/2xl), 16 refresh icon. */
+  resendCountdown: { ring: 20, icon: 16 },
+
+  /** Error box (7.2d 220:6766 / 7.10 99:2845) — 18 alert icon; attempt bars 16×4. */
+  codeError: { icon: 18, barWidth: 16, barHeight: 4 },
+
   /** Password Rule 281:7369 — 20 indicator (Met = Icon Badge 20 Success). */
   passwordRule: { indicator: 20 },
 } as const;

@@ -19,7 +19,8 @@
     "switchTo": "العربية",
     "button": "Button",
     "continue": "Continue",
-    "sampleName": "James Carter"
+    "sampleName": "James Carter",
+    "keypadNote": "Design mock only. The app uses the phone’s own number pad (with SMS code autofill) — tap the code input above."
   },
   "components": {
     "countryPrefix": "United Kingdom, +44",
@@ -41,7 +42,22 @@
       "prompt": "Not you?",
       "action": "Switch account"
     },
-    "pagination": "Step {{step}} of {{count}}"
+    "pagination": "Step {{step}} of {{count}}",
+    "codeInput": {
+      "label": "{{count}}-digit code",
+      "entered": "Entered: {{digits}}"
+    },
+    "resend": {
+      "counting": "Resend code in {{time}}",
+      "action": "Resend code"
+    },
+    "codeError": {
+      "wrongCode": "That code isn’t right. Check your messages and try again.",
+      "attemptsLeft_one": "{{count}} attempt left",
+      "attemptsLeft_other": "{{count}} attempts left"
+    },
+    "didntGetCode": "Didn’t get a code?",
+    "tryAnotherWay": "Try another way"
   },
   "registration": {
     "2_1": {
