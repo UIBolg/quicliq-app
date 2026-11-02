@@ -3,6 +3,11 @@
     "expo@claude-plugins-official": true
   },
   "permissions": {
+       "ask": [
+     "mcp__Figma__use_figma",
+     "mcp__plugin_figma_figma__use_figma"
+   ],
+    
     "deny": [
 
       "mcp__Figma__send_code_to_figma",
