@@ -123,7 +123,11 @@
       "forgot": "Forgot password?",
       "logIn": "Log in",
       "noAccount": "Don’t have an account?",
-      "signUp": "Sign up"
+      "signUp": "Sign up",
+      "incorrect": "Incorrect mobile number or password. Please try again.",
+      "tooMany": "Too many attempts. For your security, login is paused for 15 minutes.",
+      "tryAgainIn": "Try again in {{time}}",
+      "resetPassword": "Reset password"
     },
     "7_2": {
       "title": "Verify it’s you",
@@ -136,10 +140,56 @@
       "sms": "Text message",
       "email": "Email",
       "send": "Send code"
+    },
+    "7_5": {
+      "title": "You’re offline",
+      "body": "Connect to Wi-Fi or mobile data to log in to Quicliq.",
+      "retry": "Try again"
+    },
+    "7_6": {
+      "title": "Your ID has expired",
+      "body": "To keep sending money, verify your identity with a valid ID. It only takes a couple of minutes.",
+      "verify": "Verify my identity",
+      "later": "Remind me later"
     }
   },
   "notBuilt": {
     "title": "Not built yet",
     "body": "Screen {{id}} is part of a later group. Go back to continue reviewing."
+  },
+  "home": {
+    "greeting": "Welcome back,",
+    "notifications": "Notifications",
+    "corridor": "UK to Jordan",
+    "rateLabel": "TODAY’S RATE",
+    "rateNote": "Jordanian dinars for every {{gbp}}",
+    "sendMoney": "Send money",
+    "actions": {
+      "send": "Send",
+      "recipients": "Recipients",
+      "rates": "Rates",
+      "help": "Help"
+    },
+    "recent": "Recent transfers",
+    "seeAll": "See all",
+    "names": {
+      "t1": "Layla Haddad",
+      "t2": "Omar Khalil",
+      "t3": "Rana Saleh"
+    },
+    "methods": {
+      "bank": "Bank deposit",
+      "cash": "Cash pickup"
+    },
+    "status": {
+      "delivered": "Delivered",
+      "processing": "Processing"
+    },
+    "tabs": {
+      "home": "Home",
+      "send": "Send",
+      "history": "History",
+      "profile": "Profile"
+    }
   }
 }

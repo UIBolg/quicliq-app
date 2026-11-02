@@ -7,14 +7,21 @@
  * Body Medium Primary/Red), Actions (Primary "Log in"). Flexible spacer. Footer pt spacing/16, pb spacing/32:
  * "Don't have an account? Sign up" centred (Body Slate + Body Medium Primary/Red link).
  *
- * No backend yet: "Log in" shows the Loading button (7.2 / 7.2e), then goes to the code-entry step
- * (7.2a by text / 7.2b by email).
+ * States (same screen): 7.3 Incorrect credentials (82:9687) — Error Banner at the top of the form and both fields
+ * in the error look (never says which one was wrong); 7.4 Too many attempts (82:9713) — after 5 wrong tries a Security
+ * Banner (clock icon), disabled "Try again in mm:ss" (15 min countdown) and Ghost "Reset password", Actions gap spacing/16.
+ * No backend yet (demo account in src/mock/account.ts): "Log in" shows the Loading button (7.2 / 7.2e); offline → 7.5;
+ * right password → 7.2a (text) / 7.2b (email); wrong → 7.3, the 5th time → 7.4.
  */
 import { useEffect, useRef, useState } from 'react';
 import { KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { AppText, Button, LoginMethod, Logo, PhoneField, Screen, TextField, type LoginMethodValue } from '../../components';
+import {
+  AppText, Banner, Button, LoginMethod, Logo, PhoneField, Screen, TextField, formatMSS, useCountdown, type LoginMethodValue,
+} from '../../components';
+import { demoAccount } from '../../mock/account';
+import { isOffline } from '../../platform/network';
 import { useTheme } from '../../theme';
 import type { RootStackParamList } from '../../navigation/routes';
 
@@ -22,22 +29,45 @@ export function LoginScreen({ navigation, route }: NativeStackScreenProps<RootSt
   const t = useTheme();
   const { t: tr } = useTranslation();
   const [method, setMethod] = useState<LoginMethodValue>(route.params?.method ?? 'mobile');
-  const [mobile, setMobile] = useState('');
+  const preview = route.params?.previewState;
+  const [mobile, setMobile] = useState(preview ? demoAccount.phone : '');
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState(preview ? 'wrongpass1' : '');
   const [loading, setLoading] = useState(false);
+  const [failed, setFailed] = useState(preview === 'incorrect' ? 1 : 0);
+  const [incorrect, setIncorrect] = useState(preview === 'incorrect');
+  const [lockRound, setLockRound] = useState(preview === 'locked' ? 1 : 0);
+  const lockLeft = useCountdown(lockRound ? demoAccount.lockSeconds : 0, lockRound);
+  const locked = lockRound > 0 && lockLeft > 0;
   const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
   useEffect(() => () => clearTimeout(timer.current), []);
+  // Lock over: start counting attempts again.
+  useEffect(() => {
+    if (lockRound > 0 && lockLeft === 0) { setLockRound(0); setFailed(0); }
+  }, [lockRound, lockLeft]);
+
+  const edit = <T,>(set: (v: T) => void) => (v: T) => { set(v); setIncorrect(false); };
 
   const k = 'login.7_1';
   const g = t.layout.screenGutter;
 
   const logIn = () => {
     setLoading(true);
-    timer.current = setTimeout(() => {
+    setIncorrect(false);
+    timer.current = setTimeout(async () => {
+      const offline = await isOffline();
       setLoading(false);
-      if (method === 'mobile') navigation.navigate('7.2a', { phone: mobile || undefined });
-      else navigation.navigate('7.2b', { email: email || undefined });
+      if (offline) return navigation.navigate('7.5');
+      if (password === demoAccount.password) {
+        setFailed(0);
+        if (method === 'mobile') navigation.navigate('7.2a', { phone: mobile || undefined });
+        else navigation.navigate('7.2b', { email: email || undefined });
+        return;
+      }
+      const n = failed + 1;
+      setFailed(n);
+      if (n >= demoAccount.loginAttempts) setLockRound((r) => r + 1);
+      else setIncorrect(true);
     }, t.states.motion.mockRequest);
   };
 
@@ -58,13 +88,16 @@ export function LoginScreen({ navigation, route }: NativeStackScreenProps<RootSt
             <LoginMethod value={method} onChange={setMethod} />
 
             <View style={{ gap: t.spacing['spacing/16'] }}>
+              {incorrect ? <Banner type="error" text={tr(`${k}.incorrect`)} testID="banner-incorrect" /> : null}
+              {locked ? <Banner type="security" icon="clock" text={tr(`${k}.tooMany`)} testID="banner-locked" /> : null}
               {method === 'mobile' ? (
-                <PhoneField label={tr(`${k}.mobile`)} value={mobile} onChangeText={setMobile} testID="mobile" />
+                <PhoneField label={tr(`${k}.mobile`)} value={mobile} onChangeText={edit(setMobile)} invalid={incorrect} testID="mobile" />
               ) : (
                 <TextField
                   label={tr(`${k}.email`)}
                   value={email}
-                  onChangeText={setEmail}
+                  onChangeText={edit(setEmail)}
+                  invalid={incorrect}
                   keyboardType="email-address"
                   autoCapitalize="none"
                   autoComplete="email"
@@ -75,7 +108,8 @@ export function LoginScreen({ navigation, route }: NativeStackScreenProps<RootSt
               <TextField
                 label={tr(`${k}.password`)}
                 value={password}
-                onChangeText={setPassword}
+                onChangeText={edit(setPassword)}
+                invalid={incorrect}
                 trailing="eye"
                 autoComplete="current-password"
                 textContentType="password"
@@ -95,7 +129,14 @@ export function LoginScreen({ navigation, route }: NativeStackScreenProps<RootSt
               </Pressable>
             </View>
 
-            <Button type={loading ? 'loading' : 'primary'} label={tr(`${k}.logIn`)} onPress={logIn} testID="log-in-submit" />
+            {locked ? (
+              <View style={{ gap: t.spacing['spacing/16'] }}>
+                <Button type="disabled" label={tr(`${k}.tryAgainIn`, { time: `\u2066${formatMSS(lockLeft)}\u2069` })} testID="log-in-submit" />
+                <Button type="ghost" label={tr(`${k}.resetPassword`)} onPress={() => navigation.navigate('NotBuilt', { screenId: 'Forgot password' })} />
+              </View>
+            ) : (
+              <Button type={loading ? 'loading' : 'primary'} label={tr(`${k}.logIn`)} onPress={logIn} testID="log-in-submit" />
+            )}
           </View>
 
           <View style={styles.flex} />

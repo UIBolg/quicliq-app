@@ -29,3 +29,5 @@ export * from './CodeError';
 export * from './StatusBarMock';
 export * from './BackButton';
 export * from './Keypad';
+export * from './Banner';
+export * from './Illustration';

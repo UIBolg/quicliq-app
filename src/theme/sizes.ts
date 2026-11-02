@@ -99,6 +99,12 @@ export const sizes = {
   /** Radio Option 282:9637 Icon=On — 40 white badge with a 20 icon. */
   radioOptionIcon: { badge: 40, icon: 20 },
 
+  /** Banner 157:626 — 20 icon. */
+  banner: { icon: 20 },
+
+  /** Spot illustrations 79:389 — 160 artboards; 7.6 / 7.7 use them at 144. */
+  illustration: { default: 160, small: 144 },
+
   /** Password Rule 281:7369 — 20 indicator (Met = Icon Badge 20 Success). */
   passwordRule: { indicator: 20 },
 } as const;

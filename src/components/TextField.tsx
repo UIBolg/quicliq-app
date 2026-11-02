@@ -23,6 +23,8 @@ export type TextFieldProps = Omit<TextInputProps, 'style' | 'placeholderTextColo
   helper?: string;
   /** Error message; puts the field in the Error state. */
   error?: string;
+  /** Error look without a message under the field (7.3: the message is in a Banner above the form). */
+  invalid?: boolean;
   locked?: boolean;
   trailing?: TextFieldTrailing;
   /** For picker fields (calendar / chevron): the field becomes a button that opens the picker. */
@@ -45,7 +47,7 @@ const look: Record<TextFieldState, { bg?: ColorToken; border?: ColorToken; dashe
 };
 
 export function TextField({
-  label, value = '', helper, error, locked, trailing = 'none', onPress, previewState, testID,
+  label, value = '', helper, error, invalid, locked, trailing = 'none', onPress, previewState, testID,
   secureTextEntry, onFocus, onBlur, placeholder, ...inputProps
 }: TextFieldProps) {
   const t = useTheme();
@@ -54,7 +56,7 @@ export function TextField({
   const [revealed, setRevealed] = useState(false);
 
   const state: TextFieldState =
-    previewState ?? (locked ? 'locked' : error ? 'error' : focused ? 'focused' : value ? 'filled' : 'default');
+    previewState ?? (locked ? 'locked' : error || invalid ? 'error' : focused ? 'focused' : value ? 'filled' : 'default');
   const c = look[state];
   const isPassword = trailing === 'eye';
   const iconSlop = (t.sizes.touchTarget - t.sizes.textField.icon) / 2;

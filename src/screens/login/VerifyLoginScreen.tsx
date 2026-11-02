@@ -7,7 +7,7 @@
  * masked number/email in Title + Small Tonal "Edit"), Code input, [Error box 7.2d], Help row (Resend Countdown at start,
  * "Try another way" Body Medium Primary/Red at end) · Keypad (mock; device-frame preview only — phones use the
  * native number pad with SMS autofill).
- * Correct code → Home (not built yet). Wrong code → 7.2d with attempts left (3 total). Edit → back to 7.1.
+ * Correct code → Home. Wrong code → 7.2d with attempts left (3 total). Edit → back to 7.1.
  */
 import { useEffect, useRef, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
@@ -31,9 +31,10 @@ export function VerifyLoginScreen({ navigation, route }: Props) {
   const phone = route.params?.phone || demoAccount.phone;
   const email = route.params?.email || demoAccount.email;
 
-  const [code, setCode] = useState('');
-  const [status, setStatus] = useState<'error' | 'success' | undefined>();
-  const [attemptsLeft, setAttemptsLeft] = useState<number>(demoAccount.codeAttempts);
+  const wrongPreview = route.params?.previewState === 'wrongCode';
+  const [code, setCode] = useState(wrongPreview ? '482916' : '');
+  const [status, setStatus] = useState<'error' | 'success' | undefined>(wrongPreview ? 'error' : undefined);
+  const [attemptsLeft, setAttemptsLeft] = useState<number>(demoAccount.codeAttempts - (wrongPreview ? 1 : 0));
   const [round, setRound] = useState(0);
   const secondsLeft = useCountdown(demoAccount.resendSeconds, round);
   const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
@@ -45,7 +46,7 @@ export function VerifyLoginScreen({ navigation, route }: Props) {
   const submit = (value: string) => {
     if (value === demoAccount.code) {
       setStatus('success');
-      timer.current = setTimeout(() => navigation.navigate('NotBuilt', { screenId: 'Home' }), t.states.motion.mockRequest);
+      timer.current = setTimeout(() => navigation.reset({ index: 0, routes: [{ name: 'Home' }] }), t.states.motion.mockRequest);
     } else {
       setStatus('error');
       setAttemptsLeft((a) => Math.max(0, a - 1));

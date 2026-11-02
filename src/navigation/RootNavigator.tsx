@@ -2,7 +2,9 @@
  * React Navigation native stack; route names are Figma screen IDs (see routes.ts).
  * dev/* routes (read-only component gallery + tokens) are registered only in development builds.
  */
-import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme, createNavigationContainerRef } from '@react-navigation/native';
+import { useEffect } from 'react';
+import { inDeviceFrame } from '../platform/deviceFrame';
 import { createNativeStackNavigator, type NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useLocale } from '../i18n/LocaleProvider';
 import { useTheme } from '../theme';
@@ -11,12 +13,32 @@ import { OnboardingScreen } from '../screens/onboarding/OnboardingScreen';
 import { LoginScreen } from '../screens/login/LoginScreen';
 import { VerifyLoginScreen } from '../screens/login/VerifyLoginScreen';
 import { ChooseCodeMethodScreen } from '../screens/login/ChooseCodeMethodScreen';
+import { OfflineScreen } from '../screens/login/OfflineScreen';
+import { IdExpiredScreen } from '../screens/login/IdExpiredScreen';
+import { HomeScreen } from '../screens/home/HomeScreen';
 import { NotBuiltScreen } from '../screens/NotBuiltScreen';
 import { ComponentGallery } from '../screens/dev/ComponentGallery';
 import { FoundationsScreen } from '../screens/dev/FoundationsScreen';
 import type { RootStackParamList } from './routes';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
+export const navigationRef = createNavigationContainerRef<RootStackParamList>();
+
+/** Device-frame preview only: lets the review page's "Jump to screen" menu open routes and switch language. */
+function usePreviewHooks() {
+  const { setLocale } = useLocale();
+  useEffect(() => {
+    if (!inDeviceFrame) return;
+    const w = window as unknown as Record<string, unknown>;
+    w.__QUICLIQ_PREVIEW__ = {
+      open: (route: string, params?: object) => {
+        if (!navigationRef.isReady()) return;
+        navigationRef.reset({ index: 0, routes: [{ name: route as keyof RootStackParamList, params: params as never }] });
+      },
+      setLocale,
+    };
+  }, [setLocale]);
+}
 
 function GalleryRoute({ navigation }: NativeStackScreenProps<RootStackParamList, 'dev/Gallery'>) {
   const { locale, setLocale } = useLocale();
@@ -29,8 +51,10 @@ function TokensRoute({ navigation }: NativeStackScreenProps<RootStackParamList, 
 
 export function RootNavigator() {
   const t = useTheme();
+  usePreviewHooks();
   return (
     <NavigationContainer
+      ref={navigationRef}
       theme={{ ...DefaultTheme, colors: { ...DefaultTheme.colors, background: t.colors['Neutral/White'] } }}
       // Swipe-back and push animations follow the reading direction.
       direction={t.isRTL ? 'rtl' : 'ltr'}
@@ -42,6 +66,9 @@ export function RootNavigator() {
         <Stack.Screen name="7.2a" component={VerifyLoginScreen} />
         <Stack.Screen name="7.2b" component={VerifyLoginScreen} />
         <Stack.Screen name="7.2c" component={ChooseCodeMethodScreen} />
+        <Stack.Screen name="7.5" component={OfflineScreen} />
+        <Stack.Screen name="7.6" component={IdExpiredScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} options={{ animation: 'fade', gestureEnabled: false }} />
         <Stack.Screen name="NotBuilt" component={NotBuiltScreen} />
         {__DEV__ ? (
           <>
