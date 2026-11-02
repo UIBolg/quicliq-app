@@ -26,4 +26,5 @@ Read `AGENTS.md` too (Expo commands and conventions). The rules below win if the
 - Copy lives in `src/i18n/en.json` / `ar.json`.
 
 ## Workflow
+- Always work on and push directly to `main`. No feature branches.
 - Work in phases/groups and stop for review after each. Commit after each component group / flow.
