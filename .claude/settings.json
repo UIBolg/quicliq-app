@@ -4,7 +4,7 @@
   },
   "permissions": {
     "deny": [
-      "mcp__Figma__use_figma",
+
       "mcp__Figma__send_code_to_figma",
       "mcp__Figma__create_new_file",
       "mcp__Figma__upload_assets",
