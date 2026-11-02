@@ -95,5 +95,8 @@ export function getTextStyle(name: TextStyleName, locale: Locale): TextStyle {
     lineHeight: spec.lineHeight,
     letterSpacing: spec.letterSpacing,
     writingDirection: locale === 'ar' ? 'rtl' : 'ltr',
+    // Android ignores writingDirection, and the app flips layout with the `direction` style instead of
+    // I18nManager, so start-align text explicitly. Callers override with textAlign: 'center' where needed.
+    textAlign: locale === 'ar' ? 'right' : 'left',
   };
 }

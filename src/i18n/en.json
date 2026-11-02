@@ -40,7 +40,8 @@
     "switchAccount": {
       "prompt": "Not you?",
       "action": "Switch account"
-    }
+    },
+    "pagination": "Step {{step}} of {{count}}"
   },
   "registration": {
     "2_1": {
@@ -59,5 +60,57 @@
         "special": "One special character"
       }
     }
+  },
+  "splash": {
+    "tagline": ""
+  },
+  "onboarding": {
+    "slide1": {
+      "title": "Send Money",
+      "body": "Send money from the UK to your loved ones abroad, quickly and securely."
+    },
+    "slide2": {
+      "title": "Competitive Rates",
+      "body": "Transparent exchange rates and transfer fees, with no hidden costs."
+    },
+    "slide3": {
+      "title": "Flexible Receiving",
+      "body": "Your family can receive money by bank deposit or collect it as cash."
+    },
+    "slide4": {
+      "title": "Secure Transfers",
+      "body": "Secure payments, identity verification, and real-time transaction tracking."
+    },
+    "signUp": "Sign up",
+    "logIn": "Log in",
+    "language": {
+      "title": "Choose your language",
+      "subtitle": "You can change this anytime in Settings.",
+      "en": {
+        "title": "English",
+        "subtitle": "English"
+      },
+      "ar": {
+        "title": "العربية",
+        "subtitle": "Arabic"
+      }
+    }
+  },
+  "login": {
+    "7_1": {
+      "title": "Log in",
+      "subtitle": "Log in to send money in seconds.",
+      "mobile": "Mobile number",
+      "email": "Email",
+      "password": "Password",
+      "forgot": "Forgot password?",
+      "logIn": "Log in",
+      "noAccount": "Don’t have an account?",
+      "signUp": "Sign up"
+    }
+  },
+  "notBuilt": {
+    "title": "Not built yet",
+    "body": "Screen {{id}} is part of a later group. Go back to continue reviewing."
   }
 }

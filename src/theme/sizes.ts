@@ -62,6 +62,29 @@ export const sizes = {
   /** Dev gallery only — width of one icon cell in the icon grid. */
   gallery: { iconCell: 80 },
 
+  /** Pagination 12:57 — 8 dots, active dot 24 wide. */
+  pagination: { dot: 8, active: 24 },
+
+  /** Sheet Grabber 280:8504 — 40×4 handle. */
+  sheetGrabber: { width: 40, height: 4 },
+
+  /** Sheet Header 282:9973 — 32 close button with a 16 x icon. */
+  sheetHeader: { close: 32, closeIcon: 16 },
+
+  /** Radio Option 282:9637 — 22 radio; selected ring stroke/6xl, unselected stroke/md. */
+  radioOption: { radio: 22 },
+
+  /** Onboarding 202:6388 — illustration canvas 342×360 (scene artwork size). */
+  onboarding: { sceneWidth: 342, sceneHeight: 360 },
+
+  /** Splash AR/Splash 82:11716 — logo 200 wide, two decorative circles. */
+  splash: {
+    logoWidth: 200,
+    decoLarge: { size: 420, top: -120, start: 150 },
+    decoSmall: { size: 380, top: 560, start: -160 },
+    spinner: 32,
+  },
+
   /** Password Rule 281:7369 — 20 indicator (Met = Icon Badge 20 Success). */
   passwordRule: { indicator: 20 },
 } as const;

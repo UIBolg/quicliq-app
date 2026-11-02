@@ -9,14 +9,16 @@ export type IconButtonProps = {
   accessibilityLabel: string;
   onPress?: () => void;
   disabled?: boolean;
+  testID?: string;
 };
 
-export function IconButton({ icon, accessibilityLabel, onPress, disabled }: IconButtonProps) {
+export function IconButton({ icon, accessibilityLabel, onPress, disabled, testID }: IconButtonProps) {
   const t = useTheme();
   const { focused, focusProps } = useFocusRing();
   const d = t.sizes.iconButton.size;
   return (
     <Pressable
+      testID={testID}
       onPress={onPress}
       disabled={disabled}
       hitSlop={(t.sizes.touchTarget - d) / 2}

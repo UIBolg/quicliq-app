@@ -9,7 +9,7 @@ import { useState, type ReactNode } from 'react';
 import {
   Agreement, AppText, Avatar, Button, Checkbox, CountryPrefix, DividerOr, Flag, Icon, IconBadge, IconButton, LoginMethod, Logo,
   iconNames, isDirectionalIcon,
-  PasswordRule, PhoneField, SwitchAccount, TextField, VerifiedTag,
+  OnboardingScene, Pagination, PasswordRule, PhoneField, RadioOption, SheetGrabber, SheetHeader, SwitchAccount, TextField, VerifiedTag,
   type ButtonType, type LoginMethodValue, type TextFieldState,
 } from '../../components';
 import { useTheme, type IconBadgeSize } from '../../theme';
@@ -247,6 +247,26 @@ export function ComponentGallery({ onToggleLocale, onShowTokens }: { onToggleLoc
         </Section>
 
         <FormsGroup />
+
+        <AppText variant="Overline" color="Primary/Red">ONBOARDING · SHEETS</AppText>
+
+        <Section title="Pagination" node="12:57">
+          {[1, 2, 3, 4].map((step) => <Pagination key={step} step={step} />)}
+        </Section>
+
+        <Section title="Onboarding illustration" node="202:6433">
+          <OnboardingScene name="sendMoney" />
+        </Section>
+
+        <Section title="Sheet Grabber + Sheet Header" node="280:8504 · 282:9973">
+          <SheetGrabber />
+          <SheetHeader title={tr('onboarding.language.title')} subtitle={tr('onboarding.language.subtitle')} onClose={() => {}} />
+        </Section>
+
+        <Section title="Radio Option" node="282:9637">
+          <RadioOption title={tr('onboarding.language.en.title')} titleLocale="en" selected={t.locale === 'en'} onPress={() => {}} />
+          <RadioOption title={tr('onboarding.language.ar.title')} titleLocale="ar" subtitle={tr('onboarding.language.ar.subtitle')} selected={t.locale === 'ar'} onPress={() => {}} />
+        </Section>
       </ScrollView>
     </SafeAreaView>
   );
