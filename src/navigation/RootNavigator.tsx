@@ -17,6 +17,14 @@ import { OfflineScreen } from '../screens/login/OfflineScreen';
 import { IdExpiredScreen } from '../screens/login/IdExpiredScreen';
 import { HomeScreen } from '../screens/home/HomeScreen';
 import { AccountScreen } from '../screens/account/AccountScreen';
+import { PersonalDetailsScreen } from '../screens/account/PersonalDetailsScreen';
+import { ChangePasswordScreen } from '../screens/account/ChangePasswordScreen';
+import { SavedCardsScreen } from '../screens/account/SavedCardsScreen';
+import { SecurityScreen } from '../screens/account/SecurityScreen';
+import { LanguageScreen } from '../screens/account/LanguageScreen';
+import { LegalDocumentScreen, LegalScreen } from '../screens/account/LegalScreen';
+import { HelpScreen } from '../screens/account/HelpScreen';
+import { NotificationsScreen } from '../screens/account/NotificationsScreen';
 import { NotBuiltScreen } from '../screens/NotBuiltScreen';
 import { ComponentGallery } from '../screens/dev/ComponentGallery';
 import { FoundationsScreen } from '../screens/dev/FoundationsScreen';
@@ -70,7 +78,16 @@ export function RootNavigator() {
         <Stack.Screen name="7.5" component={OfflineScreen} />
         <Stack.Screen name="7.6" component={IdExpiredScreen} />
         <Stack.Screen name="Home" component={HomeScreen} options={{ animation: 'fade', gestureEnabled: false }} />
-        <Stack.Screen name="Account" component={AccountScreen} options={{ animation: 'fade', gestureEnabled: false }} />
+        <Stack.Screen name="12.1" component={AccountScreen} options={{ animation: 'fade', gestureEnabled: false }} />
+        <Stack.Screen name="12.2" component={PersonalDetailsScreen} />
+        <Stack.Screen name="12.3" component={ChangePasswordScreen} />
+        <Stack.Screen name="12.4" component={SavedCardsScreen} />
+        <Stack.Screen name="12.5" component={SecurityScreen} />
+        <Stack.Screen name="12.6" component={LanguageScreen} />
+        <Stack.Screen name="12.7" component={LegalScreen} />
+        <Stack.Screen name="12.7a" component={LegalDocumentScreen} />
+        <Stack.Screen name="13.1" component={HelpScreen} />
+        <Stack.Screen name="13.2" component={NotificationsScreen} />
         <Stack.Screen name="NotBuilt" component={NotBuiltScreen} />
         {__DEV__ ? (
           <>

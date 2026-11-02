@@ -41,3 +41,5 @@ export * from './LimitCard';
 export * from './LimitStep';
 export * from './LanguageSheet';
 export * from './ListRow';
+export * from './Switch';
+export * from './TopBar';

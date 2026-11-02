@@ -70,3 +70,24 @@ export const demoRecipients = [
   { id: 'r4', initials: 'YN', tone: 'tint' },
   { id: 'r5', initials: 'HA', tone: 'success' },
 ] as const;
+
+/** Personal details (12.2) — name and date of birth come from the ID check and are locked. */
+export const demoProfile = { dob: '12 March 1990', mobile: '7700 900123', address: '10 High Street, London' };
+
+/** Saved cards (12.4). */
+export const demoCards = [
+  { id: 'c1', brand: 'Visa', last4: '4242', expires: '08/28' },
+  { id: 'c2', brand: 'Mastercard', last4: '4444', expires: '11/27' },
+];
+
+/** Active device (12.5) — only one device can be active. */
+export const demoDevice = { name: 'iPhone 15' };
+
+/** Help contacts (13.1). PLACEHOLDERS — replace with Quicliq's real support phone, email and help page. */
+export const supportContacts = { phone: '+440000000000', email: 'support@example.com', articlesUrl: 'https://example.com/help' };
+
+/** Notifications (13.2); `opens` = the screen the row leads to. */
+export const demoNotifications = [
+  { id: 'n1', kind: 'sent', amount: 100, name: 'Sarah Ahmed', time: '09:41', when: 'today', opens: '11.3' },
+  { id: 'n2', kind: 'idDone', when: 'yesterday', opens: '4.1' },
+] as const;

@@ -4,7 +4,8 @@
  * States: Default (Fog, Slate text) · Filled (Fog, Ink value) · Focused (White + Ink outline stroke/md)
  *         · Error (Failure/Light + Failure outline, red label, message below with 14 alert)
  *         · Locked (no fill, dashed Silver outline, 18 lock, read-only).
- * Trailing: eye (toggles password visibility) | calendar | chevron | none.
+ * Trailing: eye (toggles password visibility) | calendar | chevron | search (code addition, 12.2 address finder,
+ * docs/figma-issues.md #42) | none.
  * Helper sits spacing/8 below the field.
  */
 import { useState } from 'react';
@@ -15,7 +16,7 @@ import { Icon } from './Icon';
 import { useTheme, type ColorToken } from '../theme';
 
 export type TextFieldState = 'default' | 'filled' | 'focused' | 'error' | 'locked';
-export type TextFieldTrailing = 'eye' | 'calendar' | 'chevron' | 'none';
+export type TextFieldTrailing = 'eye' | 'calendar' | 'chevron' | 'search' | 'none';
 
 export type TextFieldProps = Omit<TextInputProps, 'style' | 'placeholderTextColor' | 'editable'> & {
   label: string;
@@ -27,7 +28,7 @@ export type TextFieldProps = Omit<TextInputProps, 'style' | 'placeholderTextColo
   invalid?: boolean;
   locked?: boolean;
   trailing?: TextFieldTrailing;
-  /** For picker fields (calendar / chevron): the field becomes a button that opens the picker. */
+  /** For picker fields (calendar / chevron / search): the field becomes a button that opens the picker. */
   onPress?: () => void;
   /** Force a visual state (component gallery only). */
   previewState?: TextFieldState;
@@ -117,6 +118,7 @@ export function TextField({
       ) : null}
       {trailing === 'calendar' ? <Icon name="calendar" size={t.sizes.textField.icon} /> : null}
       {trailing === 'chevron' ? <Icon name="chevronDown" size={t.sizes.textField.icon} /> : null}
+      {trailing === 'search' ? <Icon name="search" size={t.sizes.textField.icon} /> : null}
     </View>
   );
 

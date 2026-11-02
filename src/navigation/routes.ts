@@ -7,7 +7,10 @@
  *  7.2c        — try another way (220:6694)
  *  7.5 / 7.6   — offline (82:9735) / ID expired (82:9762); 7.3 and 7.4 are states of 7.1
  *  Home        — proposal (no Figma frame yet), see src/screens/home/HomeScreen.tsx
- *  Account     — Profile tab, proposal from the product owner's sketch (no Figma frame yet)
+ *  12.1–12.8   — Account (Profile tab) and its inner pages, from "Quicliq API Gap Analysis" pp.45–52 (no Figma frames):
+ *                12.2 personal details · 12.3 change password · 12.4 saved cards · 12.5 security · 12.6 language ·
+ *                12.7 legal (12.7a document) · 12.8 log out is a sheet on 12.1
+ *  13.1 / 13.2 — help / notifications (doc pp.53–54)
  *  NotBuilt    — temporary target for links into flows that are not built yet (shows the Figma ID)
  *  dev/*       — read-only design-system previews, registered in development builds only
  */
@@ -23,7 +26,16 @@ export type RootStackParamList = {
   '7.6': undefined;
   /** level: sending-limit level to show (preview menu); defaults to the demo account's level. */
   Home: { level?: 1 | 2 | 3 } | undefined;
-  Account: undefined;
+  '12.1': undefined;
+  '12.2': undefined;
+  '12.3': undefined;
+  '12.4': undefined;
+  '12.5': undefined;
+  '12.6': undefined;
+  '12.7': undefined;
+  '12.7a': { doc: 'privacy' | 'fraud' | 'terms' };
+  '13.1': undefined;
+  '13.2': undefined;
   NotBuilt: { screenId: string };
   'dev/Gallery': undefined;
   'dev/Tokens': undefined;

@@ -262,6 +262,79 @@
       "legal": "Legal"
     },
     "logOut": "Log out",
-    "version": "Quicliq · Version {{version}}"
+    "version": "Quicliq · Version {{version}}",
+    "personal": {
+      "title": "Personal details",
+      "fullName": "Full name",
+      "dob": "Date of birth",
+      "email": "Email",
+      "mobile": "Mobile",
+      "address": "Address",
+      "lockedNote": "Your name and date of birth come from your ID check, so they can’t be changed here.",
+      "save": "Save",
+      "mobileNote": "We’ll text a code to your new number to confirm it."
+    },
+    "password": {
+      "title": "Change password",
+      "current": "Current password",
+      "new": "New password",
+      "save": "Save",
+      "wrongCurrent": "That’s not your current password.",
+      "reused": "You’ve used this password recently. Choose a new one."
+    },
+    "cards": {
+      "title": "Saved cards",
+      "expires": "Expires {{date}}",
+      "add": "Add card",
+      "remove": "Remove card",
+      "empty": "No saved cards yet.",
+      "sheetTitle": "Remove this card?",
+      "sheetBody": "{{card}} will be removed from your account.",
+      "confirm": "Remove",
+      "cancel": "Cancel"
+    },
+    "security": {
+      "title": "Security",
+      "faceId": "Face ID",
+      "faceIdHint": "Log in with your face",
+      "changePassword": "Change password",
+      "device": "ACTIVE DEVICE",
+      "deviceHint": "This device · only one device can be active",
+      "on": "On",
+      "off": "Off"
+    },
+    "language": {
+      "title": "Language"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy Policy",
+      "fraud": "Fraud Warning",
+      "terms": "Terms and conditions",
+      "placeholder": "The full document loads here from Quicliq’s servers."
+    },
+    "logout": {
+      "title": "Log out?",
+      "body": "You’ll need to log in again to use the app.",
+      "confirm": "Log out",
+      "cancel": "Cancel"
+    },
+    "help": {
+      "title": "Help",
+      "heading": "How can we help?",
+      "call": "Call us",
+      "email": "Email us",
+      "articles": "Help articles"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "prompt": "Turn on notifications to track your transfers.",
+      "allow": "Allow",
+      "sent": "{{amount}} sent to {{name}}",
+      "idDone": "Your ID check is complete",
+      "today": "Today, {{time}}",
+      "yesterday": "Yesterday",
+      "empty": "No notifications yet."
+    }
   }
 }

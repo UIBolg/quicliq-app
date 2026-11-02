@@ -114,6 +114,9 @@ export const sizes = {
   /** LimitStep (code addition, sending-limit sheet): 32 status circle, 10 dot for the current step. */
   limitStep: { badge: 32, dot: 10 },
 
+  /** Switch (code addition, 12.5 Face ID): iOS-sized track 51×31, 27 knob. */
+  switch: { width: 51, height: 31, knob: 27 },
+
   /** ListRow (code addition, Account): ≥56 rows, 40 icon badge. */
   listRow: { minHeight: 56, badge: 40 },
 

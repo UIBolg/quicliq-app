@@ -43,7 +43,7 @@ export function HomeScreen({ navigation, route }: Props) {
         style={styles.flex}
         contentContainerStyle={{ paddingTop: t.spacing['spacing/8'], paddingHorizontal: t.layout.screenGutter, paddingBottom: t.spacing['spacing/32'], gap: t.spacing['spacing/24'] }}
       >
-        <Header level={level} notBuilt={notBuilt} onOpenLimit={() => setLimitOpen(true)} />
+        <Header level={level} notBuilt={notBuilt} onOpenLimit={() => setLimitOpen(true)} onBell={() => navigation.navigate('13.2')} />
         <View style={{ gap: t.spacing['spacing/24'] }}>
           <Recipients notBuilt={notBuilt} />
           <Transfers notBuilt={notBuilt} />
@@ -61,7 +61,7 @@ export function HomeScreen({ navigation, route }: Props) {
   );
 }
 
-function Header({ level, notBuilt, onOpenLimit }: { level: LimitLevel; notBuilt: NotBuilt; onOpenLimit: () => void }) {
+function Header({ level, notBuilt, onOpenLimit, onBell }: { level: LimitLevel; notBuilt: NotBuilt; onOpenLimit: () => void; onBell: () => void }) {
   const t = useTheme();
   const { t: tr } = useTranslation();
   const { sent } = demoLimit;
@@ -78,7 +78,7 @@ function Header({ level, notBuilt, onOpenLimit }: { level: LimitLevel; notBuilt:
           <AppText variant="Caption" color="Neutral/Slate">{tr(`${k}.greeting`)}</AppText>
           <AppText variant="Title" accessibilityRole="header">{demoAccount.firstName}</AppText>
         </View>
-        <IconButton icon="bell" accessibilityLabel={tr(`${k}.notifications`)} onPress={notBuilt('Notifications')} />
+        <IconButton icon="bell" accessibilityLabel={tr(`${k}.notifications`)} onPress={onBell} testID="bell" />
       </View>
 
       {next?.route ? (
