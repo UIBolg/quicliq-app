@@ -1,6 +1,8 @@
 # Design System Audit — Home (proposal)
 
-Checked `src/screens/home/HomeScreen.tsx` (verified + unverified variants) against CLAUDE.md rules and `src/theme`.
+Checked `src/screens/home/HomeScreen.tsx` against CLAUDE.md rules and `src/theme`.
+
+> Update: the unverified variant was removed and Home was redesigned with a red header, the "Verify your ID and address" Action Banner, a rate card and colourful recipient avatars (docs/figma-issues.md #35–#36). Findings below about the unverified variant no longer apply.
 
 ## Summary
 **Patterns reviewed:** 9 | **Issues found:** 14 | **Score before:** 72/100 → **after:** 94/100

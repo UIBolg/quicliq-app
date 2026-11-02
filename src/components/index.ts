@@ -36,3 +36,4 @@ export * from './SectionHeader';
 export * from './TransferRow';
 export * from './RecipientTile';
 export * from './TabBar';
+export * from './ActionBanner';

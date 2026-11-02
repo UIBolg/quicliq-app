@@ -1,14 +1,15 @@
 /**
- * Recipient tile — code addition (Home proposal): Avatar 56 (tint) + short name (Caption, one line, centred).
- * Fixed width from `sizes.recipientTile`. Pressed = avatar dims to Alpha/Ink 6% overlay. Spoken as "<action>: <full name>".
+ * Recipient tile — code addition (Home proposal): Avatar 56 (`tone`, default tint) + short name (Caption, one line, centred).
+ * Shares its row equally, up to `sizes.recipientTile` wide (5 tiles fit the 342 content width). Pressed = avatar dims to Alpha/Ink 6% overlay. Spoken as "<action>: <full name>".
  */
 import { Pressable, StyleSheet, View } from 'react-native';
 import { AppText } from './AppText';
-import { Avatar } from './Avatar';
+import { Avatar, type AvatarTone } from './Avatar';
 import { useTheme } from '../theme';
 
-export function RecipientTile({ initials, shortName, fullName, actionLabel, onPress }: {
+export function RecipientTile({ initials, shortName, fullName, actionLabel, onPress, tone = 'tint' }: {
   initials: string;
+  tone?: AvatarTone;
   shortName: string;
   fullName: string;
   actionLabel: string;
@@ -20,12 +21,12 @@ export function RecipientTile({ initials, shortName, fullName, actionLabel, onPr
       onPress={onPress}
       accessibilityRole="button"
       accessibilityLabel={`${actionLabel}: ${fullName}`}
-      style={{ width: t.sizes.recipientTile.width, alignItems: 'center', gap: t.spacing['spacing/8'] }}
+      style={{ flex: 1, maxWidth: t.sizes.recipientTile.width, alignItems: 'center', gap: t.spacing['spacing/8'] }}
     >
       {({ pressed }) => (
         <>
           <View>
-            <Avatar initials={initials} size={56} tone="tint" />
+            <Avatar initials={initials} size={56} tone={tone} />
             {pressed ? (
               <View pointerEvents="none" style={[StyleSheet.absoluteFill, { borderRadius: t.radius['radius/full'], backgroundColor: t.colors['Alpha/Ink 6%'] }]} />
             ) : null}

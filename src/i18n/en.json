@@ -164,12 +164,6 @@
     "rateLabel": "TODAY’S RATE",
     "rateNote": "Jordanian dinars for every {{gbp}}",
     "sendMoney": "Send money",
-    "actions": {
-      "send": "Send",
-      "recipients": "Recipients",
-      "rates": "Rates",
-      "help": "Help"
-    },
     "recent": "Recent transfers",
     "seeAll": "See all",
     "names": {
@@ -191,28 +185,6 @@
       "history": "History",
       "profile": "Profile"
     },
-    "greetings": {
-      "morning": "Good morning",
-      "afternoon": "Good afternoon",
-      "evening": "Good evening"
-    },
-    "setup": {
-      "title": "Finish setting up to send money",
-      "progress": "{{done}} of {{total}} steps complete",
-      "continue": "Continue setup"
-    },
-    "calc": {
-      "title": "Send money",
-      "youSend": "You send",
-      "theyReceive": "They receive",
-      "verifyToSend": "Verify to send",
-      "verifyHint": "Finish setting up to start sending.",
-      "rateLine": "{{rate}} · Fee {{fee}}"
-    },
-    "empty": {
-      "title": "No transfers yet",
-      "body": "Your transfers will show here."
-    },
     "limit": {
       "title": "You can send",
       "left": "left of your {{total}} lifetime limit",
@@ -232,6 +204,10 @@
       "r3": "Rana",
       "r4": "Yousef",
       "r5": "Huda"
+    },
+    "verify": {
+      "title": "Verify your ID and address",
+      "body": "Increase your limit to {{amount}}"
     }
   }
 }

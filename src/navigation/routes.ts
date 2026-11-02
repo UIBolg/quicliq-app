@@ -6,7 +6,7 @@
  *  7.2a / 7.2b — verify login, code by text (220:6506) / by email (220:6600); wrong code 7.2d (220:6739) is a state
  *  7.2c        — try another way (220:6694)
  *  7.5 / 7.6   — offline (82:9735) / ID expired (82:9762); 7.3 and 7.4 are states of 7.1
- *  Home        — proposal (no Figma frame yet): verified / unverified variants, see src/screens/home/HomeScreen.tsx
+ *  Home        — proposal (no Figma frame yet), see src/screens/home/HomeScreen.tsx
  *  NotBuilt    — temporary target for links into flows that are not built yet (shows the Figma ID)
  *  dev/*       — read-only design-system previews, registered in development builds only
  */
@@ -20,8 +20,7 @@ export type RootStackParamList = {
   '7.2c': { phone: string; email: string; method: 'sms' | 'email' };
   '7.5': undefined;
   '7.6': undefined;
-  /** variant: verified customer (default) or one who hasn't finished ID & address verification. */
-  Home: { variant?: 'verified' | 'unverified' } | undefined;
+  Home: undefined;
   NotBuilt: { screenId: string };
   'dev/Gallery': undefined;
   'dev/Tokens': undefined;

@@ -9,11 +9,8 @@ export const demoAccount = {
   initials: 'JC',
   /** Sample GBP → JOD rate for the Home proposal. */
   rate: { jod: '0.8932' },
-  /** Send-money calculator (unverified Home): GBP → JOD, no fee. */
-  quote: { rate: 0.8932, fee: '0.00', defaultAmount: '500.00' },
-  /** Unverified Home: ID & address steps done (of 2). */
-  setupStepsDone: 0,
-  setupStepsTotal: 2,
+  /** Lifetime limit after verifying ID & address (build doc: £12,000). */
+  verifiedLimit: 12000,
   /** Demo login (7.1): mobile 123456789 or this email, with password 123456. Any other pair is wrong (7.3);
    *  5 wrong tries pause login for 15 minutes (7.4). Demo values only — never real credentials. */
   phone: '123456789',
