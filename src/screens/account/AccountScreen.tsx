@@ -5,7 +5,7 @@
  *  H2 "Account" ·
  *  profile card (Neutral/Fog, radius/xl, padding spacing/16): Avatar 56 · name (Title) + email (Caption, Slate) ·
  *    chevron → 12.2 (the limit lives only in the "Your limit" row) ·
- *  List Groups (every icon circle Alpha/Red 8% + Primary/Red, like Personal details): Account (Personal details, Saved cards, Your limit + next-step subtitle → sending-limit sheet) ·
+ *  List Groups (every icon circle Alpha/Red 8% + Primary/Red, like Personal details): Account (Personal details, Saved cards, Your limit: "Level n of 3" tag, 3-segment bar, next step in Primary/Red, bold value → sending-limit sheet) ·
  *    Preferences (Security, Language) · Support (Help, Legal) · Log out (danger row → 12.8 sheet → 7.1) ·
  *  app version (Caption, Slate, centred).
  * Floating TabBar with Profile active.
@@ -66,7 +66,28 @@ export function AccountScreen({ navigation }: Props) {
         <ListGroup title={tr(`${k}.groups.account`)}>
           <ListRow icon="user" title={tr(`${k}.rows.personal`)} onPress={() => navigation.navigate('12.2')} />
           <ListRow icon="card" title={tr(`${k}.rows.cards`)} onPress={() => navigation.navigate('12.4')} />
-          <ListRow icon="trendingUp" title={tr(`${k}.rows.limit`)} subtitle={next ? `${tr(`home.nextStep.${next.key}.title`)} ${tr(`home.nextStep.${next.key}.body`, { amount: formatMoney(limitTotal(2)) })}` : undefined} value={formatMoney(limitTotal(level))} onPress={() => setSheet('limit')} testID="row-limit" />
+          <ListRow
+            icon="trendingUp"
+            title={tr(`${k}.rows.limit`)}
+            titleAccessory={
+              <View style={{ paddingHorizontal: t.spacing['spacing/6'], paddingVertical: t.spacing['spacing/2'], borderRadius: t.radius['radius/full'], backgroundColor: t.colors['Alpha/Red 8%'] }}>
+                <AppText variant="Caption" color="Primary/Red">{tr('home.levelLink', { level })}</AppText>
+              </View>
+            }
+            detail={
+              <View style={{ flexDirection: 'row', gap: t.spacing['spacing/4'], paddingVertical: t.spacing['spacing/6'] }}>
+                {[1, 2, 3].map((n) => (
+                  <View key={n} style={{ flex: 1, height: t.sizes.progress.sm, borderRadius: t.radius['radius/full'], backgroundColor: t.colors[n <= level ? 'Primary/Red' : 'Alpha/Ink 10%'] }} />
+                ))}
+              </View>
+            }
+            subtitle={next ? `${tr(`home.nextStep.${next.key}.title`)} ${tr(`home.nextStep.${next.key}.body`, { amount: formatMoney(limitTotal(2)) })}` : undefined}
+            subtitleColor="Primary/Red"
+            value={formatMoney(limitTotal(level))}
+            valueStrong
+            onPress={() => setSheet('limit')}
+            testID="row-limit"
+          />
         </ListGroup>
 
         <ListGroup title={tr(`${k}.groups.preferences`)}>
