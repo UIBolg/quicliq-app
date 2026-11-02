@@ -31,7 +31,7 @@ export function SavedCardsScreen({ navigation }: NativeStackScreenProps<RootStac
         <AppText variant="Body" color="Neutral/Slate">{tr(`${k}.intro`)}</AppText>
         {cards.length === 0 ? (
           <View style={{ alignItems: 'center', gap: t.spacing['spacing/12'], paddingTop: t.spacing['spacing/48'] }}>
-            <IconBadge icon="card" size={56} tone="grey" />
+            <IconBadge icon="card" size={56} tone="redTint" />
             <AppText variant="Body" color="Neutral/Slate">{tr(`${k}.empty`)}</AppText>
           </View>
         ) : (

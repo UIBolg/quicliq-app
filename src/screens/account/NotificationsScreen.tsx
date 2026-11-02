@@ -2,7 +2,7 @@
  * 13.2 Notifications (doc p.54), opened from the Home bell.
  * Permission prompt (Fog card, radius/lg, padding spacing/16): bell 20 · Body text · "Allow" (Body Medium, Primary/Red,
  * ≥44 touch) — hidden once allowed (with the API: Notification_RegisterDevice).
- * Grouped under Overline headers (Today / Earlier). Rows (Notification_List): Icon Badge 40 (send = Red tint, ID = Success) · title (Body Medium) over time (Caption, Slate);
+ * Grouped under Overline headers (Today / Earlier). Rows (Notification_List): Icon Badge 40 Red tint · title (Body Medium) over time (Caption, Slate);
  * an 8 Primary/Red unread dot at the end for today's items; hairline between rows; a transfer row opens 11.3, the ID row opens 4.1 (not built yet).
  */
 import { useState } from 'react';
@@ -69,7 +69,7 @@ export function NotificationsScreen({ navigation }: NativeStackScreenProps<RootS
                       backgroundColor: pressed ? t.colors['Alpha/Ink 6%'] : undefined,
                     })}
                   >
-                    <IconBadge icon={n.kind === 'sent' ? 'send' : 'shield'} size={40} tone={n.kind === 'sent' ? 'redTint' : 'success'} />
+                    <IconBadge icon={n.kind === 'sent' ? 'send' : 'shield'} size={40} tone="redTint" />
                     <View style={styles.flex}>
                       <AppText variant="Body Medium">{title}</AppText>
                       <AppText variant="Caption" color="Neutral/Slate">{time}</AppText>

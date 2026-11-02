@@ -24,7 +24,7 @@ export function LegalScreen({ navigation }: NativeStackScreenProps<RootStackPara
         <AppText variant="Body" color="Neutral/Slate">{tr(`${k}.intro`)}</AppText>
         <ListGroup>
           {DOCS.map((d) => (
-            <ListRow key={d} icon="file" iconTone={d === 'fraud' ? 'red' : 'default'} title={tr(`${k}.${d}`)} onPress={() => navigation.navigate('12.7a', { doc: d })} testID={`doc-${d}`} />
+            <ListRow key={d} icon="file" title={tr(`${k}.${d}`)} onPress={() => navigation.navigate('12.7a', { doc: d })} testID={`doc-${d}`} />
           ))}
         </ListGroup>
       </ScrollView>

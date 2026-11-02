@@ -7,7 +7,7 @@
  *    (Caption, Slate) · chevron → 12.2; then, over a hairline: "Level n of 3" + current limit, a 3-segment bar
  *    (done = Primary/Red) and the next-step link (Primary/Red) → sending-limit sheet ·
  *  quick stats (3 bordered tiles, radius/lg): transfers · recipients · saved cards (H3 count + Caption label) ·
- *  List Groups (coloured icon circles per row): Account (Personal details, Saved cards, Your limit → sending-limit sheet) ·
+ *  List Groups (every icon circle Alpha/Red 8% + Primary/Red, like Personal details): Account (Personal details, Saved cards, Your limit → sending-limit sheet) ·
  *    Preferences (Security, Language) · Support (Help, Legal) · Log out (danger row → 12.8 sheet → 7.1) ·
  *  app version (Caption, Slate, centred).
  * Floating TabBar with Profile active.
@@ -98,8 +98,8 @@ export function AccountScreen({ navigation }: Props) {
         <View style={{ flexDirection: 'row', gap: t.spacing['spacing/12'] }}>
           {[
             { key: 'transfers', value: demoTransfers.length, icon: 'send' as const, tone: 'Alpha/Red 8%' as const, fg: 'Primary/Red' as const },
-            { key: 'recipients', value: demoRecipients.length, icon: 'users' as const, tone: 'Status/Success/Light' as const, fg: 'Status/Success/Default' as const },
-            { key: 'cards', value: demoCards.length, icon: 'card' as const, tone: 'Neutral/Fog' as const, fg: 'Neutral/Ink' as const },
+            { key: 'recipients', value: demoRecipients.length, icon: 'users' as const, tone: 'Alpha/Red 8%' as const, fg: 'Primary/Red' as const },
+            { key: 'cards', value: demoCards.length, icon: 'card' as const, tone: 'Alpha/Red 8%' as const, fg: 'Primary/Red' as const },
           ].map((st) => (
             <View key={st.key} accessible accessibilityLabel={`${st.value} ${tr(`${k}.stats.${st.key}`)}`} style={{ flex: 1, gap: t.spacing['spacing/8'], padding: t.spacing['spacing/12'], borderRadius: t.radius['radius/lg'], borderWidth: t.stroke['stroke/xs'], borderColor: t.colors['Alpha/Ink 10%'] }}>
               <View style={{ width: t.sizes.listRow.badge - t.spacing['spacing/8'], height: t.sizes.listRow.badge - t.spacing['spacing/8'], borderRadius: t.radius['radius/full'], backgroundColor: t.colors[st.tone], alignItems: 'center', justifyContent: 'center' }}>
@@ -114,18 +114,18 @@ export function AccountScreen({ navigation }: Props) {
         </View>
 
         <ListGroup title={tr(`${k}.groups.account`)}>
-          <ListRow icon="user" iconTone="red" title={tr(`${k}.rows.personal`)} onPress={() => navigation.navigate('12.2')} />
-          <ListRow icon="card" iconTone="green" title={tr(`${k}.rows.cards`)} onPress={() => navigation.navigate('12.4')} />
-          <ListRow icon="trendingUp" iconTone="ink" title={tr(`${k}.rows.limit`)} value={formatMoney(limitTotal(level))} onPress={() => setSheet('limit')} testID="row-limit" />
+          <ListRow icon="user" title={tr(`${k}.rows.personal`)} onPress={() => navigation.navigate('12.2')} />
+          <ListRow icon="card" title={tr(`${k}.rows.cards`)} onPress={() => navigation.navigate('12.4')} />
+          <ListRow icon="trendingUp" title={tr(`${k}.rows.limit`)} value={formatMoney(limitTotal(level))} onPress={() => setSheet('limit')} testID="row-limit" />
         </ListGroup>
 
         <ListGroup title={tr(`${k}.groups.preferences`)}>
-          <ListRow icon="shield" iconTone="red" title={tr(`${k}.rows.security`)} onPress={() => navigation.navigate('12.5')} testID="row-security" />
-          <ListRow icon="globe" iconTone="green" title={tr(`${k}.rows.language`)} value={tr(`onboarding.language.${locale}.title`)} onPress={() => navigation.navigate('12.6')} testID="row-language" />
+          <ListRow icon="shield" title={tr(`${k}.rows.security`)} onPress={() => navigation.navigate('12.5')} testID="row-security" />
+          <ListRow icon="globe" title={tr(`${k}.rows.language`)} value={tr(`onboarding.language.${locale}.title`)} onPress={() => navigation.navigate('12.6')} testID="row-language" />
         </ListGroup>
 
         <ListGroup title={tr(`${k}.groups.support`)}>
-          <ListRow icon="help" iconTone="ink" title={tr(`${k}.rows.help`)} onPress={() => navigation.navigate('13.1')} />
+          <ListRow icon="help" title={tr(`${k}.rows.help`)} onPress={() => navigation.navigate('13.1')} />
           <ListRow icon="file" title={tr(`${k}.rows.legal`)} onPress={() => navigation.navigate('12.7')} />
         </ListGroup>
 

@@ -40,7 +40,7 @@ export function SecurityScreen({ navigation }: NativeStackScreenProps<RootStackP
         <View style={{ gap: t.spacing['spacing/8'] }}>
           <AppText variant="Overline" color="Neutral/Slate" accessibilityRole="header">{tr(`${k}.device`)}</AppText>
           <View accessible style={{ flexDirection: 'row', alignItems: 'center', gap: t.spacing['spacing/12'], padding: t.spacing['spacing/16'], borderRadius: t.radius['radius/lg'], backgroundColor: t.colors['Neutral/Fog'] }}>
-            <IconBadge icon="smartphone" size={40} tone="white" />
+            <IconBadge icon="smartphone" size={40} tone="redTint" />
             <View style={styles.flex}>
               <View style={{ flexDirection: 'row', alignItems: 'center', gap: t.spacing['spacing/8'] }}>
                 <AppText variant="Body Medium">{demoDevice.name}</AppText>

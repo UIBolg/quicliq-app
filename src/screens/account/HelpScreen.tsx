@@ -26,9 +26,9 @@ export function HelpScreen({ navigation }: NativeStackScreenProps<RootStackParam
           <AppText variant="Body" color="Neutral/Slate">{tr(`${k}.intro`)}</AppText>
         </View>
         <ListGroup>
-          <ListRow icon="phoneCall" iconTone="red" title={tr(`${k}.call`)} subtitle={ltr(supportContacts.phoneDisplay)} onPress={open(`tel:${supportContacts.phone}`)} testID="call-us" />
-          <ListRow icon="mail" iconTone="green" title={tr(`${k}.email`)} subtitle={supportContacts.email} onPress={open(`mailto:${supportContacts.email}`)} testID="email-us" />
-          <ListRow icon="help" iconTone="ink" title={tr(`${k}.articles`)} onPress={open(supportContacts.articlesUrl)} testID="help-articles" />
+          <ListRow icon="phoneCall" title={tr(`${k}.call`)} subtitle={ltr(supportContacts.phoneDisplay)} onPress={open(`tel:${supportContacts.phone}`)} testID="call-us" />
+          <ListRow icon="mail" title={tr(`${k}.email`)} subtitle={supportContacts.email} onPress={open(`mailto:${supportContacts.email}`)} testID="email-us" />
+          <ListRow icon="help" title={tr(`${k}.articles`)} onPress={open(supportContacts.articlesUrl)} testID="help-articles" />
         </ListGroup>
       </ScrollView>
     </Screen>

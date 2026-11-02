@@ -2,10 +2,9 @@
  * List Row + List Group — code addition (Account screen; no Figma component yet, docs/figma-issues.md #40).
  * List Group: optional Overline title (Slate) above a Neutral/Fog card, radius/lg, padding 0 spacing/16, gap spacing/8.
  * List Row: ≥56 high (touch area ≥44), padding spacing/12 vertical, gap spacing/12, Alpha/Ink 10% hairline between rows:
- *   Icon Badge 40 (`iconTone`: default White + Ink · red Alpha/Red 8% + Primary/Red · green Status/Success/Light +
- *   Status/Success/Default · ink Neutral/Ink + White) · title (Body Medium) over optional subtitle (Caption, Slate) · optional value (Body, Slate) ·
+ *   Icon Badge 40 (Alpha/Red 8% + Primary/Red icon — one look for every row, as asked for the Account area) ·
  *   chevronRight 20 (mirrored in RTL), or an `accessory` in its place (e.g. a Switch).
- *   `tone="danger"` paints the title and icon Primary/Red and drops the chevron (Log out).
+ *   `tone="danger"` paints the title Primary/Red and drops the chevron (Log out).
  * Pressed = Alpha/Ink 6% overlay across the row.
  */
 import { Children, isValidElement, cloneElement, type ReactElement, type ReactNode } from 'react';
@@ -13,12 +12,10 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { AppText } from './AppText';
 import { Icon, type IconName } from './Icon';
 import { useFocusRing } from './usePressState';
-import { useTheme, type ColorToken } from '../theme';
+import { useTheme } from '../theme';
 
 export type ListRowProps = {
   icon: IconName;
-  /** Colour of the icon circle (Account groups). */
-  iconTone?: 'default' | 'red' | 'green' | 'ink';
   title: string;
   subtitle?: string;
   value?: string;
@@ -33,18 +30,10 @@ export type ListRowProps = {
   testID?: string;
 };
 
-const badgeTones: Record<NonNullable<ListRowProps['iconTone']>, { bg: ColorToken; fg: ColorToken }> = {
-  default: { bg: 'Neutral/White', fg: 'Neutral/Ink' },
-  red: { bg: 'Alpha/Red 8%', fg: 'Primary/Red' },
-  green: { bg: 'Status/Success/Light', fg: 'Status/Success/Default' },
-  ink: { bg: 'Neutral/Ink', fg: 'Neutral/White' },
-};
-
-export function ListRow({ icon, iconTone = 'default', title, subtitle, value, accessory, accessibilityState, onPress, tone = 'default', divider, testID }: ListRowProps) {
+export function ListRow({ icon, title, subtitle, value, accessory, accessibilityState, onPress, tone = 'default', divider, testID }: ListRowProps) {
   const t = useTheme();
   const { focused, focusProps } = useFocusRing();
   const danger = tone === 'danger';
-  const badge = badgeTones[danger ? 'red' : iconTone];
   return (
     <Pressable
       testID={testID}
@@ -73,8 +62,8 @@ export function ListRow({ icon, iconTone = 'default', title, subtitle, value, ac
               style={[StyleSheet.absoluteFill, { marginHorizontal: -t.spacing['spacing/16'], backgroundColor: t.colors['Alpha/Ink 6%'] }]}
             />
           ) : null}
-          <View style={{ width: t.sizes.listRow.badge, height: t.sizes.listRow.badge, borderRadius: t.radius['radius/full'], backgroundColor: t.colors[badge.bg], alignItems: 'center', justifyContent: 'center' }}>
-            <Icon name={icon} size={t.sizes.icon.md} color={badge.fg} />
+          <View style={{ width: t.sizes.listRow.badge, height: t.sizes.listRow.badge, borderRadius: t.radius['radius/full'], backgroundColor: t.colors['Alpha/Red 8%'], alignItems: 'center', justifyContent: 'center' }}>
+            <Icon name={icon} size={t.sizes.icon.md} color="Primary/Red" />
           </View>
           <View style={styles.flex}>
             <AppText variant="Body Medium" color={danger ? 'Primary/Red' : 'Neutral/Ink'}>{title}</AppText>
