@@ -7,6 +7,7 @@
  *  7.2c        — try another way (220:6694)
  *  7.5 / 7.6   — offline (82:9735) / ID expired (82:9762); 7.3 and 7.4 are states of 7.1
  *  Home        — proposal (no Figma frame yet), see src/screens/home/HomeScreen.tsx
+ *  11.1        — Activity (History tab): transfer cards grouped by month
  *  12.1–12.8   — Account (Profile tab) and its inner pages, from "Quicliq API Gap Analysis" pp.45–52 (no Figma frames):
  *                12.2 personal details · 12.3 change password · 12.4 saved cards · 12.5 security · 12.6 language ·
  *                12.7 legal (12.7a document) · 12.8 log out is a sheet on 12.1
@@ -26,6 +27,7 @@ export type RootStackParamList = {
   '7.6': undefined;
   /** level: sending-limit level to show (preview menu); defaults to the demo account's level. */
   Home: { level?: 1 | 2 | 3 } | undefined;
+  '11.1': undefined;
   '12.1': undefined;
   '12.2': undefined;
   '12.3': undefined;

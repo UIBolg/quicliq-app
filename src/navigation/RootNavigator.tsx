@@ -16,6 +16,7 @@ import { ChooseCodeMethodScreen } from '../screens/login/ChooseCodeMethodScreen'
 import { OfflineScreen } from '../screens/login/OfflineScreen';
 import { IdExpiredScreen } from '../screens/login/IdExpiredScreen';
 import { HomeScreen } from '../screens/home/HomeScreen';
+import { ActivityScreen } from '../screens/activity/ActivityScreen';
 import { AccountScreen } from '../screens/account/AccountScreen';
 import { PersonalDetailsScreen } from '../screens/account/PersonalDetailsScreen';
 import { ChangePasswordScreen } from '../screens/account/ChangePasswordScreen';
@@ -78,6 +79,7 @@ export function RootNavigator() {
         <Stack.Screen name="7.5" component={OfflineScreen} />
         <Stack.Screen name="7.6" component={IdExpiredScreen} />
         <Stack.Screen name="Home" component={HomeScreen} options={{ animation: 'fade', gestureEnabled: false }} />
+        <Stack.Screen name="11.1" component={ActivityScreen} options={{ animation: 'fade', gestureEnabled: false }} />
         <Stack.Screen name="12.1" component={AccountScreen} options={{ animation: 'fade', gestureEnabled: false }} />
         <Stack.Screen name="12.2" component={PersonalDetailsScreen} />
         <Stack.Screen name="12.3" component={ChangePasswordScreen} />

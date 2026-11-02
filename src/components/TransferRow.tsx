@@ -1,78 +1,58 @@
 /**
- * Transfer row — code addition (Home proposal; no Figma component yet, docs/figma-issues.md #41).
- * Row, padding spacing/12 vertical, gap spacing/12; rows after the first get an Alpha/Ink 10% hairline (stroke/xs):
- *  recipient Avatar 44 (tint, same as Recent recipients) ·
- *  name (Body Medium) over a 14 bank/cash icon + method · date (Caption, Slate) ·
- *  amount (Body Medium, EN style, LTR) over a status pill (radius/full, Caption + 12 icon):
- *    Delivered = Status/Success/Light + Status/Success/Default check · Processing = Neutral/Fog + Slate clock.
+ * Transfer card — one transfer as its own card (Home "Recent transfers" and 11.1 Activity; no Figma component yet,
+ * docs/figma-issues.md #41). Neutral/Fog, radius/lg, padding spacing/16, gap spacing/12:
+ *  Icon Badge 44 White (bank / cash) · name (Body Medium) over method · date (Caption, Slate) ·
+ *  amount (Body Medium, EN style, LTR) over a status pill (radius/full, Caption):
+ *    Delivered = Status/Success/Light + Status/Success/Default · Processing = Neutral/White + Slate.
  * Pressed = Alpha/Ink 6% overlay. Read as one element: "Layla Haddad, Bank deposit, 28 Oct, £250.00, Delivered".
  */
 import { Pressable, StyleSheet, View } from 'react-native';
 import { AppText } from './AppText';
-import { Avatar, type AvatarTone } from './Avatar';
-import { Icon } from './Icon';
+import { IconBadge } from './IconBadge';
 import { useTheme, getTextStyle, type ColorToken } from '../theme';
 
 export type TransferRowProps = {
   name: string;
-  initials: string;
-  tone?: AvatarTone;
   method: 'bank' | 'cash';
   methodLabel: string;
   date: string;
   amount: string;
   status: 'delivered' | 'processing';
   statusLabel: string;
-  divider?: boolean;
   onPress: () => void;
 };
 
-const statusLook: Record<TransferRowProps['status'], { bg: ColorToken; fg: ColorToken; icon: 'check' | 'clock' }> = {
-  delivered: { bg: 'Status/Success/Light', fg: 'Status/Success/Default', icon: 'check' },
-  processing: { bg: 'Neutral/Fog', fg: 'Neutral/Slate', icon: 'clock' },
+const statusLook: Record<TransferRowProps['status'], { bg: ColorToken; fg: ColorToken }> = {
+  delivered: { bg: 'Status/Success/Light', fg: 'Status/Success/Default' },
+  processing: { bg: 'Neutral/White', fg: 'Neutral/Slate' },
 };
 
-export function TransferRow({ name, initials, tone = 'tint', method, methodLabel, date, amount, status, statusLabel, divider, onPress }: TransferRowProps) {
+export function TransferRow({ name, method, methodLabel, date, amount, status, statusLabel, onPress }: TransferRowProps) {
   const t = useTheme();
   const s = statusLook[status];
+  const r = t.radius['radius/lg'];
   return (
     <Pressable
       onPress={onPress}
       accessibilityRole="button"
       accessibilityLabel={[name, methodLabel, date, amount, statusLabel].join(', ')}
-      style={{ borderTopWidth: divider ? t.stroke['stroke/xs'] : 0, borderTopColor: t.colors['Alpha/Ink 10%'] }}
+      style={{ flexDirection: 'row', alignItems: 'center', gap: t.spacing['spacing/12'], padding: t.spacing['spacing/16'], borderRadius: r, backgroundColor: t.colors['Neutral/Fog'], overflow: 'hidden' }}
     >
       {({ pressed }) => (
-        <View style={{ flexDirection: 'row', alignItems: 'center', gap: t.spacing['spacing/12'], paddingVertical: t.spacing['spacing/12'] }}>
-          {pressed ? (
-            <View pointerEvents="none" style={[StyleSheet.absoluteFill, { marginHorizontal: -t.spacing['spacing/16'], backgroundColor: t.colors['Alpha/Ink 6%'] }]} />
-          ) : null}
-          <Avatar initials={initials} size={44} tone={tone} />
+        <>
+          {pressed ? <View pointerEvents="none" style={[StyleSheet.absoluteFill, { borderRadius: r, backgroundColor: t.colors['Alpha/Ink 6%'] }]} /> : null}
+          <IconBadge icon={method === 'cash' ? 'cash' : 'bank'} size={44} tone="white" />
           <View style={styles.flex}>
             <AppText variant="Body Medium" numberOfLines={1}>{name}</AppText>
-            <View style={{ flexDirection: 'row', alignItems: 'center', gap: t.spacing['spacing/4'] }}>
-              <Icon name={method === 'cash' ? 'cash' : 'bank'} size={t.sizes.icon.xs} color="Neutral/Slate" />
-              <AppText variant="Caption" color="Neutral/Slate" numberOfLines={1} style={styles.flex}>{methodLabel} · {date}</AppText>
-            </View>
+            <AppText variant="Caption" color="Neutral/Slate" numberOfLines={1}>{methodLabel} · {date}</AppText>
           </View>
           <View style={{ alignItems: 'flex-end', gap: t.spacing['spacing/4'] }}>
             <AppText variant="Body Medium" style={getTextStyle('Body Medium', 'en')}>{amount}</AppText>
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                gap: t.spacing['spacing/4'],
-                paddingHorizontal: t.spacing['spacing/8'],
-                paddingVertical: t.spacing['spacing/2'],
-                borderRadius: t.radius['radius/full'],
-                backgroundColor: t.colors[s.bg],
-              }}
-            >
-              <Icon name={s.icon} size={t.sizes.icon.xxs} color={s.fg} />
+            <View style={{ paddingHorizontal: t.spacing['spacing/8'], paddingVertical: t.spacing['spacing/2'], borderRadius: t.radius['radius/full'], backgroundColor: t.colors[s.bg] }}>
               <AppText variant="Caption" color={s.fg}>{statusLabel}</AppText>
             </View>
           </View>
-        </View>
+        </>
       )}
     </Pressable>
   );

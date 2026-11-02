@@ -19,6 +19,7 @@ export function useMainTabs(navigation: Pick<NativeStackNavigationProp<RootStack
   ];
   const onSelect = (key: string) => {
     if (key === 'home') navigation.replace('Home');
+    else if (key === 'history') navigation.replace('11.1');
     else if (key === 'profile') navigation.replace('12.1');
     else navigation.navigate('NotBuilt', { screenId: items.find((x) => x.key === key)?.label ?? key });
   };

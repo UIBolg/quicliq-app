@@ -6,7 +6,7 @@
  *   top group (gap spacing/16): greeting row (Avatar brand · Caption Slate + Title · IconButton bell) ·
  *     next-level Action Banner (alert; ID & address at level 1, source of funds at level 2, none at 3) ·
  *     Limit Card (red, plane artwork, "Level n of 3" pill; tap → SendingLimitSheet) · Primary "Send money".
- *   then (gap spacing/24): Recent recipients ("Add new" tile + 5 tint tiles, scrolls sideways) · Recent transfers (TransferRows on a white card with an Alpha/Ink 10% border).
+ *   then (gap spacing/24): Recent recipients ("Add new" tile + 5 tint tiles, scrolls sideways) · Recent transfers (first 3 Transfer cards, gap spacing/8; See all → 11.1).
  * Composition only: every repeated pattern lives in src/components; every string in src/i18n.
  */
 import { useState } from 'react';
@@ -20,6 +20,7 @@ import {
 import { demoAccount, demoLimit, demoRecipients, demoTransfers, limitTotal, nextLevel, type LimitLevel } from '../../mock/account';
 import { SendingLimitSheet } from './SendingLimitSheet';
 import { useMainTabs } from '../../navigation/mainTabs';
+import { transferCardProps } from '../activity/transferCard';
 import { formatMoney, ltr } from '../../utils/format';
 import { useTheme } from '../../theme';
 import type { RootStackParamList } from '../../navigation/routes';
@@ -46,7 +47,7 @@ export function HomeScreen({ navigation, route }: Props) {
         <Header level={level} notBuilt={notBuilt} onOpenLimit={() => setLimitOpen(true)} onBell={() => navigation.navigate('13.2')} />
         <View style={{ gap: t.spacing['spacing/24'] }}>
           <Recipients notBuilt={notBuilt} />
-          <Transfers notBuilt={notBuilt} />
+          <Transfers onSeeAll={() => navigation.navigate('11.1')} onOpen={notBuilt('11.3')} />
         </View>
       </ScrollView>
       <TabBar items={tabs.items} active="home" onSelect={tabs.onSelect} />
@@ -137,31 +138,14 @@ function Recipients({ notBuilt }: { notBuilt: NotBuilt }) {
   );
 }
 
-function Transfers({ notBuilt }: { notBuilt: NotBuilt }) {
+function Transfers({ onSeeAll, onOpen }: { onSeeAll: () => void; onOpen: () => void }) {
   const t = useTheme();
   const { t: tr } = useTranslation();
   return (
     <View style={{ gap: t.spacing['spacing/12'] }}>
-      <SectionHeader title={tr(`${k}.recent`)} actionLabel={tr(`${k}.seeAll`)} onAction={notBuilt('History')} />
-      <View style={{ backgroundColor: t.colors['Neutral/White'], borderWidth: t.stroke['stroke/xs'], borderColor: t.colors['Alpha/Ink 10%'], borderRadius: t.radius['radius/lg'], paddingHorizontal: t.spacing['spacing/16'], overflow: 'hidden' }}>
-        {demoTransfers.map((tx, i) => {
-          const r = demoRecipients.find((x) => x.id === tx.recipient);
-          return (
-          <TransferRow
-            key={tx.id}
-            initials={r?.initials ?? ''}
-            divider={i > 0}
-            name={tr(`${k}.names.${tx.id}`)}
-            method={tx.method}
-            methodLabel={tr(`${k}.methods.${tx.method}`)}
-            date={ltr(tx.date)}
-            amount={formatMoney(Number(tx.amount), 'GBP', { decimals: 'always' })}
-            status={tx.status}
-            statusLabel={tr(`${k}.status.${tx.status}`)}
-            onPress={notBuilt('Transfer details')}
-          />
-          );
-        })}
+      <SectionHeader title={tr(`${k}.recent`)} actionLabel={tr(`${k}.seeAll`)} onAction={onSeeAll} />
+      <View style={{ gap: t.spacing['spacing/8'] }}>
+        {demoTransfers.slice(0, 3).map((tx) => <TransferRow key={tx.id} {...transferCardProps(tx, tr)} onPress={onOpen} />)}
       </View>
     </View>
   );

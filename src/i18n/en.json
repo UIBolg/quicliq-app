@@ -163,11 +163,6 @@
     "sendMoney": "Send money",
     "recent": "Recent transfers",
     "seeAll": "See all",
-    "names": {
-      "t1": "Layla Haddad",
-      "t2": "Omar Khalil",
-      "t3": "Rana Saleh"
-    },
     "methods": {
       "bank": "Bank deposit",
       "cash": "Cash pickup"
@@ -179,7 +174,7 @@
     "tabs": {
       "home": "Home",
       "send": "Send",
-      "history": "History",
+      "history": "Activity",
       "profile": "Account"
     },
     "limit": {
@@ -356,6 +351,17 @@
     "raise": {
       "idAddress": "Verify your ID to send up to {{amount}}",
       "sourceOfFunds": "Add your source of funds to send over {{amount}}"
+    }
+  },
+  "activity": {
+    "title": "Activity",
+    "search": "Search by name",
+    "filter": "Filter",
+    "empty": "No transfers match your search.",
+    "months": {
+      "2026-10": "October 2026",
+      "2026-09": "September 2026",
+      "2026-08": "August 2026"
     }
   }
 }

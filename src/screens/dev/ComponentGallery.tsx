@@ -340,8 +340,8 @@ export function ComponentGallery({ onToggleLocale, onShowTokens }: { onToggleLoc
 
         <Section title="Transfer Row" node="code">
           <View style={{ backgroundColor: t.colors['Neutral/Fog'], borderRadius: t.radius['radius/lg'], paddingHorizontal: t.spacing['spacing/16'] }}>
-            <TransferRow name={tr('home.names.t1')} initials="LH" tone="brand" method="bank" methodLabel={tr('home.methods.bank')} date="28 Oct" amount="£250.00" status="delivered" statusLabel={tr('home.status.delivered')} onPress={() => {}} />
-            <TransferRow divider name={tr('home.names.t3')} initials="RS" tone="ink" method="cash" methodLabel={tr('home.methods.cash')} date="02 Oct" amount="£75.50" status="processing" statusLabel={tr('home.status.processing')} onPress={() => {}} />
+            <TransferRow name={tr('home.recipientNames.r1')} method="bank" methodLabel={tr('home.methods.bank')} date="28 Oct" amount="£250.00" status="delivered" statusLabel={tr('home.status.delivered')} onPress={() => {}} />
+            <TransferRow name={tr('home.recipientNames.r3')} method="cash" methodLabel={tr('home.methods.cash')} date="02 Oct" amount="£75.50" status="processing" statusLabel={tr('home.status.processing')} onPress={() => {}} />
           </View>
         </Section>
 
