@@ -1,6 +1,7 @@
 /**
- * Demo account used until the API exists. The verification code is the one drawn in Figma's Keypad
- * "From Messages" suggestion (281:7943), so the preview's autofill tap succeeds; any other code is wrong (7.2d).
+ * Demo account used until the API exists. The verification code 123456 is right for both text (7.2a) and email (7.2b);
+ * any other code is wrong (7.2d). The preview keypad's "From Messages" suggestion shows the same code
+ * (Figma draws 482 916 there).
  */
 export const demoAccount = {
   firstName: 'James',
@@ -19,7 +20,7 @@ export const demoAccount = {
   password: 'Quicliq1!',
   loginAttempts: 5,
   lockSeconds: 15 * 60,
-  code: '482916',
+  code: '123456',
   codeAttempts: 3,
   resendSeconds: 59,
 } as const;
