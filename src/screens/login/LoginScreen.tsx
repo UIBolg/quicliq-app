@@ -11,7 +11,8 @@
  * in the error look (never says which one was wrong); 7.4 Too many attempts (82:9713) — after 5 wrong tries a Security
  * Banner (clock icon), disabled "Try again in mm:ss" (15 min countdown) and Ghost "Reset password", Actions gap spacing/16.
  * No backend yet (demo account in src/mock/account.ts): "Log in" shows the Loading button (7.2 / 7.2e); offline → 7.5;
- * right password → 7.2a (text) / 7.2b (email); wrong → 7.3, the 5th time → 7.4.
+ * demo credentials (mobile 123456789 / demo email + password 123456) → 7.2a (text) / 7.2b (email);
+ * anything else → 7.3, the 5th time → 7.4.
  */
 import { useEffect, useRef, useState } from 'react';
 import { KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, View } from 'react-native';
@@ -20,7 +21,7 @@ import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import {
   AppText, Banner, Button, LoginMethod, Logo, PhoneField, Screen, TextField, formatMSS, useCountdown, type LoginMethodValue,
 } from '../../components';
-import { demoAccount } from '../../mock/account';
+import { demoAccount, isDemoLogin } from '../../mock/account';
 import { isOffline } from '../../platform/network';
 import { useTheme } from '../../theme';
 import type { RootStackParamList } from '../../navigation/routes';
@@ -58,7 +59,7 @@ export function LoginScreen({ navigation, route }: NativeStackScreenProps<RootSt
       const offline = await isOffline();
       setLoading(false);
       if (offline) return navigation.navigate('7.5');
-      if (password === demoAccount.password) {
+      if (isDemoLogin(method, method === 'mobile' ? mobile : email, password)) {
         setFailed(0);
         if (method === 'mobile') navigation.navigate('7.2a', { phone: mobile || undefined });
         else navigation.navigate('7.2b', { email: email || undefined });

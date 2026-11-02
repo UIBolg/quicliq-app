@@ -14,10 +14,11 @@ export const demoAccount = {
   /** Unverified Home: ID & address steps done (of 2). */
   setupStepsDone: 0,
   setupStepsTotal: 2,
-  phone: '7700 900123',
+  /** Demo login (7.1): mobile 123456789 or this email, with password 123456. Any other pair is wrong (7.3);
+   *  5 wrong tries pause login for 15 minutes (7.4). Demo values only — never real credentials. */
+  phone: '123456789',
   email: 'james.carter@email.com',
-  /** Any other password is wrong (7.3); 5 wrong tries pause login for 15 minutes (7.4). */
-  password: 'Quicliq1!',
+  password: '123456',
   loginAttempts: 5,
   lockSeconds: 15 * 60,
   code: '123456',
@@ -31,3 +32,11 @@ export const demoTransfers = [
   { id: 't2', amount: '120.00', date: '14 Oct', method: 'cash', status: 'delivered' },
   { id: 't3', amount: '75.50', date: '02 Oct', method: 'bank', status: 'processing' },
 ] as const;
+
+/** Demo credential check for 7.1 (mobile compared on digits only, email case-insensitive). */
+export function isDemoLogin(method: 'mobile' | 'email', id: string, password: string): boolean {
+  const idOk = method === 'mobile'
+    ? id.replace(/\D/g, '') === demoAccount.phone
+    : id.trim().toLowerCase() === demoAccount.email;
+  return idOk && password === demoAccount.password;
+}
