@@ -359,11 +359,6 @@
     "raise": {
       "idAddress": "وثّق هويتك لترسل حتى {{amount}}",
       "sourceOfFunds": "أضف مصدر أموالك لترسل أكثر من {{amount}}"
-    },
-    "stats": {
-      "transfers": "التحويلات",
-      "recipients": "المستلمون",
-      "cards": "البطاقات"
     }
   }
 }

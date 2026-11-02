@@ -6,7 +6,6 @@
  *  profile card (Neutral/Fog, radius/xl, padding spacing/16, gap spacing/16): Avatar 56 · name (Title) + email
  *    (Caption, Slate) · chevron → 12.2; then, over a hairline: "Level n of 3" + current limit, a 3-segment bar
  *    (done = Primary/Red) and the next-step link (Primary/Red) → sending-limit sheet ·
- *  quick stats (3 bordered tiles, radius/lg): transfers · recipients · saved cards (H3 count + Caption label) ·
  *  List Groups (every icon circle Alpha/Red 8% + Primary/Red, like Personal details): Account (Personal details, Saved cards, Your limit → sending-limit sheet) ·
  *    Preferences (Security, Language) · Support (Help, Legal) · Log out (danger row → 12.8 sheet → 7.1) ·
  *  app version (Caption, Slate, centred).
@@ -17,12 +16,12 @@ import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { AppText, Avatar, BottomSheet, Button, Icon, ListGroup, ListRow, Screen, TabBar } from '../../components';
-import { demoAccount, demoCards, demoLimit, demoRecipients, demoTransfers, limitTotal, nextLevel } from '../../mock/account';
+import { demoAccount, demoLimit, limitTotal, nextLevel } from '../../mock/account';
 import { useLocale } from '../../i18n/LocaleProvider';
 import { useMainTabs } from '../../navigation/mainTabs';
 import { SendingLimitSheet } from '../home/SendingLimitSheet';
 import { formatMoney } from '../../utils/format';
-import { getTextStyle, useTheme } from '../../theme';
+import { useTheme } from '../../theme';
 import type { RootStackParamList } from '../../navigation/routes';
 import appConfig from '../../../app.json';
 
@@ -92,25 +91,6 @@ export function AccountScreen({ navigation }: Props) {
               <AppText variant="Body Medium" color="Status/Success/Default">{tr('home.limitSheet.allDone')}</AppText>
             )}
           </View>
-        </View>
-
-        {/* Quick stats: transfers · recipients · saved cards (cards opens 12.4). */}
-        <View style={{ flexDirection: 'row', gap: t.spacing['spacing/12'] }}>
-          {[
-            { key: 'transfers', value: demoTransfers.length, icon: 'send' as const, tone: 'Alpha/Red 8%' as const, fg: 'Primary/Red' as const },
-            { key: 'recipients', value: demoRecipients.length, icon: 'users' as const, tone: 'Alpha/Red 8%' as const, fg: 'Primary/Red' as const },
-            { key: 'cards', value: demoCards.length, icon: 'card' as const, tone: 'Alpha/Red 8%' as const, fg: 'Primary/Red' as const },
-          ].map((st) => (
-            <View key={st.key} accessible accessibilityLabel={`${st.value} ${tr(`${k}.stats.${st.key}`)}`} style={{ flex: 1, gap: t.spacing['spacing/8'], padding: t.spacing['spacing/12'], borderRadius: t.radius['radius/lg'], borderWidth: t.stroke['stroke/xs'], borderColor: t.colors['Alpha/Ink 10%'] }}>
-              <View style={{ width: t.sizes.listRow.badge - t.spacing['spacing/8'], height: t.sizes.listRow.badge - t.spacing['spacing/8'], borderRadius: t.radius['radius/full'], backgroundColor: t.colors[st.tone], alignItems: 'center', justifyContent: 'center' }}>
-                <Icon name={st.icon} size={t.sizes.icon.sm} color={st.fg} />
-              </View>
-              <View>
-                <AppText variant="H3" style={[getTextStyle('H3', 'en'), { color: t.colors['Neutral/Ink'], textAlign: t.isRTL ? 'right' : 'left' }]}>{String(st.value)}</AppText>
-                <AppText variant="Caption" color="Neutral/Slate">{tr(`${k}.stats.${st.key}`)}</AppText>
-              </View>
-            </View>
-          ))}
         </View>
 
         <ListGroup title={tr(`${k}.groups.account`)}>

@@ -355,11 +355,6 @@
     "raise": {
       "idAddress": "Verify your ID to send up to {{amount}}",
       "sourceOfFunds": "Add your source of funds to send over {{amount}}"
-    },
-    "stats": {
-      "transfers": "Transfers",
-      "recipients": "Recipients",
-      "cards": "Saved cards"
     }
   }
 }
