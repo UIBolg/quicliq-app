@@ -3,6 +3,11 @@
 Read `AGENTS.md` too (Expo commands and conventions). The rules below win if they conflict.
 
 ## Figma is READ-ONLY
+- **One exception (approved by the product owner):** the file "New Designs"
+  (https://www.figma.com/design/Dxr5Ajr1A5uk1cgQDI6iEJ/New-Designs) may be written to with `use_figma` (set to
+  "ask" in `.claude/settings.json`, so every write needs approval). Only add new pages/frames there (e.g. page "Home").
+  Its design-system pages (Documentation, Component, Icons & Illustrations) and the Quicliq [Kitchen] library are
+  USE-ONLY: never edit, add to, rename or remove their variables, styles or components. Never write to any other file.
 - Source file: https://www.figma.com/design/kGcOLLGSdsq37Ova5pRIRE/Test (library "Quicliq [Main]").
 - Only use Figma **read** tools: `get_metadata`, `get_design_context`, `get_variable_defs`,
   `get_screenshot`, `search_design_system`, `get_libraries`, `download_assets`, `create_session` (session bookkeeping only).
