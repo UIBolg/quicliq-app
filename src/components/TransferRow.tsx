@@ -1,7 +1,7 @@
 /**
  * Transfer row — code addition (Home proposal; no Figma component yet, docs/figma-issues.md #41).
  * Row, padding spacing/12 vertical, gap spacing/12; rows after the first get an Alpha/Ink 10% hairline (stroke/xs):
- *  recipient Avatar 44 (same tone as in Recent recipients) ·
+ *  recipient Avatar 44 (tint, same as Recent recipients) ·
  *  name (Body Medium) over a 14 bank/cash icon + method · date (Caption, Slate) ·
  *  amount (Body Medium, EN style, LTR) over a status pill (radius/full, Caption + 12 icon):
  *    Delivered = Status/Success/Light + Status/Success/Default check · Processing = Neutral/Fog + Slate clock.

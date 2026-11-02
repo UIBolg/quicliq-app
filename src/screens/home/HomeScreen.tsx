@@ -6,7 +6,7 @@
  *   top group (gap spacing/16): greeting row (Avatar brand · Caption Slate + Title · IconButton bell) ·
  *     next-level Action Banner (alert; ID & address at level 1, source of funds at level 2, none at 3) ·
  *     Limit Card (red, plane artwork, "Level n of 3" pill; tap → SendingLimitSheet) · Primary "Send money".
- *   then (gap spacing/24): Recent recipients (5 tiles, rotating avatar tones) · Recent transfers (TransferRows on a white card with an Alpha/Ink 10% border).
+ *   then (gap spacing/24): Recent recipients (5 tiles, tint avatars) · Recent transfers (TransferRows on a white card with an Alpha/Ink 10% border).
  * Composition only: every repeated pattern lives in src/components; every string in src/i18n.
  */
 import { useState } from 'react';
@@ -119,7 +119,6 @@ function Recipients({ notBuilt }: { notBuilt: NotBuilt }) {
           <RecipientTile
             key={r.id}
             initials={r.initials}
-            tone={r.tone}
             shortName={tr(`${k}.recipientShort.${r.id}`)}
             fullName={tr(`${k}.recipientNames.${r.id}`)}
             actionLabel={tr(`${k}.sendMoney`)}
@@ -144,7 +143,6 @@ function Transfers({ notBuilt }: { notBuilt: NotBuilt }) {
           <TransferRow
             key={tx.id}
             initials={r?.initials ?? ''}
-            tone={r?.tone}
             divider={i > 0}
             name={tr(`${k}.names.${tx.id}`)}
             method={tx.method}

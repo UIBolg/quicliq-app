@@ -62,13 +62,13 @@ export const demoLimit = { level: 1 as LimitLevel, sent: 100 };
 /** Lifetime limit at a level; level 3 has no fixed cap, so it reports the level-2 figure it goes beyond. */
 export const limitTotal = (level: LimitLevel): number => limitLevels[level - 1].total ?? limitLevels[1].total ?? 0;
 
-/** Last 5 recipients, most recent first; `tone` = avatar colour, shared by Recent recipients and Recent transfers (names live in the i18n files under home.recipientNames). */
+/** Last 5 recipients, most recent first (names live in the i18n files under home.recipientNames). */
 export const demoRecipients = [
-  { id: 'r1', initials: 'LH', tone: 'brand' },
-  { id: 'r2', initials: 'OK', tone: 'success' },
-  { id: 'r3', initials: 'RS', tone: 'ink' },
-  { id: 'r4', initials: 'YN', tone: 'tint' },
-  { id: 'r5', initials: 'HA', tone: 'success' },
+  { id: 'r1', initials: 'LH' },
+  { id: 'r2', initials: 'OK' },
+  { id: 'r3', initials: 'RS' },
+  { id: 'r4', initials: 'YN' },
+  { id: 'r5', initials: 'HA' },
 ] as const;
 
 /** Personal details (12.2) — name and date of birth come from the ID check and are locked. */
