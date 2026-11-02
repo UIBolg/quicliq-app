@@ -5,7 +5,7 @@
  * Neutral/White page, pt spacing/8 · gutter · pb spacing/32:
  *   top group (gap spacing/16): greeting row (Avatar brand · Caption Slate + Title · IconButton bell) ·
  *     next-level Action Banner (alert; ID & address at level 1, source of funds at level 2, none at 3) ·
- *     Limit Card (red, plane artwork, "Level n of 3" pill; tap → SendingLimitSheet) · Primary "Send money".
+ *     Limit Card (red, plane artwork, "Level n of 3" pill; tap → SendingLimitSheet) · Send money CTA card (red, icon + title + subtitle + chevron).
  *   then (gap spacing/24): Recent recipients ("Add new" tile + 5 tint tiles, scrolls sideways) · Recent transfers (first 3 Transfer cards, gap spacing/8; See all → 11.1).
  * Composition only: every repeated pattern lives in src/components; every string in src/i18n.
  */
@@ -14,7 +14,7 @@ import { ScrollView, StyleSheet, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import {
-  ActionBanner, AddRecipientTile, AppText, Avatar, Button, IconButton, LimitCard, RecipientTile, Screen, SectionHeader,
+  ActionBanner, AddRecipientTile, AppText, CtaCard, Avatar, Button, IconButton, LimitCard, RecipientTile, Screen, SectionHeader,
   TabBar, TransferRow,
 } from '../../components';
 import { demoAccount, demoLimit, demoRecipients, demoTransfers, limitTotal, nextLevel, type LimitLevel } from '../../mock/account';
@@ -104,7 +104,7 @@ function Header({ level, notBuilt, onOpenLimit, onBell }: { level: LimitLevel; n
         testID="limit-card"
       />
 
-      <Button icon="send" label={tr(`${k}.sendMoney`)} onPress={notBuilt('Send money')} testID="home-send" />
+      <CtaCard icon="send" title={tr(`${k}.sendMoney`)} subtitle={tr(`${k}.sendMoneyHint`)} onPress={notBuilt('Send money')} testID="home-send" />
     </View>
   );
 }

@@ -43,3 +43,4 @@ export * from './LanguageSheet';
 export * from './ListRow';
 export * from './Switch';
 export * from './TopBar';
+export * from './CtaCard';

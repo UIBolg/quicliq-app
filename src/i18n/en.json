@@ -239,7 +239,8 @@
       "raise": "Raise my limit",
       "allDone": "You have the highest sending limit."
     },
-    "addRecipient": "Add new"
+    "addRecipient": "Add new",
+    "sendMoneyHint": "Transfer money internationally"
   },
   "account": {
     "title": "Account",

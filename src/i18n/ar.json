@@ -243,7 +243,8 @@
       "raise": "ارفع حدّي",
       "allDone": "لديك أعلى حدّ للإرسال."
     },
-    "addRecipient": "إضافة"
+    "addRecipient": "إضافة",
+    "sendMoneyHint": "حوّل الأموال دولياً"
   },
   "account": {
     "title": "حسابي",

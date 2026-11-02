@@ -114,6 +114,9 @@ export const sizes = {
   /** LimitStep (code addition, sending-limit sheet): 32 status circle, 10 dot for the current step. */
   limitStep: { badge: 32, dot: 10 },
 
+  /** CtaCard (code addition, Home Send money): 28 icon. */
+  cta: { icon: 28 },
+
   /** Saved-card thumbnail (code addition, 12.4): 48×32 mini card, 14 Mastercard circles. */
   cardThumb: { width: 48, height: 32, dot: 14 },
 
