@@ -1,0 +1,18 @@
+{
+  "_source": "Figma page 'Icons & Illustrations' (79:2). Icons 24px, 1.75 stroke, recolour via stroke override. Illustrations 160px spot.",
+  "icons": {
+    "arrowLeft":"79:9","arrowRight":"79:14","arrowUp":"79:19","arrowUpRight":"79:24","check":"79:28","chevronRight":"79:32","chevronLeft":"79:36","chevronDown":"79:40","x":"79:45","swap":"79:52",
+    "bank":"79:61","cash":"79:67","shield":"79:72","send":"79:77","download":"79:83","wrench":"79:87","lock":"79:92","scan":"79:100","edit":"79:105","hand":"79:112",
+    "sun":"79:124","idCard":"79:132","alert":"79:138","alertTriangle":"79:144","focus":"79:152","cameraOff":"79:159","info":"79:165","home":"79:170","file":"79:178","camera":"79:183",
+    "image":"79:189","refresh":"79:196","trash":"79:204","clock":"79:209","wifiOff":"79:219","smartphone":"79:224","phoneCall":"79:228","user":"79:233","users":"79:240","message":"79:246",
+    "faceId":"79:256","fingerprint":"89:1606","bell":"79:261","help":"79:267","anchor":"79:273","search":"79:278","briefcase":"79:283","tag":"79:288","activity":"79:292","gift":"79:299","grid":"79:306",
+    "card":"79:311","zap":"79:315","pin":"79:320","plus":"79:325","wallet":"79:330","bookmark":"79:334","type":"79:340","calendar":"79:347","backspace":"79:353","trendingUp":"79:358","globe":"209:7048",
+    "eye":"79:363","mail":"79:368","laptop":"79:372","history":"79:378","link":"79:383","droplet":"79:387"
+  },
+  "illustrations": {
+    "success":"79:401","error":"79:415","cameraOff":"79:427","idCard":"79:440","newDevice":"79:453","message":"79:467","faceId":"79:478","fingerprint":"89:1587",
+    "update":"79:490","maintenance":"79:501","locked":"79:511","offline":"181:2643"
+  },
+  "flags": {"UK":"81:9","JO":"117:1567"},
+  "mirrorInRTL": ["arrowLeft","arrowRight","chevronLeft","chevronRight","send","backspace","arrowUpRight","trendingUp"]
+}

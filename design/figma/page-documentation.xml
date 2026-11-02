@@ -1,0 +1,1044 @@
+<canvas id="0:1" name="Documentation" x="0" y="0" width="0" height="0">
+  <frame id="6:22" name="Typography Scale — Mobile" x="100" y="100" width="1468" height="2047">
+    <frame id="6:23" name="Header" x="64" y="64" width="1340" height="213">
+      <text id="6:24" name="Typography Scale" x="0" y="0" width="329" height="55" />
+      <text id="6:25" name="Mobile app · English: Avenir · Arabic: Frutiger LT Arabic" x="0" y="63" width="400" height="22" />
+      <text id="17:36" name="Code Note" x="0" y="93" width="406" height="80" />
+    </frame>
+    <frame id="6:26" name="Columns" x="64" y="277" width="1340" height="27">
+      <text id="6:27" name="STYLE" x="0" y="0" width="220" height="15" />
+      <text id="6:28" name="ENGLISH — AVENIR" x="260" y="0" width="520" height="15" />
+      <text id="6:29" name="العربية — FRUTIGER LT ARABIC" x="820" y="0" width="520" height="15" />
+    </frame>
+    <frame id="6:30" name="Row/Display" x="64" y="304" width="1340" height="138">
+      <frame id="6:31" name="Label" x="0" y="21" width="220" height="97">
+        <text id="6:32" name="Display" x="0" y="0" width="48" height="19" />
+        <text id="6:33" name="32px · EN Black 40lh · -0.5%" x="0" y="23" width="152" height="16" />
+        <text id="6:34" name="AR 75 Black 44lh" x="0" y="43" width="91" height="16" />
+        <text id="17:16" name="Code" x="0" y="63" width="112" height="15" />
+        <text id="17:17" name="Code" x="0" y="82" width="109" height="15" />
+      </frame>
+      <text id="6:35" name="The quick brown fox jumps" x="260" y="49.5" width="520" height="40" />
+      <text id="6:36" name="نص تجريبي للتطبيق" x="820" y="47.5" width="520" height="44" />
+    </frame>
+    <frame id="6:37" name="Row/H1" x="64" y="442" width="1340" height="138">
+      <frame id="6:38" name="Label" x="0" y="21" width="220" height="97">
+        <text id="6:39" name="Heading 1" x="0" y="0" width="68" height="19" />
+        <text id="6:40" name="28px · EN Heavy 36lh · -0.5%" x="0" y="23" width="157" height="16" />
+        <text id="6:41" name="AR 65 Bold 40lh" x="0" y="43" width="87" height="16" />
+        <text id="17:18" name="Code" x="0" y="63" width="89" height="15" />
+        <text id="17:19" name="Code" x="0" y="82" width="86" height="15" />
+      </frame>
+      <text id="6:42" name="The quick brown fox jumps" x="260" y="51.5" width="520" height="36" />
+      <text id="6:43" name="نص تجريبي للتطبيق" x="820" y="49.5" width="520" height="40" />
+    </frame>
+    <frame id="6:44" name="Row/H2" x="64" y="580" width="1340" height="138">
+      <frame id="6:45" name="Label" x="0" y="21" width="220" height="97">
+        <text id="6:46" name="Heading 2" x="0" y="0" width="68" height="19" />
+        <text id="6:47" name="24px · EN Heavy 32lh" x="0" y="23" width="116" height="16" />
+        <text id="6:48" name="AR 65 Bold 36lh" x="0" y="43" width="87" height="16" />
+        <text id="17:20" name="Code" x="0" y="63" width="89" height="15" />
+        <text id="17:21" name="Code" x="0" y="82" width="86" height="15" />
+      </frame>
+      <text id="6:49" name="The quick brown fox jumps" x="260" y="53.5" width="520" height="32" />
+      <text id="6:50" name="نص تجريبي للتطبيق" x="820" y="51.5" width="520" height="36" />
+    </frame>
+    <frame id="6:51" name="Row/H3" x="64" y="718" width="1340" height="138">
+      <frame id="6:52" name="Label" x="0" y="21" width="220" height="97">
+        <text id="6:53" name="Heading 3" x="0" y="0" width="68" height="19" />
+        <text id="6:54" name="20px · EN Heavy 28lh" x="0" y="23" width="116" height="16" />
+        <text id="6:55" name="AR 65 Bold 32lh" x="0" y="43" width="87" height="16" />
+        <text id="17:22" name="Code" x="0" y="63" width="89" height="15" />
+        <text id="17:23" name="Code" x="0" y="82" width="86" height="15" />
+      </frame>
+      <text id="6:56" name="The quick brown fox jumps" x="260" y="55.5" width="520" height="28" />
+      <text id="6:57" name="نص تجريبي للتطبيق" x="820" y="53.5" width="520" height="32" />
+    </frame>
+    <frame id="6:58" name="Row/Title" x="64" y="856" width="1340" height="138">
+      <frame id="6:59" name="Label" x="0" y="21" width="220" height="97">
+        <text id="6:60" name="Title" x="0" y="0" width="29" height="19" />
+        <text id="6:61" name="18px · EN Medium 26lh" x="0" y="23" width="128" height="16" />
+        <text id="6:62" name="AR 65 Bold 28lh" x="0" y="43" width="87" height="16" />
+        <text id="17:24" name="Code" x="0" y="63" width="97" height="15" />
+        <text id="17:25" name="Code" x="0" y="82" width="93" height="15" />
+      </frame>
+      <text id="6:63" name="The quick brown fox jumps" x="260" y="56.5" width="520" height="26" />
+      <text id="6:64" name="نص تجريبي للتطبيق" x="820" y="55.5" width="520" height="28" />
+    </frame>
+    <frame id="6:65" name="Row/Body Large" x="64" y="994" width="1340" height="138">
+      <frame id="6:66" name="Label" x="0" y="21" width="220" height="97">
+        <text id="6:67" name="Body Large" x="0" y="0" width="75" height="19" />
+        <text id="6:68" name="16px · EN Roman 24lh" x="0" y="23" width="121" height="16" />
+        <text id="6:69" name="AR 55 Roman 28lh" x="0" y="43" width="100" height="16" />
+        <text id="17:26" name="Code" x="0" y="63" width="131" height="15" />
+        <text id="17:27" name="Code" x="0" y="82" width="128" height="15" />
+      </frame>
+      <text id="6:70" name="The quick brown fox jumps" x="260" y="57.5" width="520" height="24" />
+      <text id="6:71" name="نص تجريبي للتطبيق" x="820" y="55.5" width="520" height="28" />
+    </frame>
+    <frame id="6:72" name="Row/Body" x="64" y="1132" width="1340" height="138">
+      <frame id="6:73" name="Label" x="0" y="21" width="220" height="97">
+        <text id="6:74" name="Body" x="0" y="0" width="34" height="19" />
+        <text id="6:75" name="14px · EN Roman 22lh" x="0" y="23" width="121" height="16" />
+        <text id="6:76" name="AR 55 Roman 24lh" x="0" y="43" width="100" height="16" />
+        <text id="17:28" name="Code" x="0" y="63" width="102" height="15" />
+        <text id="17:29" name="Code" x="0" y="82" width="99" height="15" />
+      </frame>
+      <text id="6:77" name="The quick brown fox jumps" x="260" y="58.5" width="520" height="22" />
+      <text id="6:78" name="نص تجريبي للتطبيق" x="820" y="57.5" width="520" height="24" />
+    </frame>
+    <frame id="6:79" name="Row/Body Medium" x="64" y="1270" width="1340" height="138">
+      <frame id="6:80" name="Label" x="0" y="21" width="220" height="97">
+        <text id="6:81" name="Body Medium" x="0" y="0" width="92" height="19" />
+        <text id="6:82" name="14px · EN Medium 22lh" x="0" y="23" width="128" height="16" />
+        <text id="6:83" name="AR 65 Bold 24lh" x="0" y="43" width="87" height="16" />
+        <text id="17:30" name="Code" x="0" y="63" width="146" height="15" />
+        <text id="17:31" name="Code" x="0" y="82" width="143" height="15" />
+      </frame>
+      <text id="6:84" name="The quick brown fox jumps" x="260" y="58.5" width="520" height="22" />
+      <text id="6:85" name="نص تجريبي للتطبيق" x="820" y="57.5" width="520" height="24" />
+    </frame>
+    <frame id="6:86" name="Row/Caption" x="64" y="1408" width="1340" height="138">
+      <frame id="6:87" name="Label" x="0" y="21" width="220" height="97">
+        <text id="6:88" name="Caption" x="0" y="0" width="52" height="19" />
+        <text id="6:89" name="12px · EN Roman 18lh" x="0" y="23" width="121" height="16" />
+        <text id="6:90" name="AR 45 Light 20lh" x="0" y="43" width="90" height="16" />
+        <text id="17:32" name="Code" x="0" y="63" width="114" height="15" />
+        <text id="17:33" name="Code" x="0" y="82" width="111" height="15" />
+      </frame>
+      <text id="6:91" name="The quick brown fox jumps" x="260" y="60.5" width="520" height="18" />
+      <text id="6:92" name="نص تجريبي للتطبيق" x="820" y="59.5" width="520" height="20" />
+    </frame>
+    <frame id="6:93" name="Row/Overline" x="64" y="1546" width="1340" height="138">
+      <frame id="6:94" name="Label" x="0" y="21" width="220" height="97">
+        <text id="6:95" name="Overline" x="0" y="0" width="56" height="19" />
+        <text id="6:96" name="10px · EN Medium 14lh · 4%" x="0" y="23" width="155" height="16" />
+        <text id="6:97" name="AR 55 Roman 16lh" x="0" y="43" width="100" height="16" />
+        <text id="17:34" name="Code" x="0" y="63" width="117" height="15" />
+        <text id="17:35" name="Code" x="0" y="82" width="114" height="15" />
+      </frame>
+      <text id="6:98" name="THE QUICK BROWN FOX JUMPS" x="260" y="62.5" width="520" height="14" />
+      <text id="6:99" name="نص تجريبي للتطبيق" x="820" y="61.5" width="520" height="16" />
+    </frame>
+    <frame id="275:44" name="Row/Numeric L" x="64" y="1684" width="1340" height="138">
+      <frame id="275:45" name="Label" x="0" y="21" width="220" height="97">
+        <text id="275:46" name="Numeric L" x="0" y="0" width="67" height="19" />
+        <text id="275:47" name="44px · EN Black 48lh" x="0" y="23" width="112" height="16" />
+        <text id="275:48" name="AR 75 Black 60lh" x="0" y="43" width="91" height="16" />
+        <text id="275:49" name="Code" x="0" y="63" width="123" height="15" />
+        <text id="275:50" name="Code" x="0" y="82" width="120" height="15" />
+      </frame>
+      <text id="275:51" name="Sample EN" x="260" y="45.5" width="520" height="48" />
+      <text id="275:52" name="Sample AR" x="820" y="39.5" width="520" height="60" />
+    </frame>
+    <frame id="275:53" name="Row/Numeric XL" x="64" y="1822" width="1340" height="161">
+      <frame id="275:54" name="Label" x="0" y="32.5" width="220" height="97">
+        <text id="275:55" name="Numeric XL" x="0" y="0" width="77" height="19" />
+        <text id="275:56" name="96px · EN Black 100lh" x="0" y="23" width="118" height="16" />
+        <text id="275:57" name="AR 75 Black 120lh" x="0" y="43" width="98" height="16" />
+        <text id="275:58" name="Code" x="0" y="63" width="129" height="15" />
+        <text id="275:59" name="Code" x="0" y="82" width="126" height="15" />
+      </frame>
+      <text id="275:60" name="Sample EN" x="260" y="31" width="520" height="100" />
+      <text id="275:61" name="Sample AR" x="820" y="21" width="520" height="120" />
+    </frame>
+  </frame>
+  <frame id="8:9" name="Colour Palette" x="1688" y="100" width="992" height="3419">
+    <frame id="8:10" name="Header" x="64" y="64" width="864" height="111">
+      <text id="8:11" name="Colour Palette" x="0" y="0" width="271" height="55" />
+      <text id="8:12" name="White &amp; neutrals 65% · Ink for text &amp; structure 25% · Red for accents &amp; action 10%" x="0" y="63" width="592" height="22" />
+      <text id="17:15" name="Code Note" x="0" y="93" width="1254" height="18" />
+    </frame>
+    <frame id="8:13" name="PRIMARY &amp; SECONDARY" x="64" y="215" width="864" height="252">
+      <text id="8:14" name="PRIMARY &amp; SECONDARY" x="0" y="0" width="161" height="16" />
+      <frame id="8:15" name="Swatches" x="0" y="32" width="696" height="220">
+        <frame id="8:16" name="Swatch/Primary Red" x="0" y="0" width="340" height="220">
+          <text id="8:17" name="Primary Red" x="20" y="62" width="137" height="33" />
+          <text id="8:18" name="#E01018" x="20" y="101" width="48" height="16" />
+          <text id="8:19" name="RGB 224, 16, 24" x="20" y="123" width="81" height="15" />
+          <text id="8:20" name="CMYK 0, 93, 89, 12" x="20" y="144" width="96" height="15" />
+          <text id="8:21" name="Primary/Red" x="20" y="165" width="56" height="14" />
+          <text id="17:2" name="Code" x="20" y="185" width="115" height="15" />
+        </frame>
+        <frame id="8:22" name="Swatch/Secondary Grey" x="356" y="0" width="340" height="220">
+          <text id="8:23" name="Secondary Grey" x="20" y="62" width="179" height="33" />
+          <text id="8:24" name="#838383" x="20" y="101" width="47" height="16" />
+          <text id="8:25" name="RGB 131, 131, 131" x="20" y="123" width="93" height="15" />
+          <text id="8:26" name="CMYK 0, 0, 0, 49" x="20" y="144" width="84" height="15" />
+          <text id="8:27" name="Secondary/Grey" x="20" y="165" width="73" height="14" />
+          <text id="17:3" name="Code" x="20" y="185" width="133" height="15" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="8:28" name="NEUTRAL PALETTE" x="64" y="507" width="864" height="252">
+      <text id="8:29" name="NEUTRAL PALETTE" x="0" y="0" width="122" height="16" />
+      <frame id="8:30" name="Swatches" x="0" y="32" width="864" height="220">
+        <frame id="8:31" name="Swatch/Ink" x="0" y="0" width="160" height="220">
+          <text id="8:32" name="Ink" x="20" y="73" width="23" height="22" />
+          <text id="8:33" name="#171717" x="20" y="101" width="47" height="16" />
+          <text id="8:34" name="RGB 23, 23, 23" x="20" y="123" width="75" height="15" />
+          <text id="8:35" name="CMYK 0, 0, 0, 91" x="20" y="144" width="84" height="15" />
+          <text id="8:36" name="Neutral/Ink" x="20" y="165" width="51" height="14" />
+          <text id="17:4" name="Code" x="20" y="185" width="110" height="15" />
+        </frame>
+        <frame id="8:37" name="Swatch/Slate" x="176" y="0" width="160" height="220">
+          <text id="8:38" name="Slate" x="20" y="73" width="38" height="22" />
+          <text id="8:39" name="#595959" x="20" y="101" width="47" height="16" />
+          <text id="8:40" name="RGB 89, 89, 89" x="20" y="123" width="75" height="15" />
+          <text id="8:41" name="CMYK 0, 0, 0, 65" x="20" y="144" width="84" height="15" />
+          <text id="8:42" name="Neutral/Slate" x="20" y="165" width="60" height="14" />
+          <text id="17:5" name="Code" x="20" y="185" width="119" height="15" />
+        </frame>
+        <frame id="8:43" name="Swatch/Silver" x="352" y="0" width="160" height="220">
+          <text id="8:44" name="Silver" x="20" y="73" width="42" height="22" />
+          <text id="8:45" name="#BFBFBF" x="20" y="101" width="51" height="16" />
+          <text id="8:46" name="RGB 191, 191, 191" x="20" y="123" width="93" height="15" />
+          <text id="8:47" name="CMYK 0, 0, 0, 25" x="20" y="144" width="84" height="15" />
+          <text id="8:48" name="Neutral/Silver" x="20" y="165" width="62" height="14" />
+          <text id="17:6" name="Code" x="20" y="185" width="121" height="15" />
+        </frame>
+        <frame id="8:49" name="Swatch/Fog" x="528" y="0" width="160" height="220">
+          <text id="8:50" name="Fog" x="21" y="72" width="30" height="22" />
+          <text id="8:51" name="#F3F3F3" x="21" y="100" width="48" height="16" />
+          <text id="8:52" name="RGB 243, 243, 243" x="21" y="122" width="93" height="15" />
+          <text id="8:53" name="CMYK 0, 0, 0, 5" x="21" y="143" width="78" height="15" />
+          <text id="8:54" name="Neutral/Fog" x="21" y="164" width="55" height="14" />
+          <text id="17:7" name="Code" x="21" y="184" width="112" height="15" />
+        </frame>
+        <frame id="8:55" name="Swatch/White" x="704" y="0" width="160" height="220">
+          <text id="8:56" name="White" x="21" y="72" width="45" height="22" />
+          <text id="8:57" name="#FFFFFF" x="21" y="100" width="49" height="16" />
+          <text id="8:58" name="RGB 255, 255, 255" x="21" y="122" width="93" height="15" />
+          <text id="8:59" name="CMYK 0, 0, 0, 0" x="21" y="143" width="78" height="15" />
+          <text id="8:60" name="Neutral/White" x="21" y="164" width="64" height="14" />
+          <text id="17:8" name="Code" x="21" y="184" width="122" height="15" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="9:8" name="STATUS COLOURS" x="64" y="799" width="704" height="368">
+      <text id="9:9" name="STATUS COLOURS" x="0" y="0" width="117" height="16" />
+      <frame id="9:10" name="Swatches" x="0" y="32" width="704" height="160">
+        <frame id="9:11" name="Swatch/Success" x="0" y="0" width="224" height="160">
+          <text id="9:12" name="Success" x="20" y="34" width="58" height="22" />
+          <text id="9:13" name="#067647" x="20" y="62" width="47" height="16" />
+          <text id="9:14" name="RGB 6, 118, 71" x="20" y="84" width="75" height="15" />
+          <text id="9:15" name="Status/Success/Default" x="20" y="105" width="103" height="14" />
+          <text id="17:9" name="Code" x="20" y="125" width="166" height="15" />
+        </frame>
+        <frame id="9:16" name="Swatch/Success Dark" x="240" y="0" width="224" height="160">
+          <text id="9:17" name="Success Dark" x="20" y="34" width="98" height="22" />
+          <text id="9:18" name="#054F31" x="20" y="62" width="47" height="16" />
+          <text id="9:19" name="RGB 5, 79, 49" x="20" y="84" width="69" height="15" />
+          <text id="9:20" name="Status/Success/Dark" x="20" y="105" width="91" height="14" />
+          <text id="17:10" name="Code" x="20" y="125" width="153" height="15" />
+        </frame>
+        <frame id="9:21" name="Swatch/Success Light" x="480" y="0" width="224" height="160">
+          <text id="9:22" name="Success Light" x="21" y="33" width="100" height="22" />
+          <text id="9:23" name="#ECFDF3" x="21" y="61" width="52" height="16" />
+          <text id="9:24" name="RGB 236, 253, 243" x="21" y="83" width="93" height="15" />
+          <text id="9:25" name="Status/Success/Light" x="21" y="104" width="93" height="14" />
+          <text id="17:11" name="Code" x="21" y="124" width="153" height="15" />
+        </frame>
+      </frame>
+      <frame id="9:26" name="Swatches" x="0" y="208" width="704" height="160">
+        <frame id="9:27" name="Swatch/Failure" x="0" y="0" width="224" height="160">
+          <text id="9:28" name="Failure" x="20" y="34" width="51" height="22" />
+          <text id="9:29" name="#B42318" x="20" y="62" width="48" height="16" />
+          <text id="9:30" name="RGB 180, 35, 24" x="20" y="84" width="81" height="15" />
+          <text id="9:31" name="Status/Failure/Default" x="20" y="105" width="98" height="14" />
+          <text id="17:12" name="Code" x="20" y="125" width="159" height="15" />
+        </frame>
+        <frame id="9:32" name="Swatch/Failure Dark" x="240" y="0" width="224" height="160">
+          <text id="9:33" name="Failure Dark" x="20" y="34" width="91" height="22" />
+          <text id="9:34" name="#7A1A12" x="20" y="62" width="51" height="16" />
+          <text id="9:35" name="RGB 122, 26, 18" x="20" y="84" width="81" height="15" />
+          <text id="9:36" name="Status/Failure/Dark" x="20" y="105" width="87" height="14" />
+          <text id="17:13" name="Code" x="20" y="125" width="146" height="15" />
+        </frame>
+        <frame id="9:37" name="Swatch/Failure Light" x="480" y="0" width="224" height="160">
+          <text id="9:38" name="Failure Light" x="21" y="33" width="94" height="22" />
+          <text id="9:39" name="#FEF3F2" x="21" y="61" width="49" height="16" />
+          <text id="9:40" name="RGB 254, 243, 242" x="21" y="83" width="93" height="15" />
+          <text id="9:41" name="Status/Failure/Light" x="21" y="104" width="88" height="14" />
+          <text id="17:14" name="Code" x="21" y="124" width="146" height="15" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="275:71" name="ALPHA - TINTS &amp; OVERLAYS" x="64" y="1207" width="864" height="1072">
+      <text id="275:72" name="ALPHA - TINTS &amp; OVERLAYS" x="0" y="0" width="184" height="16" />
+      <frame id="275:73" name="Swatches" x="0" y="32" width="864" height="160">
+        <frame id="275:74" name="Swatch/Alpha/Dark 35%" x="0" y="0" width="160" height="160">
+          <text id="275:75" name="Dark 35%" x="21" y="33" width="74" height="22" />
+          <text id="275:76" name="#7A1A12" x="21" y="61" width="51" height="16" />
+          <text id="275:77" name="Opacity 35%" x="21" y="83" width="64" height="15" />
+          <text id="275:78" name="Alpha/Dark 35%" x="21" y="104" width="74" height="14" />
+          <text id="275:79" name="Code" x="21" y="124" width="129" height="15" />
+        </frame>
+        <frame id="275:80" name="Swatch/Alpha/Ink 10%" x="176" y="0" width="160" height="160">
+          <text id="275:81" name="Ink 10%" x="21" y="33" width="61" height="22" />
+          <text id="275:82" name="#171717" x="21" y="61" width="47" height="16" />
+          <text id="275:83" name="Opacity 10%" x="21" y="83" width="64" height="15" />
+          <text id="275:84" name="Alpha/Ink 10%" x="21" y="104" width="66" height="14" />
+          <text id="275:85" name="Code" x="21" y="124" width="89" height="15" />
+        </frame>
+        <frame id="275:86" name="Swatch/Alpha/Ink 25%" x="352" y="0" width="160" height="160">
+          <text id="275:87" name="Ink 25%" x="21" y="33" width="61" height="22" />
+          <text id="275:88" name="#171717" x="21" y="61" width="47" height="16" />
+          <text id="275:89" name="Opacity 25%" x="21" y="83" width="64" height="15" />
+          <text id="275:90" name="Alpha/Ink 25%" x="21" y="104" width="66" height="14" />
+          <text id="275:91" name="Code" x="21" y="124" width="121" height="15" />
+        </frame>
+        <frame id="275:92" name="Swatch/Alpha/Ink 50%" x="528" y="0" width="160" height="160">
+          <text id="275:93" name="Ink 50%" x="21" y="33" width="61" height="22" />
+          <text id="275:94" name="#171717" x="21" y="61" width="47" height="16" />
+          <text id="275:95" name="Opacity 50%" x="21" y="83" width="64" height="15" />
+          <text id="275:96" name="Alpha/Ink 50%" x="21" y="104" width="66" height="14" />
+          <text id="275:97" name="Code" x="21" y="124" width="121" height="15" />
+        </frame>
+        <frame id="275:98" name="Swatch/Alpha/Ink 6%" x="704" y="0" width="160" height="160">
+          <text id="275:99" name="Ink 6%" x="21" y="33" width="51" height="22" />
+          <text id="275:100" name="#171717" x="21" y="61" width="47" height="16" />
+          <text id="275:101" name="Opacity 6%" x="21" y="83" width="58" height="15" />
+          <text id="275:102" name="Alpha/Ink 6%" x="21" y="104" width="60" height="14" />
+          <text id="275:103" name="Code" x="21" y="124" width="115" height="15" />
+        </frame>
+      </frame>
+      <frame id="275:104" name="Swatches" x="0" y="208" width="864" height="160">
+        <frame id="275:105" name="Swatch/Alpha/Red 10%" x="0" y="0" width="160" height="160">
+          <text id="275:106" name="Red 10%" x="21" y="33" width="68" height="22" />
+          <text id="275:107" name="#E01018" x="21" y="61" width="48" height="16" />
+          <text id="275:108" name="Opacity 10%" x="21" y="83" width="64" height="15" />
+          <text id="275:109" name="Alpha/Red 10%" x="21" y="104" width="71" height="14" />
+          <text id="275:110" name="Code" x="21" y="124" width="123" height="15" />
+        </frame>
+        <frame id="275:111" name="Swatch/Alpha/Red 12%" x="176" y="0" width="160" height="160">
+          <text id="275:112" name="Red 12%" x="21" y="33" width="68" height="22" />
+          <text id="275:113" name="#E01018" x="21" y="61" width="48" height="16" />
+          <text id="275:114" name="Opacity 12%" x="21" y="83" width="64" height="15" />
+          <text id="275:115" name="Alpha/Red 12%" x="21" y="104" width="71" height="14" />
+          <text id="275:116" name="Code" x="21" y="124" width="123" height="15" />
+        </frame>
+        <frame id="275:117" name="Swatch/Alpha/Red 25%" x="352" y="0" width="160" height="160">
+          <text id="275:118" name="Red 25%" x="21" y="33" width="68" height="22" />
+          <text id="275:119" name="#E01018" x="21" y="61" width="48" height="16" />
+          <text id="275:120" name="Opacity 25%" x="21" y="83" width="64" height="15" />
+          <text id="275:121" name="Alpha/Red 25%" x="21" y="104" width="71" height="14" />
+          <text id="275:122" name="Code" x="21" y="124" width="123" height="15" />
+        </frame>
+        <frame id="275:123" name="Swatch/Alpha/Red 4%" x="528" y="0" width="160" height="160">
+          <text id="275:124" name="Red 4%" x="21" y="33" width="59" height="22" />
+          <text id="275:125" name="#E01018" x="21" y="61" width="48" height="16" />
+          <text id="275:126" name="Opacity 4%" x="21" y="83" width="58" height="15" />
+          <text id="275:127" name="Alpha/Red 4%" x="21" y="104" width="65" height="14" />
+          <text id="275:128" name="Code" x="21" y="124" width="117" height="15" />
+        </frame>
+        <frame id="275:129" name="Swatch/Alpha/Red 6%" x="704" y="0" width="160" height="160">
+          <text id="275:130" name="Red 6%" x="21" y="33" width="59" height="22" />
+          <text id="275:131" name="#E01018" x="21" y="61" width="48" height="16" />
+          <text id="275:132" name="Opacity 6%" x="21" y="83" width="58" height="15" />
+          <text id="275:133" name="Alpha/Red 6%" x="21" y="104" width="65" height="14" />
+          <text id="275:134" name="Code" x="21" y="124" width="117" height="15" />
+        </frame>
+      </frame>
+      <frame id="275:135" name="Swatches" x="0" y="384" width="864" height="160">
+        <frame id="275:136" name="Swatch/Alpha/Red 7%" x="0" y="0" width="160" height="160">
+          <text id="275:137" name="Red 7%" x="21" y="33" width="59" height="22" />
+          <text id="275:138" name="#E01018" x="21" y="61" width="48" height="16" />
+          <text id="275:139" name="Opacity 7%" x="21" y="83" width="58" height="15" />
+          <text id="275:140" name="Alpha/Red 7%" x="21" y="104" width="65" height="14" />
+          <text id="275:141" name="Code" x="21" y="124" width="117" height="15" />
+        </frame>
+        <frame id="275:142" name="Swatch/Alpha/Red 8%" x="176" y="0" width="160" height="160">
+          <text id="275:143" name="Red 8%" x="21" y="33" width="59" height="22" />
+          <text id="275:144" name="#E01018" x="21" y="61" width="48" height="16" />
+          <text id="275:145" name="Opacity 8%" x="21" y="83" width="58" height="15" />
+          <text id="275:146" name="Alpha/Red 8%" x="21" y="104" width="65" height="14" />
+          <text id="275:147" name="Code" x="21" y="124" width="117" height="15" />
+        </frame>
+        <frame id="275:148" name="Swatch/Alpha/White 0%" x="352" y="0" width="160" height="160">
+          <text id="275:149" name="White 0%" x="20" y="34" width="74" height="22" />
+          <text id="275:150" name="#FFFFFF" x="20" y="62" width="49" height="16" />
+          <text id="275:151" name="Opacity 0%" x="20" y="84" width="58" height="15" />
+          <text id="275:152" name="Alpha/White 0%" x="20" y="105" width="74" height="14" />
+          <text id="275:153" name="Code" x="20" y="125" width="128" height="15" />
+        </frame>
+        <frame id="275:154" name="Swatch/Alpha/White 14%" x="528" y="0" width="160" height="160">
+          <text id="275:155" name="White 14%" x="20" y="34" width="83" height="22" />
+          <text id="275:156" name="#FFFFFF" x="20" y="62" width="49" height="16" />
+          <text id="275:157" name="Opacity 14%" x="20" y="84" width="64" height="15" />
+          <text id="275:158" name="Alpha/White 14%" x="20" y="105" width="79" height="14" />
+          <text id="275:159" name="Code" x="20" y="125" width="134" height="15" />
+        </frame>
+        <frame id="275:160" name="Swatch/Alpha/White 16%" x="704" y="0" width="160" height="160">
+          <text id="275:161" name="White 16%" x="20" y="34" width="83" height="22" />
+          <text id="275:162" name="#FFFFFF" x="20" y="62" width="49" height="16" />
+          <text id="275:163" name="Opacity 16%" x="20" y="84" width="64" height="15" />
+          <text id="275:164" name="Alpha/White 16%" x="20" y="105" width="79" height="14" />
+          <text id="275:165" name="Code" x="20" y="125" width="134" height="15" />
+        </frame>
+      </frame>
+      <frame id="275:166" name="Swatches" x="0" y="560" width="864" height="160">
+        <frame id="275:167" name="Swatch/Alpha/White 18%" x="0" y="0" width="160" height="160">
+          <text id="275:168" name="White 18%" x="20" y="34" width="83" height="22" />
+          <text id="275:169" name="#FFFFFF" x="20" y="62" width="49" height="16" />
+          <text id="275:170" name="Opacity 18%" x="20" y="84" width="64" height="15" />
+          <text id="275:171" name="Alpha/White 18%" x="20" y="105" width="79" height="14" />
+          <text id="275:172" name="Code" x="20" y="125" width="134" height="15" />
+        </frame>
+        <frame id="275:173" name="Swatch/Alpha/White 20%" x="176" y="0" width="160" height="160">
+          <text id="275:174" name="White 20%" x="20" y="34" width="83" height="22" />
+          <text id="275:175" name="#FFFFFF" x="20" y="62" width="49" height="16" />
+          <text id="275:176" name="Opacity 20%" x="20" y="84" width="64" height="15" />
+          <text id="275:177" name="Alpha/White 20%" x="20" y="105" width="79" height="14" />
+          <text id="275:178" name="Code" x="20" y="125" width="134" height="15" />
+        </frame>
+        <frame id="275:179" name="Swatch/Alpha/White 25%" x="352" y="0" width="160" height="160">
+          <text id="275:180" name="White 25%" x="20" y="34" width="83" height="22" />
+          <text id="275:181" name="#FFFFFF" x="20" y="62" width="49" height="16" />
+          <text id="275:182" name="Opacity 25%" x="20" y="84" width="64" height="15" />
+          <text id="275:183" name="Alpha/White 25%" x="20" y="105" width="79" height="14" />
+          <text id="275:184" name="Code" x="20" y="125" width="134" height="15" />
+        </frame>
+        <frame id="275:185" name="Swatch/Alpha/White 30%" x="528" y="0" width="160" height="160">
+          <text id="275:186" name="White 30%" x="20" y="34" width="83" height="22" />
+          <text id="275:187" name="#FFFFFF" x="20" y="62" width="49" height="16" />
+          <text id="275:188" name="Opacity 30%" x="20" y="84" width="64" height="15" />
+          <text id="275:189" name="Alpha/White 30%" x="20" y="105" width="79" height="14" />
+          <text id="275:190" name="Code" x="20" y="125" width="134" height="15" />
+        </frame>
+        <frame id="275:191" name="Swatch/Alpha/White 35%" x="704" y="0" width="160" height="160">
+          <text id="275:192" name="White 35%" x="20" y="34" width="83" height="22" />
+          <text id="275:193" name="#FFFFFF" x="20" y="62" width="49" height="16" />
+          <text id="275:194" name="Opacity 35%" x="20" y="84" width="64" height="15" />
+          <text id="275:195" name="Alpha/White 35%" x="20" y="105" width="79" height="14" />
+          <text id="275:196" name="Code" x="20" y="125" width="134" height="15" />
+        </frame>
+      </frame>
+      <frame id="275:197" name="Swatches" x="0" y="736" width="864" height="160">
+        <frame id="275:198" name="Swatch/Alpha/White 40%" x="0" y="0" width="160" height="160">
+          <text id="275:199" name="White 40%" x="20" y="34" width="83" height="22" />
+          <text id="275:200" name="#FFFFFF" x="20" y="62" width="49" height="16" />
+          <text id="275:201" name="Opacity 40%" x="20" y="84" width="64" height="15" />
+          <text id="275:202" name="Alpha/White 40%" x="20" y="105" width="79" height="14" />
+          <text id="275:203" name="Code" x="20" y="125" width="134" height="15" />
+        </frame>
+        <frame id="275:204" name="Swatch/Alpha/White 45%" x="176" y="0" width="160" height="160">
+          <text id="275:205" name="White 45%" x="20" y="34" width="83" height="22" />
+          <text id="275:206" name="#FFFFFF" x="20" y="62" width="49" height="16" />
+          <text id="275:207" name="Opacity 45%" x="20" y="84" width="64" height="15" />
+          <text id="275:208" name="Alpha/White 45%" x="20" y="105" width="79" height="14" />
+          <text id="275:209" name="Code" x="20" y="125" width="134" height="15" />
+        </frame>
+        <frame id="275:210" name="Swatch/Alpha/White 50%" x="352" y="0" width="160" height="160">
+          <text id="275:211" name="White 50%" x="20" y="34" width="83" height="22" />
+          <text id="275:212" name="#FFFFFF" x="20" y="62" width="49" height="16" />
+          <text id="275:213" name="Opacity 50%" x="20" y="84" width="64" height="15" />
+          <text id="275:214" name="Alpha/White 50%" x="20" y="105" width="79" height="14" />
+          <text id="275:215" name="Code" x="20" y="125" width="134" height="15" />
+        </frame>
+        <frame id="275:216" name="Swatch/Alpha/White 60%" x="528" y="0" width="160" height="160">
+          <text id="275:217" name="White 60%" x="20" y="34" width="83" height="22" />
+          <text id="275:218" name="#FFFFFF" x="20" y="62" width="49" height="16" />
+          <text id="275:219" name="Opacity 60%" x="20" y="84" width="64" height="15" />
+          <text id="275:220" name="Alpha/White 60%" x="20" y="105" width="79" height="14" />
+          <text id="275:221" name="Code" x="20" y="125" width="134" height="15" />
+        </frame>
+        <frame id="275:222" name="Swatch/Alpha/White 70%" x="704" y="0" width="160" height="160">
+          <text id="275:223" name="White 70%" x="20" y="34" width="83" height="22" />
+          <text id="275:224" name="#FFFFFF" x="20" y="62" width="49" height="16" />
+          <text id="275:225" name="Opacity 70%" x="20" y="84" width="64" height="15" />
+          <text id="275:226" name="Alpha/White 70%" x="20" y="105" width="79" height="14" />
+          <text id="275:227" name="Code" x="20" y="125" width="134" height="15" />
+        </frame>
+      </frame>
+      <frame id="275:228" name="Swatches" x="0" y="912" width="512" height="160">
+        <frame id="275:229" name="Swatch/Alpha/White 75%" x="0" y="0" width="160" height="160">
+          <text id="275:230" name="White 75%" x="20" y="34" width="83" height="22" />
+          <text id="275:231" name="#FFFFFF" x="20" y="62" width="49" height="16" />
+          <text id="275:232" name="Opacity 75%" x="20" y="84" width="64" height="15" />
+          <text id="275:233" name="Alpha/White 75%" x="20" y="105" width="79" height="14" />
+          <text id="275:234" name="Code" x="20" y="125" width="134" height="15" />
+        </frame>
+        <frame id="275:235" name="Swatch/Alpha/White 80%" x="176" y="0" width="160" height="160">
+          <text id="275:236" name="White 80%" x="20" y="34" width="83" height="22" />
+          <text id="275:237" name="#FFFFFF" x="20" y="62" width="49" height="16" />
+          <text id="275:238" name="Opacity 80%" x="20" y="84" width="64" height="15" />
+          <text id="275:239" name="Alpha/White 80%" x="20" y="105" width="79" height="14" />
+          <text id="275:240" name="Code" x="20" y="125" width="134" height="15" />
+        </frame>
+        <frame id="275:241" name="Swatch/Alpha/White 85%" x="352" y="0" width="160" height="160">
+          <text id="275:242" name="White 85%" x="20" y="34" width="83" height="22" />
+          <text id="275:243" name="#FFFFFF" x="20" y="62" width="49" height="16" />
+          <text id="275:244" name="Opacity 85%" x="20" y="84" width="64" height="15" />
+          <text id="275:245" name="Alpha/White 85%" x="20" y="105" width="79" height="14" />
+          <text id="275:246" name="Code" x="20" y="125" width="134" height="15" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="275:287" name="BRAND, SYSTEM &amp; FLAGS" x="64" y="2319" width="688" height="192">
+      <text id="275:288" name="BRAND, SYSTEM &amp; FLAGS" x="0" y="0" width="170" height="16" />
+      <frame id="275:289" name="Swatches" x="0" y="32" width="688" height="160">
+        <frame id="275:290" name="Swatch/Brand/Logo Red" x="0" y="0" width="160" height="160">
+          <text id="275:291" name="Logo Red" x="20" y="34" width="72" height="22" />
+          <text id="275:292" name="#EA2328" x="20" y="62" width="50" height="16" />
+          <text id="275:293" name="RGB 234, 35, 40" x="20" y="84" width="81" height="15" />
+          <text id="275:294" name="Brand/Logo Red" x="20" y="105" width="74" height="14" />
+          <text id="275:295" name="Code" x="20" y="125" width="104" height="15" />
+        </frame>
+        <frame id="275:296" name="Swatch/System/Keyboard" x="176" y="0" width="160" height="160">
+          <text id="275:297" name="Keyboard" x="20" y="34" width="73" height="22" />
+          <text id="275:298" name="#D6D7DC" x="20" y="62" width="56" height="16" />
+          <text id="275:299" name="RGB 214, 215, 220" x="20" y="84" width="93" height="15" />
+          <text id="275:300" name="System/Keyboard" x="20" y="105" width="80" height="14" />
+          <text id="275:301" name="Code" x="20" y="125" width="114" height="15" />
+        </frame>
+        <frame id="275:302" name="Swatch/Flag/UK Blue" x="352" y="0" width="160" height="160">
+          <text id="275:303" name="UK Blue" x="20" y="34" width="61" height="22" />
+          <text id="275:304" name="#012169" x="20" y="62" width="47" height="16" />
+          <text id="275:305" name="RGB 1, 33, 105" x="20" y="84" width="75" height="15" />
+          <text id="275:306" name="Flag/UK Blue" x="20" y="105" width="59" height="14" />
+          <text id="275:307" name="Code" x="20" y="125" width="88" height="15" />
+        </frame>
+        <frame id="275:308" name="Swatch/Flag/UK Red" x="528" y="0" width="160" height="160">
+          <text id="275:309" name="UK Red" x="20" y="34" width="57" height="22" />
+          <text id="275:310" name="#C8102E" x="20" y="62" width="50" height="16" />
+          <text id="275:311" name="RGB 200, 16, 46" x="20" y="84" width="81" height="15" />
+          <text id="275:312" name="Flag/UK Red" x="20" y="105" width="57" height="14" />
+          <text id="275:313" name="Code" x="20" y="125" width="83" height="15" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="8:61" name="Accessible Contrast" x="64" y="2551" width="686" height="804">
+      <text id="8:62" name="ACCESSIBLE CONTRAST" x="0" y="0" width="157" height="16" />
+      <frame id="8:63" name="Contrast/Ink on White" x="0" y="28" width="686" height="68">
+        <text id="8:64" name="Aa" x="21" y="15" width="36" height="38" />
+        <text id="8:65" name="Ink on White — Body &amp; headlines" x="81" y="24.5" width="420" height="19" />
+        <text id="8:66" name="17.93:1 · PASS" x="525" y="26" width="140" height="16" />
+      </frame>
+      <frame id="8:67" name="Contrast/White on Red" x="0" y="108" width="684" height="66">
+        <text id="8:68" name="Aa" x="20" y="14" width="36" height="38" />
+        <text id="8:69" name="White on Red — Buttons, emphasis" x="80" y="23.5" width="420" height="19" />
+        <text id="8:70" name="4.93:1 · PASS" x="524" y="25" width="140" height="16" />
+      </frame>
+      <frame id="8:71" name="Contrast/Red on White" x="0" y="186" width="686" height="68">
+        <text id="8:72" name="Aa" x="21" y="15" width="36" height="38" />
+        <text id="8:73" name="Red on White — Headlines only" x="81" y="24.5" width="420" height="19" />
+        <text id="8:74" name="4.93:1 · PASS" x="525" y="26" width="140" height="16" />
+      </frame>
+      <frame id="8:75" name="Contrast/Grey on White" x="0" y="266" width="686" height="68">
+        <text id="8:76" name="Aa" x="21" y="15" width="36" height="38" />
+        <text id="8:77" name="Grey on White — Not for body text" x="81" y="24.5" width="420" height="19" />
+        <text id="8:78" name="3.79:1 · AVOID" x="525" y="26" width="140" height="16" />
+      </frame>
+      <frame id="8:79" name="Contrast/Red on Fog" x="0" y="346" width="684" height="66">
+        <text id="8:80" name="Aa" x="20" y="14" width="36" height="38" />
+        <text id="8:81" name="Red on Fog — Not for small text" x="80" y="23.5" width="420" height="19" />
+        <text id="8:82" name="4.45:1 · AVOID" x="524" y="25" width="140" height="16" />
+      </frame>
+      <frame id="9:42" name="Contrast/Status/White on Success" x="0" y="424" width="684" height="66">
+        <text id="9:43" name="Aa" x="20" y="14" width="36" height="38" />
+        <text id="9:44" name="White on Success — Buttons, badges" x="80" y="23.5" width="420" height="19" />
+        <text id="9:45" name="5.69:1 · PASS" x="524" y="25" width="140" height="16" />
+      </frame>
+      <frame id="9:46" name="Contrast/Status/Success Dark on Success Light" x="0" y="502" width="684" height="66">
+        <text id="9:47" name="Aa" x="20" y="14" width="36" height="38" />
+        <text id="9:48" name="Success Dark on Success Light — Banner / toast text" x="80" y="23.5" width="420" height="19" />
+        <text id="9:49" name="9.18:1 · PASS" x="524" y="25" width="140" height="16" />
+      </frame>
+      <frame id="9:50" name="Contrast/Status/White on Failure" x="0" y="580" width="684" height="66">
+        <text id="9:51" name="Aa" x="20" y="14" width="36" height="38" />
+        <text id="9:52" name="White on Failure — Destructive buttons" x="80" y="23.5" width="420" height="19" />
+        <text id="9:53" name="6.57:1 · PASS" x="524" y="25" width="140" height="16" />
+      </frame>
+      <frame id="9:54" name="Contrast/Status/Failure on White" x="0" y="658" width="686" height="68">
+        <text id="9:55" name="Aa" x="21" y="15" width="36" height="38" />
+        <text id="9:56" name="Failure on White — Error messages, field hints" x="81" y="24.5" width="420" height="19" />
+        <text id="9:57" name="6.57:1 · PASS" x="525" y="26" width="140" height="16" />
+      </frame>
+      <frame id="9:58" name="Contrast/Status/Failure Dark on Failure Light" x="0" y="738" width="684" height="66">
+        <text id="9:59" name="Aa" x="20" y="14" width="36" height="38" />
+        <text id="9:60" name="Failure Dark on Failure Light — Banner / toast text" x="80" y="23.5" width="420" height="19" />
+        <text id="9:61" name="9.74:1 · PASS" x="524" y="25" width="140" height="16" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="15:2" name="Spacing" x="2800" y="100" width="1513" height="1695">
+    <frame id="15:3" name="Header" x="64" y="64" width="1292" height="96">
+      <text id="15:4" name="Spacing" x="0" y="0" width="118" height="40" />
+      <text id="15:5" name="Spacing follows an 8px rhythm with a 4px half-step. The 2, 4, 6 and 12px steps are for tight component internals only. Every padding and gap comes from a Spacing variable, never a typed-in number." x="0" y="48" width="1100" height="48" />
+    </frame>
+    <frame id="15:6" name="Scale" x="64" y="208" width="1385" height="1057">
+      <text id="15:7" name="SPACING SCALE" x="0" y="0" width="87" height="14" />
+      <frame id="15:8" name="Row/Header" x="0" y="14" width="1292" height="42">
+        <text id="15:9" name="Variable" x="0" y="16" width="180" height="18" />
+        <text id="15:10" name="Value" x="204" y="16" width="96" height="18" />
+        <text id="15:11" name="Visual" x="324" y="16" width="160" height="18" />
+        <text id="15:12" name="Use cases" x="508" y="16" width="560" height="18" />
+        <text id="15:13" name="Code" x="1092" y="16" width="200" height="18" />
+      </frame>
+      <frame id="15:14" name="Row/spacing-0" x="0" y="56" width="1292" height="55">
+        <text id="15:15" name="spacing/0" x="0" y="17" width="180" height="22" />
+        <text id="15:16" name="0px · 0×" x="204" y="17" width="96" height="22" />
+        <frame id="15:17" name="Visual" x="324" y="20" width="160" height="16" />
+        <text id="15:19" name="No space. Elements that sit flush, edge-to-edge images and full-width dividers." x="508" y="17" width="560" height="22" />
+        <text id="15:20" name="var(--spacing-0)" x="1092" y="19" width="200" height="18" />
+      </frame>
+      <frame id="275:2" name="Row/spacing-2" x="0" y="111" width="1292" height="55">
+        <text id="275:3" name="spacing/2" x="0" y="17" width="180" height="22" />
+        <text id="275:4" name="2px · 0.25×" x="204" y="17" width="96" height="22" />
+        <frame id="275:5" name="Visual" x="324" y="20" width="160" height="16" />
+        <text id="275:7" name="Hairline gaps. Stacked lines inside a compact label, such as a title over its caption." x="508" y="17" width="560" height="22" />
+        <text id="275:8" name="var(--spacing-2)" x="1092" y="19" width="200" height="18" />
+      </frame>
+      <frame id="275:9" name="Row/spacing-4" x="0" y="166" width="1292" height="55">
+        <text id="275:10" name="spacing/4" x="0" y="17" width="180" height="22" />
+        <text id="275:11" name="4px · 0.5×" x="204" y="17" width="96" height="22" />
+        <frame id="275:12" name="Visual" x="324" y="20" width="160" height="16" />
+        <text id="275:14" name="Micro gaps. Icon to small text, pill and chip padding, field to helper text." x="508" y="17" width="560" height="22" />
+        <text id="275:15" name="var(--spacing-4)" x="1092" y="19" width="200" height="18" />
+      </frame>
+      <frame id="275:16" name="Row/spacing-6" x="0" y="221" width="1292" height="55">
+        <text id="275:17" name="spacing/6" x="0" y="17" width="180" height="22" />
+        <text id="275:18" name="6px · 0.75×" x="204" y="17" width="96" height="22" />
+        <frame id="275:19" name="Visual" x="324" y="20" width="160" height="16" />
+        <text id="275:21" name="Tight component internals that need a little more air than 4px." x="508" y="17" width="560" height="22" />
+        <text id="275:22" name="var(--spacing-6)" x="1092" y="19" width="200" height="18" />
+      </frame>
+      <frame id="15:21" name="Row/spacing-8" x="0" y="276" width="1292" height="55">
+        <text id="15:22" name="spacing/8" x="0" y="17" width="180" height="22" />
+        <text id="15:23" name="8px · 1×" x="204" y="17" width="96" height="22" />
+        <frame id="15:24" name="Visual" x="324" y="20" width="160" height="16" />
+        <text id="15:26" name="Tightest gap. Icon to label, page-indicator dots, chip internals, status bar top inset." x="508" y="17" width="560" height="22" />
+        <text id="15:27" name="var(--spacing-8)" x="1092" y="19" width="200" height="18" />
+      </frame>
+      <frame id="275:23" name="Row/spacing-12" x="0" y="331" width="1292" height="55">
+        <text id="275:24" name="spacing/12" x="0" y="17" width="180" height="22" />
+        <text id="275:25" name="12px · 1.5×" x="204" y="17" width="96" height="22" />
+        <frame id="275:26" name="Visual" x="324" y="20" width="160" height="16" />
+        <text id="275:28" name="Between list rows, option cards and keypad keys; padding inside small components." x="508" y="17" width="560" height="22" />
+        <text id="275:29" name="var(--spacing-12)" x="1092" y="19" width="200" height="18" />
+      </frame>
+      <frame id="15:28" name="Row/spacing-16" x="0" y="386" width="1292" height="77">
+        <text id="15:29" name="spacing/16" x="0" y="28" width="180" height="22" />
+        <text id="15:30" name="16px · 2×" x="204" y="28" width="96" height="22" />
+        <frame id="15:31" name="Visual" x="324" y="31" width="160" height="16" />
+        <text id="15:33" name="Closely related items. Headline to message, stacked buttons, form label to field, list item content." x="508" y="17" width="560" height="44" />
+        <text id="15:34" name="var(--spacing-16)" x="1092" y="30" width="200" height="18" />
+      </frame>
+      <frame id="15:35" name="Row/spacing-24" x="0" y="463" width="1292" height="77">
+        <text id="15:36" name="spacing/24" x="0" y="28" width="180" height="22" />
+        <text id="15:37" name="24px · 3×" x="204" y="28" width="96" height="22" />
+        <frame id="15:38" name="Visual" x="324" y="31" width="160" height="16" />
+        <text id="15:40" name="Default mobile screen margin (left/right). Button and card inner padding, component padding." x="508" y="17" width="560" height="44" />
+        <text id="15:41" name="var(--spacing-24)" x="1092" y="30" width="200" height="18" />
+      </frame>
+      <frame id="15:42" name="Row/spacing-32" x="0" y="540" width="1292" height="77">
+        <text id="15:43" name="spacing/32" x="0" y="28" width="180" height="22" />
+        <text id="15:44" name="32px · 4×" x="204" y="28" width="96" height="22" />
+        <frame id="15:45" name="Visual" x="324" y="31" width="160" height="16" />
+        <text id="15:47" name="Separating groups. Footer bottom padding above the home indicator, space before a group of actions." x="508" y="17" width="560" height="44" />
+        <text id="15:48" name="var(--spacing-32)" x="1092" y="30" width="200" height="18" />
+      </frame>
+      <frame id="15:49" name="Row/spacing-40" x="0" y="617" width="1292" height="55">
+        <text id="15:50" name="spacing/40" x="0" y="17" width="180" height="22" />
+        <text id="15:51" name="40px · 5×" x="204" y="17" width="96" height="22" />
+        <frame id="15:52" name="Visual" x="324" y="20" width="160" height="16" />
+        <text id="15:54" name="Between distinct sections inside one screen." x="508" y="17" width="560" height="22" />
+        <text id="15:55" name="var(--spacing-40)" x="1092" y="19" width="200" height="18" />
+      </frame>
+      <frame id="15:56" name="Row/spacing-48" x="0" y="672" width="1292" height="55">
+        <text id="15:57" name="spacing/48" x="0" y="17" width="180" height="22" />
+        <text id="15:58" name="48px · 6×" x="204" y="17" width="96" height="22" />
+        <frame id="15:59" name="Visual" x="324" y="20" width="160" height="16" />
+        <text id="15:61" name="Large section breaks; matches the 48px top-bar and minimum touch-target height." x="508" y="17" width="560" height="22" />
+        <text id="15:62" name="var(--spacing-48)" x="1092" y="19" width="200" height="18" />
+      </frame>
+      <frame id="15:63" name="Row/spacing-56" x="0" y="727" width="1292" height="55">
+        <text id="15:64" name="spacing/56" x="0" y="17" width="180" height="22" />
+        <text id="15:65" name="56px · 7×" x="204" y="17" width="96" height="22" />
+        <frame id="15:66" name="Visual" x="324" y="20" width="160" height="16" />
+        <text id="15:68" name="Hero spacing above or below key content on spacious screens." x="508" y="17" width="560" height="22" />
+        <text id="15:69" name="var(--spacing-56)" x="1092" y="19" width="200" height="18" />
+      </frame>
+      <frame id="15:70" name="Row/spacing-64" x="0" y="782" width="1292" height="55">
+        <text id="15:71" name="spacing/64" x="0" y="17" width="180" height="22" />
+        <text id="15:72" name="64px · 8×" x="204" y="17" width="96" height="22" />
+        <frame id="15:73" name="Visual" x="324" y="20" width="160" height="16" />
+        <text id="15:75" name="Very large separation. Documentation sheet padding, empty-state offsets." x="508" y="17" width="560" height="22" />
+        <text id="15:76" name="var(--spacing-64)" x="1092" y="19" width="200" height="18" />
+      </frame>
+      <frame id="15:77" name="Row/spacing-72" x="0" y="837" width="1292" height="55">
+        <text id="15:78" name="spacing/72" x="0" y="17" width="180" height="22" />
+        <text id="15:79" name="72px · 9×" x="204" y="17" width="96" height="22" />
+        <frame id="15:80" name="Visual" x="324" y="20" width="160" height="16" />
+        <text id="15:82" name="Rare. Extra breathing room on tablet or large layouts." x="508" y="17" width="560" height="22" />
+        <text id="15:83" name="var(--spacing-72)" x="1092" y="19" width="200" height="18" />
+      </frame>
+      <frame id="15:84" name="Row/spacing-80" x="0" y="892" width="1292" height="55">
+        <text id="15:85" name="spacing/80" x="0" y="17" width="180" height="22" />
+        <text id="15:86" name="80px · 10×" x="204" y="17" width="96" height="22" />
+        <frame id="15:87" name="Visual" x="324" y="20" width="160" height="16" />
+        <text id="15:89" name="Rare. Empty-state and illustration offsets on large screens." x="508" y="17" width="560" height="22" />
+        <text id="15:90" name="var(--spacing-80)" x="1092" y="19" width="200" height="18" />
+      </frame>
+      <frame id="15:91" name="Row/spacing-96" x="0" y="947" width="1292" height="55">
+        <text id="15:92" name="spacing/96" x="0" y="17" width="180" height="22" />
+        <text id="15:93" name="96px · 12×" x="204" y="17" width="96" height="22" />
+        <frame id="15:94" name="Visual" x="324" y="20" width="160" height="16" />
+        <text id="15:96" name="Rare. Full-screen moments such as splash and celebration screens." x="508" y="17" width="560" height="22" />
+        <text id="15:97" name="var(--spacing-96)" x="1092" y="19" width="200" height="18" />
+      </frame>
+      <frame id="15:98" name="Row/spacing-120" x="0" y="1002" width="1292" height="55">
+        <text id="15:99" name="spacing/120" x="0" y="17" width="180" height="22" />
+        <text id="15:100" name="120px · 15×" x="204" y="17" width="96" height="22" />
+        <frame id="15:101" name="Visual" x="324" y="20" width="160" height="16" />
+        <text id="15:103" name="Canvas only. Gaps between frames and sheets in Figma, not used inside the app." x="508" y="17" width="560" height="22" />
+        <text id="15:104" name="var(--spacing-120)" x="1092" y="19" width="200" height="18" />
+      </frame>
+    </frame>
+    <frame id="15:105" name="Rules" x="64" y="1313" width="1385" height="200">
+      <text id="15:106" name="RULES" x="0" y="0" width="34" height="14" />
+      <frame id="15:107" name="Rule Cards" x="0" y="30" width="1200" height="170">
+        <frame id="15:108" name="Rule/Use the variables" x="0" y="0" width="288" height="148">
+          <text id="15:109" name="Use the variables" x="24" y="24" width="240" height="26" />
+          <text id="15:110" name="Bind padding and gaps to spacing/* variables. Typed-in values break the system and won’t update." x="24" y="58" width="240" height="66" />
+        </frame>
+        <frame id="15:111" name="Rule/8px rhythm, 4px details" x="304" y="0" width="288" height="170">
+          <text id="15:112" name="8px rhythm, 4px details" x="24" y="24" width="240" height="26" />
+          <text id="15:113" name="Layouts use multiples of 8. Use 2, 4, 6 and 12px only inside components. If a gap feels wrong, step up or down the scale instead of inventing a value." x="24" y="58" width="240" height="88" />
+        </frame>
+        <frame id="15:114" name="Rule/Closer means related" x="608" y="0" width="288" height="148">
+          <text id="15:115" name="Closer means related" x="24" y="24" width="240" height="26" />
+          <text id="15:116" name="Use smaller steps inside a group and larger steps between groups, so structure is visible without dividers." x="24" y="58" width="240" height="66" />
+        </frame>
+        <frame id="15:117" name="Rule/Mobile defaults" x="912" y="0" width="288" height="148">
+          <text id="15:118" name="Mobile defaults" x="24" y="24" width="240" height="26" />
+          <text id="15:119" name="24px screen margins, 32px bottom padding above the home indicator, 16px between stacked buttons." x="24" y="58" width="240" height="66" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="15:120" name="In Practice" x="64" y="1561" width="1385" height="70">
+      <text id="15:121" name="IN PRACTICE — ONBOARDING SCREEN" x="0" y="0" width="213" height="14" />
+      <frame id="15:122" name="Example" x="0" y="30" width="1385" height="40">
+        <frame id="15:123" name="Example/Screen margin left / right" x="0" y="0" width="269" height="40">
+          <text id="15:124" name="spacing/24" x="17" y="9" width="70" height="22" />
+          <text id="15:125" name="Screen margin left / right" x="95" y="9" width="157" height="22" />
+        </frame>
+        <frame id="15:126" name="Example/Headline → message" x="293" y="0" width="246" height="40">
+          <text id="15:127" name="spacing/16" x="17" y="9" width="70" height="22" />
+          <text id="15:128" name="Headline → message" x="95" y="9" width="134" height="22" />
+        </frame>
+        <frame id="15:129" name="Example/Page dots → button" x="563" y="0" width="240" height="40">
+          <text id="15:130" name="spacing/24" x="17" y="9" width="70" height="22" />
+          <text id="15:131" name="Page dots → button" x="95" y="9" width="128" height="22" />
+        </frame>
+        <frame id="15:132" name="Example/Between stacked buttons" x="827" y="0" width="272" height="40">
+          <text id="15:133" name="spacing/16" x="17" y="9" width="70" height="22" />
+          <text id="15:134" name="Between stacked buttons" x="95" y="9" width="160" height="22" />
+        </frame>
+        <frame id="15:135" name="Example/Footer bottom padding" x="1123" y="0" width="262" height="40">
+          <text id="15:136" name="spacing/32" x="17" y="9" width="70" height="22" />
+          <text id="15:137" name="Footer bottom padding" x="95" y="9" width="150" height="22" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="16:231" name="Radius" x="4433" y="100" width="1420" height="1880">
+    <frame id="16:232" name="Header" x="64" y="64" width="1100" height="72">
+      <text id="16:233" name="Corner Radius" x="0" y="0" width="212" height="40" />
+      <text id="16:234" name="Corner radius comes from Radius variables. Steps follow a 4px sub-grid so small elements can round softly while larger surfaces stay on the 8px rhythm." x="0" y="48" width="1100" height="24" />
+    </frame>
+    <frame id="16:235" name="Scale" x="64" y="184" width="1292" height="1266">
+      <text id="16:236" name="RADIUS SCALE" x="0" y="0" width="79" height="14" />
+      <frame id="16:237" name="Row/Header" x="0" y="14" width="1292" height="42">
+        <text id="16:238" name="Variable" x="0" y="16" width="180" height="18" />
+        <text id="16:239" name="Value" x="204" y="16" width="96" height="18" />
+        <text id="16:240" name="Visual" x="324" y="16" width="120" height="18" />
+        <text id="16:241" name="Use cases" x="468" y="16" width="600" height="18" />
+        <text id="16:242" name="Code" x="1092" y="16" width="200" height="18" />
+      </frame>
+      <frame id="16:243" name="Row/radius-none" x="0" y="56" width="1292" height="121">
+        <text id="16:244" name="radius/none" x="0" y="50" width="180" height="22" />
+        <text id="16:245" name="0px" x="204" y="50" width="96" height="22" />
+        <frame id="16:246" name="Visual" x="324" y="17" width="120" height="88" />
+        <text id="16:248" name="Square corners. Full-bleed images, edge-to-edge sections, dividers, top app bars." x="468" y="50" width="600" height="22" />
+        <text id="16:249" name="var(--radius-none)" x="1092" y="52" width="200" height="18" />
+      </frame>
+      <frame id="275:30" name="Row/radius-2xs" x="0" y="177" width="1292" height="121">
+        <text id="275:31" name="radius/2xs" x="0" y="50" width="180" height="22" />
+        <text id="275:32" name="2px" x="204" y="50" width="96" height="22" />
+        <frame id="275:33" name="Visual" x="324" y="17" width="120" height="88" />
+        <text id="275:35" name="Hairline elements. Progress dots, thin bars and dividers with soft ends." x="468" y="50" width="600" height="22" />
+        <text id="275:36" name="var(--radius-2xs)" x="1092" y="52" width="200" height="18" />
+      </frame>
+      <frame id="16:250" name="Row/radius-xs" x="0" y="298" width="1292" height="121">
+        <text id="16:251" name="radius/xs" x="0" y="50" width="180" height="22" />
+        <text id="16:252" name="4px" x="204" y="50" width="96" height="22" />
+        <frame id="16:253" name="Visual" x="324" y="17" width="120" height="88" />
+        <text id="16:255" name="Small details. Tags, badges, progress bars, tiny thumbnails." x="468" y="50" width="600" height="22" />
+        <text id="16:256" name="var(--radius-xs)" x="1092" y="52" width="200" height="18" />
+      </frame>
+      <frame id="16:257" name="Row/radius-sm" x="0" y="419" width="1292" height="121">
+        <text id="16:258" name="radius/sm" x="0" y="50" width="180" height="22" />
+        <text id="16:259" name="8px" x="204" y="50" width="96" height="22" />
+        <frame id="16:260" name="Visual" x="324" y="17" width="120" height="88" />
+        <text id="16:262" name="Compact controls. Checkboxes, small inputs, tooltips, small icon buttons." x="468" y="50" width="600" height="22" />
+        <text id="16:263" name="var(--radius-sm)" x="1092" y="52" width="200" height="18" />
+      </frame>
+      <frame id="16:264" name="Row/radius-md" x="0" y="540" width="1292" height="121">
+        <text id="16:265" name="radius/md" x="0" y="50" width="180" height="22" />
+        <text id="16:266" name="12px" x="204" y="50" width="96" height="22" />
+        <frame id="16:267" name="Visual" x="324" y="17" width="120" height="88" />
+        <text id="16:269" name="Default for controls. Buttons, text fields, dropdowns, small cards." x="468" y="50" width="600" height="22" />
+        <text id="16:270" name="var(--radius-md)" x="1092" y="52" width="200" height="18" />
+      </frame>
+      <frame id="16:271" name="Row/radius-lg" x="0" y="661" width="1292" height="121">
+        <text id="16:272" name="radius/lg" x="0" y="50" width="180" height="22" />
+        <text id="16:273" name="16px" x="204" y="50" width="96" height="22" />
+        <frame id="16:274" name="Visual" x="324" y="17" width="120" height="88" />
+        <text id="16:276" name="Containers. Cards, list groups, banners, toasts, rate and fee summary panels." x="468" y="50" width="600" height="22" />
+        <text id="16:277" name="var(--radius-lg)" x="1092" y="52" width="200" height="18" />
+      </frame>
+      <frame id="16:278" name="Row/radius-xl" x="0" y="782" width="1292" height="121">
+        <text id="16:279" name="radius/xl" x="0" y="50" width="180" height="22" />
+        <text id="16:280" name="24px" x="204" y="50" width="96" height="22" />
+        <frame id="16:281" name="Visual" x="324" y="17" width="120" height="88" />
+        <text id="16:283" name="Large surfaces. Bottom sheets (top corners), dialogs, logo tile, large feature cards." x="468" y="50" width="600" height="22" />
+        <text id="16:284" name="var(--radius-xl)" x="1092" y="52" width="200" height="18" />
+      </frame>
+      <frame id="16:285" name="Row/radius-2xl" x="0" y="903" width="1292" height="121">
+        <text id="16:286" name="radius/2xl" x="0" y="50" width="180" height="22" />
+        <text id="16:287" name="32px" x="204" y="50" width="96" height="22" />
+        <frame id="16:288" name="Visual" x="324" y="17" width="120" height="88" />
+        <text id="16:290" name="Hero surfaces. Promotional cards and large onboarding panels." x="468" y="50" width="600" height="22" />
+        <text id="16:291" name="var(--radius-2xl)" x="1092" y="52" width="200" height="18" />
+      </frame>
+      <frame id="275:37" name="Row/radius-3xl" x="0" y="1024" width="1292" height="121">
+        <text id="275:38" name="radius/3xl" x="0" y="50" width="180" height="22" />
+        <text id="275:39" name="40px" x="204" y="50" width="96" height="22" />
+        <frame id="275:40" name="Visual" x="324" y="17" width="120" height="88" />
+        <text id="275:42" name="Large surfaces. Phone screen frames, illustration canvases and onboarding cards." x="468" y="50" width="600" height="22" />
+        <text id="275:43" name="var(--radius-3xl)" x="1092" y="52" width="200" height="18" />
+      </frame>
+      <frame id="16:292" name="Row/radius-full" x="0" y="1145" width="1292" height="121">
+        <text id="16:293" name="radius/full" x="0" y="50" width="180" height="22" />
+        <text id="16:294" name="999px" x="204" y="50" width="96" height="22" />
+        <frame id="16:295" name="Visual" x="324" y="17" width="120" height="88" />
+        <text id="16:297" name="Fully rounded. Pills, chips, avatars, page-indicator dots, circular icon buttons." x="468" y="50" width="600" height="22" />
+        <text id="16:298" name="var(--radius-full)" x="1092" y="52" width="200" height="18" />
+      </frame>
+    </frame>
+    <frame id="16:299" name="Rules" x="64" y="1498" width="1292" height="200">
+      <text id="16:300" name="RULES" x="0" y="0" width="34" height="14" />
+      <frame id="16:301" name="Rule Cards" x="0" y="30" width="1292" height="170">
+        <frame id="16:302" name="Rule/Use the variables" x="0" y="0" width="288" height="148">
+          <text id="16:303" name="Use the variables" x="24" y="24" width="240" height="26" />
+          <text id="16:304" name="Bind corners to radius/* variables instead of typing values, so a change to the scale updates every screen." x="24" y="58" width="240" height="66" />
+        </frame>
+        <frame id="16:305" name="Rule/Bigger surface, bigger radius" x="304" y="0" width="288" height="148">
+          <text id="16:306" name="Bigger surface, bigger radius" x="24" y="24" width="240" height="26" />
+          <text id="16:307" name="Radius grows with element size: controls md, containers lg, sheets and dialogs xl." x="24" y="58" width="240" height="66" />
+        </frame>
+        <frame id="16:308" name="Rule/Nested corners" x="608" y="0" width="288" height="148">
+          <text id="16:309" name="Nested corners" x="24" y="24" width="240" height="26" />
+          <text id="16:310" name="An inner element’s radius should be the outer radius minus the padding between them, so curves stay parallel." x="24" y="58" width="240" height="66" />
+        </frame>
+        <frame id="16:311" name="Rule/Pills use full" x="912" y="0" width="288" height="170">
+          <text id="16:312" name="Pills use full" x="24" y="24" width="240" height="26" />
+          <text id="16:313" name="For anything meant to be fully round, use radius/full rather than half the height, so it stays round when it resizes." x="24" y="58" width="240" height="88" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="16:314" name="In Practice" x="64" y="1746" width="1292" height="70">
+      <text id="16:315" name="IN PRACTICE — CURRENT SCREENS" x="0" y="0" width="193" height="14" />
+      <frame id="16:316" name="Example" x="0" y="30" width="794" height="40">
+        <frame id="16:317" name="Example/Buttons (Sign up, Log in, Next)" x="0" y="0" width="301" height="40">
+          <text id="16:318" name="radius/md" x="17" y="9" width="65" height="22" />
+          <text id="16:319" name="Buttons (Sign up, Log in, Next)" x="90" y="9" width="194" height="22" />
+        </frame>
+        <frame id="16:320" name="Example/Logo tile on splash" x="325" y="0" width="216" height="40">
+          <text id="16:321" name="radius/xl" x="17" y="9" width="55" height="22" />
+          <text id="16:322" name="Logo tile on splash" x="80" y="9" width="119" height="22" />
+        </frame>
+        <frame id="16:323" name="Example/Page-indicator dots" x="565" y="0" width="229" height="40">
+          <text id="16:324" name="radius/full" x="17" y="9" width="63" height="22" />
+          <text id="16:325" name="Page-indicator dots" x="88" y="9" width="124" height="22" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="150:2" name="Stroke Width" x="5973" y="100" width="1396" height="2100">
+    <frame id="150:3" name="Header" x="64" y="64" width="1100" height="72">
+      <text id="150:4" name="Stroke Width" x="0" y="0" width="200" height="40" />
+      <text id="150:5" name="Line thickness comes from Stroke variables. UI strokes stay thin (1–2px) and step with icon size; heavier widths are reserved for illustrations and loaders." x="0" y="48" width="1100" height="24" />
+    </frame>
+    <frame id="150:6" name="Scale" x="64" y="184" width="1268" height="1508">
+      <text id="150:7" name="STROKE SCALE" x="0" y="0" width="81" height="14" />
+      <frame id="150:8" name="Row/Header" x="0" y="14" width="1292" height="42">
+        <text id="150:9" name="Variable" x="0" y="16" width="180" height="18" />
+        <text id="150:10" name="Value" x="204" y="16" width="96" height="18" />
+        <text id="150:11" name="Visual" x="324" y="16" width="120" height="18" />
+        <text id="150:12" name="Use cases" x="468" y="16" width="600" height="18" />
+        <text id="150:13" name="Code" x="1092" y="16" width="200" height="18" />
+      </frame>
+      <frame id="150:97" name="Row/stroke-xs" x="0" y="56" width="1268" height="121">
+        <text id="150:98" name="stroke/xs" x="0" y="50" width="180" height="22" />
+        <text id="150:99" name="1px" x="204" y="50" width="96" height="22" />
+        <frame id="150:100" name="Visual" x="324" y="17" width="96" height="88">
+          <line id="150:104" name="Line" x="0" y="44" width="48" height="0" />
+          <ellipse id="150:105" name="Ellipse" x="64" y="28" width="32" height="32" />
+        </frame>
+        <text id="150:102" name="Hairlines. Dividers, card and section outlines, toast borders, inactive outlines." x="444" y="50" width="600" height="22" />
+        <text id="150:103" name="var(--stroke-xs)" x="1068" y="52" width="200" height="18" />
+      </frame>
+      <frame id="150:106" name="Row/stroke-sm" x="0" y="177" width="1268" height="121">
+        <text id="150:107" name="stroke/sm" x="0" y="50" width="180" height="22" />
+        <text id="150:108" name="1.25px" x="204" y="50" width="96" height="22" />
+        <frame id="150:109" name="Visual" x="324" y="17" width="96" height="88">
+          <line id="150:113" name="Line" x="0" y="44" width="48" height="0" />
+          <ellipse id="150:114" name="Ellipse" x="64" y="28" width="32" height="32" />
+        </frame>
+        <text id="150:111" name="Icons 18px and smaller: inline validation, chips, helper rows, small badges." x="444" y="50" width="600" height="22" />
+        <text id="150:112" name="var(--stroke-sm)" x="1068" y="52" width="200" height="18" />
+      </frame>
+      <frame id="150:115" name="Row/stroke-md" x="0" y="298" width="1268" height="121">
+        <text id="150:116" name="stroke/md" x="0" y="50" width="180" height="22" />
+        <text id="150:117" name="1.5px" x="204" y="50" width="96" height="22" />
+        <frame id="150:118" name="Visual" x="324" y="17" width="96" height="88">
+          <line id="150:122" name="Line" x="0" y="44" width="48" height="0" />
+          <ellipse id="150:123" name="Ellipse" x="64" y="28" width="32" height="32" />
+        </frame>
+        <text id="150:120" name="Default. Icons 20–28px, outlined (Secondary) buttons, input borders." x="444" y="50" width="600" height="22" />
+        <text id="150:121" name="var(--stroke-md)" x="1068" y="52" width="200" height="18" />
+      </frame>
+      <frame id="150:124" name="Row/stroke-lg" x="0" y="419" width="1268" height="121">
+        <text id="150:125" name="stroke/lg" x="0" y="50" width="180" height="22" />
+        <text id="150:126" name="1.75px" x="204" y="50" width="96" height="22" />
+        <frame id="150:127" name="Visual" x="324" y="17" width="96" height="88">
+          <line id="150:131" name="Line" x="0" y="44" width="48" height="0" />
+          <ellipse id="150:132" name="Ellipse" x="64" y="28" width="32" height="32" />
+        </frame>
+        <text id="150:129" name="Large icons 32px and up: hero icons and empty states." x="444" y="50" width="600" height="22" />
+        <text id="150:130" name="var(--stroke-lg)" x="1068" y="52" width="200" height="18" />
+      </frame>
+      <frame id="150:133" name="Row/stroke-xl" x="0" y="540" width="1268" height="121">
+        <text id="150:134" name="stroke/xl" x="0" y="50" width="180" height="22" />
+        <text id="150:135" name="2px" x="204" y="50" width="96" height="22" />
+        <frame id="150:136" name="Visual" x="324" y="17" width="96" height="88">
+          <line id="150:140" name="Line" x="0" y="44" width="48" height="0" />
+          <ellipse id="150:141" name="Ellipse" x="64" y="28" width="32" height="32" />
+        </frame>
+        <text id="150:138" name="State emphasis. Focused or error fields, checkboxes, dashed placeholders, progress rings." x="444" y="50" width="600" height="22" />
+        <text id="150:139" name="var(--stroke-xl)" x="1068" y="52" width="200" height="18" />
+      </frame>
+      <frame id="150:142" name="Row/stroke-2xl" x="0" y="661" width="1268" height="121">
+        <text id="150:143" name="stroke/2xl" x="0" y="50" width="180" height="22" />
+        <text id="150:144" name="2.5px" x="204" y="50" width="96" height="22" />
+        <frame id="150:145" name="Visual" x="324" y="17" width="96" height="88">
+          <line id="150:149" name="Line" x="0" y="44" width="48" height="0" />
+          <ellipse id="150:150" name="Ellipse" x="64" y="28" width="32" height="32" />
+        </frame>
+        <text id="150:147" name="Illustrations: main object outlines." x="444" y="50" width="600" height="22" />
+        <text id="150:148" name="var(--stroke-2xl)" x="1068" y="52" width="200" height="18" />
+      </frame>
+      <frame id="150:151" name="Row/stroke-3xl" x="0" y="782" width="1268" height="121">
+        <text id="150:152" name="stroke/3xl" x="0" y="50" width="180" height="22" />
+        <text id="150:153" name="3px" x="204" y="50" width="96" height="22" />
+        <frame id="150:154" name="Visual" x="324" y="17" width="96" height="88">
+          <line id="150:158" name="Line" x="0" y="44" width="48" height="0" />
+          <ellipse id="150:159" name="Ellipse" x="64" y="28" width="32" height="32" />
+        </frame>
+        <text id="150:156" name="Illustrations: badge rings and the ticks inside them." x="444" y="50" width="600" height="22" />
+        <text id="150:157" name="var(--stroke-3xl)" x="1068" y="52" width="200" height="18" />
+      </frame>
+      <frame id="150:160" name="Row/stroke-4xl" x="0" y="903" width="1268" height="121">
+        <text id="150:161" name="stroke/4xl" x="0" y="50" width="180" height="22" />
+        <text id="150:162" name="4px" x="204" y="50" width="96" height="22" />
+        <frame id="150:163" name="Visual" x="324" y="17" width="96" height="88">
+          <line id="150:167" name="Line" x="0" y="44" width="48" height="0" />
+          <ellipse id="150:168" name="Ellipse" x="64" y="28" width="32" height="32" />
+        </frame>
+        <text id="150:165" name="Illustrations: scan corners, fingerprint ridges, badge marks." x="444" y="50" width="600" height="22" />
+        <text id="150:166" name="var(--stroke-4xl)" x="1068" y="52" width="200" height="18" />
+      </frame>
+      <frame id="150:169" name="Row/stroke-5xl" x="0" y="1024" width="1268" height="121">
+        <text id="150:170" name="stroke/5xl" x="0" y="50" width="180" height="22" />
+        <text id="150:171" name="5px" x="204" y="50" width="96" height="22" />
+        <frame id="150:172" name="Visual" x="324" y="17" width="96" height="88">
+          <line id="150:176" name="Line" x="0" y="44" width="48" height="0" />
+          <ellipse id="150:177" name="Ellipse" x="64" y="28" width="32" height="32" />
+        </frame>
+        <text id="150:174" name="Illustrations: accent strokes such as the camera-off slash." x="444" y="50" width="600" height="22" />
+        <text id="150:175" name="var(--stroke-5xl)" x="1068" y="52" width="200" height="18" />
+      </frame>
+      <frame id="150:178" name="Row/stroke-6xl" x="0" y="1145" width="1268" height="121">
+        <text id="150:179" name="stroke/6xl" x="0" y="50" width="180" height="22" />
+        <text id="150:180" name="7px" x="204" y="50" width="96" height="22" />
+        <frame id="150:181" name="Visual" x="324" y="17" width="96" height="88">
+          <line id="150:185" name="Line" x="0" y="44" width="48" height="0" />
+          <ellipse id="150:186" name="Ellipse" x="64" y="28" width="32" height="32" />
+        </frame>
+        <text id="150:183" name="Illustrations: heavy marks such as the success tick and padlock shackle." x="444" y="50" width="600" height="22" />
+        <text id="150:184" name="var(--stroke-6xl)" x="1068" y="52" width="200" height="18" />
+      </frame>
+      <frame id="150:187" name="Row/stroke-7xl" x="0" y="1266" width="1268" height="121">
+        <text id="150:188" name="stroke/7xl" x="0" y="50" width="180" height="22" />
+        <text id="150:189" name="8px" x="204" y="50" width="96" height="22" />
+        <frame id="150:190" name="Visual" x="324" y="17" width="96" height="88">
+          <line id="150:194" name="Line" x="0" y="44" width="48" height="0" />
+          <ellipse id="150:195" name="Ellipse" x="64" y="28" width="32" height="32" />
+        </frame>
+        <text id="150:192" name="Loaders: the progress arc on “Checking your details”." x="444" y="50" width="600" height="22" />
+        <text id="150:193" name="var(--stroke-7xl)" x="1068" y="52" width="200" height="18" />
+      </frame>
+      <frame id="150:196" name="Row/stroke-8xl" x="0" y="1387" width="1268" height="121">
+        <text id="150:197" name="stroke/8xl" x="0" y="50" width="180" height="22" />
+        <text id="150:198" name="11px" x="204" y="50" width="96" height="22" />
+        <frame id="150:199" name="Visual" x="324" y="17" width="96" height="88">
+          <line id="150:203" name="Line" x="0" y="44" width="48" height="0" />
+          <ellipse id="150:204" name="Ellipse" x="64" y="28" width="32" height="32" />
+        </frame>
+        <text id="150:201" name="Illustrations: knock-out outline behind the camera-off slash." x="444" y="50" width="600" height="22" />
+        <text id="150:202" name="var(--stroke-8xl)" x="1068" y="52" width="200" height="18" />
+      </frame>
+    </frame>
+    <frame id="150:70" name="Rules" x="64" y="1740" width="1200" height="178">
+      <text id="150:71" name="RULES" x="0" y="0" width="34" height="14" />
+      <frame id="150:72" name="Rule Cards" x="0" y="30" width="1200" height="148">
+        <frame id="150:73" name="Rule/Use the variables" x="0" y="0" width="288" height="148">
+          <text id="150:74" name="Use the variables" x="24" y="24" width="240" height="26" />
+          <text id="150:75" name="Never type a stroke width. Pick a stroke/* variable so one change updates every screen." x="24" y="58" width="240" height="66" />
+        </frame>
+        <frame id="150:76" name="Rule/Match the icon size" x="304" y="0" width="288" height="148">
+          <text id="150:77" name="Match the icon size" x="24" y="24" width="240" height="26" />
+          <text id="150:78" name="Icons up to 18px use sm, 20–28px use md, 32px and up use lg. Thin lines keep small icons from looking bulky." x="24" y="58" width="240" height="66" />
+        </frame>
+        <frame id="150:79" name="Rule/Thicker means state" x="608" y="0" width="288" height="148">
+          <text id="150:80" name="Thicker means state" x="24" y="24" width="240" height="26" />
+          <text id="150:81" name="Use xl only to show state: focus, error, selection or progress. Resting borders stay xs or md." x="24" y="58" width="240" height="66" />
+        </frame>
+        <frame id="150:82" name="Rule/Heavy widths are for art" x="912" y="0" width="288" height="148">
+          <text id="150:83" name="Heavy widths are for art" x="24" y="24" width="240" height="26" />
+          <text id="150:84" name="2xl to 8xl belong to illustrations and loaders only. Never use them on buttons, fields or icons." x="24" y="58" width="240" height="66" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="150:85" name="In Practice" x="64" y="1966" width="1268" height="70">
+      <text id="150:86" name="IN PRACTICE — CURRENT SCREENS" x="0" y="0" width="193" height="14" />
+      <frame id="150:87" name="Example" x="0" y="30" width="748" height="40">
+        <frame id="150:88" name="Example/Outlined button border" x="0" y="0" width="257" height="40">
+          <text id="150:89" name="Outlined button border" x="17" y="9" width="150" height="22" />
+          <text id="150:90" name="stroke/md" x="175" y="9" width="65" height="22" />
+        </frame>
+        <frame id="150:91" name="Example/Error field outline" x="281" y="0" width="209" height="40">
+          <text id="150:92" name="Error field outline" x="17" y="9" width="112" height="22" />
+          <text id="150:93" name="stroke/xl" x="137" y="9" width="55" height="22" />
+        </frame>
+        <frame id="150:94" name="Example/Inline validation icon" x="514" y="0" width="234" height="40">
+          <text id="150:95" name="Inline validation icon" x="17" y="9" width="130" height="22" />
+          <text id="150:96" name="stroke/sm" x="155" y="9" width="62" height="22" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+</canvas>
