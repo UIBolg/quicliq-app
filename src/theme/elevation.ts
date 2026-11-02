@@ -30,4 +30,12 @@ export const elevation = {
     shadowRadius: 16,
     elevation: 2,
   },
+  /** Floating tab bar (code addition, no Figma effect yet — docs/figma-issues.md #38). */
+  floating: {
+    shadowColor: colors['Neutral/Ink'],
+    shadowOpacity: 0.1,
+    shadowOffset: { width: 0, height: 8 },
+    shadowRadius: 24,
+    elevation: 6,
+  },
 } as const;
