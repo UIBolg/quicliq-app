@@ -111,6 +111,9 @@ export const sizes = {
   /** RecipientTile (code addition, Home proposal): 56 avatar + one-line name. */
   recipientTile: { width: 72 },
 
+  /** LimitCard (code addition, Home option B2): 132 high; progress 170 wide; artwork 190×150 bleeding past the top/end. */
+  limitCard: { height: 132, progressWidth: 170, artInsetEnd: -24, artInsetTop: -10 },
+
   /** Password Rule 281:7369 — 20 indicator (Met = Icon Badge 20 Success). */
   passwordRule: { indicator: 20 },
 } as const;

@@ -2,21 +2,20 @@
  * Avatar — Figma local component 280:8449 (Size=56): Primary/Red circle, white initials in H3.
  * Size 44 is not in Figma (added on request) — it uses Title so the initials fit.
  * Tones (code additions, Home): `tint` Alpha/Red 10% + Primary/Red initials · `success` Status/Success/Light +
- * Status/Success/Default · `ink` Neutral/Ink + White · `onBrand` Neutral/White + Primary/Red (on red surfaces).
+ * Status/Success/Default · `ink` Neutral/Ink + White.
  * AR screens (e.g. AR/7.0 139:3922) keep Latin initials in the EN style; the avatar sits on the start side.
  */
 import { View } from 'react-native';
 import { Text } from 'react-native';
 import { getTextStyle, useTheme, type AvatarSize, type ColorToken } from '../theme';
 
-export type AvatarTone = 'brand' | 'tint' | 'success' | 'ink' | 'onBrand';
+export type AvatarTone = 'brand' | 'tint' | 'success' | 'ink';
 
 const tones: Record<AvatarTone, { bg: ColorToken; fg: ColorToken }> = {
   brand: { bg: 'Primary/Red', fg: 'Neutral/White' },
   tint: { bg: 'Alpha/Red 10%', fg: 'Primary/Red' },
   success: { bg: 'Status/Success/Light', fg: 'Status/Success/Default' },
   ink: { bg: 'Neutral/Ink', fg: 'Neutral/White' },
-  onBrand: { bg: 'Neutral/White', fg: 'Primary/Red' },
 };
 
 export type AvatarProps = {

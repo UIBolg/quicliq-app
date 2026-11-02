@@ -1,7 +1,6 @@
 /**
  * Icon Button — Figma 217:7015. 40 circle, Neutral/Fog, radius/full, 24 icon. Touch area extended to 44.
- * `surface` = Neutral/White fill for use on Fog pages; `onBrand` = Alpha/White 20% fill + white icon for use on
- * Primary/Red surfaces (code additions, Home).
+ * `surface` = Neutral/White fill for use on Fog pages (code addition, Home proposal).
  */
 import { Pressable, StyleSheet, View } from 'react-native';
 import { Icon, type IconName } from './Icon';
@@ -15,10 +14,9 @@ export type IconButtonProps = {
   disabled?: boolean;
   testID?: string;
   surface?: boolean;
-  onBrand?: boolean;
 };
 
-export function IconButton({ icon, accessibilityLabel, onPress, disabled, testID, surface, onBrand }: IconButtonProps) {
+export function IconButton({ icon, accessibilityLabel, onPress, disabled, testID, surface }: IconButtonProps) {
   const t = useTheme();
   const { focused, focusProps } = useFocusRing();
   const d = t.sizes.iconButton.size;
@@ -34,15 +32,15 @@ export function IconButton({ icon, accessibilityLabel, onPress, disabled, testID
       {...focusProps}
       style={[
         styles.base,
-        { width: d, height: d, borderRadius: t.radius['radius/full'], backgroundColor: t.colors[onBrand ? 'Alpha/White 20%' : surface ? 'Neutral/White' : 'Neutral/Fog'] },
-        focused && { outlineColor: t.colors[onBrand ? 'Neutral/White' : 'Neutral/Ink'], outlineWidth: t.stroke['stroke/md'], outlineStyle: 'solid' },
+        { width: d, height: d, borderRadius: t.radius['radius/full'], backgroundColor: t.colors[surface ? 'Neutral/White' : 'Neutral/Fog'] },
+        focused && { outlineColor: t.colors['Neutral/Ink'], outlineWidth: t.stroke['stroke/md'], outlineStyle: 'solid' },
       ]}
     >
       {({ pressed }) => (
         <>
-          <Icon name={icon} size={t.sizes.iconButton.icon} color={disabled ? 'Neutral/Silver' : onBrand ? 'Neutral/White' : 'Neutral/Ink'} />
+          <Icon name={icon} size={t.sizes.iconButton.icon} color={disabled ? 'Neutral/Silver' : 'Neutral/Ink'} />
           {pressed ? (
-            <View pointerEvents="none" style={[StyleSheet.absoluteFill, { borderRadius: t.radius['radius/full'], backgroundColor: t.colors[onBrand ? t.states.pressedOverlayOnDark : t.states.pressedOverlay] }]} />
+            <View pointerEvents="none" style={[StyleSheet.absoluteFill, { borderRadius: t.radius['radius/full'], backgroundColor: t.colors[t.states.pressedOverlay] }]} />
           ) : null}
         </>
       )}

@@ -1,8 +1,9 @@
 /**
- * Action Banner — code addition (Home "Verify your ID and address", from the product owner's design; no Figma
- * component yet, docs/figma-issues.md #35). Tappable card: Neutral/White, Alpha/Ink 10% hairline (stroke/xs),
- * radius/lg, padding spacing/16, gap spacing/12. 24 icon in Primary/Red at the start · title (Body Medium, Ink) over
- * subtitle (Caption, Slate) · chevronRight at the end (mirrored in RTL). Pressed = Alpha/Ink 6% overlay.
+ * Action Banner — code addition (Home "Verify your ID and address" alert, option B2 on the "Quicliq Home options"
+ * canvas; no Figma component yet, docs/figma-issues.md #35). A tappable alert in the Banner Error colours (Banner 157:626):
+ * Status/Failure/Light fill, radius/md, padding spacing/12, gap spacing/12, ≥44 high.
+ * 20 icon in Status/Failure/Default at the start · one Body text in Status/Failure/Dark with the `title` part in
+ * Body Medium · 16 chevronRight at the end (mirrored in RTL). Pressed = Alpha/Ink 6% overlay.
  */
 import { Pressable, StyleSheet, View } from 'react-native';
 import { AppText } from './AppText';
@@ -12,32 +13,32 @@ import { useTheme } from '../theme';
 
 export type ActionBannerProps = {
   icon: IconName;
+  /** Bold lead-in, e.g. "Verify your ID and address". */
   title: string;
-  subtitle?: string;
+  /** Rest of the sentence, e.g. "to send up to £12,000". */
+  message?: string;
   onPress: () => void;
   testID?: string;
 };
 
-export function ActionBanner({ icon, title, subtitle, onPress, testID }: ActionBannerProps) {
+export function ActionBanner({ icon, title, message, onPress, testID }: ActionBannerProps) {
   const t = useTheme();
   const { focused, focusProps } = useFocusRing();
-  const r = t.radius['radius/lg'];
+  const r = t.radius['radius/md'];
   return (
     <Pressable
       testID={testID}
       onPress={onPress}
       accessibilityRole="button"
-      accessibilityLabel={subtitle ? `${title}. ${subtitle}` : title}
+      accessibilityLabel={message ? `${title} ${message}` : title}
       {...focusProps}
       style={[
         styles.row,
         {
           gap: t.spacing['spacing/12'],
-          padding: t.spacing['spacing/16'],
+          padding: t.spacing['spacing/12'],
           borderRadius: r,
-          backgroundColor: t.colors['Neutral/White'],
-          borderWidth: t.stroke['stroke/xs'],
-          borderColor: t.colors['Alpha/Ink 10%'],
+          backgroundColor: t.colors['Status/Failure/Light'],
           minHeight: t.sizes.touchTarget,
         },
         focused && { outlineColor: t.colors[t.states.focusRing.color], outlineWidth: t.stroke[t.states.focusRing.width], outlineStyle: 'solid', outlineOffset: t.spacing['spacing/2'] },
@@ -45,12 +46,12 @@ export function ActionBanner({ icon, title, subtitle, onPress, testID }: ActionB
     >
       {({ pressed }) => (
         <>
-          <Icon name={icon} size={t.sizes.icon.default} color="Primary/Red" />
-          <View style={styles.flex}>
-            <AppText variant="Body Medium" numberOfLines={2}>{title}</AppText>
-            {subtitle ? <AppText variant="Caption" color="Neutral/Slate">{subtitle}</AppText> : null}
-          </View>
-          <Icon name="chevronRight" size={t.sizes.icon.md} color="Neutral/Ink" />
+          <Icon name={icon} size={t.sizes.icon.md} color="Status/Failure/Default" />
+          <AppText variant="Body" color="Status/Failure/Dark" style={styles.flex}>
+            <AppText variant="Body Medium" color="Status/Failure/Dark">{title}</AppText>
+            {message ? ` ${message}` : ''}
+          </AppText>
+          <Icon name="chevronRight" size={t.sizes.icon.sm} color="Status/Failure/Dark" />
           {pressed ? (
             <View pointerEvents="none" style={[StyleSheet.absoluteFill, { borderRadius: r, backgroundColor: t.colors['Alpha/Ink 6%'] }]} />
           ) : null}

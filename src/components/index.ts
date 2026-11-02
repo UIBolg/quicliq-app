@@ -37,3 +37,4 @@ export * from './TransferRow';
 export * from './RecipientTile';
 export * from './TabBar';
 export * from './ActionBanner';
+export * from './LimitCard';

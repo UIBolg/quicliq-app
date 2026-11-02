@@ -187,8 +187,8 @@
     },
     "limit": {
       "title": "You can send",
-      "left": "left of your {{total}} lifetime limit",
-      "a11y": "{{used}} of {{total}} used"
+      "a11y": "{{used}} of {{total}} used",
+      "caption": "of your {{total}} lifetime limit"
     },
     "recipients": "Recent recipients",
     "recipientNames": {
@@ -207,7 +207,7 @@
     },
     "verify": {
       "title": "Verify your ID and address",
-      "body": "Increase your limit to {{amount}}"
+      "body": "to send up to {{amount}}"
     }
   }
 }

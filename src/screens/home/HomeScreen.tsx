@@ -1,22 +1,19 @@
 /**
- * Home — PROPOSAL, not from Figma. The Figma file has no Home screen yet (docs/figma-issues.md #30); built only from
- * existing tokens and shared components. Sample data from src/mock/account.ts. Audit: docs/design-system-audit-home.md.
+ * Home — PROPOSAL, not from Figma (docs/figma-issues.md #30). Layout = option B2 chosen on the "Quicliq Home options"
+ * canvas. Built only from tokens and shared components; sample data from src/mock/account.ts.
  *
- * Header (Primary/Red, light status bar, bottom corners radius/xl; pt spacing/8 · gutter · pb spacing/24, gap spacing/24):
- *   greeting row (Avatar onBrand · Caption White 80% + Title White · IconButton onBrand bell) ·
- *   "Verify your ID and address" Action Banner → 4.1 ·
- *   sending limit (Body Large White 80% · Numeric L White · Body White 80% · ProgressBar md onBrand) ·
- *   Inverse "Send money" with the send icon.
- * Body (Neutral/White, pt spacing/24 · gutter, gap spacing/24):
- *   today's rate card (Status/Success/Light: UK + JO flags, Overline Success/Dark, Title rate, trendingUp) ·
- *   Recent recipients (last 5 RecipientTiles in rotating avatar tones) · Recent transfers (TransferRows on Fog).
+ * Neutral/White page, pt spacing/8 · gutter · pb spacing/32:
+ *   top group (gap spacing/16): greeting row (Avatar brand · Caption Slate + Title · IconButton bell) ·
+ *     "Verify your ID and address" Action Banner (alert) → 4.1 · Limit Card (red, plane artwork) · Primary "Send money".
+ *   then (gap spacing/24): today's rate card (Status/Success/Light) · Recent recipients (5 tiles, rotating avatar tones) ·
+ *     Recent transfers (TransferRows on Fog).
  * Composition only: every repeated pattern lives in src/components; every string in src/i18n.
  */
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import {
-  ActionBanner, AppText, Avatar, Button, Flag, Icon, IconButton, ProgressBar, RecipientTile, Screen, SectionHeader,
+  ActionBanner, AppText, Avatar, Button, Flag, Icon, IconButton, LimitCard, RecipientTile, Screen, SectionHeader,
   TabBar, TransferRow, type AvatarTone, type TabBarItem,
 } from '../../components';
 import { demoAccount, demoLimit, demoRecipients, demoTransfers } from '../../mock/account';
@@ -43,10 +40,13 @@ export function HomeScreen({ navigation }: Props) {
   ];
 
   return (
-    <Screen edges={['top']} background="Primary/Red" statusBar="light">
-      <ScrollView style={[styles.flex, { backgroundColor: t.colors['Neutral/White'] }]} contentContainerStyle={{ paddingBottom: t.spacing['spacing/32'] }}>
+    <Screen edges={['top']}>
+      <ScrollView
+        style={styles.flex}
+        contentContainerStyle={{ paddingTop: t.spacing['spacing/8'], paddingHorizontal: t.layout.screenGutter, paddingBottom: t.spacing['spacing/32'], gap: t.spacing['spacing/24'] }}
+      >
         <Header notBuilt={notBuilt} />
-        <View style={{ paddingTop: t.spacing['spacing/24'], paddingHorizontal: t.layout.screenGutter, gap: t.spacing['spacing/24'] }}>
+        <View style={{ gap: t.spacing['spacing/24'] }}>
           <RateCard />
           <Recipients notBuilt={notBuilt} />
           <Transfers notBuilt={notBuilt} />
@@ -64,46 +64,34 @@ function Header({ notBuilt }: { notBuilt: NotBuilt }) {
   const left = Math.max(0, total - sent);
 
   return (
-    <View
-      style={{
-        backgroundColor: t.colors['Primary/Red'],
-        borderBottomLeftRadius: t.radius['radius/xl'],
-        borderBottomRightRadius: t.radius['radius/xl'],
-        paddingTop: t.spacing['spacing/8'],
-        paddingHorizontal: t.layout.screenGutter,
-        paddingBottom: t.spacing['spacing/24'],
-        gap: t.spacing['spacing/24'],
-      }}
-    >
+    <View style={{ gap: t.spacing['spacing/16'] }}>
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: t.spacing['spacing/12'] }}>
-        <Avatar initials={demoAccount.initials} size={44} tone="onBrand" accessibilityLabel={demoAccount.fullName} />
+        <Avatar initials={demoAccount.initials} size={44} accessibilityLabel={demoAccount.fullName} />
         <View style={styles.flex}>
-          <AppText variant="Caption" color="Alpha/White 80%">{tr(`${k}.greeting`)}</AppText>
-          <AppText variant="Title" color="Neutral/White" accessibilityRole="header">{demoAccount.firstName}</AppText>
+          <AppText variant="Caption" color="Neutral/Slate">{tr(`${k}.greeting`)}</AppText>
+          <AppText variant="Title" accessibilityRole="header">{demoAccount.firstName}</AppText>
         </View>
-        <IconButton icon="bell" onBrand accessibilityLabel={tr(`${k}.notifications`)} onPress={notBuilt('Notifications')} />
+        <IconButton icon="bell" accessibilityLabel={tr(`${k}.notifications`)} onPress={notBuilt('Notifications')} />
       </View>
 
       <ActionBanner
         icon="idCard"
         title={tr(`${k}.verify.title`)}
-        subtitle={tr(`${k}.verify.body`, { amount: formatMoney(demoAccount.verifiedLimit) })}
+        message={tr(`${k}.verify.body`, { amount: formatMoney(demoAccount.verifiedLimit) })}
         onPress={notBuilt('4.1')}
         testID="verify-banner"
       />
 
-      <View style={{ gap: t.spacing['spacing/8'] }}>
-        <AppText variant="Body Large" color="Alpha/White 80%">{tr(`${k}.limit.title`)}</AppText>
-        <AppText variant="Numeric L" color="Neutral/White" style={[getTextStyle('Numeric L', 'en'), { color: t.colors['Neutral/White'] }, startAlign(t.isRTL)]}>
-          {formatMoney(left)}
-        </AppText>
-        <AppText variant="Body" color="Alpha/White 80%">{tr(`${k}.limit.left`, { total: formatMoney(total) })}</AppText>
-        <View style={{ paddingTop: t.spacing['spacing/8'] }}>
-          <ProgressBar value={sent} max={total} tone="onBrand" accessibilityLabel={tr(`${k}.limit.a11y`, { used: formatMoney(sent), total: formatMoney(total) })} />
-        </View>
-      </View>
+      <LimitCard
+        label={tr(`${k}.limit.title`)}
+        amount={formatMoney(left)}
+        caption={tr(`${k}.limit.caption`, { total: formatMoney(total) })}
+        value={sent}
+        max={total}
+        progressLabel={tr(`${k}.limit.a11y`, { used: formatMoney(sent), total: formatMoney(total) })}
+      />
 
-      <Button type="inverse" icon="send" label={tr(`${k}.sendMoney`)} onPress={notBuilt('Send money')} testID="home-send" />
+      <Button icon="send" label={tr(`${k}.sendMoney`)} onPress={notBuilt('Send money')} testID="home-send" />
     </View>
   );
 }
