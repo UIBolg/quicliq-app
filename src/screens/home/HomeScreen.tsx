@@ -5,20 +5,19 @@
  * Neutral/White page, pt spacing/8 · gutter · pb spacing/32:
  *   top group (gap spacing/16): greeting row (Avatar brand · Caption Slate + Title · IconButton bell) ·
  *     "Verify your ID and address" Action Banner (alert) → 4.1 · Limit Card (red, plane artwork) · Primary "Send money".
- *   then (gap spacing/24): today's rate card (Status/Success/Light) · Recent recipients (5 tiles, rotating avatar tones) ·
- *     Recent transfers (TransferRows on Fog).
+ *   then (gap spacing/24): Recent recipients (5 tiles, rotating avatar tones) · Recent transfers (TransferRows on Fog).
  * Composition only: every repeated pattern lives in src/components; every string in src/i18n.
  */
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import {
-  ActionBanner, AppText, Avatar, Button, Flag, Icon, IconButton, LimitCard, RecipientTile, Screen, SectionHeader,
+  ActionBanner, AppText, Avatar, Button, IconButton, LimitCard, RecipientTile, Screen, SectionHeader,
   TabBar, TransferRow, type AvatarTone, type TabBarItem,
 } from '../../components';
 import { demoAccount, demoLimit, demoRecipients, demoTransfers } from '../../mock/account';
 import { formatMoney, ltr } from '../../utils/format';
-import { useTheme, getTextStyle } from '../../theme';
+import { useTheme } from '../../theme';
 import type { RootStackParamList } from '../../navigation/routes';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
@@ -47,7 +46,6 @@ export function HomeScreen({ navigation }: Props) {
       >
         <Header notBuilt={notBuilt} />
         <View style={{ gap: t.spacing['spacing/24'] }}>
-          <RateCard />
           <Recipients notBuilt={notBuilt} />
           <Transfers notBuilt={notBuilt} />
         </View>
@@ -92,38 +90,6 @@ function Header({ notBuilt }: { notBuilt: NotBuilt }) {
       />
 
       <Button icon="send" label={tr(`${k}.sendMoney`)} onPress={notBuilt('Send money')} testID="home-send" />
-    </View>
-  );
-}
-
-function RateCard() {
-  const t = useTheme();
-  const { t: tr } = useTranslation();
-  const rate = ltr(`1 GBP = ${demoAccount.rate.jod} JOD`);
-  return (
-    <View
-      accessible
-      accessibilityLabel={`${tr(`${k}.rateLabel`)}, ${tr(`${k}.corridor`)}: ${rate}`}
-      style={{
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: t.spacing['spacing/12'],
-        backgroundColor: t.colors['Status/Success/Light'],
-        borderRadius: t.radius['radius/lg'],
-        padding: t.spacing['spacing/16'],
-      }}
-    >
-      {/* Flags stay in UK → JO order in both languages (never mirrored). */}
-      <View style={{ flexDirection: 'row', direction: 'ltr', gap: t.spacing['spacing/2'] }}>
-        <Flag country="UK" />
-        <Flag country="JO" />
-      </View>
-      <View style={styles.flex}>
-        <AppText variant="Overline" color="Status/Success/Dark">{tr(`${k}.rateLabel`)}</AppText>
-        <AppText variant="Title" style={[getTextStyle('Title', 'en'), { color: t.colors['Neutral/Ink'] }, startAlign(t.isRTL)]}>{rate}</AppText>
-        <AppText variant="Caption" color="Neutral/Slate">{tr(`${k}.corridor`)}</AppText>
-      </View>
-      <Icon name="trendingUp" size={t.sizes.icon.default} color="Status/Success/Default" />
     </View>
   );
 }
@@ -176,8 +142,5 @@ function Transfers({ notBuilt }: { notBuilt: NotBuilt }) {
     </View>
   );
 }
-
-/** Text that uses an EN style inside an RTL screen still starts at the reading start. */
-const startAlign = (isRTL: boolean) => ({ textAlign: isRTL ? ('right' as const) : ('left' as const) });
 
 const styles = StyleSheet.create({ flex: { flex: 1 } });

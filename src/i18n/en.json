@@ -160,9 +160,6 @@
   "home": {
     "greeting": "Welcome back,",
     "notifications": "Notifications",
-    "corridor": "UK to Jordan",
-    "rateLabel": "TODAY’S RATE",
-    "rateNote": "Jordanian dinars for every {{gbp}}",
     "sendMoney": "Send money",
     "recent": "Recent transfers",
     "seeAll": "See all",
