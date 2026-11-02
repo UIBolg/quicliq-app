@@ -12,7 +12,8 @@ export const demoAccount = {
   /** Lifetime limit after verifying ID & address (build doc: £12,000). */
   verifiedLimit: 12000,
   /** Demo login (7.1): mobile 123456789 or this email, with password 123456. Any other pair is wrong (7.3);
-   *  5 wrong tries pause login for 15 minutes (7.4). Demo values only — never real credentials. */
+   *  5 wrong tries pause login for 15 minutes (7.4). Log in with both fields empty goes straight to Home (demo shortcut).
+   *  Demo values only — never real credentials. */
   phone: '123456789',
   email: 'james.carter@email.com',
   password: '123456',

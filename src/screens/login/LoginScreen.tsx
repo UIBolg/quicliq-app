@@ -59,6 +59,12 @@ export function LoginScreen({ navigation, route }: NativeStackScreenProps<RootSt
       const offline = await isOffline();
       setLoading(false);
       if (offline) return navigation.navigate('7.5');
+      // Demo shortcut: Log in with both fields empty skips straight to Home (no code step). Remove with the real API.
+      if (!(method === 'mobile' ? mobile : email).trim() && !password) {
+        setFailed(0);
+        navigation.reset({ index: 0, routes: [{ name: 'Home' }] });
+        return;
+      }
       if (isDemoLogin(method, method === 'mobile' ? mobile : email, password)) {
         setFailed(0);
         if (method === 'mobile') navigation.navigate('7.2a', { phone: mobile || undefined });
