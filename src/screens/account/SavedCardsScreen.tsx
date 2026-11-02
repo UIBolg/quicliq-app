@@ -3,7 +3,7 @@
  * Visa = Neutral/Ink with "VISA" Overline, Mastercard = Primary/Red with two overlapping white circles; brand colours
  * aren't tokens) · "Visa ••••4242" (Body Medium) + "Default" Verified Tag on the first card, over "Expires 08/28"
  * (Caption, Slate) · trash button (Primary/Red icon, 44 touch area). Trash opens a confirm sheet
- * (Remove / Cancel). Footer Secondary "Add card" → 6.5a (not built yet). Empty state when no cards are left.
+ * (Remove / Cancel). Footer Secondary "Add card" opens the Add a card sheet (AddCardSheet, profile mode); a valid card joins the list. Empty state when no cards are left.
  */
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
@@ -11,17 +11,19 @@ import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { AppText, BottomSheet, Button, Icon, IconBadge, Screen, TopBar, VerifiedTag } from '../../components';
 import { demoCards } from '../../mock/account';
+import { AddCardSheet } from './AddCardSheet';
 import { getTextStyle, useTheme } from '../../theme';
 import type { RootStackParamList } from '../../navigation/routes';
 
 const k = 'account.cards';
-type Card = (typeof demoCards)[number];
+type Card = { id: string; brand: string; last4: string; expires: string };
 
 export function SavedCardsScreen({ navigation }: NativeStackScreenProps<RootStackParamList, '12.4'>) {
   const t = useTheme();
   const { t: tr } = useTranslation();
   const [cards, setCards] = useState<Card[]>(demoCards);
   const [removing, setRemoving] = useState<Card | null>(null);
+  const [adding, setAdding] = useState(false);
   const label = (c: Card) => `\u2066${c.brand} ••••${c.last4}\u2069`;
 
   return (
@@ -79,8 +81,15 @@ export function SavedCardsScreen({ navigation }: NativeStackScreenProps<RootStac
         )}
       </ScrollView>
       <View style={{ paddingHorizontal: t.layout.screenGutter, paddingTop: t.spacing['spacing/16'], paddingBottom: t.layout.footerBottom }}>
-        <Button type="secondary" icon="plus" label={tr(`${k}.add`)} onPress={() => navigation.navigate('NotBuilt', { screenId: '6.5a' })} testID="add-card" />
+        <Button type="secondary" icon="plus" label={tr(`${k}.add`)} onPress={() => setAdding(true)} testID="add-card" />
       </View>
+
+      <AddCardSheet
+        visible={adding}
+        context="profile"
+        onClose={() => setAdding(false)}
+        onDone={(c) => { setCards((cs) => [...cs, { id: `c${Date.now()}`, brand: c.brand, last4: c.last4, expires: c.expires }]); setAdding(false); }}
+      />
 
       <BottomSheet visible={!!removing} onClose={() => setRemoving(null)}>
         <View style={{ gap: t.spacing['spacing/8'] }}>

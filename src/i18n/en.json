@@ -352,6 +352,15 @@
     "raise": {
       "idAddress": "Verify your ID to send up to {{amount}}",
       "sourceOfFunds": "Add your source of funds to send over {{amount}}"
+    },
+    "addCard": {
+      "title": "Add a card",
+      "number": "Card number",
+      "expiry": "Expiry",
+      "cvv": "CVV",
+      "save": "Save this card",
+      "use": "Use this card",
+      "saveCard": "Save card"
     }
   },
   "activity": {
