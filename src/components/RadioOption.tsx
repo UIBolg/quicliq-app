@@ -5,8 +5,10 @@
  * Unselected = no outline, radio = white with a Neutral/Silver ring (stroke/md).
  * Icon=On (7.2c / 7.8d code method): 40 Neutral/White badge with a 20 icon (Primary/Red when selected, Ink otherwise)
  * at the start, gap spacing/8; title + subtitle (Body, Slate) gap spacing/4.
+ * `leading` (code addition, 12.6 Language): any element at the start instead of the icon badge, e.g. a Flag.
  * `titleLocale` renders the title in another language's text style (e.g. "العربية" inside the EN sheet).
  */
+import type { ReactNode } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { AppText } from './AppText';
 import { Icon, type IconName } from './Icon';
@@ -18,12 +20,13 @@ export type RadioOptionProps = {
   selected: boolean;
   onPress: () => void;
   icon?: IconName;
+  leading?: ReactNode;
   titleLocale?: Locale;
   subtitleLocale?: Locale;
   testID?: string;
 };
 
-export function RadioOption({ title, subtitle, selected, onPress, icon, titleLocale, subtitleLocale, testID }: RadioOptionProps) {
+export function RadioOption({ title, subtitle, selected, onPress, icon, leading, titleLocale, subtitleLocale, testID }: RadioOptionProps) {
   const t = useTheme();
   const r = t.sizes.radioOption.radio;
   const styleFor = (locale: Locale | undefined, name: 'Body Medium' | 'Body' | 'Caption') =>
@@ -55,6 +58,7 @@ export function RadioOption({ title, subtitle, selected, onPress, icon, titleLoc
           {pressed ? (
             <View pointerEvents="none" style={[StyleSheet.absoluteFill, { backgroundColor: t.colors['Alpha/Ink 6%'] }]} />
           ) : null}
+          {leading}
           {icon ? (
             <View
               style={{

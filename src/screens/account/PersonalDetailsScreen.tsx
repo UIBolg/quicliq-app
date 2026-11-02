@@ -3,13 +3,14 @@
  * ID check); email, mobile and address are editable. Find address (search field) → Loqate finder (not built yet).
  * Save is enabled once something changed: a new mobile first goes to code entry (2.4), otherwise it saves and goes back.
  * Latin values that start with digits (date, address) are kept LTR so Arabic doesn't reorder them.
- * Layout: TopBar · fields gap spacing/16 · locked note (Caption, Slate) · footer Primary "Save".
+ * Layout: TopBar · sections (Overline title, gap spacing/24): From your ID check (locked name + date of birth + Info
+ * Banner with lock icon) · Contact (email, mobile) · Home address (search field) · footer Primary "Save".
  */
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { KeyboardAvoidingView, Platform, ScrollView, StyleSheet, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { AppText, Button, PhoneField, Screen, TextField, TopBar } from '../../components';
+import { AppText, Banner, Button, PhoneField, Screen, TextField, TopBar } from '../../components';
 import { demoAccount, demoProfile } from '../../mock/account';
 import { ltr } from '../../utils/format';
 import { useTheme } from '../../theme';
@@ -34,10 +35,13 @@ export function PersonalDetailsScreen({ navigation }: NativeStackScreenProps<Roo
     <Screen>
       <TopBar title={tr(`${k}.title`)} onBack={() => navigation.goBack()} />
       <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
-        <ScrollView style={styles.flex} contentContainerStyle={{ paddingHorizontal: t.layout.screenGutter, gap: t.spacing['spacing/16'] }} keyboardShouldPersistTaps="handled">
-          <TextField label={tr(`${k}.fullName`)} value={demoAccount.fullName} locked />
-          <TextField label={tr(`${k}.dob`)} value={ltr(demoProfile.dob)} locked />
-          <AppText variant="Caption" color="Neutral/Slate">{tr(`${k}.lockedNote`)}</AppText>
+        <ScrollView style={styles.flex} contentContainerStyle={{ paddingHorizontal: t.layout.screenGutter, paddingBottom: t.spacing['spacing/16'], gap: t.spacing['spacing/24'] }} keyboardShouldPersistTaps="handled">
+          <Section title={tr(`${k}.sections.identity`)}>
+            <TextField label={tr(`${k}.fullName`)} value={demoAccount.fullName} locked />
+            <TextField label={tr(`${k}.dob`)} value={ltr(demoProfile.dob)} locked />
+            <Banner type="info" icon="lock" text={tr(`${k}.lockedNote`)} />
+          </Section>
+          <Section title={tr(`${k}.sections.contact`)}>
           <TextField label={tr(`${k}.email`)} value={email} onChangeText={setEmail} keyboardType="email-address" autoCapitalize="none" autoComplete="email" testID="email" />
           <PhoneField
             label={tr(`${k}.mobile`)}
@@ -47,13 +51,27 @@ export function PersonalDetailsScreen({ navigation }: NativeStackScreenProps<Roo
             helper={mobileChanged ? tr(`${k}.mobileNote`) : undefined}
             testID="mobile"
           />
+          </Section>
+          <Section title={tr(`${k}.sections.address`)}>
           <TextField label={tr(`${k}.address`)} value={ltr(demoProfile.address)} trailing="search" onPress={() => navigation.navigate('NotBuilt', { screenId: 'Find address (Loqate)' })} testID="address" />
+          </Section>
         </ScrollView>
         <View style={{ paddingHorizontal: t.layout.screenGutter, paddingTop: t.spacing['spacing/16'], paddingBottom: t.layout.footerBottom }}>
           <Button type={changed ? 'primary' : 'disabled'} label={tr(`${k}.save`)} onPress={save} testID="save" />
         </View>
       </KeyboardAvoidingView>
     </Screen>
+  );
+}
+
+/** Overline title (Slate) above a stack of fields, gap spacing/12. */
+function Section({ title, children }: { title: string; children: ReactNode }) {
+  const t = useTheme();
+  return (
+    <View style={{ gap: t.spacing['spacing/12'] }}>
+      <AppText variant="Overline" color="Neutral/Slate" accessibilityRole="header">{title}</AppText>
+      {children}
+    </View>
   );
 }
 

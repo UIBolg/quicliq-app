@@ -272,7 +272,12 @@
       "address": "Address",
       "lockedNote": "Your name and date of birth come from your ID check, so they can’t be changed here.",
       "save": "Save",
-      "mobileNote": "We’ll text a code to your new number to confirm it."
+      "mobileNote": "We’ll text a code to your new number to confirm it.",
+      "sections": {
+        "identity": "FROM YOUR ID CHECK",
+        "contact": "CONTACT",
+        "address": "HOME ADDRESS"
+      }
     },
     "password": {
       "title": "Change password",
@@ -280,7 +285,8 @@
       "new": "New password",
       "save": "Save",
       "wrongCurrent": "That’s not your current password.",
-      "reused": "You’ve used this password recently. Choose a new one."
+      "reused": "You’ve used this password recently. Choose a new one.",
+      "intro": "Choose a strong password you haven’t used before."
     },
     "cards": {
       "title": "Saved cards",
@@ -291,7 +297,9 @@
       "sheetTitle": "Remove this card?",
       "sheetBody": "{{card}} will be removed from your account.",
       "confirm": "Remove",
-      "cancel": "Cancel"
+      "cancel": "Cancel",
+      "default": "Default",
+      "intro": "Cards you’ve paid with are saved here for faster transfers."
     },
     "security": {
       "title": "Security",
@@ -299,19 +307,23 @@
       "faceIdHint": "Log in with your face",
       "changePassword": "Change password",
       "device": "ACTIVE DEVICE",
-      "deviceHint": "This device · only one device can be active",
+      "deviceHint": "Only one device can be active",
       "on": "On",
-      "off": "Off"
+      "off": "Off",
+      "intro": "Keep your account safe on this phone.",
+      "thisDevice": "This device"
     },
     "language": {
-      "title": "Language"
+      "title": "Language",
+      "intro": "Choose the language for the app, texts and emails."
     },
     "legal": {
       "title": "Legal",
       "privacy": "Privacy Policy",
       "fraud": "Fraud Warning",
       "terms": "Terms and conditions",
-      "placeholder": "The full document loads here from Quicliq’s servers."
+      "placeholder": "The full document loads here from Quicliq’s servers.",
+      "intro": "Read how Quicliq works and how we protect you."
     },
     "logout": {
       "title": "Log out?",
@@ -324,7 +336,8 @@
       "heading": "How can we help?",
       "call": "Call us",
       "email": "Email us",
-      "articles": "Help articles"
+      "articles": "Help articles",
+      "intro": "Our team is here to help with your transfers and account."
     },
     "notifications": {
       "title": "Notifications",
@@ -334,7 +347,19 @@
       "idDone": "Your ID check is complete",
       "today": "Today, {{time}}",
       "yesterday": "Yesterday",
-      "empty": "No notifications yet."
+      "empty": "No notifications yet.",
+      "today_h": "TODAY",
+      "earlier": "EARLIER"
+    },
+    "limitValue": "{{amount}} limit",
+    "raise": {
+      "idAddress": "Verify your ID to send up to {{amount}}",
+      "sourceOfFunds": "Add your source of funds to send over {{amount}}"
+    },
+    "stats": {
+      "transfers": "Transfers",
+      "recipients": "Recipients",
+      "cards": "Saved cards"
     }
   }
 }

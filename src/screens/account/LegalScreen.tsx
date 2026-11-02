@@ -6,7 +6,7 @@
 import { ScrollView, StyleSheet } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { Banner, ListGroup, ListRow, Screen, TopBar } from '../../components';
+import { AppText, Banner, ListGroup, ListRow, Screen, TopBar } from '../../components';
 import { useTheme } from '../../theme';
 import type { RootStackParamList } from '../../navigation/routes';
 
@@ -20,10 +20,11 @@ export function LegalScreen({ navigation }: NativeStackScreenProps<RootStackPara
   return (
     <Screen>
       <TopBar title={tr(`${k}.title`)} onBack={() => navigation.goBack()} />
-      <ScrollView style={styles.flex} contentContainerStyle={{ paddingHorizontal: t.layout.screenGutter }}>
+      <ScrollView style={styles.flex} contentContainerStyle={{ paddingHorizontal: t.layout.screenGutter, gap: t.spacing['spacing/16'] }}>
+        <AppText variant="Body" color="Neutral/Slate">{tr(`${k}.intro`)}</AppText>
         <ListGroup>
           {DOCS.map((d) => (
-            <ListRow key={d} icon="file" title={tr(`${k}.${d}`)} onPress={() => navigation.navigate('12.7a', { doc: d })} testID={`doc-${d}`} />
+            <ListRow key={d} icon="file" iconTone={d === 'fraud' ? 'red' : 'default'} title={tr(`${k}.${d}`)} onPress={() => navigation.navigate('12.7a', { doc: d })} testID={`doc-${d}`} />
           ))}
         </ListGroup>
       </ScrollView>

@@ -3,9 +3,11 @@
  * Rows open 12.2–12.7 and 13.1; Your limit opens the sending-limit sheet (5.2); Log out opens the 12.8 sheet.
  * Neutral/White page, pt spacing/8 · gutter · pb spacing/32, gap spacing/24:
  *  H2 "Account" ·
- *  profile card (Neutral/Fog, radius/xl, padding spacing/16): Avatar 56 · name (Title) + email (Caption, Slate) ·
- *    level pill (Alpha/Red 8%, Caption Primary/Red, "Level n of 3") · chevron → Personal details ·
- *  List Groups: Account (Personal details, Saved cards, Your limit → sending-limit sheet) ·
+ *  profile card (Neutral/Fog, radius/xl, padding spacing/16, gap spacing/16): Avatar 56 · name (Title) + email
+ *    (Caption, Slate) · chevron → 12.2; then, over a hairline: "Level n of 3" + current limit, a 3-segment bar
+ *    (done = Primary/Red) and the next-step link (Primary/Red) → sending-limit sheet ·
+ *  quick stats (3 bordered tiles, radius/lg): transfers · recipients · saved cards (H3 count + Caption label) ·
+ *  List Groups (coloured icon circles per row): Account (Personal details, Saved cards, Your limit → sending-limit sheet) ·
  *    Preferences (Security, Language) · Support (Help, Legal) · Log out (danger row → 12.8 sheet → 7.1) ·
  *  app version (Caption, Slate, centred).
  * Floating TabBar with Profile active.
@@ -15,12 +17,12 @@ import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { AppText, Avatar, BottomSheet, Button, Icon, ListGroup, ListRow, Screen, TabBar } from '../../components';
-import { demoAccount, demoLimit, limitTotal } from '../../mock/account';
+import { demoAccount, demoCards, demoLimit, demoRecipients, demoTransfers, limitTotal, nextLevel } from '../../mock/account';
 import { useLocale } from '../../i18n/LocaleProvider';
 import { useMainTabs } from '../../navigation/mainTabs';
 import { SendingLimitSheet } from '../home/SendingLimitSheet';
 import { formatMoney } from '../../utils/format';
-import { useTheme } from '../../theme';
+import { getTextStyle, useTheme } from '../../theme';
 import type { RootStackParamList } from '../../navigation/routes';
 import appConfig from '../../../app.json';
 
@@ -35,6 +37,7 @@ export function AccountScreen({ navigation }: Props) {
   const tabs = useMainTabs(navigation);
   const [sheet, setSheet] = useState<'limit' | 'logout' | null>(null);
   const level = demoLimit.level;
+  const next = nextLevel(level);
 
   return (
     <Screen edges={['top']}>
@@ -44,47 +47,85 @@ export function AccountScreen({ navigation }: Props) {
       >
         <AppText variant="H2" accessibilityRole="header">{tr(`${k}.title`)}</AppText>
 
-        <Pressable
-          onPress={() => navigation.navigate('12.2')}
-          accessibilityRole="button"
-          accessibilityLabel={`${demoAccount.fullName}, ${demoAccount.email}, ${tr('home.levelLink', { level })}`}
-          testID="profile-card"
-          style={({ pressed }) => ({
-            flexDirection: 'row',
-            alignItems: 'center',
-            gap: t.spacing['spacing/12'],
-            padding: t.spacing['spacing/16'],
-            borderRadius: t.radius['radius/xl'],
-            backgroundColor: t.colors[pressed ? 'Alpha/Ink 10%' : 'Neutral/Fog'],
-          })}
-        >
-          <Avatar initials={demoAccount.initials} size={56} />
-          <View style={[styles.flex, { gap: t.spacing['spacing/4'] }]}>
-            <View>
+        <View style={{ padding: t.spacing['spacing/16'], gap: t.spacing['spacing/16'], borderRadius: t.radius['radius/xl'], backgroundColor: t.colors['Neutral/Fog'] }}>
+          <Pressable
+            onPress={() => navigation.navigate('12.2')}
+            accessibilityRole="button"
+            accessibilityLabel={`${demoAccount.fullName}, ${demoAccount.email}`}
+            testID="profile-card"
+            style={({ pressed }) => ({ flexDirection: 'row', alignItems: 'center', gap: t.spacing['spacing/12'], backgroundColor: pressed ? t.colors['Alpha/Ink 6%'] : undefined, borderRadius: t.radius['radius/md'] })}
+          >
+            <Avatar initials={demoAccount.initials} size={56} />
+            <View style={styles.flex}>
               <AppText variant="Title" numberOfLines={1}>{demoAccount.fullName}</AppText>
               <AppText variant="Caption" color="Neutral/Slate" numberOfLines={1}>{demoAccount.email}</AppText>
             </View>
-            <View style={{ alignSelf: 'flex-start', flexDirection: 'row', alignItems: 'center', gap: t.spacing['spacing/4'], paddingHorizontal: t.spacing['spacing/8'], paddingVertical: t.spacing['spacing/2'], borderRadius: t.radius['radius/full'], backgroundColor: t.colors['Alpha/Red 8%'] }}>
-              <Icon name="shield" size={t.sizes.icon.xs} color="Primary/Red" />
-              <AppText variant="Caption" color="Primary/Red">{tr('home.levelLink', { level })}</AppText>
+            <Icon name="chevronRight" size={t.sizes.icon.md} color="Neutral/Slate" />
+          </Pressable>
+
+          {/* Limit level: label + current limit, 3-segment bar (done = Primary/Red), next-step link → sending-limit sheet. */}
+          <View style={{ gap: t.spacing['spacing/8'], paddingTop: t.spacing['spacing/16'], borderTopWidth: t.stroke['stroke/xs'], borderTopColor: t.colors['Alpha/Ink 10%'] }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: t.spacing['spacing/6'] }}>
+                <Icon name="shield" size={t.sizes.icon.sm} color="Primary/Red" />
+                <AppText variant="Body Medium">{tr('home.levelLink', { level })}</AppText>
+              </View>
+              <AppText variant="Caption" color="Neutral/Slate">{tr(`${k}.limitValue`, { amount: formatMoney(limitTotal(level)) })}</AppText>
             </View>
+            <View accessible accessibilityLabel={tr('home.levelLink', { level })} style={{ flexDirection: 'row', gap: t.spacing['spacing/4'] }}>
+              {[1, 2, 3].map((n) => (
+                <View key={n} style={{ flex: 1, height: t.sizes.progress.sm, borderRadius: t.radius['radius/full'], backgroundColor: t.colors[n <= level ? 'Primary/Red' : 'Alpha/Ink 10%'] }} />
+              ))}
+            </View>
+            {next ? (
+              <Pressable onPress={() => setSheet('limit')} accessibilityRole="button" testID="raise-limit-link" hitSlop={t.spacing['spacing/8']} style={{ flexDirection: 'row', alignItems: 'center', gap: t.spacing['spacing/4'], alignSelf: 'flex-start', minHeight: t.sizes.touchTarget }}>
+                {({ pressed }) => (
+                  <>
+                    <AppText variant="Body Medium" color="Primary/Red" style={pressed ? styles.underline : undefined}>
+                      {tr(`${k}.raise.${next.key}`, { amount: formatMoney(limitTotal(2)) })}
+                    </AppText>
+                    <Icon name="chevronRight" size={t.sizes.icon.sm} color="Primary/Red" />
+                  </>
+                )}
+              </Pressable>
+            ) : (
+              <AppText variant="Body Medium" color="Status/Success/Default">{tr('home.limitSheet.allDone')}</AppText>
+            )}
           </View>
-          <Icon name="chevronRight" size={t.sizes.icon.md} color="Neutral/Slate" />
-        </Pressable>
+        </View>
+
+        {/* Quick stats: transfers · recipients · saved cards (cards opens 12.4). */}
+        <View style={{ flexDirection: 'row', gap: t.spacing['spacing/12'] }}>
+          {[
+            { key: 'transfers', value: demoTransfers.length, icon: 'send' as const, tone: 'Alpha/Red 8%' as const, fg: 'Primary/Red' as const },
+            { key: 'recipients', value: demoRecipients.length, icon: 'users' as const, tone: 'Status/Success/Light' as const, fg: 'Status/Success/Default' as const },
+            { key: 'cards', value: demoCards.length, icon: 'card' as const, tone: 'Neutral/Fog' as const, fg: 'Neutral/Ink' as const },
+          ].map((st) => (
+            <View key={st.key} accessible accessibilityLabel={`${st.value} ${tr(`${k}.stats.${st.key}`)}`} style={{ flex: 1, gap: t.spacing['spacing/8'], padding: t.spacing['spacing/12'], borderRadius: t.radius['radius/lg'], borderWidth: t.stroke['stroke/xs'], borderColor: t.colors['Alpha/Ink 10%'] }}>
+              <View style={{ width: t.sizes.listRow.badge - t.spacing['spacing/8'], height: t.sizes.listRow.badge - t.spacing['spacing/8'], borderRadius: t.radius['radius/full'], backgroundColor: t.colors[st.tone], alignItems: 'center', justifyContent: 'center' }}>
+                <Icon name={st.icon} size={t.sizes.icon.sm} color={st.fg} />
+              </View>
+              <View>
+                <AppText variant="H3" style={[getTextStyle('H3', 'en'), { color: t.colors['Neutral/Ink'], textAlign: t.isRTL ? 'right' : 'left' }]}>{String(st.value)}</AppText>
+                <AppText variant="Caption" color="Neutral/Slate">{tr(`${k}.stats.${st.key}`)}</AppText>
+              </View>
+            </View>
+          ))}
+        </View>
 
         <ListGroup title={tr(`${k}.groups.account`)}>
-          <ListRow icon="user" title={tr(`${k}.rows.personal`)} onPress={() => navigation.navigate('12.2')} />
-          <ListRow icon="card" title={tr(`${k}.rows.cards`)} onPress={() => navigation.navigate('12.4')} />
-          <ListRow icon="trendingUp" title={tr(`${k}.rows.limit`)} value={formatMoney(limitTotal(level))} onPress={() => setSheet('limit')} testID="row-limit" />
+          <ListRow icon="user" iconTone="red" title={tr(`${k}.rows.personal`)} onPress={() => navigation.navigate('12.2')} />
+          <ListRow icon="card" iconTone="green" title={tr(`${k}.rows.cards`)} onPress={() => navigation.navigate('12.4')} />
+          <ListRow icon="trendingUp" iconTone="ink" title={tr(`${k}.rows.limit`)} value={formatMoney(limitTotal(level))} onPress={() => setSheet('limit')} testID="row-limit" />
         </ListGroup>
 
         <ListGroup title={tr(`${k}.groups.preferences`)}>
-          <ListRow icon="shield" title={tr(`${k}.rows.security`)} onPress={() => navigation.navigate('12.5')} testID="row-security" />
-          <ListRow icon="globe" title={tr(`${k}.rows.language`)} value={tr(`onboarding.language.${locale}.title`)} onPress={() => navigation.navigate('12.6')} testID="row-language" />
+          <ListRow icon="shield" iconTone="red" title={tr(`${k}.rows.security`)} onPress={() => navigation.navigate('12.5')} testID="row-security" />
+          <ListRow icon="globe" iconTone="green" title={tr(`${k}.rows.language`)} value={tr(`onboarding.language.${locale}.title`)} onPress={() => navigation.navigate('12.6')} testID="row-language" />
         </ListGroup>
 
         <ListGroup title={tr(`${k}.groups.support`)}>
-          <ListRow icon="help" title={tr(`${k}.rows.help`)} onPress={() => navigation.navigate('13.1')} />
+          <ListRow icon="help" iconTone="ink" title={tr(`${k}.rows.help`)} onPress={() => navigation.navigate('13.1')} />
           <ListRow icon="file" title={tr(`${k}.rows.legal`)} onPress={() => navigation.navigate('12.7')} />
         </ListGroup>
 
@@ -120,4 +161,4 @@ export function AccountScreen({ navigation }: Props) {
   );
 }
 
-const styles = StyleSheet.create({ flex: { flex: 1 } });
+const styles = StyleSheet.create({ flex: { flex: 1 }, underline: { textDecorationLine: 'underline' } });

@@ -8,7 +8,7 @@ import { useState } from 'react';
 import { KeyboardAvoidingView, Platform, ScrollView, StyleSheet, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { Button, PasswordRule, Screen, TextField, TopBar } from '../../components';
+import { AppText, Button, PasswordRule, Screen, TextField, TopBar } from '../../components';
 import { demoAccount } from '../../mock/account';
 import { useTheme } from '../../theme';
 import type { RootStackParamList } from '../../navigation/routes';
@@ -43,6 +43,7 @@ export function ChangePasswordScreen({ navigation }: NativeStackScreenProps<Root
       <TopBar title={tr(`${k}.title`)} onBack={() => navigation.goBack()} />
       <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
         <ScrollView style={styles.flex} contentContainerStyle={{ paddingHorizontal: t.layout.screenGutter, gap: t.spacing['spacing/16'] }} keyboardShouldPersistTaps="handled">
+          <AppText variant="Body" color="Neutral/Slate">{tr(`${k}.intro`)}</AppText>
           <TextField
             label={tr(`${k}.current`)}
             value={current}

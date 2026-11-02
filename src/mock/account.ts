@@ -84,7 +84,7 @@ export const demoCards = [
 export const demoDevice = { name: 'iPhone 15' };
 
 /** Help contacts (13.1). PLACEHOLDERS — replace with Quicliq's real support phone, email and help page. */
-export const supportContacts = { phone: '+440000000000', email: 'support@example.com', articlesUrl: 'https://example.com/help' };
+export const supportContacts = { phone: '+440000000000', phoneDisplay: '+44 00 0000 0000', email: 'support@example.com', articlesUrl: 'https://example.com/help' };
 
 /** Notifications (13.2); `opens` = the screen the row leads to. */
 export const demoNotifications = [
