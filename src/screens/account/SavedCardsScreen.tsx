@@ -1,18 +1,16 @@
 /**
- * 12.4 Saved cards (doc p.48). Intro (Body, Slate) · Fog card (radius/lg) of rows: card thumbnail (48×32, radius/xs —
- * Visa = Neutral/Ink with "VISA" Overline, Mastercard = Primary/Red with two overlapping white circles; brand colours
- * aren't tokens) · "Visa ••••4242" (Body Medium) + "Default" Verified Tag on the first card, over "Expires 08/28"
- * (Caption, Slate) · trash button (Primary/Red icon, 44 touch area). Trash opens a confirm sheet
- * (Remove / Cancel). Footer Secondary "Add card" opens the Add a card sheet (AddCardSheet, profile mode); a valid card joins the list. Empty state when no cards are left.
+ * 12.4 Saved cards (doc p.48). Intro (Body, Slate) · one realistic PaymentCard per saved card (masked number, expiry,
+ * brand), with a "Default" Verified Tag under the first and a red "Remove card" text button (trash icon, ≥44 touch)
+ * at the end, which opens a confirm sheet (Remove / Cancel). Footer Secondary "Add card" opens the Add a card sheet (AddCardSheet, profile mode); a valid card joins the list. Empty state when no cards are left.
  */
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { AppText, BottomSheet, Button, Icon, IconBadge, Screen, TopBar, VerifiedTag } from '../../components';
+import { AppText, BottomSheet, Button, Icon, IconBadge, PaymentCard, Screen, TopBar, VerifiedTag } from '../../components';
 import { demoCards } from '../../mock/account';
 import { AddCardSheet } from './AddCardSheet';
-import { getTextStyle, useTheme } from '../../theme';
+import { useTheme } from '../../theme';
 import type { RootStackParamList } from '../../navigation/routes';
 
 const k = 'account.cards';
@@ -29,7 +27,7 @@ export function SavedCardsScreen({ navigation }: NativeStackScreenProps<RootStac
   return (
     <Screen>
       <TopBar title={tr(`${k}.title`)} onBack={() => navigation.goBack()} />
-      <ScrollView style={styles.flex} contentContainerStyle={{ paddingHorizontal: t.layout.screenGutter, gap: t.spacing['spacing/16'] }}>
+      <ScrollView style={styles.flex} contentContainerStyle={{ paddingHorizontal: t.layout.screenGutter, paddingBottom: t.spacing['spacing/24'], gap: t.spacing['spacing/24'] }}>
         <AppText variant="Body" color="Neutral/Slate">{tr(`${k}.intro`)}</AppText>
         {cards.length === 0 ? (
           <View style={{ alignItems: 'center', gap: t.spacing['spacing/12'], paddingTop: t.spacing['spacing/48'] }}>
@@ -37,47 +35,39 @@ export function SavedCardsScreen({ navigation }: NativeStackScreenProps<RootStac
             <AppText variant="Body" color="Neutral/Slate">{tr(`${k}.empty`)}</AppText>
           </View>
         ) : (
-          <View style={{ backgroundColor: t.colors['Neutral/Fog'], borderRadius: t.radius['radius/lg'], paddingHorizontal: t.spacing['spacing/16'] }}>
-          {cards.map((c, i) => (
-            <View
-              key={c.id}
-              accessible={false}
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                gap: t.spacing['spacing/12'],
-                paddingVertical: t.spacing['spacing/12'],
-                borderTopWidth: i > 0 ? t.stroke['stroke/xs'] : 0,
-                borderTopColor: t.colors['Alpha/Ink 10%'],
-              }}
-            >
-              <CardThumb brand={c.brand} />
-              <View style={styles.flex}>
-                <View style={{ flexDirection: 'row', alignItems: 'center', gap: t.spacing['spacing/8'] }}>
-                  <AppText variant="Body Medium">{label(c)}</AppText>
-                  {i === 0 ? <VerifiedTag label={tr(`${k}.default`)} /> : null}
-                </View>
-                <AppText variant="Caption" color="Neutral/Slate">{tr(`${k}.expires`, { date: `⁦${c.expires}⁩` })}</AppText>
+          cards.map((c, i) => (
+            <View key={c.id} style={{ gap: t.spacing['spacing/8'] }}>
+              <PaymentCard
+                brand={c.brand === 'Visa' || c.brand === 'Mastercard' ? c.brand : 'Unknown'}
+                number={c.last4}
+                masked
+                expires={c.expires}
+                expiresLabel={tr(`${k}.expiresLabel`)}
+                accessibilityLabel={`${label(c)}, ${tr(`${k}.expires`, { date: c.expires })}`}
+              />
+              <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                {i === 0 ? <VerifiedTag label={tr(`${k}.default`)} /> : <View />}
+                <Pressable
+                  onPress={() => setRemoving(c)}
+                  accessibilityRole="button"
+                  accessibilityLabel={`${tr(`${k}.remove`)}, ${label(c)}`}
+                  testID={`remove-${c.id}`}
+                  style={({ pressed }) => ({
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    gap: t.spacing['spacing/4'],
+                    minHeight: t.sizes.touchTarget,
+                    paddingHorizontal: t.spacing['spacing/8'],
+                    borderRadius: t.radius['radius/full'],
+                    backgroundColor: pressed ? t.colors['Alpha/Red 8%'] : undefined,
+                  })}
+                >
+                  <Icon name="trash" size={t.sizes.icon.sm} color="Primary/Red" />
+                  <AppText variant="Body Medium" color="Primary/Red">{tr(`${k}.remove`)}</AppText>
+                </Pressable>
               </View>
-              <Pressable
-                onPress={() => setRemoving(c)}
-                accessibilityRole="button"
-                accessibilityLabel={`${tr(`${k}.remove`)}, ${label(c)}`}
-                testID={`remove-${c.id}`}
-                style={({ pressed }) => ({
-                  width: t.sizes.touchTarget,
-                  height: t.sizes.touchTarget,
-                  borderRadius: t.radius['radius/full'],
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  backgroundColor: pressed ? t.colors['Alpha/Red 8%'] : undefined,
-                })}
-              >
-                <Icon name="trash" size={t.sizes.icon.md} color="Primary/Red" />
-              </Pressable>
             </View>
-          ))}
-          </View>
+          ))
         )}
       </ScrollView>
       <View style={{ paddingHorizontal: t.layout.screenGutter, paddingTop: t.spacing['spacing/16'], paddingBottom: t.layout.footerBottom }}>
@@ -106,28 +96,6 @@ export function SavedCardsScreen({ navigation }: NativeStackScreenProps<RootStac
         </View>
       </BottomSheet>
     </Screen>
-  );
-}
-
-/** Mini card face. Never mirrored. */
-function CardThumb({ brand }: { brand: string }) {
-  const t = useTheme();
-  const s = t.sizes.cardThumb;
-  const visa = brand === 'Visa';
-  return (
-    <View
-      accessible={false}
-      style={{ width: s.width, height: s.height, borderRadius: t.radius['radius/xs'], backgroundColor: t.colors[visa ? 'Neutral/Ink' : 'Primary/Red'], alignItems: 'center', justifyContent: 'center', flexDirection: 'row', direction: 'ltr' }}
-    >
-      {visa ? (
-        <AppText variant="Overline" color="Neutral/White" style={getTextStyle('Overline', 'en')}>VISA</AppText>
-      ) : (
-        <>
-          <View style={{ width: s.dot, height: s.dot, borderRadius: t.radius['radius/full'], backgroundColor: t.colors['Alpha/White 85%'] }} />
-          <View style={{ width: s.dot, height: s.dot, borderRadius: t.radius['radius/full'], backgroundColor: t.colors['Alpha/White 50%'], marginLeft: -t.spacing['spacing/6'] }} />
-        </>
-      )}
-    </View>
   );
 }
 
