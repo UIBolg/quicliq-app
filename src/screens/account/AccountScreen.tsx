@@ -5,7 +5,7 @@
  *  H2 "Account" ·
  *  profile card (Neutral/Fog, radius/xl, padding spacing/16): Avatar 56 · name (Title) + email (Caption, Slate) ·
  *    chevron → 12.2 (the limit lives only in the "Your limit" row) ·
- *  List Groups (every icon circle Alpha/Red 8% + Primary/Red, like Personal details): Account (Personal details, Saved cards, Your limit: "Level n of 3" tag, 3-segment bar, next step in Primary/Red, bold value → sending-limit sheet) ·
+ *  List Groups (every icon circle Alpha/Red 8% + Primary/Red, like Personal details): Account (Saved cards, Your limit: "Level n of 3" tag, 3-segment bar, next step in Primary/Red, bold value → sending-limit sheet) ·
  *    Preferences (Security, Language) · Support (Help, Legal) · Log out (danger row → 12.8 sheet → 7.1) ·
  *  app version (Caption, Slate, centred).
  * Floating TabBar with Profile active.
@@ -64,7 +64,6 @@ export function AccountScreen({ navigation }: Props) {
         </View>
 
         <ListGroup title={tr(`${k}.groups.account`)}>
-          <ListRow icon="user" title={tr(`${k}.rows.personal`)} onPress={() => navigation.navigate('12.2')} />
           <ListRow icon="card" title={tr(`${k}.rows.cards`)} onPress={() => navigation.navigate('12.4')} />
           <ListRow
             icon="trendingUp"

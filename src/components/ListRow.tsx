@@ -32,7 +32,8 @@ export type ListRowProps = {
   accessory?: ReactNode;
   /** Extra spoken state, e.g. "On" for a switch row. */
   accessibilityState?: { checked?: boolean };
-  onPress: () => void;
+  /** Omit for a read-only row (no chevron, not pressable). */
+  onPress?: () => void;
   tone?: 'default' | 'danger';
   /** Set by ListGroup on every row but the first. */
   divider?: boolean;
@@ -47,7 +48,8 @@ export function ListRow({ icon, title, subtitle, subtitleColor = 'Neutral/Slate'
     <Pressable
       testID={testID}
       onPress={onPress}
-      accessibilityRole={accessibilityState ? 'switch' : 'button'}
+      disabled={!onPress}
+      accessibilityRole={!onPress ? 'text' : accessibilityState ? 'switch' : 'button'}
       accessibilityState={accessibilityState}
       accessibilityLabel={[title, subtitle, value].filter(Boolean).join(', ')}
       {...focusProps}
@@ -83,7 +85,7 @@ export function ListRow({ icon, title, subtitle, subtitleColor = 'Neutral/Slate'
             {subtitle ? <AppText variant="Caption" color={subtitleColor}>{subtitle}</AppText> : null}
           </View>
           {value ? <AppText variant={valueStrong ? 'Body Medium' : 'Body'} color={valueStrong ? 'Neutral/Ink' : 'Neutral/Slate'}>{value}</AppText> : null}
-          {accessory ?? (danger ? null : <Icon name="chevronRight" size={t.sizes.icon.md} color="Neutral/Slate" />)}
+          {accessory ?? (danger || !onPress ? null : <Icon name="chevronRight" size={t.sizes.icon.md} color="Neutral/Slate" />)}
         </>
       )}
     </Pressable>

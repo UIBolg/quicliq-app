@@ -274,6 +274,10 @@
         "identity": "FROM YOUR ID CHECK",
         "contact": "CONTACT",
         "address": "HOME ADDRESS"
+      },
+      "edit": {
+        "email": "Change email",
+        "mobile": "Change mobile number"
       }
     },
     "password": {
