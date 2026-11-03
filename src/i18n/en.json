@@ -182,7 +182,7 @@
       "a11y": "{{used}} of {{total}} used",
       "caption": "of your {{total}} lifetime limit"
     },
-    "recipients": "Recent recipients",
+    "recipients": "Recent beneficiaries",
     "recipientNames": {
       "r1": "Layla Haddad",
       "r2": "Omar Khalil",
