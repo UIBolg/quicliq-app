@@ -6,7 +6,7 @@
  *   amount (Numeric L in the EN style, White) ·
  *   ProgressBar sm onBrand (`sizes.limitCard.progressWidth`) · caption (Caption, White 80%).
  * Level looks (chosen on the "Quicliq Home options" canvas, board "Limit levels · Simple"):
- *  1 Basic   — Alpha/Red 8% + Alpha/Red 12% border, Ink/Slate text, red art, Alpha/Red 12% tag, onTint bar.
+ *  1 Basic   — Alpha/Red 10% + Alpha/Red 12% border, Ink/Slate text, red art, Alpha/Red 12% tag, onTint bar.
  *  2 Plus    — Primary/Red, white text and art (the original card).
  *  3 Premium — Status/Failure/Dark (burgundy; no burgundy token yet, docs/figma-issues.md #48), white text and art,
  *              Alpha/Red 25% glow, solid Primary/Red tag, no progress bar.
@@ -28,7 +28,7 @@ const looks: Record<LimitCardLevel, {
   bg: ColorToken; border?: ColorToken; text: ColorToken; sub: ColorToken; tag: ColorToken; tagText: ColorToken;
   glow: ColorToken; trail: ColorToken; coin: ColorToken; coinText: ColorToken; plane: ColorToken; shade: ColorToken; bar: 'onTint' | 'onBrand';
 }> = {
-  1: { bg: 'Alpha/Red 8%', border: 'Alpha/Red 12%', text: 'Neutral/Ink', sub: 'Neutral/Slate', tag: 'Alpha/Red 12%', tagText: 'Primary/Red', glow: 'Alpha/Red 8%', trail: 'Alpha/Red 25%', coin: 'Primary/Red', coinText: 'Neutral/White', plane: 'Primary/Red', shade: 'Illustration/Red Shade', bar: 'onTint' },
+  1: { bg: 'Alpha/Red 10%', border: 'Alpha/Red 12%', text: 'Neutral/Ink', sub: 'Neutral/Slate', tag: 'Alpha/Red 12%', tagText: 'Primary/Red', glow: 'Alpha/Red 8%', trail: 'Alpha/Red 25%', coin: 'Primary/Red', coinText: 'Neutral/White', plane: 'Primary/Red', shade: 'Illustration/Red Shade', bar: 'onTint' },
   2: { bg: 'Primary/Red', text: 'Neutral/White', sub: 'Alpha/White 80%', tag: 'Alpha/White 20%', tagText: 'Neutral/White', glow: 'Alpha/White 14%', trail: 'Alpha/White 50%', coin: 'Neutral/White', coinText: 'Primary/Red', plane: 'Neutral/White', shade: 'Alpha/White 70%', bar: 'onBrand' },
   3: { bg: 'Status/Failure/Dark', text: 'Neutral/White', sub: 'Alpha/White 80%', tag: 'Primary/Red', tagText: 'Neutral/White', glow: 'Alpha/Red 25%', trail: 'Alpha/White 50%', coin: 'Neutral/White', coinText: 'Status/Failure/Dark', plane: 'Neutral/White', shade: 'Alpha/White 70%', bar: 'onBrand' },
 };
