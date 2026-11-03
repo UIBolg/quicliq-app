@@ -5,7 +5,7 @@
  * Neutral/White page, pt spacing/8 · gutter · pb spacing/32:
  *   top group (gap spacing/16): greeting row (Avatar brand · Caption Slate + Title · IconButton bell) ·
  *     next-level Action Banner (alert; ID & address at level 1, source of funds at level 2, none at 3) ·
- *     Limit Card (red, plane artwork, "Level n of 3" pill; tap → SendingLimitSheet) · Send money CTA card (red, icon + title + subtitle + chevron).
+ *     Limit Card (red, plane artwork; tap → SendingLimitSheet) · Send money CTA card (red, icon + title + subtitle + chevron).
  *   then (gap spacing/24): Recent recipients ("Add new" tile + 5 tint tiles, scrolls sideways) · Recent transfers (first 3 Transfer cards, gap spacing/8; See all → 11.1).
  * Composition only: every repeated pattern lives in src/components; every string in src/i18n.
  */
@@ -99,7 +99,6 @@ function Header({ level, notBuilt, onOpenLimit, onBell }: { level: LimitLevel; n
         value={sent}
         max={total}
         progressLabel={tr(`${k}.limit.a11y`, { used: formatMoney(sent), total: formatMoney(total) })}
-        linkLabel={tr(`${k}.levelLink`, { level })}
         onPress={onOpenLimit}
         testID="limit-card"
       />
