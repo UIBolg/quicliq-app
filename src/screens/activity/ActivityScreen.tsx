@@ -2,8 +2,8 @@
  * 11.1 Transfers history (History tab) — "Quicliq API Gap Analysis" 11.1 ("Activity"); no Figma frame yet (#43).
  * Page pt spacing/8 · gutter · pb spacing/32, gap spacing/16:
  *  H2 "Transfers history" · search Text Field (trailing search; filters by name) ·
- *  3 dropdown Filter Chips — Status (all/processing/delivered) · Sending type (all/bank/cash) · Date (any/30/90 days);
- *  each opens a Bottom Sheet of Radio Options; active chips turn Primary/Red; they combine with search (replaces 11.2) ·
+ *  3 dropdown Filter Chips — Status (all/processing/delivered) · Sending type (all/bank/cash) (Bottom Sheet of Radio Options) ·
+ *  Date (Bottom Sheet with a DateRangeCalendar, Clear / Apply; chip shows the range); active chips turn Primary/Red; they combine with search (replaces 11.2) ·
  *  month groups (Overline, Slate; gap spacing/8) of Transfer cards (→ 11.3, not built) · empty line when nothing matches.
  * Floating TabBar with History active. With the API: Transaction_LatestTransactions (paged) / Transaction_Search.
  */
@@ -11,7 +11,7 @@ import { useState } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { AppText, BottomSheet, FilterChip, RadioOption, Screen, TabBar, TextField, TransferRow } from '../../components';
+import { AppText, BottomSheet, Button, DateRangeCalendar, FilterChip, RadioOption, Screen, TabBar, TextField, TransferRow, formatRange } from '../../components';
 import { demoToday, demoTransfers } from '../../mock/account';
 import { useMainTabs } from '../../navigation/mainTabs';
 import { transferCardProps } from './transferCard';
@@ -22,25 +22,28 @@ const k = 'activity';
 const OPTIONS = {
   status: ['all', 'processing', 'delivered'],
   type: ['all', 'bank', 'cash'],
-  date: ['all', 'days30', 'days90'],
 } as const;
 type Group = keyof typeof OPTIONS;
 type Picked = { [G in Group]: (typeof OPTIONS)[G][number] };
-const DAY = 24 * 60 * 60 * 1000;
-const withinDays = (iso: string, days: number) => Date.parse(demoToday) - Date.parse(iso) <= days * DAY;
+type Range = { from: string; to?: string } | null;
 
 export function ActivityScreen({ navigation }: NativeStackScreenProps<RootStackParamList, '11.1'>) {
   const t = useTheme();
   const { t: tr } = useTranslation();
   const tabs = useMainTabs(navigation);
   const [query, setQuery] = useState('');
-  const [picked, setPicked] = useState<Picked>({ status: 'all', type: 'all', date: 'all' });
-  const [open, setOpen] = useState<Group | null>(null);
+  const [picked, setPicked] = useState<Picked>({ status: 'all', type: 'all' });
+  const [open, setOpen] = useState<Group | 'date' | null>(null);
+  const [range, setRange] = useState<Range>(null);
+  // Draft range + shown month while the date sheet is open; applied on "Apply".
+  const [draft, setDraft] = useState<Range>(null);
+  const [month, setMonth] = useState(`${demoToday.slice(0, 7)}-01`);
+  const openDate = () => { setDraft(range); setMonth(`${(range?.from ?? demoToday).slice(0, 7)}-01`); setOpen('date'); };
   const q = query.trim().toLowerCase();
   const items = demoTransfers.map((tx) => ({ tx, card: transferCardProps(tx, tr) })).filter((x) => !q || x.card.name.toLowerCase().includes(q))
     .filter(({ tx }) => picked.status === 'all' || tx.status === picked.status)
     .filter(({ tx }) => picked.type === 'all' || tx.method === picked.type)
-    .filter(({ tx }) => picked.date === 'all' || withinDays(tx.on, picked.date === 'days30' ? 30 : 90));
+    .filter(({ tx }) => !range || (tx.on >= range.from && tx.on <= (range.to ?? range.from)));
   const months = [...new Set(items.map((x) => x.tx.month))];
 
   return (
@@ -69,6 +72,13 @@ export function ActivityScreen({ navigation }: NativeStackScreenProps<RootStackP
               testID={`filter-${g}`}
             />
           ))}
+          <FilterChip
+            dropdown
+            label={range ? formatRange(t.locale, range.from, range.to) : tr(`${k}.groups.date`)}
+            selected={!!range}
+            onPress={openDate}
+            testID="filter-date"
+          />
         </ScrollView>
 
         {months.length === 0 ? <AppText variant="Body" color="Neutral/Slate">{tr(`${k}.empty`)}</AppText> : null}
@@ -82,8 +92,34 @@ export function ActivityScreen({ navigation }: NativeStackScreenProps<RootStackP
         ))}
       </ScrollView>
       <TabBar items={tabs.items} active="history" onSelect={tabs.onSelect} />
-      <BottomSheet visible={!!open} onClose={() => setOpen(null)}>
-        {open ? (
+      {/* Date range sheet */}
+      <BottomSheet visible={open === 'date'} onClose={() => setOpen(null)}>
+        <AppText variant="H3" accessibilityRole="header">{tr(`${k}.groups.date`)}</AppText>
+        <DateRangeCalendar
+          month={month}
+          onMonth={setMonth}
+          from={draft?.from}
+          to={draft?.to}
+          onChange={(from, to) => setDraft(from ? { from, to } : null)}
+          max={demoToday}
+          prevLabel={tr(`${k}.prevMonth`)}
+          nextLabel={tr(`${k}.nextMonth`)}
+        />
+        <AppText variant="Body" color="Neutral/Slate" style={{ textAlign: 'center' }}>
+          {draft ? formatRange(t.locale, draft.from, draft.to) : tr(`${k}.pickRange`)}
+        </AppText>
+        <View style={{ flexDirection: 'row', gap: t.spacing['spacing/12'] }}>
+          <View style={styles.flex}>
+            <Button type="secondary" label={tr(`${k}.clear`)} onPress={() => { setRange(null); setDraft(null); setOpen(null); }} testID="date-clear" />
+          </View>
+          <View style={styles.flex}>
+            <Button type={draft ? 'primary' : 'disabled'} label={tr(`${k}.apply`)} onPress={() => { setRange(draft); setOpen(null); }} testID="date-apply" />
+          </View>
+        </View>
+      </BottomSheet>
+
+      <BottomSheet visible={!!open && open !== 'date'} onClose={() => setOpen(null)}>
+        {open && open !== 'date' ? (
           <>
             <AppText variant="H3" accessibilityRole="header">{tr(`${k}.groups.${open}`)}</AppText>
             <View style={{ gap: t.spacing['spacing/8'] }}>

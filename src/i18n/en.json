@@ -382,12 +382,12 @@
         "all": "All types",
         "bank": "Bank deposit",
         "cash": "Cash pickup"
-      },
-      "date": {
-        "all": "Any time",
-        "days30": "Last 30 days",
-        "days90": "Last 3 months"
       }
-    }
+    },
+    "prevMonth": "Previous month",
+    "nextMonth": "Next month",
+    "pickRange": "Pick a start and an end date",
+    "apply": "Apply",
+    "clear": "Clear"
   }
 }

@@ -45,3 +45,4 @@ export * from './Switch';
 export * from './TopBar';
 export * from './CtaCard';
 export * from './FilterChip';
+export * from './DateRangeCalendar';

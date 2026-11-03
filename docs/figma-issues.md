@@ -50,3 +50,4 @@ Figma is never edited from code.
 | 43 | 11.1 Activity | No Figma frame; from "Quicliq API Gap Analysis" 11.1. | Built from tokens: H2 + filter Icon Button (→ 11.2, not built), search Text Field, month groups (Overline) of Transfer cards (Fog, radius/lg). Transfer row is now a card everywhere (Home too). History tab renamed "Activity". |
 | 44 | Home Send money CTA card | From the owner's design; no Figma component. | `CtaCard`: Primary/Red, radius/lg, 28 white icon, Title + Caption White 80%, white chevron. |
 | 45 | Transactions history filters | No Figma chip component; the doc uses a filter sheet (11.2). | `FilterChip` row (All, Processing, Delivered, Bank deposit, Cash pickup), 36 high pills, selected Primary/Red. |
+| 46 | Date range calendar | No Figma date picker. | `DateRangeCalendar` (month nav, 44 day cells, red start/end, Alpha/Red 8% band, future days disabled) in a sheet with Clear / Apply. |
