@@ -127,7 +127,8 @@
       "incorrect": "Incorrect mobile number or password. Please try again.",
       "tooMany": "Too many attempts. For your security, login is paused for 15 minutes.",
       "tryAgainIn": "Try again in {{time}}",
-      "resetPassword": "Reset password"
+      "resetPassword": "Reset password",
+      "demo": "Demo: open Home as"
     },
     "7_2": {
       "title": "Verify it’s you",
@@ -180,7 +181,8 @@
     "limit": {
       "title": "You can send",
       "a11y": "{{used}} of {{total}} used",
-      "caption": "of your {{total}} lifetime limit"
+      "caption": "of your {{total}} lifetime limit",
+      "noCap": "No lifetime limit"
     },
     "recipients": "Recent beneficiaries",
     "recipientNames": {
@@ -240,7 +242,12 @@
       "allDone": "You have the highest sending limit."
     },
     "addRecipient": "Add new",
-    "sendMoneyHint": "Transfer money internationally"
+    "sendMoneyHint": "Transfer money internationally",
+    "levels": {
+      "1": "Basic",
+      "2": "Plus",
+      "3": "Premium"
+    }
   },
   "account": {
     "title": "Account",

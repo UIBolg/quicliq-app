@@ -52,3 +52,4 @@ Figma is never edited from code.
 | 45 | Transactions history filters | No Figma chip component; the doc uses a filter sheet (11.2). | `FilterChip` row (All, Processing, Delivered, Bank deposit, Cash pickup), 36 high pills, selected Primary/Red. |
 | 46 | Date range calendar | No Figma date picker. | `DateRangeCalendar` (month nav, 44 day cells, red start/end, Alpha/Red 8% band, future days disabled) in a sheet with Clear / Apply. |
 | 47 | Payment card visual | No Figma card component. | `PaymentCard`: realistic card (brand fill Ink/Red, chip, number groups, expiry, brand mark), back face with CVV, animated 3D flip. Used in Add a card (live preview) and Saved cards. |
+| 48 | Limit card level colours | Burgundy for the Premium card has no token; the library has no level colours. | Basic = Alpha/Red 8% + 12% border; Plus = Primary/Red; Premium = Status/Failure/Dark (#7A1A12) as burgundy. Designer to add e.g. Brand/Burgundy. |

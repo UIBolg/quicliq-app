@@ -148,6 +148,23 @@ export function LoginScreen({ navigation, route }: NativeStackScreenProps<RootSt
 
           <View style={styles.flex} />
 
+          {/* Demo entry (no API yet): open Home straight at a sending-limit level. Remove with the real login. */}
+          <View style={{ paddingHorizontal: g, gap: t.spacing['spacing/8'], alignItems: 'center' }}>
+            <AppText variant="Caption" color="Neutral/Slate">{tr(`${k}.demo`)}</AppText>
+            <View style={{ flexDirection: 'row', gap: t.spacing['spacing/8'] }}>
+              {([1, 2, 3] as const).map((lvl) => (
+                <Button
+                  key={lvl}
+                  size="small"
+                  type="tonal"
+                  label={tr(`home.levels.${lvl}`)}
+                  onPress={() => navigation.reset({ index: 0, routes: [{ name: 'Home', params: { level: lvl } }] })}
+                  testID={`demo-level-${lvl}`}
+                />
+              ))}
+            </View>
+          </View>
+
           <View style={{ paddingTop: t.spacing['spacing/16'], paddingBottom: t.spacing['spacing/32'], paddingHorizontal: g, alignItems: 'center' }}>
             <Pressable
               onPress={() => navigation.navigate('NotBuilt', { screenId: '1.1' })}

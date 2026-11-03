@@ -34,6 +34,8 @@ export function HomeScreen({ navigation, route }: Props) {
   const t = useTheme();
   const { t: tr } = useTranslation();
   const level = route.params?.level ?? demoLimit.level;
+  // A level passed in (login demo entry / preview menu) becomes the demo account's level for the other tabs too.
+  if (route.params?.level) demoLimit.level = route.params.level;
   const [limitOpen, setLimitOpen] = useState(false);
   const notBuilt: NotBuilt = (screenId) => () => navigation.navigate('NotBuilt', { screenId });
   const tabs = useMainTabs(navigation);
@@ -96,8 +98,11 @@ function Header({ level, notBuilt, onOpenLimit, onBell }: { level: LimitLevel; n
       <View style={{ gap: t.spacing['spacing/8'] }}>
         <LimitCard
           label={tr(`${k}.limit.title`)}
-          amount={formatMoney(left)}
-          caption={tr(`${k}.limit.caption`, { total: formatMoney(total) })}
+          level={level}
+          levelName={tr(`${k}.levels.${level}`)}
+          hideProgress={level === 3}
+          amount={level === 3 ? `${formatMoney(limitTotal(2))}+` : formatMoney(left)}
+          caption={level === 3 ? tr(`${k}.limit.noCap`) : tr(`${k}.limit.caption`, { total: formatMoney(total) })}
           value={sent}
           max={total}
           progressLabel={tr(`${k}.limit.a11y`, { used: formatMoney(sent), total: formatMoney(total) })}

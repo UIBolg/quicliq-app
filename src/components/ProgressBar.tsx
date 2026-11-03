@@ -4,13 +4,15 @@
  * reads as "not started" rather than empty. Fill grows from the reading start (right in Arabic).
  *  tone default — Neutral/White track (on Fog surfaces), Primary/Red fill
  *  tone onBrand — Alpha/White 25% track (on Primary/Red surfaces), Neutral/White fill
+ *  tone onTint — Alpha/Red 12% track (on light-red surfaces), Primary/Red fill
  */
 import { View } from 'react-native';
 import { useTheme, type ColorToken } from '../theme';
 
-const tones: Record<'default' | 'onBrand', { track: ColorToken; fill: ColorToken }> = {
+const tones: Record<'default' | 'onBrand' | 'onTint', { track: ColorToken; fill: ColorToken }> = {
   default: { track: 'Neutral/White', fill: 'Primary/Red' },
   onBrand: { track: 'Alpha/White 25%', fill: 'Neutral/White' },
+  onTint: { track: 'Alpha/Red 12%', fill: 'Primary/Red' },
 };
 
 export type ProgressBarProps = {
