@@ -114,6 +114,9 @@ export const sizes = {
   /** LimitStep (code addition, sending-limit sheet): 32 status circle, 10 dot for the current step. */
   limitStep: { badge: 32, dot: 10 },
 
+  /** FilterChip (code addition, Transactions history): 36 high pill. */
+  chip: { height: 36 },
+
   /** CtaCard (code addition, Home Send money): 28 icon. */
   cta: { icon: 28 },
 

@@ -44,3 +44,4 @@ export * from './ListRow';
 export * from './Switch';
 export * from './TopBar';
 export * from './CtaCard';
+export * from './FilterChip';
