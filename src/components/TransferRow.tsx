@@ -1,6 +1,6 @@
 /**
  * Transfer card — one transfer as its own card (Home "Recent transfers" and 11.1 Activity; no Figma component yet,
- * docs/figma-issues.md #41). Neutral/Fog, radius/lg, padding spacing/16, gap spacing/12:
+ * docs/figma-issues.md #41). Neutral/Fog fill + Neutral/Dark Fog stroke/xs border (as in New Designs 32:764), radius/lg, padding spacing/16, gap spacing/12:
  *  Icon Badge 44 Red tint (Alpha/Red 10% + Primary/Red bank / cash icon, same colour as the recipient circles) · name (Body Medium) over method · date (Caption, Slate) ·
  *  amount (Body Medium, EN style, LTR) over a status pill (radius/full, Caption):
  *    Delivered = Status/Success/Light + Status/Success/Default · Processing = Neutral/White + Slate.
@@ -36,7 +36,7 @@ export function TransferRow({ name, method, methodLabel, date, amount, status, s
       onPress={onPress}
       accessibilityRole="button"
       accessibilityLabel={[name, methodLabel, date, amount, statusLabel].join(', ')}
-      style={{ flexDirection: 'row', alignItems: 'center', gap: t.spacing['spacing/12'], padding: t.spacing['spacing/16'], borderRadius: r, backgroundColor: t.colors['Neutral/Fog'], overflow: 'hidden' }}
+      style={{ flexDirection: 'row', alignItems: 'center', gap: t.spacing['spacing/12'], padding: t.spacing['spacing/16'], borderRadius: r, backgroundColor: t.colors['Neutral/Fog'], borderWidth: t.stroke['stroke/xs'], borderColor: t.colors['Neutral/Dark Fog'], overflow: 'hidden' }}
     >
       {({ pressed }) => (
         <>
