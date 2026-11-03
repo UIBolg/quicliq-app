@@ -17,6 +17,8 @@ import { useTheme, type ColorToken } from '../theme';
 
 export type ListRowProps = {
   icon: IconName;
+  /** Small label above the title (Caption, Slate) — for label/value rows, e.g. "Email" over the address. */
+  eyebrow?: string;
   title: string;
   subtitle?: string;
   /** Subtitle colour (default Slate), e.g. Primary/Red for a next-step hint. */
@@ -40,7 +42,7 @@ export type ListRowProps = {
   testID?: string;
 };
 
-export function ListRow({ icon, title, subtitle, subtitleColor = 'Neutral/Slate', titleAccessory, detail, valueStrong, value, accessory, accessibilityState, onPress, tone = 'default', divider, testID }: ListRowProps) {
+export function ListRow({ icon, eyebrow, title, subtitle, subtitleColor = 'Neutral/Slate', titleAccessory, detail, valueStrong, value, accessory, accessibilityState, onPress, tone = 'default', divider, testID }: ListRowProps) {
   const t = useTheme();
   const { focused, focusProps } = useFocusRing();
   const danger = tone === 'danger';
@@ -51,7 +53,7 @@ export function ListRow({ icon, title, subtitle, subtitleColor = 'Neutral/Slate'
       disabled={!onPress}
       accessibilityRole={!onPress ? 'text' : accessibilityState ? 'switch' : 'button'}
       accessibilityState={accessibilityState}
-      accessibilityLabel={[title, subtitle, value].filter(Boolean).join(', ')}
+      accessibilityLabel={[eyebrow, title, subtitle, value].filter(Boolean).join(', ')}
       {...focusProps}
       style={[
         styles.row,
@@ -77,6 +79,7 @@ export function ListRow({ icon, title, subtitle, subtitleColor = 'Neutral/Slate'
             <Icon name={icon} size={t.sizes.icon.md} color="Primary/Red" />
           </View>
           <View style={styles.flex}>
+            {eyebrow ? <AppText variant="Caption" color="Neutral/Slate">{eyebrow}</AppText> : null}
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: t.spacing['spacing/8'] }}>
               <AppText variant="Body Medium" color={danger ? 'Primary/Red' : 'Neutral/Ink'}>{title}</AppText>
               {titleAccessory}

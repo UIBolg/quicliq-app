@@ -1,16 +1,16 @@
 /**
  * 12.2 Personal details (doc p.46) — list view (owner's request), opened from the Account profile card.
- * TopBar · List Groups (List Rows: label as title, value as subtitle in Ink):
+ * TopBar · List Groups (List Rows: label as Caption eyebrow, value as the Body Medium title):
  *  From your ID check — Full name · Date of birth: read-only, lock icon at the end (they come from the ID check) ·
  *  Contact — Email · Mobile: tap opens an edit sheet (one Text Field + Save); a new mobile goes to code entry 2.4 ·
  *  Home address — tap opens the address finder (Loqate, not built yet).
- * Info Banner with lock under the locked group explains why.
+ * A Caption line with a 14 lock under the locked group explains why.
  */
 import { useState } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { AppText, Banner, BottomSheet, Button, Icon, ListGroup, ListRow, PhoneField, Screen, TextField, TopBar } from '../../components';
+import { AppText, BottomSheet, Button, Icon, ListGroup, ListRow, PhoneField, Screen, TextField, TopBar } from '../../components';
 import { demoAccount, demoProfile } from '../../mock/account';
 import { ltr } from '../../utils/format';
 import { useTheme } from '../../theme';
@@ -46,17 +46,20 @@ export function PersonalDetailsScreen({ navigation }: NativeStackScreenProps<Roo
       <ScrollView style={styles.flex} contentContainerStyle={{ paddingHorizontal: t.layout.screenGutter, paddingBottom: t.spacing['spacing/32'], gap: t.spacing['spacing/24'] }}>
         <View style={{ gap: t.spacing['spacing/8'] }}>
           <ListGroup title={tr(`${k}.sections.identity`)}>
-            <ListRow icon="user" title={tr(`${k}.fullName`)} subtitle={demoAccount.fullName} subtitleColor="Neutral/Ink" accessory={lock} />
-            <ListRow icon="calendar" title={tr(`${k}.dob`)} subtitle={ltr(demoProfile.dob)} subtitleColor="Neutral/Ink" accessory={lock} />
+            <ListRow icon="user" eyebrow={tr(`${k}.fullName`)} title={demoAccount.fullName} accessory={lock} />
+            <ListRow icon="calendar" eyebrow={tr(`${k}.dob`)} title={ltr(demoProfile.dob)} accessory={lock} />
           </ListGroup>
-          <Banner type="info" icon="lock" text={tr(`${k}.lockedNote`)} />
+          <View style={{ flexDirection: 'row', alignItems: 'flex-start', gap: t.spacing['spacing/6'], paddingHorizontal: t.spacing['spacing/4'] }}>
+            <Icon name="lock" size={t.sizes.icon.xs} color="Neutral/Slate" />
+            <AppText variant="Caption" color="Neutral/Slate" style={styles.flex}>{tr(`${k}.lockedNote`)}</AppText>
+          </View>
         </View>
         <ListGroup title={tr(`${k}.sections.contact`)}>
-          <ListRow icon="mail" title={tr(`${k}.email`)} subtitle={email} subtitleColor="Neutral/Ink" onPress={() => edit('email')} testID="row-email" />
-          <ListRow icon="smartphone" title={tr(`${k}.mobile`)} subtitle={ltr(`+44 ${mobile}`)} subtitleColor="Neutral/Ink" onPress={() => edit('mobile')} testID="row-mobile" />
+          <ListRow icon="mail" eyebrow={tr(`${k}.email`)} title={email} onPress={() => edit('email')} testID="row-email" />
+          <ListRow icon="smartphone" eyebrow={tr(`${k}.mobile`)} title={ltr(`+44 ${mobile}`)} onPress={() => edit('mobile')} testID="row-mobile" />
         </ListGroup>
         <ListGroup title={tr(`${k}.sections.address`)}>
-          <ListRow icon="pin" title={tr(`${k}.address`)} subtitle={ltr(demoProfile.address)} subtitleColor="Neutral/Ink" onPress={() => navigation.navigate('NotBuilt', { screenId: 'Find address (Loqate)' })} testID="row-address" />
+          <ListRow icon="pin" eyebrow={tr(`${k}.address`)} title={ltr(demoProfile.address)} onPress={() => navigation.navigate('NotBuilt', { screenId: 'Find address (Loqate)' })} testID="row-address" />
         </ListGroup>
       </ScrollView>
 
