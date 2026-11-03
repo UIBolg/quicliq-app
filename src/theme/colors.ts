@@ -11,6 +11,8 @@ export const colors = {
   'Neutral/Slate': '#595959',
   'Neutral/Silver': '#BFBFBF',
   'Neutral/Fog': '#F3F3F3',
+  /** Added in the Quicliq [Kitchen] library (read from New Designs 32:721). */
+  'Neutral/Dark Fog': '#EEEFF0',
   'Neutral/White': '#FFFFFF',
 
   'Status/Success/Default': '#067647',
