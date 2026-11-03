@@ -51,3 +51,4 @@ Figma is never edited from code.
 | 44 | Home Send money CTA card | From the owner's design; no Figma component. | `CtaCard`: Primary/Red, radius/lg, 28 white icon, Title + Caption White 80%, white chevron. |
 | 45 | Transactions history filters | No Figma chip component; the doc uses a filter sheet (11.2). | `FilterChip` row (All, Processing, Delivered, Bank deposit, Cash pickup), 36 high pills, selected Primary/Red. |
 | 46 | Date range calendar | No Figma date picker. | `DateRangeCalendar` (month nav, 44 day cells, red start/end, Alpha/Red 8% band, future days disabled) in a sheet with Clear / Apply. |
+| 47 | Payment card visual | No Figma card component. | `PaymentCard`: realistic card (brand fill Ink/Red, chip, number groups, expiry, brand mark), back face with CVV, animated 3D flip. Used in Add a card (live preview) and Saved cards. |

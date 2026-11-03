@@ -296,7 +296,8 @@
       "confirm": "Remove",
       "cancel": "Cancel",
       "default": "Default",
-      "intro": "Cards you’ve paid with are saved here for faster transfers."
+      "intro": "Cards you’ve paid with are saved here for faster transfers.",
+      "expiresLabel": "VALID THRU"
     },
     "security": {
       "title": "Security",

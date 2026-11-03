@@ -1,6 +1,6 @@
 /**
  * Add a card — bottom sheet from the owner's Send money design (6.5a); reused by 12.4 Saved cards.
- * Title (H3) · Card number Text Field (digits grouped in 4s, 16 digits) · Expiry (MM/YY) + CVV (3 digits, hidden) side by side,
+ * Title (H3) · live PaymentCard preview (flips to the back while CVV is focused) · Card number Text Field (digits grouped in 4s, 16 digits) · Expiry (MM/YY) + CVV (3 digits, hidden) side by side,
  * gap spacing/12 · "Save this card" row with a Switch (payment context only — in Saved cards the card is always saved) ·
  * Primary button ("Use this card" in payment, "Save card" in the profile), disabled until all fields are valid.
  * Brand from the first digit (4 Visa, 5 Mastercard). With the API: Checkout.com card capture + 3DS (6.5a).
@@ -8,7 +8,7 @@
 import { useState } from 'react';
 import { Pressable, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import { AppText, BottomSheet, Button, Switch, TextField } from '../../components';
+import { AppText, BottomSheet, Button, PaymentCard, Switch, TextField } from '../../components';
 import { useTheme } from '../../theme';
 
 export type NewCard = { brand: 'Visa' | 'Mastercard'; last4: string; expires: string; save: boolean };
@@ -28,6 +28,7 @@ export function AddCardSheet({ visible, context, onClose, onDone }: {
   const [expiry, setExpiry] = useState('');
   const [cvv, setCvv] = useState('');
   const [save, setSave] = useState(true);
+  const [cvvFocused, setCvvFocused] = useState(false);
 
   const n = digits(number);
   const [mm, yy] = [Number(expiry.slice(0, 2)), expiry.slice(3)];
@@ -43,6 +44,15 @@ export function AddCardSheet({ visible, context, onClose, onDone }: {
   return (
     <BottomSheet visible={visible} onClose={close}>
       <AppText variant="H3" accessibilityRole="header">{tr(`${k}.title`)}</AppText>
+      {/* Live card preview: fills in as you type and flips to the back while the CVV field is focused. */}
+      <PaymentCard
+        brand={n.startsWith('4') ? 'Visa' : n.startsWith('5') ? 'Mastercard' : 'Unknown'}
+        number={n}
+        expires={expiry}
+        cvv={digits(cvv)}
+        expiresLabel={tr('account.cards.expiresLabel')}
+        flipped={cvvFocused}
+      />
       <View style={{ gap: t.spacing['spacing/12'] }}>
         <TextField
           label={tr(`${k}.number`)}
@@ -72,6 +82,8 @@ export function AddCardSheet({ visible, context, onClose, onDone }: {
               keyboardType="number-pad"
               autoComplete="cc-csc"
               secureTextEntry
+              onFocus={() => setCvvFocused(true)}
+              onBlur={() => setCvvFocused(false)}
               testID="card-cvv"
             />
           </View>

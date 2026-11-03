@@ -120,6 +120,9 @@ export const sizes = {
   /** CtaCard (code addition, Home Send money): 28 icon. */
   cta: { icon: 28 },
 
+  /** PaymentCard (code addition, 12.4 + Add a card): ISO card ratio, chip, mark, strip, flip perspective. */
+  paymentCard: { aspect: 1.586, chipW: 40, chipH: 30, markDot: 26, glow: 220, strip: 40, numberSpacing: 1.5, perspective: 1000 },
+
   /** Saved-card thumbnail (code addition, 12.4): 48×32 mini card, 14 Mastercard circles. */
   cardThumb: { width: 48, height: 32, dot: 14 },
 
