@@ -92,18 +92,21 @@ function Header({ level, notBuilt, onOpenLimit, onBell }: { level: LimitLevel; n
         />
       ) : null}
 
-      <LimitCard
-        label={tr(`${k}.limit.title`)}
-        amount={formatMoney(left)}
-        caption={tr(`${k}.limit.caption`, { total: formatMoney(total) })}
-        value={sent}
-        max={total}
-        progressLabel={tr(`${k}.limit.a11y`, { used: formatMoney(sent), total: formatMoney(total) })}
-        onPress={onOpenLimit}
-        testID="limit-card"
-      />
+      {/* Limit card and Send money sit closer together (spacing/8) than the rest of the header (spacing/16). */}
+      <View style={{ gap: t.spacing['spacing/8'] }}>
+        <LimitCard
+          label={tr(`${k}.limit.title`)}
+          amount={formatMoney(left)}
+          caption={tr(`${k}.limit.caption`, { total: formatMoney(total) })}
+          value={sent}
+          max={total}
+          progressLabel={tr(`${k}.limit.a11y`, { used: formatMoney(sent), total: formatMoney(total) })}
+          onPress={onOpenLimit}
+          testID="limit-card"
+        />
 
-      <CtaCard icon="send" title={tr(`${k}.sendMoney`)} subtitle={tr(`${k}.sendMoneyHint`)} onPress={notBuilt('Send money')} testID="home-send" />
+        <CtaCard icon="send" title={tr(`${k}.sendMoney`)} subtitle={tr(`${k}.sendMoneyHint`)} onPress={notBuilt('Send money')} testID="home-send" />
+      </View>
     </View>
   );
 }
