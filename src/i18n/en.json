@@ -174,7 +174,7 @@
     "tabs": {
       "home": "Home",
       "send": "Send",
-      "history": "Transactions history",
+      "history": "Transfers history",
       "profile": "Account"
     },
     "limit": {
@@ -359,7 +359,7 @@
     }
   },
   "activity": {
-    "title": "Transactions history",
+    "title": "Transfers history",
     "search": "Search by name",
     "empty": "No transfers match.",
     "months": {
@@ -367,12 +367,27 @@
       "2026-09": "September 2026",
       "2026-08": "August 2026"
     },
-    "filters": {
-      "all": "All",
-      "processing": "Processing",
-      "delivered": "Delivered",
-      "bank": "Bank deposit",
-      "cash": "Cash pickup"
+    "groups": {
+      "status": "Status",
+      "type": "Sending type",
+      "date": "Date"
+    },
+    "options": {
+      "status": {
+        "all": "All statuses",
+        "processing": "Processing",
+        "delivered": "Delivered"
+      },
+      "type": {
+        "all": "All types",
+        "bank": "Bank deposit",
+        "cash": "Cash pickup"
+      },
+      "date": {
+        "all": "Any time",
+        "days30": "Last 30 days",
+        "days90": "Last 3 months"
+      }
     }
   }
 }

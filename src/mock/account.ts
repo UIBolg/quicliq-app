@@ -22,15 +22,18 @@ export const demoAccount = {
   resendSeconds: 59,
 } as const;
 
+/** Demo "today" for date filters. */
+export const demoToday = '2026-11-03';
+
 /** Sample transfers, newest first (Home shows the first 3; 11.1 Activity shows all, grouped by month). Names come from home.recipientNames. */
 export const demoTransfers = [
-  { id: 't1', recipient: 'r1', amount: '250.00', date: '28 Oct', month: '2026-10', method: 'bank', status: 'delivered' },
-  { id: 't2', recipient: 'r2', amount: '120.00', date: '14 Oct', month: '2026-10', method: 'cash', status: 'delivered' },
-  { id: 't3', recipient: 'r3', amount: '75.50', date: '02 Oct', month: '2026-10', method: 'bank', status: 'processing' },
-  { id: 't4', recipient: 'r4', amount: '300.00', date: '21 Sep', month: '2026-09', method: 'bank', status: 'delivered' },
-  { id: 't5', recipient: 'r5', amount: '60.00', date: '09 Sep', month: '2026-09', method: 'cash', status: 'delivered' },
-  { id: 't6', recipient: 'r1', amount: '180.00', date: '27 Aug', month: '2026-08', method: 'bank', status: 'delivered' },
-  { id: 't7', recipient: 'r2', amount: '95.00', date: '11 Aug', month: '2026-08', method: 'cash', status: 'delivered' },
+  { id: 't1', on: '2026-10-28', recipient: 'r1', amount: '250.00', date: '28 Oct', month: '2026-10', method: 'bank', status: 'delivered' },
+  { id: 't2', on: '2026-10-14', recipient: 'r2', amount: '120.00', date: '14 Oct', month: '2026-10', method: 'cash', status: 'delivered' },
+  { id: 't3', on: '2026-10-02', recipient: 'r3', amount: '75.50', date: '02 Oct', month: '2026-10', method: 'bank', status: 'processing' },
+  { id: 't4', on: '2026-09-21', recipient: 'r4', amount: '300.00', date: '21 Sep', month: '2026-09', method: 'bank', status: 'delivered' },
+  { id: 't5', on: '2026-09-09', recipient: 'r5', amount: '60.00', date: '09 Sep', month: '2026-09', method: 'cash', status: 'delivered' },
+  { id: 't6', on: '2026-08-27', recipient: 'r1', amount: '180.00', date: '27 Aug', month: '2026-08', method: 'bank', status: 'delivered' },
+  { id: 't7', on: '2026-08-11', recipient: 'r2', amount: '95.00', date: '11 Aug', month: '2026-08', method: 'cash', status: 'delivered' },
 ] as const;
 
 /** Demo credential check for 7.1 (mobile compared on digits only, email case-insensitive). */
