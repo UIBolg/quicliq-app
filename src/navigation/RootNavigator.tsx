@@ -13,6 +13,10 @@ import { OnboardingScreen } from '../screens/onboarding/OnboardingScreen';
 import { LoginScreen } from '../screens/login/LoginScreen';
 import { VerifyLoginScreen } from '../screens/login/VerifyLoginScreen';
 import { ChooseCodeMethodScreen } from '../screens/login/ChooseCodeMethodScreen';
+import { NewDeviceScreen } from '../screens/login/NewDeviceScreen';
+import { ContactSupportScreen } from '../screens/login/ContactSupportScreen';
+import { VerifyDetailsScreen } from '../screens/login/VerifyDetailsScreen';
+import { DeviceVerifiedScreen, VerifyLockedScreen } from '../screens/login/DeviceMessageScreens';
 import { OfflineScreen } from '../screens/login/OfflineScreen';
 import { IdExpiredScreen } from '../screens/login/IdExpiredScreen';
 import { HomeScreen } from '../screens/home/HomeScreen';
@@ -76,6 +80,14 @@ export function RootNavigator() {
         <Stack.Screen name="7.2a" component={VerifyLoginScreen} />
         <Stack.Screen name="7.2b" component={VerifyLoginScreen} />
         <Stack.Screen name="7.2c" component={ChooseCodeMethodScreen} />
+        <Stack.Screen name="7.7" component={NewDeviceScreen} />
+        <Stack.Screen name="7.7c" component={ContactSupportScreen} />
+        <Stack.Screen name="7.8" component={VerifyDetailsScreen} />
+        <Stack.Screen name="7.8c" component={VerifyLockedScreen} />
+        <Stack.Screen name="7.8d" component={ChooseCodeMethodScreen} />
+        <Stack.Screen name="7.9" component={VerifyLoginScreen} />
+        <Stack.Screen name="7.9b" component={VerifyLoginScreen} />
+        <Stack.Screen name="7.11" component={DeviceVerifiedScreen} />
         <Stack.Screen name="7.5" component={OfflineScreen} />
         <Stack.Screen name="7.6" component={IdExpiredScreen} />
         <Stack.Screen name="Home" component={HomeScreen} options={{ animation: 'fade', gestureEnabled: false }} />

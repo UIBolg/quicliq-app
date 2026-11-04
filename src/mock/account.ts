@@ -91,7 +91,11 @@ export const demoCards = [
 export const demoDevice = { name: 'iPhone 15' };
 
 /** Help contacts (13.1). PLACEHOLDERS — replace with Quicliq's real support phone, email and help page. */
-export const supportContacts = { phone: '+440000000000', phoneDisplay: '+44 00 0000 0000', email: 'support@example.com', articlesUrl: 'https://example.com/help' };
+/** Support contacts from the build doc (7.7c). */
+export const supportContacts = { phone: '+442080731090', phoneDisplay: '+44 208 073 10 90', email: 'info@levexpress.co.uk', office: 'Chiswick Park, London W4 5YA', articlesUrl: 'https://example.com/help' };
+
+/** New-device check (7.8): details that match the demo ID (date as DDMMYYYY digits); 3 tries. Demo values only. */
+export const demoIdentity = { first: 'James', middle: 'Robert', last: 'Carter', dob: '14031990', attempts: 3 } as const;
 
 /** Notifications (13.2); `opens` = the screen the row leads to. */
 export const demoNotifications = [

@@ -32,6 +32,8 @@ export type TextFieldProps = Omit<TextInputProps, 'style' | 'placeholderTextColo
   onPress?: () => void;
   /** Force a visual state (component gallery only). */
   previewState?: TextFieldState;
+  /** Keep the value left-to-right in RTL (dates, numbers); it still sits at the start side. */
+  ltrValue?: boolean;
   testID?: string;
 };
 
@@ -48,7 +50,7 @@ const look: Record<TextFieldState, { bg?: ColorToken; border?: ColorToken; dashe
 };
 
 export function TextField({
-  label, value = '', helper, error, invalid, locked, trailing = 'none', onPress, previewState, testID,
+  label, value = '', helper, error, invalid, locked, trailing = 'none', onPress, previewState, ltrValue, testID,
   secureTextEntry, onFocus, onBlur, placeholder, ...inputProps
 }: TextFieldProps) {
   const t = useTheme();
@@ -81,7 +83,7 @@ export function TextField({
           accessibilityHint={error ?? helper}
           onFocus={(e) => { setFocused(true); onFocus?.(e); }}
           onBlur={(e) => { setFocused(false); onBlur?.(e); }}
-          style={[t.text('Body Large'), styles.input, { color: t.colors[c.value], textAlign: t.isRTL ? 'right' : 'left' }]}
+          style={[t.text('Body Large'), styles.input, { color: t.colors[c.value], textAlign: t.isRTL ? 'right' : 'left' }, ltrValue && t.isRTL ? { writingDirection: 'ltr' } : null]}
         />
       )}
     </View>

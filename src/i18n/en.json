@@ -12,7 +12,8 @@
     "hidePassword": "Hide password",
     "locked": "Locked",
     "ruleMet": "met",
-    "ruleUnmet": "not met"
+    "ruleUnmet": "not met",
+    "continue": "Continue"
   },
   "gallery": {
     "title": "Component gallery",
@@ -128,7 +129,8 @@
       "tooMany": "Too many attempts. For your security, login is paused for 15 minutes.",
       "tryAgainIn": "Try again in {{time}}",
       "resetPassword": "Reset password",
-      "demo": "Demo: open Home as"
+      "demo": "Demo: open Home as",
+      "demoNewDevice": "New device"
     },
     "7_2": {
       "title": "Verify it’s you",
@@ -152,6 +154,58 @@
       "body": "To keep sending money, verify your identity with a valid ID. It only takes a couple of minutes.",
       "verify": "Verify my identity",
       "later": "Remind me later"
+    },
+    "7_7": {
+      "title": "New device detected",
+      "body": "For your security, we need to confirm it’s you before using this device.",
+      "steps": {
+        "details": "Confirm your personal details",
+        "code": "Enter the code we send you",
+        "trusted": "This becomes your trusted device"
+      },
+      "oneDevice": "Only one device can be active at a time. You’ll be logged out of your other device."
+    },
+    "7_7c": {
+      "title": "Contact support",
+      "hero": "We’re here to help",
+      "body": "Get in touch and we’ll help you with your account.",
+      "call": "Call us",
+      "email": "Email us",
+      "office": "Visit our office",
+      "security": "Never share your password or verification code with anyone.",
+      "callSupport": "Call support",
+      "emailSupport": "Email support"
+    },
+    "7_8": {
+      "title": "Verify it’s you",
+      "body": "Enter these details exactly as they appear on your ID.",
+      "first": "First name",
+      "middle": "Middle name",
+      "last": "Last name",
+      "dob": "Date of birth",
+      "dobFormat": "DD / MM / YYYY",
+      "note": "We’ll send a 6-digit code to {{maskedPhone}}.",
+      "mismatch_one": "These details don’t match our records. You have 1 attempt left.",
+      "mismatch_other": "These details don’t match our records. You have {{count}} attempts left."
+    },
+    "7_8c": {
+      "title": "We couldn’t verify you",
+      "body": "You’ve used all 3 attempts. For your security, you can’t log in on this phone right now. Contact support to continue.",
+      "back": "Back to log in"
+    },
+    "7_8d": {
+      "title": "Where should we send your code?",
+      "body": "Your email address is verified, so you can get your code by text or by email."
+    },
+    "7_9": {
+      "title": "Enter your code",
+      "textedTo": "We’ve texted a 6-digit code to",
+      "emailedTo": "We’ve emailed a 6-digit code to",
+      "noCode": "Didn’t get a code?"
+    },
+    "7_11": {
+      "title": "Device verified",
+      "body": "This device is now linked to your account. We’ll ask you to verify again if you log in on another device."
     }
   },
   "notBuilt": {

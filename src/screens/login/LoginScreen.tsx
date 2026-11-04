@@ -162,6 +162,7 @@ export function LoginScreen({ navigation, route }: NativeStackScreenProps<RootSt
                   testID={`demo-level-${lvl}`}
                 />
               ))}
+              <Button size="small" type="tonal" label={tr(`${k}.demoNewDevice`)} onPress={() => navigation.navigate('7.7')} testID="demo-new-device" />
             </View>
           </View>
 

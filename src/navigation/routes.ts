@@ -6,6 +6,9 @@
  *  7.2a / 7.2b — verify login, code by text (220:6506) / by email (220:6600); wrong code 7.2d (220:6739) is a state
  *  7.2c        — try another way (220:6694)
  *  7.5 / 7.6   — offline (82:9735) / ID expired (82:9762); 7.3 and 7.4 are states of 7.1
+ *  7.7–7.11    — new device (New Designs "Login — English (LTR)" 57:28130): 7.7 new device · 7.7c contact support ·
+ *                7.8 details (7.8b mismatch is a state) · 7.8c locked · 7.8d code method · 7.9 / 7.9b code (7.10 wrong code
+ *                is a state) · 7.11 device verified
  *  Home        — proposal (no Figma frame yet), see src/screens/home/HomeScreen.tsx
  *  11.1        — Activity (History tab): transfer cards grouped by month
  *  12.1–12.8   — Account (Profile tab) and its inner pages, from "Quicliq API Gap Analysis" pp.45–52 (no Figma frames):
@@ -23,6 +26,14 @@ export type RootStackParamList = {
   '7.2a': { phone?: string; email?: string; previewState?: 'wrongCode' } | undefined;
   '7.2b': { phone?: string; email?: string; previewState?: 'wrongCode' } | undefined;
   '7.2c': { phone: string; email: string; method: 'sms' | 'email' };
+  '7.7': undefined;
+  '7.7c': undefined;
+  '7.8': undefined;
+  '7.8c': undefined;
+  '7.8d': { phone?: string; email?: string; method?: 'sms' | 'email' } | undefined;
+  '7.9': { phone?: string; email?: string; previewState?: 'wrongCode' } | undefined;
+  '7.9b': { phone?: string; email?: string; previewState?: 'wrongCode' } | undefined;
+  '7.11': undefined;
   '7.5': undefined;
   '7.6': undefined;
   /** level: sending-limit level to show (preview menu); defaults to the demo account's level. */

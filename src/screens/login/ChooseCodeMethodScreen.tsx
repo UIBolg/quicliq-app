@@ -10,16 +10,24 @@ import { ScrollView, StyleSheet, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { AppText, BackButton, Button, RadioOption, Screen } from '../../components';
+import { demoAccount } from '../../mock/account';
 import { maskEmail, maskPhone } from '../../utils/mask';
 import { useTheme } from '../../theme';
 import type { RootStackParamList } from '../../navigation/routes';
 
-export function ChooseCodeMethodScreen({ navigation, route }: NativeStackScreenProps<RootStackParamList, '7.2c'>) {
+export function ChooseCodeMethodScreen({ navigation, route }: NativeStackScreenProps<RootStackParamList, '7.2c' | '7.8d'>) {
   const t = useTheme();
   const { t: tr } = useTranslation();
-  const { phone, email } = route.params;
-  const [method, setMethod] = useState<'sms' | 'email'>(route.params.method);
-  const k = 'login.7_2c';
+  // 7.8d "Where should we send your code?" (New Designs 57:28400, new-device flow; only when the email is verified).
+  const newDevice = route.name === '7.8d';
+  const phone = route.params?.phone ?? demoAccount.phone;
+  const email = route.params?.email ?? demoAccount.email;
+  const [method, setMethod] = useState<'sms' | 'email'>(route.params?.method ?? 'sms');
+  const k = newDevice ? 'login.7_8d' : 'login.7_2c';
+  const send = () => {
+    if (newDevice) navigation.navigate(method === 'sms' ? '7.9' : '7.9b', { phone, email });
+    else navigation.popTo(method === 'sms' ? '7.2a' : '7.2b', { phone, email });
+  };
   const g = t.layout.screenGutter;
 
   return (
@@ -33,14 +41,14 @@ export function ChooseCodeMethodScreen({ navigation, route }: NativeStackScreenP
           <AppText variant="Body Large" color="Neutral/Slate">{tr(`${k}.body`)}</AppText>
         </View>
         <View accessibilityRole="radiogroup" style={{ gap: t.spacing['spacing/12'] }}>
-          <RadioOption icon="smartphone" title={tr(`${k}.sms`)} subtitle={maskPhone(phone)} selected={method === 'sms'} onPress={() => setMethod('sms')} testID="method-sms" />
-          <RadioOption icon="mail" title={tr(`${k}.email`)} subtitle={maskEmail(email)} selected={method === 'email'} onPress={() => setMethod('email')} testID="method-email" />
+          <RadioOption icon="smartphone" title={tr('login.7_2c.sms')} subtitle={maskPhone(phone)} selected={method === 'sms'} onPress={() => setMethod('sms')} testID="method-sms" />
+          <RadioOption icon="mail" title={tr('login.7_2c.email')} subtitle={maskEmail(email)} selected={method === 'email'} onPress={() => setMethod('email')} testID="method-email" />
         </View>
       </ScrollView>
       <View style={{ paddingTop: t.spacing['spacing/16'], paddingHorizontal: g, paddingBottom: t.spacing['spacing/40'] }}>
         <Button
-          label={tr(`${k}.send`)}
-          onPress={() => navigation.popTo(method === 'sms' ? '7.2a' : '7.2b', { phone, email })}
+          label={tr('login.7_2c.send')}
+          onPress={send}
           testID="send-code"
         />
       </View>

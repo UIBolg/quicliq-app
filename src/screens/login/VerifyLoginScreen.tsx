@@ -7,6 +7,7 @@
  * masked number/email in Title + Small Tonal "Edit"), Code input, [Error box 7.2d], Help row (Resend Countdown at start,
  * "Try another way" Body Medium Primary/Red at end) · Keypad (mock; device-frame preview only — phones use the
  * native number pad with SMS autofill).
+ * 7.9 / 7.9b / 7.10 (New Designs 57:28130) reuse it for a new device: "Enter your code", correct → 7.11, "Didn’t get a code?" → 7.8d.
  * Correct code → Home. Wrong code → 7.2d with attempts left (3 total). Edit → back to 7.1.
  */
 import { useEffect, useRef, useState } from 'react';
@@ -19,15 +20,18 @@ import {
 import { demoAccount } from '../../mock/account';
 import { inDeviceFrame } from '../../platform/deviceFrame';
 import { maskEmail, maskPhone } from '../../utils/mask';
+import { ltr } from '../../utils/format';
 import { useTheme } from '../../theme';
 import type { RootStackParamList } from '../../navigation/routes';
 
-type Props = NativeStackScreenProps<RootStackParamList, '7.2a' | '7.2b'>;
+type Props = NativeStackScreenProps<RootStackParamList, '7.2a' | '7.2b' | '7.9' | '7.9b'>;
 
 export function VerifyLoginScreen({ navigation, route }: Props) {
   const t = useTheme();
   const { t: tr } = useTranslation();
-  const method = route.name === '7.2b' ? 'email' : 'sms';
+  const method = route.name === '7.2b' || route.name === '7.9b' ? 'email' : 'sms';
+  // 7.9 / 7.9b (New Designs, new-device flow): same screen, "Enter your code", correct code → 7.11, help link → 7.8d.
+  const newDevice = route.name === '7.9' || route.name === '7.9b';
   const phone = route.params?.phone || demoAccount.phone;
   const email = route.params?.email || demoAccount.email;
 
@@ -41,12 +45,15 @@ export function VerifyLoginScreen({ navigation, route }: Props) {
   useEffect(() => () => clearTimeout(timer.current), []);
 
   const locked = attemptsLeft === 0;
-  const k = 'login.7_2';
+  const k = newDevice ? 'login.7_9' : 'login.7_2';
 
   const submit = (value: string) => {
     if (value === demoAccount.code) {
       setStatus('success');
-      timer.current = setTimeout(() => navigation.reset({ index: 0, routes: [{ name: 'Home' }] }), t.states.motion.mockRequest);
+      timer.current = setTimeout(
+        () => (newDevice ? navigation.reset({ index: 0, routes: [{ name: '7.11' }] }) : navigation.reset({ index: 0, routes: [{ name: 'Home' }] })),
+        t.states.motion.mockRequest,
+      );
     } else {
       setStatus('error');
       setAttemptsLeft((a) => Math.max(0, a - 1));
@@ -91,7 +98,7 @@ export function VerifyLoginScreen({ navigation, route }: Props) {
           <AppText variant="H2" accessibilityRole="header">{tr(`${k}.title`)}</AppText>
           <AppText variant="Body Large" color="Neutral/Slate">{tr(`${k}.${method === 'sms' ? 'textedTo' : 'emailedTo'}`)}</AppText>
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: t.spacing['spacing/16'] }}>
-            <AppText variant="Title">{method === 'sms' ? maskPhone(phone) : maskEmail(email)}</AppText>
+            <AppText variant="Title">{ltr(method === 'sms' ? maskPhone(phone) : maskEmail(email))}</AppText>
             <Button size="small" type="tonal" icon="edit" label={tr('common.edit')} onPress={() => navigation.goBack()} />
           </View>
         </View>
@@ -114,14 +121,14 @@ export function VerifyLoginScreen({ navigation, route }: Props) {
         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: t.spacing['spacing/8'] }}>
           <ResendCountdown secondsLeft={secondsLeft} total={demoAccount.resendSeconds} onResend={resend} />
           <Pressable
-            onPress={() => navigation.navigate('7.2c', { phone, email, method })}
+            onPress={() => (newDevice ? navigation.popTo('7.8d') : navigation.navigate('7.2c', { phone, email, method }))}
             accessibilityRole="link"
             hitSlop={t.spacing['spacing/12']}
             testID="try-another-way"
           >
             {({ pressed }) => (
               <AppText variant="Body Medium" color="Primary/Red" style={pressed ? styles.underline : undefined}>
-                {tr('components.tryAnotherWay')}
+                {newDevice ? tr(`${k}.noCode`) : tr('components.tryAnotherWay')}
               </AppText>
             )}
           </Pressable>
