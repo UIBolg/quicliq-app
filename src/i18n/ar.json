@@ -134,7 +134,9 @@
       "tryAgainIn": "حاول مجدداً بعد {{time}}",
       "resetPassword": "إعادة تعيين كلمة المرور",
       "demo": "تجربة: افتح الرئيسية كـ",
-      "demoNewDevice": "جهاز جديد"
+      "demoNewDevice": "جهاز جديد",
+      "demoFaceId": "عائد · Face ID",
+      "demoFingerprint": "عائد · البصمة"
     },
     "7_2": {
       "title": "تحقق من هويتك",
@@ -214,6 +216,37 @@
     "7_11": {
       "title": "تم التحقق من الجهاز",
       "body": "تم ربط هذا الجهاز بحسابك. سنطلب منك التحقق مجدداً عند تسجيل الدخول من جهاز آخر."
+    },
+    "7_0": {
+      "title": "أهلاً بعودتك يا {{name}}",
+      "number": "رقمك ينتهي بـ {{last4}}",
+      "faceId": "الدخول باستخدام Face ID",
+      "faceIdAgain": "إعادة المحاولة بـ Face ID",
+      "faceIdPrompt": "Face ID",
+      "fingerprint": "الدخول بالبصمة",
+      "faceIdOut": "لم ينجح Face ID ثلاث مرات. أدخل كلمة المرور لتسجيل الدخول.",
+      "fingerprintTitle": "الدخول بالبصمة",
+      "touchSensor": "المس مستشعر البصمة",
+      "usePassword": "استخدام كلمة المرور",
+      "fingerprintOut": "لم تنجح البصمة ثلاث مرات. أدخل كلمة المرور لتسجيل الدخول.",
+      "faceIdFail_zero": "لم يتعرّف Face ID عليك. لم تتبقَّ محاولات.",
+      "faceIdFail_one": "لم يتعرّف Face ID عليك. تبقّت لديك محاولة واحدة.",
+      "faceIdFail_two": "لم يتعرّف Face ID عليك. تبقّت لديك محاولتان.",
+      "faceIdFail_few": "لم يتعرّف Face ID عليك. تبقّت لديك {{count}} محاولات.",
+      "faceIdFail_many": "لم يتعرّف Face ID عليك. تبقّت لديك {{count}} محاولة.",
+      "faceIdFail_other": "لم يتعرّف Face ID عليك. تبقّت لديك {{count}} محاولة.",
+      "fingerprintFail_zero": "لم يتم التعرّف على البصمة. لم تتبقَّ محاولات.",
+      "fingerprintFail_one": "لم يتم التعرّف على البصمة. حاول مجدداً. تبقّت محاولة واحدة.",
+      "fingerprintFail_two": "لم يتم التعرّف على البصمة. حاول مجدداً. تبقّت محاولتان.",
+      "fingerprintFail_few": "لم يتم التعرّف على البصمة. حاول مجدداً. تبقّت {{count}} محاولات.",
+      "fingerprintFail_many": "لم يتم التعرّف على البصمة. حاول مجدداً. تبقّت {{count}} محاولة.",
+      "fingerprintFail_other": "لم يتم التعرّف على البصمة. حاول مجدداً. تبقّت {{count}} محاولة.",
+      "wrongPassword_zero": "كلمة المرور غير صحيحة. لم تتبقَّ محاولات.",
+      "wrongPassword_one": "كلمة المرور غير صحيحة. تبقّت محاولة واحدة.",
+      "wrongPassword_two": "كلمة المرور غير صحيحة. تبقّت محاولتان.",
+      "wrongPassword_few": "كلمة المرور غير صحيحة. تبقّت {{count}} محاولات.",
+      "wrongPassword_many": "كلمة المرور غير صحيحة. تبقّت {{count}} محاولة.",
+      "wrongPassword_other": "كلمة المرور غير صحيحة. تبقّت {{count}} محاولة."
     }
   },
   "notBuilt": {

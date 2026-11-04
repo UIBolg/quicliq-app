@@ -162,7 +162,11 @@ export function LoginScreen({ navigation, route }: NativeStackScreenProps<RootSt
                   testID={`demo-level-${lvl}`}
                 />
               ))}
+            </View>
+            <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: t.spacing['spacing/8'] }}>
               <Button size="small" type="tonal" label={tr(`${k}.demoNewDevice`)} onPress={() => navigation.navigate('7.7')} testID="demo-new-device" />
+              <Button size="small" type="tonal" label={tr(`${k}.demoFaceId`)} onPress={() => navigation.navigate('7.0', { biometric: 'faceId' })} testID="demo-face-id" />
+              <Button size="small" type="tonal" label={tr(`${k}.demoFingerprint`)} onPress={() => navigation.navigate('7.0', { biometric: 'fingerprint' })} testID="demo-fingerprint" />
             </View>
           </View>
 

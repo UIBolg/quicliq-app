@@ -2,6 +2,7 @@
  * Route names = Figma screen IDs (build doc rule). Screens without a number in Figma use their frame name.
  *  Splash      — "Splash — Loading" 82:11650 / AR 82:11716
  *  Onboarding  — "Onboarding 1–4 — Illustrated" + "Choose language" sheet (202:6388 / AR 202:6715)
+ *  7.0         — welcome back, returning customer (139:3333 / AR 139:3887); 7.0a–7.0i are states
  *  7.1         — "7.1 Login" 82:9641 (mobile) and "7.1b Login — email" 138:3251 (same screen, method param)
  *  7.2a / 7.2b — verify login, code by text (220:6506) / by email (220:6600); wrong code 7.2d (220:6739) is a state
  *  7.2c        — try another way (220:6694)
@@ -21,6 +22,8 @@
 export type RootStackParamList = {
   Splash: undefined;
   Onboarding: undefined;
+  /** 7.0 Welcome back (returning customer); biometric the user enabled at sign-up (7.0i = both). */
+  '7.0': { biometric?: 'faceId' | 'fingerprint' | 'both' } | undefined;
   /** previewState: open directly in the 7.3 / 7.4 state (device-frame preview menu only). */
   '7.1': { method?: 'mobile' | 'email'; previewState?: 'incorrect' | 'locked' } | undefined;
   '7.2a': { phone?: string; email?: string; previewState?: 'wrongCode' } | undefined;

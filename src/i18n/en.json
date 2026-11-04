@@ -130,7 +130,9 @@
       "tryAgainIn": "Try again in {{time}}",
       "resetPassword": "Reset password",
       "demo": "Demo: open Home as",
-      "demoNewDevice": "New device"
+      "demoNewDevice": "New device",
+      "demoFaceId": "Returning · Face ID",
+      "demoFingerprint": "Returning · Fingerprint"
     },
     "7_2": {
       "title": "Verify it’s you",
@@ -206,6 +208,25 @@
     "7_11": {
       "title": "Device verified",
       "body": "This device is now linked to your account. We’ll ask you to verify again if you log in on another device."
+    },
+    "7_0": {
+      "title": "Welcome back, {{name}}",
+      "number": "{{number}}",
+      "faceId": "Log in with Face ID",
+      "faceIdAgain": "Try Face ID again",
+      "faceIdPrompt": "Face ID",
+      "fingerprint": "Log in with fingerprint",
+      "faceIdFail_one": "Face ID didn’t recognise you. You have 1 attempt left.",
+      "faceIdFail_other": "Face ID didn’t recognise you. You have {{count}} attempts left.",
+      "faceIdOut": "Face ID didn’t work 3 times. Enter your password to log in.",
+      "fingerprintTitle": "Log in with fingerprint",
+      "touchSensor": "Touch the fingerprint sensor",
+      "usePassword": "Use password",
+      "fingerprintFail_one": "Not recognised. Try again. 1 attempt left.",
+      "fingerprintFail_other": "Not recognised. Try again. {{count}} attempts left.",
+      "fingerprintOut": "Fingerprint didn’t work 3 times. Enter your password to log in.",
+      "wrongPassword_one": "Incorrect password. 1 attempt left.",
+      "wrongPassword_other": "Incorrect password. {{count}} attempts left."
     }
   },
   "notBuilt": {
