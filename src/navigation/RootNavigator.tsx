@@ -13,6 +13,8 @@ import { OnboardingScreen } from '../screens/onboarding/OnboardingScreen';
 import { LoginScreen } from '../screens/login/LoginScreen';
 import { VerifyLoginScreen } from '../screens/login/VerifyLoginScreen';
 import { ChooseCodeMethodScreen } from '../screens/login/ChooseCodeMethodScreen';
+import { AboutYouScreen } from '../screens/registration/AboutYouScreen';
+import { AccountDetailsScreen } from '../screens/registration/AccountDetailsScreen';
 import { WelcomeBackScreen } from '../screens/login/WelcomeBackScreen';
 import { NewDeviceScreen } from '../screens/login/NewDeviceScreen';
 import { ContactSupportScreen } from '../screens/login/ContactSupportScreen';
@@ -82,6 +84,8 @@ export function RootNavigator() {
         <Stack.Screen name="7.2a" component={VerifyLoginScreen} />
         <Stack.Screen name="7.2b" component={VerifyLoginScreen} />
         <Stack.Screen name="7.2c" component={ChooseCodeMethodScreen} />
+        <Stack.Screen name="1.1" component={AboutYouScreen} />
+        <Stack.Screen name="2.1" component={AccountDetailsScreen} />
         <Stack.Screen name="7.0" component={WelcomeBackScreen} />
         <Stack.Screen name="7.7" component={NewDeviceScreen} />
         <Stack.Screen name="7.7c" component={ContactSupportScreen} />

@@ -174,7 +174,7 @@ export function LoginScreen({ navigation, route }: NativeStackScreenProps<RootSt
 
           <View style={{ paddingTop: t.spacing['spacing/16'], paddingBottom: t.spacing['spacing/32'], paddingHorizontal: g, alignItems: 'center' }}>
             <Pressable
-              onPress={() => navigation.navigate('NotBuilt', { screenId: '1.1' })}
+              onPress={() => navigation.navigate('1.1')}
               accessibilityRole="link"
               accessibilityLabel={`${tr(`${k}.noAccount`)} ${tr(`${k}.signUp`)}`}
               hitSlop={t.spacing['spacing/12']}

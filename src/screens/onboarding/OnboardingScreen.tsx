@@ -114,7 +114,7 @@ export function OnboardingScreen({ navigation }: NativeStackScreenProps<RootStac
 
       {/* Actions — fixed */}
       <View style={{ paddingHorizontal: g, paddingTop: t.spacing['spacing/24'], paddingBottom: t.spacing['spacing/40'], gap: t.spacing['spacing/12'] }}>
-        <Button type="primary" label={tr('onboarding.signUp')} onPress={() => navigation.navigate('NotBuilt', { screenId: '1.1' })} testID="sign-up" />
+        <Button type="primary" label={tr('onboarding.signUp')} onPress={() => navigation.navigate('1.1')} testID="sign-up" />
         <Button type="secondary" label={tr('onboarding.logIn')} onPress={() => navigation.navigate('7.1')} testID="log-in" />
       </View>
 

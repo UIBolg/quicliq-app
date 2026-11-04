@@ -91,6 +91,9 @@ export const demoCards = [
 export const demoDevice = { name: 'iPhone 15' };
 
 /** Help contacts (13.1). PLACEHOLDERS — replace with Quicliq's real support phone, email and help page. */
+/** Registration (2.1): the mobile number the ownership check says is registered in the user's name. Demo value. */
+export const demoRegistration = { ownedMobile: '7700900123' } as const;
+
 /** System screens (9.1 / 9.2): app versions, store link and maintenance end time from the API. Demo values. */
 export const demoSystem = { version: '2.4.0', latest: '3.0.0', storeUrl: 'https://apps.apple.com', backBy: '14:00' } as const;
 

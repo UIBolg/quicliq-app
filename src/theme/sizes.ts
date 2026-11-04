@@ -121,6 +121,8 @@ export const sizes = {
   cta: { icon: 28 },
   /** 7.0a / 7.0c biometric prompt: Fog circle with the Face ID / fingerprint icon. */
   biometric: { circle: 88, icon: 48 },
+  /** DateWheel (1.1b): 40 rows, 5 visible. */
+  wheel: { item: 40, rows: 5 },
 
   /** PaymentCard (code addition, 12.4 + Add a card): ISO card ratio, chip, mark, strip, flip perspective. */
   paymentCard: { aspect: 1.586, chipW: 40, chipH: 30, markDot: 26, glow: 220, strip: 40, numberSpacing: 1.5, perspective: 1000 },

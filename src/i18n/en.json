@@ -13,7 +13,8 @@
     "locked": "Locked",
     "ruleMet": "met",
     "ruleUnmet": "not met",
-    "continue": "Continue"
+    "continue": "Continue",
+    "done": "Done"
   },
   "gallery": {
     "title": "Component gallery",
@@ -79,6 +80,74 @@
         "lower": "One lowercase letter",
         "number": "One number",
         "special": "One special character"
+      },
+      "title": "Your account details",
+      "passwordPlaceholder": "Create a password",
+      "create": "Create account",
+      "match": "Passwords match",
+      "errors": {
+        "mobile": "Enter a UK mobile number starting with 7.",
+        "email": "Enter a valid email address.",
+        "match": "Passwords don’t match."
+      },
+      "nextCode": "Next, we’ll text a 6-digit code to {{phone}}.",
+      "checking": "Checking this number is registered in your name...",
+      "ok": {
+        "title": "Your number checks out",
+        "body": "This number is registered in your name. Next, we’ll text you a 6-digit code to verify it.",
+        "tag": "Registered in your name",
+        "send": "Send code"
+      },
+      "no": {
+        "title": "We couldn’t confirm your number",
+        "body": "This mobile number isn’t registered to the name you gave us. Enter a UK mobile number that’s registered in your name.",
+        "checks": [
+          "Use a number in your own name, not a family member’s or a work phone",
+          "Check the number is typed correctly"
+        ],
+        "different": "Enter a different number",
+        "note": "If you continue, your sending limit will be £0 until you verify your ID and address in the app.",
+        "continue": "Continue with this number"
+      }
+    },
+    "step": "Step {{step}} of {{total}}",
+    "thingsToCheck": "Things to check",
+    "1_1": {
+      "title": "About you",
+      "intro": "Enter your name and date of birth exactly as they appear on your ID.",
+      "first": "First name",
+      "middle": "Middle name (optional)",
+      "last": "Last name",
+      "dob": "Date of birth",
+      "dobFormat": "DD / MM / YYYY",
+      "dobHelper": "You must be 18 or older to open an account.",
+      "day": "Day",
+      "month": "Month",
+      "year": "Year",
+      "errors": {
+        "required": "Enter your name as it appears on your ID.",
+        "letters": "Use letters only. Numbers and special characters aren’t allowed.",
+        "age": "You must be 18 or older to register."
+      },
+      "creditNote": "This is not a credit check and won’t affect your credit score.",
+      "matched": {
+        "title": "Your details check out",
+        "body": "Your details match official records and there’s no existing account. Next, set up your login details.",
+        "tag": "Matched"
+      },
+      "unknown": {
+        "title": "We couldn’t confirm your details",
+        "body": "Your name and date of birth didn’t match official records. Please check them and try again.",
+        "checks": [
+          "Use your full legal name, including middle names",
+          "Check the day and month aren’t swapped",
+          "Enter your name exactly as it appears on your ID"
+        ],
+        "edit": "Edit my details"
+      },
+      "exists": {
+        "title": "You already have an account",
+        "body": "An account with these details already exists. Log in, or reset your password if you’ve forgotten it."
       }
     }
   },
