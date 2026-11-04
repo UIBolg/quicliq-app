@@ -40,3 +40,6 @@ yarn-error.*
 /ios
 /android
 
+
+# Copied from @lottiefiles/dotlottie-web at build time (scripts/copy-lottie-wasm.js)
+public/dotlottie-player.wasm

@@ -32,7 +32,7 @@ jobs:
         run: npm ci
 
       - name: Export web
-        run: npx expo export --platform web
+        run: node scripts/copy-lottie-wasm.js && npx expo export --platform web
 
       # GitHub Pages has no SPA fallback: serve the app for unknown paths so refresh / deep links work.
       # .nojekyll keeps folders that start with "_" (Expo's _expo/ bundle folder) from being dropped.

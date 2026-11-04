@@ -1,10 +1,13 @@
 /**
- * Splash — Loading. Matches the visible Figma frames EN 82:11650 / AR 82:11716: a plain Primary/Red screen with a
- * light status bar. In Figma the content is a Lottie animation (placeholder layer linking to LottieFiles); the file
- * is not in Figma yet, so nothing is drawn on top (docs/figma-issues.md #23).
+ * Splash — Loading. Figma EN 82:11650 / AR 82:11716: Primary/Red screen, light status bar, Lottie animation on top —
+ * the product owner's splash.json (390×844, plays once, covers the screen; still last frame with Reduce Motion).
+ * Resolves docs/figma-issues.md #23.
  * Waits for the saved language (and, later, app config / forced-update checks) then replaces itself with Onboarding.
  */
 import { useEffect } from 'react';
+import LottieView from 'lottie-react-native';
+import { splashLottie } from '../../assets/lottie';
+import { useReduceMotion } from '../../platform/reduceMotion';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
@@ -17,6 +20,7 @@ export function SplashScreen({ navigation }: NativeStackScreenProps<RootStackPar
   const t = useTheme();
   const { t: tr } = useTranslation();
   const { ready } = useLocale();
+  const reduce = useReduceMotion();
 
   useEffect(() => {
     if (!ready) return;
@@ -26,7 +30,9 @@ export function SplashScreen({ navigation }: NativeStackScreenProps<RootStackPar
 
   return (
     <Screen background="Primary/Red" statusBar="light" edges={[]}>
-      <View style={{ flex: 1 }} accessible accessibilityRole="progressbar" accessibilityLabel={`${tr('common.logo')}, ${tr('common.loading')}`} />
+      <View style={{ flex: 1 }} accessible accessibilityRole="progressbar" accessibilityLabel={`${tr('common.logo')}, ${tr('common.loading')}`}>
+        <LottieView source={splashLottie} autoPlay={!reduce} loop={false} progress={reduce ? 1 : undefined} resizeMode="cover" style={{ flex: 1 }} />
+      </View>
     </Screen>
   );
 }
