@@ -391,37 +391,20 @@
     },
     "options": {
       "status": {
+        "all": "كل الحالات",
         "processing": "قيد المعالجة",
         "delivered": "تم التسليم"
       },
       "type": {
+        "all": "كل الأنواع",
         "bank": "إيداع بنكي",
         "cash": "استلام نقدي"
       }
     },
     "prevMonth": "الشهر السابق",
     "nextMonth": "الشهر التالي",
-    "filter": "تصفية",
-    "sheetTitle": "تصفية الحوالات",
-    "clearAll": "مسح الكل",
-    "remove": "إزالة التصفية",
-    "matches_one": "حوالة واحدة مطابقة",
-    "matches_other": "{{count}} حوالة مطابقة",
-    "show_one": "عرض حوالة واحدة",
-    "show_other": "عرض {{count}} حوالة",
-    "date": {
-      "d7": "آخر 7 أيام",
-      "d30": "آخر 30 يوماً",
-      "d90": "آخر 3 أشهر",
-      "custom": "فترة مخصصة"
-    },
-    "matches_zero": "لا توجد حوالات مطابقة",
-    "matches_two": "حوالتان مطابقتان",
-    "matches_few": "{{count}} حوالات مطابقة",
-    "matches_many": "{{count}} حوالة مطابقة",
-    "show_zero": "لا توجد حوالات",
-    "show_two": "عرض حوالتين",
-    "show_few": "عرض {{count}} حوالات",
-    "show_many": "عرض {{count}} حوالة"
+    "pickRange": "اختر تاريخ البداية والنهاية",
+    "apply": "تطبيق",
+    "clear": "مسح"
   }
 }
