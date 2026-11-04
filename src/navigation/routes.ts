@@ -3,6 +3,8 @@
  *  Splash      — "Splash — Loading" 82:11650 / AR 82:11716
  *  Onboarding  — "Onboarding 1–4 — Illustrated" + "Choose language" sheet (202:6388 / AR 202:6715)
  *  1.1 / 2.1   — registration step 1 About you (1.1–1.7 are states/sheets) and step 2 Account details (2.1–2.3d)
+ *  2.4 / 2.9   — verify number (2.4–2.8, 2.4g/2.7b states) · account created (2.9 / 2.9b via idCheck)
+ *  3.6         — biometric setup (3.6 Face ID / 3.1b fingerprint via kind)
  *  7.0         — welcome back, returning customer (139:3333 / AR 139:3887); 7.0a–7.0i are states
  *  7.1         — "7.1 Login" 82:9641 (mobile) and "7.1b Login — email" 138:3251 (same screen, method param)
  *  7.2a / 7.2b — verify login, code by text (220:6506) / by email (220:6600); wrong code 7.2d (220:6739) is a state
@@ -26,6 +28,10 @@ export type RootStackParamList = {
   Onboarding: undefined;
   '1.1': undefined;
   '2.1': { firstName: string; fullName: string };
+  /** idCheck: number not in the user's name (2.4g / 2.7b → 2.9b). */
+  '2.4': { phone: string; firstName: string; idCheck?: boolean };
+  '2.9': { firstName: string; idCheck?: boolean };
+  '3.6': { kind?: 'faceId' | 'fingerprint' } | undefined;
   /** 7.0 Welcome back (returning customer); biometric the user enabled at sign-up (7.0i = both). */
   '7.0': { biometric?: 'faceId' | 'fingerprint' | 'both' } | undefined;
   /** previewState: open directly in the 7.3 / 7.4 state (device-frame preview menu only). */

@@ -149,6 +149,67 @@
         "title": "You already have an account",
         "body": "An account with these details already exists. Log in, or reset your password if you’ve forgotten it."
       }
+    },
+    "2_4": {
+      "title": "Verify your number",
+      "textedTo": "We’ve texted a 6-digit code to",
+      "noCode": "Didn’t get a code?",
+      "newCode": "New code sent. It can take up to a minute.",
+      "verifying": "Verifying...",
+      "verified": "Number verified",
+      "creating": "Creating your account...",
+      "helpBody": "It can take up to a minute to arrive. Check the number below is right.",
+      "resendText": "Resend by text",
+      "availableIn": "Available in {{time}}",
+      "change": "Change mobile number",
+      "changeBody": "We’ll text a new code to this number. UK mobile numbers only.",
+      "sendNew": "Send new code",
+      "cancel": "Cancel",
+      "check07": "Make sure it’s a UK mobile number starting with 07"
+    },
+    "2_9": {
+      "title": "Account created",
+      "welcome": "Welcome, {{name}}! You can start sending now.",
+      "welcomeId": "Welcome, {{name}}! Verify your ID and address to start sending.",
+      "idBanner": "Your number isn’t registered in your name, so we need to check your ID and address first. You can’t send money until your ID and address are verified.",
+      "yourLimit": "Your sending limit",
+      "lifetime": "Total you can send over the lifetime of your account",
+      "raise": "Raise your limit",
+      "total": "total",
+      "done": "Done",
+      "steps": {
+        "account": "Create your account",
+        "id": "Verify your ID and address",
+        "idHint": "Passport or driving licence + a recent bill · 3 min",
+        "idRequired": "Required to start sending · 3 min",
+        "funds": "Add your source of funds",
+        "fundsHint": "Unlocks after ID and address"
+      },
+      "verify": "Verify ID and address",
+      "later": "Maybe later"
+    },
+    "3_6": {
+      "notNow": "Not now",
+      "faceId": {
+        "title": "Log in faster with Face ID",
+        "body": "Use Face ID instead of typing your password each time.",
+        "benefits": [
+          "Faster, one-glance login",
+          "Your face data never leaves your phone",
+          "Extra protection for every transfer"
+        ],
+        "enable": "Enable Face ID"
+      },
+      "fingerprint": {
+        "title": "Log in faster with your fingerprint",
+        "body": "Use your fingerprint instead of typing your password each time.",
+        "benefits": [
+          "Faster, one-touch login",
+          "Your fingerprint data never leaves your phone",
+          "Extra protection for every transfer"
+        ],
+        "enable": "Enable fingerprint"
+      }
     }
   },
   "onboarding": {

@@ -15,6 +15,9 @@ import { VerifyLoginScreen } from '../screens/login/VerifyLoginScreen';
 import { ChooseCodeMethodScreen } from '../screens/login/ChooseCodeMethodScreen';
 import { AboutYouScreen } from '../screens/registration/AboutYouScreen';
 import { AccountDetailsScreen } from '../screens/registration/AccountDetailsScreen';
+import { VerifyNumberScreen } from '../screens/registration/VerifyNumberScreen';
+import { AccountCreatedScreen } from '../screens/registration/AccountCreatedScreen';
+import { BiometricSetupScreen } from '../screens/registration/BiometricSetupScreen';
 import { WelcomeBackScreen } from '../screens/login/WelcomeBackScreen';
 import { NewDeviceScreen } from '../screens/login/NewDeviceScreen';
 import { ContactSupportScreen } from '../screens/login/ContactSupportScreen';
@@ -86,6 +89,9 @@ export function RootNavigator() {
         <Stack.Screen name="7.2c" component={ChooseCodeMethodScreen} />
         <Stack.Screen name="1.1" component={AboutYouScreen} />
         <Stack.Screen name="2.1" component={AccountDetailsScreen} />
+        <Stack.Screen name="2.4" component={VerifyNumberScreen} />
+        <Stack.Screen name="2.9" component={AccountCreatedScreen} />
+        <Stack.Screen name="3.6" component={BiometricSetupScreen} />
         <Stack.Screen name="7.0" component={WelcomeBackScreen} />
         <Stack.Screen name="7.7" component={NewDeviceScreen} />
         <Stack.Screen name="7.7c" component={ContactSupportScreen} />

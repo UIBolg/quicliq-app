@@ -30,7 +30,7 @@ const RULES = {
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export const ukDisplay = (digits: string) => `+44 ${digits.slice(0, 4)} ${digits.slice(4)}`;
 
-export function AccountDetailsScreen({ navigation }: NativeStackScreenProps<RootStackParamList, '2.1'>) {
+export function AccountDetailsScreen({ navigation, route }: NativeStackScreenProps<RootStackParamList, '2.1'>) {
   const t = useTheme();
   const { t: tr } = useTranslation();
   const g = t.layout.screenGutter;
@@ -132,7 +132,7 @@ export function AccountDetailsScreen({ navigation }: NativeStackScreenProps<Root
               <AppText variant="Body Medium" style={styles.flex}>{phone}</AppText>
               <VerifiedTag label={tr(`${k}.ok.tag`)} />
             </View>
-            <Button label={tr(`${k}.ok.send`)} onPress={() => { setSheet(null); navigation.navigate('NotBuilt', { screenId: '2.4' }); }} testID="send-code" />
+            <Button label={tr(`${k}.ok.send`)} onPress={() => { setSheet(null); navigation.navigate('2.4', { phone: digits, firstName: route.params.firstName }); }} testID="send-code" />
           </>
         ) : sheet === 'no' ? (
           <>
@@ -140,7 +140,7 @@ export function AccountDetailsScreen({ navigation }: NativeStackScreenProps<Root
             <ThingsToCheck title={tr('registration.thingsToCheck')} items={tr(`${k}.no.checks`, { returnObjects: true }) as string[]} />
             <Button label={tr(`${k}.no.different`)} onPress={() => { setSheet(null); setMobileKey((n) => n + 1); }} testID="different-number" />
             <AppText variant="Caption" color="Neutral/Slate" style={{ textAlign: 'center' }}>{tr(`${k}.no.note`)}</AppText>
-            <Button type="secondary" label={tr(`${k}.no.continue`)} onPress={() => { setSheet(null); navigation.navigate('NotBuilt', { screenId: '2.4g' }); }} testID="continue-number" />
+            <Button type="secondary" label={tr(`${k}.no.continue`)} onPress={() => { setSheet(null); navigation.navigate('2.4', { phone: digits, firstName: route.params.firstName, idCheck: true }); }} testID="continue-number" />
           </>
         ) : null}
       </BottomSheet>
