@@ -22,6 +22,12 @@ export const colors = {
   'Status/Failure/Dark': '#7A1A12',
   'Status/Failure/Light': '#FEF3F2',
 
+  // Info set — code addition on the owner's request (Home verify banner); not in the Figma library yet,
+  // docs/figma-issues.md #49. Designer to add or replace.
+  'Status/Info/Default': '#1D5BBF',
+  'Status/Info/Dark': '#123A7A',
+  'Status/Info/Light': '#EAF2FD',
+
   'Brand/Logo Red': '#EA2328',
   'System/Keyboard': '#D6D7DC',
   'Flag/UK Blue': '#012169',
