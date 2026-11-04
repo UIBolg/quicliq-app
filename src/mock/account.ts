@@ -94,6 +94,11 @@ export const demoDevice = { name: 'iPhone 15' };
 /** Registration (2.1): the mobile number the ownership check says is registered in the user's name. Demo value. */
 export const demoRegistration = { ownedMobile: '7700900123' } as const;
 
+/** Verify ID and address (4.x): what the ID scan reads, the postcode lookup result and demo uploads. Demo values. */
+export const demoIdScan = { title: 'Mr', first: 'James', middle: 'Robert', last: 'Carter', birthCountry: 'United Kingdom', birthDate: '14 Mar 1990', idType: 'Passport', idNumber: '533412891', issuer: 'United Kingdom', expiry: '22 Aug 2031' } as const;
+export const demoAddress = { postcode: 'SW1A 1AA', country: 'United Kingdom', county: 'Greater London', city: 'London', line1: '10 Downing Street' } as const;
+export const demoUploads = { id: { name: 'passport-photo-page.jpg', size: '2.4 MB' }, address: { name: 'british-gas-bill-oct.pdf', size: '1.2 MB' } } as const;
+
 /** System screens (9.1 / 9.2): app versions, store link and maintenance end time from the API. Demo values. */
 export const demoSystem = { version: '2.4.0', latest: '3.0.0', storeUrl: 'https://apps.apple.com', backBy: '14:00' } as const;
 

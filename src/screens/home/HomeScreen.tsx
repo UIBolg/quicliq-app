@@ -37,7 +37,8 @@ export function HomeScreen({ navigation, route }: Props) {
   // A level passed in (login demo entry / preview menu) becomes the demo account's level for the other tabs too.
   if (route.params?.level) demoLimit.level = route.params.level;
   const [limitOpen, setLimitOpen] = useState(false);
-  const notBuilt: NotBuilt = (screenId) => () => navigation.navigate('NotBuilt', { screenId });
+  // ID and address (level 2) opens the 4.0 "Raise your sending limit" sheet; other levels aren't built yet.
+  const notBuilt: NotBuilt = (screenId) => () => (screenId === '4.1' ? navigation.navigate('4.0') : navigation.navigate('NotBuilt', { screenId }));
   const tabs = useMainTabs(navigation);
 
   return (
@@ -58,7 +59,7 @@ export function HomeScreen({ navigation, route }: Props) {
         level={level}
         sent={demoLimit.sent}
         onClose={() => setLimitOpen(false)}
-        onRaise={(screenId) => { setLimitOpen(false); navigation.navigate('NotBuilt', { screenId }); }}
+        onRaise={(screenId) => { setLimitOpen(false); notBuilt(screenId)(); }}
       />
     </Screen>
   );

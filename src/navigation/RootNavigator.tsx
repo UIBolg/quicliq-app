@@ -18,6 +18,10 @@ import { AccountDetailsScreen } from '../screens/registration/AccountDetailsScre
 import { VerifyNumberScreen } from '../screens/registration/VerifyNumberScreen';
 import { AccountCreatedScreen } from '../screens/registration/AccountCreatedScreen';
 import { BiometricSetupScreen } from '../screens/registration/BiometricSetupScreen';
+import {
+  AddressScreen, BeforeYouStartScreen, CameraAccessScreen, ChooseIdScreen, ManualDetailsScreen, RaiseLimitScreen, ReviewDetailsScreen, ScanFailedScreen,
+  ScanIdScreen, VerificationHubScreen,
+} from '../screens/verify/VerifyScreens';
 import { WelcomeBackScreen } from '../screens/login/WelcomeBackScreen';
 import { NewDeviceScreen } from '../screens/login/NewDeviceScreen';
 import { ContactSupportScreen } from '../screens/login/ContactSupportScreen';
@@ -92,6 +96,16 @@ export function RootNavigator() {
         <Stack.Screen name="2.4" component={VerifyNumberScreen} />
         <Stack.Screen name="2.9" component={AccountCreatedScreen} />
         <Stack.Screen name="3.6" component={BiometricSetupScreen} />
+        <Stack.Screen name="4.0" component={RaiseLimitScreen} options={{ presentation: 'transparentModal', animation: 'fade' }} />
+        <Stack.Screen name="4.0a" component={BeforeYouStartScreen} />
+        <Stack.Screen name="4.1" component={VerificationHubScreen} />
+        <Stack.Screen name="4.1a" component={ChooseIdScreen} />
+        <Stack.Screen name="4.2" component={CameraAccessScreen} />
+        <Stack.Screen name="4.3" component={ScanIdScreen} />
+        <Stack.Screen name="4.3a" component={ScanFailedScreen} />
+        <Stack.Screen name="4.4" component={ReviewDetailsScreen} />
+        <Stack.Screen name="4.5" component={ManualDetailsScreen} />
+        <Stack.Screen name="4.7" component={AddressScreen} />
         <Stack.Screen name="7.0" component={WelcomeBackScreen} />
         <Stack.Screen name="7.7" component={NewDeviceScreen} />
         <Stack.Screen name="7.7c" component={ContactSupportScreen} />

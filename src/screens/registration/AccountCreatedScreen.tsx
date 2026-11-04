@@ -54,7 +54,7 @@ export function AccountCreatedScreen({ navigation, route }: NativeStackScreenPro
         </View>
       </ScrollView>
       <View style={{ paddingTop: t.spacing['spacing/16'], paddingHorizontal: g, paddingBottom: t.spacing['spacing/40'], gap: t.spacing['spacing/8'] }}>
-        <Button label={tr(`${k}.verify`)} onPress={() => navigation.navigate('NotBuilt', { screenId: '4.1' })} testID="verify-id" />
+        <Button label={tr(`${k}.verify`)} onPress={() => navigation.navigate('4.0a')} testID="verify-id" />
         <Button type="ghost" label={tr(`${k}.later`)} onPress={() => navigation.navigate('3.6')} testID="later" />
       </View>
     </Screen>

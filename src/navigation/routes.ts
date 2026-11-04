@@ -5,6 +5,7 @@
  *  1.1 / 2.1   — registration step 1 About you (1.1–1.7 are states/sheets) and step 2 Account details (2.1–2.3d)
  *  2.4 / 2.9   — verify number (2.4–2.8, 2.4g/2.7b states) · account created (2.9 / 2.9b via idCheck)
  *  3.6         — biometric setup (3.6 Face ID / 3.1b fingerprint via kind)
+ *  4.0–4.9     — verify ID and address (326:36305 / AR 326:36899); 4.5a–d, 4.6/4.6a/4.9, 4.7a, 4.8–4.8c are states
  *  7.0         — welcome back, returning customer (139:3333 / AR 139:3887); 7.0a–7.0i are states
  *  7.1         — "7.1 Login" 82:9641 (mobile) and "7.1b Login — email" 138:3251 (same screen, method param)
  *  7.2a / 7.2b — verify login, code by text (220:6506) / by email (220:6600); wrong code 7.2d (220:6739) is a state
@@ -32,6 +33,17 @@ export type RootStackParamList = {
   '2.4': { phone: string; firstName: string; idCheck?: boolean };
   '2.9': { firstName: string; idCheck?: boolean };
   '3.6': { kind?: 'faceId' | 'fingerprint' } | undefined;
+  '4.0': undefined;
+  '4.0a': undefined;
+  /** stage: start (4.1) · idDone (4.6) · idReview (4.6a) · submitted (4.9). */
+  '4.1': { stage?: 'start' | 'idDone' | 'idReview' | 'submitted' } | undefined;
+  '4.1a': undefined;
+  '4.2': { doc?: 'passport' | 'licence' } | undefined;
+  '4.3': { doc?: 'passport' | 'licence' } | undefined;
+  '4.3a': { doc?: 'passport' | 'licence' } | undefined;
+  '4.4': undefined;
+  '4.5': undefined;
+  '4.7': { from?: 'idDone' | 'idReview' } | undefined;
   /** 7.0 Welcome back (returning customer); biometric the user enabled at sign-up (7.0i = both). */
   '7.0': { biometric?: 'faceId' | 'fingerprint' | 'both' } | undefined;
   /** previewState: open directly in the 7.3 / 7.4 state (device-frame preview menu only). */

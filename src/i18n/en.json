@@ -857,5 +857,165 @@
       "retry": "Try again",
       "support": "Contact support"
     }
+  },
+  "verify": {
+    "stepId": "Personal information",
+    "stepAddress": "Your address",
+    "4_0": {
+      "title": "Raise your sending limit",
+      "body": "Verify your ID and address to send up to {{amount}}. It’s a legal requirement and keeps your money safe.",
+      "start": "Get started",
+      "later": "Maybe later"
+    },
+    "steps": {
+      "id": "Personal details & ID",
+      "idHint": "Scan your ID · about 2 minutes",
+      "address": "Your address",
+      "addressHint": "About 1 minute",
+      "addressLocked": "Unlocks after step 1",
+      "idReview": "We’re checking your ID · up to 24 hours",
+      "addressReview": "We’re checking your proof · up to 24 hours"
+    },
+    "status": {
+      "notStarted": "Not started",
+      "completed": "Completed",
+      "inProgress": "In progress",
+      "inReview": "In review"
+    },
+    "4_0a": {
+      "title": "Before you start",
+      "body": "Have these documents ready. It takes about 3 minutes, and you can stop at any time.",
+      "id": "1. Your ID",
+      "idItems": [
+        "Passport",
+        "Driving licence"
+      ],
+      "idNote": "Must be valid and not expired. You’ll scan it with your phone camera.",
+      "address": "2. Proof of address",
+      "addressItems": [
+        "Utility bill or bank statement"
+      ],
+      "addressNote": "Dated in the last 3 months and showing your full name and UK address. Photo or PDF.",
+      "ready": "I’m ready",
+      "later": "Not now"
+    },
+    "4_1": {
+      "title": "Verify your account",
+      "body": "Complete both steps to start sending money.",
+      "progress": "{{done}} of 2 complete",
+      "submitted1": "1 of 2 submitted",
+      "submitted2": "2 of 2 submitted",
+      "noteStart": "Your progress is saved. You can leave and continue anytime.",
+      "noteIdDone": "Pick up where you left off: your address.",
+      "noteIdReview": "We’re reviewing your ID. You can add your address in the meantime.",
+      "noteDone": "We’ll notify you as soon as we’ve reviewed your details, usually within 24 hours.",
+      "start1": "Start step 1",
+      "start2": "Continue to step 2",
+      "done": "Back to home",
+      "close": "Close"
+    },
+    "4_1a": {
+      "title": "Choose your ID",
+      "body": "Which document do you want to scan? It must be valid and not expired.",
+      "passport": "Passport",
+      "passportHint": "Photo page",
+      "licence": "Driving licence",
+      "licenceHint": "Front of the card",
+      "continue": "Continue"
+    },
+    "4_2": {
+      "title": "Allow camera access",
+      "body": "We need your camera to scan your ID and take a selfie. Turn it on in Settings.",
+      "settings": "Open Settings",
+      "manual": "Enter details manually"
+    },
+    "4_3": {
+      "title": "Scan your passport",
+      "titleLicence": "Scan your driving licence",
+      "body": "Place the photo page inside the frame. Make sure it’s well lit and all 4 corners show.",
+      "hold": "Hold still…",
+      "trouble": "Having trouble?"
+    },
+    "4_3a": {
+      "title": "We couldn’t read your ID",
+      "body": "Try these tips and scan again, or enter your details manually instead.",
+      "tips": [
+        "Place your ID on a flat, dark surface",
+        "Use good light and avoid glare",
+        "Keep all 4 corners inside the frame",
+        "Hold your phone steady until it captures"
+      ],
+      "again": "Scan again",
+      "manual": "Enter details manually"
+    },
+    "4_4": {
+      "banner": "ID scanned. Check these details are correct. They come from your ID and can’t be edited.",
+      "confirm": "Confirm details"
+    },
+    "4_5": {
+      "banner": "Enter your details exactly as they appear on your ID. Our team will check them against a photo of your ID.",
+      "photo": "Photo of your ID",
+      "photoHint": "Passport or driving licence",
+      "upload": "Upload photo",
+      "submit": "Confirm details"
+    },
+    "fields": {
+      "title": "Title",
+      "first": "First name",
+      "middle": "Middle name",
+      "last": "Last name",
+      "birthCountry": "Birth country",
+      "birthDate": "Birth date",
+      "idType": "Identification type",
+      "idNumber": "ID number",
+      "issuer": "Country issuer",
+      "expiry": "Expiry date",
+      "postcode": "Postcode",
+      "postcodeHelper": "We’ll look up your address from your postcode.",
+      "country": "Country",
+      "county": "State / County",
+      "city": "City",
+      "line1": "Address line 1",
+      "line2": "Address line 2 (optional)",
+      "line2Placeholder": "Flat, building, etc."
+    },
+    "upload": {
+      "idTitle": "Photo of your ID",
+      "idBody": "Upload a clear photo of the ID you entered. All 4 corners and the text must be visible.",
+      "idAccepted": "Accepted IDs",
+      "idList": [
+        "Passport",
+        "Driving licence"
+      ],
+      "idRule": "Must not be expired",
+      "addressTitle": "Proof of address",
+      "addressBody": "Verifying your address helps us comply with financial regulations and protect your account. Providing proof of address increases your sending limit.",
+      "addressAccepted": "Accepted documents",
+      "addressList": [
+        "Electricity bill",
+        "Water bill"
+      ],
+      "addressRule": "Must be dated within the last 3 months",
+      "camera": "Take a photo",
+      "gallery": "Choose from gallery",
+      "file": "Upload a file",
+      "formats": "JPG, PNG or PDF · max 5MB",
+      "uploaded": "Uploaded",
+      "uploadedToday": "Uploaded today",
+      "preview": "Preview",
+      "replace": "Replace",
+      "remove": "Remove",
+      "removeTitle": "Remove this document?",
+      "removeIdBody": "You’ll need to upload a photo of your ID again before you can submit.",
+      "removeAddressBody": "You’ll need to upload proof of address again before you can submit.",
+      "keep": "Keep it",
+      "done": "Done"
+    },
+    "4_7": {
+      "proof": "Proof of address",
+      "proofHint": "Verify your address.",
+      "uploadDoc": "Upload document",
+      "continue": "Continue"
+    }
   }
 }
