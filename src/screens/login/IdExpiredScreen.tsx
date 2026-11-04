@@ -23,7 +23,7 @@ export function IdExpiredScreen({ navigation }: NativeStackScreenProps<RootStack
       footerPadBottom="spacing/32"
       footer={
         <>
-          <Button label={tr('login.7_6.verify')} onPress={() => navigation.navigate('NotBuilt', { screenId: 'ID verification' })} />
+          <Button label={tr('login.7_6.verify')} onPress={() => navigation.navigate('4.1a')} />
           <Button type="ghost" label={tr('login.7_6.later')} onPress={() => navigation.reset({ index: 0, routes: [{ name: 'Home' }] })} />
         </>
       }
