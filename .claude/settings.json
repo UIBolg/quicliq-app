@@ -7,7 +7,8 @@
     
     "allow": [
   "mcp__Figma__use_figma",
-   "mcp__use_figma",
+  "mcp__use_figma",
+  "figma-generate-design",
   "mcp__plugin_figma_figma__use_figma",
   "mcp__Figma__search_design_system",
   "mcp__Figma__get_metadata",
