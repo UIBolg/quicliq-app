@@ -16,7 +16,7 @@
   "mcp__Figma__create_session",
   "Artifact",
   "Bash"
-]
+],
     "deny": [
 
       "mcp__Figma__create_new_file",
