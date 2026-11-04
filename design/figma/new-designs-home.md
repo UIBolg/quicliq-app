@@ -19,3 +19,11 @@ variants), Icon Badge (44 White, 40 Grey), Icon/* for tabs.
 Library gaps (closest library option used, nothing added): no Inverse button → Secondary Small "Continue setup";
 Avatar only solid → recipients use Avatar 56; no Icon Badge 44 Grey → 40 Grey; no card effect style → cards without shadow;
 Icon Button white fill on Fog pages is an instance override.
+
+## Home by limit level (2026-11-04)
+Page 4 (6:2128) of New Designs, built with use_figma from Quicliq [Kitchen] variables, text styles, icons and components:
+- 48:160 — Home — Basic (Level 1): blue info banner, light-red limit card (Alpha/Red 10% + 12% border)
+- 48:335 — Home — Plus (Level 2): blue banner (source of funds), Primary/Red limit card
+- 48:505 — Home — Premium (Level 3): no banner, burgundy limit card (Status/Failure/Dark), no progress bar
+Raw (non-variable) values: blue banner (#EAF2FD / #1D5BBF / #123A7A — no Info variables, figma-issues #49), plane artwork,
+tab-bar shadow, card padding 20. Icon Badge uses Size=40 Red tint (no 44 Red tint variant).
