@@ -27,3 +27,9 @@ Page 4 (6:2128) of New Designs, built with use_figma from Quicliq [Kitchen] vari
 - 48:505 — Home — Premium (Level 3): no banner, burgundy limit card (Status/Failure/Dark), no progress bar
 Raw (non-variable) values: blue banner (#EAF2FD / #1D5BBF / #123A7A — no Info variables, figma-issues #49), plane artwork,
 tab-bar shadow, card padding 20. Icon Badge uses Size=40 Red tint (no 44 Red tint variant).
+- Arabic Home frames (cloned + mirrored): 54:190 Basic AR · 54:351 Plus AR · 54:512 Premium AR
+
+## Transfers history (2026-11-04)
+- 66:351 — 11.1 Transfers history (EN) · 66:527 — 11.1 Transfers history (AR)
+H2 title, search field (Fog, radius 12 raw), Status / Sending type / Date chips, month groups (Overline) of transfer cards
+(Fog + Dark Fog stroke, Icon Badge 40 Red tint), floating tab bar with History active. Amounts/dates keep EN styles in AR.
