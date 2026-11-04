@@ -1,6 +1,7 @@
 /**
  * 12.4 Saved cards (doc p.48). Intro (Body, Slate) · one realistic PaymentCard per saved card (masked number, expiry,
- * brand), with a "Default" Verified Tag under the first and a red "Remove card" text button (trash icon, ≥44 touch)
+ * brand). The first card is the default ("Default" Verified Tag); the others show "Set as default", which moves that
+ * card to the top (so removing the default promotes the next one). Under each card and a red "Remove card" text button (trash icon, ≥44 touch)
  * at the end, which opens a confirm sheet (Remove / Cancel). Footer Secondary "Add card" opens the Add a card sheet (AddCardSheet, profile mode); a valid card joins the list. Empty state when no cards are left.
  */
 import { useState } from 'react';
@@ -46,7 +47,25 @@ export function SavedCardsScreen({ navigation }: NativeStackScreenProps<RootStac
                 accessibilityLabel={`${label(c)}, ${tr(`${k}.expires`, { date: c.expires })}`}
               />
               <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                {i === 0 ? <VerifiedTag label={tr(`${k}.default`)} /> : <View />}
+                {i === 0 ? (
+                  <VerifiedTag label={tr(`${k}.default`)} />
+                ) : (
+                  <Pressable
+                    onPress={() => setCards((cs) => [c, ...cs.filter((x) => x.id !== c.id)])}
+                    accessibilityRole="button"
+                    accessibilityLabel={`${tr(`${k}.setDefault`)}, ${label(c)}`}
+                    testID={`default-${c.id}`}
+                    style={({ pressed }) => ({
+                      minHeight: t.sizes.touchTarget,
+                      justifyContent: 'center',
+                      paddingHorizontal: t.spacing['spacing/8'],
+                      borderRadius: t.radius['radius/full'],
+                      backgroundColor: pressed ? t.colors['Alpha/Ink 6%'] : undefined,
+                    })}
+                  >
+                    <AppText variant="Body Medium" color="Neutral/Ink">{tr(`${k}.setDefault`)}</AppText>
+                  </Pressable>
+                )}
                 <Pressable
                   onPress={() => setRemoving(c)}
                   accessibilityRole="button"
