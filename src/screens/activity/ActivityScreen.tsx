@@ -1,7 +1,8 @@
 /**
  * 11.1 Transfers history (History tab) — "Quicliq API Gap Analysis" 11.1 / 11.2; no Figma frame yet (#43, #50).
  * Hybrid filter (chosen on the "Quicliq Home options" canvas, board "Transfers history · Hybrid filter"):
- *  H2 title · search Text Field + filter button (Primary/Red, radius/md, text-field height; Ink count badge when active) ·
+ *  H2 title · search Text Field + filter button (48 circle, centred: Neutral/Fog + Ink glyph; Primary/Red + white glyph and
+ *  an Ink count badge when filters are active) ·
  *  active-filter tags (Alpha/Red 8%, Primary/Red, ✕ removes one) + "Clear all" ·
  *  month groups (Overline) of Transfer cards (→ 11.3, not built) · result count / empty line.
  * Filter sheet (11.2): title + Clear all · Status (multi) · Sending type (multi) · Date (one of 7/30/90 days or a custom
@@ -73,7 +74,7 @@ export function ActivityScreen({ navigation }: NativeStackScreenProps<RootStackP
     ...(filters.date ? [{ key: 'date', label: dateLabel(filters.date), remove: () => setFilters((f) => ({ ...f, date: null })) }] : []),
   ];
   const draftCount = apply(draft).length;
-  const btn = t.sizes.textField.height;
+  const btn = t.sizes.filterButton.size;
 
   return (
     <Screen edges={['top']}>
@@ -83,7 +84,7 @@ export function ActivityScreen({ navigation }: NativeStackScreenProps<RootStackP
         contentContainerStyle={{ paddingTop: t.spacing['spacing/8'], paddingHorizontal: t.layout.screenGutter, paddingBottom: t.spacing['spacing/32'], gap: t.spacing['spacing/16'] }}
       >
         <AppText variant="H2" accessibilityRole="header">{tr(`${k}.title`)}</AppText>
-        <View style={{ flexDirection: 'row', gap: t.spacing['spacing/8'] }}>
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: t.spacing['spacing/8'] }}>
           <View style={styles.flex}>
             <TextField label={tr(`${k}.search`)} value={query} onChangeText={setQuery} trailing="search" autoCapitalize="none" testID="search" />
           </View>
@@ -92,17 +93,17 @@ export function ActivityScreen({ navigation }: NativeStackScreenProps<RootStackP
             accessibilityRole="button"
             accessibilityLabel={count ? `${tr(`${k}.filter`)}, ${count}` : tr(`${k}.filter`)}
             testID="filter"
-            style={({ pressed }) => ({ width: btn, height: btn, borderRadius: t.radius['radius/md'], backgroundColor: t.colors['Primary/Red'], alignItems: 'center', justifyContent: 'center', opacity: 1, overflow: 'visible' })}
+            style={{ width: btn, height: btn, borderRadius: t.radius['radius/full'], backgroundColor: t.colors[count ? 'Primary/Red' : 'Neutral/Fog'], alignItems: 'center', justifyContent: 'center' }}
           >
             {({ pressed }) => (
               <>
                 {/* Filter glyph: three bars of decreasing width (no filter icon in the Figma set). */}
                 <View style={{ alignItems: 'center', gap: t.spacing['spacing/4'] }}>
                   {[1, 0.66, 0.33].map((w) => (
-                    <View key={w} style={{ width: t.sizes.icon.default * w, height: t.stroke['stroke/xl'], borderRadius: t.radius['radius/full'], backgroundColor: t.colors['Neutral/White'] }} />
+                    <View key={w} style={{ width: t.sizes.icon.md * w, height: t.stroke['stroke/md'], borderRadius: t.radius['radius/full'], backgroundColor: t.colors[count ? 'Neutral/White' : 'Neutral/Ink'] }} />
                   ))}
                 </View>
-                {pressed ? <View pointerEvents="none" style={[StyleSheet.absoluteFill, { borderRadius: t.radius['radius/md'], backgroundColor: t.colors[t.states.pressedOverlayOnDark] }]} /> : null}
+                {pressed ? <View pointerEvents="none" style={[StyleSheet.absoluteFill, { borderRadius: t.radius['radius/full'], backgroundColor: t.colors[count ? t.states.pressedOverlayOnDark : t.states.pressedOverlay] }]} /> : null}
                 {count ? (
                   <View style={{ position: 'absolute', top: -t.spacing['spacing/6'], [t.isRTL ? 'left' : 'right']: -t.spacing['spacing/6'], minWidth: t.sizes.badge.count, height: t.sizes.badge.count, paddingHorizontal: t.spacing['spacing/4'], borderRadius: t.radius['radius/full'], backgroundColor: t.colors['Neutral/Ink'], borderWidth: t.stroke['stroke/xl'], borderColor: t.colors['Neutral/White'], alignItems: 'center', justifyContent: 'center' }}>
                     <AppText variant="Overline" color="Neutral/White">{String(count)}</AppText>

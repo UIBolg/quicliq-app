@@ -114,6 +114,9 @@ export const sizes = {
   /** LimitStep (code addition, sending-limit sheet): 32 status circle, 10 dot for the current step. */
   limitStep: { badge: 32, dot: 10 },
 
+  /** Filter button (Transfers history): 48 circle (touch ≥44). */
+  filterButton: { size: 48 },
+
   /** Count badge (code addition, Transfers history filter button): 20 circle. */
   badge: { count: 20 },
 
