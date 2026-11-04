@@ -31,6 +31,7 @@ import { LanguageScreen } from '../screens/account/LanguageScreen';
 import { LegalDocumentScreen, LegalScreen } from '../screens/account/LegalScreen';
 import { HelpScreen } from '../screens/account/HelpScreen';
 import { NotificationsScreen } from '../screens/account/NotificationsScreen';
+import { MaintenanceScreen, UpdateRequiredScreen } from '../screens/system/SystemScreens';
 import { NotBuiltScreen } from '../screens/NotBuiltScreen';
 import { ComponentGallery } from '../screens/dev/ComponentGallery';
 import { FoundationsScreen } from '../screens/dev/FoundationsScreen';
@@ -90,6 +91,8 @@ export function RootNavigator() {
         <Stack.Screen name="7.9" component={VerifyLoginScreen} />
         <Stack.Screen name="7.9b" component={VerifyLoginScreen} />
         <Stack.Screen name="7.11" component={DeviceVerifiedScreen} />
+        <Stack.Screen name="9.1" component={UpdateRequiredScreen} />
+        <Stack.Screen name="9.2" component={MaintenanceScreen} />
         <Stack.Screen name="7.5" component={OfflineScreen} />
         <Stack.Screen name="7.6" component={IdExpiredScreen} />
         <Stack.Screen name="Home" component={HomeScreen} options={{ animation: 'fade', gestureEnabled: false }} />

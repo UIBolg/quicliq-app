@@ -167,6 +167,8 @@ export function LoginScreen({ navigation, route }: NativeStackScreenProps<RootSt
               <Button size="small" type="tonal" label={tr(`${k}.demoNewDevice`)} onPress={() => navigation.navigate('7.7')} testID="demo-new-device" />
               <Button size="small" type="tonal" label={tr(`${k}.demoFaceId`)} onPress={() => navigation.navigate('7.0', { biometric: 'faceId' })} testID="demo-face-id" />
               <Button size="small" type="tonal" label={tr(`${k}.demoFingerprint`)} onPress={() => navigation.navigate('7.0', { biometric: 'fingerprint' })} testID="demo-fingerprint" />
+              <Button size="small" type="tonal" label={tr('system.9_1.title')} onPress={() => navigation.navigate('9.1')} testID="demo-update" />
+              <Button size="small" type="tonal" label={tr('system.9_2.title')} onPress={() => navigation.navigate('9.2')} testID="demo-maintenance" />
             </View>
           </View>
 

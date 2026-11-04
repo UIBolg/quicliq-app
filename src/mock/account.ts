@@ -91,6 +91,9 @@ export const demoCards = [
 export const demoDevice = { name: 'iPhone 15' };
 
 /** Help contacts (13.1). PLACEHOLDERS — replace with Quicliq's real support phone, email and help page. */
+/** System screens (9.1 / 9.2): app versions, store link and maintenance end time from the API. Demo values. */
+export const demoSystem = { version: '2.4.0', latest: '3.0.0', storeUrl: 'https://apps.apple.com', backBy: '14:00' } as const;
+
 /** Support contacts from the build doc (7.7c). */
 export const supportContacts = { phone: '+442080731090', phoneDisplay: '+44 208 073 10 90', email: 'info@levexpress.co.uk', office: 'Chiswick Park, London W4 5YA', articlesUrl: 'https://example.com/help' };
 

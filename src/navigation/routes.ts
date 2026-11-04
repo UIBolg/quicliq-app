@@ -16,6 +16,7 @@
  *                12.2 personal details · 12.3 change password · 12.4 saved cards · 12.5 security · 12.6 language ·
  *                12.7 legal (12.7a document) · 12.8 log out is a sheet on 12.1
  *  13.1 / 13.2 — help / notifications (doc pp.53–54)
+ *  9.1 / 9.2   — system: update required / maintenance (158:4856 / AR 158:4860)
  *  NotBuilt    — temporary target for links into flows that are not built yet (shows the Figma ID)
  *  dev/*       — read-only design-system previews, registered in development builds only
  */
@@ -52,6 +53,8 @@ export type RootStackParamList = {
   '12.7a': { doc: 'privacy' | 'fraud' | 'terms' };
   '13.1': undefined;
   '13.2': undefined;
+  '9.1': undefined;
+  '9.2': undefined;
   NotBuilt: { screenId: string };
   'dev/Gallery': undefined;
   'dev/Tokens': undefined;

@@ -408,7 +408,238 @@
       "fraud": "Fraud Warning",
       "terms": "Terms and conditions",
       "placeholder": "The full document loads here from Quicliq’s servers.",
-      "intro": "Read how Quicliq works and how we protect you."
+      "intro": "Read how Quicliq works and how we protect you.",
+      "docs": {
+        "privacy": {
+          "icon": "shield",
+          "title": "Privacy Policy",
+          "intro": "How Levantine Express Ltd collects, uses and protects your personal data when you use our services.",
+          "blocks": [
+            {
+              "type": "points",
+              "title": "Key points",
+              "items": [
+                "Levantine Express Ltd is the data controller for your data.",
+                "We keep your data only as long as we need it, or until you ask us to delete it.",
+                "You can ask to see, correct or delete your data at any time.",
+                "You can complain to the Information Commissioner’s Office (ICO)."
+              ]
+            },
+            {
+              "type": "section",
+              "title": "Who we are",
+              "body": "Levantine Express Ltd is registered in England and Wales (company no. 11630563). We decide why and how your data is processed, which makes us the data controller under UK GDPR."
+            },
+            {
+              "type": "section",
+              "title": "What this policy covers",
+              "body": "This policy covers how we and our users handle data on our services. It doesn’t cover third-party websites we link to, including social media."
+            },
+            {
+              "type": "list",
+              "icon": "info",
+              "title": "Data we collect",
+              "items": [
+                "Data you give us when you contact us by app, website, phone, post or email.",
+                "Data collected automatically, such as your IP address, when and how often you visit, and how you use our content. We use it to improve our services."
+              ]
+            },
+            {
+              "type": "section",
+              "title": "How we keep it safe",
+              "body": "Accounts are password-protected and personal to you, and data is stored on secure servers. If you think your data has been misused, lost or accessed without permission, email us:",
+              "link": "abdulkhadir@levexpress.co.uk"
+            },
+            {
+              "type": "section",
+              "title": "How long we keep it",
+              "body": "We keep your data only as long as we need it for the purposes in this policy, or until you ask us to delete it, unless the law requires us to keep it longer. Deleted data may stay on backups for legal, tax or regulatory reasons."
+            },
+            {
+              "type": "cards",
+              "title": "Your rights",
+              "icons": [
+                "eye",
+                "edit",
+                "trash",
+                "lock",
+                "download",
+                "hand"
+              ],
+              "items": [
+                [
+                  "Access",
+                  "See the data we hold about you, usually free of charge."
+                ],
+                [
+                  "Correction",
+                  "Fix anything that’s wrong or incomplete."
+                ],
+                [
+                  "Erasure",
+                  "Ask us to delete your data."
+                ],
+                [
+                  "Restriction",
+                  "Limit how we use your data."
+                ],
+                [
+                  "Portability",
+                  "Get your data in a form you can move."
+                ],
+                [
+                  "Objection",
+                  "Object to how we use your data, including for legitimate interests."
+                ]
+              ],
+              "after": "To use these rights or withdraw your consent, email:",
+              "link": "abdulkhadir@levexpress.co.uk"
+            },
+            {
+              "type": "section",
+              "title": "Complaints",
+              "body": "If you’re unhappy with how we handle a complaint about your data, you can contact the Information Commissioner’s Office:",
+              "link": "ico.org.uk"
+            },
+            {
+              "type": "section",
+              "title": "Other websites",
+              "body": "We’re not responsible for websites we link to. Read their privacy policies before you share data with them."
+            },
+            {
+              "type": "section",
+              "title": "If our business changes hands",
+              "body": "If the business is sold or restructured, your data may move to the new owner and be used for the same purposes. We’ll take steps to protect your privacy."
+            },
+            {
+              "type": "section",
+              "title": "Changes to this policy",
+              "body": "We may update this policy when needed or when the law requires it. Using our services after a change means you accept the updated policy."
+            },
+            {
+              "type": "section",
+              "title": "Governing law",
+              "body": "This policy is governed by the law of England and Wales, and the courts of England and Wales have exclusive jurisdiction."
+            },
+            {
+              "type": "contact",
+              "title": "Contact us",
+              "link": "legal@levexpress.co.uk",
+              "line": "Levantine Express Ltd, registered in England and Wales, no. 11630563"
+            }
+          ]
+        },
+        "fraud": {
+          "icon": "alertTriangle",
+          "title": "Fraud Warning",
+          "intro": "Scammers use fake websites, texts and calls that look genuine to steal your money or personal information. Here’s how to stay safe.",
+          "blocks": [
+            {
+              "type": "banner",
+              "text": "The police, your bank and HMRC will never cold call you to ask for your bank details."
+            },
+            {
+              "type": "do",
+              "title": "Do",
+              "items": [
+                "Use a strong, different password for every account.",
+                "Research unfamiliar companies before you buy.",
+                "Turn down unsolicited offers and deals that seem too good to be true.",
+                "Keep records of online purchases, like receipts and order confirmations.",
+                "Contact your bank straight away if money goes missing.",
+                "Report scams to the police and to Action Fraud."
+              ]
+            },
+            {
+              "type": "dont",
+              "title": "Don’t",
+              "items": [
+                "Share personal information with callers you don’t know.",
+                "Click links in suspicious emails or texts.",
+                "Reuse passwords, especially for accounts linked to your bank.",
+                "Give personal details to people who turn up unannounced.",
+                "Rush into decisions when someone pressures you.",
+                "Keep quiet if you think you’ve been scammed."
+              ],
+              "note": "If you’re unsure, ask a friend or relative for advice."
+            },
+            {
+              "type": "list",
+              "icon": "alertTriangle",
+              "title": "Warning signs",
+              "items": [
+                "A greeting that’s impersonal, or uses the wrong name or title.",
+                "A sender address that doesn’t match the company’s real domain.",
+                "Links in messages about problems with your account. Go to the company’s website yourself instead.",
+                "Pop-ups asking for personal details. Close them without typing anything.",
+                "Websites without a padlock or https:// in the address."
+              ]
+            },
+            {
+              "type": "cards",
+              "title": "Common scams",
+              "icons": [
+                "gift",
+                "globe",
+                "users",
+                "sun",
+                "file",
+                "link",
+                "mail"
+              ],
+              "items": [
+                [
+                  "Fake offers and free trials",
+                  "Bogus offers and fake goods that take your money or card details."
+                ],
+                [
+                  "Copycat government websites",
+                  "Fake sites that copy official services like HMRC and charge you to renew passports or visas."
+                ],
+                [
+                  "Dating and romance scams",
+                  "People you meet online who ask for money. Never send them money or let them pay money into your account."
+                ],
+                [
+                  "Holiday fraud",
+                  "Holidays or accommodation that don’t exist, often found out only on arrival."
+                ],
+                [
+                  "Mandate fraud",
+                  "A hacked or copied email changes the bank details on a genuine invoice, so your payment goes to the scammer."
+                ],
+                [
+                  "Pharming",
+                  "You’re sent to a fake website even when you type the right address."
+                ],
+                [
+                  "Phishing",
+                  "Messages pretending to be your bank, HMRC or PayPal that lead to a fake login page."
+                ]
+              ]
+            },
+            {
+              "type": "steps",
+              "title": "If you think you’ve been scammed",
+              "items": [
+                "Contact your bank or card provider straight away.",
+                "Report it to the police.",
+                "Report it to Action Fraud."
+              ]
+            },
+            {
+              "type": "company",
+              "title": "Levantine Express Ltd",
+              "lines": [
+                "Office 117a, Building 3, Chiswick Park, 566 Chiswick High Road, London W4 5YA",
+                "Authorised Payment Institution regulated by the Financial Conduct Authority (FRN 940437). Registered in England and Wales, no. 11630563.",
+                "Levantine Express Ltd is not responsible if a customer becomes a victim of fraud or a scam."
+              ]
+            }
+          ]
+        }
+      },
+      "done": "Done"
     },
     "logout": {
       "title": "Log out?",
@@ -477,5 +708,24 @@
     "pickRange": "Pick a start and an end date",
     "apply": "Apply",
     "clear": "Clear"
+  },
+  "system": {
+    "9_1": {
+      "title": "Update required",
+      "body": "This version of Quicliq is no longer supported. Update to the latest version to keep sending money.",
+      "yours": "Your version",
+      "latest": "Latest version",
+      "safe": "Your account and transfers are safe. Updating takes about a minute.",
+      "update": "Update now"
+    },
+    "9_2": {
+      "title": "We’ll be back soon",
+      "body": "We’re doing planned maintenance to make Quicliq better. You can’t log in or send money until we’re finished.",
+      "backBy": "Expected back by",
+      "time": "{{time}} UK time",
+      "safe": "Your account and money are safe.",
+      "retry": "Try again",
+      "support": "Contact support"
+    }
   }
 }

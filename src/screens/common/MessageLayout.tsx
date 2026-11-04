@@ -9,12 +9,14 @@ import { AppText, Screen } from '../../components';
 import { useTheme, type SpacingToken } from '../../theme';
 
 export function MessageLayout({
-  illustration, title, body, footer, contentPadTop = 'spacing/0', contentPadBottom = 'spacing/0', footerPadBottom = 'spacing/40',
+  illustration, title, body, footer, children, contentPadTop = 'spacing/0', contentPadBottom = 'spacing/0', footerPadBottom = 'spacing/40',
 }: {
   illustration: ReactNode;
   title: string;
   body: string;
   footer: ReactNode;
+  /** Extra content under the heading (9.1 version card, 9.2 back-by card + banner). */
+  children?: ReactNode;
   contentPadTop?: SpacingToken;
   contentPadBottom?: SpacingToken;
   footerPadBottom?: SpacingToken;
@@ -30,6 +32,7 @@ export function MessageLayout({
           <AppText variant="H2" accessibilityRole="header" style={center}>{title}</AppText>
           <AppText variant="Body Large" color="Neutral/Slate" style={center}>{body}</AppText>
         </View>
+        {children ? <View style={{ alignSelf: 'stretch', gap: t.spacing['spacing/24'] }}>{children}</View> : null}
       </View>
       <View style={{ paddingTop: t.spacing['spacing/16'], paddingHorizontal: g, paddingBottom: t.spacing[footerPadBottom], gap: t.spacing['spacing/16'] }}>
         {footer}
