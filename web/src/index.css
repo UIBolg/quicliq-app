@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+/* Quicliq fonts (same files as the Expo app). */
+@font-face { font-family: "Avenir"; font-weight: 400; src: url("@assets/fonts/Avenir-Roman.ttf"); font-display: swap; }
+@font-face { font-family: "Avenir"; font-weight: 500; src: url("@assets/fonts/Avenir-Medium.ttf"); font-display: swap; }
+@font-face { font-family: "Avenir"; font-weight: 800; src: url("@assets/fonts/Avenir-Heavy.ttf"); font-display: swap; }
+@font-face { font-family: "Avenir"; font-weight: 900; src: url("@assets/fonts/Avenir-Black.ttf"); font-display: swap; }
+@font-face { font-family: "Frutiger Arabic"; font-weight: 300; src: url("@assets/fonts/FrutigerLTArabic45Light.ttf"); font-display: swap; }
+@font-face { font-family: "Frutiger Arabic"; font-weight: 400; src: url("@assets/fonts/FrutigerLTArabic55Roman.ttf"); font-display: swap; }
+@font-face { font-family: "Frutiger Arabic"; font-weight: 700; src: url("@assets/fonts/FrutigerLTArabic65Bold.ttf"); font-display: swap; }
+@font-face { font-family: "Frutiger Arabic"; font-weight: 900; src: url("@assets/fonts/frutigerltarabic75black.ttf"); font-display: swap; }
+
+/* Design tokens — exact Figma names from src/theme (Quicliq [Kitchen]). */
+@theme {
+  --color-red: #E01018;
+  --color-red-shade: #B80D14;
+  --color-ink: #171717;
+  --color-slate: #595959;
+  --color-silver: #BFBFBF;
+  --color-fog: #F8F8F8;
+  --color-dark-fog: #EEEFF0;
+  --color-grey: #838383;
+  --color-success: #067647;
+  --color-success-dark: #054F31;
+  --color-success-light: #ECFDF3;
+  --color-failure: #B42318;
+  --color-failure-dark: #7A1A12;
+  --color-failure-light: #FEF3F2;
+  --color-info: #1D5BBF;
+  --color-info-dark: #123A7A;
+  --color-info-light: #EAF2FD;
+  --color-red-4: #E010180A;
+  --color-red-10: #E010181A;
+  --color-red-12: #E010181F;
+  --color-red-25: #E0101840;
+  --color-ink-6: #1717170F;
+  --color-ink-10: #1717171A;
+  --color-ink-50: #17171780;
+  --color-white-20: #FFFFFF33;
+  --color-white-80: #FFFFFFCC;
+
+  --font-en: "Avenir", system-ui, sans-serif;
+  --font-ar: "Frutiger Arabic", "Avenir", system-ui, sans-serif;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-3xl: 40px;
+}
+
+/* shadcn/ui theme variables mapped to Quicliq tokens. */
+:root {
+  --background: var(--color-white, #fff);
+  --foreground: var(--color-ink);
+  --primary: var(--color-red);
+  --primary-foreground: #FFFFFF;
+  --secondary: var(--color-fog);
+  --secondary-foreground: var(--color-ink);
+  --muted: var(--color-fog);
+  --muted-foreground: var(--color-slate);
+  --accent: var(--color-red-10);
+  --accent-foreground: var(--color-red);
+  --destructive: var(--color-failure);
+  --border: var(--color-dark-fog);
+  --input: var(--color-fog);
+  --ring: var(--color-ink);
+  --radius: 12px;
+}
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+/* Text styles (EN Avenir / AR Frutiger LT Arabic — the font follows the document direction). */
+@utility text-display { font-size: 32px; line-height: 40px; font-weight: 900; letter-spacing: -0.16px; }
+@utility text-h1 { font-size: 28px; line-height: 36px; font-weight: 800; letter-spacing: -0.14px; }
+@utility text-h2 { font-size: 24px; line-height: 32px; font-weight: 800; }
+@utility text-h3 { font-size: 20px; line-height: 28px; font-weight: 800; }
+@utility text-title { font-size: 18px; line-height: 26px; font-weight: 500; }
+@utility text-body-lg { font-size: 16px; line-height: 24px; font-weight: 400; }
+@utility text-body { font-size: 14px; line-height: 22px; font-weight: 400; }
+@utility text-body-md { font-size: 14px; line-height: 22px; font-weight: 500; }
+@utility text-caption { font-size: 12px; line-height: 18px; font-weight: 400; }
+@utility text-overline { font-size: 10px; line-height: 14px; font-weight: 500; letter-spacing: 0.4px; text-transform: uppercase; }
+@utility text-numeric-l { font-family: var(--font-en); font-size: 44px; line-height: 48px; font-weight: 900; letter-spacing: -0.88px; }
+
+html, body, #root { height: 100%; }
+body { margin: 0; background: var(--color-dark-fog); color: var(--color-ink); font-family: var(--font-en); -webkit-font-smoothing: antialiased; }
+[dir="rtl"] body, [dir="rtl"] { font-family: var(--font-ar); }
+[dir="rtl"] .text-h1, [dir="rtl"] .text-h2, [dir="rtl"] .text-h3, [dir="rtl"] .text-title, [dir="rtl"] .text-body-md { font-weight: 700; }
+[dir="rtl"] .text-caption { font-weight: 300; }
+[dir="rtl"] .text-body, [dir="rtl"] .text-body-lg, [dir="rtl"] .text-caption, [dir="rtl"] .text-body-md { line-height: 24px; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }

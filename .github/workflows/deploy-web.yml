@@ -1,5 +1,6 @@
 # Builds the Expo web version and publishes it to GitHub Pages:
 # https://uibolg.github.io/quicliq-app/  (base URL set in app.json → expo.experiments.baseUrl)
+# and the React web preview: https://uibolg.github.io/quicliq-app/web/
 name: Deploy web to GitHub Pages
 
 on:
@@ -33,6 +34,12 @@ jobs:
 
       - name: Export web
         run: node scripts/copy-lottie-wasm.js && npx expo export --platform web
+
+      # Client preview: React + TypeScript (Vite, Tailwind CSS, shadcn/ui) app in web/, published at /quicliq-app/web/.
+      - name: Build web preview (web/)
+        run: |
+          cd web && npm ci && npm run build && cd ..
+          mkdir -p dist/web && cp -r web/dist/. dist/web/
 
       # GitHub Pages has no SPA fallback: serve the app for unknown paths so refresh / deep links work.
       # .nojekyll keeps folders that start with "_" (Expo's _expo/ bundle folder) from being dropped.

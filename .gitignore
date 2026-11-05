@@ -43,3 +43,7 @@ yarn-error.*
 
 # Copied from @lottiefiles/dotlottie-web at build time (scripts/copy-lottie-wasm.js)
 public/dotlottie-player.wasm
+
+# Web preview (web/)
+web/node_modules/
+web/dist/
