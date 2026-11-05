@@ -1,7 +1,7 @@
 /**
  * Radio Option — Figma 282:9637. Selectable card: Fog, radius/lg, padding spacing/16, gap spacing/12.
  * Title Body Medium (Ink) + optional subtitle Caption (Slate); 22 radio at the end.
- * Selected = soft Primary/Red tint (Alpha/Red 6%) fill + soft Alpha/Red 25% outline at stroke/md (unselected: no fill, no outline), radio = red ring (stroke/6xl) with a white centre.
+ * Selected = soft Primary/Red tint (Alpha/Red 6%) fill; unselected = Fog fill, no outline + soft Alpha/Red 25% outline at stroke/md , radio = red ring (stroke/6xl) with a white centre.
  * Unselected = no outline, radio = white with a Neutral/Silver ring (stroke/md).
  * Icon=On (7.2c / 7.8d code method): 40 Neutral/White badge with a 20 icon (Primary/Red when selected, Ink otherwise)
  * at the start, gap spacing/8; title + subtitle (Body, Slate) gap spacing/4.
@@ -47,7 +47,7 @@ export function RadioOption({ title, subtitle, selected, onPress, icon, leading,
         gap: t.spacing[icon ? 'spacing/8' : 'spacing/12'],
         padding: t.spacing['spacing/16'],
         borderRadius: t.radius['radius/lg'],
-        backgroundColor: selected ? t.colors['Alpha/Red 6%'] : undefined,
+        backgroundColor: t.colors[selected ? 'Alpha/Red 6%' : 'Neutral/Fog'],
         overflow: 'hidden',
         borderWidth: t.stroke['stroke/md'],
         borderColor: selected ? t.colors['Alpha/Red 25%'] : 'transparent',

@@ -11,7 +11,7 @@ function RadioOption({ className, title, subtitle, leading, ...props }: React.Co
   return (
     <RadioGroupPrimitive.Item
       className={cn(
-        'flex min-h-14 w-full cursor-pointer items-center gap-3 rounded-lg border-[1.5px] border-transparent px-4 py-3 text-start outline-none focus-visible:ring-2 focus-visible:ring-ink data-[state=checked]:border-red-25 data-[state=checked]:bg-red-6',
+        'flex min-h-14 w-full cursor-pointer items-center gap-3 rounded-lg border-[1.5px] border-transparent bg-fog px-4 py-3 text-start outline-none focus-visible:ring-2 focus-visible:ring-ink data-[state=checked]:border-red-25 data-[state=checked]:bg-red-6',
         className,
       )}
       {...props}
