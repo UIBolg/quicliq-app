@@ -59,3 +59,10 @@ back = arrowRight, chevrons = chevronLeft). Names, emails, phone numbers, card d
 £ amounts inside Arabic sentences carry LRM marks so they read "£12,000".
 96:1528 Account · 96:2334 Log out sheet · 96:1667 Personal details · 96:1813 Change password · 96:1922 Saved cards ·
 96:2030 Security · 96:2099 Language (العربية selected) · 96:2133 Legal · 96:2196 Help · 96:2254 Notifications
+
+## New registration — Arabic (2026-11-05)
+Page "Created Perviously" (57:26261): section 108:12262 "New registration — Arabic (RTL)", directly below the English
+section 104:15499 (left untouched). Made by cloning the EN section, then: Lang=AR on all 236 library instances,
+301 texts translated (src/i18n/ar.json + 24 new strings: e.g. placeholders, months, sheet messages), EN→AR text styles,
+own auto-layouts mirrored (rows reversed, stacks right-aligned), arrowLeft→arrowRight / chevronRight→chevronLeft.
+OTP digits, keypad, phone numbers, names, emails and amounts stay LTR / EN styles. Frames renamed EN/… → AR/….
