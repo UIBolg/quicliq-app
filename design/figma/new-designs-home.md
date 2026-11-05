@@ -33,3 +33,9 @@ tab-bar shadow, card padding 20. Icon Badge uses Size=40 Red tint (no 44 Red tin
 - 66:351 — 11.1 Transfers history (EN) · 66:527 — 11.1 Transfers history (AR)
 H2 title, search field (Fog, radius 12 raw), Status / Sending type / Date chips, month groups (Overline) of transfer cards
 (Fog + Dark Fog stroke, Icon Badge 40 Red tint), floating tab bar with History active. Amounts/dates keep EN styles in AR.
+
+## Transfers history — Filter cases, Arabic (2026-11-05)
+- 76:692 — section "Transfer History — Filter cases — Arabic (RTL)", cloned from 69:619 and mirrored:
+  76:693 Default · 76:853 Status sheet · 76:1041 Sending type sheet · 76:1229 Date range sheet · 76:1535 Filters applied · 76:1602 No results.
+  AR text styles (H2, Overline, Body, Body Medium, Caption, Title), Arabic month names in dates, amounts keep EN styles.
+  Still English (fix pass not applied yet): sheet titles/descriptions/options, Apply / Clear, calendar weekday letters.
