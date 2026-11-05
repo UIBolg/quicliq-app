@@ -5,6 +5,7 @@ import { Onboarding, Splash } from '@/screens/Start';
 import { Login } from '@/screens/Login';
 import { Home } from '@/screens/Home';
 import { History } from '@/screens/transfers';
+import { TransferDetails } from '@/screens/TransferDetails';
 import { Account } from '@/screens/Account';
 import { Soon } from '@/screens/Soon';
 import {
@@ -41,6 +42,7 @@ export default function App() {
             <Route path="/maintenance" element={<Maintenance />} />
             <Route path="/home" element={<Home />} />
             <Route path="/history" element={<History />} />
+            <Route path="/history/:id" element={<TransferDetails />} />
             <Route path="/account" element={<Account />} />
             <Route path="/register" element={<AboutYou />} />
             <Route path="/register/account" element={<AccountDetails />} />
