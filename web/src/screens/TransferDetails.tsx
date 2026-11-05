@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent } from '@/components/ui/sheet';
 import { RadioGroup, RadioOption } from '@/components/ui/radio-group';
 import { Icon } from '@/components/Icon';
-import { Banner, IconBadge, ListGroup, Screen, StatusPill, TopBar } from '@/components/quicliq';
+import { Banner, IconBadge, IconButton, ListGroup, Screen, StatusPill, TopBar } from '@/components/quicliq';
 import { Footer } from '@/components/forms';
 import { cancelTransfer, useTransfers, type Transfer } from '@/lib/transfers';
 import { useLocale } from '@/i18n';
@@ -84,10 +84,22 @@ export function TransferDetails() {
     try { await navigator.clipboard.writeText(text); } catch { /* clipboard blocked */ }
     setNote(msg);
   };
-  const share = async (text: string) => {
-    try { if (navigator.share) { await navigator.share({ text }); return; } } catch { return; }
-    await copy(text, t(`${k}.pickup.copied`));
+  const share = async (text: string, copiedMsg = t(`${k}.pickup.copied`)) => {
+    try { if (navigator.share) { await navigator.share({ title: t(`${k}.title`), text }); return; } } catch { return; }
+    await copy(text, copiedMsg);
   };
+  /** Plain-text summary for the share sheet (no card number or pickup code). */
+  const shareTransfer = () => share(
+    t(`${k}.shareText`, {
+      ...vars,
+      ref: d.reference,
+      sent: money(sent),
+      method: t(`home.methods.${tx.method}`),
+      status: t(`home.status.${tx.status}`),
+      date: dateTime(d.events[0].at),
+    }),
+    t(`${k}.shareCopied`),
+  );
   const confirmCancel = () => {
     const clock = new Date().toTimeString().slice(0, 5);
     const refundBy = new Date(`${demoToday}T00:00`);
@@ -118,11 +130,14 @@ export function TransferDetails() {
         footer={
           <Footer border>
             {actions}
-            <Button variant="ghost" onClick={() => nav('/support')}>{t(`${k}.actions.help`)}</Button>
+            <div className="grid grid-cols-2 gap-2">
+              <Button variant="tonal" onClick={shareTransfer}>{t(`${k}.actions.share`)}</Button>
+              <Button variant="ghost" onClick={() => nav('/support')}>{t(`${k}.actions.helpShort`)}</Button>
+            </div>
           </Footer>
         }
       >
-        <TopBar title={t(`${k}.title`)} />
+        <TopBar title={t(`${k}.title`)} action={<IconButton icon="arrowUpRight" label={t(`${k}.actions.share`)} onClick={shareTransfer} />} />
         <div className="flex flex-col gap-6 px-6 pb-6 [&>*]:shrink-0">
           {note ? <Banner type="success">{note}</Banner> : null}
 

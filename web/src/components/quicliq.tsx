@@ -35,12 +35,12 @@ export function BackButton({ onClick }: { onClick?: () => void }) {
   return <IconButton icon="arrowLeft" label={t('common.back')} onClick={onClick ?? (() => nav(-1))} />;
 }
 
-export function TopBar({ title, onBack }: { title: string; onBack?: () => void }) {
+export function TopBar({ title, onBack, action }: { title: string; onBack?: () => void; action?: ReactNode }) {
   return (
     <div className="flex items-center gap-3 px-6 pt-2 pb-4">
       <BackButton onClick={onBack} />
       <h1 className="flex-1 truncate text-center text-title text-ink">{title}</h1>
-      <span className="size-10" aria-hidden />
+      {action ?? <span className="size-10" aria-hidden />}
     </div>
   );
 }

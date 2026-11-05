@@ -1110,7 +1110,9 @@
       "fixAndSend": "Fix details and send again",
       "receipt": "Download receipt",
       "help": "Get help with this transfer",
-      "track": "Share tracking"
+      "track": "Share tracking",
+      "share": "Share transfer",
+      "helpShort": "Get help"
     },
     "cancelSheet": {
       "title": "Cancel this transfer?",
@@ -1140,6 +1142,8 @@
       "payment": "Payment",
       "recipient": "Recipient",
       "transfer": "Transfer"
-    }
+    },
+    "shareCopied": "Transfer details copied. Paste them anywhere to share.",
+    "shareText": "Quicliq transfer {{ref}}\nTo: {{name}} ({{method}})\nAmount sent: {{sent}}\n{{name}} gets: {{receive}}\nStatus: {{status}}\nDate: {{date}}"
   }
 }
