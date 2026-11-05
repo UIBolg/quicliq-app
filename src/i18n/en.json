@@ -1036,7 +1036,7 @@
       "pending": "We're checking your transfer. This usually takes under an hour.",
       "processing": "On its way to {{bank}}. Expected by {{eta}}.",
       "deliveredBank": "Paid into {{name}}'s account on {{date}}.",
-      "deliveredCash": "Delivered to {{agent}}. {{name}} can collect it with ID and the pickup code.",
+      "deliveredCash": "Delivered to {{agent}} for {{name}} to collect.",
       "rejected": "This transfer was stopped.",
       "cancelled": "This transfer was cancelled.",
       "refundPending": "Your refund of {{amount}} is on its way to your card. Expected by {{eta}}.",
@@ -1057,22 +1057,6 @@
         "bank": "{{receive}} paid into {{name}}'s account.",
         "cash": "{{receive}} delivered to {{agent}} for {{name}} to collect."
       }
-    },
-    "reasons": {
-      "nameMismatch": "The recipient's name didn't match the name on the bank account. Check the name and IBAN with {{name}}, then send again.",
-      "compliance": "We couldn't complete our security checks for this transfer. Contact us and we'll tell you what we need.",
-      "notCollected": "The money wasn't collected within 30 days, so we cancelled the transfer automatically.",
-      "byWrongAmount": "You cancelled it: wrong amount.",
-      "byWrongRecipient": "You cancelled it: wrong recipient.",
-      "byChangedMind": "You cancelled it: you changed your mind.",
-      "byOther": "You cancelled it."
-    },
-    "reasonTitle": "Why",
-    "pickup": {
-      "title": "Pickup code",
-      "hint": "{{name}} needs this code and their ID at {{agent}}.",
-      "share": "Share code",
-      "copied": "Copied"
     },
     "details": "Details",
     "rows": {
@@ -1116,27 +1100,12 @@
     },
     "cancelSheet": {
       "title": "Cancel this transfer?",
-      "subtitle": "You'll get {{amount}} back on {{card}}. Tell us why:",
+      "subtitle": "You'll get {{amount}} back on {{card}}.",
       "confirm": "Cancel transfer",
       "keep": "Keep transfer"
     },
     "cancelledToast": "Transfer cancelled. Your refund is on its way.",
     "notFound": "We couldn't find this transfer.",
-    "cancelReasons": {
-      "byWrongAmount": "Wrong amount",
-      "byWrongRecipient": "Wrong recipient",
-      "byChangedMind": "I changed my mind",
-      "byOther": "Something else"
-    },
-    "reasonsShort": {
-      "nameMismatch": "Name doesn't match the bank account",
-      "compliance": "Security checks not completed",
-      "notCollected": "Not collected within 30 days",
-      "byWrongAmount": "Cancelled by you: wrong amount",
-      "byWrongRecipient": "Cancelled by you: wrong recipient",
-      "byChangedMind": "Cancelled by you: changed your mind",
-      "byOther": "Cancelled by you"
-    },
     "copyShort": "Copy",
     "groups": {
       "payment": "Payment",

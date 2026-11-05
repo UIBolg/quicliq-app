@@ -1,14 +1,13 @@
 /** Transfer details (11.3): status header, progress timeline (every status with its time, current step, what's next,
- *  rejection / cancellation reason and refund), pickup code for cash, payment details and status-based actions. */
+ *  refund), payment details and status-based actions. No rejection / cancellation reason or pickup code is shown. */
 import { useState, type ReactNode } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { demoAccount, demoCards, demoToday } from '@shared/mock/account';
-import { cancelReasons, receiveAmount, statusFlow, type StopReason, type TransferStatus } from '@shared/mock/transfers';
+import { receiveAmount, statusFlow, type TransferStatus } from '@shared/mock/transfers';
 import { formatMoney, ltr } from '@shared/utils/format';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent } from '@/components/ui/sheet';
-import { RadioGroup, RadioOption } from '@/components/ui/radio-group';
 import { Icon } from '@/components/Icon';
 import { Banner, IconBadge, IconButton, ListGroup, Screen, StatusPill, TopBar } from '@/components/quicliq';
 import { Footer } from '@/components/forms';
@@ -40,7 +39,6 @@ export function TransferDetails() {
   const nav = useNavigate();
   const tx = useTransfers().find((x) => x.id === id);
   const [cancelOpen, setCancelOpen] = useState(false);
-  const [reason, setReason] = useState<StopReason>('byWrongAmount');
   const [note, setNote] = useState<string | null>(null);
 
   if (!tx) {
@@ -71,7 +69,6 @@ export function TransferDetails() {
   };
   const last = d.events[d.events.length - 1];
   const stopped = tx.status === 'rejected' || tx.status === 'cancelled';
-  const readyToCollect = tx.status === 'delivered' && tx.method === 'cash';
   const headline = {
     pending: t(`${k}.headline.pending`),
     processing: t(`${k}.headline.processing`, vars),
@@ -84,11 +81,11 @@ export function TransferDetails() {
     try { await navigator.clipboard.writeText(text); } catch { /* clipboard blocked */ }
     setNote(msg);
   };
-  const share = async (text: string, copiedMsg = t(`${k}.pickup.copied`)) => {
+  const share = async (text: string, copiedMsg: string) => {
     try { if (navigator.share) { await navigator.share({ title: t(`${k}.title`), text }); return; } } catch { return; }
     await copy(text, copiedMsg);
   };
-  /** Plain-text summary for the share sheet (no card number or pickup code). */
+  /** Plain-text summary for the share sheet (no card number). */
   const shareTransfer = () => share(
     t(`${k}.shareText`, {
       ...vars,
@@ -105,7 +102,7 @@ export function TransferDetails() {
     const refundBy = new Date(`${demoToday}T00:00`);
     refundBy.setDate(refundBy.getDate() + 3);
     const at = [`${demoToday}T${clock}`, last.at].sort()[1]; // never before the last event in the demo
-    cancelTransfer(tx, reason, at, `${refundBy.toISOString().slice(0, 10)}T18:00`);
+    cancelTransfer(tx, at, `${refundBy.toISOString().slice(0, 10)}T18:00`);
     setCancelOpen(false);
     setNote(t(`${k}.cancelledToast`));
   };
@@ -115,12 +112,11 @@ export function TransferDetails() {
     processing: null,
     delivered: (
       <>
-        {readyToCollect && d.pickupCode ? <Button onClick={() => share(`${t(`${k}.pickup.title`)}: ${d.pickupCode} (${d.reference})`)}>{t(`${k}.pickup.share`)}</Button> : null}
-        <Button variant={readyToCollect ? 'secondary' : 'default'} onClick={() => nav('/soon/Send money')}>{t(`${k}.actions.sendAgain`)}</Button>
+        <Button onClick={() => nav('/soon/Send money')}>{t(`${k}.actions.sendAgain`)}</Button>
         <Button variant="secondary" onClick={() => nav('/soon/Receipt')}>{t(`${k}.actions.receipt`)}</Button>
       </>
     ),
-    rejected: <Button onClick={() => nav('/soon/Send money')}>{t(`${k}.actions.fixAndSend`)}</Button>,
+    rejected: <Button onClick={() => nav('/soon/Send money')}>{t(`${k}.actions.sendAgain`)}</Button>,
     cancelled: <Button onClick={() => nav('/soon/Send money')}>{t(`${k}.actions.sendAgain`)}</Button>,
   }[tx.status];
 
@@ -141,7 +137,7 @@ export function TransferDetails() {
         <div className="flex flex-col gap-6 px-6 pb-6 [&>*]:shrink-0">
           {note ? <Banner type="success">{note}</Banner> : null}
 
-          {/* Summary card: who, how much, status, what it means; Cancelled / Rejected show the reason here. */}
+          {/* Summary card: who, how much, status, what it means. */}
           <section className="flex flex-col items-center gap-3 rounded-xl border border-dark-fog bg-fog px-5 pt-6 pb-5 text-center">
             <IconBadge icon={tx.method === 'bank' ? 'bank' : 'cash'} size={56} />
             <div className="flex flex-col items-center gap-0.5">
@@ -150,29 +146,13 @@ export function TransferDetails() {
               <p className="text-caption text-slate">{t(`${k}.rows.receive`, { name })} <span className="text-body-md text-ink">{vars.receive}</span></p>
             </div>
             <StatusPill status={tx.status} label={t(`home.status.${tx.status}`)} className="px-3 py-1 text-body-md" />
-            {stopped && d.reason ? (
-              <div className="flex w-full items-start gap-2 rounded-md bg-failure-light p-3 text-start text-body text-failure-dark" role="note">
-                <Icon name="alert" size={20} className="mt-px text-failure" />
-                <span><span className="text-body-md">{t(`${k}.reasonTitle`)}: </span>{t(`${k}.reasons.${d.reason}`, vars)}</span>
-              </div>
-            ) : <p className="text-body text-slate">{headline}</p>}
+            <p className="text-body text-slate">{headline}</p>
           </section>
 
           {stopped && (d.refundedAt || d.eta) ? (
             <Banner type={d.refundedAt ? 'success' : 'info'} icon="wallet">
               {d.refundedAt ? t(`${k}.headline.refundDone`, { ...vars, date: dayOnly(d.refundedAt) }) : t(`${k}.headline.refundPending`, { ...vars, eta: d.eta ? dayOnly(d.eta) : '' })}
             </Banner>
-          ) : null}
-
-          {readyToCollect && d.pickupCode ? (
-            <section className="flex flex-col gap-3 rounded-lg bg-info-light p-4">
-              <div className="flex items-center justify-between">
-                <h2 className="text-body-md text-info-dark">{t(`${k}.pickup.title`)}</h2>
-                <CopyButton label={t(`${k}.copyShort`)} aria={t(`${k}.pickup.title`)} onClick={() => copy(d.pickupCode!, t(`${k}.pickup.copied`))} />
-              </div>
-              <p className="text-numeric-l tracking-[0.2em] text-ink" dir="ltr" style={{ fontFamily: 'var(--font-en)', textAlign: 'center' }}>{d.pickupCode}</p>
-              <p className="text-caption text-info-dark">{t(`${k}.pickup.hint`, vars)}</p>
-            </section>
           ) : null}
 
           {/* Progress timeline */}
@@ -185,7 +165,7 @@ export function TransferDetails() {
                   row={r}
                   last={i === all.length - 1}
                   title={t(`home.status.${r.step}`)}
-                  body={r.state === 'failed' ? t(`${k}.reasonsShort.${d.reason ?? 'byOther'}`) : t(`${k}.steps.${r.step}.${tx.method}`, vars)}
+                  body={r.state === 'failed' ? '' : t(`${k}.steps.${r.step}.${tx.method}`, vars)}
                   when={r.at ? dateTime(r.at) : i === all.findIndex((x) => x.state === 'upcoming') && d.eta ? t(`${k}.expected`, vars) : ''}
                 />
               ))}
@@ -224,9 +204,6 @@ export function TransferDetails() {
             <h2 className="text-h3">{t(`${k}.cancelSheet.title`)}</h2>
             <p className="text-body text-slate">{t(`${k}.cancelSheet.subtitle`, vars)}</p>
           </div>
-          <RadioGroup value={reason} onValueChange={(v) => setReason(v as StopReason)}>
-            {cancelReasons.map((r) => <RadioOption key={r} value={r} title={t(`${k}.cancelReasons.${r}`)} />)}
-          </RadioGroup>
           <div className="flex flex-col gap-2">
             <Button onClick={confirmCancel}>{t(`${k}.cancelSheet.confirm`)}</Button>
             <Button variant="secondary" onClick={() => setCancelOpen(false)}>{t(`${k}.cancelSheet.keep`)}</Button>
