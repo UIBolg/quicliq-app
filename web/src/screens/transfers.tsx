@@ -72,7 +72,7 @@ export function History() {
       <Sheet open={open === 'status' || open === 'type'} onOpenChange={(o) => !o && setOpen(null)}>
         {open === 'status' || open === 'type' ? (
           <SheetContent title={t(`${k}.groups.${open}`)}>
-            <SheetHead title={t(`${k}.groups.${open}`)} subtitle={t(`${k}.hints.${open}`)} onClose={() => setOpen(null)} />
+            <SheetHead title={t(`${k}.groups.${open}`)} onClose={() => setOpen(null)} />
             <RadioGroup value={picked[open]} onValueChange={(v) => { setPicked((p) => ({ ...p, [open]: v })); setOpen(null); }}>
               {OPTIONS[open].map((o) => <RadioOption key={o} value={o} title={t(`${k}.options.${open}.${o}`)} />)}
             </RadioGroup>
@@ -81,7 +81,7 @@ export function History() {
       </Sheet>
       <Sheet open={open === 'date'} onOpenChange={(o) => !o && setOpen(null)}>
         <SheetContent title={t(`${k}.groups.date`)}>
-          <SheetHead title={t(`${k}.groups.date`)} subtitle={t(`${k}.pickRange`)} onClose={() => setOpen(null)} />
+          <SheetHead title={t(`${k}.groups.date`)} onClose={() => setOpen(null)} />
           <RangeCalendar month={month} onMonth={setMonth} from={draft.from} to={draft.to} max={demoToday} onChange={(from, to) => setDraft({ from, to })} />
           <p className="text-center text-body text-slate">{draft.from ? `${fmt(draft.from)} – ${fmt(draft.to || draft.from)}` : t(`${k}.pickRange`)}</p>
           <div className="grid grid-cols-2 gap-3">
@@ -94,12 +94,12 @@ export function History() {
   );
 }
 
-/** Sheet Header (Figma 69:461): H3 title, Primary/Red body subtitle, 32 Fog close button. */
-function SheetHead({ title, subtitle, onClose }: { title: string; subtitle: string; onClose: () => void }) {
+/** Sheet Header (Figma 69:461): H3 title and 32 Fog close button (the red subtitle was removed on request). */
+function SheetHead({ title, onClose }: { title: string; onClose: () => void }) {
   const { t } = useTranslation();
   return (
     <div className="flex items-center gap-4">
-      <div className="flex flex-1 flex-col gap-0.5"><h2 className="text-h3">{title}</h2><p className="text-body text-red">{subtitle}</p></div>
+      <h2 className="flex-1 text-h3">{title}</h2>
       <button onClick={onClose} aria-label={t('common.close')} className="grid size-8 cursor-pointer place-items-center rounded-full bg-fog hover:bg-dark-fog"><Icon name="x" size={16} /></button>
     </div>
   );
