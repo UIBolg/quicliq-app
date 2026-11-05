@@ -1092,7 +1092,8 @@
       "agent": "نقطة الاستلام",
       "card": "الدفع بواسطة",
       "created": "تاريخ الإنشاء",
-      "name": "الاسم"
+      "name": "الاسم",
+      "received": "المبلغ المستلم"
     },
     "rateValue": "1 GBP = {{rate}} JOD",
     "cardValue": "{{brand}} •••• {{last4}}",
@@ -1133,6 +1134,7 @@
       "transfer": "التحويل"
     },
     "shareCopied": "تم نسخ تفاصيل التحويل. الصقها في أي مكان لمشاركتها.",
-    "shareText": "تحويل كويكلك {{ref}}\nإلى: {{name}} ({{method}})\nالمبلغ المرسل: {{sent}}\nيستلم {{name}}: {{receive}}\nالحالة: {{status}}\nالتاريخ: {{date}}"
+    "shareText": "تحويل كويكلك {{ref}}\nإلى: {{name}} ({{method}})\nالمبلغ المرسل: {{sent}}\nيستلم {{name}}: {{receive}}\nالحالة: {{status}}\nالتاريخ: {{date}}",
+    "currencyJOD": "دينار أردني"
   }
 }

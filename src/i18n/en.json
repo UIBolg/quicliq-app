@@ -1072,7 +1072,8 @@
       "agent": "Pickup point",
       "card": "Paid with",
       "created": "Created",
-      "name": "Name"
+      "name": "Name",
+      "received": "Amount received"
     },
     "rateValue": "1 GBP = {{rate}} JOD",
     "cardValue": "{{brand}} •••• {{last4}}",
@@ -1113,6 +1114,7 @@
       "transfer": "Transfer"
     },
     "shareCopied": "Transfer details copied. Paste them anywhere to share.",
-    "shareText": "Quicliq transfer {{ref}}\nTo: {{name}} ({{method}})\nAmount sent: {{sent}}\n{{name}} gets: {{receive}}\nStatus: {{status}}\nDate: {{date}}"
+    "shareText": "Quicliq transfer {{ref}}\nTo: {{name}} ({{method}})\nAmount sent: {{sent}}\n{{name}} gets: {{receive}}\nStatus: {{status}}\nDate: {{date}}",
+    "currencyJOD": "Jordanian dinar"
   }
 }

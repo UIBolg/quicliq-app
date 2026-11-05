@@ -5,7 +5,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { demoAccount, demoCards, demoToday } from '@shared/mock/account';
 import { receiveAmount, statusFlow, type TransferStatus } from '@shared/mock/transfers';
-import { formatMoney, ltr } from '@shared/utils/format';
+import { formatAmount, formatMoney, ltr } from '@shared/utils/format';
+import { flagXml } from '@shared/assets/flags.generated';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent } from '@/components/ui/sheet';
 import { Icon } from '@/components/Icon';
@@ -175,7 +176,8 @@ export function TransferDetails() {
             <DetailRow label={t(`${k}.rows.fee`)} value={money(d.fee)} ltr />
             <DetailRow label={t(`${k}.rows.total`)} value={vars.amount} ltr strong />
             <DetailRow label={t(`${k}.rows.rate`)} value={t(`${k}.rateValue`, { rate: demoAccount.rate.jod })} ltr />
-            <DetailRow label={t(`${k}.rows.receive`, { name })} value={vars.receive} ltr strong />
+            <DetailRow label={t(`${k}.rows.received`)} value={formatAmount(receiveAmount(sent))} ltr strong
+              trailing={<CurrencyTag flag="JO" code="JOD" label={t(`${k}.currencyJOD`)} />} />
             <DetailRow label={t(`${k}.rows.card`)} value={vars.card} ltr />
           </ListGroup>
           <ListGroup title={t(`${k}.groups.recipient`)}>
@@ -254,5 +256,15 @@ function CopyButton({ label, aria, onClick }: { label: string; aria: string; onC
     <button onClick={onClick} aria-label={aria} className="flex min-h-11 cursor-pointer items-center gap-1 rounded-full px-2 text-body-md text-red outline-none hover:bg-red-4 focus-visible:ring-2 focus-visible:ring-ink">
       {label}
     </button>
+  );
+}
+
+/** Currency indicator next to an amount: flag + ISO code in a small pill (flags never mirror). */
+function CurrencyTag({ flag, code, label }: { flag: 'JO' | 'UK'; code: string; label: string }) {
+  return (
+    <span className="flex shrink-0 items-center gap-1.5 rounded-full border border-dark-fog bg-white py-0.5 ps-1 pe-2" title={label} aria-label={label} role="img">
+      <span className="h-3 w-4 overflow-hidden rounded-[2px] [&>svg]:size-full" aria-hidden dangerouslySetInnerHTML={{ __html: flagXml[flag] }} />
+      <span className="text-caption text-ink" style={{ fontFamily: 'var(--font-en)' }}>{code}</span>
+    </span>
   );
 }
