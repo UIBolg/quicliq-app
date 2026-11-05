@@ -131,13 +131,13 @@ export function TransferDetails() {
           <Footer border>
             {actions}
             <div className="grid grid-cols-2 gap-2">
-              <Button variant="tonal" onClick={shareTransfer}>{t(`${k}.actions.share`)}</Button>
+              <Button variant="tonal" onClick={shareTransfer}><Icon name="share" size={20} />{t(`${k}.actions.share`)}</Button>
               <Button variant="ghost" onClick={() => nav('/support')}>{t(`${k}.actions.helpShort`)}</Button>
             </div>
           </Footer>
         }
       >
-        <TopBar title={t(`${k}.title`)} action={<IconButton icon="arrowUpRight" label={t(`${k}.actions.share`)} onClick={shareTransfer} />} />
+        <TopBar title={t(`${k}.title`)} action={<IconButton icon="share" label={t(`${k}.actions.share`)} onClick={shareTransfer} />} />
         <div className="flex flex-col gap-6 px-6 pb-6 [&>*]:shrink-0">
           {note ? <Banner type="success">{note}</Banner> : null}
 
