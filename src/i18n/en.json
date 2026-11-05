@@ -195,7 +195,18 @@
         "fundsHint": "Unlocks after ID and address"
       },
       "verify": "Verify ID and address",
-      "later": "Maybe later"
+      "later": "Maybe later",
+      "ready": {
+        "title": "Your account is ready",
+        "body": "One more step: verify your ID and address to start sending money.",
+        "info": "We couldn’t match your mobile number to your name, so we need to check your ID and address. It takes about 3 minutes.",
+        "next": "Your next steps",
+        "idHint": "Required to send money · 3 min",
+        "send": "Send your first transfer",
+        "sendHint": "Unlocks after verification",
+        "need": "You’ll need a passport or driving licence and a recent bill.",
+        "later": "I’ll do it later"
+      }
     },
     "3_6": {
       "notNow": "Not now",
@@ -465,6 +476,20 @@
       "1": "Basic",
       "2": "Plus",
       "3": "Premium"
+    },
+    "locked": {
+      "banner": "Verify your ID and address",
+      "bannerBody": "to start sending money. It takes about 3 minutes.",
+      "limitLabel": "Your sending limit",
+      "limitTitle": "Verify to unlock",
+      "limitBody": "Your limit appears once we’ve checked your ID and address.",
+      "verify": "Verify ID and address",
+      "sendHint": "Available after you verify your ID and address",
+      "empty": "Your transfers will show here once you’ve verified your ID.",
+      "sheetTitle": "Verify to send money",
+      "sheetBody": "Before your first transfer we need to check your ID and address, because your mobile number isn’t in your name. It takes about 3 minutes.",
+      "verifyNow": "Verify now",
+      "notNow": "Not now"
     }
   },
   "account": {

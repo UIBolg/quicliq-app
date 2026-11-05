@@ -1,5 +1,5 @@
 /** 7.1 Log in — mobile / email, password; demo: empty fields → Home, or open Home at a limit level. */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { demoAccount, isDemoLogin } from '@shared/mock/account';
@@ -9,11 +9,13 @@ import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/Art';
 import { Banner, Screen, TextField } from '@/components/quicliq';
 import { cn } from '@/lib/utils';
+import { setIdRequired } from '@/lib/idRequired';
 
 export function Login() {
   const { t } = useTranslation();
   const nav = useNavigate();
   const k = 'login.7_1';
+  useEffect(() => { setIdRequired(false); }, []); // logging in = the verified demo account
   const [method, setMethod] = useState<'mobile' | 'email'>('mobile');
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');

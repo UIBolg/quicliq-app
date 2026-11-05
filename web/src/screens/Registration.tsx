@@ -15,6 +15,7 @@ import { Banner, IconBadge, Screen, TextField } from '@/components/quicliq';
 import { Agreement, CodeError, CodeInput, Footer, Keypad, PasswordRule, PhoneRow, ResendCountdown, StepHeader, VerifiedTag, formatMSS, useCountdown } from '@/components/forms';
 import { useLocale } from '@/i18n';
 import { cn } from '@/lib/utils';
+import { setIdRequired } from '@/lib/idRequired';
 
 const NAME_RE = /^[\p{L}][\p{L}\s'’-]*$/u;
 const pad = (n: number) => String(n).padStart(2, '0');
@@ -290,6 +291,8 @@ export function AccountCreated() {
   const idCheck = q.get('id') === '1';
   const k = 'registration.2_9';
   const first = limitLevels[0].total ?? 0, second = limitLevels[1].total ?? 0;
+  useEffect(() => { setIdRequired(idCheck); }, [idCheck]);
+  if (idCheck) return <AccountReady />;
   const step = (status: 'done' | 'current' | 'locked', title: string, hint: string, amount: string, red?: boolean) => (
     <div className="flex items-center gap-3 py-3">
       {status === 'done' ? <IconBadge icon="check" size={32} tone="success" /> : status === 'locked' ? <IconBadge icon="lock" size={32} tone="grey" /> : <span className="grid size-8 place-items-center rounded-full bg-red-10"><span className="size-2.5 rounded-full bg-red" /></span>}
@@ -316,6 +319,40 @@ export function AccountCreated() {
             {step('locked', t(`${k}.steps.funds`), t(`${k}.steps.fundsHint`), `${formatMoney(second)}+`)}
           </div>
         </div>
+      </div>
+    </Screen>
+  );
+}
+
+/* ——— 2.9b Account ready — number not in the user's name: no limit shown, ID + address required before sending ——— */
+function AccountReady() {
+  const { t } = useTranslation();
+  const nav = useNavigate();
+  const k = 'registration.2_9';
+  const row = (marker: React.ReactNode, title: string, hint: string, hintCls: string, last?: boolean, doneLine?: boolean) => (
+    <div className="flex gap-3">
+      <div className="flex flex-col items-center">{marker}{last ? null : <span className={cn('min-h-4 w-0.5 flex-1', doneLine ? 'bg-success' : 'bg-dark-fog')} />}</div>
+      <div className={cn('flex flex-1 flex-col gap-0.5 pt-1', !last && 'pb-4')}><span className="text-body-md">{title}</span><span className={cn('text-caption', hintCls)}>{hint}</span></div>
+    </div>
+  );
+  return (
+    <Screen footer={<Footer><Button onClick={() => nav('/verify/start')}><Icon name="idCard" size={20} />{t(`${k}.verify`)}</Button><Button variant="ghost" onClick={() => nav('/register/biometric')}>{t(`${k}.ready.later`)}</Button></Footer>}>
+      <div className="flex flex-col gap-6 px-4 pt-6 pb-6">
+        <div className="flex flex-col items-center gap-2 text-center">
+          <IconBadge icon="shield" size={72} />
+          <h1 className="text-h2">{t(`${k}.ready.title`)}</h1>
+          <p className="text-body-lg text-slate">{t(`${k}.ready.body`)}</p>
+        </div>
+        <Banner type="info">{t(`${k}.ready.info`)}</Banner>
+        <div className="flex flex-col gap-3 rounded-xl bg-fog p-4">
+          <span className="text-overline text-slate">{t(`${k}.ready.next`).toUpperCase()}</span>
+          <div>
+            {row(<IconBadge icon="check" size={32} tone="success" />, t(`${k}.steps.account`), t(`${k}.done`), 'text-success', false, true)}
+            {row(<span className="grid size-8 shrink-0 place-items-center rounded-full bg-red-10 ring-[1.5px] ring-red"><span className="size-2.5 rounded-full bg-red" /></span>, t(`${k}.steps.id`), t(`${k}.ready.idHint`), 'text-red')}
+            {row(<IconBadge icon="lock" size={32} tone="grey" />, t(`${k}.ready.send`), t(`${k}.ready.sendHint`), 'text-slate', true)}
+          </div>
+        </div>
+        <p className="flex items-center gap-2 text-caption text-slate"><Icon name="idCard" size={20} />{t(`${k}.ready.need`)}</p>
       </div>
     </Screen>
   );

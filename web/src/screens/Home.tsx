@@ -12,6 +12,7 @@ import { transferCard } from '@/screens/transfers';
 import { useTransfers } from '@/lib/transfers';
 import { RaiseLimitSheet } from '@/screens/Verify';
 import { cn } from '@/lib/utils';
+import { isIdRequired } from '@/lib/idRequired';
 
 const k = 'home';
 
@@ -32,6 +33,10 @@ export function Home() {
   const next = nextLevel(level);
   const soon = (id: string) => () => nav(`/soon/${id}`);
   const transfers = useTransfers();
+  const [q] = useSearchParams();
+  const locked = isIdRequired(q);
+  const [lockSheet, setLockSheet] = useState(false);
+  if (locked) return <LockedHome onVerify={() => nav('/verify/start')} sheet={lockSheet} setSheet={setLockSheet} />;
   return (
     <>
       <Screen className="gap-6 px-4 pt-4 pb-28">
@@ -87,6 +92,56 @@ export function Home() {
       <TabBar active="home" />
       <LimitSheet open={sheet} onOpenChange={setSheet} level={level} onRaise={() => { setSheet(false); if (level === 1) setRaise(true); else soon('Source of funds')(); }} />
       <RaiseLimitSheet open={raise} onOpenChange={setRaise} />
+    </>
+  );
+}
+
+/** Number not in the user's name: no limit until ID + address are verified, every way to send opens the verify sheet. */
+function LockedHome({ onVerify, sheet, setSheet }: { onVerify: () => void; sheet: boolean; setSheet: (o: boolean) => void }) {
+  const { t } = useTranslation();
+  const nav = useNavigate();
+  const kl = `${k}.locked`;
+  return (
+    <>
+      <Screen className="gap-6 px-4 pt-4 pb-28">
+        <header className="flex items-center gap-3">
+          <Avatar initials={demoAccount.initials} size={44} tone="brand" />
+          <div className="flex-1"><p className="text-caption text-slate">{t(`${k}.greeting`)}</p><h1 className="text-title">{demoAccount.firstName}</h1></div>
+          <IconButton icon="bell" label={t(`${k}.notifications`)} onClick={() => nav('/notifications')} />
+        </header>
+        <ActionBanner icon="idCard" title={t(`${kl}.banner`)} message={t(`${kl}.bannerBody`)} onClick={onVerify} />
+        <div className="flex flex-col gap-2">
+          <div className="flex flex-col items-start gap-2 rounded-xl border border-dark-fog bg-fog p-5">
+            <span className="flex items-center gap-2 text-body text-slate"><Icon name="lock" size={16} />{t(`${kl}.limitLabel`)}</span>
+            <span className="text-h2">{t(`${kl}.limitTitle`)}</span>
+            <span className="text-caption text-slate">{t(`${kl}.limitBody`)}</span>
+            <Button size="sm" onClick={onVerify}><Icon name="idCard" size={16} />{t(`${kl}.verify`)}</Button>
+          </div>
+          <button onClick={() => setSheet(true)} className="flex cursor-pointer items-center gap-3 rounded-xl border border-dark-fog bg-fog p-4 text-start text-slate hover:bg-dark-fog">
+            <Icon name="send" size={28} className="text-silver" />
+            <span className="flex flex-1 flex-col"><span className="text-title">{t(`${k}.sendMoney`)}</span><span className="text-caption">{t(`${kl}.sendHint`)}</span></span>
+            <Icon name="lock" size={20} />
+          </button>
+        </div>
+        <section className="flex flex-col gap-3">
+          <h2 className="text-h3">{t(`${k}.recent`)}</h2>
+          <div className="flex flex-col items-center gap-2 rounded-lg bg-fog p-6 text-center"><IconBadge icon="send" size={40} tone="white" /><p className="text-body text-slate">{t(`${kl}.empty`)}</p></div>
+        </section>
+      </Screen>
+      <TabBar active="home" onSend={() => setSheet(true)} />
+      <Sheet open={sheet} onOpenChange={setSheet}>
+        <SheetContent title={t(`${kl}.sheetTitle`)}>
+          <div className="flex flex-col items-center gap-3 text-center">
+            <IconBadge icon="lock" size={72} />
+            <h2 className="text-h3">{t(`${kl}.sheetTitle`)}</h2>
+            <p className="text-body text-slate">{t(`${kl}.sheetBody`)}</p>
+          </div>
+          <div className="flex flex-col gap-2">
+            <Button onClick={() => { setSheet(false); onVerify(); }}><Icon name="idCard" size={20} />{t(`${kl}.verifyNow`)}</Button>
+            <Button variant="ghost" onClick={() => setSheet(false)}>{t(`${kl}.notNow`)}</Button>
+          </div>
+        </SheetContent>
+      </Sheet>
     </>
   );
 }

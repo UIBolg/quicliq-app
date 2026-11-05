@@ -104,9 +104,9 @@ export function ActionBanner({ icon, title, message, onClick }: { icon: IconName
   );
 }
 
-export function IconBadge({ icon, size = 40, tone = 'redTint' }: { icon: IconName; size?: 32 | 40 | 56; tone?: 'redTint' | 'white' | 'success' | 'grey' }) {
+export function IconBadge({ icon, size = 40, tone = 'redTint' }: { icon: IconName; size?: 32 | 40 | 56 | 72; tone?: 'redTint' | 'white' | 'success' | 'grey' }) {
   const toneCls = { redTint: 'bg-red-10 text-red', white: 'bg-white text-ink', success: 'bg-success text-white', grey: 'bg-dark-fog text-slate' }[tone];
-  return <span className={cn('grid shrink-0 place-items-center rounded-full', toneCls)} style={{ width: size, height: size }}><Icon name={icon} size={size >= 56 ? 28 : size >= 40 ? 20 : 16} /></span>;
+  return <span className={cn('grid shrink-0 place-items-center rounded-full', toneCls)} style={{ width: size, height: size }}><Icon name={icon} size={size >= 72 ? 36 : size >= 56 ? 28 : size >= 40 ? 20 : 16} /></span>;
 }
 
 export function Avatar({ initials, tone = 'tint', size = 56 }: { initials: string; tone?: 'brand' | 'tint'; size?: 44 | 56 }) {
@@ -204,7 +204,7 @@ export function FilterChip({ label, selected, onClick, plain }: { label: string;
 }
 
 /** Floating light tab bar: Home · Send · Transfers history · Account. */
-export function TabBar({ active }: { active: 'home' | 'send' | 'history' | 'profile' }) {
+export function TabBar({ active, onSend }: { active: 'home' | 'send' | 'history' | 'profile'; onSend?: () => void }) {
   const { t } = useTranslation();
   const nav = useNavigate();
   const items: { key: typeof active; icon: IconName; to: string }[] = [
@@ -218,7 +218,7 @@ export function TabBar({ active }: { active: 'home' | 'send' | 'history' | 'prof
       {items.map((it) => (
         <button
           key={it.key}
-          onClick={() => nav(it.to)}
+          onClick={() => (it.key === 'send' && onSend ? onSend() : nav(it.to))}
           aria-label={t(`home.tabs.${it.key}`)}
           aria-current={active === it.key ? 'page' : undefined}
           className={cn('grid size-12 cursor-pointer place-items-center rounded-full', active === it.key ? 'bg-red text-white' : 'text-slate hover:bg-fog')}
