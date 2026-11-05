@@ -6,6 +6,8 @@ import tailwindcss from '@tailwindcss/vite';
 // Published under GitHub Pages at /quicliq-app/web/ (the Expo app owns /quicliq-app/).
 export default defineConfig({
   base: '/quicliq-app/web/',
+  // Use web/tsconfig.json for every file (incl. shared ../src), so the web app runs without Expo installed.
+  tsconfig: path.resolve(import.meta.dirname, 'tsconfig.json'),
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
