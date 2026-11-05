@@ -2,6 +2,15 @@
 
 Read `AGENTS.md` too (Expo commands and conventions). The rules below win if they conflict.
 
+## Active app: the web preview in `web/` (owner's decision)
+- New features and design fixes go into `web/` — React + TypeScript, Vite, Tailwind CSS v4, shadcn/ui
+  (components in `web/src/components/ui`, Quicliq tokens in `web/src/index.css`). See `web/README.md`.
+- Shared with the Expo app (edit carefully, both use them): copy `src/i18n/en.json` / `ar.json`, icons/illustrations
+  `src/assets/*`, demo data `src/mock/account.ts`, formatters `src/utils/*`, fonts and Lottie files in `assets/`.
+- Leave the Expo app (`src/screens`, `src/components`) alone unless the owner asks.
+- Client link (deployed on every push to main): https://uibolg.github.io/quicliq-app/web/
+- Check with `cd web && npx tsc -p . && npx vite build`; match Figma (New Designs file) for new screens.
+
 ## Figma is READ-ONLY
 - **One exception (approved by the product owner):** the file "New Designs"
   (https://www.figma.com/design/Dxr5Ajr1A5uk1cgQDI6iEJ/New-Designs) may be written to with `use_figma` (set to
