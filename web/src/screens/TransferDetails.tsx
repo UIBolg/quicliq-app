@@ -126,10 +126,7 @@ export function TransferDetails() {
         footer={
           <Footer border>
             {actions}
-            <div className="grid grid-cols-2 gap-2">
-              <Button variant="tonal" onClick={shareTransfer}><Icon name="share" size={20} />{t(`${k}.actions.share`)}</Button>
-              <Button variant="ghost" onClick={() => nav('/support')}>{t(`${k}.actions.helpShort`)}</Button>
-            </div>
+            <Button variant="ghost" onClick={() => nav('/support')}>{t(`${k}.actions.help`)}</Button>
           </Footer>
         }
       >
