@@ -194,11 +194,11 @@ export function StatusPill({ status, label, className }: { status: TransferStatu
   return <span className={cn('rounded-full px-2 text-caption', statusTone[status], className)}>{label}</span>;
 }
 
-export function FilterChip({ label, selected, onClick }: { label: string; selected?: boolean; onClick: () => void }) {
+export function FilterChip({ label, selected, onClick, plain }: { label: string; selected?: boolean; onClick: () => void; plain?: boolean }) {
   return (
     <button onClick={onClick} aria-pressed={selected} className={cn('flex shrink-0 cursor-pointer items-center gap-1 rounded-full px-4 py-2 text-body-md', selected ? 'bg-red text-white' : 'bg-fog text-ink hover:bg-dark-fog')}>
       {label}
-      <Icon name="chevronDown" size={16} />
+      {plain ? null : <Icon name="chevronDown" size={16} />}
     </button>
   );
 }
