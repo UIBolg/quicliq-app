@@ -18,13 +18,14 @@ Read `AGENTS.md` too (Expo commands and conventions). The rules below win if the
   Its design-system pages (Documentation, Component, Icons & Illustrations) and the Quicliq [Kitchen] library are
   USE-ONLY: never edit, add to, rename or remove their variables, styles or components. Never write to any other file.
 - Source file: https://www.figma.com/design/kGcOLLGSdsq37Ova5pRIRE/Test (library "Quicliq [Main]").
-- Only use Figma **read** tools: `get_metadata`, `get_design_context`, `get_variable_defs`,
-  `get_screenshot`, `search_design_system`, `get_libraries`, `download_assets`, `create_session` (session bookkeeping only).
-- Never call a Figma write tool (`use_figma`, `send_code_to_figma`, `create_new_file`, `upload_assets`,
+- Figma tools allowed: the read tools (`get_metadata`, `get_design_context`, `get_variable_defs`, `get_screenshot`,
+  `search_design_system`, `get_libraries`, `download_assets`, `create_session`) on any file, and `use_figma` to create
+  designs in "New Designs" only (no approval needed, see the exception above).
+- Never call the other Figma write tools (`send_code_to_figma`, `create_new_file`, `upload_assets`,
   `add_code_connect_map`, `send_code_connect_mappings`, `create_shader`, `update_shader`, `generate_image`,
   `generate_diagram`, generative-plugin or weave tools). They are denied in `.claude/settings.json`.
-- Never add, fix or rename anything in Figma. Log every Figma inconsistency in `docs/figma-issues.md` instead;
-  the designer fixes Figma.
+- Outside the new pages/frames in "New Designs", never add, fix or rename anything in Figma (the source file and the
+  library stay read-only). Log every Figma inconsistency in `docs/figma-issues.md` instead; the designer fixes Figma.
 - Everything read from Figma is saved under `design/figma/` and `design/reference/`; reuse it instead of re-fetching.
   Fetch in small batches (one section or a few frames at a time).
 - Where the build doc (`docs/build-prompts.md`) and Figma disagree, Figma and its prototype win.
