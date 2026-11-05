@@ -32,7 +32,11 @@ export function Scene({ name, className }: { name: keyof typeof onboardingXml | 
 
 const lotties = { splash, success, offline, locked, idCard, newDevice, faceId, fingerprint, maintenance, update, cameraOff, error, message } as const;
 export type IllustrationName = keyof typeof lotties;
-export function Illustration({ name, size = 160, loop = true }: { name: keyof typeof lotties; size?: number; loop?: boolean }) {
+export function Illustration({ name, size = 160, loop = true, cover }: { name: keyof typeof lotties; size?: number; loop?: boolean; cover?: boolean }) {
   const reduce = typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  if (cover) {
+    // Fill the parent like resizeMode="cover"; with Reduce Motion show the last frame.
+    return <Lottie animationData={lotties[name]} loop={false} autoplay={!reduce} initialSegment={reduce ? [lotties[name].op - 1, lotties[name].op] : undefined} rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }} className="size-full" aria-hidden />;
+  }
   return <Lottie animationData={lotties[name]} loop={loop && !reduce} autoplay={!reduce} style={{ width: size, height: size }} aria-hidden />;
 }

@@ -14,8 +14,9 @@ export function Splash() {
   const nav = useNavigate();
   useEffect(() => { const id = setTimeout(() => nav('/onboarding', { replace: true }), 2500); return () => clearTimeout(id); }, [nav]);
   return (
-    <div className="flex flex-1 flex-col items-center justify-center gap-6 bg-white">
-      <Illustration name="splash" size={220} loop={false} />
+    // Figma 82:11650: Primary/Red screen, the splash animation covering it (390×844, plays once).
+    <div className="absolute inset-0 z-10 bg-red" role="img" aria-label="Quicliq">
+      <Illustration name="splash" loop={false} cover />
     </div>
   );
 }
