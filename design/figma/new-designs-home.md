@@ -66,3 +66,15 @@ section 104:15499 (left untouched). Made by cloning the EN section, then: Lang=A
 301 texts translated (src/i18n/ar.json + 24 new strings: e.g. placeholders, months, sheet messages), EN→AR text styles,
 own auto-layouts mirrored (rows reversed, stacks right-aligned), arrowLeft→arrowRight / chevronRight→chevronLeft.
 OTP digits, keypad, phone numbers, names, emails and amounts stay LTR / EN styles. Frames renamed EN/… → AR/….
+
+## Local components + polish (2026-11-05)
+- Section 119:2211 "Components (local) — Nav bar · Transfer card" (left of the Home sections), built from the screens'
+  own frames, all fills/spacing/radius/text styles linked to Quicliq [Kitchen]:
+  - 119:2292 **Nav bar** — Active = Home / Send / History / Account
+  - 119:2428 **Transfer card** — Status = Delivered / Processing / Pending / Cancelled / Rejected × Lang = EN / AR;
+    text properties Name, Details, Amount, Status label; exposed Icon Badge (swap bank / cash)
+  - Every tab bar (25) and transfer card (76) on this page is now an instance of these.
+- 12.4 Saved cards (EN 93:1696, AR 96:1922): payment cards rebuilt like the app (diagonal gradient Ink→Slate /
+  Primary Red→Illustration Red Shade, 10% white glow, chip, contactless icon, spaced number, VALID THRU, brand);
+  Add card = Secondary + plus. Brand is not italic (no Avenir oblique in the library fonts).
+- All 26 screens without a corner radius now use radius/3xl (40) like Home / Transfers history.
