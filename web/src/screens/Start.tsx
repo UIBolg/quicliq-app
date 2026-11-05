@@ -88,7 +88,7 @@ export function Onboarding() {
         ))}
       </div>
       <div className="flex flex-col gap-3 px-6 pb-10">
-        <Button onClick={() => nav('/soon/1.1')}>{t('onboarding.signUp')}</Button>
+        <Button onClick={() => nav('/register')}>{t('onboarding.signUp')}</Button>
         <Button variant="secondary" onClick={() => nav('/login')}>{t('onboarding.logIn')}</Button>
       </div>
       <LanguageSheet open={lang} onOpenChange={setLang} />

@@ -19,9 +19,9 @@ export function Screen({ children, className, footer }: { children: ReactNode; c
   );
 }
 
-export function IconButton({ icon, label, onClick, className }: { icon: IconName; label: string; onClick?: () => void; className?: string }) {
+export function IconButton({ icon, label, onClick, className, plain }: { icon: IconName; label: string; onClick?: () => void; className?: string; plain?: boolean }) {
   return (
-    <button onClick={onClick} aria-label={label} className={cn('grid size-10 shrink-0 cursor-pointer place-items-center rounded-full bg-fog text-ink outline-none hover:bg-dark-fog focus-visible:ring-2 focus-visible:ring-ink', className)}>
+    <button onClick={onClick} aria-label={label} className={cn('grid size-10 shrink-0 cursor-pointer place-items-center rounded-full text-ink outline-none hover:bg-dark-fog focus-visible:ring-2 focus-visible:ring-ink', !plain && 'bg-fog', className)}>
       <Icon name={icon} size={20} />
     </button>
   );
@@ -103,7 +103,7 @@ export function ActionBanner({ icon, title, message, onClick }: { icon: IconName
 }
 
 export function IconBadge({ icon, size = 40, tone = 'redTint' }: { icon: IconName; size?: 32 | 40 | 56; tone?: 'redTint' | 'white' | 'success' | 'grey' }) {
-  const toneCls = { redTint: 'bg-red-10 text-red', white: 'bg-white text-ink', success: 'bg-success-light text-success', grey: 'bg-dark-fog text-slate' }[tone];
+  const toneCls = { redTint: 'bg-red-10 text-red', white: 'bg-white text-ink', success: 'bg-success text-white', grey: 'bg-dark-fog text-slate' }[tone];
   return <span className={cn('grid shrink-0 place-items-center rounded-full', toneCls)} style={{ width: size, height: size }}><Icon name={icon} size={size >= 56 ? 28 : size >= 40 ? 20 : 16} /></span>;
 }
 
@@ -173,7 +173,7 @@ export function TransferCard({ name, method, methodLabel, date, amount, status, 
       </span>
       <span className="flex flex-col items-end gap-1">
         <span className="text-body-md text-ink" dir="ltr" style={{ fontFamily: 'var(--font-en)' }}>{amount}</span>
-        <span className={cn('rounded-full px-2 text-caption', status === 'delivered' ? 'bg-success-light text-success' : 'bg-info-light text-info')}>{statusLabel}</span>
+        <span className={cn('rounded-full px-2 text-caption', status === 'delivered' ? 'bg-success-light text-success' : 'text-slate')}>{statusLabel}</span>
       </span>
     </button>
   );
@@ -199,17 +199,16 @@ export function TabBar({ active }: { active: 'home' | 'send' | 'history' | 'prof
     { key: 'profile', icon: 'user', to: '/account' },
   ];
   return (
-    <nav className="absolute inset-x-6 bottom-6 z-30 flex items-center justify-between rounded-full bg-white p-2 shadow-[0_8px_24px_rgba(23,23,23,0.12)]" aria-label="Main">
+    <nav className="absolute inset-x-4 bottom-4 z-30 flex items-center justify-around rounded-full bg-white px-4 py-2 shadow-[0_8px_24px_rgba(23,23,23,0.12)]" aria-label="Main">
       {items.map((it) => (
         <button
           key={it.key}
           onClick={() => nav(it.to)}
           aria-label={t(`home.tabs.${it.key}`)}
           aria-current={active === it.key ? 'page' : undefined}
-          className={cn('flex h-12 cursor-pointer items-center justify-center gap-2 rounded-full px-4', active === it.key ? 'bg-red text-white' : 'text-slate hover:bg-fog')}
+          className={cn('grid size-12 cursor-pointer place-items-center rounded-full', active === it.key ? 'bg-red text-white' : 'text-slate hover:bg-fog')}
         >
-          <Icon name={it.icon} size={22} />
-          {active === it.key ? <span className="text-body-md">{t(`home.tabs.${it.key}`)}</span> : null}
+          <Icon name={it.icon} size={24} />
         </button>
       ))}
     </nav>

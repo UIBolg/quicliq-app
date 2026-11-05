@@ -9,6 +9,7 @@ import { Sheet, SheetContent } from '@/components/ui/sheet';
 import { Icon } from '@/components/Icon';
 import { ActionBanner, Avatar, IconBadge, IconButton, LimitCard, Screen, TabBar, TransferCard } from '@/components/quicliq';
 import { transferCard } from '@/screens/transfers';
+import { RaiseLimitSheet } from '@/screens/Verify';
 import { cn } from '@/lib/utils';
 
 const k = 'home';
@@ -24,6 +25,7 @@ export function Home() {
   const nav = useNavigate();
   const level = useLevel();
   const [sheet, setSheet] = useState(false);
+  const [raise, setRaise] = useState(false);
   const total = limitTotal(level);
   const left = Math.max(0, total - demoLimit.sent);
   const next = nextLevel(level);
@@ -37,11 +39,11 @@ export function Home() {
             <p className="text-caption text-slate">{t(`${k}.greeting`)}</p>
             <h1 className="text-title">{demoAccount.firstName}</h1>
           </div>
-          <IconButton icon="bell" label={t(`${k}.notifications`)} onClick={soon('13.2')} />
+          <IconButton icon="bell" label={t(`${k}.notifications`)} onClick={() => nav('/notifications')} />
         </header>
 
         {next ? (
-          <ActionBanner icon={next.icon} title={t(`${k}.nextStep.${next.key}.title`)} message={t(`${k}.nextStep.${next.key}.body`, { amount: formatMoney(limitTotal(2)) })} onClick={soon('4.0')} />
+          <ActionBanner icon={next.icon} title={t(`${k}.nextStep.${next.key}.title`)} message={t(`${k}.nextStep.${next.key}.body`, { amount: formatMoney(limitTotal(2)) })} onClick={() => (next?.key === 'idAddress' ? setRaise(true) : soon('Source of funds')())} />
         ) : null}
 
         <div className="flex flex-col gap-2">
@@ -54,10 +56,10 @@ export function Home() {
             value={(demoLimit.sent / total) * 100}
             onClick={() => setSheet(true)}
           />
-          <button onClick={soon('Send money')} className="flex cursor-pointer items-center gap-3 rounded-xl border border-dark-fog bg-fog p-4 text-start hover:bg-dark-fog">
-            <span className="grid size-12 place-items-center rounded-full bg-red text-white"><Icon name="send" size={24} /></span>
-            <span className="flex flex-1 flex-col"><span className="text-title">{t(`${k}.sendMoney`)}</span><span className="text-caption text-slate">{t(`${k}.sendMoneyHint`)}</span></span>
-            <Icon name="chevronRight" size={20} className="text-slate" />
+          <button onClick={soon('Send money')} className="flex cursor-pointer items-center gap-3 rounded-xl bg-red p-4 text-start text-white hover:bg-red-shade">
+            <Icon name="send" size={28} />
+            <span className="flex flex-1 flex-col"><span className="text-title">{t(`${k}.sendMoney`)}</span><span className="text-caption text-white-80">{t(`${k}.sendMoneyHint`)}</span></span>
+            <Icon name="chevronRight" size={20} />
           </button>
         </div>
 
@@ -81,7 +83,8 @@ export function Home() {
         </section>
       </Screen>
       <TabBar active="home" />
-      <LimitSheet open={sheet} onOpenChange={setSheet} level={level} />
+      <LimitSheet open={sheet} onOpenChange={setSheet} level={level} onRaise={() => { setSheet(false); if (level === 1) setRaise(true); else soon('Source of funds')(); }} />
+      <RaiseLimitSheet open={raise} onOpenChange={setRaise} />
     </>
   );
 }
@@ -104,9 +107,8 @@ function Tile({ label, onClick, children }: { label: string; onClick: () => void
   );
 }
 
-function LimitSheet({ open, onOpenChange, level }: { open: boolean; onOpenChange: (o: boolean) => void; level: LimitLevel }) {
+export function LimitSheet({ open, onOpenChange, level, onRaise }: { open: boolean; onOpenChange: (o: boolean) => void; level: LimitLevel; onRaise: () => void }) {
   const { t } = useTranslation();
-  const nav = useNavigate();
   const ks = `${k}.limitSheet`;
   const total = limitTotal(level);
   return (
@@ -133,7 +135,7 @@ function LimitSheet({ open, onOpenChange, level }: { open: boolean; onOpenChange
             );
           })}
         </div>
-        {level < 3 ? <Button onClick={() => { onOpenChange(false); nav('/soon/4.0'); }}>{t(`${ks}.raise`)}</Button> : <p className="text-body text-slate">{t(`${ks}.allDone`)}</p>}
+        {level < 3 ? <Button onClick={onRaise}>{t(`${ks}.raise`)}</Button> : <p className="text-body text-slate">{t(`${ks}.allDone`)}</p>}
       </SheetContent>
     </Sheet>
   );

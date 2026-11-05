@@ -49,8 +49,8 @@ export function History() {
       <Screen className="gap-4 px-6 pt-4 pb-28">
         <h1 className="text-h2">{t(`${k}.title`)}</h1>
         <label className="flex h-14 items-center gap-2 rounded-md bg-fog px-4 focus-within:ring-[1.5px] focus-within:ring-ink">
-          <Icon name="search" size={20} className="text-slate" />
           <input value={q} onChange={(e) => setQ(e.target.value)} placeholder={t(`${k}.search`)} aria-label={t(`${k}.search`)} className="flex-1 bg-transparent text-body-lg outline-none placeholder:text-slate" />
+          <Icon name="search" size={20} className="text-slate" />
         </label>
         <div className="-mx-6 flex gap-2 overflow-x-auto px-6 no-scrollbar">
           {(Object.keys(OPTIONS) as Group[]).map((g) => (

@@ -20,6 +20,7 @@
   --color-fog: #F8F8F8;
   --color-dark-fog: #EEEFF0;
   --color-grey: #838383;
+  --color-keyboard: #D6D7DC;
   --color-success: #067647;
   --color-success-dark: #054F31;
   --color-success-light: #ECFDF3;
@@ -96,7 +97,7 @@
 @utility text-body { font-size: 14px; line-height: 22px; font-weight: 400; }
 @utility text-body-md { font-size: 14px; line-height: 22px; font-weight: 500; }
 @utility text-caption { font-size: 12px; line-height: 18px; font-weight: 400; }
-@utility text-overline { font-size: 10px; line-height: 14px; font-weight: 500; letter-spacing: 0.4px; text-transform: uppercase; }
+@utility text-overline { font-size: 10px; line-height: 14px; font-weight: 500; letter-spacing: 0.4px; }
 @utility text-numeric-l { font-family: var(--font-en); font-size: 44px; line-height: 48px; font-weight: 900; letter-spacing: -0.88px; }
 
 html, body, #root { height: 100%; }
