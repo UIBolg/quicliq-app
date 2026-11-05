@@ -13,7 +13,8 @@ import { cn } from '@/lib/utils';
 export function Screen({ children, className, footer }: { children: ReactNode; className?: string; footer?: ReactNode }) {
   return (
     <div className="flex min-h-0 flex-1 flex-col">
-      <div className={cn('flex min-h-0 flex-1 flex-col overflow-y-auto no-scrollbar', className)}>{children}</div>
+      {/* Children keep their size (no flex shrink) so long pages scroll instead of squashing rows. */}
+      <div className={cn('flex min-h-0 flex-1 flex-col overflow-y-auto no-scrollbar [&>*]:shrink-0', className)}>{children}</div>
       {footer}
     </div>
   );

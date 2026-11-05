@@ -151,7 +151,7 @@ export function VerifiedTag({ label }: { label: string }) {
 export function MessageLayout({ illustration, title, body, children, footer }: { illustration: ReactNode; title: string; body: string; children?: ReactNode; footer: ReactNode }) {
   return (
     <div className="flex min-h-0 flex-1 flex-col">
-      <div className="flex flex-1 flex-col items-center justify-center gap-6 overflow-y-auto px-6 pt-10 no-scrollbar">
+      <div className="flex flex-1 flex-col items-center justify-center gap-6 overflow-y-auto px-6 pt-10 no-scrollbar [&>*]:shrink-0">
         {illustration}
         <div className="flex w-full flex-col gap-2 text-center">
           <h1 className="text-h2">{title}</h1>
