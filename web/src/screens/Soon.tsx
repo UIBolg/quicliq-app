@@ -1,4 +1,4 @@
-/** Placeholder for flows not in this web preview yet (shows the Figma screen ID). */
+/** "Coming soon" page for flows not in this web preview yet. */
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
@@ -6,7 +6,6 @@ import { Illustration } from '@/components/Art';
 import { Screen, TopBar } from '@/components/quicliq';
 
 export function Soon() {
-  const { id = '' } = useParams();
   const { t } = useTranslation();
   const nav = useNavigate();
   return (
