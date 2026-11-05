@@ -8,6 +8,7 @@ import { useTransfers, type Transfer } from '@/lib/transfers';
 import { formatMoney } from '@shared/utils/format';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent } from '@/components/ui/sheet';
+import { RadioGroup, RadioOption } from '@/components/ui/radio-group';
 import { Icon } from '@/components/Icon';
 import { FilterChip, Screen, TabBar, TransferCard, type TransferCardProps } from '@/components/quicliq';
 import { cn } from '@/lib/utils';
@@ -72,13 +73,9 @@ export function History() {
         {open === 'status' || open === 'type' ? (
           <SheetContent title={t(`${k}.groups.${open}`)}>
             <SheetHead title={t(`${k}.groups.${open}`)} onClose={() => setOpen(null)} />
-            {([open] as const).map((g) => (
-              <div key={g} className="flex flex-col gap-2">
-                <div className="flex flex-wrap gap-2">
-                  {OPTIONS[g].map((o) => <FilterChip plain key={o} label={t(`${k}.options.${g}.${o}`)} selected={picked[g] === o} onClick={() => setPicked((p) => ({ ...p, [g]: o }))} />)}
-                </div>
-              </div>
-            ))}
+            <RadioGroup value={picked[open]} onValueChange={(v) => { setPicked((p) => ({ ...p, [open]: v })); setOpen(null); }}>
+              {OPTIONS[open].map((o) => <RadioOption key={o} value={o} title={t(`${k}.options.${open}.${o}`)} />)}
+            </RadioGroup>
           </SheetContent>
         ) : null}
       </Sheet>

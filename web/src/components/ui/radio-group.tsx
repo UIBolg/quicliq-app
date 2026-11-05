@@ -6,12 +6,12 @@ function RadioGroup({ className, ...props }: React.ComponentProps<typeof RadioGr
   return <RadioGroupPrimitive.Root data-slot="radio-group" className={cn('grid gap-3', className)} {...props} />;
 }
 
-/** Quicliq Radio Option: Fog card radius lg; selected = white + 1.5 red border, filled red dot. */
+/** Quicliq Radio Option: Fog card radius lg; selected = soft Fog fill + light border, filled red dot. */
 function RadioOption({ className, title, subtitle, leading, ...props }: React.ComponentProps<typeof RadioGroupPrimitive.Item> & { title: string; subtitle?: string; leading?: React.ReactNode }) {
   return (
     <RadioGroupPrimitive.Item
       className={cn(
-        'flex min-h-14 w-full cursor-pointer items-center gap-3 rounded-lg border-[1.5px] border-transparent bg-fog px-4 py-3 text-start outline-none focus-visible:ring-2 focus-visible:ring-ink data-[state=checked]:border-red data-[state=checked]:bg-white',
+        'flex min-h-14 w-full cursor-pointer items-center gap-3 rounded-lg border-[1.5px] border-transparent px-4 py-3 text-start outline-none focus-visible:ring-2 focus-visible:ring-ink data-[state=checked]:border-dark-fog data-[state=checked]:bg-fog',
         className,
       )}
       {...props}

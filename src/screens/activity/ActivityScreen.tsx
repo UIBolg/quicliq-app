@@ -11,7 +11,7 @@ import { useState } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { AppText, BottomSheet, Button, DateRangeCalendar, FilterChip, Screen, TabBar, TextField, TransferRow, formatRange } from '../../components';
+import { AppText, BottomSheet, Button, DateRangeCalendar, FilterChip, RadioOption, Screen, TabBar, TextField, TransferRow, formatRange } from '../../components';
 import { demoToday, demoTransfers } from '../../mock/account';
 import { useMainTabs } from '../../navigation/mainTabs';
 import { transferCardProps } from './transferCard';
@@ -122,21 +122,17 @@ export function ActivityScreen({ navigation }: NativeStackScreenProps<RootStackP
         {open && open !== 'date' ? (
           <>
             <AppText variant="H3" accessibilityRole="header">{tr(`${k}.groups.${open}`)}</AppText>
-            {([open] as Group[]).map((g) => (
-              <View key={g} style={{ gap: t.spacing['spacing/8'] }}>
-                <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: t.spacing['spacing/8'] }}>
-                  {OPTIONS[g].map((o) => (
-                    <FilterChip
-                      key={o}
-                      label={tr(`${k}.options.${g}.${o}`)}
-                      selected={picked[g] === o}
-                      onPress={() => setPicked((p) => ({ ...p, [g]: o }))}
-                      testID={`option-${g}-${o}`}
-                    />
-                  ))}
-                </View>
-              </View>
-            ))}
+            <View style={{ gap: t.spacing['spacing/8'] }}>
+              {OPTIONS[open].map((o) => (
+                <RadioOption
+                  key={o}
+                  title={tr(`${k}.options.${open}.${o}`)}
+                  selected={picked[open] === o}
+                  onPress={() => { setPicked((p) => ({ ...p, [open]: o })); setOpen(null); }}
+                  testID={`option-${open}-${o}`}
+                />
+              ))}
+            </View>
           </>
         ) : null}
       </BottomSheet>
