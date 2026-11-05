@@ -27,12 +27,17 @@ export const demoToday = '2026-11-03';
 
 /** Sample transfers, newest first (Home shows the first 3; 11.1 Activity shows all, grouped by month). Names come from home.recipientNames. */
 export const demoTransfers = [
+  { id: 't8', on: '2026-11-03', recipient: 'r1', amount: '150.00', date: '03 Nov', month: '2026-11', method: 'bank', status: 'pending' },
+  { id: 't3', on: '2026-11-02', recipient: 'r3', amount: '75.50', date: '02 Nov', month: '2026-11', method: 'bank', status: 'processing' },
+  { id: 't9', on: '2026-11-01', recipient: 'r2', amount: '200.00', date: '01 Nov', month: '2026-11', method: 'cash', status: 'ready' },
   { id: 't1', on: '2026-10-28', recipient: 'r1', amount: '250.00', date: '28 Oct', month: '2026-10', method: 'bank', status: 'delivered' },
+  { id: 't10', on: '2026-10-20', recipient: 'r4', amount: '500.00', date: '20 Oct', month: '2026-10', method: 'bank', status: 'rejected' },
   { id: 't2', on: '2026-10-14', recipient: 'r2', amount: '120.00', date: '14 Oct', month: '2026-10', method: 'cash', status: 'delivered' },
-  { id: 't3', on: '2026-10-02', recipient: 'r3', amount: '75.50', date: '02 Oct', month: '2026-10', method: 'bank', status: 'processing' },
+  { id: 't11', on: '2026-10-06', recipient: 'r5', amount: '90.00', date: '06 Oct', month: '2026-10', method: 'cash', status: 'cancelled' },
   { id: 't4', on: '2026-09-21', recipient: 'r4', amount: '300.00', date: '21 Sep', month: '2026-09', method: 'bank', status: 'delivered' },
   { id: 't5', on: '2026-09-09', recipient: 'r5', amount: '60.00', date: '09 Sep', month: '2026-09', method: 'cash', status: 'delivered' },
   { id: 't6', on: '2026-08-27', recipient: 'r1', amount: '180.00', date: '27 Aug', month: '2026-08', method: 'bank', status: 'delivered' },
+  { id: 't12', on: '2026-08-18', recipient: 'r3', amount: '110.00', date: '18 Aug', month: '2026-08', method: 'cash', status: 'cancelled' },
   { id: 't7', on: '2026-08-11', recipient: 'r2', amount: '95.00', date: '11 Aug', month: '2026-08', method: 'cash', status: 'delivered' },
 ] as const;
 

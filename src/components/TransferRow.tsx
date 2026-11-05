@@ -10,6 +10,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { AppText } from './AppText';
 import { IconBadge } from './IconBadge';
 import { useTheme, getTextStyle, type ColorToken } from '../theme';
+import type { TransferStatus } from '../mock/transfers';
 
 export type TransferRowProps = {
   name: string;
@@ -17,7 +18,7 @@ export type TransferRowProps = {
   methodLabel: string;
   date: string;
   amount: string;
-  status: 'delivered' | 'processing';
+  status: TransferStatus;
   statusLabel: string;
   onPress: () => void;
 };
@@ -25,6 +26,10 @@ export type TransferRowProps = {
 const statusLook: Record<TransferRowProps['status'], { bg: ColorToken; fg: ColorToken }> = {
   delivered: { bg: 'Status/Success/Light', fg: 'Status/Success/Default' },
   processing: { bg: 'Neutral/White', fg: 'Neutral/Slate' },
+  pending: { bg: 'Neutral/White', fg: 'Neutral/Slate' },
+  ready: { bg: 'Status/Info/Light', fg: 'Status/Info/Default' },
+  rejected: { bg: 'Status/Failure/Light', fg: 'Status/Failure/Default' },
+  cancelled: { bg: 'Neutral/Dark Fog', fg: 'Neutral/Slate' },
 };
 
 export function TransferRow({ name, method, methodLabel, date, amount, status, statusLabel, onPress }: TransferRowProps) {

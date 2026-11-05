@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { TFunction } from 'i18next';
-import { demoToday, demoTransfers } from '@shared/mock/account';
+import { demoToday } from '@shared/mock/account';
+import { useTransfers, type Transfer } from '@/lib/transfers';
 import { formatMoney } from '@shared/utils/format';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent } from '@/components/ui/sheet';
@@ -13,8 +14,7 @@ import { FilterChip, Screen, TabBar, TransferCard, type TransferCardProps } from
 import { cn } from '@/lib/utils';
 import { useLocale } from '@/i18n';
 
-type Tx = (typeof demoTransfers)[number];
-export const transferCard = (tx: Tx, t: TFunction): TransferCardProps => ({
+export const transferCard = (tx: Transfer, t: TFunction): TransferCardProps => ({
   name: t(`home.recipientNames.${tx.recipient}`),
   method: tx.method,
   methodLabel: t(`home.methods.${tx.method}`),
@@ -24,7 +24,7 @@ export const transferCard = (tx: Tx, t: TFunction): TransferCardProps => ({
   statusLabel: t(`home.status.${tx.status}`),
 });
 
-const OPTIONS = { status: ['all', 'processing', 'delivered'], type: ['all', 'bank', 'cash'] } as const;
+const OPTIONS = { status: ['all', 'pending', 'processing', 'ready', 'delivered', 'rejected', 'cancelled'], type: ['all', 'bank', 'cash'] } as const;
 type Group = keyof typeof OPTIONS;
 
 export function History() {
@@ -38,7 +38,7 @@ export function History() {
   const [range, setRange] = useState<{ from: string; to: string } | null>(null);
   const [draft, setDraft] = useState({ from: '', to: '' });
   const [month, setMonth] = useState(demoToday.slice(0, 7));
-  const items = demoTransfers
+  const items = useTransfers()
     .map((tx) => ({ tx, card: transferCard(tx, t) }))
     .filter((x) => !q.trim() || x.card.name.toLowerCase().includes(q.trim().toLowerCase()))
     .filter(({ tx }) => picked.status === 'all' || tx.status === picked.status)
@@ -64,7 +64,7 @@ export function History() {
         {months.map((m) => (
           <section key={m} className="flex flex-col gap-2">
             <h2 className="text-overline text-slate">{t(`${k}.months.${m}`)}</h2>
-            {items.filter((x) => x.tx.month === m).map(({ tx, card }) => <TransferCard key={tx.id} {...card} onClick={() => nav('/soon/11.3')} />)}
+            {items.filter((x) => x.tx.month === m).map(({ tx, card }) => <TransferCard key={tx.id} {...card} onClick={() => nav(`/history/${tx.id}`)} />)}
           </section>
         ))}
       </Screen>

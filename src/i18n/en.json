@@ -374,8 +374,12 @@
       "cash": "Cash pickup"
     },
     "status": {
+      "pending": "Pending",
+      "processing": "Processing",
+      "ready": "Ready to collect",
       "delivered": "Delivered",
-      "processing": "Processing"
+      "rejected": "Rejected",
+      "cancelled": "Cancelled"
     },
     "tabs": {
       "home": "Home",
@@ -812,6 +816,7 @@
     "search": "Search by name",
     "empty": "No transfers match.",
     "months": {
+      "2026-11": "November 2026",
       "2026-10": "October 2026",
       "2026-09": "September 2026",
       "2026-08": "August 2026"
@@ -824,8 +829,12 @@
     "options": {
       "status": {
         "all": "All statuses",
+        "pending": "Pending",
         "processing": "Processing",
-        "delivered": "Delivered"
+        "ready": "Ready to collect",
+        "delivered": "Delivered",
+        "rejected": "Rejected",
+        "cancelled": "Cancelled"
       },
       "type": {
         "all": "All types",
@@ -1021,5 +1030,136 @@
       "uploadDoc": "Upload document",
       "continue": "Continue"
     }
+  },
+  "transfer": {
+    "title": "Transfer details",
+    "toName": "To {{name}}",
+    "headline": {
+      "pending": "We're checking your transfer. This usually takes under an hour.",
+      "processing": "On its way to {{bank}}. Expected by {{eta}}.",
+      "ready": "Ready for {{name}} to collect until {{eta}}.",
+      "deliveredBank": "Paid into {{name}}'s account on {{date}}.",
+      "deliveredCash": "Collected by {{name}} on {{date}}.",
+      "rejected": "This transfer was stopped.",
+      "cancelled": "This transfer was cancelled.",
+      "refundPending": "Your refund of {{amount}} is on its way to your card. Expected by {{eta}}."
+    },
+    "progress": "Progress",
+    "now": "Now",
+    "expected": "Expected by {{eta}}",
+    "steps": {
+      "created": {
+        "title": "Transfer created",
+        "body": "You set up the transfer in the app."
+      },
+      "paid": {
+        "title": "Payment received",
+        "body": "{{amount}} taken from {{card}}."
+      },
+      "review": {
+        "title": "Security check",
+        "body": "We check every transfer to keep your money safe."
+      },
+      "sent": {
+        "title": "Sent to {{bank}}",
+        "body": "The bank is paying it into the account."
+      },
+      "delivered": {
+        "title": "Delivered",
+        "body": "{{receive}} paid into {{name}}'s account."
+      },
+      "ready": {
+        "title": "Ready to collect",
+        "body": "{{name}} can collect {{receive}} at {{agent}} with ID and the pickup code."
+      },
+      "collected": {
+        "title": "Collected",
+        "body": "{{name}} collected {{receive}}."
+      },
+      "rejected": {
+        "title": "Transfer rejected",
+        "body": ""
+      },
+      "cancelled": {
+        "title": "Transfer cancelled",
+        "body": ""
+      },
+      "refunded": {
+        "title": "Refunded",
+        "body": "{{amount}} back to {{card}}. Banks can take 3–5 working days to show it."
+      },
+      "refunding": {
+        "title": "Refund on its way",
+        "body": "{{amount}} back to {{card}}. Banks can take 3–5 working days to show it."
+      }
+    },
+    "reasons": {
+      "nameMismatch": "The recipient's name didn't match the name on the bank account. Check the name and IBAN with {{name}}, then send again.",
+      "compliance": "We couldn't complete our security checks for this transfer. Contact us and we'll tell you what we need.",
+      "notCollected": "The money wasn't collected within 30 days, so we cancelled the transfer automatically.",
+      "byWrongAmount": "You cancelled it: wrong amount.",
+      "byWrongRecipient": "You cancelled it: wrong recipient.",
+      "byChangedMind": "You cancelled it: you changed your mind.",
+      "byOther": "You cancelled it."
+    },
+    "reasonTitle": "Why",
+    "pickup": {
+      "title": "Pickup code",
+      "hint": "{{name}} needs this code and their ID at {{agent}}.",
+      "share": "Share code",
+      "copied": "Copied"
+    },
+    "details": "Details",
+    "rows": {
+      "reference": "Reference",
+      "sent": "You sent",
+      "fee": "Transfer fee",
+      "total": "Total paid",
+      "rate": "Exchange rate",
+      "receive": "{{name}} gets",
+      "method": "Sending type",
+      "bank": "Bank",
+      "account": "Account",
+      "agent": "Pickup point",
+      "card": "Paid with",
+      "created": "Created"
+    },
+    "rateValue": "1 GBP = {{rate}} JOD",
+    "cardValue": "{{brand}} •••• {{last4}}",
+    "accountValue": "IBAN •••• {{last4}}",
+    "copy": "Copy reference",
+    "copied": "Reference copied",
+    "banks": {
+      "arab": "Arab Bank",
+      "housing": "Housing Bank",
+      "cairoAmman": "Cairo Amman Bank"
+    },
+    "agents": {
+      "abdali": "Quicliq agent, Abdali, Amman",
+      "irbid": "Quicliq agent, University St, Irbid"
+    },
+    "actions": {
+      "cancel": "Cancel transfer",
+      "sendAgain": "Send again",
+      "fixAndSend": "Fix details and send again",
+      "receipt": "Download receipt",
+      "help": "Get help with this transfer",
+      "track": "Share tracking"
+    },
+    "cancelSheet": {
+      "title": "Cancel this transfer?",
+      "subtitle": "You'll get {{amount}} back on {{card}}. Tell us why:",
+      "confirm": "Cancel transfer",
+      "keep": "Keep transfer"
+    },
+    "cancelledToast": "Transfer cancelled. Your refund is on its way.",
+    "notFound": "We couldn't find this transfer.",
+    "cancelReasons": {
+      "byWrongAmount": "Wrong amount",
+      "byWrongRecipient": "Wrong recipient",
+      "byChangedMind": "I changed my mind",
+      "byOther": "Something else"
+    },
+    "collectBy": "Collect by {{eta}}"
   }
 }

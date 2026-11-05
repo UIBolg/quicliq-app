@@ -8,6 +8,7 @@ import { Progress } from '@/components/ui/progress';
 import { Icon, type IconName } from '@/components/Icon';
 import { useLocale } from '@/i18n';
 import { cn } from '@/lib/utils';
+import type { TransferStatus } from '@shared/mock/transfers';
 
 /** Scrollable screen body. */
 export function Screen({ children, className, footer }: { children: ReactNode; className?: string; footer?: ReactNode }) {
@@ -163,7 +164,7 @@ export function LimitCard({ level, label, amount, caption, value, levelName, onC
   );
 }
 
-export type TransferCardProps = { name: string; method: 'bank' | 'cash'; methodLabel: string; date: string; amount: string; status: 'delivered' | 'processing'; statusLabel: string; onClick?: () => void };
+export type TransferCardProps = { name: string; method: 'bank' | 'cash'; methodLabel: string; date: string; amount: string; status: TransferStatus; statusLabel: string; onClick?: () => void };
 export function TransferCard({ name, method, methodLabel, date, amount, status, statusLabel, onClick }: TransferCardProps) {
   return (
     <button onClick={onClick} className="flex w-full cursor-pointer items-center gap-3 rounded-lg border border-dark-fog bg-fog p-3 text-start hover:bg-dark-fog">
@@ -174,10 +175,23 @@ export function TransferCard({ name, method, methodLabel, date, amount, status, 
       </span>
       <span className="flex flex-col items-end gap-1">
         <span className="text-body-md text-ink" dir="ltr" style={{ fontFamily: 'var(--font-en)' }}>{amount}</span>
-        <span className={cn('rounded-full px-2 text-caption', status === 'delivered' ? 'bg-success-light text-success' : 'text-slate')}>{statusLabel}</span>
+        <StatusPill status={status} label={statusLabel} />
       </span>
     </button>
   );
+}
+
+/** Transfer status pill: Delivered green, Ready blue, Rejected red, Cancelled grey, Pending / Processing slate. */
+export const statusTone: Record<TransferStatus, string> = {
+  pending: 'text-slate',
+  processing: 'text-slate',
+  ready: 'bg-info-light text-info',
+  delivered: 'bg-success-light text-success',
+  rejected: 'bg-failure-light text-failure',
+  cancelled: 'bg-dark-fog text-slate',
+};
+export function StatusPill({ status, label, className }: { status: TransferStatus; label: string; className?: string }) {
+  return <span className={cn('rounded-full px-2 text-caption', statusTone[status], className)}>{label}</span>;
 }
 
 export function FilterChip({ label, selected, onClick }: { label: string; selected?: boolean; onClick: () => void }) {

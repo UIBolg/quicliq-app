@@ -2,13 +2,14 @@
 import { useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { demoAccount, demoLimit, demoRecipients, demoTransfers, limitLevels, limitTotal, nextLevel, type LimitLevel } from '@shared/mock/account';
+import { demoAccount, demoLimit, demoRecipients, limitLevels, limitTotal, nextLevel, type LimitLevel } from '@shared/mock/account';
 import { formatMoney } from '@shared/utils/format';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent } from '@/components/ui/sheet';
 import { Icon } from '@/components/Icon';
 import { ActionBanner, Avatar, IconBadge, IconButton, LimitCard, Screen, TabBar, TransferCard } from '@/components/quicliq';
 import { transferCard } from '@/screens/transfers';
+import { useTransfers } from '@/lib/transfers';
 import { RaiseLimitSheet } from '@/screens/Verify';
 import { cn } from '@/lib/utils';
 
@@ -30,6 +31,7 @@ export function Home() {
   const left = Math.max(0, total - demoLimit.sent);
   const next = nextLevel(level);
   const soon = (id: string) => () => nav(`/soon/${id}`);
+  const transfers = useTransfers();
   return (
     <>
       <Screen className="gap-6 px-6 pt-4 pb-28">
@@ -78,7 +80,7 @@ export function Home() {
         <section className="flex flex-col gap-3">
           <SectionHeader title={t(`${k}.recent`)} action={t(`${k}.seeAll`)} onAction={() => nav(`/history?level=${level}`)} />
           <div className="flex flex-col gap-2">
-            {demoTransfers.slice(0, 3).map((tx) => <TransferCard key={tx.id} {...transferCard(tx, t)} onClick={soon('11.3')} />)}
+            {transfers.slice(0, 3).map((tx) => <TransferCard key={tx.id} {...transferCard(tx, t)} onClick={() => nav(`/history/${tx.id}`)} />)}
           </div>
         </section>
       </Screen>
