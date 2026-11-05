@@ -396,7 +396,6 @@
     "status": {
       "pending": "قيد الانتظار",
       "processing": "قيد المعالجة",
-      "ready": "جاهزة للاستلام",
       "delivered": "تم التسليم",
       "rejected": "مرفوضة",
       "cancelled": "ملغاة"
@@ -851,10 +850,8 @@
         "all": "كل الحالات",
         "pending": "قيد الانتظار",
         "processing": "قيد المعالجة",
-        "ready": "جاهزة للاستلام",
-        "delivered": "تم التسليم",
-        "rejected": "مرفوضة",
-        "cancelled": "ملغاة"
+        "stopped": "ملغاة / مرفوضة",
+        "delivered": "تم التسليم"
       },
       "type": {
         "all": "كل الأنواع",
@@ -1180,6 +1177,15 @@
       "byChangedMind": "غيّرت رأيي",
       "byOther": "سبب آخر"
     },
-    "collectBy": "الاستلام قبل {{eta}}"
+    "collectBy": "الاستلام قبل {{eta}}",
+    "reasonsShort": {
+      "nameMismatch": "الاسم لا يطابق الحساب البنكي",
+      "compliance": "لم يكتمل التحقق الأمني",
+      "notCollected": "لم يُستلم خلال 30 يومًا",
+      "byWrongAmount": "ألغيته أنت: مبلغ خاطئ",
+      "byWrongRecipient": "ألغيته أنت: مستلم خاطئ",
+      "byChangedMind": "ألغيته أنت: غيّرت رأيك",
+      "byOther": "ألغيته أنت"
+    }
   }
 }

@@ -73,10 +73,10 @@ export function TransferDetails() {
   };
   const last = d.events[d.events.length - 1];
   const refunded = d.events.some((e) => e.step === 'refunded');
+  const readyToCollect = tx.status === 'processing' && last.step === 'ready';
   const headline = {
     pending: t(`${k}.headline.pending`),
-    processing: t(`${k}.headline.processing`, vars),
-    ready: t(`${k}.headline.ready`, { ...vars, eta: d.eta ? dayOnly(d.eta) : '' }),
+    processing: readyToCollect ? t(`${k}.headline.ready`, { ...vars, eta: d.eta ? dayOnly(d.eta) : '' }) : t(`${k}.headline.processing`, vars),
     delivered: t(`${k}.headline.${tx.method === 'bank' ? 'deliveredBank' : 'deliveredCash'}`, { ...vars, date: dateTime(last.at) }),
     rejected: t(`${k}.headline.rejected`),
     cancelled: t(`${k}.headline.cancelled`),
@@ -102,8 +102,7 @@ export function TransferDetails() {
 
   const actions: ReactNode = {
     pending: <Button variant="secondary" className="text-red" onClick={() => setCancelOpen(true)}>{t(`${k}.actions.cancel`)}</Button>,
-    processing: null,
-    ready: d.pickupCode ? <Button onClick={() => share(`${t(`${k}.pickup.title`)}: ${d.pickupCode} (${d.reference})`)}>{t(`${k}.pickup.share`)}</Button> : null,
+    processing: readyToCollect && d.pickupCode ? <Button onClick={() => share(`${t(`${k}.pickup.title`)}: ${d.pickupCode} (${d.reference})`)}>{t(`${k}.pickup.share`)}</Button> : null,
     delivered: (
       <>
         <Button onClick={() => nav('/soon/Send money')}>{t(`${k}.actions.sendAgain`)}</Button>
@@ -146,7 +145,7 @@ export function TransferDetails() {
             <Banner type="info" icon="wallet">{t(`${k}.headline.refundPending`, vars)}</Banner>
           ) : null}
 
-          {tx.status === 'ready' && d.pickupCode ? (
+          {readyToCollect && d.pickupCode ? (
             <section className="flex flex-col gap-3 rounded-lg bg-info-light p-4">
               <div className="flex items-center justify-between">
                 <h2 className="text-body-md text-info-dark">{t(`${k}.pickup.title`)}</h2>

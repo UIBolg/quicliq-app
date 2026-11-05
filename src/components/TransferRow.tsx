@@ -25,11 +25,10 @@ export type TransferRowProps = {
 
 const statusLook: Record<TransferRowProps['status'], { bg: ColorToken; fg: ColorToken }> = {
   delivered: { bg: 'Status/Success/Light', fg: 'Status/Success/Default' },
-  processing: { bg: 'Neutral/White', fg: 'Neutral/Slate' },
+  processing: { bg: 'Status/Info/Light', fg: 'Status/Info/Default' },
   pending: { bg: 'Neutral/White', fg: 'Neutral/Slate' },
-  ready: { bg: 'Status/Info/Light', fg: 'Status/Info/Default' },
   rejected: { bg: 'Status/Failure/Light', fg: 'Status/Failure/Default' },
-  cancelled: { bg: 'Neutral/Dark Fog', fg: 'Neutral/Slate' },
+  cancelled: { bg: 'Status/Failure/Light', fg: 'Status/Failure/Default' },
 };
 
 export function TransferRow({ name, method, methodLabel, date, amount, status, statusLabel, onPress }: TransferRowProps) {

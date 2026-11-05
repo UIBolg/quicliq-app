@@ -164,14 +164,15 @@ export function LimitCard({ level, label, amount, caption, value, levelName, onC
   );
 }
 
-export type TransferCardProps = { name: string; method: 'bank' | 'cash'; methodLabel: string; date: string; amount: string; status: TransferStatus; statusLabel: string; onClick?: () => void };
-export function TransferCard({ name, method, methodLabel, date, amount, status, statusLabel, onClick }: TransferCardProps) {
+export type TransferCardProps = { name: string; method: 'bank' | 'cash'; methodLabel: string; date: string; amount: string; status: TransferStatus; statusLabel: string; note?: string; onClick?: () => void };
+export function TransferCard({ name, method, methodLabel, date, amount, status, statusLabel, note, onClick }: TransferCardProps) {
   return (
     <button onClick={onClick} className="flex w-full cursor-pointer items-center gap-3 rounded-lg border border-dark-fog bg-fog p-3 text-start hover:bg-dark-fog">
       <IconBadge icon={method === 'bank' ? 'bank' : 'cash'} size={40} />
       <span className="flex min-w-0 flex-1 flex-col">
         <span className="truncate text-body-md text-ink">{name}</span>
         <span className="text-caption text-slate">{methodLabel} · {date}</span>
+        {note ? <span className="flex items-center gap-1 text-caption text-failure"><Icon name="alert" size={12} /><span className="truncate">{note}</span></span> : null}
       </span>
       <span className="flex flex-col items-end gap-1">
         <span className="text-body-md text-ink" dir="ltr" style={{ fontFamily: 'var(--font-en)' }}>{amount}</span>
@@ -181,14 +182,13 @@ export function TransferCard({ name, method, methodLabel, date, amount, status, 
   );
 }
 
-/** Transfer status pill: Delivered green, Ready blue, Rejected red, Cancelled grey, Pending / Processing slate. */
+/** Transfer status pill: Pending grey, Processing blue, Delivered green, Cancelled / Rejected red. */
 export const statusTone: Record<TransferStatus, string> = {
-  pending: 'text-slate',
-  processing: 'text-slate',
-  ready: 'bg-info-light text-info',
+  pending: 'bg-dark-fog text-slate',
+  processing: 'bg-info-light text-info',
   delivered: 'bg-success-light text-success',
   rejected: 'bg-failure-light text-failure',
-  cancelled: 'bg-dark-fog text-slate',
+  cancelled: 'bg-failure-light text-failure',
 };
 export function StatusPill({ status, label, className }: { status: TransferStatus; label: string; className?: string }) {
   return <span className={cn('rounded-full px-2 text-caption', statusTone[status], className)}>{label}</span>;

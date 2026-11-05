@@ -22,9 +22,10 @@ export const transferCard = (tx: Transfer, t: TFunction): TransferCardProps => (
   amount: formatMoney(Number(tx.amount), 'GBP', { decimals: 'always' }),
   status: tx.status,
   statusLabel: t(`home.status.${tx.status}`),
+  note: tx.detail.reason ? t(`transfer.reasonsShort.${tx.detail.reason}`) : undefined,
 });
 
-const OPTIONS = { status: ['all', 'pending', 'processing', 'ready', 'delivered', 'rejected', 'cancelled'], type: ['all', 'bank', 'cash'] } as const;
+const OPTIONS = { status: ['all', 'pending', 'processing', 'stopped', 'delivered'], type: ['all', 'bank', 'cash'] } as const;
 type Group = keyof typeof OPTIONS;
 
 export function History() {
@@ -41,7 +42,7 @@ export function History() {
   const items = useTransfers()
     .map((tx) => ({ tx, card: transferCard(tx, t) }))
     .filter((x) => !q.trim() || x.card.name.toLowerCase().includes(q.trim().toLowerCase()))
-    .filter(({ tx }) => picked.status === 'all' || tx.status === picked.status)
+    .filter(({ tx }) => picked.status === 'all' || tx.status === picked.status || (picked.status === 'stopped' && (tx.status === 'rejected' || tx.status === 'cancelled')))
     .filter(({ tx }) => picked.type === 'all' || tx.method === picked.type)
     .filter(({ tx }) => !range || (tx.on >= range.from && tx.on <= range.to));
   const months = [...new Set(items.map((x) => x.tx.month))];

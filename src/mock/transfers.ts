@@ -9,7 +9,9 @@
  */
 import { demoAccount, demoTransfers } from './account';
 
-export type TransferStatus = 'pending' | 'processing' | 'ready' | 'delivered' | 'rejected' | 'cancelled';
+/** List statuses: Pending → Processing → Delivered, or Cancelled / Rejected (always with a reason). A cash transfer that is
+ *  ready to collect is still Processing until it is collected (the timeline shows the "Ready to collect" step). */
+export type TransferStatus = 'pending' | 'processing' | 'delivered' | 'rejected' | 'cancelled';
 export type TransferStep = 'created' | 'paid' | 'review' | 'sent' | 'delivered' | 'ready' | 'collected' | 'rejected' | 'cancelled' | 'refunded';
 /** Why a transfer stopped. `by*` reasons are the sender's own cancellation choices (also offered in the cancel sheet). */
 export type StopReason = 'nameMismatch' | 'compliance' | 'notCollected' | 'byWrongAmount' | 'byWrongRecipient' | 'byChangedMind' | 'byOther';

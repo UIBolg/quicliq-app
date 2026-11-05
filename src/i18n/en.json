@@ -376,7 +376,6 @@
     "status": {
       "pending": "Pending",
       "processing": "Processing",
-      "ready": "Ready to collect",
       "delivered": "Delivered",
       "rejected": "Rejected",
       "cancelled": "Cancelled"
@@ -831,10 +830,8 @@
         "all": "All statuses",
         "pending": "Pending",
         "processing": "Processing",
-        "ready": "Ready to collect",
-        "delivered": "Delivered",
-        "rejected": "Rejected",
-        "cancelled": "Cancelled"
+        "stopped": "Cancelled / Rejected",
+        "delivered": "Delivered"
       },
       "type": {
         "all": "All types",
@@ -1160,6 +1157,15 @@
       "byChangedMind": "I changed my mind",
       "byOther": "Something else"
     },
-    "collectBy": "Collect by {{eta}}"
+    "collectBy": "Collect by {{eta}}",
+    "reasonsShort": {
+      "nameMismatch": "Name doesn't match the bank account",
+      "compliance": "Security checks not completed",
+      "notCollected": "Not collected within 30 days",
+      "byWrongAmount": "Cancelled by you: wrong amount",
+      "byWrongRecipient": "Cancelled by you: wrong recipient",
+      "byChangedMind": "Cancelled by you: changed your mind",
+      "byOther": "Cancelled by you"
+    }
   }
 }
