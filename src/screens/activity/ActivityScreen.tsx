@@ -121,18 +121,23 @@ export function ActivityScreen({ navigation }: NativeStackScreenProps<RootStackP
       <BottomSheet visible={!!open && open !== 'date'} onClose={() => setOpen(null)}>
         {open && open !== 'date' ? (
           <>
-            <AppText variant="H3" accessibilityRole="header">{tr(`${k}.groups.${open}`)}</AppText>
-            <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: t.spacing['spacing/8'] }}>
-              {OPTIONS[open].map((o) => (
-                <FilterChip
-                  key={o}
-                  label={tr(`${k}.options.${open}.${o}`)}
-                  selected={picked[open] === o}
-                  onPress={() => { setPicked((p) => ({ ...p, [open]: o })); setOpen(null); }}
-                  testID={`option-${open}-${o}`}
-                />
-              ))}
-            </View>
+            <AppText variant="H3" accessibilityRole="header">{tr(`${k}.filters`)}</AppText>
+            {(Object.keys(OPTIONS) as Group[]).map((g) => (
+              <View key={g} style={{ gap: t.spacing['spacing/8'] }}>
+                <AppText variant="Body Medium">{tr(`${k}.groups.${g}`)}</AppText>
+                <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: t.spacing['spacing/8'] }}>
+                  {OPTIONS[g].map((o) => (
+                    <FilterChip
+                      key={o}
+                      label={tr(`${k}.options.${g}.${o}`)}
+                      selected={picked[g] === o}
+                      onPress={() => setPicked((p) => ({ ...p, [g]: o }))}
+                      testID={`option-${g}-${o}`}
+                    />
+                  ))}
+                </View>
+              </View>
+            ))}
           </>
         ) : null}
       </BottomSheet>

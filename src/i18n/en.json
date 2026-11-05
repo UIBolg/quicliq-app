@@ -813,6 +813,7 @@
   },
   "activity": {
     "title": "Transfers history",
+    "filters": "Filters",
     "search": "Search by name",
     "empty": "No transfers match.",
     "months": {

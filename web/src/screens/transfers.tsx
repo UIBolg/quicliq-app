@@ -70,11 +70,16 @@ export function History() {
       <TabBar active="history" />
       <Sheet open={open === 'status' || open === 'type'} onOpenChange={(o) => !o && setOpen(null)}>
         {open === 'status' || open === 'type' ? (
-          <SheetContent title={t(`${k}.groups.${open}`)}>
-            <SheetHead title={t(`${k}.groups.${open}`)} onClose={() => setOpen(null)} />
-            <div className="flex flex-wrap gap-2">
-              {OPTIONS[open].map((o) => <FilterChip plain key={o} label={t(`${k}.options.${open}.${o}`)} selected={picked[open] === o} onClick={() => { setPicked((p) => ({ ...p, [open]: o })); setOpen(null); }} />)}
-            </div>
+          <SheetContent title={t(`${k}.filters`)}>
+            <SheetHead title={t(`${k}.filters`)} onClose={() => setOpen(null)} />
+            {(['status', 'type'] as const).map((g) => (
+              <div key={g} className="flex flex-col gap-2">
+                <p className="text-body-md">{t(`${k}.groups.${g}`)}</p>
+                <div className="flex flex-wrap gap-2">
+                  {OPTIONS[g].map((o) => <FilterChip plain key={o} label={t(`${k}.options.${g}.${o}`)} selected={picked[g] === o} onClick={() => setPicked((p) => ({ ...p, [g]: o }))} />)}
+                </div>
+              </div>
+            ))}
           </SheetContent>
         ) : null}
       </Sheet>
