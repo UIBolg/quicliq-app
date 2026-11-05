@@ -62,7 +62,7 @@ export function Onboarding() {
   };
   return (
     <div className="flex flex-1 flex-col">
-      <div className="flex items-center justify-between px-6 pt-4">
+      <div className="flex items-center justify-between px-4 pt-4">
         <Logo height={28} />
         <button onClick={() => setLang(true)} aria-label={t('common.language')} className="grid size-10 cursor-pointer place-items-center rounded-full bg-fog hover:bg-dark-fog">
           <Icon name="globe" size={20} />
@@ -74,7 +74,7 @@ export function Onboarding() {
         className="flex flex-1 snap-x snap-mandatory overflow-x-auto no-scrollbar"
       >
         {SLIDES.map((s) => (
-          <section key={s.key} className="flex w-full shrink-0 snap-center flex-col items-center justify-center gap-6 px-6">
+          <section key={s.key} className="flex w-full shrink-0 snap-center flex-col items-center justify-center gap-6 px-4">
             <Scene name={s.scene} className="aspect-[342/360] w-full max-w-[342px]" />
             <div className="flex flex-col gap-2 text-center">
               <h1 className="text-h1">{t(`onboarding.${s.key}.title`)}</h1>
@@ -88,7 +88,7 @@ export function Onboarding() {
           <button key={s.key} role="tab" aria-selected={page === i} aria-label={`${i + 1} / 4`} onClick={() => go(i)} className={cn('h-2 cursor-pointer rounded-full transition-all', page === i ? 'w-6 bg-red' : 'w-2 bg-silver')} />
         ))}
       </div>
-      <div className="flex flex-col gap-3 px-6 pb-10">
+      <div className="flex flex-col gap-3 px-4 pb-10">
         <Button onClick={() => nav('/register')}>{t('onboarding.signUp')}</Button>
         <Button variant="secondary" onClick={() => nav('/login')}>{t('onboarding.logIn')}</Button>
       </div>

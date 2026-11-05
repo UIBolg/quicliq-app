@@ -9,9 +9,9 @@ export function Soon() {
   const { t } = useTranslation();
   const nav = useNavigate();
   return (
-    <Screen footer={<div className="px-6 pb-10"><Button onClick={() => nav(-1)}>{t('common.back')}</Button></div>}>
+    <Screen footer={<div className="px-4 pb-10"><Button onClick={() => nav(-1)}>{t('common.back')}</Button></div>}>
       <TopBar title="" />
-      <div className="flex flex-1 flex-col items-center justify-center gap-4 px-6 text-center">
+      <div className="flex flex-1 flex-col items-center justify-center gap-4 px-4 text-center">
         <Illustration name="update" size={176} />
         <h1 className="text-h2">{t('notBuilt.title')}</h1>
         <p className="text-body-lg text-slate">{t('notBuilt.body')}</p>

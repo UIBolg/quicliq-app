@@ -38,8 +38,8 @@ function CodeEntry({ method, title, intro, onSuccess, helpLabel, onHelp }: { met
   };
   return (
     <Screen footer={<Keypad onDigit={(d) => change(status === 'error' ? d : (code + d).slice(0, 6))} onDelete={() => change(code.slice(0, -1))} suggestion={method === 'sms' && !status ? demoAccount.code : undefined} onSuggestion={change} />}>
-      <div className="flex px-6 pt-2 pb-4"><BackButton /></div>
-      <div className="flex flex-col gap-6 px-6 pt-2 pb-6">
+      <div className="flex px-4 pt-2 pb-4"><BackButton /></div>
+      <div className="flex flex-col gap-6 px-4 pt-2 pb-6">
         <div className="flex flex-col gap-2">
           <h1 className="text-h2">{title}</h1>
           <p className="text-body-lg text-slate">{intro}</p>
@@ -75,8 +75,8 @@ function MethodChoice({ k, onSend }: { k: string; onSend: (m: 'sms' | 'email') =
   const [m, setM] = useState<'sms' | 'email'>(q.get('m') === 'email' ? 'email' : 'sms');
   return (
     <Screen footer={<Footer><Button onClick={() => onSend(m)}>{t('login.7_2c.send')}</Button></Footer>}>
-      <div className="flex px-6 pt-2"><BackButton /></div>
-      <div className="flex flex-col gap-6 px-6 pt-6">
+      <div className="flex px-4 pt-2"><BackButton /></div>
+      <div className="flex flex-col gap-6 px-4 pt-6">
         <div className="flex flex-col gap-2">
           <h1 className={k === 'login.7_2c' ? 'text-h1' : 'text-h2'}>{t(`${k}.title`)}</h1>
           <p className="text-body-lg text-slate">{t(`${k}.body`)}</p>
@@ -142,7 +142,7 @@ export function WelcomeBack() {
   else if (last === 'bio' && bioFailed) banner = { type: 'error', text: bio === 'faceId' ? (out ? t(`${k}.faceIdOut`) : t(`${k}.faceIdFail`, { count: 3 - bioFailed })) : out ? t(`${k}.fingerprintOut`) : '' };
   return (
     <div className="relative flex flex-1 flex-col">
-      <Screen className="gap-8 px-6 pt-12 pb-6">
+      <Screen className="gap-8 px-4 pt-12 pb-6">
         <Logo height={36} />
         <div className="flex items-center gap-4">
           <Avatar initials={demoAccount.initials} tone="brand" />
@@ -201,8 +201,8 @@ export function NewDevice() {
   const k = 'login.7_7';
   return (
     <Screen footer={<Footer><Button onClick={() => nav('/device/details')}>{t('common.continue')}</Button></Footer>}>
-      <div className="flex px-6 pt-2"><BackButton /></div>
-      <div className="flex flex-col gap-6 px-6 pt-4">
+      <div className="flex px-4 pt-2"><BackButton /></div>
+      <div className="flex flex-col gap-6 px-4 pt-4">
         <div className="flex justify-center"><Illustration name="newDevice" size={144} /></div>
         <div className="flex flex-col gap-2"><h1 className="text-h2">{t(`${k}.title`)}</h1><p className="text-body-lg text-slate">{t(`${k}.body`)}</p></div>
         <ol className="flex flex-col gap-4">
@@ -235,8 +235,8 @@ export function VerifyDetails() {
   };
   return (
     <Screen footer={<Footer><Button disabled={!ready} onClick={submit}>{t('common.continue')}</Button></Footer>}>
-      <div className="flex px-6 pt-2"><BackButton /></div>
-      <div className="flex flex-col gap-6 px-6 pt-4 pb-6">
+      <div className="flex px-4 pt-2"><BackButton /></div>
+      <div className="flex flex-col gap-6 px-4 pt-4 pb-6">
         <div className="flex flex-col gap-2"><h1 className="text-h2">{t(`${k}.title`)}</h1><p className="text-body-lg text-slate">{t(`${k}.body`)}</p></div>
         <div className="flex flex-col gap-4">
           <TextField label={t(`${k}.first`)} value={v.first} onChange={set('first')} error={mismatch ? ' ' : undefined} autoComplete="given-name" />
@@ -287,7 +287,7 @@ export function ContactSupport() {
   return (
     <Screen footer={<Footer><Button onClick={call}><Icon name="phoneCall" size={20} />{t(`${k}.callSupport`)}</Button><Button variant="secondary" onClick={mail}><Icon name="mail" size={20} />{t(`${k}.emailSupport`)}</Button></Footer>}>
       <TopBar title={t(`${k}.title`)} />
-      <div className="flex flex-col gap-6 px-6 pt-4">
+      <div className="flex flex-col gap-6 px-4 pt-4">
         <div className="flex flex-col gap-2"><h1 className="text-h2">{t(`${k}.hero`)}</h1><p className="text-body-lg text-slate">{t(`${k}.body`)}</p></div>
         <ListGroup>
           <ListRow icon="phoneCall" title={t(`${k}.call`)} subtitle={ltr(supportContacts.phoneDisplay)} onClick={call} />

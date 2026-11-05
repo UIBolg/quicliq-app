@@ -94,7 +94,7 @@ export function AboutYou() {
     <>
       <Screen footer={<Footer>{checking ? <FooterNote text={t(`${k}.creditNote`)} /> : null}<Button disabled={!ready || checking} onClick={submit}>{checking ? t('common.loading') : t('common.continue')}</Button></Footer>}>
         <StepHeader step={1} total={2} title={t(`${k}.title`)} />
-        <div className="flex flex-col gap-4 px-6 pb-6">
+        <div className="flex flex-col gap-4 px-4 pb-6">
           <p className="text-body-lg text-slate">{t(`${k}.intro`)}</p>
           <TextField label={t(`${k}.first`)} value={v.first} onChange={set('first')} error={errs.first} autoComplete="given-name" />
           <TextField label={t(`${k}.middle`)} value={v.middle} onChange={set('middle')} error={errs.middle} />
@@ -171,7 +171,7 @@ export function AccountDetails() {
     <>
       <Screen footer={<Footer>{checking ? <FooterNote text={t(`${k}.checking`)} /> : null}<Button disabled={!ready || checking} onClick={create}>{checking ? t('common.loading') : t(`${k}.create`)}</Button></Footer>}>
         <StepHeader step={2} total={2} title={t(`${k}.title`)} />
-        <div className="flex flex-col gap-4 px-6 pb-6">
+        <div className="flex flex-col gap-4 px-4 pb-6">
           <p className="text-body-lg text-slate">{t(`${k}.intro`)}</p>
           <div onBlur={blur('mobile')}><PhoneRow><TextField label={t(`${k}.mobile`)} value={f.mobile} onChange={set('mobile')} inputMode="tel" dirLtr helper={t(`${k}.mobileHelper`)} error={err('mobile', t(`${k}.errors.mobile`))} /></PhoneRow></div>
           <div onBlur={blur('email')}><TextField label={t(`${k}.email`)} value={f.email} onChange={set('email')} type="email" dirLtr error={err('email', t(`${k}.errors.email`))} /></div>
@@ -250,7 +250,7 @@ export function VerifyNumber() {
     <>
       <Screen footer={done ? undefined : <Keypad onDigit={(d) => change(status === 'error' ? d : (code + d).slice(0, 6))} onDelete={() => change(code.slice(0, -1))} suggestion={!status ? demoAccount.code : undefined} onSuggestion={change} />}>
         <StepHeader step={2} total={2} title={t('registration.2_1.title')} />
-        <div className="flex flex-col gap-6 px-6 pb-6">
+        <div className="flex flex-col gap-6 px-4 pb-6">
           <div className="flex flex-col gap-2">
             <h2 className="text-h2">{t(`${k}.title`)}</h2>
             <p className="text-body-lg text-slate">{t(`${k}.textedTo`)}</p>
@@ -308,7 +308,7 @@ export function AccountCreated() {
   );
   return (
     <Screen footer={<Footer><Button onClick={() => nav('/verify/start')}>{t(`${k}.verify`)}</Button><Button variant="ghost" onClick={() => nav('/register/biometric')}>{t(`${k}.later`)}</Button></Footer>}>
-      <div className="flex flex-col gap-6 px-6 pt-6 pb-6">
+      <div className="flex flex-col gap-6 px-4 pt-6 pb-6">
         <div className="flex flex-col items-center gap-4 text-center">
           <Illustration name="success" size={144} />
           <h1 className="text-h2">{t(`${k}.title`)}</h1>
@@ -341,7 +341,7 @@ export function BiometricSetup() {
   const done = () => nav('/home?level=1', { replace: true });
   return (
     <Screen footer={<Footer><Button onClick={done}><Icon name={kind} size={20} />{t(`${k}.enable`)}</Button><Button variant="ghost" onClick={done}>{t('registration.3_6.notNow')}</Button></Footer>}>
-      <div className="flex flex-1 flex-col justify-center gap-6 px-6 py-6">
+      <div className="flex flex-1 flex-col justify-center gap-6 px-4 py-6">
         <div className="flex justify-center"><Illustration name={kind} /></div>
         <div className="flex flex-col gap-2 text-center"><h1 className="text-h2">{t(`${k}.title`)}</h1><p className="text-body-lg text-slate">{t(`${k}.body`)}</p></div>
         <div className="flex flex-col gap-3">{(t(`${k}.benefits`, { returnObjects: true }) as string[]).map((b, i) => <p key={b} className="flex items-center gap-3 text-body-md"><IconBadge icon={icons[i]} size={40} />{b}</p>)}</div>

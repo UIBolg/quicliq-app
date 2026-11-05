@@ -46,7 +46,7 @@ export function TransferDetails() {
     return (
       <Screen>
         <TopBar title={t(`${k}.title`)} />
-        <p className="px-6 py-12 text-center text-body text-slate">{t(`${k}.notFound`)}</p>
+        <p className="px-4 py-12 text-center text-body text-slate">{t(`${k}.notFound`)}</p>
       </Screen>
     );
   }
@@ -132,7 +132,7 @@ export function TransferDetails() {
         }
       >
         <TopBar title={t(`${k}.title`)} action={<IconButton icon="share" label={t(`${k}.actions.share`)} onClick={shareTransfer} />} />
-        <div className="flex flex-col gap-6 px-6 pb-6 [&>*]:shrink-0">
+        <div className="flex flex-col gap-6 px-4 pb-6 [&>*]:shrink-0">
           {note ? <Banner type="success">{note}</Banner> : null}
 
           {/* Summary card: who, how much, status, what it means. */}

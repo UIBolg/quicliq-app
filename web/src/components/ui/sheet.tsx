@@ -16,7 +16,7 @@ function SheetContent({ className, children, title, ...props }: React.ComponentP
       <SheetPrimitive.Content
         aria-describedby={undefined}
         className={cn(
-          'absolute inset-x-0 bottom-0 z-50 flex max-h-[90%] flex-col gap-4 overflow-y-auto rounded-t-3xl bg-white px-6 pt-4 pb-10 outline-none no-scrollbar',
+          'absolute inset-x-0 bottom-0 z-50 flex max-h-[90%] flex-col gap-4 overflow-y-auto rounded-t-3xl bg-white px-4 pt-4 pb-10 outline-none no-scrollbar',
           className,
         )}
         {...props}

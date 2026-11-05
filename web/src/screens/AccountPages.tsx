@@ -39,7 +39,7 @@ export function PersonalDetails() {
   return (
     <Screen>
       <TopBar title={t(`${k}.title`)} />
-      <div className="flex flex-col gap-6 px-6 pb-8">
+      <div className="flex flex-col gap-6 px-4 pb-8">
         <div className="flex flex-col gap-2">
           <ListGroup title={t(`${k}.sections.identity`)}>
             <Row icon="user" label={t(`${k}.fullName`)} value={demoAccount.fullName} />
@@ -84,7 +84,7 @@ export function ChangePassword() {
   return (
     <Screen footer={<Footer><Button disabled={!cur || !ok} onClick={save}>{t(`${k}.save`)}</Button></Footer>}>
       <TopBar title={t(`${k}.title`)} />
-      <div className="flex flex-col gap-4 px-6">
+      <div className="flex flex-col gap-4 px-4">
         <p className="text-body-lg text-slate">{t(`${k}.intro`)}</p>
         {error ? <Banner type="error">{error}</Banner> : null}
         <TextField label={t(`${k}.current`)} value={cur} onChange={(v) => { setCur(v); setError(undefined); }} type="password" />
@@ -135,7 +135,7 @@ export function SavedCards() {
   return (
     <Screen footer={<Footer><Button variant="secondary" onClick={() => setAdding(true)}><Icon name="plus" size={20} />{t(`${k}.add`)}</Button></Footer>}>
       <TopBar title={t(`${k}.title`)} />
-      <div className="flex flex-col gap-6 px-6 pb-6">
+      <div className="flex flex-col gap-6 px-4 pb-6">
         <p className="text-body text-slate">{t(`${k}.intro`)}</p>
         {cards.length === 0 ? <p className="text-body text-slate">{t(`${k}.empty`)}</p> : null}
         {cards.map((c) => (
@@ -191,7 +191,7 @@ export function Security() {
   return (
     <Screen>
       <TopBar title={t(`${k}.title`)} />
-      <div className="flex flex-col gap-6 px-6">
+      <div className="flex flex-col gap-6 px-4">
         <p className="text-body-lg text-slate">{t(`${k}.intro`)}</p>
         <ListGroup>
           <ListRow icon="faceId" title={t(`${k}.faceId`)} subtitle={t(`${k}.faceIdHint`)} trailing={<Switch checked={face} onCheckedChange={setFace} aria-label={t(`${k}.faceId`)} />} />
@@ -213,7 +213,7 @@ export function Language() {
   return (
     <Screen>
       <TopBar title={t(`${ka}.language.title`)} />
-      <div className="flex flex-col gap-6 px-6">
+      <div className="flex flex-col gap-6 px-4">
         <p className="text-body-lg text-slate">{t(`${ka}.language.intro`)}</p>
         <RadioGroup value={locale} onValueChange={(v) => setLocale(v as Locale)}>
           {(['en', 'ar'] as const).map((l) => <RadioOption key={l} value={l} title={t(`onboarding.language.${l}.title`)} subtitle={t(`onboarding.language.${l}.subtitle`)} />)}
@@ -261,7 +261,7 @@ export function Legal() {
   return (
     <Screen>
       <TopBar title={t(`${ka}.legal.title`)} />
-      <div className="flex flex-col gap-4 px-6">
+      <div className="flex flex-col gap-4 px-4">
         <p className="text-body text-slate">{t(`${ka}.legal.intro`)}</p>
         <ListGroup>{(['privacy', 'fraud', 'terms'] as const).map((d) => <ListRow key={d} icon="file" title={t(`${ka}.legal.${d}`)} onClick={() => nav(`/legal/${d}`)} />)}</ListGroup>
       </div>
@@ -276,7 +276,7 @@ export function LegalDoc() {
   return (
     <Screen footer={content ? <Footer><Button onClick={() => nav(-1)}>{t(`${ka}.legal.done`)}</Button></Footer> : undefined}>
       <TopBar title={t(`${ka}.legal.${doc}`)} />
-      <div className="flex flex-col gap-8 px-6 pt-2 pb-6">
+      <div className="flex flex-col gap-8 px-4 pt-2 pb-6">
         {content ? <>
           <div className="flex flex-col gap-3"><IconBadge icon={content.icon} size={56} /><h1 className="text-h2">{content.title}</h1><p className="text-body-lg text-slate">{content.intro}</p></div>
           {content.blocks.map((b, i) => <DocBlock key={i} b={b} />)}
@@ -293,7 +293,7 @@ export function Help() {
   return (
     <Screen>
       <TopBar title={t(`${k}.title`)} />
-      <div className="flex flex-col gap-6 px-6">
+      <div className="flex flex-col gap-6 px-4">
         <div className="flex flex-col gap-2"><h1 className="text-h2">{t(`${k}.heading`)}</h1><p className="text-body-lg text-slate">{t(`${k}.intro`)}</p></div>
         <ListGroup>
           <ListRow icon="phoneCall" title={t(`${k}.call`)} subtitle={ltr(supportContacts.phoneDisplay)} onClick={() => { location.href = `tel:${supportContacts.phone}`; }} />
@@ -324,7 +324,7 @@ export function Notifications() {
   return (
     <Screen>
       <TopBar title={t(`${k}.title`)} />
-      <div className="flex flex-col gap-4 px-6">
+      <div className="flex flex-col gap-4 px-4">
         {!allowed ? <div className="flex items-center gap-3 rounded-lg bg-fog p-4"><Icon name="bell" size={20} /><span className="flex-1 text-body">{t(`${k}.prompt`)}</span><button onClick={() => setAllowed(true)} className="cursor-pointer text-body-md text-red">{t(`${k}.allow`)}</button></div> : null}
         <section><h2 className="text-overline text-slate">{t(`${k}.today_h`)}</h2>{demoNotifications.filter((n) => n.when === 'today').map(row)}</section>
         <section><h2 className="text-overline text-slate">{t(`${k}.earlier`)}</h2>{demoNotifications.filter((n) => n.when !== 'today').map(row)}</section>

@@ -26,7 +26,7 @@ export function Account() {
   const next = nextLevel(level);
   return (
     <>
-      <Screen className="gap-6 px-6 pt-4 pb-28">
+      <Screen className="gap-6 px-4 pt-4 pb-28">
         <h1 className="text-h2">{t(`${k}.title`)}</h1>
         <button onClick={() => nav('/account/personal')} className="flex cursor-pointer items-center gap-4 rounded-xl bg-fog p-4 text-start hover:bg-dark-fog">
           <Avatar initials={demoAccount.initials} tone="brand" />

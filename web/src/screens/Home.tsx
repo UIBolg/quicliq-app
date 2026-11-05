@@ -34,7 +34,7 @@ export function Home() {
   const transfers = useTransfers();
   return (
     <>
-      <Screen className="gap-6 px-6 pt-4 pb-28">
+      <Screen className="gap-6 px-4 pt-4 pb-28">
         <header className="flex items-center gap-3">
           <Avatar initials={demoAccount.initials} size={44} tone="brand" />
           <div className="flex-1">
@@ -67,7 +67,7 @@ export function Home() {
 
         <section className="flex flex-col gap-3">
           <SectionHeader title={t(`${k}.recipients`)} action={t(`${k}.seeAll`)} onAction={soon('Recipients')} />
-          <div className="-mx-6 flex gap-1 overflow-x-auto px-6 no-scrollbar">
+          <div className="-mx-6 flex gap-1 overflow-x-auto px-4 no-scrollbar">
             <Tile label={t(`${k}.addRecipient`)} onClick={soon('Add recipient')}>
               <span className="grid size-14 place-items-center rounded-full border-[1.5px] border-dashed border-red text-red"><Icon name="plus" size={24} /></span>
             </Tile>

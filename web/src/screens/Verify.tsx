@@ -22,7 +22,7 @@ type File = { name: string; size: string } | null;
 function CloseBar() {
   const { t } = useTranslation();
   const nav = useNavigate();
-  return <div className="flex px-6 pt-2"><IconButton plain icon="x" label={t(`${k}.4_1.close`)} onClick={() => nav('/home?level=1')} /></div>;
+  return <div className="flex px-4 pt-2"><IconButton plain icon="x" label={t(`${k}.4_1.close`)} onClick={() => nav('/home?level=1')} /></div>;
 }
 function NumberedStep({ n, title, hint }: { n: number; title: string; hint: string }) {
   return <div className="flex items-center gap-3"><span className="grid size-8 place-items-center rounded-full bg-red-10 text-body-md text-red">{n}</span><div className="flex flex-col"><span className="text-body-md">{title}</span><span className="text-caption text-slate">{hint}</span></div></div>;
@@ -93,7 +93,7 @@ export function Hub() {
   return (
     <Screen footer={<Footer>{stage === 'start' ? <Button onClick={() => nav('/verify/choose-id')}>{t(`${kk}.start1`)}</Button> : stage === 'submitted' ? <Button onClick={() => nav('/home?level=1')}>{t(`${kk}.done`)}</Button> : <Button onClick={() => nav(`/verify/address?from=${stage}`)}>{t(`${kk}.start2`)}</Button>}</Footer>}>
       <CloseBar />
-      <div className="flex flex-col gap-6 px-6 pt-4 pb-6">
+      <div className="flex flex-col gap-6 px-4 pt-4 pb-6">
         <div className="flex flex-col gap-2"><h1 className="text-h1">{t(`${kk}.title`)}</h1><p className="text-body-lg text-slate">{t(`${kk}.body`)}</p></div>
         <div className="flex flex-col gap-2"><span className="text-body-md">{progress}</span><Progress value={done * 50} className="h-1.5 bg-fog" /></div>
         <div className="flex flex-col gap-4">
@@ -115,7 +115,7 @@ export function ChooseId() {
   return (
     <Screen footer={<Footer><Button onClick={() => nav(`/verify/camera?doc=${doc}`)}>{t(`${kk}.continue`)}</Button></Footer>}>
       <StepHeader step={1} total={2} title={t(`${kk}.title`)} />
-      <div className="flex flex-col gap-4 px-6">
+      <div className="flex flex-col gap-4 px-4">
         <p className="text-body-lg text-slate">{t(`${kk}.body`)}</p>
         <RadioGroup value={doc} onValueChange={setDoc}>
           <RadioOption value="passport" title={t(`${kk}.passport`)} subtitle={t(`${kk}.passportHint`)} leading={<IconBadge icon="idCard" size={40} />} />
@@ -146,7 +146,7 @@ export function Scan() {
   useEffect(() => { const id = setTimeout(() => nav('/verify/review', { replace: true }), 2400); return () => clearTimeout(id); }, [nav]);
   return (
     <div className="flex flex-1 flex-col bg-ink text-white">
-      <div className="flex px-6 pt-2"><IconButton icon="x" label={t(`${k}.4_1.close`)} onClick={() => nav(-1)} /></div>
+      <div className="flex px-4 pt-2"><IconButton icon="x" label={t(`${k}.4_1.close`)} onClick={() => nav(-1)} /></div>
       <div className="flex flex-1 flex-col justify-center gap-6 p-6">
         <div className="flex flex-col gap-2 text-center"><h1 className="text-h3">{t(licence ? `${k}.4_3.titleLicence` : `${k}.4_3.title`)}</h1><p className="text-body text-white-80">{t(`${k}.4_3.body`)}</p></div>
         <div className={cn('grid w-full place-items-center rounded-lg border-2 border-dashed border-white', licence ? 'aspect-[1.586]' : 'aspect-[1.42]')}><Icon name="scan" size={48} className="text-white-80" /></div>
@@ -190,7 +190,7 @@ export function ReviewDetails() {
   return (
     <Screen footer={<Footer border><Button onClick={() => nav('/verify/hub?stage=idDone', { replace: true })}>{t(`${k}.4_4.confirm`)}</Button></Footer>}>
       <StepHeader step={1} total={2} title={t(`${k}.stepId`)} />
-      <div className="flex flex-col gap-4 px-6 pb-6">
+      <div className="flex flex-col gap-4 px-4 pb-6">
         <Banner type="success">{t(`${k}.4_4.banner`)}</Banner>
         {FIELDS.map((f) => <LockedField key={f} label={t(`${k}.fields.${f}`)} value={demoIdScan[f]} />)}
       </div>
@@ -255,7 +255,7 @@ function useDoc(kind: 'id' | 'address') {
       </Sheet>
       {preview && file ? (
         <div className="absolute inset-0 z-50 flex flex-col bg-white">
-          <div className="flex px-6 pt-2"><IconButton icon="x" label={t('common.close')} onClick={() => setPreview(false)} /></div>
+          <div className="flex px-4 pt-2"><IconButton icon="x" label={t('common.close')} onClick={() => setPreview(false)} /></div>
           <div className="flex flex-1 flex-col gap-4 p-6">
             <div><h2 className="text-h3">{t(kind === 'id' ? `${k}.upload.idTitle` : `${k}.upload.addressTitle`)}</h2><p className="text-caption text-slate"><span dir="ltr">{file.name} · {file.size}</span> · {t(`${k}.upload.uploadedToday`)}</p></div>
             <div className="grid flex-1 place-items-center rounded-xl bg-fog">{kind === 'id' ? <Illustration name="idCard" /> : <Icon name="file" size={48} className="text-red" />}</div>
@@ -281,7 +281,7 @@ export function ManualDetails() {
     <>
       <Screen footer={<Footer border><Button disabled={!ready} onClick={() => nav('/verify/hub?stage=idReview', { replace: true })}>{t(`${k}.4_5.submit`)}</Button></Footer>}>
         <StepHeader step={1} total={2} title={t(`${k}.stepId`)} />
-        <div className="flex flex-col gap-4 px-6 pb-6">
+        <div className="flex flex-col gap-4 px-4 pb-6">
           <Banner type="info">{t(`${k}.4_5.banner`)}</Banner>
           {FIELDS.map((f) => <TextField key={f} label={t(`${k}.fields.${f}`)} value={v[f] ?? ''} onChange={(x) => setV((p) => ({ ...p, [f]: x }))} dirLtr={f === 'idNumber' || dates.has(f)} trailing={picker.has(f) ? <Icon name="chevronDown" size={20} className="text-slate" /> : dates.has(f) ? <Icon name="calendar" size={20} className="text-slate" /> : undefined} />)}
           <DocCard title={t(`${k}.4_5.photo`)} hint={t(`${k}.4_5.photoHint`)} file={doc.file} uploadLabel={t(`${k}.4_5.upload`)} onUpload={doc.open} onPreview={doc.preview} onRemove={doc.remove} />
@@ -307,7 +307,7 @@ export function Address() {
     <>
       <Screen footer={<Footer border><Button disabled={!ready} onClick={() => nav('/verify/hub?stage=submitted', { replace: true })}>{t(`${k}.4_7.continue`)}</Button></Footer>}>
         <StepHeader step={2} total={2} title={t(`${k}.stepAddress`)} />
-        <div className="flex flex-col gap-4 px-6 pb-6">
+        <div className="flex flex-col gap-4 px-4 pb-6">
           <TextField label={t(`${k}.fields.postcode`)} value={postcode} onChange={(x) => setPostcode(x.toUpperCase())} helper={t(`${k}.fields.postcodeHelper`)} dirLtr />
           <LockedField label={t(`${k}.fields.country`)} value={demoAddress.country} />
           <TextField label={t(`${k}.fields.county`)} value={a.county} onChange={(x) => setA((p) => ({ ...p, county: x }))} dirLtr trailing={<Icon name="chevronDown" size={20} className="text-slate" />} />

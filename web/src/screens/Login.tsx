@@ -35,7 +35,7 @@ export function Login() {
     }, 600);
   };
   return (
-    <Screen className="gap-8 px-6 pt-12 pb-8">
+    <Screen className="gap-8 px-4 pt-12 pb-8">
       <Logo height={44} />
       <div className="flex flex-col gap-2">
         <h1 className="text-h1">{t(`${k}.title`)}</h1>

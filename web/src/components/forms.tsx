@@ -26,7 +26,7 @@ export function useCountdown(seconds: number, round: unknown = 0) {
 export function StepHeader({ step, total, title, onBack }: { step: number; total: number; title: string; onBack?: () => void }) {
   const { t } = useTranslation();
   return (
-    <div className="flex flex-col gap-3 px-6 pt-2 pb-4">
+    <div className="flex flex-col gap-3 px-4 pt-2 pb-4">
       <div className="flex"><BackButton onClick={onBack} /></div>
       <div className="flex flex-col gap-1">
         <span className="text-caption text-slate">{t('registration.step', { step, total })}</span>
@@ -151,7 +151,7 @@ export function VerifiedTag({ label }: { label: string }) {
 export function MessageLayout({ illustration, title, body, children, footer }: { illustration: ReactNode; title: string; body: string; children?: ReactNode; footer: ReactNode }) {
   return (
     <div className="flex min-h-0 flex-1 flex-col">
-      <div className="flex flex-1 flex-col items-center justify-center gap-6 overflow-y-auto px-6 pt-10 no-scrollbar [&>*]:shrink-0">
+      <div className="flex flex-1 flex-col items-center justify-center gap-6 overflow-y-auto px-4 pt-10 no-scrollbar [&>*]:shrink-0">
         {illustration}
         <div className="flex w-full flex-col gap-2 text-center">
           <h1 className="text-h2">{title}</h1>
@@ -159,13 +159,13 @@ export function MessageLayout({ illustration, title, body, children, footer }: {
         </div>
         {children ? <div className="flex w-full flex-col gap-6">{children}</div> : null}
       </div>
-      <div className="flex flex-col gap-4 px-6 pt-4 pb-10">{footer}</div>
+      <div className="flex flex-col gap-4 px-4 pt-4 pb-10">{footer}</div>
     </div>
   );
 }
 
 export function Footer({ children, border }: { children: ReactNode; border?: boolean }) {
-  return <div className={cn('flex flex-col gap-2 px-6 pt-4 pb-8', border && 'border-t border-fog')}>{children}</div>;
+  return <div className={cn('flex flex-col gap-2 px-4 pt-4 pb-8', border && 'border-t border-fog')}>{children}</div>;
 }
 
 /** iOS number pad mock (Figma 281:8115) — shown only in the desktop phone frame, where there is no phone keyboard.

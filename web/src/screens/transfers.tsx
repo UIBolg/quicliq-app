@@ -48,13 +48,13 @@ export function History() {
   const fmt = (iso: string) => new Intl.DateTimeFormat(locale === 'ar' ? 'ar-u-nu-latn' : 'en-GB', { day: 'numeric', month: 'short' }).format(new Date(iso));
   return (
     <>
-      <Screen className="gap-4 px-6 pt-4 pb-28">
+      <Screen className="gap-4 px-4 pt-4 pb-28">
         <h1 className="text-h2">{t(`${k}.title`)}</h1>
         <label className="flex h-14 items-center gap-2 rounded-md bg-fog px-4 focus-within:ring-[1.5px] focus-within:ring-ink">
           <input value={q} onChange={(e) => setQ(e.target.value)} placeholder={t(`${k}.search`)} aria-label={t(`${k}.search`)} className="flex-1 bg-transparent text-body-lg outline-none placeholder:text-slate" />
           <Icon name="search" size={20} className="text-slate" />
         </label>
-        <div className="-mx-6 flex gap-2 overflow-x-auto px-6 no-scrollbar">
+        <div className="-mx-6 flex gap-2 overflow-x-auto px-4 no-scrollbar">
           <FilterChip label={range ? `${fmt(range.from)} – ${fmt(range.to)}` : t(`${k}.groups.date`)} selected={!!range} onClick={() => { setDraft(range ?? { from: '', to: '' }); setMonth((range?.from ?? demoToday).slice(0, 7)); setOpen('date'); }} />
           {(Object.keys(OPTIONS) as Group[]).map((g) => (
             <FilterChip key={g} label={picked[g] === 'all' ? t(`${k}.groups.${g}`) : t(`${k}.options.${g}.${picked[g]}`)} selected={picked[g] !== 'all'} onClick={() => setOpen(g)} />

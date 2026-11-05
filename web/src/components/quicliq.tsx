@@ -37,7 +37,7 @@ export function BackButton({ onClick }: { onClick?: () => void }) {
 
 export function TopBar({ title, onBack, action }: { title: string; onBack?: () => void; action?: ReactNode }) {
   return (
-    <div className="flex items-center gap-3 px-6 pt-2 pb-4">
+    <div className="flex items-center gap-3 px-4 pt-2 pb-4">
       <BackButton onClick={onBack} />
       <h1 className="flex-1 truncate text-center text-title text-ink">{title}</h1>
       {action ?? <span className="size-10" aria-hidden />}
