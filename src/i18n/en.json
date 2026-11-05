@@ -837,7 +837,11 @@
     "nextMonth": "Next month",
     "pickRange": "Pick a start and an end date",
     "apply": "Apply",
-    "clear": "Clear"
+    "clear": "Clear",
+    "hints": {
+      "status": "Show transfers by their status",
+      "type": "How the money is paid out"
+    }
   },
   "system": {
     "9_1": {
