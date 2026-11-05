@@ -60,7 +60,7 @@ export function TextField({ label, value, onChange, type = 'text', error, helper
         htmlFor={id}
         className={cn(
           'flex h-16 cursor-text items-center gap-2 rounded-md border-[1.5px] px-4 transition-colors',
-          error ? 'border-failure bg-failure-light' : 'border-dark-fog bg-fog focus-within:border-ink focus-within:bg-white',
+          error ? 'border-failure bg-failure-light' : 'border-dark-fog bg-fog focus-within:border-red focus-within:bg-white',
         )}
       >
         <span className="flex min-w-0 flex-1 flex-col">

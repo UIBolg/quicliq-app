@@ -1,7 +1,7 @@
 /**
  * Text Field — Figma 21:388. Filled field, 64 high, radius/md, padding 0/spacing/16, gap spacing/8.
  * Label (Caption) sits inside above the value (Body Large), gap spacing/2.
- * States: Default (Fog, Slate text) · Filled (Fog, Ink value) · Focused (White + Ink outline stroke/md)
+ * States: Default (Fog, Slate text) · Filled (Fog, Ink value) · Focused (White + Primary/Red outline stroke/md)
  *         · Error (Failure/Light + Failure outline, red label, message below with 14 alert)
  *         · Locked (no fill, dashed Silver outline, 18 lock, read-only).
  * Trailing: eye (toggles password visibility) | calendar | chevron | search (code addition, 12.2 address finder,
@@ -44,7 +44,7 @@ const isolateLtr = (v: string) => (NUMERIC.test(v) ? `\u2066${v}\u2069` : v);
 const look: Record<TextFieldState, { bg?: ColorToken; border?: ColorToken; dashed?: boolean; label: ColorToken; value: ColorToken }> = {
   default: { bg: 'Neutral/Fog', border: 'Neutral/Dark Fog', label: 'Neutral/Slate', value: 'Neutral/Slate' },
   filled: { bg: 'Neutral/Fog', border: 'Neutral/Dark Fog', label: 'Neutral/Slate', value: 'Neutral/Ink' },
-  focused: { bg: 'Neutral/White', border: 'Neutral/Ink', label: 'Neutral/Slate', value: 'Neutral/Ink' },
+  focused: { bg: 'Neutral/White', border: 'Primary/Red', label: 'Neutral/Slate', value: 'Neutral/Ink' },
   error: { bg: 'Status/Failure/Light', border: 'Status/Failure/Default', label: 'Status/Failure/Default', value: 'Neutral/Ink' },
   locked: { border: 'Neutral/Silver', dashed: true, label: 'Neutral/Slate', value: 'Neutral/Slate' },
 };
