@@ -39,3 +39,15 @@ H2 title, search field (Fog, radius 12 raw), Status / Sending type / Date chips,
   76:693 Default · 76:853 Status sheet · 76:1041 Sending type sheet · 76:1229 Date range sheet · 76:1535 Filters applied · 76:1602 No results.
   AR text styles (H2, Overline, Body, Body Medium, Caption, Title), Arabic month names in dates, amounts keep EN styles.
   Still English (fix pass not applied yet): sheet titles/descriptions/options, Apply / Clear, calendar weekday letters.
+
+## Account (Profile) — English (2026-11-05)
+Section 93:1301 "Account (Profile) — English (LTR)" on page 6:2128, built with use_figma from Quicliq [Kitchen]
+components, Colour / Spacing / Radius / Stroke variables and EN text styles (Avenir):
+- 93:1302 12.1 Account (profile card, Account / Preferences / Support groups, Log out, tab bar) · 93:2094 12.1a Log out sheet
+- 93:1441 12.2 Personal details (Text Field Locked / Filled + Chevron, Info Banner)
+- 93:1587 12.3 Change password (Text Field Eye, Focused; rule list with Icon Badge 20 Success; Button Disabled)
+- 93:1696 12.4 Saved cards (payment card visuals, Verified Tag "Default", "Set as default" pill, Button Ghost Small + trash, Add card)
+- 93:1804 12.5 Security (Face ID switch, Change password, Active device) · 93:1873 12.6 Language (Radio Option)
+- 93:1907 12.7 Legal (Nav Option ×3) · 93:1961 13.1 Help (Nav Option ×3) · 93:2014 13.2 Notifications (Banner, Tonal Small, rows)
+Built manually (no library component): list group/row, switch, payment card, set-as-default pill, tab bar (shadow not
+tokenised), log-out sheet. See figma-issues #38, #42, #47. Arabic versions not built yet.
