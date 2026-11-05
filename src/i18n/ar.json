@@ -410,7 +410,8 @@
       "title": "يمكنك إرسال",
       "a11y": "تم استخدام {{used}} من {{total}}",
       "caption": "من حدّك الإجمالي البالغ {{total}}",
-      "noCap": "بلا حدّ إجمالي"
+      "noCap": "بلا حدّ إجمالي",
+      "unlimited": "غير محدود"
     },
     "recipients": "آخر المستفيدين",
     "recipientNames": {
@@ -460,7 +461,7 @@
       },
       "done": "تم",
       "total": "الإجمالي",
-      "over": "{{amount}}+",
+      "over": "غير محدود",
       "status": {
         "done": "تم",
         "current": "الخطوة التالية",
@@ -1106,7 +1107,8 @@
       "account": "الحساب",
       "agent": "نقطة الاستلام",
       "card": "الدفع بواسطة",
-      "created": "تاريخ الإنشاء"
+      "created": "تاريخ الإنشاء",
+      "name": "الاسم"
     },
     "rateValue": "1 GBP = {{rate}} JOD",
     "cardValue": "{{brand}} •••• {{last4}}",
@@ -1152,6 +1154,12 @@
       "byWrongRecipient": "ألغيته أنت: مستلم خاطئ",
       "byChangedMind": "ألغيته أنت: غيّرت رأيك",
       "byOther": "ألغيته أنت"
+    },
+    "copyShort": "نسخ",
+    "groups": {
+      "payment": "الدفع",
+      "recipient": "المستلم",
+      "transfer": "التحويل"
     }
   }
 }

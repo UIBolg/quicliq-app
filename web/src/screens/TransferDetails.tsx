@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { demoAccount, demoCards, demoToday } from '@shared/mock/account';
 import { cancelReasons, receiveAmount, statusFlow, type StopReason, type TransferStatus } from '@shared/mock/transfers';
-import { formatMoney } from '@shared/utils/format';
+import { formatMoney, ltr } from '@shared/utils/format';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent } from '@/components/ui/sheet';
 import { RadioGroup, RadioOption } from '@/components/ui/radio-group';
@@ -54,6 +54,7 @@ export function TransferDetails() {
 
   const d = tx.detail;
   const lang = locale === 'ar' ? 'ar-u-nu-latn' : 'en-GB';
+  const dayOnly = (iso: string) => new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'short' }).format(new Date(iso));
   const dateTime = (iso: string) => new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date(iso));
   const sent = Number(tx.amount);
   const card = demoCards.find((c) => c.id === d.cardId)!;
@@ -63,7 +64,7 @@ export function TransferDetails() {
     name,
     amount: money(sent + d.fee),
     receive: formatMoney(receiveAmount(sent), 'JOD', { decimals: 'always' }),
-    card: t(`${k}.cardValue`, { brand: card.brand, last4: card.last4 }),
+    card: ltr(t(`${k}.cardValue`, { brand: card.brand, last4: card.last4 })),
     bank: 'bank' in d.payout ? t(`${k}.banks.${d.payout.bank}`) : '',
     agent: 'agent' in d.payout ? t(`${k}.agents.${d.payout.agent}`) : '',
     eta: d.eta ? dateTime(d.eta) : '',
@@ -125,23 +126,26 @@ export function TransferDetails() {
         <div className="flex flex-col gap-6 px-6 pb-6 [&>*]:shrink-0">
           {note ? <Banner type="success">{note}</Banner> : null}
 
-          {/* Summary */}
-          <section className="flex flex-col items-center gap-2 text-center">
+          {/* Summary card: who, how much, status, what it means; Cancelled / Rejected show the reason here. */}
+          <section className="flex flex-col items-center gap-3 rounded-xl border border-dark-fog bg-fog px-5 pt-6 pb-5 text-center">
             <IconBadge icon={tx.method === 'bank' ? 'bank' : 'cash'} size={56} />
-            <p className="text-body text-slate">{t(`${k}.toName`, { name })}</p>
-            <p className="text-numeric-l text-ink" dir="ltr" style={{ fontFamily: 'var(--font-en)' }}>{money(sent)}</p>
-            <StatusPill status={tx.status} label={t(`home.status.${tx.status}`)} className="py-0.5 text-body-md" />
-            <p className="text-body text-slate">{headline}</p>
+            <div className="flex flex-col items-center gap-0.5">
+              <p className="text-body text-slate">{t(`${k}.toName`, { name })}</p>
+              <p className="text-numeric-l text-ink" dir="ltr" style={{ fontFamily: 'var(--font-en)' }}>{money(sent)}</p>
+              <p className="text-caption text-slate">{t(`${k}.rows.receive`, { name })} <span className="text-body-md text-ink">{vars.receive}</span></p>
+            </div>
+            <StatusPill status={tx.status} label={t(`home.status.${tx.status}`)} className="px-3 py-1 text-body-md" />
+            {stopped && d.reason ? (
+              <div className="flex w-full items-start gap-2 rounded-md bg-failure-light p-3 text-start text-body text-failure-dark" role="note">
+                <Icon name="alert" size={20} className="mt-px text-failure" />
+                <span><span className="text-body-md">{t(`${k}.reasonTitle`)}: </span>{t(`${k}.reasons.${d.reason}`, vars)}</span>
+              </div>
+            ) : <p className="text-body text-slate">{headline}</p>}
           </section>
 
-          {d.reason ? (
-            <Banner type={tx.status === 'rejected' ? 'error' : 'info'} icon={tx.status === 'rejected' ? 'alertTriangle' : 'info'}>
-              <span className="text-body-md">{t(`${k}.reasonTitle`)}: </span>{t(`${k}.reasons.${d.reason}`, vars)}
-            </Banner>
-          ) : null}
           {stopped && (d.refundedAt || d.eta) ? (
             <Banner type={d.refundedAt ? 'success' : 'info'} icon="wallet">
-              {d.refundedAt ? t(`${k}.headline.refundDone`, { ...vars, date: dateTime(d.refundedAt) }) : t(`${k}.headline.refundPending`, vars)}
+              {d.refundedAt ? t(`${k}.headline.refundDone`, { ...vars, date: dayOnly(d.refundedAt) }) : t(`${k}.headline.refundPending`, { ...vars, eta: d.eta ? dayOnly(d.eta) : '' })}
             </Banner>
           ) : null}
 
@@ -149,9 +153,7 @@ export function TransferDetails() {
             <section className="flex flex-col gap-3 rounded-lg bg-info-light p-4">
               <div className="flex items-center justify-between">
                 <h2 className="text-body-md text-info-dark">{t(`${k}.pickup.title`)}</h2>
-                <button onClick={() => copy(d.pickupCode!, t(`${k}.pickup.copied`))} aria-label={t(`${k}.pickup.title`)} className="grid size-11 cursor-pointer place-items-center rounded-full text-info-dark hover:bg-white">
-                  <Icon name="file" size={20} />
-                </button>
+                <CopyButton label={t(`${k}.copyShort`)} aria={t(`${k}.pickup.title`)} onClick={() => copy(d.pickupCode!, t(`${k}.pickup.copied`))} />
               </div>
               <p className="text-numeric-l tracking-[0.2em] text-ink" dir="ltr" style={{ fontFamily: 'var(--font-en)', textAlign: 'center' }}>{d.pickupCode}</p>
               <p className="text-caption text-info-dark">{t(`${k}.pickup.hint`, vars)}</p>
@@ -159,28 +161,33 @@ export function TransferDetails() {
           ) : null}
 
           {/* Progress timeline */}
-          <section className="flex flex-col gap-3">
+          <section className="flex flex-col gap-2">
             <h2 className="text-overline text-slate">{t(`${k}.progress`)}</h2>
-            <ol className="flex flex-col">
+            <ol className="flex flex-col rounded-lg border border-dark-fog bg-white p-4">
               {timeline(tx).map((r, i, all) => (
                 <TimelineRow
                   key={r.step + i}
                   row={r}
                   last={i === all.length - 1}
                   title={t(`home.status.${r.step}`)}
-                  body={r.state === 'failed' ? t(`${k}.reasons.${d.reason ?? 'byOther'}`, vars) : t(`${k}.steps.${r.step}.${tx.method}`, vars)}
+                  body={r.state === 'failed' ? t(`${k}.reasonsShort.${d.reason ?? 'byOther'}`) : t(`${k}.steps.${r.step}.${tx.method}`, vars)}
                   when={r.at ? dateTime(r.at) : i === all.findIndex((x) => x.state === 'upcoming') && d.eta ? t(`${k}.expected`, vars) : ''}
                 />
               ))}
             </ol>
           </section>
 
-          {/* Details */}
-          <ListGroup title={t(`${k}.details`)}>
-            <DetailRow label={t(`${k}.rows.reference`)} value={d.reference} ltr trailing={
-              <button onClick={() => copy(d.reference, t(`${k}.copied`))} aria-label={t(`${k}.copy`)} className="grid size-11 cursor-pointer place-items-center rounded-full text-slate hover:bg-dark-fog"><Icon name="file" size={18} /></button>
-            } />
-            <DetailRow label={t(`${k}.rows.created`)} value={dateTime(d.events[0].at)} />
+          {/* Details, grouped */}
+          <ListGroup title={t(`${k}.groups.payment`)}>
+            <DetailRow label={t(`${k}.rows.sent`)} value={money(sent)} ltr />
+            <DetailRow label={t(`${k}.rows.fee`)} value={money(d.fee)} ltr />
+            <DetailRow label={t(`${k}.rows.total`)} value={vars.amount} ltr strong />
+            <DetailRow label={t(`${k}.rows.rate`)} value={t(`${k}.rateValue`, { rate: demoAccount.rate.jod })} ltr />
+            <DetailRow label={t(`${k}.rows.receive`, { name })} value={vars.receive} ltr strong />
+            <DetailRow label={t(`${k}.rows.card`)} value={vars.card} ltr />
+          </ListGroup>
+          <ListGroup title={t(`${k}.groups.recipient`)}>
+            <DetailRow label={t(`${k}.rows.name`)} value={name} />
             <DetailRow label={t(`${k}.rows.method`)} value={t(`home.methods.${tx.method}`)} />
             {'bank' in d.payout ? (
               <>
@@ -188,12 +195,10 @@ export function TransferDetails() {
                 <DetailRow label={t(`${k}.rows.account`)} value={t(`${k}.accountValue`, { last4: d.payout.last4 })} ltr />
               </>
             ) : <DetailRow label={t(`${k}.rows.agent`)} value={vars.agent} />}
-            <DetailRow label={t(`${k}.rows.sent`)} value={money(sent)} ltr />
-            <DetailRow label={t(`${k}.rows.fee`)} value={money(d.fee)} ltr />
-            <DetailRow label={t(`${k}.rows.total`)} value={vars.amount} ltr strong />
-            <DetailRow label={t(`${k}.rows.rate`)} value={t(`${k}.rateValue`, { rate: demoAccount.rate.jod })} ltr />
-            <DetailRow label={t(`${k}.rows.receive`, { name })} value={vars.receive} ltr strong />
-            <DetailRow label={t(`${k}.rows.card`)} value={vars.card} ltr />
+          </ListGroup>
+          <ListGroup title={t(`${k}.groups.transfer`)}>
+            <DetailRow label={t(`${k}.rows.reference`)} value={d.reference} ltr trailing={<CopyButton label={t(`${k}.copyShort`)} aria={t(`${k}.copy`)} onClick={() => copy(d.reference, t(`${k}.copied`))} />} />
+            <DetailRow label={t(`${k}.rows.created`)} value={dateTime(d.events[0].at)} />
           </ListGroup>
         </div>
       </Screen>
@@ -217,12 +222,15 @@ export function TransferDetails() {
   );
 }
 
-/** One status in the timeline: marker (done ✓ green, stopped ✕ red, current red ring, upcoming grey) + connector line. */
+/** One status in the timeline: marker (done ✓ green, stopped ✕ red, current ring in the status colour — Pending amber,
+ *  Processing blue — upcoming dashed grey) + connector line. */
 function TimelineRow({ row, last, title, body, when }: { row: Row; last: boolean; title: string; body: string; when: string }) {
   const marker = {
     done: <IconBadge icon="check" size={32} tone="success" />,
     failed: <span className="grid size-8 shrink-0 place-items-center rounded-full bg-failure text-white"><Icon name="x" size={16} /></span>,
-    current: <span className="grid size-8 shrink-0 place-items-center rounded-full bg-red-10 ring-[1.5px] ring-red"><span className="size-2.5 animate-pulse rounded-full bg-red" /></span>,
+    current: row.step === 'pending'
+      ? <span className="grid size-8 shrink-0 place-items-center rounded-full bg-warning-light ring-[1.5px] ring-warning"><span className="size-2.5 animate-pulse rounded-full bg-warning" /></span>
+      : <span className="grid size-8 shrink-0 place-items-center rounded-full bg-info-light ring-[1.5px] ring-info"><span className="size-2.5 animate-pulse rounded-full bg-info" /></span>,
     upcoming: <span className="size-8 shrink-0 rounded-full border-[1.5px] border-dashed border-silver bg-white" />,
   }[row.state];
   return (
@@ -234,9 +242,9 @@ function TimelineRow({ row, last, title, body, when }: { row: Row; last: boolean
       <div className={cn('flex flex-1 flex-col gap-0.5 pt-1', !last && 'pb-5')}>
         <div className="flex items-baseline justify-between gap-2">
           <span className={cn('text-body-md', row.state === 'failed' ? 'text-failure' : row.state === 'upcoming' ? 'text-slate' : 'text-ink')}>{title}</span>
-          {when ? <span className={cn('shrink-0 text-caption', row.state === 'upcoming' ? 'text-red' : 'text-slate')}>{when}</span> : null}
+          {when ? <span className={cn('shrink-0 text-caption', row.state === 'upcoming' ? 'text-ink' : 'text-slate')}>{when}</span> : null}
         </div>
-        {body && row.state !== 'upcoming' ? <p className="text-caption text-slate">{body}</p> : null}
+        {body && row.state !== 'upcoming' ? <p className={cn('text-caption', row.state === 'failed' ? 'text-failure' : 'text-slate')}>{body}</p> : null}
       </div>
     </li>
   );
@@ -249,5 +257,13 @@ function DetailRow({ label, value, ltr, strong, trailing }: { label: string; val
       <span className={cn('text-end', strong ? 'text-body-md text-ink' : 'text-body text-ink')} dir={ltr ? 'ltr' : undefined} style={ltr ? { fontFamily: 'var(--font-en)' } : undefined}>{value}</span>
       {trailing}
     </div>
+  );
+}
+
+function CopyButton({ label, aria, onClick }: { label: string; aria: string; onClick: () => void }) {
+  return (
+    <button onClick={onClick} aria-label={aria} className="flex min-h-11 cursor-pointer items-center gap-1 rounded-full px-2 text-body-md text-red outline-none hover:bg-red-4 focus-visible:ring-2 focus-visible:ring-ink">
+      {label}
+    </button>
   );
 }

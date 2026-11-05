@@ -53,7 +53,7 @@ export function Home() {
             level={level}
             label={t(`${k}.limit.title`)}
             levelName={t(`${k}.levels.${level}`)}
-            amount={level === 3 ? `${formatMoney(limitTotal(2))}+` : formatMoney(left)}
+            amount={level === 3 ? t(`${k}.limit.unlimited`) : formatMoney(left)}
             caption={level === 3 ? t(`${k}.limit.noCap`) : t(`${k}.limit.caption`, { total: formatMoney(total) })}
             value={(demoLimit.sent / total) * 100}
             onClick={() => setSheet(true)}

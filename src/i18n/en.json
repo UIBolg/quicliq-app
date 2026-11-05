@@ -390,7 +390,8 @@
       "title": "You can send",
       "a11y": "{{used}} of {{total}} used",
       "caption": "of your {{total}} lifetime limit",
-      "noCap": "No lifetime limit"
+      "noCap": "No lifetime limit",
+      "unlimited": "Unlimited"
     },
     "recipients": "Recent beneficiaries",
     "recipientNames": {
@@ -440,7 +441,7 @@
       },
       "done": "Done",
       "total": "total",
-      "over": "{{amount}}+",
+      "over": "Unlimited",
       "status": {
         "done": "Done",
         "current": "Next step",
@@ -1086,7 +1087,8 @@
       "account": "Account",
       "agent": "Pickup point",
       "card": "Paid with",
-      "created": "Created"
+      "created": "Created",
+      "name": "Name"
     },
     "rateValue": "1 GBP = {{rate}} JOD",
     "cardValue": "{{brand}} •••• {{last4}}",
@@ -1132,6 +1134,12 @@
       "byWrongRecipient": "Cancelled by you: wrong recipient",
       "byChangedMind": "Cancelled by you: changed your mind",
       "byOther": "Cancelled by you"
+    },
+    "copyShort": "Copy",
+    "groups": {
+      "payment": "Payment",
+      "recipient": "Recipient",
+      "transfer": "Transfer"
     }
   }
 }
