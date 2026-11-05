@@ -10,8 +10,8 @@ export const colors = {
   'Neutral/Ink': '#171717',
   'Neutral/Slate': '#595959',
   'Neutral/Silver': '#BFBFBF',
-  /** Quicliq [Kitchen] library update (read from New Designs 32:721): Fog lightened #F3F3F3 → #F5F7FA, Dark Fog added. */
-  'Neutral/Fog': '#F5F7FA',
+  /** Quicliq [Kitchen] library update (read from New Designs 32:721): Fog lightened #F3F3F3 → #F8FAFC, Dark Fog added. */
+  'Neutral/Fog': '#F8FAFC',
   'Neutral/Dark Fog': '#EBEFF5',
   'Neutral/White': '#FFFFFF',
 
