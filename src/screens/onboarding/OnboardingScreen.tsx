@@ -11,7 +11,7 @@
  * Sign up → Registration 1.1 (not built yet) · Log in → 7.1.
  */
 import { useCallback, useMemo, useRef, useState } from 'react';
-import { FlatList, Pressable, StyleSheet, View, type LayoutChangeEvent, type NativeScrollEvent, type NativeSyntheticEvent } from 'react-native';
+import { FlatList, StyleSheet, View, type LayoutChangeEvent, type NativeScrollEvent, type NativeSyntheticEvent } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import {
@@ -63,13 +63,7 @@ export function OnboardingScreen({ navigation }: NativeStackScreenProps<RootStac
       {/* Header — top bar */}
       <View style={{ paddingTop: t.spacing['spacing/8'], paddingHorizontal: g }}>
         <View style={[styles.topBar, { height: t.sizes.iconButton.size }]}>
-          <Pressable
-            // Development builds only: long-press the logo to open the read-only component gallery.
-            onLongPress={__DEV__ ? () => navigation.navigate('dev/Gallery') : undefined}
-            accessible={false}
-          >
-            <Logo height={t.sizes.logo.header} />
-          </Pressable>
+          <Logo height={t.sizes.logo.header} />
           <IconButton icon="globe" accessibilityLabel={tr('common.language')} onPress={() => setSheetOpen(true)} testID="language-button" />
         </View>
       </View>
