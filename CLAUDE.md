@@ -19,8 +19,7 @@ Read `AGENTS.md` too (Expo commands and conventions). The rules below win if the
   USE-ONLY: never edit, add to, rename or remove their variables, styles or components. Never write to any other file.
 - Source file: https://www.figma.com/design/kGcOLLGSdsq37Ova5pRIRE/Test (library "Quicliq [Main]").
 - Figma tools allowed: the read tools (`get_metadata`, `get_design_context`, `get_variable_defs`, `get_screenshot`,
-  `search_design_system`, `get_libraries`, `download_assets`, `create_session`) on any file, and `use_figma` to create
-  designs in "New Designs" only (no approval needed, see the exception above).
+  `search_design_system`, `get_libraries`, `download_assets`, `create_session`) on any file.
 - Never call the other Figma write tools (`send_code_to_figma`, `create_new_file`, `upload_assets`,
   `add_code_connect_map`, `send_code_connect_mappings`, `create_shader`, `update_shader`, `generate_image`,
   `generate_diagram`, generative-plugin or weave tools). They are denied in `.claude/settings.json`.
