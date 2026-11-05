@@ -22,7 +22,6 @@ export const transferCard = (tx: Transfer, t: TFunction): TransferCardProps => (
   amount: formatMoney(Number(tx.amount), 'GBP', { decimals: 'always' }),
   status: tx.status,
   statusLabel: t(`home.status.${tx.status}`),
-  note: tx.detail.reason ? t(`transfer.reasonsShort.${tx.detail.reason}`) : undefined,
 });
 
 const OPTIONS = { status: ['all', 'pending', 'processing', 'stopped', 'delivered'], type: ['all', 'bank', 'cash'] } as const;
