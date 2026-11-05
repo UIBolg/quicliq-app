@@ -42,8 +42,8 @@ const NUMERIC = /^[\d\s/+\-.•()]+$/;
 const isolateLtr = (v: string) => (NUMERIC.test(v) ? `\u2066${v}\u2069` : v);
 
 const look: Record<TextFieldState, { bg?: ColorToken; border?: ColorToken; dashed?: boolean; label: ColorToken; value: ColorToken }> = {
-  default: { bg: 'Neutral/Fog', label: 'Neutral/Slate', value: 'Neutral/Slate' },
-  filled: { bg: 'Neutral/Fog', label: 'Neutral/Slate', value: 'Neutral/Ink' },
+  default: { bg: 'Neutral/Fog', border: 'Neutral/Dark Fog', label: 'Neutral/Slate', value: 'Neutral/Slate' },
+  filled: { bg: 'Neutral/Fog', border: 'Neutral/Dark Fog', label: 'Neutral/Slate', value: 'Neutral/Ink' },
   focused: { bg: 'Neutral/White', border: 'Neutral/Ink', label: 'Neutral/Slate', value: 'Neutral/Ink' },
   error: { bg: 'Status/Failure/Light', border: 'Status/Failure/Default', label: 'Status/Failure/Default', value: 'Neutral/Ink' },
   locked: { border: 'Neutral/Silver', dashed: true, label: 'Neutral/Slate', value: 'Neutral/Slate' },

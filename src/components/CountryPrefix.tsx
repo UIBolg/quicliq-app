@@ -25,6 +25,8 @@ export function CountryPrefix() {
         paddingHorizontal: t.spacing['spacing/16'],
         borderRadius: t.radius['radius/lg'],
         backgroundColor: t.colors['Neutral/Fog'],
+        borderWidth: t.stroke['stroke/md'],
+        borderColor: t.colors['Neutral/Dark Fog'],
         direction: 'ltr',
       }}
     >

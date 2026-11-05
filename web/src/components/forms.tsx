@@ -114,7 +114,7 @@ export function PhoneRow({ children }: { children: ReactNode }) {
   const { t } = useTranslation();
   return (
     <div className="flex items-start gap-2" dir="ltr">
-      <span aria-label={t('components.countryPrefix')} className="flex h-16 w-28 shrink-0 items-center gap-2 rounded-lg bg-fog px-4">
+      <span aria-label={t('components.countryPrefix')} className="flex h-16 w-28 shrink-0 items-center gap-2 rounded-lg border-[1.5px] border-dark-fog bg-fog px-4">
         <span className="h-4 w-6 overflow-hidden rounded-[2px] [&>svg]:size-full" dangerouslySetInnerHTML={{ __html: flagXml.UK }} />
         <span className="text-body-lg" style={{ fontFamily: 'var(--font-en)' }}>+44</span>
         <Icon name="lock" size={14} className="text-slate" />
