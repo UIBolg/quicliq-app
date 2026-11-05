@@ -144,7 +144,15 @@ export function SavedCards() {
             <div className="flex items-center justify-between gap-2">
               {def === c.id
                 ? <span className="flex items-center gap-1.5 rounded-full bg-success-light px-2 py-1 text-caption text-success"><Icon name="check" size={14} />{t(`${k}.default`)}</span>
-                : <label className="flex cursor-pointer items-center gap-2 text-body-md">{t(`${k}.setDefault`)}<Switch checked={false} onCheckedChange={() => setDef(c.id)} aria-label={t(`${k}.setDefault`)} /></label>}
+                : (
+                  // Small outline pill (same size as the Default tag); the 44 high button keeps the touch area.
+                  <button onClick={() => setDef(c.id)} className="group flex min-h-11 cursor-pointer items-center outline-none">
+                    <span className="flex items-center gap-1.5 rounded-full border border-silver bg-white px-2.5 py-1 text-caption text-ink transition-colors group-hover:border-ink group-hover:bg-fog group-active:bg-dark-fog group-focus-visible:ring-2 group-focus-visible:ring-ink">
+                      <span className="size-3 rounded-full border-[1.5px] border-slate" aria-hidden />
+                      {t(`${k}.setDefault`)}
+                    </span>
+                  </button>
+                )}
               <button onClick={() => setRemove(c.id)} className="flex cursor-pointer items-center gap-1.5 text-body-md text-red hover:underline"><Icon name="trash" size={16} />{t(`${k}.remove`)}</button>
             </div>
           </div>
