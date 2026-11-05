@@ -1,5 +1,7 @@
-/** Registration: 1.1–1.7 About you · 2.1–2.3d Account details · 2.4–2.8 Verify your number · 2.9 / 2.9b Account created ·
- *  3.6 / 3.1b Biometric setup. Demo rules as in the artifact. */
+/** Registration (Figma "New registration", New Designs 104:15499), 3 steps:
+ *  1 Verify your number (mobile → code sheet → Number verified) · 2 Personal information (name + date of birth →
+ *  details verified / number not in your name / couldn't confirm / account exists) · 3 Account details (email, password,
+ *  agreements) → 2.9 / 2.9b Account created → 3.6 / 3.1b Biometric setup. Demo rules in src/mock/account.ts. */
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -41,6 +43,15 @@ function ThingsToCheck({ items }: { items: string[] }) {
     </div>
   );
 }
+function MatchRow({ icon, label, value, hint, tag }: { icon: IconName; label: string; value: string; hint?: string; tag: string }) {
+  return (
+    <div className="flex items-center gap-3 rounded-lg bg-fog p-4">
+      <IconBadge icon={icon} size={40} />
+      <div className="flex min-w-0 flex-1 flex-col"><span className="text-caption text-slate">{label}</span><span className="text-body-md">{value}</span>{hint ? <span className="text-caption text-slate">{hint}</span> : null}</div>
+      <VerifiedTag label={tag} />
+    </div>
+  );
+}
 function FooterNote({ text }: { text: string }) {
   return <p className="flex items-center gap-2 text-caption text-slate"><Icon name="lock" size={16} />{text}</p>;
 }
@@ -64,6 +75,8 @@ export function AboutYou() {
   const { t } = useTranslation();
   const { locale } = useLocale();
   const nav = useNavigate();
+  const [q] = useSearchParams();
+  const phone = q.get('phone') ?? '';
   const k = 'registration.1_1';
   const [v, setV] = useState({ first: '', middle: '', last: '' });
   const [dob, setDob] = useState<D | null>(null);
@@ -71,7 +84,7 @@ export function AboutYou() {
   const [picker, setPicker] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [checking, setChecking] = useState(false);
-  const [result, setResult] = useState<'matched' | 'unknown' | 'exists' | null>(null);
+  const [result, setResult] = useState<'verified' | 'number' | 'unknown' | 'exists' | null>(null);
   const set = (f: keyof typeof v) => (x: string) => setV((p) => ({ ...p, [f]: x }));
   const nameErr = (s: string, req: boolean) => !submitted ? undefined : !s.trim() ? (req ? t(`${k}.errors.required`) : undefined) : NAME_RE.test(s.trim()) ? undefined : t(`${k}.errors.letters`);
   const errs = { first: nameErr(v.first, true), middle: nameErr(v.middle, false), last: nameErr(v.last, true), dob: submitted && dob && age(dob) < 18 ? t(`${k}.errors.age`) : undefined };
@@ -87,13 +100,13 @@ export function AboutYou() {
       const n = (s: string) => s.trim().toLowerCase();
       if (n(v.first) === n(demoIdentity.first) && n(v.last) === n(demoIdentity.last) && `${pad(dob.d)}${pad(dob.m)}${dob.y}` === demoIdentity.dob) setResult('exists');
       else if (n(v.last) === 'unknown') setResult('unknown');
-      else setResult('matched');
+      else setResult(phone === demoRegistration.ownedMobile ? 'verified' : 'number');
     }, 1200);
   };
   return (
     <>
       <Screen footer={<Footer>{checking ? <FooterNote text={t(`${k}.creditNote`)} /> : null}<Button disabled={!ready || checking} onClick={submit}>{checking ? t('common.loading') : t('common.continue')}</Button></Footer>}>
-        <StepHeader step={1} total={2} title={t(`${k}.title`)} />
+        <StepHeader step={2} total={3} title={t(`${k}.title`)} />
         <div className="flex flex-col gap-4 px-4 pb-6">
           <p className="text-body-lg text-slate">{t(`${k}.intro`)}</p>
           <TextField label={t(`${k}.first`)} value={v.first} onChange={set('first')} error={errs.first} autoComplete="given-name" />
@@ -123,14 +136,19 @@ export function AboutYou() {
       </Sheet>
       <Sheet open={!!result} onOpenChange={(o) => !o && setResult(null)}>
         <SheetContent title={t(`${k}.title`)}>
-          {result === 'matched' && dob ? <>
-            <SheetHeading illustration="success" title={t(`${k}.matched.title`)} body={t(`${k}.matched.body`)} />
-            <div className="flex items-center gap-3 rounded-lg bg-fog p-4">
-              <IconBadge icon="user" size={40} />
-              <div className="flex flex-1 flex-col"><span className="text-body-md">{full}</span><span className="text-caption text-slate">{longDate(locale, dob)}</span></div>
-              <VerifiedTag label={t(`${k}.matched.tag`)} />
+          {result === 'verified' && dob ? <>
+            <SheetHeading illustration="success" title={t(`${k}.verified.title`)} body={t(`${k}.verified.body`)} />
+            <div className="flex flex-col gap-2">
+              <MatchRow icon="user" label={t(`${k}.verified.personal`)} value={full} hint={longDate(locale, dob)} tag={t(`${k}.verified.tag`)} />
+              <MatchRow icon="smartphone" label={t(`${k}.verified.mobile`)} value={ltr(uk(phone))} tag={t(`${k}.verified.tag`)} />
             </div>
             <Button onClick={() => nav(`/register/account?name=${encodeURIComponent(v.first.trim())}`)}>{t('common.continue')}</Button>
+          </> : result === 'number' ? <>
+            <SheetHeading illustration="error" title={t('registration.2_1.no.title')} body={t('registration.2_1.no.body')} />
+            <ThingsToCheck items={t('registration.2_1.no.checks', { returnObjects: true }) as string[]} />
+            <Button onClick={() => nav('/register', { replace: true })}>{t('registration.2_1.no.different')}</Button>
+            <p className="text-center text-caption text-slate">{t('registration.2_1.no.note')}</p>
+            <Button variant="secondary" onClick={() => nav(`/register/account?name=${encodeURIComponent(v.first.trim())}&id=1`)}>{t('registration.2_1.no.continue')}</Button>
           </> : result === 'unknown' ? <>
             <SheetHeading illustration="error" title={t(`${k}.unknown.title`)} body={t(`${k}.unknown.body`)} />
             <ThingsToCheck items={t(`${k}.unknown.checks`, { returnObjects: true }) as string[]} />
@@ -146,63 +164,40 @@ export function AboutYou() {
   );
 }
 
-/* ——— 2.1 Account details ——— */
+/* ——— 2.1 Account details (step 3) ——— */
 const RULES = { length: (p: string) => p.length >= 8, upper: (p: string) => /[A-Z]/.test(p), lower: (p: string) => /[a-z]/.test(p), number: (p: string) => /\d/.test(p), special: (p: string) => /[^A-Za-z0-9]/.test(p) };
 export function AccountDetails() {
   const { t } = useTranslation();
   const nav = useNavigate();
   const [q] = useSearchParams();
   const name = q.get('name') ?? demoAccount.firstName;
+  const idCheck = q.get('id') === '1';
   const k = 'registration.2_1';
-  const [f, setF] = useState({ mobile: '', email: '', password: '', confirm: '' });
+  const [f, setF] = useState({ email: '', password: '', confirm: '' });
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [agreed, setAgreed] = useState({ privacy: false, fraud: false });
   const [checking, setChecking] = useState(false);
-  const [sheet, setSheet] = useState<'ok' | 'no' | null>(null);
-  const digits = f.mobile.replace(/\D/g, '').replace(/^0/, '');
-  const ok = { mobile: /^7\d{9}$/.test(digits), email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.trim()), password: Object.values(RULES).every((r) => r(f.password)), confirm: !!f.confirm && f.confirm === f.password };
+  const ok = { email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.trim()), password: Object.values(RULES).every((r) => r(f.password)), confirm: !!f.confirm && f.confirm === f.password };
   const err = (key: keyof typeof ok, msg: string) => (touched[key] && f[key] && !ok[key] ? msg : undefined);
   const ready = Object.values(ok).every(Boolean) && agreed.privacy && agreed.fraud;
   const set = (key: keyof typeof f) => (v: string) => setF((p) => ({ ...p, [key]: v }));
   const blur = (key: string) => () => setTouched((p) => ({ ...p, [key]: true }));
-  const create = () => { setChecking(true); setTimeout(() => { setChecking(false); setSheet(digits === demoRegistration.ownedMobile ? 'ok' : 'no'); }, 1200); };
-  const phone = ltr(uk(digits));
+  const create = () => { setChecking(true); setTimeout(() => nav(`/register/created?name=${encodeURIComponent(name)}${idCheck ? '&id=1' : ''}`, { replace: true }), 1200); };
   return (
-    <>
-      <Screen footer={<Footer>{checking ? <FooterNote text={t(`${k}.checking`)} /> : null}<Button disabled={!ready || checking} onClick={create}>{checking ? t('common.loading') : t(`${k}.create`)}</Button></Footer>}>
-        <StepHeader step={2} total={2} title={t(`${k}.title`)} />
-        <div className="flex flex-col gap-4 px-4 pb-6">
-          <p className="text-body-lg text-slate">{t(`${k}.intro`)}</p>
-          <div onBlur={blur('mobile')}><PhoneRow><TextField label={t(`${k}.mobile`)} value={f.mobile} onChange={set('mobile')} inputMode="tel" dirLtr helper={t(`${k}.mobileHelper`)} error={err('mobile', t(`${k}.errors.mobile`))} /></PhoneRow></div>
-          <div onBlur={blur('email')}><TextField label={t(`${k}.email`)} value={f.email} onChange={set('email')} type="email" dirLtr error={err('email', t(`${k}.errors.email`))} /></div>
-          <div className="flex flex-col gap-2" onBlur={blur('password')}>
-            <TextField label={t(`${k}.password`)} value={f.password} onChange={set('password')} type="password" />
-            {f.password && !ok.password ? <div className="flex flex-col gap-1">{(Object.keys(RULES) as (keyof typeof RULES)[]).map((r) => <PasswordRule key={r} label={t(`${k}.rules.${r}`)} met={RULES[r](f.password)} />)}</div> : null}
-          </div>
-          <div onBlur={blur('confirm')}><TextField label={t(`${k}.confirmPassword`)} value={f.confirm} onChange={set('confirm')} type="password" error={err('confirm', t(`${k}.errors.match`))} helper={ok.confirm ? t(`${k}.match`) : undefined} /></div>
-          <div className="flex flex-col gap-3">
-            {(['privacy', 'fraud'] as const).map((d) => <Agreement key={d} document={d} checked={agreed[d]} onChange={(c) => setAgreed((p) => ({ ...p, [d]: c }))} onOpen={() => nav(`/legal/${d}`)} />)}
-          </div>
-          {ready && !checking ? <Banner type="info">{t(`${k}.nextCode`, { phone })}</Banner> : null}
-          <p className="text-caption text-slate">Demo · 7700 900123 is registered in your name</p>
+    <Screen footer={<Footer><Button disabled={!ready || checking} onClick={create}>{checking ? t('common.loading') : t(`${k}.create`)}</Button></Footer>}>
+      <StepHeader step={3} total={3} title={t(`${k}.title`)} />
+      <div className="flex flex-col gap-4 px-4 pb-6">
+        <div onBlur={blur('email')}><TextField label={t(`${k}.email`)} value={f.email} onChange={set('email')} type="email" dirLtr error={err('email', t(`${k}.errors.email`))} /></div>
+        <div className="flex flex-col gap-2" onBlur={blur('password')}>
+          <TextField label={t(`${k}.password`)} value={f.password} onChange={set('password')} type="password" />
+          {f.password ? <div className="flex flex-col gap-1">{(Object.keys(RULES) as (keyof typeof RULES)[]).map((r) => <PasswordRule key={r} label={t(`${k}.rules.${r}`)} met={RULES[r](f.password)} />)}</div> : null}
         </div>
-      </Screen>
-      <Sheet open={!!sheet} onOpenChange={(o) => !o && setSheet(null)}>
-        <SheetContent title={t(`${k}.title`)}>
-          {sheet === 'ok' ? <>
-            <SheetHeading illustration="success" title={t(`${k}.ok.title`)} body={t(`${k}.ok.body`)} />
-            <div className="flex items-center gap-3 rounded-lg bg-fog p-4"><IconBadge icon="smartphone" size={40} /><span className="flex-1 text-body-md">{phone}</span><VerifiedTag label={t(`${k}.ok.tag`)} /></div>
-            <Button onClick={() => nav(`/register/verify?phone=${digits}&name=${encodeURIComponent(name)}`)}>{t(`${k}.ok.send`)}</Button>
-          </> : sheet === 'no' ? <>
-            <SheetHeading illustration="error" title={t(`${k}.no.title`)} body={t(`${k}.no.body`)} />
-            <ThingsToCheck items={t(`${k}.no.checks`, { returnObjects: true }) as string[]} />
-            <Button onClick={() => { setSheet(null); setF((p) => ({ ...p, mobile: '' })); }}>{t(`${k}.no.different`)}</Button>
-            <p className="text-center text-caption text-slate">{t(`${k}.no.note`)}</p>
-            <Button variant="secondary" onClick={() => nav(`/register/verify?phone=${digits}&name=${encodeURIComponent(name)}&id=1`)}>{t(`${k}.no.continue`)}</Button>
-          </> : null}
-        </SheetContent>
-      </Sheet>
-    </>
+        <div onBlur={blur('confirm')}><TextField label={t(`${k}.confirmPassword`)} value={f.confirm} onChange={set('confirm')} type="password" error={err('confirm', t(`${k}.errors.match`))} helper={ok.confirm ? t(`${k}.match`) : undefined} /></div>
+        <div className="flex flex-col gap-3">
+          {(['privacy', 'fraud'] as const).map((d) => <Agreement key={d} document={d} checked={agreed[d]} onChange={(c) => setAgreed((p) => ({ ...p, [d]: c }))} onOpen={() => nav(`/legal/${d}`)} />)}
+        </div>
+      </div>
+    </Screen>
   );
 }
 
@@ -218,22 +213,20 @@ function OptionRow({ icon, title, subtitle, disabled, onClick }: { icon: IconNam
 export function VerifyNumber() {
   const { t } = useTranslation();
   const nav = useNavigate();
-  const [q] = useSearchParams();
-  const name = q.get('name') ?? demoAccount.firstName;
-  const idCheck = q.get('id') === '1';
   const k = 'registration.2_4';
-  const [phone, setPhone] = useState(q.get('phone') ?? demoRegistration.ownedMobile);
+  const k1 = 'registration.2_1';
+  const [mobile, setMobile] = useState('');
+  const [touched, setTouched] = useState(false);
+  const phone = mobile.replace(/\D/g, '').replace(/^0/, '');
+  const valid = /^7\d{9}$/.test(phone);
   const [code, setCode] = useState('');
   const [status, setStatus] = useState<'error' | 'success' | 'verifying'>();
   const [left, setLeft] = useState<number>(demoAccount.codeAttempts);
   const [round, setRound] = useState(0);
-  const [sent, setSent] = useState(false);
   const secs = useCountdown(demoAccount.resendSeconds, round);
-  const [sheet, setSheet] = useState<'help' | 'edit' | 'checking' | 'ok' | 'no' | null>(null);
-  const [nm, setNm] = useState('');
-  const nd = nm.replace(/\D/g, '').replace(/^0/, '');
+  const [sheet, setSheet] = useState<'code' | 'help' | 'verified' | null>(null);
   const done = status === 'success' || status === 'verifying';
-  const resend = () => { setRound((r) => r + 1); setCode(''); setStatus(undefined); setLeft(demoAccount.codeAttempts); setSent(true); };
+  const send = () => { setRound((r) => r + 1); setCode(''); setStatus(undefined); setLeft(demoAccount.codeAttempts); setSheet('code'); };
   const change = (v: string) => {
     if (done || left === 0) return;
     if (status === 'error') { setStatus(undefined); setCode(v.slice(-1)); return; }
@@ -241,48 +234,46 @@ export function VerifyNumber() {
     if (v.length === 6) {
       setStatus('verifying');
       setTimeout(() => {
-        if (v === demoAccount.code) { setStatus('success'); setTimeout(() => nav(`/register/created?name=${encodeURIComponent(name)}${idCheck ? '&id=1' : ''}`, { replace: true }), 1200); }
+        if (v === demoAccount.code) { setStatus('success'); setTimeout(() => setSheet('verified'), 600); }
         else { setStatus('error'); setLeft((a) => Math.max(0, a - 1)); }
-      }, 600);
+      }, 800);
     }
   };
   return (
     <>
-      <Screen footer={done ? undefined : <Keypad onDigit={(d) => change(status === 'error' ? d : (code + d).slice(0, 6))} onDelete={() => change(code.slice(0, -1))} suggestion={!status ? demoAccount.code : undefined} onSuggestion={change} />}>
-        <StepHeader step={2} total={2} title={t('registration.2_1.title')} />
-        <div className="flex flex-col gap-6 px-4 pb-6">
-          <div className="flex flex-col gap-2">
-            <h2 className="text-h2">{t(`${k}.title`)}</h2>
-            <p className="text-body-lg text-slate">{t(`${k}.textedTo`)}</p>
-            <div className="flex items-center gap-4"><span className="text-title">{ltr(uk(phone))}</span>{done ? null : <Button variant="tonal" size="sm" onClick={() => { setNm(''); setSheet('edit'); }}><Icon name="edit" size={16} />{t('common.edit')}</Button>}</div>
-          </div>
-          <CodeInput value={code} onChange={change} status={status === 'verifying' ? undefined : status} disabled={left === 0 || done} />
-          {status === 'error' ? <CodeError message={t('components.codeError.wrongCode')} attemptsLeft={left} /> : null}
-          {status === 'verifying' ? <Button disabled>{t(`${k}.verifying`)}</Button> : null}
-          {status === 'success' ? <div className="flex flex-col items-start gap-2"><VerifiedTag label={t(`${k}.verified`)} /><p className="text-body text-slate">{t(`${k}.creating`)}</p></div> : null}
-          {sent && !status ? <Banner type="success">{t(`${k}.newCode`)}</Banner> : null}
-          {done ? null : <div className="flex items-center justify-between gap-2"><ResendCountdown secondsLeft={secs} total={demoAccount.resendSeconds} onResend={resend} /><button onClick={() => setSheet('help')} className="cursor-pointer text-body-md text-red hover:underline">{t(`${k}.noCode`)}</button></div>}
-          <p className="text-caption text-slate md:hidden" dir="ltr">Demo · {demoAccount.code}</p>
+      <Screen footer={<Footer><Button disabled={!valid} onClick={send}>{t(`${k}.send`)}</Button></Footer>}>
+        <StepHeader step={1} total={3} title={t(`${k}.title`)} />
+        <div className="flex flex-col gap-4 px-4 pb-6">
+          <p className="text-body-lg text-slate">{t(`${k1}.intro`)}</p>
+          <div onBlur={() => setTouched(true)}><PhoneRow><TextField label={t(`${k1}.mobile`)} value={mobile} onChange={setMobile} inputMode="tel" dirLtr helper={t(`${k1}.mobileHelper`)} error={touched && mobile && !valid ? t(`${k1}.errors.mobile`) : undefined} /></PhoneRow></div>
+          <p className="text-caption text-slate" dir="ltr">Demo · 7700 900123 is in your name · code {demoAccount.code}</p>
         </div>
       </Screen>
-      <Sheet open={!!sheet} onOpenChange={(o) => !o && setSheet(null)}>
+      <Sheet open={!!sheet} onOpenChange={(o) => { if (!o && sheet !== 'verified') setSheet(sheet === 'help' ? 'code' : null); }}>
         <SheetContent title={t(`${k}.title`)}>
-          {sheet === 'help' ? <>
+          {sheet === 'code' ? <>
+            <div className="flex flex-col gap-2">
+              <h2 className="text-h3">{t(`${k}.title`)}</h2>
+              <p className="text-body text-slate">{t(`${k}.textedTo`)}</p>
+              <div className="flex items-center gap-4"><span className="text-title">{ltr(uk(phone))}</span>{done ? null : <Button variant="tonal" size="sm" onClick={() => setSheet(null)}><Icon name="edit" size={16} />{t('common.edit')}</Button>}</div>
+            </div>
+            <CodeInput value={code} onChange={change} status={status === 'verifying' ? undefined : status} disabled={left === 0 || done} />
+            {status === 'error' ? <CodeError message={t('components.codeError.wrongCode')} attemptsLeft={left} /> : null}
+            {status === 'verifying' ? <p className="text-center text-body-md text-slate">{t(`${k}.verifying`)}</p> : null}
+            {done ? null : <div className="flex items-center justify-between gap-2"><ResendCountdown secondsLeft={secs} total={demoAccount.resendSeconds} onResend={send} /><button onClick={() => setSheet('help')} className="cursor-pointer text-body-md text-red hover:underline">{t(`${k}.noCode`)}</button></div>}
+            {done ? null : <Keypad onDigit={(d) => change(status === 'error' ? d : (code + d).slice(0, 6))} onDelete={() => change(code.slice(0, -1))} suggestion={!status ? demoAccount.code : undefined} onSuggestion={change} />}
+          </> : sheet === 'help' ? <>
             <div className="flex flex-col gap-2"><h2 className="text-h3">{t(`${k}.noCode`)}</h2><p className="text-body text-slate">{t(`${k}.helpBody`)}</p></div>
-            <OptionRow icon="message" title={t(`${k}.resendText`)} subtitle={secs > 0 ? t(`${k}.availableIn`, { time: ltr(formatMSS(secs)) }) : undefined} disabled={secs > 0} onClick={() => { resend(); setSheet(null); }} />
-            <OptionRow icon="edit" title={t(`${k}.change`)} subtitle={ltr(uk(phone))} onClick={() => { setNm(''); setSheet('edit'); }} />
-            <Button variant="ghost" onClick={() => setSheet(null)}>{t(`${k}.cancel`)}</Button>
-          </> : sheet === 'edit' || sheet === 'checking' ? <>
-            <div className="flex flex-col gap-2"><h2 className="text-h3">{t(`${k}.change`)}</h2><p className="text-body text-slate">{t(`${k}.changeBody`)}</p></div>
-            <PhoneRow><TextField label={t('registration.2_1.mobile')} value={nm} onChange={setNm} inputMode="tel" dirLtr /></PhoneRow>
-            <Button disabled={!/^7\d{9}$/.test(nd) || sheet === 'checking'} onClick={() => { setSheet('checking'); setTimeout(() => setSheet(nd === demoRegistration.ownedMobile ? 'ok' : 'no'), 1200); }}>{sheet === 'checking' ? t('common.loading') : t(`${k}.sendNew`)}</Button>
-          </> : sheet === 'ok' ? <>
-            <SheetHeading illustration="success" title={t('registration.2_1.ok.title')} body={t('registration.2_1.ok.body')} />
-            <Button onClick={() => { setPhone(nd); resend(); setSheet(null); }}>{t('registration.2_1.ok.send')}</Button>
-          </> : sheet === 'no' ? <>
-            <SheetHeading illustration="error" title={t('registration.2_1.no.title')} body={t('registration.2_1.no.body')} />
-            <ThingsToCheck items={[...(t('registration.2_1.no.checks', { returnObjects: true }) as string[]), t(`${k}.check07`)]} />
-            <Button onClick={() => setSheet('edit')}>{t('registration.2_1.no.different')}</Button>
+            <OptionRow icon="message" title={t(`${k}.resendText`)} subtitle={secs > 0 ? t(`${k}.availableIn`, { time: ltr(formatMSS(secs)) }) : undefined} disabled={secs > 0} onClick={send} />
+            <OptionRow icon="edit" title={t(`${k}.change`)} subtitle={ltr(uk(phone))} onClick={() => { setSheet(null); setMobile(''); setTouched(false); }} />
+            <Button variant="ghost" onClick={() => setSheet('code')}>{t(`${k}.cancel`)}</Button>
+          </> : sheet === 'verified' ? <>
+            <div className="flex flex-col items-center gap-3 text-center">
+              <IconBadge icon="check" size={56} tone="success" />
+              <h2 className="text-h3">{t(`${k}.verified`)}</h2>
+              <p className="text-body text-slate">{t(`${k}.verifiedBody`)}</p>
+            </div>
+            <Button onClick={() => nav(`/register/about?phone=${phone}`)}>{t('common.continue')}</Button>
           </> : null}
         </SheetContent>
       </Sheet>

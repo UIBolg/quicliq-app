@@ -81,7 +81,7 @@
         "number": "One number",
         "special": "One special character"
       },
-      "title": "Your account details",
+      "title": "Account details",
       "passwordPlaceholder": "Create a password",
       "create": "Create account",
       "match": "Passwords match",
@@ -113,7 +113,7 @@
     "step": "Step {{step}} of {{total}}",
     "thingsToCheck": "Things to check",
     "1_1": {
-      "title": "About you",
+      "title": "Personal information",
       "intro": "Enter your name and date of birth exactly as they appear on your ID.",
       "first": "First name",
       "middle": "Middle name (optional)",
@@ -148,6 +148,13 @@
       "exists": {
         "title": "You already have an account",
         "body": "An account with these details already exists. Log in, or reset your password if you’ve forgotten it."
+      },
+      "verified": {
+        "title": "Your details are verified",
+        "body": "We’ve confirmed your personal details and mobile number.",
+        "personal": "Personal details",
+        "mobile": "Mobile ownership",
+        "tag": "Matched"
       }
     },
     "2_4": {
@@ -165,7 +172,9 @@
       "changeBody": "We’ll text a new code to this number. UK mobile numbers only.",
       "sendNew": "Send new code",
       "cancel": "Cancel",
-      "check07": "Make sure it’s a UK mobile number starting with 07"
+      "check07": "Make sure it’s a UK mobile number starting with 07",
+      "send": "Send code",
+      "verifiedBody": "Your mobile number is verified. Continue to confirm your personal details."
     },
     "2_9": {
       "title": "Account created",

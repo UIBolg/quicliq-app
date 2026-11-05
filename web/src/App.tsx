@@ -44,9 +44,10 @@ export default function App() {
             <Route path="/history" element={<History />} />
             <Route path="/history/:id" element={<TransferDetails />} />
             <Route path="/account" element={<Account />} />
-            <Route path="/register" element={<AboutYou />} />
+            <Route path="/register" element={<VerifyNumber />} />
+            <Route path="/register/about" element={<AboutYou />} />
             <Route path="/register/account" element={<AccountDetails />} />
-            <Route path="/register/verify" element={<VerifyNumber />} />
+            <Route path="/register/verify" element={<Navigate to="/register" replace />} />
             <Route path="/register/created" element={<AccountCreated />} />
             <Route path="/register/biometric" element={<BiometricSetup />} />
             <Route path="/verify/start" element={<BeforeYouStart />} />
