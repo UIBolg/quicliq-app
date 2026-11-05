@@ -360,8 +360,8 @@
     }
   },
   "notBuilt": {
-    "title": "Not built yet",
-    "body": "Screen {{id}} is part of a later group. Go back to continue reviewing."
+    "title": "Coming soon",
+    "body": "We’re still building this part of Quicliq. We’ll let you know as soon as it’s ready."
   },
   "home": {
     "greeting": "Welcome back,",
