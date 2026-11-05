@@ -182,9 +182,9 @@ export function TransferCard({ name, method, methodLabel, date, amount, status, 
   );
 }
 
-/** Transfer status pill: Pending grey, Processing blue, Delivered green, Cancelled / Rejected red. */
+/** Transfer status pill: Pending amber, Processing blue, Delivered green, Cancelled / Rejected red. */
 export const statusTone: Record<TransferStatus, string> = {
-  pending: 'bg-dark-fog text-slate',
+  pending: 'bg-warning-light text-warning',
   processing: 'bg-info-light text-info',
   delivered: 'bg-success-light text-success',
   rejected: 'bg-failure-light text-failure',

@@ -1054,60 +1054,27 @@
     "headline": {
       "pending": "نتحقق من تحويلك. يستغرق ذلك عادةً أقل من ساعة.",
       "processing": "في طريقه إلى {{bank}}. متوقع بحلول {{eta}}.",
-      "ready": "جاهز ليستلمه {{name}} حتى {{eta}}.",
       "deliveredBank": "أُودع في حساب {{name}} بتاريخ {{date}}.",
-      "deliveredCash": "استلمه {{name}} بتاريخ {{date}}.",
+      "deliveredCash": "تم التسليم إلى {{agent}}. يمكن لـ{{name}} استلامه بالهوية ورمز الاستلام.",
       "rejected": "تم إيقاف هذا التحويل.",
       "cancelled": "تم إلغاء هذا التحويل.",
-      "refundPending": "استرداد {{amount}} في طريقه إلى بطاقتك. متوقع بحلول {{eta}}."
+      "refundPending": "استرداد {{amount}} في طريقه إلى بطاقتك. متوقع بحلول {{eta}}.",
+      "refundDone": "أُعيد {{amount}} إلى {{card}} بتاريخ {{date}}."
     },
     "progress": "مراحل التحويل",
-    "now": "الآن",
     "expected": "متوقع بحلول {{eta}}",
     "steps": {
-      "created": {
-        "title": "تم إنشاء التحويل",
-        "body": "أنشأت التحويل من التطبيق."
+      "pending": {
+        "bank": "استلمنا {{amount}} من {{card}} ونتحقق من التحويل.",
+        "cash": "استلمنا {{amount}} من {{card}} ونتحقق من التحويل."
       },
-      "paid": {
-        "title": "تم استلام الدفعة",
-        "body": "تم خصم {{amount}} من {{card}}."
-      },
-      "review": {
-        "title": "التحقق الأمني",
-        "body": "نتحقق من كل تحويل لحماية أموالك."
-      },
-      "sent": {
-        "title": "أُرسل إلى {{bank}}",
-        "body": "يقوم البنك بإيداعه في الحساب."
+      "processing": {
+        "bank": "أُرسل إلى {{bank}} الذي يقوم بإيداعه في حساب {{name}}.",
+        "cash": "نجهّز {{receive}} في {{agent}}."
       },
       "delivered": {
-        "title": "تم التسليم",
-        "body": "أُودع {{receive}} في حساب {{name}}."
-      },
-      "ready": {
-        "title": "جاهز للاستلام",
-        "body": "يمكن لـ{{name}} استلام {{receive}} من {{agent}} بالهوية ورمز الاستلام."
-      },
-      "collected": {
-        "title": "تم الاستلام",
-        "body": "استلم {{name}} مبلغ {{receive}}."
-      },
-      "rejected": {
-        "title": "تم رفض التحويل",
-        "body": ""
-      },
-      "cancelled": {
-        "title": "تم إلغاء التحويل",
-        "body": ""
-      },
-      "refunded": {
-        "title": "تم الاسترداد",
-        "body": "أُعيد {{amount}} إلى {{card}}. قد يستغرق ظهوره لدى البنك من 3 إلى 5 أيام عمل."
-      },
-      "refunding": {
-        "title": "الاسترداد في الطريق",
-        "body": "سيُعاد {{amount}} إلى {{card}}. قد يستغرق ظهوره لدى البنك من 3 إلى 5 أيام عمل."
+        "bank": "أُودع {{receive}} في حساب {{name}}.",
+        "cash": "تم تسليم {{receive}} إلى {{agent}} ليستلمه {{name}}."
       }
     },
     "reasons": {
@@ -1177,7 +1144,6 @@
       "byChangedMind": "غيّرت رأيي",
       "byOther": "سبب آخر"
     },
-    "collectBy": "الاستلام قبل {{eta}}",
     "reasonsShort": {
       "nameMismatch": "الاسم لا يطابق الحساب البنكي",
       "compliance": "لم يكتمل التحقق الأمني",

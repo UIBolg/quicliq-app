@@ -16,7 +16,7 @@ export function useTransfers(): Transfer[] {
 
 /** Sender cancels a pending transfer: adds `cancelled` now and a refund expected in 3 working days. */
 export function cancelTransfer(tx: Transfer, reason: StopReason, now: string, refundBy: string) {
-  overrides = { ...overrides, [tx.id]: { status: 'cancelled', detail: { ...tx.detail, reason, eta: refundBy, events: [...tx.detail.events, { step: 'cancelled', at: now }] } } };
+  overrides = { ...overrides, [tx.id]: { status: 'cancelled', detail: { ...tx.detail, reason, eta: refundBy, events: [...tx.detail.events, { status: 'cancelled', at: now }] } } };
   snapshot = build();
   listeners.forEach((l) => l());
 }

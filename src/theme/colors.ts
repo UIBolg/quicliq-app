@@ -27,6 +27,9 @@ export const colors = {
   'Status/Info/Default': '#1D5BBF',
   'Status/Info/Dark': '#123A7A',
   'Status/Info/Light': '#EAF2FD',
+  'Status/Warning/Default': '#B54708',
+  'Status/Warning/Dark': '#7A2E0E',
+  'Status/Warning/Light': '#FFFAEB',
 
   'Brand/Logo Red': '#EA2328',
   'System/Keyboard': '#D6D7DC',

@@ -4,7 +4,7 @@ import { useState, type ReactNode } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { demoAccount, demoCards, demoToday } from '@shared/mock/account';
-import { cancelReasons, receiveAmount, stepsFor, type StopReason, type TransferStep } from '@shared/mock/transfers';
+import { cancelReasons, receiveAmount, statusFlow, type StopReason, type TransferStatus } from '@shared/mock/transfers';
 import { formatMoney } from '@shared/utils/format';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent } from '@/components/ui/sheet';
@@ -18,20 +18,18 @@ import { cn } from '@/lib/utils';
 
 const k = 'transfer';
 type RowState = 'done' | 'failed' | 'current' | 'upcoming';
-type Row = { step: TransferStep | 'refunding'; state: RowState; at?: string };
+type Row = { step: TransferStatus; state: RowState; at?: string };
 
-/** Events that happened + what is happening now + what is still to come (skipped once a transfer stops). */
+/** Pending → Processing → Delivered; a transfer that stops ends on Cancelled / Rejected (nothing upcoming after it). */
 function timeline(tx: Transfer): Row[] {
-  const { events } = tx.detail;
-  const rows: Row[] = events.map((e) => ({ step: e.step, at: e.at, state: e.step === 'rejected' || e.step === 'cancelled' ? 'failed' : 'done' }));
-  const stopped = rows.some((r) => r.state === 'failed');
-  if (stopped) {
-    if (!events.some((e) => e.step === 'refunded')) rows.push({ step: 'refunding', state: 'current' });
-    return rows;
-  }
-  const flow = stepsFor(tx.method);
-  const next = flow.slice(flow.indexOf(events[events.length - 1].step) + 1);
-  next.forEach((step, i) => rows.push({ step, state: i === 0 ? 'current' : 'upcoming' }));
+  const ev = tx.detail.events;
+  const rows: Row[] = ev.map((e, i) => ({
+    step: e.status,
+    at: e.at,
+    state: e.status === 'rejected' || e.status === 'cancelled' ? 'failed' : i === ev.length - 1 && e.status !== 'delivered' ? 'current' : 'done',
+  }));
+  if (rows.some((r) => r.state === 'failed')) return rows;
+  statusFlow.slice(statusFlow.indexOf(ev[ev.length - 1].status) + 1).forEach((step) => rows.push({ step, state: 'upcoming' }));
   return rows;
 }
 
@@ -57,7 +55,6 @@ export function TransferDetails() {
   const d = tx.detail;
   const lang = locale === 'ar' ? 'ar-u-nu-latn' : 'en-GB';
   const dateTime = (iso: string) => new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date(iso));
-  const dayOnly = (iso: string) => new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(iso));
   const sent = Number(tx.amount);
   const card = demoCards.find((c) => c.id === d.cardId)!;
   const name = t(`home.recipientNames.${tx.recipient}`);
@@ -72,11 +69,11 @@ export function TransferDetails() {
     eta: d.eta ? dateTime(d.eta) : '',
   };
   const last = d.events[d.events.length - 1];
-  const refunded = d.events.some((e) => e.step === 'refunded');
-  const readyToCollect = tx.status === 'processing' && last.step === 'ready';
+  const stopped = tx.status === 'rejected' || tx.status === 'cancelled';
+  const readyToCollect = tx.status === 'delivered' && tx.method === 'cash';
   const headline = {
     pending: t(`${k}.headline.pending`),
-    processing: readyToCollect ? t(`${k}.headline.ready`, { ...vars, eta: d.eta ? dayOnly(d.eta) : '' }) : t(`${k}.headline.processing`, vars),
+    processing: t(`${k}.headline.processing`, vars),
     delivered: t(`${k}.headline.${tx.method === 'bank' ? 'deliveredBank' : 'deliveredCash'}`, { ...vars, date: dateTime(last.at) }),
     rejected: t(`${k}.headline.rejected`),
     cancelled: t(`${k}.headline.cancelled`),
@@ -102,10 +99,11 @@ export function TransferDetails() {
 
   const actions: ReactNode = {
     pending: <Button variant="secondary" className="text-red" onClick={() => setCancelOpen(true)}>{t(`${k}.actions.cancel`)}</Button>,
-    processing: readyToCollect && d.pickupCode ? <Button onClick={() => share(`${t(`${k}.pickup.title`)}: ${d.pickupCode} (${d.reference})`)}>{t(`${k}.pickup.share`)}</Button> : null,
+    processing: null,
     delivered: (
       <>
-        <Button onClick={() => nav('/soon/Send money')}>{t(`${k}.actions.sendAgain`)}</Button>
+        {readyToCollect && d.pickupCode ? <Button onClick={() => share(`${t(`${k}.pickup.title`)}: ${d.pickupCode} (${d.reference})`)}>{t(`${k}.pickup.share`)}</Button> : null}
+        <Button variant={readyToCollect ? 'secondary' : 'default'} onClick={() => nav('/soon/Send money')}>{t(`${k}.actions.sendAgain`)}</Button>
         <Button variant="secondary" onClick={() => nav('/soon/Receipt')}>{t(`${k}.actions.receipt`)}</Button>
       </>
     ),
@@ -141,8 +139,10 @@ export function TransferDetails() {
               <span className="text-body-md">{t(`${k}.reasonTitle`)}: </span>{t(`${k}.reasons.${d.reason}`, vars)}
             </Banner>
           ) : null}
-          {(tx.status === 'rejected' || tx.status === 'cancelled') && !refunded && d.eta ? (
-            <Banner type="info" icon="wallet">{t(`${k}.headline.refundPending`, vars)}</Banner>
+          {stopped && (d.refundedAt || d.eta) ? (
+            <Banner type={d.refundedAt ? 'success' : 'info'} icon="wallet">
+              {d.refundedAt ? t(`${k}.headline.refundDone`, { ...vars, date: dateTime(d.refundedAt) }) : t(`${k}.headline.refundPending`, vars)}
+            </Banner>
           ) : null}
 
           {readyToCollect && d.pickupCode ? (
@@ -167,9 +167,9 @@ export function TransferDetails() {
                   key={r.step + i}
                   row={r}
                   last={i === all.length - 1}
-                  title={t(`${k}.steps.${r.step}.title`, vars)}
-                  body={r.step === 'rejected' || r.step === 'cancelled' ? t(`${k}.reasons.${d.reason ?? 'byOther'}`, vars) : t(`${k}.steps.${r.step}.body`, vars)}
-                  when={r.at ? dateTime(r.at) : r.state === 'current' ? (d.eta ? t(`${k}.${r.step === 'collected' ? 'collectBy' : 'expected'}`, vars) : t(`${k}.now`)) : ''}
+                  title={t(`home.status.${r.step}`)}
+                  body={r.state === 'failed' ? t(`${k}.reasons.${d.reason ?? 'byOther'}`, vars) : t(`${k}.steps.${r.step}.${tx.method}`, vars)}
+                  when={r.at ? dateTime(r.at) : i === all.findIndex((x) => x.state === 'upcoming') && d.eta ? t(`${k}.expected`, vars) : ''}
                 />
               ))}
             </ol>
@@ -234,9 +234,9 @@ function TimelineRow({ row, last, title, body, when }: { row: Row; last: boolean
       <div className={cn('flex flex-1 flex-col gap-0.5 pt-1', !last && 'pb-5')}>
         <div className="flex items-baseline justify-between gap-2">
           <span className={cn('text-body-md', row.state === 'failed' ? 'text-failure' : row.state === 'upcoming' ? 'text-slate' : 'text-ink')}>{title}</span>
-          {when ? <span className={cn('shrink-0 text-caption', row.state === 'current' ? 'text-red' : 'text-slate')}>{when}</span> : null}
+          {when ? <span className={cn('shrink-0 text-caption', row.state === 'upcoming' ? 'text-red' : 'text-slate')}>{when}</span> : null}
         </div>
-        {body && (row.state === 'done' || row.state === 'failed' || row.step === 'review' || row.step === 'refunding') ? <p className="text-caption text-slate">{body}</p> : null}
+        {body && row.state !== 'upcoming' ? <p className="text-caption text-slate">{body}</p> : null}
       </div>
     </li>
   );

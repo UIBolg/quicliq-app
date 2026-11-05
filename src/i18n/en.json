@@ -1034,60 +1034,27 @@
     "headline": {
       "pending": "We're checking your transfer. This usually takes under an hour.",
       "processing": "On its way to {{bank}}. Expected by {{eta}}.",
-      "ready": "Ready for {{name}} to collect until {{eta}}.",
       "deliveredBank": "Paid into {{name}}'s account on {{date}}.",
-      "deliveredCash": "Collected by {{name}} on {{date}}.",
+      "deliveredCash": "Delivered to {{agent}}. {{name}} can collect it with ID and the pickup code.",
       "rejected": "This transfer was stopped.",
       "cancelled": "This transfer was cancelled.",
-      "refundPending": "Your refund of {{amount}} is on its way to your card. Expected by {{eta}}."
+      "refundPending": "Your refund of {{amount}} is on its way to your card. Expected by {{eta}}.",
+      "refundDone": "{{amount}} was refunded to {{card}} on {{date}}."
     },
     "progress": "Progress",
-    "now": "Now",
     "expected": "Expected by {{eta}}",
     "steps": {
-      "created": {
-        "title": "Transfer created",
-        "body": "You set up the transfer in the app."
+      "pending": {
+        "bank": "We received {{amount}} from {{card}} and are checking the transfer.",
+        "cash": "We received {{amount}} from {{card}} and are checking the transfer."
       },
-      "paid": {
-        "title": "Payment received",
-        "body": "{{amount}} taken from {{card}}."
-      },
-      "review": {
-        "title": "Security check",
-        "body": "We check every transfer to keep your money safe."
-      },
-      "sent": {
-        "title": "Sent to {{bank}}",
-        "body": "The bank is paying it into the account."
+      "processing": {
+        "bank": "Sent to {{bank}}, which is paying it into {{name}}'s account.",
+        "cash": "We're getting {{receive}} ready at {{agent}}."
       },
       "delivered": {
-        "title": "Delivered",
-        "body": "{{receive}} paid into {{name}}'s account."
-      },
-      "ready": {
-        "title": "Ready to collect",
-        "body": "{{name}} can collect {{receive}} at {{agent}} with ID and the pickup code."
-      },
-      "collected": {
-        "title": "Collected",
-        "body": "{{name}} collected {{receive}}."
-      },
-      "rejected": {
-        "title": "Transfer rejected",
-        "body": ""
-      },
-      "cancelled": {
-        "title": "Transfer cancelled",
-        "body": ""
-      },
-      "refunded": {
-        "title": "Refunded",
-        "body": "{{amount}} back to {{card}}. Banks can take 3–5 working days to show it."
-      },
-      "refunding": {
-        "title": "Refund on its way",
-        "body": "{{amount}} back to {{card}}. Banks can take 3–5 working days to show it."
+        "bank": "{{receive}} paid into {{name}}'s account.",
+        "cash": "{{receive}} delivered to {{agent}} for {{name}} to collect."
       }
     },
     "reasons": {
@@ -1157,7 +1124,6 @@
       "byChangedMind": "I changed my mind",
       "byOther": "Something else"
     },
-    "collectBy": "Collect by {{eta}}",
     "reasonsShort": {
       "nameMismatch": "Name doesn't match the bank account",
       "compliance": "Security checks not completed",
