@@ -50,4 +50,12 @@ components, Colour / Spacing / Radius / Stroke variables and EN text styles (Ave
 - 93:1804 12.5 Security (Face ID switch, Change password, Active device) · 93:1873 12.6 Language (Radio Option)
 - 93:1907 12.7 Legal (Nav Option ×3) · 93:1961 13.1 Help (Nav Option ×3) · 93:2014 13.2 Notifications (Banner, Tonal Small, rows)
 Built manually (no library component): list group/row, switch, payment card, set-as-default pill, tab bar (shadow not
-tokenised), log-out sheet. See figma-issues #38, #42, #47. Arabic versions not built yet.
+tokenised), log-out sheet. See figma-issues #38, #42, #47.
+
+## Account (Profile) — Arabic (2026-11-05)
+Section 96:1527 "Account (Profile) — Arabic (RTL)" below the English one: same 10 screens with Lang=AR library variants,
+AR text styles (Frutiger LT Arabic), Arabic copy from src/i18n/ar.json, RTL order (rows, top bar, tab bar mirrored;
+back = arrowRight, chevrons = chevronLeft). Names, emails, phone numbers, card details and amounts keep EN styles;
+£ amounts inside Arabic sentences carry LRM marks so they read "£12,000".
+96:1528 Account · 96:2334 Log out sheet · 96:1667 Personal details · 96:1813 Change password · 96:1922 Saved cards ·
+96:2030 Security · 96:2099 Language (العربية selected) · 96:2133 Legal · 96:2196 Help · 96:2254 Notifications
